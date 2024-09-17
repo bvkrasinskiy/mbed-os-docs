@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__main_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | smp_main.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="smp__main_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__main_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__main_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_33de8441f7b8b108cc48249435a2d2bd.html">cordio_stack</a></li><li class="navelem"><a class="el" href="dir_3940a4f0546291bcd68aa891290cb6c5.html">ble-host</a></li><li class="navelem"><a class="el" href="dir_e276228f8496bf800e01198cc79e5a5f.html">sources</a></li><li class="navelem"><a class="el" href="dir_629a499420c3e80db90a8c1bdd4624c3.html">stack</a></li><li class="navelem"><a class="el" href="dir_813e49a353249ce29b19e3e87f37d11f.html">smp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle">
+<div class="title">smp_main.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>SMP main module.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="sec__api_8h_source.html">sec_api.h</a>"</code><br/>
+<code>#include "<a class="el" href="wsf__timer_8h_source.html">wsf_timer.h</a>"</code><br/>
+<code>#include "<a class="el" href="l2c__api_8h_source.html">l2c_api.h</a>"</code><br/>
+<code>#include "<a class="el" href="dm__api_8h_source.html">dm_api.h</a>"</code><br/>
+<code>#include "<a class="el" href="smp__api_8h_source.html">smp_api.h</a>"</code><br/>
+</div>
+<p><a href="smp__main_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">union  </td><td class="memItemRight" valign="bottom"><a class="el" href="unionsmp_scratch__t.html">smpScratch_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_data_msg__t.html">smpDataMsg_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">union  </td><td class="memItemRight" valign="bottom"><a class="el" href="unionsmp_msg__t.html">smpMsg_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_sc_ltk__t.html">smpScLtk_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_sc_pub_key__t.html">smpScPubKey_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_sc_scratch__t.html">smpScScratch_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_sc_ccb__t.html">smpScCcb_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_ccb__t.html">smpCcb_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_sm_if__t.html">smpSmIf_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsmp_cb__t.html">smpCb_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SMP main module. </p>
+<p>Copyright (c) 2010-2019 Arm Ltd. All Rights Reserved.</p>
+<p>Copyright (c) 2019-2020 Packetcraft, Inc.</p>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">http://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+
+<p>Definition in file <a class="el" href="smp__main_8h_source.html">smp_main.h</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>smpi_sm state machine states </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7afd4bfac41019562a91e0dd9c1fb55728"></a>SMPI_SM_ST_IDLE </td><td class="fielddoc">
+<p>Idle </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7ad97ebfa0f8a0e5b66ea9b791dfc3d787"></a>SMPI_SM_ST_PAIR_RSP </td><td class="fielddoc">
+<p>Wait for pairing response </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7a5bc20d3177e63ec0c103dc2a2702d159"></a>SMPI_SM_ST_PIN </td><td class="fielddoc">
+<p>Wait for PIN </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7aebb1cba46dadbdbbe5e1de3e069a08b7"></a>SMPI_SM_ST_CNF_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7adc7bd6db0e2a51d3c633f5c652c54eb1"></a>SMPI_SM_ST_CNF_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7aa252d5d4ec1e4f167dc158a74ddeb135"></a>SMPI_SM_ST_PAIR_CNF </td><td class="fielddoc">
+<p>Wait for pairing confirm </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7aa2e10ae18b6c720d459b1b8cad348f95"></a>SMPI_SM_ST_PAIR_RAND </td><td class="fielddoc">
+<p>Wait for pairing random </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7a08c2959dce3b95f950c09b96a8d8fb46"></a>SMPI_SM_ST_CNF_VER_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7a969a5dd57aada6e78e2e8c82d4dd2539"></a>SMPI_SM_ST_CNF_VER_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7a2c876e3d806467b8b62bec4d1de2cf28"></a>SMPI_SM_ST_STK_CALC </td><td class="fielddoc">
+<p>Wait for STK calc </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7a85d905f58644e5f3cce23dbbcfb75e2e"></a>SMPI_SM_ST_ENCRYPT </td><td class="fielddoc">
+<p>Wait for link encryption </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7a5869c38e750644ca406e4cd5bec873fd"></a>SMPI_SM_ST_KEY_DIST </td><td class="fielddoc">
+<p>Key distribution </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7adcc13b2c3d31530aae82667235079ee9"></a>SMPI_SM_ST_ATTEMPTS </td><td class="fielddoc">
+<p>Repeated attempts </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3d01b665f7e924f5f97fa41f5879c7f7aee60884482414e24afd087f752033063"></a>SMPI_SM_ST_RSP_TO </td><td class="fielddoc">
+<p>Response timeout state </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="smp__main_8h_source.html#l00068">68</a> of file <a class="el" href="smp__main_8h_source.html">smp_main.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>smpr_sm state machine states </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a57b883a571e6da371ed907212fd62016"></a>SMPR_SM_ST_IDLE </td><td class="fielddoc">
+<p>Idle </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740aac9e44c76dfa983309caf5b7c73ae327"></a>SMPR_SM_ST_API_PAIR_REQ </td><td class="fielddoc">
+<p>Wait for API pairing request </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a87d6721797eb0eb52b09b527db353f23"></a>SMPR_SM_ST_API_PAIR_RSP </td><td class="fielddoc">
+<p>Wait for API pairing response </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740aadf03608bfb247e07fa4975b5148bd1b"></a>SMPR_SM_ST_PIN_PAIR_1 </td><td class="fielddoc">
+<p>Wait for PIN or pairing confirm 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a43b3d157709baf223c58ee21820a3eeb"></a>SMPR_SM_ST_PIN_PAIR_2 </td><td class="fielddoc">
+<p>Wait for PIN or pairing confirm 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740acaeda807d50562d4a62e807a55f6ea16"></a>SMPR_SM_ST_CNF_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740ae92f565658900ecc23fdf63d9948d2a5"></a>SMPR_SM_ST_CNF_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740aec89332db82ea0d9d31f92ff8e394064"></a>SMPR_SM_ST_PAIR_RAND </td><td class="fielddoc">
+<p>Wait for pairing random </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a6f96eeae767100f32684f5331a4a5c72"></a>SMPR_SM_ST_CNF_VER_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a342acceae471f2735564f6a5b8616a96"></a>SMPR_SM_ST_CNF_VER_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740acd913239ff2d4506802cc5177a2b3528"></a>SMPR_SM_ST_STK_CALC </td><td class="fielddoc">
+<p>Wait for STK calc </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a1181b5797452a6ed9c5a27ba4e61839b"></a>SMPR_SM_ST_ENCRYPT </td><td class="fielddoc">
+<p>Wait for link encryption </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a10eec4edef7fa988fa1d04a5d9a4bdaa"></a>SMPR_SM_ST_KEY_DIST </td><td class="fielddoc">
+<p>Key distribution </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a5920556d66610be3f162be728d9bed4e"></a>SMPR_SM_ST_ATTEMPTS </td><td class="fielddoc">
+<p>Repeated attempts </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a49b1d57ca8b026018a74c3dcb2779740a9be1ead948348ec84252ef9f8280a286"></a>SMPR_SM_ST_RSP_TO </td><td class="fielddoc">
+<p>Response timeout state </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="smp__main_8h_source.html#l00087">87</a> of file <a class="el" href="smp__main_8h_source.html">smp_main.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12acb3634428eafc5724df6d836f4e64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>smpi_sc_sm state machine states </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a311690d0850ac5fd861ba88b7ccec7e6"></a>SMPI_SC_SM_ST_IDLE </td><td class="fielddoc">
+<p>Idle </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ab4108c47bbdff5c171d61e2fdb69595a"></a>SMPI_SC_SM_ST_PAIR_RSP </td><td class="fielddoc">
+<p>Wait for pairing response </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a9e1bd6cb13557aaf7a86a891157248de"></a>SMPI_SC_SM_ST_MODE_SELECT </td><td class="fielddoc">
+<p>Select the security mode (LESC or Legacy) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a2908c71602b556f27c87fc3bab90608b"></a>SMPI_SC_SM_ST_LESC_PIN </td><td class="fielddoc">
+<p>Wait for PIN in LESC </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a41389635eee590e735fe1e7e33a2be77"></a>SMPI_SC_SM_ST_PUB_KEY </td><td class="fielddoc">
+<p>Wait for public key from peer </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a37d77fe163fd94060cc0a042a9cd7533"></a>SMPI_SC_SM_ST_AUTH_SELECT </td><td class="fielddoc">
+<p>Select the type of LESC pairing (Just Works, Passkey, or OOB) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64aa03a8def39a4eec701f27c6db8247fb4"></a>SMPI_SC_SM_ST_JWNC_WAIT_CNF </td><td class="fielddoc">
+<p>Wait for confirm in Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a7a7a48c851d6eedc5080e2a8acd12bda"></a>SMPI_SC_SM_ST_JWNC_RAND </td><td class="fielddoc">
+<p>Wait for rand in Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ab7d5c01d9bc4aa982fd91b77f2b7df06"></a>SMPI_SC_SM_ST_JWNC_CHECK_1 </td><td class="fielddoc">
+<p>Calculate confirm value in Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a5974e6142e27a4a31d5b076537e6c7e0"></a>SMPI_SC_SM_ST_JWNC_CHECK_2 </td><td class="fielddoc">
+<p>Calculate user validate value in Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a10bbcca06705a76dd6defd8aff51ebb6"></a>SMPI_SC_SM_ST_PK_KEYPRESS </td><td class="fielddoc">
+<p>Process a keypress command in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ae1b2ad3a324b2ce9d303476c97c7acf7"></a>SMPI_SC_SM_ST_PK_CALC </td><td class="fielddoc">
+<p>Calculate the confirm in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64abfe04327bb5a34b13f73f597ba6a26ee"></a>SMPI_SC_SM_ST_PK_CNF </td><td class="fielddoc">
+<p>Wait for confirm in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a909eaca2309d8d888b0e31f92da2f2e3"></a>SMPI_SC_SM_ST_PK_RAND </td><td class="fielddoc">
+<p>Wait for rand in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a642dca37c77b67b5b5de39beafb7b11e"></a>SMPI_SC_SM_ST_PK_CHECK </td><td class="fielddoc">
+<p>Check the conform value in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ae31261dd4af3b701896abff66712c281"></a>SMPI_SC_SM_ST_PK_REPEAT </td><td class="fielddoc">
+<p>Repeat or complete the passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64aa3e1834e181ce0a69014dbd527b7a0ae"></a>SMPI_SC_SM_ST_OOB_SEND_RAND </td><td class="fielddoc">
+<p>Send the rand in OOB pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64abb9f6f134d17eb8ce24809709559d5ff"></a>SMPI_SC_SM_ST_OOB_WAIT_RAND </td><td class="fielddoc">
+<p>Wait for a rand in OOB pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a9195083b9ef2a52604d3f47941ff80ca"></a>SMPI_SC_SM_ST_CALC_DHKEY </td><td class="fielddoc">
+<p>Calculate the DHKEY shared secret </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a9ed34edcc66d48c2c17e74d85f4b76e9"></a>SMPI_SC_SM_ST_CALC_F5_TKEY </td><td class="fielddoc">
+<p>Calculate the DHKEY T Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a5902be0664adee72580a840ade667139"></a>SMPI_SC_SM_ST_CALC_F5_MACKEY </td><td class="fielddoc">
+<p>Calculate the DHKEY MAC Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ad3d473a310c310f29559a2da5aa4f1c4"></a>SMPI_SC_SM_ST_CALC_F5_LTK </td><td class="fielddoc">
+<p>Calculate the DHKEY LTK Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a765c166a49008844a6d95030b6e17023"></a>SMPI_SC_SM_ST_CALC_F6_EA </td><td class="fielddoc">
+<p>Calculate the DHKEY Ea Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a8c18274befe81c91dcd693ff982ee4fa"></a>SMPI_SC_SM_ST_CALC_F6_EB </td><td class="fielddoc">
+<p>Calculate the DHKEY Eb Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a5acd720ec845dc2bf8adb996ef8bc079"></a>SMPI_SC_SM_ST_VERIFY_DH_CHECK </td><td class="fielddoc">
+<p>Verify the DHKEY check value </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a44369417cb4cdd9cdd08dc8d94b9522b"></a>SMPI_SC_SM_ST_LEGACY_PIN </td><td class="fielddoc">
+<p>Wait for PIN </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ab80d074ef9b89bc16cbd0e0dd11decf9"></a>SMPI_SC_SM_ST_CNF_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a4a006dfb2aef64d6424c6ebcea021a3e"></a>SMPI_SC_SM_ST_CNF_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a4cb522b6fca747c65ea7a41eb478468f"></a>SMPI_SC_SM_ST_PAIR_CNF </td><td class="fielddoc">
+<p>Wait for pairing confirm </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64acc204d139739a4da61b87847663bf54f"></a>SMPI_SC_SM_ST_PAIR_RAND </td><td class="fielddoc">
+<p>Wait for pairing random </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ac89ff571b5542d5cdaa8faa49dc1ed01"></a>SMPI_SC_SM_ST_CNF_VER_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a7b3005b20f5a7c07d816e95697fcf990"></a>SMPI_SC_SM_ST_CNF_VER_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64aeb2164f1256a8c8e039a65395c7012e0"></a>SMPI_SC_SM_ST_STK_CALC </td><td class="fielddoc">
+<p>Wait for STK calc </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ad3611f827d6237644688e826c2874efa"></a>SMPI_SC_SM_ST_ENCRYPT </td><td class="fielddoc">
+<p>Wait for link encryption </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a1e192e3f0a205183f6b9ea4a760265f1"></a>SMPI_SC_SM_ST_KEY_DIST </td><td class="fielddoc">
+<p>Key distribution </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64a53ca18a01f12b29bf4c9007e82bb42f0"></a>SMPI_SC_SM_ST_ATTEMPTS </td><td class="fielddoc">
+<p>Repeated attempts </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a12acb3634428eafc5724df6d836f4e64ae1be51a6004a4d21abcd5d3c9039cc3e"></a>SMPI_SC_SM_ST_RSP_TO </td><td class="fielddoc">
+<p>Response timeout state </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="smp__main_8h_source.html#l00107">107</a> of file <a class="el" href="smp__main_8h_source.html">smp_main.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>smpr_sc_sm state machine states </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64af748396aa2a8f1811e82cbe71627135c"></a>SMPR_SC_SM_ST_IDLE </td><td class="fielddoc">
+<p>Idle </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a15b1aa8fe278bf9781a43b94423ba4d5"></a>SMPR_SC_SM_ST_API_PAIR_REQ </td><td class="fielddoc">
+<p>Wait for API pairing request </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a0e33a92c90779e2cb0afd05b8865cd2e"></a>SMPR_SC_SM_ST_API_PAIR_RSP </td><td class="fielddoc">
+<p>Wait for API pairing response </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ad30d39cbc3713df67c935b9e7c92d1e3"></a>SMPR_SC_SM_ST_MODE_SELECT </td><td class="fielddoc">
+<p>Select the security mode (LESC or Legacy) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64abd067e35669b23eb5830003f757dafa1"></a>SMPR_SC_SM_ST_PUB_KEY </td><td class="fielddoc">
+<p>Wait for public key from peer </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ad0aa5ac51c85e08c1cadc44cea477b5b"></a>SMPR_SC_SM_ST_LESC_PIN </td><td class="fielddoc">
+<p>Wait for pin in LESC </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a2cdc98e45d9e45ca911fd8791d01abd4"></a>SMPR_SC_SM_ST_AUTH_SELECT </td><td class="fielddoc">
+<p>Select the type of LESC pairing (Just Works, Passkey, or OOB) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ab33b141ebc27a6e61a6e6095c9c363c0"></a>SMPR_SC_SM_ST_JWNC_SETUP </td><td class="fielddoc">
+<p>Prepare for Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a68760d02dffff9f5522ce0cd8512acc7"></a>SMPR_SC_SM_ST_JWNC_WAIT_RAND </td><td class="fielddoc">
+<p>Wait for Rand in Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a6b0860917d632a86801c5dbc257f5e2e"></a>SMPR_SC_SM_ST_JWNC_CALC_G2 </td><td class="fielddoc">
+<p>Calculate the user validate value in Just Works/Numeric Comparison Pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a7a9b02eb1c6544925ab8e4ab98cc7818"></a>SMPR_SC_SM_ST_JWNC_WAIT_USER </td><td class="fielddoc">
+<p>Wait for user to validate the confirm value </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ab48f4ad0d1a34e9a39a6e5dd63cccc0c"></a>SMPR_SC_SM_ST_JWNC_WAIT_USER_DH_CHECK_RCVD </td><td class="fielddoc">
+<p>Wait for user to validate the confirm value with a received DH Key Check </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64aa28af04cbe133249bc816622ac623ff1"></a>SMPR_SC_SM_ST_PK_KEYPRESS </td><td class="fielddoc">
+<p>Process a keypress command in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a4522b7ff5c8c06ac1b69983173c0f948"></a>SMPR_SC_SM_ST_PK_WAIT_AUTH </td><td class="fielddoc">
+<p>The confirm was received before the auth from the API, wait for the auth </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64aa3c3e8a7d9f360029a63c2f20cb1bc78"></a>SMPR_SC_SM_ST_PK_WAIT_CNF </td><td class="fielddoc">
+<p>Wait for the confirm command in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a9715ed2fb7a9b377ea7a61d4f021cc70"></a>SMPR_SC_SM_ST_PK_CALC </td><td class="fielddoc">
+<p>Calculate the confirm in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a95305eb11e959d3cb4ad09eca0f6609a"></a>SMPR_SC_SM_ST_PK_RAND </td><td class="fielddoc">
+<p>Send the rand command in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ab3054d4b29b6731dc0dbe14bf7745923"></a>SMPR_SC_SM_ST_PK_CHECK </td><td class="fielddoc">
+<p>Check the confirm in passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ac218c090149d85823f637963ebf761d7"></a>SMPR_SC_SM_ST_PK_REPEAT </td><td class="fielddoc">
+<p>Repeat or complete the passkey pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a2e10f72e47521b58b558b89e869adab6"></a>SMPR_SC_SM_ST_OOB_SEND_RAND </td><td class="fielddoc">
+<p>Send the rand in OOB pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a4b3f2a96ae48d4b761b601d149e88bdd"></a>SMPR_SC_SM_ST_OOB_WAIT_RAND </td><td class="fielddoc">
+<p>Wait for a rand in OOB pairing </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ab64ddd63fafa79caaf953a96774da48b"></a>SMPR_SC_SM_ST_WAIT_DH_CHECK </td><td class="fielddoc">
+<p>Wait for the DH Check command </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a48d7c573d77249cd17617de54289f1e6"></a>SMPR_SC_SM_ST_CALC_DHKEY </td><td class="fielddoc">
+<p>Calculate the DHKEY shared secret </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a4667e31d4795c126248e14a94b645052"></a>SMPR_SC_SM_ST_CALC_F5_TKEY </td><td class="fielddoc">
+<p>Calculate the DHKEY T Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ac91724d3134c45b0e03d79713561edcd"></a>SMPR_SC_SM_ST_CALC_F5_MACKEY </td><td class="fielddoc">
+<p>Calculate the DHKEY MAC Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a1ed5057cd253c50a691db2f034f19d3d"></a>SMPR_SC_SM_ST_CALC_F5_LTK </td><td class="fielddoc">
+<p>Calculate the DHKEY LTK Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a675501fd843c712b64129ce8535b0b5e"></a>SMPR_SC_SM_ST_CALC_F6_EA </td><td class="fielddoc">
+<p>Calculate the DHKEY Ea Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a21ada8f5d39477af60e5b00feaa13a5a"></a>SMPR_SC_SM_ST_CALC_F6_EB </td><td class="fielddoc">
+<p>Calculate the DHKEY Eb Key </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a0cc2384923b7bad93c8a91bf8685ccc6"></a>SMPR_SC_SM_ST_PIN_PAIR_1 </td><td class="fielddoc">
+<p>Wait for PIN or pairing confirm 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64af3851da20aaa73c0edfab3b632e48222"></a>SMPR_SC_SM_ST_PIN_PAIR_2 </td><td class="fielddoc">
+<p>Wait for PIN or pairing confirm 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ac0d450e800d44518f7c798e7f4389cb3"></a>SMPR_SC_SM_ST_CNF_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a8f32237dc36c1f2da1daa94f7fe956e7"></a>SMPR_SC_SM_ST_CNF_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a869dd3550e02889a40db32261a31d4e0"></a>SMPR_SC_SM_ST_PAIR_RAND </td><td class="fielddoc">
+<p>Wait for pairing random </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64ad08034b91992712af0ca46c35bc65f05"></a>SMPR_SC_SM_ST_CNF_VER_CALC_1 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64acf18eaff6b3307aa1cc8755b7d9cfbef"></a>SMPR_SC_SM_ST_CNF_VER_CALC_2 </td><td class="fielddoc">
+<p>Wait for confirm verify calc 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a2453cc30e15f1bac02cc5ae13d762737"></a>SMPR_SC_SM_ST_STK_CALC </td><td class="fielddoc">
+<p>Wait for STK calc </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a38e9e6bf641276cbcd74be09e4807d2d"></a>SMPR_SC_SM_ST_ENCRYPT </td><td class="fielddoc">
+<p>Wait for link encryption </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64afb1fa1a031ac5ba15769cd2ec1fc5510"></a>SMPR_SC_SM_ST_KEY_DIST </td><td class="fielddoc">
+<p>Key distribution </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a383ffe861f478620a4f970921f3e90d6"></a>SMPR_SC_SM_ST_ATTEMPTS </td><td class="fielddoc">
+<p>Repeated attempts </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="adab0c4467b3c6f365e87d0316a74bf64a6f8577591b8d39b41d1904151f9c39ad"></a>SMPR_SC_SM_ST_RSP_TO </td><td class="fielddoc">
+<p>Response timeout state </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="smp__main_8h_source.html#l00155">155</a> of file <a class="el" href="smp__main_8h_source.html">smp_main.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__main_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:16 GMT -->
+</html>

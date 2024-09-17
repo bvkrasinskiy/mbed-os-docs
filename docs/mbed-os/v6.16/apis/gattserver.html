@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/apis/gattserver.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:14:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <title>GattServer - API references and tutorials | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="gattserver.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/apis/gattserver.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/apis/gattserver.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis active-doc" href="index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Full API list</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="scheduling-rtos-and-event-handling.html">Scheduling: RTOS and event handling</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="scheduling-concepts.html">Scheduling concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="scheduling-concepts.html">RTOS overview</a>
+                        
+                        <a class="toc-item" href="thread-safety.html">Thread safety</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="scheduling-options-and-config.html">Scheduling options and config</a>
+                    
+                    
+                    <a class="toc-item" href="scheduling-tutorials.html">Scheduling tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="scheduling-tutorials.html">The EventQueue API</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="rtos-apis.html">RTOS APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="rtos-apis.html">ConditionVariable</a>
+                        
+                        <a class="toc-item" href="eventflags.html">EventFlags</a>
+                        
+                        <a class="toc-item" href="idle-loop.html">Idle loop</a>
+                        
+                        <a class="toc-item" href="kernel-interface-functions.html">Kernel interface functions</a>
+                        
+                        <a class="toc-item" href="mail.html">Mail</a>
+                        
+                        <a class="toc-item" href="mutex.html">Mutex</a>
+                        
+                        <a class="toc-item" href="queue.html">Queue</a>
+                        
+                        <a class="toc-item" href="semaphore.html">Semaphore</a>
+                        
+                        <a class="toc-item" href="thisthread.html">ThisThread</a>
+                        
+                        <a class="toc-item" href="thread.html">Thread</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="event-handling-apis.html">Event handling APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="event-handling-apis.html">Event</a>
+                        
+                        <a class="toc-item" href="eventqueue.html">EventQueue</a>
+                        
+                        <a class="toc-item" href="userallocatedevent.html">UserAllocatedEvent</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="drivers.html">Drivers</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="drivers-concepts.html">Drivers concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="driver-interfaces-experimental.html">Driver Interfaces (Experimental)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="drivers-architecture.html">Drivers architecture</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="drivers-architecture.html">USB device stack</a>
+                        
+                        <a class="toc-item" href="usb-overview.html">USB components overview</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="drivers-options-and-config.html">Drivers options and config</a>
+                    
+                    
+                    <a class="toc-item" href="drivers-tutorials.html">Drivers tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="drivers-tutorials.html">Alarm tutorial</a>
+                        
+                        <a class="toc-item" href="usb-wav-audio-player.html">USB WAV audio player</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                        
+                        <a class="toc-item" href="arduino-uno-pin-names.html">Arduino Uno Pin Names</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="serial-uart-apis.html">Serial (UART) APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="serial-uart-apis.html">BufferedSerial</a>
+                        
+                        <a class="toc-item" href="unbufferedserial.html">UnbufferedSerial</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="spi-apis.html">SPI APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="spi-apis.html">QuadSPI (QSPI)</a>
+                        
+                        <a class="toc-item" href="spi.html">SPI</a>
+                        
+                        <a class="toc-item" href="spislave.html">SPISlave</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="i-o-apis.html">I/O APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="i-o-apis.html">AnalogIn</a>
+                        
+                        <a class="toc-item" href="analogout.html">AnalogOut</a>
+                        
+                        <a class="toc-item" href="busin.html">BusIn</a>
+                        
+                        <a class="toc-item" href="busout.html">BusOut</a>
+                        
+                        <a class="toc-item" href="businout.html">BusInOut</a>
+                        
+                        <a class="toc-item" href="digitalin.html">DigitalIn</a>
+                        
+                        <a class="toc-item" href="digitalout.html">DigitalOut</a>
+                        
+                        <a class="toc-item" href="digitalinout.html">DigitalInOut</a>
+                        
+                        <a class="toc-item" href="interruptin.html">InterruptIn</a>
+                        
+                        <a class="toc-item" href="portin.html">PortIn</a>
+                        
+                        <a class="toc-item" href="portout.html">PortOut</a>
+                        
+                        <a class="toc-item" href="portinout.html">PortInOut</a>
+                        
+                        <a class="toc-item" href="pwmout.html">PwmOut</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="usb-apis.html">USB APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="usb-apis.html">USBAudio</a>
+                        
+                        <a class="toc-item" href="usbcdc.html">USBCDC</a>
+                        
+                        <a class="toc-item" href="usbcdc-ecm.html">USBCDC_ECM</a>
+                        
+                        <a class="toc-item" href="usbhid.html">USBHID</a>
+                        
+                        <a class="toc-item" href="usbkeyboard.html">USBKeyboard</a>
+                        
+                        <a class="toc-item" href="usbmidi.html">USBMIDI</a>
+                        
+                        <a class="toc-item" href="usbmouse.html">USBMouse</a>
+                        
+                        <a class="toc-item" href="usbmousekeyboard.html">USBMouseKeyboard</a>
+                        
+                        <a class="toc-item" href="usbmsd.html">USBMSD</a>
+                        
+                        <a class="toc-item" href="usbserial.html">USBSerial</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="other-driver-apis.html">Other driver APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="other-driver-apis.html">CAN</a>
+                        
+                        <a class="toc-item" href="flash-iap.html">Flash IAP</a>
+                        
+                        <a class="toc-item" href="i2c.html">I2C</a>
+                        
+                        <a class="toc-item" href="i2cslave.html">I2CSlave</a>
+                        
+                        <a class="toc-item" href="mbedcrc.html">MbedCRC</a>
+                        
+                        <a class="toc-item" href="resetreason.html">ResetReason</a>
+                        
+                        <a class="toc-item" href="watchdog.html">Watchdog</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="platform.html">Platform</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="platform-concepts.html">Platform concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="platform-concepts.html">Platform overview</a>
+                        
+                        <a class="toc-item" href="printf-and-reducing-memory.html">printf and reducing memory</a>
+                        
+                        <a class="toc-item" href="memory-model.html">Memory</a>
+                        
+                        <a class="toc-item" href="static-memory-optimization.html">Static memory optimization</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="platform-options-and-config.html">Platform options and config</a>
+                    
+                    
+                    <a class="toc-item" href="platform-tutorials.html">Platform tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="platform-tutorials.html">Application flow control</a>
+                        
+                        <a class="toc-item" href="power-optimization.html">Power optimization</a>
+                        
+                        <a class="toc-item" href="runtime-memory-tracing.html">Runtime memory tracing</a>
+                        
+                        <a class="toc-item" href="runtime-memory-statistics.html">Runtime memory statistics</a>
+                        
+                        <a class="toc-item" href="link-time-optimization.html">Link Time Optimization</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="time-apis.html">Time APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="time-apis.html">RTC</a>
+                        
+                        <a class="toc-item" href="ticker.html">Ticker</a>
+                        
+                        <a class="toc-item" href="time.html">Time</a>
+                        
+                        <a class="toc-item" href="timeout.html">Timeout</a>
+                        
+                        <a class="toc-item" href="timer.html">Timer</a>
+                        
+                        <a class="toc-item" href="wait.html">Wait</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="power-apis.html">Power APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="power-apis.html">DeepSleepLock</a>
+                        
+                        <a class="toc-item" href="lowpowerticker.html">LowPowerTicker</a>
+                        
+                        <a class="toc-item" href="lowpowertimeout.html">LowPowerTimeout</a>
+                        
+                        <a class="toc-item" href="lowpowertimer.html">LowPowerTimer</a>
+                        
+                        <a class="toc-item" href="power-management-sleep.html">Power management (sleep)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="memory-apis.html">Memory APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="memory-apis.html">Memory tracing</a>
+                        
+                        <a class="toc-item" href="mpu-management.html">MPU management</a>
+                        
+                        <a class="toc-item" href="memorypool.html">MemoryPool</a>
+                        
+                        <a class="toc-item" href="mbed-statistics.html">Mbed statistics</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="other-platform-apis.html">Other platform APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="other-platform-apis.html">Assert</a>
+                        
+                        <a class="toc-item" href="atcmdparser.html">ATCmdParser</a>
+                        
+                        <a class="toc-item" href="callback.html">Callback</a>
+                        
+                        <a class="toc-item" href="circularbuffer.html">CircularBuffer</a>
+                        
+                        <a class="toc-item" href="criticalsectionlock.html">CriticalSectionLock</a>
+                        
+                        <a class="toc-item" href="debug.html">Debug</a>
+                        
+                        <a class="toc-item" href="error-handling.html">Error handling</a>
+                        
+                        <a class="toc-item" href="filehandle.html">FileHandle</a>
+                        
+                        <a class="toc-item" href="noncopyable.html">NonCopyable</a>
+                        
+                        <a class="toc-item" href="platformmutex.html">PlatformMutex</a>
+                        
+                        <a class="toc-item" href="poll.html">Poll</a>
+                        
+                        <a class="toc-item" href="scopedramexecutionlock.html">ScopedRamExecutionLock</a>
+                        
+                        <a class="toc-item" href="scopedromwritelock.html">ScopedRomWriteLock</a>
+                        
+                        <a class="toc-item" href="shared-pointer.html">Shared Pointer</a>
+                        
+                        <a class="toc-item" href="span.html">Span</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="data-storage.html">Data storage</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="data-storage-concepts.html">Data storage concepts</a>
+                    
+                    
+                    <a class="toc-item" href="data-architecture.html">Data architecture</a>
+                    
+                    
+                    <a class="toc-item" href="data-options-and-config.html">Data options and config</a>
+                    
+                    
+                    <a class="toc-item" href="file-system-apis.html">File system APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="file-system-apis.html">Dir</a>
+                        
+                        <a class="toc-item" href="fatfilesystem.html">FATFileSystem</a>
+                        
+                        <a class="toc-item" href="file.html">File</a>
+                        
+                        <a class="toc-item" href="filesystem.html">FileSystem</a>
+                        
+                        <a class="toc-item" href="kvstore.html">KVStore</a>
+                        
+                        <a class="toc-item" href="littlefilesystem.html">LittleFileSystem</a>
+                        
+                        <a class="toc-item" href="static-global-api.html">kvstore_global_api (Static Global API)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="blockdevice-apis.html">BlockDevice APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="blockdevice-apis.html">BlockDevice</a>
+                        
+                        <a class="toc-item" href="bufferedblockdevice.html">BufferedBlockDevice</a>
+                        
+                        <a class="toc-item" href="chainingblockdevice.html">ChainingBlockDevice</a>
+                        
+                        <a class="toc-item" href="dataflashblockdevice.html">DataFlashBlockDevice</a>
+                        
+                        <a class="toc-item" href="flashiapblockdevice.html">FlashIAPBlockDevice</a>
+                        
+                        <a class="toc-item" href="flashsimblockdevice.html">FlashSimBlockDevice</a>
+                        
+                        <a class="toc-item" href="heapblockdevice.html">HeapBlockDevice</a>
+                        
+                        <a class="toc-item" href="mbrblockdevice.html">MBRBlockDevice</a>
+                        
+                        <a class="toc-item" href="profilingblockdevice.html">ProfilingBlockDevice</a>
+                        
+                        <a class="toc-item" href="qspifblockdevice.html">QSPIFBlockDevice</a>
+                        
+                        <a class="toc-item" href="sdblockdevice.html">SDBlockDevice</a>
+                        
+                        <a class="toc-item" href="slicingblockdevice.html">SlicingBlockDevice</a>
+                        
+                        <a class="toc-item" href="spi-flash-block-device.html">SPI Flash block device</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="psa-compliant-apis.html">PSA compliant APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="psa-compliant-apis.html">PSA internal storage</a>
+                        
+                        <a class="toc-item" href="psa-protected-storage.html">PSA protected storage</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="connectivity.html">Connectivity</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="choosing-a-connectivity-type.html">Choosing a connectivity type</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="bluetooth.html">Bluetooth</a>
+                        
+                        <a class="toc-item" href="cellular-networking.html">Cellular networking</a>
+                        
+                        <a class="toc-item" href="ethernet-technology.html">Ethernet</a>
+                        
+                        <a class="toc-item" href="wlan-technology.html">Wireless LAN</a>
+                        
+                        <a class="toc-item" href="lora-tech.html">LoRaWAN</a>
+                        
+                        <a class="toc-item" href="nfc-technology.html">NFC</a>
+                        
+                        <a class="toc-item" href="wisun-tech.html">Wi-SUN</a>
+                        
+                        <a class="toc-item" href="6LoWPAN-ND-tech.html">6LoWPAN-ND</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-architecture.html">Connectivity architecture</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-architecture.html">IP networking</a>
+                        
+                        <a class="toc-item" href="network-socket.html">Network socket</a>
+                        
+                        <a class="toc-item" href="network-socket-interfaces-and-classes.html">Network socket interfaces and classes</a>
+                        
+                        <a class="toc-item" href="network-interface.html">Network interface</a>
+                        
+                        <a class="toc-item" href="secure-socket.html">Secure Socket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-options-and-config.html">Connectivity options and config</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-options-and-config.html">Connectivity configurations</a>
+                        
+                        <a class="toc-item" href="configuration-mesh.html">6LoWPAN Mesh</a>
+                        
+                        <a class="toc-item" href="configuration-ble.html">BLE configuration</a>
+                        
+                        <a class="toc-item" href="lorawan-configuration.html">LoRaWAN configuration</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-tutorials.html">Connectivity tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-tutorials.html">Mesh tutorial</a>
+                        
+                        <a class="toc-item" href="light-control.html">Light control tutorial</a>
+                        
+                        <a class="toc-item" href="lorawan-usage.html">LoRaWAN usage</a>
+                        
+                        <a class="toc-item" href="LoRa-tutorial.html">Building a private LoRa network</a>
+                        
+                        <a class="toc-item" href="tls-tutorial.html">Using Mbed TLS to communicate securely</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="network-socket-apis.html">Network socket APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="network-socket-apis.html">Non-IP cellular socket</a>
+                        
+                        <a class="toc-item" href="socket.html">Socket</a>
+                        
+                        <a class="toc-item" href="socketaddress.html">SocketAddress</a>
+                        
+                        <a class="toc-item" href="socketstats.html">SocketStats</a>
+                        
+                        <a class="toc-item" href="tcpsocket.html">TCPSocket</a>
+                        
+                        <a class="toc-item" href="udpsocket.html">UDPSocket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="network-interface-apis.html">Network interface APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="network-interface-apis.html">Cellular</a>
+                        
+                        <a class="toc-item" href="ethernet.html">Ethernet</a>
+                        
+                        <a class="toc-item" href="mesh-api.html">Mesh</a>
+                        
+                        <a class="toc-item" href="network-status.html">Network status</a>
+                        
+                        <a class="toc-item" href="wi-fi.html">Wi-Fi</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="secure-socket-apis.html">Secure socket APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="secure-socket-apis.html">DTLSSocket</a>
+                        
+                        <a class="toc-item" href="tlssocket.html">TLSSocket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="dns-apis.html">DNS APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="dns-apis.html">DNS Resolver</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="bluetooth-apis.html">Bluetooth APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="bluetooth-apis.html">BLE</a>
+                        
+                        <a class="toc-item" href="gap.html">GAP</a>
+                        
+                        <a class="toc-item" href="gattserver.html">GattServer</a>
+                        
+                        <a class="toc-item" href="securitymanager.html">SecurityManager</a>
+                        
+                        <a class="toc-item" href="ble-services.html">BLE Services</a>
+                        
+                        <a class="toc-item" href="gattclient.html">GattClient</a>
+                        
+                        <a class="toc-item" href="optimizing-applications-for-throughput-and-power-consumption.html">Optimizing applications for throughput and power consumption</a>
+                        
+                        <a class="toc-item" href="test-and-measure.html">Test and measure</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="nfc-apis.html">NFC APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="nfc-apis.html">MessageBuilder</a>
+                        
+                        <a class="toc-item" href="messageparser.html">MessageParser</a>
+                        
+                        <a class="toc-item" href="nfccontroller.html">NFCController</a>
+                        
+                        <a class="toc-item" href="nfc-eeprom.html">NFC EEPROM</a>
+                        
+                        <a class="toc-item" href="simplemessageparser.html">SimpleMessageParser</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="lorawan-apis.html">LoRAWAN APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="lorawan-apis.html">LoRaWANInterface</a>
+                        
+                        <a class="toc-item" href="loraradio.html">LoRa radio driver</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="security.html">Security</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="security-concepts.html">Security concepts</a>
+                    
+                    
+                    <a class="toc-item" href="security-apis.html">Security APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="security-apis.html">DeviceKey</a>
+                        
+                        <a class="toc-item" href="mbed-crypto.html">Mbed Crypto</a>
+                        
+                        <a class="toc-item" href="psa-initial-attestation.html">PSA initial attestation</a>
+                        
+                        <a class="toc-item" href="psa-lifecycle.html">PSA lifecycle</a>
+                        
+                        <a class="toc-item" href="tls.html">TLS</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test" href="../debug-test/index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">API references and tutorials</a>
+                                     › 
+                                    
+                                    <a href="connectivity.html">Connectivity</a>
+                                     › 
+                                    
+                                    <a href="bluetooth-apis.html">Bluetooth APIs</a>
+                                     › 
+                                    
+                                    <a href="gattserver.html">GattServer</a>
+                                    
+                                    
+                                </div>
+                                <h1>GattServer</h1><p>You can use Generic Attribute Profile (GATT) to discover services, characteristics and descriptors and to perform operations on them. The interaction happens between two peers, one of which is the client (which initiates interactions) and the other is the server (which responds). You can use Attribute Protocol (ATT) to implement this interaction.</p><p><code>GattServer</code> is a collection of GattServices. These services contain characteristics that a <code>GattClient</code> on the peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.</p><h2 id="server-layout">Server layout</h2><p>Application code can add a GattService object to the server with the help of the function <code>addService()</code>. That function registers all the GattCharacteristics enclosed in the service, as well as all the characteristic descriptors (see GattAttribute) that these characteristics contain. Service registration assigns a unique handle to the various attributes that are part of the service. The user must use this handle to read or write these components.</p><p>There are no defined primitives that remove a single service; however, a call to the function <code>reset()</code> removes all services previously registered in the GattServer.</p><h2 id="characteristic-and-attributes-access">Characteristic and attributes access</h2><p>You must access values of the characteristic and the characteristic descriptor present in the GattServer through the handle assigned to them when you registered the service. The GattServer class offers several types of <code>read()</code> and <code>write()</code> functions that retrieve or mutate an attribute value.</p><p>You can query the server by invoking the function <code>areUpdatesEnabled()</code> to find out if a client has subscribed to a given characteristic's value update.</p><h2 id="attribute-protocol-maximum-transmission-unit-att-mtu">Attribute Protocol Maximum Transmission Unit (ATT_MTU)</h2><p>The Attribute Protocol Maximum Transmission Unit (<code>ATT_MTU</code>) is the maximum size of the attribute protocol packet. For details, please see the <a href="gattclient.html">GattClient Documentation</a>.</p><h2 id="events">Events</h2><p>You can register your implementation of <code>GattServer::EventHandler</code> with the GattServer using
+<code>GattServer::setEventHandler()</code>. It will call your event handler methods to notify you of client (remote application
+connected to the server) and server activity:</p><ul>
+<li><code>onDataSent</code>: Register an event handler with the GattServer that it will call to notify you when it sends a characteristic value update to a client.</li>
+<li><code>onDataWriten</code>: Register an event handler with the GattServer that it will call to notify you when a client has written an attribute of the server.</li>
+<li><code>onDataRead</code>: Register an event handler with the GattServer that it will call to notify you when a client has read an attribute of the server.</li>
+<li><code>onUpdatesEnabled</code>: Register an event handler with the GattServer that it will call to notify you when a client subscribes to updates for a characteristic.</li>
+<li><code>onUpdatesDisabled</code>: Register an event handler with the GattServer that it will call to notify you when a client unsubscribes from updates for a characteristic.</li>
+<li><code>onConfimationReceived</code>: Register an event handler with the GattServer that it will call to notify you when a client acknowledges a characteristic value notification.</li>
+</ul><p>The term characteristic value update represents Characteristic Value Notification and Characteristic Value Indication when the nature of the server initiated is not relevant.</p><h2 id="gattserver-class-reference">GattServer class reference</h2><div class="api-include-block">
+<div class="api-header">
+<a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank">
+<i class="fa fa-folder-o"></i>
+<b class="filename">GattServer Class Reference</b>
+</a>
+</div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="nested-classes"></a>
+Data Structures</span></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/structble_1_1_gatt_server_1_1_event_handler.html" target="_blank">EventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Definition of the general handler of <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank" title="Construct and operates a GATT server. ">GattServer</a> related events.  <a href="../mbed-os-api-doxy/structble_1_1_gatt_server_1_1_event_handler.html#details" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-types"></a>
+Public Types</span></td></tr>
+<tr class="memitem:a0f9cbf739a4d5d408d14d9b1c134fd00"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">FunctionPointerWithContext</a>&lt; unsigned &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a0f9cbf739a4d5d408d14d9b1c134fd00" target="_blank">DataSentCallback_t</a></td></tr>
+<tr class="memdesc:a0f9cbf739a4d5d408d14d9b1c134fd00"><td class="mdescLeft"> </td><td class="mdescRight">Event handler invoked when the server has sent data to a client.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a0f9cbf739a4d5d408d14d9b1c134fd00" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a3108297218f52d0251d441f592307441"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_call_chain_of_function_pointers_with_context.html" target="_blank">CallChainOfFunctionPointersWithContext</a>&lt; unsigned &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a3108297218f52d0251d441f592307441" target="_blank">DataSentCallbackChain_t</a></td></tr>
+<tr class="memdesc:a3108297218f52d0251d441f592307441"><td class="mdescLeft"> </td><td class="mdescRight">Callchain of DataSentCallback_t objects.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a3108297218f52d0251d441f592307441" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ab30d72f627383c97349e877926723114"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">FunctionPointerWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/struct_gatt_write_callback_params.html" target="_blank">GattWriteCallbackParams</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ab30d72f627383c97349e877926723114" target="_blank">DataWrittenCallback_t</a></td></tr>
+<tr class="memdesc:ab30d72f627383c97349e877926723114"><td class="mdescLeft"> </td><td class="mdescRight">Event handler invoked when the client has written an attribute of the server.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ab30d72f627383c97349e877926723114" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:abbe0dc4d355c4fa7cd2b75cf09eef993"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_call_chain_of_function_pointers_with_context.html" target="_blank">CallChainOfFunctionPointersWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/struct_gatt_write_callback_params.html" target="_blank">GattWriteCallbackParams</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#abbe0dc4d355c4fa7cd2b75cf09eef993" target="_blank">DataWrittenCallbackChain_t</a></td></tr>
+<tr class="memdesc:abbe0dc4d355c4fa7cd2b75cf09eef993"><td class="mdescLeft"> </td><td class="mdescRight">Callchain of DataWrittenCallback_t objects.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#abbe0dc4d355c4fa7cd2b75cf09eef993" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7c2886b222aca85c6d3472a881366b24"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">FunctionPointerWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/struct_gatt_read_callback_params.html" target="_blank">GattReadCallbackParams</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7c2886b222aca85c6d3472a881366b24" target="_blank">DataReadCallback_t</a></td></tr>
+<tr class="memdesc:a7c2886b222aca85c6d3472a881366b24"><td class="mdescLeft"> </td><td class="mdescRight">Event handler invoked when the client has read an attribute of the server.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7c2886b222aca85c6d3472a881366b24" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a867fbb14fd75413c7a601f7382e81e10"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_call_chain_of_function_pointers_with_context.html" target="_blank">CallChainOfFunctionPointersWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/struct_gatt_read_callback_params.html" target="_blank">GattReadCallbackParams</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a867fbb14fd75413c7a601f7382e81e10" target="_blank">DataReadCallbackChain_t</a></td></tr>
+<tr class="memdesc:a867fbb14fd75413c7a601f7382e81e10"><td class="mdescLeft"> </td><td class="mdescRight">Callchain of DataReadCallback_t.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a867fbb14fd75413c7a601f7382e81e10" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a475847fd09ee655a1dde9a40e3e7cb00"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">FunctionPointerWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank">GattServer</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a475847fd09ee655a1dde9a40e3e7cb00" target="_blank">GattServerShutdownCallback_t</a></td></tr>
+<tr class="memdesc:a475847fd09ee655a1dde9a40e3e7cb00"><td class="mdescLeft"> </td><td class="mdescRight">Event handler invoked when the <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank" title="Construct and operates a GATT server. ">GattServer</a> is reset.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a475847fd09ee655a1dde9a40e3e7cb00" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a03a955d32b698070ccb280da0f5e18f7"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_call_chain_of_function_pointers_with_context.html" target="_blank">CallChainOfFunctionPointersWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank">GattServer</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a03a955d32b698070ccb280da0f5e18f7" target="_blank">GattServerShutdownCallbackChain_t</a></td></tr>
+<tr class="memdesc:a03a955d32b698070ccb280da0f5e18f7"><td class="mdescLeft"> </td><td class="mdescRight">Callchain of GattServerShutdownCallback_t.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a03a955d32b698070ccb280da0f5e18f7" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a26a0c8174d2fef0537fd837ba6d6d906"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">FunctionPointerWithContext</a>&lt; <a class="el" href="../mbed-os-api-doxy/class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4" target="_blank">GattAttribute::Handle_t</a> &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a26a0c8174d2fef0537fd837ba6d6d906" target="_blank">EventCallback_t</a></td></tr>
+<tr class="memdesc:a26a0c8174d2fef0537fd837ba6d6d906"><td class="mdescLeft"> </td><td class="mdescRight">Event handler that handles subscription to characteristic updates, unsubscription from characteristic updates and notification confirmation.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a26a0c8174d2fef0537fd837ba6d6d906" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</span></td></tr>
+<tr class="memitem:a69a6df1d2238b823ade935417a39e14e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a69a6df1d2238b823ade935417a39e14e" target="_blank">setEventHandler</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1_gatt_server_1_1_event_handler.html" target="_blank">EventHandler</a> *handler)</td></tr>
+<tr class="memdesc:a69a6df1d2238b823ade935417a39e14e"><td class="mdescLeft"> </td><td class="mdescRight">Assign the event handler implementation that will be used by the module to signal events back to the application.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a69a6df1d2238b823ade935417a39e14e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7e9ddee179d9477b59535f5d031a054b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7e9ddee179d9477b59535f5d031a054b" target="_blank">reset</a> ()</td></tr>
+<tr class="memdesc:a7e9ddee179d9477b59535f5d031a054b"><td class="mdescLeft"> </td><td class="mdescRight">Shut down the <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank" title="Construct and operates a GATT server. ">GattServer</a> instance.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7e9ddee179d9477b59535f5d031a054b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:af6044bffa0ebee04a7100ed237d90478"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#af6044bffa0ebee04a7100ed237d90478" target="_blank">addService</a> (<a class="el" href="../mbed-os-api-doxy/class_gatt_service.html" target="_blank">GattService</a> &amp;service)</td></tr>
+<tr class="memdesc:af6044bffa0ebee04a7100ed237d90478"><td class="mdescLeft"> </td><td class="mdescRight">Add a service declaration to the local attribute server table.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#af6044bffa0ebee04a7100ed237d90478" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aedfccde5e118b1fa7782a97889f9fff4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#aedfccde5e118b1fa7782a97889f9fff4" target="_blank">read</a> (<a class="el" href="../mbed-os-api-doxy/class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4" target="_blank">GattAttribute::Handle_t</a> attributeHandle, uint8_t buffer[], uint16_t *lengthP)</td></tr>
+<tr class="memdesc:aedfccde5e118b1fa7782a97889f9fff4"><td class="mdescLeft"> </td><td class="mdescRight">Read the value of an attribute present in the local GATT server.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#aedfccde5e118b1fa7782a97889f9fff4" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ac8418783e645dc1943cea4e5801318f8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ac8418783e645dc1943cea4e5801318f8" target="_blank">read</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4" target="_blank">GattAttribute::Handle_t</a> attributeHandle, uint8_t *buffer, uint16_t *lengthP)</td></tr>
+<tr class="memdesc:ac8418783e645dc1943cea4e5801318f8"><td class="mdescLeft"> </td><td class="mdescRight">Read the value of an attribute present in the local GATT server.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ac8418783e645dc1943cea4e5801318f8" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ab8e4dda0a2b9ff2122f3323314c2edbc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ab8e4dda0a2b9ff2122f3323314c2edbc" target="_blank">write</a> (<a class="el" href="../mbed-os-api-doxy/class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4" target="_blank">GattAttribute::Handle_t</a> attributeHandle, const uint8_t *value, uint16_t size, bool localOnly=false)</td></tr>
+<tr class="memdesc:ab8e4dda0a2b9ff2122f3323314c2edbc"><td class="mdescLeft"> </td><td class="mdescRight">Update the value of an attribute present in the local GATT server.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ab8e4dda0a2b9ff2122f3323314c2edbc" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ad4343243e868b1b2ed7223db7b4f03d6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ad4343243e868b1b2ed7223db7b4f03d6" target="_blank">write</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4" target="_blank">GattAttribute::Handle_t</a> attributeHandle, const uint8_t *value, uint16_t size, bool localOnly=false)</td></tr>
+<tr class="memdesc:ad4343243e868b1b2ed7223db7b4f03d6"><td class="mdescLeft"> </td><td class="mdescRight">Update the value of an attribute present in the local GATT server.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ad4343243e868b1b2ed7223db7b4f03d6" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a5f1db9d1339dc75d44465285071b42e2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a5f1db9d1339dc75d44465285071b42e2" target="_blank">areUpdatesEnabled</a> (const <a class="el" href="../mbed-os-api-doxy/class_gatt_characteristic.html" target="_blank">GattCharacteristic</a> &amp;characteristic, bool *enabledP)</td></tr>
+<tr class="memdesc:a5f1db9d1339dc75d44465285071b42e2"><td class="mdescLeft"> </td><td class="mdescRight">Determine if one of the connected clients has subscribed to notifications or indications of the characteristic in input.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a5f1db9d1339dc75d44465285071b42e2" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a534174d4d1da53530e78731eb42f7aa6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a534174d4d1da53530e78731eb42f7aa6" target="_blank">areUpdatesEnabled</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, const <a class="el" href="../mbed-os-api-doxy/class_gatt_characteristic.html" target="_blank">GattCharacteristic</a> &amp;characteristic, bool *enabledP)</td></tr>
+<tr class="memdesc:a534174d4d1da53530e78731eb42f7aa6"><td class="mdescLeft"> </td><td class="mdescRight">Determine if an identified client has subscribed to notifications or indications of a given characteristic.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a534174d4d1da53530e78731eb42f7aa6" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a6399d5982368085e182b544d31439c43"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a6399d5982368085e182b544d31439c43" target="_blank">isOnDataReadAvailable</a> () const </td></tr>
+<tr class="memdesc:a6399d5982368085e182b544d31439c43"><td class="mdescLeft"> </td><td class="mdescRight">Indicate if the underlying stack emit events when an attribute is read by a client.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a6399d5982368085e182b544d31439c43" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7647d427577656acd123d412e8547c1e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7647d427577656acd123d412e8547c1e" target="_blank">onDataSent</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a0f9cbf739a4d5d408d14d9b1c134fd00" target="_blank">DataSentCallback_t</a> &amp;callback)</td></tr>
+<tr class="memdesc:a7647d427577656acd123d412e8547c1e"><td class="mdescLeft"> </td><td class="mdescRight">Add an event handler that monitors emission of characteristic value updates.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7647d427577656acd123d412e8547c1e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a4b077f9d9c76f4e925cc046d37b8cc23"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4b077f9d9c76f4e925cc046d37b8cc23"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a4b077f9d9c76f4e925cc046d37b8cc23" target="_blank">onDataSent</a> (T *objPtr, void(T::*memberPtr)(unsigned count))</td></tr>
+<tr class="memdesc:a4b077f9d9c76f4e925cc046d37b8cc23"><td class="mdescLeft"> </td><td class="mdescRight">Add an event handler that monitors emission of characteristic value updates.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a4b077f9d9c76f4e925cc046d37b8cc23" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a57f6e443b959fc6cf727ffe8f071a3dc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a3108297218f52d0251d441f592307441" target="_blank">DataSentCallbackChain_t</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a57f6e443b959fc6cf727ffe8f071a3dc" target="_blank">onDataSent</a> ()</td></tr>
+<tr class="memdesc:a57f6e443b959fc6cf727ffe8f071a3dc"><td class="mdescLeft"> </td><td class="mdescRight">Access the callchain of data sent event handlers.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a57f6e443b959fc6cf727ffe8f071a3dc" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ac7a01ab00198576b4d408966a5134b76"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ac7a01ab00198576b4d408966a5134b76" target="_blank">onDataWritten</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ab30d72f627383c97349e877926723114" target="_blank">DataWrittenCallback_t</a> &amp;callback)</td></tr>
+<tr class="memdesc:ac7a01ab00198576b4d408966a5134b76"><td class="mdescLeft"> </td><td class="mdescRight">Set an event handler that is called after a connected peer has written an attribute.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ac7a01ab00198576b4d408966a5134b76" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a8715e5016dd6046aa6913401bd94a88e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8715e5016dd6046aa6913401bd94a88e"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a8715e5016dd6046aa6913401bd94a88e" target="_blank">onDataWritten</a> (T *objPtr, void(T::*memberPtr)(const <a class="el" href="../mbed-os-api-doxy/struct_gatt_write_callback_params.html" target="_blank">GattWriteCallbackParams</a> *context))</td></tr>
+<tr class="memdesc:a8715e5016dd6046aa6913401bd94a88e"><td class="mdescLeft"> </td><td class="mdescRight">Set an event handler that is called after a connected peer has written an attribute.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a8715e5016dd6046aa6913401bd94a88e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a14bf610e9a2fab7303510f479692c300"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#abbe0dc4d355c4fa7cd2b75cf09eef993" target="_blank">DataWrittenCallbackChain_t</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a14bf610e9a2fab7303510f479692c300" target="_blank">onDataWritten</a> ()</td></tr>
+<tr class="memdesc:a14bf610e9a2fab7303510f479692c300"><td class="mdescLeft"> </td><td class="mdescRight">Access the callchain of data written event handlers.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a14bf610e9a2fab7303510f479692c300" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aa769971e68656bfa1b6999ebcc665074"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#aa769971e68656bfa1b6999ebcc665074" target="_blank">onDataRead</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7c2886b222aca85c6d3472a881366b24" target="_blank">DataReadCallback_t</a> &amp;callback)</td></tr>
+<tr class="memdesc:aa769971e68656bfa1b6999ebcc665074"><td class="mdescLeft"> </td><td class="mdescRight">Set an event handler that monitors attribute reads from connected clients.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#aa769971e68656bfa1b6999ebcc665074" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a9344869c8a1c425a54927c68c368405e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9344869c8a1c425a54927c68c368405e"><td align="right" class="memTemplItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a9344869c8a1c425a54927c68c368405e" target="_blank">onDataRead</a> (T *objPtr, void(T::*memberPtr)(const <a class="el" href="../mbed-os-api-doxy/struct_gatt_read_callback_params.html" target="_blank">GattReadCallbackParams</a> *context))</td></tr>
+<tr class="memdesc:a9344869c8a1c425a54927c68c368405e"><td class="mdescLeft"> </td><td class="mdescRight">Set an event handler that monitors attribute reads from connected clients.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a9344869c8a1c425a54927c68c368405e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ad85c6da87cbf2c1682dcde922e2bbd65"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a867fbb14fd75413c7a601f7382e81e10" target="_blank">DataReadCallbackChain_t</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ad85c6da87cbf2c1682dcde922e2bbd65" target="_blank">onDataRead</a> ()</td></tr>
+<tr class="memdesc:ad85c6da87cbf2c1682dcde922e2bbd65"><td class="mdescLeft"> </td><td class="mdescRight">Access the callchain of data read event handlers.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#ad85c6da87cbf2c1682dcde922e2bbd65" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a09136a94c4e81a3bff1a9b66c5ef8744"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a09136a94c4e81a3bff1a9b66c5ef8744" target="_blank">onShutdown</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a475847fd09ee655a1dde9a40e3e7cb00" target="_blank">GattServerShutdownCallback_t</a> &amp;callback)</td></tr>
+<tr class="memdesc:a09136a94c4e81a3bff1a9b66c5ef8744"><td class="mdescLeft"> </td><td class="mdescRight">Set an event handler that monitors shutdown or reset of the <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank" title="Construct and operates a GATT server. ">GattServer</a>.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a09136a94c4e81a3bff1a9b66c5ef8744" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7d4e522b82cec694ec262369db3241c4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7d4e522b82cec694ec262369db3241c4"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7d4e522b82cec694ec262369db3241c4" target="_blank">onShutdown</a> (T *objPtr, void(T::*memberPtr)(const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank">GattServer</a> *))</td></tr>
+<tr class="memdesc:a7d4e522b82cec694ec262369db3241c4"><td class="mdescLeft"> </td><td class="mdescRight">Set an event handler that monitors shutdown or reset of the <a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html" target="_blank" title="Construct and operates a GATT server. ">GattServer</a>.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a7d4e522b82cec694ec262369db3241c4" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a44a7e6e13e60f531f2f482cab456e9da"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a03a955d32b698070ccb280da0f5e18f7" target="_blank">GattServerShutdownCallbackChain_t</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a44a7e6e13e60f531f2f482cab456e9da" target="_blank">onShutdown</a> ()</td></tr>
+<tr class="memdesc:a44a7e6e13e60f531f2f482cab456e9da"><td class="mdescLeft"> </td><td class="mdescRight">Access the callchain of shutdown event handlers.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a44a7e6e13e60f531f2f482cab456e9da" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a06015a934b685698d0916d68686d4e0b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a06015a934b685698d0916d68686d4e0b" target="_blank">onUpdatesEnabled</a> (<a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a26a0c8174d2fef0537fd837ba6d6d906" target="_blank">EventCallback_t</a> callback)</td></tr>
+<tr class="memdesc:a06015a934b685698d0916d68686d4e0b"><td class="mdescLeft"> </td><td class="mdescRight">Set up an event handler that monitors subscription to characteristic updates.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a06015a934b685698d0916d68686d4e0b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a98148654015af3366529d504241c472c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a98148654015af3366529d504241c472c" target="_blank">onUpdatesDisabled</a> (<a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a26a0c8174d2fef0537fd837ba6d6d906" target="_blank">EventCallback_t</a> callback)</td></tr>
+<tr class="memdesc:a98148654015af3366529d504241c472c"><td class="mdescLeft"> </td><td class="mdescRight">Set up an event handler that monitors unsubscription from characteristic updates.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a98148654015af3366529d504241c472c" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a2b3fe7f222a928d531fdc1eefea853dd"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a2b3fe7f222a928d531fdc1eefea853dd" target="_blank">onConfirmationReceived</a> (<a class="el" href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a26a0c8174d2fef0537fd837ba6d6d906" target="_blank">EventCallback_t</a> callback)</td></tr>
+<tr class="memdesc:a2b3fe7f222a928d531fdc1eefea853dd"><td class="mdescLeft"> </td><td class="mdescRight">Set up an event handler that monitors notification acknowledgment.  <a href="../mbed-os-api-doxy/classble_1_1_gatt_server.html#a2b3fe7f222a928d531fdc1eefea853dd" target="_blank">More...</a><br/></td></tr>
+</tbody></table>
+</div><h2 id="gattserver-examples">GattServer examples</h2><h3 id="add-service">Add Service</h3><div class="code-include-block">
+<div class="code-header">
+<a href="https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_AddService/source/main.cpp" target="_blank"><i class="fa fa-file-code-o"></i> <b class="filename">main.cpp</b></a>
+</div>
+<pre><code>/* mbed Microcontroller Library
+ * Copyright (c) 2006-2015 ARM Limited
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include &lt;events/mbed_events.h&gt;
+#include "ble/BLE.h"
+#include "ble/gap/Gap.h"
+#include "ble/services/HeartRateService.h"
+#include "pretty_printer.h"
+
+using namespace std::literals::chrono_literals;
+
+const static char DEVICE_NAME[] = "Heartrate";
+
+static events::EventQueue event_queue(/* event count */ 16 * EVENTS_EVENT_SIZE);
+
+class HeartrateDemo : ble::Gap::EventHandler {
+public:
+    HeartrateDemo(BLE &amp;ble, events::EventQueue &amp;event_queue) :
+        _ble(ble),
+        _event_queue(event_queue),
+        _heartrate_uuid(GattService::UUID_HEART_RATE_SERVICE),
+        _heartrate_value(100),
+        _heartrate_service(ble, _heartrate_value, HeartRateService::LOCATION_FINGER),
+        _adv_data_builder(_adv_buffer)
+    {
+    }
+
+    void start()
+    {
+        _ble.init(this, &amp;HeartrateDemo::on_init_complete);
+
+        _event_queue.dispatch_forever();
+    }
+
+private:
+    /** Callback triggered when the ble initialization process has finished */
+    void on_init_complete(BLE::InitializationCompleteCallbackContext *params)
+    {
+        if (params-&gt;error != BLE_ERROR_NONE) {
+            printf("Ble initialization failed.");
+            return;
+        }
+
+        print_mac_address();
+
+        /* this allows us to receive events like onConnectionComplete() */
+        _ble.gap().setEventHandler(this);
+
+        /* heart rate value updated every second */
+        _event_queue.call_every(
+            1000ms,
+            [this] {
+                update_sensor_value();
+            }
+        );
+
+        start_advertising();
+    }
+
+    void start_advertising()
+    {
+        /* Create advertising parameters and payload */
+
+        ble::AdvertisingParameters adv_parameters(
+            ble::advertising_type_t::CONNECTABLE_UNDIRECTED,
+            ble::adv_interval_t(ble::millisecond_t(100))
+        );
+
+        _adv_data_builder.setFlags();
+        _adv_data_builder.setAppearance(ble::adv_data_appearance_t::GENERIC_HEART_RATE_SENSOR);
+        _adv_data_builder.setLocalServiceList({&amp;_heartrate_uuid, 1});
+        _adv_data_builder.setName(DEVICE_NAME);
+
+        /* Setup advertising */
+
+        ble_error_t error = _ble.gap().setAdvertisingParameters(
+            ble::LEGACY_ADVERTISING_HANDLE,
+            adv_parameters
+        );
+
+        if (error) {
+            printf("_ble.gap().setAdvertisingParameters() failed\r\n");
+            return;
+        }
+
+        error = _ble.gap().setAdvertisingPayload(
+            ble::LEGACY_ADVERTISING_HANDLE,
+            _adv_data_builder.getAdvertisingData()
+        );
+
+        if (error) {
+            printf("_ble.gap().setAdvertisingPayload() failed\r\n");
+            return;
+        }
+
+        /* Start advertising */
+
+        error = _ble.gap().startAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+
+        if (error) {
+            printf("_ble.gap().startAdvertising() failed\r\n");
+            return;
+        }
+
+        printf("Heart rate sensor advertising, please connect\r\n");
+    }
+
+    void update_sensor_value()
+    {
+        /* you can read in the real value but here we just simulate a value */
+        _heartrate_value++;
+
+        /*  100 &lt;= bpm value &lt;= 175 */
+        if (_heartrate_value == 175) {
+            _heartrate_value = 100;
+        }
+
+        _heartrate_service.updateHeartRate(_heartrate_value);
+    }
+
+    /* these implement ble::Gap::EventHandler */
+private:
+    /* when we connect we stop advertising, restart advertising so others can connect */
+    virtual void onConnectionComplete(const ble::ConnectionCompleteEvent &amp;event)
+    {
+        if (event.getStatus() == ble_error_t::BLE_ERROR_NONE) {
+            printf("Client connected, you may now subscribe to updates\r\n");
+        }
+    }
+
+    /* when we connect we stop advertising, restart advertising so others can connect */
+    virtual void onDisconnectionComplete(const ble::DisconnectionCompleteEvent &amp;event)
+    {
+        printf("Client disconnected, restarting advertising\r\n");
+
+        ble_error_t error = _ble.gap().startAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+
+        if (error) {
+            printf("_ble.gap().startAdvertising() failed\r\n");
+            return;
+        }
+    }
+
+private:
+    BLE &amp;_ble;
+    events::EventQueue &amp;_event_queue;
+
+    UUID _heartrate_uuid;
+    uint8_t _heartrate_value;
+    HeartRateService _heartrate_service;
+
+    uint8_t _adv_buffer[ble::LEGACY_ADVERTISING_MAX_SIZE];
+    ble::AdvertisingDataBuilder _adv_data_builder;
+};
+
+/* Schedule processing of events from the BLE middleware in the event queue. */
+void schedule_ble_events(BLE::OnEventsToProcessCallbackContext *context)
+{
+    event_queue.call(Callback&lt;void()&gt;(&amp;context-&gt;ble, &amp;BLE::processEvents));
+}
+
+int main()
+{
+    BLE &amp;ble = BLE::Instance();
+    ble.onEventsToProcess(schedule_ble_events);
+
+    HeartrateDemo demo(ble, event_queue);
+    demo.start();
+
+    return 0;
+}
+
+
+</code></pre>
+</div><h3 id="characteristic-writes">Characteristic Writes</h3><div class="code-include-block">
+<div class="code-header">
+<a href="https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_CharacteristicWrite/source/main.cpp" target="_blank"><i class="fa fa-file-code-o"></i> <b class="filename">main.cpp</b></a>
+</div>
+<pre><code>/* mbed Microcontroller Library
+ * Copyright (c) 2006-2013 ARM Limited
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include &lt;events/mbed_events.h&gt;
+#include "ble/BLE.h"
+#include "gatt_server_process.h"
+
+static EventQueue event_queue(/* event count */ 10 * EVENTS_EVENT_SIZE);
+
+class GattServerDemo : ble::GattServer::EventHandler {
+
+    const static uint16_t EXAMPLE_SERVICE_UUID         = 0xA000;
+    const static uint16_t WRITABLE_CHARACTERISTIC_UUID = 0xA001;
+
+public:
+    GattServerDemo()
+    {
+        const UUID uuid = WRITABLE_CHARACTERISTIC_UUID;
+        _writable_characteristic = new ReadWriteGattCharacteristic&lt;uint8_t&gt; (uuid, &amp;_characteristic_value);
+
+        if (!_writable_characteristic) {
+            printf("Allocation of ReadWriteGattCharacteristic failed\r\n");
+        }
+    }
+
+    ~GattServerDemo()
+    {
+    }
+
+    void start(BLE &amp;ble, events::EventQueue &amp;event_queue)
+    {
+        const UUID uuid = EXAMPLE_SERVICE_UUID;
+        GattCharacteristic* charTable[] = { _writable_characteristic };
+        GattService example_service(uuid, charTable, 1);
+
+        ble.gattServer().addService(example_service);
+
+        ble.gattServer().setEventHandler(this);
+
+        printf("Example service added with UUID 0xA000\r\n");
+        printf("Connect and write to characteristic 0xA001\r\n");
+    }
+
+private:
+    /**
+     * This callback allows the LEDService to receive updates to the ledState Characteristic.
+     *
+     * @param[in] params Information about the characterisitc being updated.
+     */
+    virtual void onDataWritten(const GattWriteCallbackParams &amp;params)
+    {
+        if ((params.handle == _writable_characteristic-&gt;getValueHandle()) &amp;&amp; (params.len == 1)) {
+            printf("New characteristic value written: %x\r\n", *(params.data));
+        }
+    }
+
+private:
+    ReadWriteGattCharacteristic&lt;uint8_t&gt; *_writable_characteristic = nullptr;
+    uint8_t _characteristic_value = 0;
+};
+
+int main()
+{
+    BLE &amp;ble = BLE::Instance();
+
+    printf("\r\nGattServer demo of a writable characteristic\r\n");
+
+    GattServerDemo demo;
+
+    /* this process will handle basic setup and advertising for us */
+    GattServerProcess ble_process(event_queue, ble);
+
+    /* once it's done it will let us continue with our demo*/
+    ble_process.on_init(callback(&amp;demo, &amp;GattServerDemo::start));
+
+    ble_process.start();
+
+    return 0;
+}
+
+</code></pre>
+</div><h3 id="characteristic-updates">Characteristic Updates</h3><div class="code-include-block">
+<div class="code-header">
+<a href="https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_CharacteristicUpdates/source/main.cpp" target="_blank"><i class="fa fa-file-code-o"></i> <b class="filename">main.cpp</b></a>
+</div>
+<pre><code>/* mbed Microcontroller Library
+ * Copyright (c) 2017-2019 ARM Limited
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "platform/Callback.h"
+#include "events/EventQueue.h"
+#include "ble/BLE.h"
+#include "gatt_server_process.h"
+
+using mbed::callback;
+using namespace std::literals::chrono_literals;
+
+/**
+ * A Clock service that demonstrate the GattServer features.
+ *
+ * The clock service host three characteristics that model the current hour,
+ * minute and second of the clock. The value of the second characteristic is
+ * incremented automatically by the system.
+ *
+ * A client can subscribe to updates of the clock characteristics and get
+ * notified when one of the value is changed. Clients can also change value of
+ * the second, minute and hour characteristric.
+ */
+class ClockService : public ble::GattServer::EventHandler {
+public:
+    ClockService() :
+        _hour_char("485f4145-52b9-4644-af1f-7a6b9322490f", 0),
+        _minute_char("0a924ca7-87cd-4699-a3bd-abdcd9cf126a", 0),
+        _second_char("8dd6a1b7-bc75-4741-8a26-264af75807de", 0),
+        _clock_service(
+            /* uuid */ "51311102-030e-485f-b122-f8f381aa84ed",
+            /* characteristics */ _clock_characteristics,
+            /* numCharacteristics */ sizeof(_clock_characteristics) /
+                                     sizeof(_clock_characteristics[0])
+        )
+    {
+        /* update internal pointers (value, descriptors and characteristics array) */
+        _clock_characteristics[0] = &amp;_hour_char;
+        _clock_characteristics[1] = &amp;_minute_char;
+        _clock_characteristics[2] = &amp;_second_char;
+
+        /* setup authorization handlers */
+        _hour_char.setWriteAuthorizationCallback(this, &amp;ClockService::authorize_client_write);
+        _minute_char.setWriteAuthorizationCallback(this, &amp;ClockService::authorize_client_write);
+        _second_char.setWriteAuthorizationCallback(this, &amp;ClockService::authorize_client_write);
+    }
+
+    void start(BLE &amp;ble, events::EventQueue &amp;event_queue)
+    {
+        _server = &amp;ble.gattServer();
+        _event_queue = &amp;event_queue;
+
+        printf("Registering demo service\r\n");
+        ble_error_t err = _server-&gt;addService(_clock_service);
+
+        if (err) {
+            printf("Error %u during demo service registration.\r\n", err);
+            return;
+        }
+
+        /* register handlers */
+        _server-&gt;setEventHandler(this);
+
+        printf("clock service registered\r\n");
+        printf("service handle: %u\r\n", _clock_service.getHandle());
+        printf("hour characteristic value handle %u\r\n", _hour_char.getValueHandle());
+        printf("minute characteristic value handle %u\r\n", _minute_char.getValueHandle());
+        printf("second characteristic value handle %u\r\n", _second_char.getValueHandle());
+
+        _event_queue-&gt;call_every(1000ms, callback(this, &amp;ClockService::increment_second));
+    }
+
+    /* GattServer::EventHandler */
+private:
+    /**
+     * Handler called when a notification or an indication has been sent.
+     */
+    void onDataSent(const GattDataSentCallbackParams &amp;params) override
+    {
+        printf("sent updates\r\n");
+    }
+
+    /**
+     * Handler called after an attribute has been written.
+     */
+    void onDataWritten(const GattWriteCallbackParams &amp;params) override
+    {
+        printf("data written:\r\n");
+        printf("connection handle: %u\r\n", params.connHandle);
+        printf("attribute handle: %u", params.handle);
+        if (params.handle == _hour_char.getValueHandle()) {
+            printf(" (hour characteristic)\r\n");
+        } else if (params.handle == _minute_char.getValueHandle()) {
+            printf(" (minute characteristic)\r\n");
+        } else if (params.handle == _second_char.getValueHandle()) {
+            printf(" (second characteristic)\r\n");
+        } else {
+            printf("\r\n");
+        }
+        printf("write operation: %u\r\n", params.writeOp);
+        printf("offset: %u\r\n", params.offset);
+        printf("length: %u\r\n", params.len);
+        printf("data: ");
+
+        for (size_t i = 0; i &lt; params.len; ++i) {
+            printf("%02X", params.data[i]);
+        }
+
+        printf("\r\n");
+    }
+
+    /**
+     * Handler called after an attribute has been read.
+     */
+    void onDataRead(const GattReadCallbackParams &amp;params) override
+    {
+        printf("data read:\r\n");
+        printf("connection handle: %u\r\n", params.connHandle);
+        printf("attribute handle: %u", params.handle);
+        if (params.handle == _hour_char.getValueHandle()) {
+            printf(" (hour characteristic)\r\n");
+        } else if (params.handle == _minute_char.getValueHandle()) {
+            printf(" (minute characteristic)\r\n");
+        } else if (params.handle == _second_char.getValueHandle()) {
+            printf(" (second characteristic)\r\n");
+        } else {
+            printf("\r\n");
+        }
+    }
+
+    /**
+     * Handler called after a client has subscribed to notification or indication.
+     *
+     * @param handle Handle of the characteristic value affected by the change.
+     */
+    void onUpdatesEnabled(const GattUpdatesEnabledCallbackParams &amp;params) override
+    {
+        printf("update enabled on handle %d\r\n", params.attHandle);
+    }
+
+    /**
+     * Handler called after a client has cancelled his subscription from
+     * notification or indication.
+     *
+     * @param handle Handle of the characteristic value affected by the change.
+     */
+    void onUpdatesDisabled(const GattUpdatesDisabledCallbackParams &amp;params) override
+    {
+        printf("update disabled on handle %d\r\n", params.attHandle);
+    }
+
+    /**
+     * Handler called when an indication confirmation has been received.
+     *
+     * @param handle Handle of the characteristic value that has emitted the
+     * indication.
+     */
+    void onConfirmationReceived(const GattConfirmationReceivedCallbackParams &amp;params) override
+    {
+        printf("confirmation received on handle %d\r\n", params.attHandle);
+    }
+
+private:
+    /**
+     * Handler called when a write request is received.
+     *
+     * This handler verify that the value submitted by the client is valid before
+     * authorizing the operation.
+     */
+    void authorize_client_write(GattWriteAuthCallbackParams *e)
+    {
+        printf("characteristic %u write authorization\r\n", e-&gt;handle);
+
+        if (e-&gt;offset != 0) {
+            printf("Error invalid offset\r\n");
+            e-&gt;authorizationReply = AUTH_CALLBACK_REPLY_ATTERR_INVALID_OFFSET;
+            return;
+        }
+
+        if (e-&gt;len != 1) {
+            printf("Error invalid len\r\n");
+            e-&gt;authorizationReply = AUTH_CALLBACK_REPLY_ATTERR_INVALID_ATT_VAL_LENGTH;
+            return;
+        }
+
+        if ((e-&gt;data[0] &gt;= 60) ||
+            ((e-&gt;data[0] &gt;= 24) &amp;&amp; (e-&gt;handle == _hour_char.getValueHandle()))) {
+            printf("Error invalid data\r\n");
+            e-&gt;authorizationReply = AUTH_CALLBACK_REPLY_ATTERR_WRITE_NOT_PERMITTED;
+            return;
+        }
+
+        e-&gt;authorizationReply = AUTH_CALLBACK_REPLY_SUCCESS;
+    }
+
+    /**
+     * Increment the second counter.
+     */
+    void increment_second(void)
+    {
+        uint8_t second = 0;
+        ble_error_t err = _second_char.get(*_server, second);
+        if (err) {
+            printf("read of the second value returned error %u\r\n", err);
+            return;
+        }
+
+        second = (second + 1) % 60;
+
+        err = _second_char.set(*_server, second);
+        if (err) {
+            printf("write of the second value returned error %u\r\n", err);
+            return;
+        }
+
+        if (second == 0) {
+            increment_minute();
+        }
+    }
+
+    /**
+     * Increment the minute counter.
+     */
+    void increment_minute(void)
+    {
+        uint8_t minute = 0;
+        ble_error_t err = _minute_char.get(*_server, minute);
+        if (err) {
+            printf("read of the minute value returned error %u\r\n", err);
+            return;
+        }
+
+        minute = (minute + 1) % 60;
+
+        err = _minute_char.set(*_server, minute);
+        if (err) {
+            printf("write of the minute value returned error %u\r\n", err);
+            return;
+        }
+
+        if (minute == 0) {
+            increment_hour();
+        }
+    }
+
+    /**
+     * Increment the hour counter.
+     */
+    void increment_hour(void)
+    {
+        uint8_t hour = 0;
+        ble_error_t err = _hour_char.get(*_server, hour);
+        if (err) {
+            printf("read of the hour value returned error %u\r\n", err);
+            return;
+        }
+
+        hour = (hour + 1) % 24;
+
+        err = _hour_char.set(*_server, hour);
+        if (err) {
+            printf("write of the hour value returned error %u\r\n", err);
+            return;
+        }
+    }
+
+private:
+    /**
+     * Read, Write, Notify, Indicate  Characteristic declaration helper.
+     *
+     * @tparam T type of data held by the characteristic.
+     */
+    template&lt;typename T&gt;
+    class ReadWriteNotifyIndicateCharacteristic : public GattCharacteristic {
+    public:
+        /**
+         * Construct a characteristic that can be read or written and emit
+         * notification or indication.
+         *
+         * @param[in] uuid The UUID of the characteristic.
+         * @param[in] initial_value Initial value contained by the characteristic.
+         */
+        ReadWriteNotifyIndicateCharacteristic(const UUID &amp; uuid, const T&amp; initial_value) :
+            GattCharacteristic(
+                /* UUID */ uuid,
+                /* Initial value */ &amp;_value,
+                /* Value size */ sizeof(_value),
+                /* Value capacity */ sizeof(_value),
+                /* Properties */ GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_READ |
+                                 GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_WRITE |
+                                 GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY |
+                                 GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_INDICATE,
+                /* Descriptors */ nullptr,
+                /* Num descriptors */ 0,
+                /* variable len */ false
+            ),
+            _value(initial_value) {
+        }
+
+        /**
+         * Get the value of this characteristic.
+         *
+         * @param[in] server GattServer instance that contain the characteristic
+         * value.
+         * @param[in] dst Variable that will receive the characteristic value.
+         *
+         * @return BLE_ERROR_NONE in case of success or an appropriate error code.
+         */
+        ble_error_t get(GattServer &amp;server, T&amp; dst) const
+        {
+            uint16_t value_length = sizeof(dst);
+            return server.read(getValueHandle(), &amp;dst, &amp;value_length);
+        }
+
+        /**
+         * Assign a new value to this characteristic.
+         *
+         * @param[in] server GattServer instance that will receive the new value.
+         * @param[in] value The new value to set.
+         * @param[in] local_only Flag that determine if the change should be kept
+         * locally or forwarded to subscribed clients.
+         */
+        ble_error_t set(GattServer &amp;server, const uint8_t &amp;value, bool local_only = false) const
+        {
+            return server.write(getValueHandle(), &amp;value, sizeof(value), local_only);
+        }
+
+    private:
+        uint8_t _value;
+    };
+
+private:
+    GattServer *_server = nullptr;
+    events::EventQueue *_event_queue = nullptr;
+
+    GattService _clock_service;
+    GattCharacteristic* _clock_characteristics[3];
+
+    ReadWriteNotifyIndicateCharacteristic&lt;uint8_t&gt; _hour_char;
+    ReadWriteNotifyIndicateCharacteristic&lt;uint8_t&gt; _minute_char;
+    ReadWriteNotifyIndicateCharacteristic&lt;uint8_t&gt; _second_char;
+};
+
+int main() {
+    BLE &amp;ble = BLE::Instance();
+    events::EventQueue event_queue;
+    ClockService demo_service;
+
+    /* this process will handle basic ble setup and advertising for us */
+    GattServerProcess ble_process(event_queue, ble);
+
+    /* once it's done it will let us continue with our demo */
+    ble_process.on_init(callback(&amp;demo_service, &amp;ClockService::start));
+
+    ble_process.start();
+
+    return 0;
+}
+
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="gap.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="securitymanager.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/apis/gattserver.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:14:56 GMT -->
+</html>

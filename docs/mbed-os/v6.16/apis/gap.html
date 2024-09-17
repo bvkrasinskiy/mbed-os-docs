@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/apis/gap.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:14:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <title>GAP - API references and tutorials | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="gap.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/apis/gap.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/apis/gap.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis active-doc" href="index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Full API list</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="scheduling-rtos-and-event-handling.html">Scheduling: RTOS and event handling</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="scheduling-concepts.html">Scheduling concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="scheduling-concepts.html">RTOS overview</a>
+                        
+                        <a class="toc-item" href="thread-safety.html">Thread safety</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="scheduling-options-and-config.html">Scheduling options and config</a>
+                    
+                    
+                    <a class="toc-item" href="scheduling-tutorials.html">Scheduling tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="scheduling-tutorials.html">The EventQueue API</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="rtos-apis.html">RTOS APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="rtos-apis.html">ConditionVariable</a>
+                        
+                        <a class="toc-item" href="eventflags.html">EventFlags</a>
+                        
+                        <a class="toc-item" href="idle-loop.html">Idle loop</a>
+                        
+                        <a class="toc-item" href="kernel-interface-functions.html">Kernel interface functions</a>
+                        
+                        <a class="toc-item" href="mail.html">Mail</a>
+                        
+                        <a class="toc-item" href="mutex.html">Mutex</a>
+                        
+                        <a class="toc-item" href="queue.html">Queue</a>
+                        
+                        <a class="toc-item" href="semaphore.html">Semaphore</a>
+                        
+                        <a class="toc-item" href="thisthread.html">ThisThread</a>
+                        
+                        <a class="toc-item" href="thread.html">Thread</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="event-handling-apis.html">Event handling APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="event-handling-apis.html">Event</a>
+                        
+                        <a class="toc-item" href="eventqueue.html">EventQueue</a>
+                        
+                        <a class="toc-item" href="userallocatedevent.html">UserAllocatedEvent</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="drivers.html">Drivers</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="drivers-concepts.html">Drivers concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="driver-interfaces-experimental.html">Driver Interfaces (Experimental)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="drivers-architecture.html">Drivers architecture</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="drivers-architecture.html">USB device stack</a>
+                        
+                        <a class="toc-item" href="usb-overview.html">USB components overview</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="drivers-options-and-config.html">Drivers options and config</a>
+                    
+                    
+                    <a class="toc-item" href="drivers-tutorials.html">Drivers tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="drivers-tutorials.html">Alarm tutorial</a>
+                        
+                        <a class="toc-item" href="usb-wav-audio-player.html">USB WAV audio player</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                        
+                        <a class="toc-item" href="arduino-uno-pin-names.html">Arduino Uno Pin Names</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="serial-uart-apis.html">Serial (UART) APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="serial-uart-apis.html">BufferedSerial</a>
+                        
+                        <a class="toc-item" href="unbufferedserial.html">UnbufferedSerial</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="spi-apis.html">SPI APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="spi-apis.html">QuadSPI (QSPI)</a>
+                        
+                        <a class="toc-item" href="spi.html">SPI</a>
+                        
+                        <a class="toc-item" href="spislave.html">SPISlave</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="i-o-apis.html">I/O APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="i-o-apis.html">AnalogIn</a>
+                        
+                        <a class="toc-item" href="analogout.html">AnalogOut</a>
+                        
+                        <a class="toc-item" href="busin.html">BusIn</a>
+                        
+                        <a class="toc-item" href="busout.html">BusOut</a>
+                        
+                        <a class="toc-item" href="businout.html">BusInOut</a>
+                        
+                        <a class="toc-item" href="digitalin.html">DigitalIn</a>
+                        
+                        <a class="toc-item" href="digitalout.html">DigitalOut</a>
+                        
+                        <a class="toc-item" href="digitalinout.html">DigitalInOut</a>
+                        
+                        <a class="toc-item" href="interruptin.html">InterruptIn</a>
+                        
+                        <a class="toc-item" href="portin.html">PortIn</a>
+                        
+                        <a class="toc-item" href="portout.html">PortOut</a>
+                        
+                        <a class="toc-item" href="portinout.html">PortInOut</a>
+                        
+                        <a class="toc-item" href="pwmout.html">PwmOut</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="usb-apis.html">USB APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="usb-apis.html">USBAudio</a>
+                        
+                        <a class="toc-item" href="usbcdc.html">USBCDC</a>
+                        
+                        <a class="toc-item" href="usbcdc-ecm.html">USBCDC_ECM</a>
+                        
+                        <a class="toc-item" href="usbhid.html">USBHID</a>
+                        
+                        <a class="toc-item" href="usbkeyboard.html">USBKeyboard</a>
+                        
+                        <a class="toc-item" href="usbmidi.html">USBMIDI</a>
+                        
+                        <a class="toc-item" href="usbmouse.html">USBMouse</a>
+                        
+                        <a class="toc-item" href="usbmousekeyboard.html">USBMouseKeyboard</a>
+                        
+                        <a class="toc-item" href="usbmsd.html">USBMSD</a>
+                        
+                        <a class="toc-item" href="usbserial.html">USBSerial</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="other-driver-apis.html">Other driver APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="other-driver-apis.html">CAN</a>
+                        
+                        <a class="toc-item" href="flash-iap.html">Flash IAP</a>
+                        
+                        <a class="toc-item" href="i2c.html">I2C</a>
+                        
+                        <a class="toc-item" href="i2cslave.html">I2CSlave</a>
+                        
+                        <a class="toc-item" href="mbedcrc.html">MbedCRC</a>
+                        
+                        <a class="toc-item" href="resetreason.html">ResetReason</a>
+                        
+                        <a class="toc-item" href="watchdog.html">Watchdog</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="platform.html">Platform</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="platform-concepts.html">Platform concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="platform-concepts.html">Platform overview</a>
+                        
+                        <a class="toc-item" href="printf-and-reducing-memory.html">printf and reducing memory</a>
+                        
+                        <a class="toc-item" href="memory-model.html">Memory</a>
+                        
+                        <a class="toc-item" href="static-memory-optimization.html">Static memory optimization</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="platform-options-and-config.html">Platform options and config</a>
+                    
+                    
+                    <a class="toc-item" href="platform-tutorials.html">Platform tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="platform-tutorials.html">Application flow control</a>
+                        
+                        <a class="toc-item" href="power-optimization.html">Power optimization</a>
+                        
+                        <a class="toc-item" href="runtime-memory-tracing.html">Runtime memory tracing</a>
+                        
+                        <a class="toc-item" href="runtime-memory-statistics.html">Runtime memory statistics</a>
+                        
+                        <a class="toc-item" href="link-time-optimization.html">Link Time Optimization</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="time-apis.html">Time APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="time-apis.html">RTC</a>
+                        
+                        <a class="toc-item" href="ticker.html">Ticker</a>
+                        
+                        <a class="toc-item" href="time.html">Time</a>
+                        
+                        <a class="toc-item" href="timeout.html">Timeout</a>
+                        
+                        <a class="toc-item" href="timer.html">Timer</a>
+                        
+                        <a class="toc-item" href="wait.html">Wait</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="power-apis.html">Power APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="power-apis.html">DeepSleepLock</a>
+                        
+                        <a class="toc-item" href="lowpowerticker.html">LowPowerTicker</a>
+                        
+                        <a class="toc-item" href="lowpowertimeout.html">LowPowerTimeout</a>
+                        
+                        <a class="toc-item" href="lowpowertimer.html">LowPowerTimer</a>
+                        
+                        <a class="toc-item" href="power-management-sleep.html">Power management (sleep)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="memory-apis.html">Memory APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="memory-apis.html">Memory tracing</a>
+                        
+                        <a class="toc-item" href="mpu-management.html">MPU management</a>
+                        
+                        <a class="toc-item" href="memorypool.html">MemoryPool</a>
+                        
+                        <a class="toc-item" href="mbed-statistics.html">Mbed statistics</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="other-platform-apis.html">Other platform APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="other-platform-apis.html">Assert</a>
+                        
+                        <a class="toc-item" href="atcmdparser.html">ATCmdParser</a>
+                        
+                        <a class="toc-item" href="callback.html">Callback</a>
+                        
+                        <a class="toc-item" href="circularbuffer.html">CircularBuffer</a>
+                        
+                        <a class="toc-item" href="criticalsectionlock.html">CriticalSectionLock</a>
+                        
+                        <a class="toc-item" href="debug.html">Debug</a>
+                        
+                        <a class="toc-item" href="error-handling.html">Error handling</a>
+                        
+                        <a class="toc-item" href="filehandle.html">FileHandle</a>
+                        
+                        <a class="toc-item" href="noncopyable.html">NonCopyable</a>
+                        
+                        <a class="toc-item" href="platformmutex.html">PlatformMutex</a>
+                        
+                        <a class="toc-item" href="poll.html">Poll</a>
+                        
+                        <a class="toc-item" href="scopedramexecutionlock.html">ScopedRamExecutionLock</a>
+                        
+                        <a class="toc-item" href="scopedromwritelock.html">ScopedRomWriteLock</a>
+                        
+                        <a class="toc-item" href="shared-pointer.html">Shared Pointer</a>
+                        
+                        <a class="toc-item" href="span.html">Span</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="data-storage.html">Data storage</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="data-storage-concepts.html">Data storage concepts</a>
+                    
+                    
+                    <a class="toc-item" href="data-architecture.html">Data architecture</a>
+                    
+                    
+                    <a class="toc-item" href="data-options-and-config.html">Data options and config</a>
+                    
+                    
+                    <a class="toc-item" href="file-system-apis.html">File system APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="file-system-apis.html">Dir</a>
+                        
+                        <a class="toc-item" href="fatfilesystem.html">FATFileSystem</a>
+                        
+                        <a class="toc-item" href="file.html">File</a>
+                        
+                        <a class="toc-item" href="filesystem.html">FileSystem</a>
+                        
+                        <a class="toc-item" href="kvstore.html">KVStore</a>
+                        
+                        <a class="toc-item" href="littlefilesystem.html">LittleFileSystem</a>
+                        
+                        <a class="toc-item" href="static-global-api.html">kvstore_global_api (Static Global API)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="blockdevice-apis.html">BlockDevice APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="blockdevice-apis.html">BlockDevice</a>
+                        
+                        <a class="toc-item" href="bufferedblockdevice.html">BufferedBlockDevice</a>
+                        
+                        <a class="toc-item" href="chainingblockdevice.html">ChainingBlockDevice</a>
+                        
+                        <a class="toc-item" href="dataflashblockdevice.html">DataFlashBlockDevice</a>
+                        
+                        <a class="toc-item" href="flashiapblockdevice.html">FlashIAPBlockDevice</a>
+                        
+                        <a class="toc-item" href="flashsimblockdevice.html">FlashSimBlockDevice</a>
+                        
+                        <a class="toc-item" href="heapblockdevice.html">HeapBlockDevice</a>
+                        
+                        <a class="toc-item" href="mbrblockdevice.html">MBRBlockDevice</a>
+                        
+                        <a class="toc-item" href="profilingblockdevice.html">ProfilingBlockDevice</a>
+                        
+                        <a class="toc-item" href="qspifblockdevice.html">QSPIFBlockDevice</a>
+                        
+                        <a class="toc-item" href="sdblockdevice.html">SDBlockDevice</a>
+                        
+                        <a class="toc-item" href="slicingblockdevice.html">SlicingBlockDevice</a>
+                        
+                        <a class="toc-item" href="spi-flash-block-device.html">SPI Flash block device</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="psa-compliant-apis.html">PSA compliant APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="psa-compliant-apis.html">PSA internal storage</a>
+                        
+                        <a class="toc-item" href="psa-protected-storage.html">PSA protected storage</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="connectivity.html">Connectivity</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="choosing-a-connectivity-type.html">Choosing a connectivity type</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="bluetooth.html">Bluetooth</a>
+                        
+                        <a class="toc-item" href="cellular-networking.html">Cellular networking</a>
+                        
+                        <a class="toc-item" href="ethernet-technology.html">Ethernet</a>
+                        
+                        <a class="toc-item" href="wlan-technology.html">Wireless LAN</a>
+                        
+                        <a class="toc-item" href="lora-tech.html">LoRaWAN</a>
+                        
+                        <a class="toc-item" href="nfc-technology.html">NFC</a>
+                        
+                        <a class="toc-item" href="wisun-tech.html">Wi-SUN</a>
+                        
+                        <a class="toc-item" href="6LoWPAN-ND-tech.html">6LoWPAN-ND</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-architecture.html">Connectivity architecture</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-architecture.html">IP networking</a>
+                        
+                        <a class="toc-item" href="network-socket.html">Network socket</a>
+                        
+                        <a class="toc-item" href="network-socket-interfaces-and-classes.html">Network socket interfaces and classes</a>
+                        
+                        <a class="toc-item" href="network-interface.html">Network interface</a>
+                        
+                        <a class="toc-item" href="secure-socket.html">Secure Socket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-options-and-config.html">Connectivity options and config</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-options-and-config.html">Connectivity configurations</a>
+                        
+                        <a class="toc-item" href="configuration-mesh.html">6LoWPAN Mesh</a>
+                        
+                        <a class="toc-item" href="configuration-ble.html">BLE configuration</a>
+                        
+                        <a class="toc-item" href="lorawan-configuration.html">LoRaWAN configuration</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-tutorials.html">Connectivity tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-tutorials.html">Mesh tutorial</a>
+                        
+                        <a class="toc-item" href="light-control.html">Light control tutorial</a>
+                        
+                        <a class="toc-item" href="lorawan-usage.html">LoRaWAN usage</a>
+                        
+                        <a class="toc-item" href="LoRa-tutorial.html">Building a private LoRa network</a>
+                        
+                        <a class="toc-item" href="tls-tutorial.html">Using Mbed TLS to communicate securely</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="network-socket-apis.html">Network socket APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="network-socket-apis.html">Non-IP cellular socket</a>
+                        
+                        <a class="toc-item" href="socket.html">Socket</a>
+                        
+                        <a class="toc-item" href="socketaddress.html">SocketAddress</a>
+                        
+                        <a class="toc-item" href="socketstats.html">SocketStats</a>
+                        
+                        <a class="toc-item" href="tcpsocket.html">TCPSocket</a>
+                        
+                        <a class="toc-item" href="udpsocket.html">UDPSocket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="network-interface-apis.html">Network interface APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="network-interface-apis.html">Cellular</a>
+                        
+                        <a class="toc-item" href="ethernet.html">Ethernet</a>
+                        
+                        <a class="toc-item" href="mesh-api.html">Mesh</a>
+                        
+                        <a class="toc-item" href="network-status.html">Network status</a>
+                        
+                        <a class="toc-item" href="wi-fi.html">Wi-Fi</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="secure-socket-apis.html">Secure socket APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="secure-socket-apis.html">DTLSSocket</a>
+                        
+                        <a class="toc-item" href="tlssocket.html">TLSSocket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="dns-apis.html">DNS APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="dns-apis.html">DNS Resolver</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="bluetooth-apis.html">Bluetooth APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="bluetooth-apis.html">BLE</a>
+                        
+                        <a class="toc-item" href="gap.html">GAP</a>
+                        
+                        <a class="toc-item" href="gattserver.html">GattServer</a>
+                        
+                        <a class="toc-item" href="securitymanager.html">SecurityManager</a>
+                        
+                        <a class="toc-item" href="ble-services.html">BLE Services</a>
+                        
+                        <a class="toc-item" href="gattclient.html">GattClient</a>
+                        
+                        <a class="toc-item" href="optimizing-applications-for-throughput-and-power-consumption.html">Optimizing applications for throughput and power consumption</a>
+                        
+                        <a class="toc-item" href="test-and-measure.html">Test and measure</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="nfc-apis.html">NFC APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="nfc-apis.html">MessageBuilder</a>
+                        
+                        <a class="toc-item" href="messageparser.html">MessageParser</a>
+                        
+                        <a class="toc-item" href="nfccontroller.html">NFCController</a>
+                        
+                        <a class="toc-item" href="nfc-eeprom.html">NFC EEPROM</a>
+                        
+                        <a class="toc-item" href="simplemessageparser.html">SimpleMessageParser</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="lorawan-apis.html">LoRAWAN APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="lorawan-apis.html">LoRaWANInterface</a>
+                        
+                        <a class="toc-item" href="loraradio.html">LoRa radio driver</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="security.html">Security</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="security-concepts.html">Security concepts</a>
+                    
+                    
+                    <a class="toc-item" href="security-apis.html">Security APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="security-apis.html">DeviceKey</a>
+                        
+                        <a class="toc-item" href="mbed-crypto.html">Mbed Crypto</a>
+                        
+                        <a class="toc-item" href="psa-initial-attestation.html">PSA initial attestation</a>
+                        
+                        <a class="toc-item" href="psa-lifecycle.html">PSA lifecycle</a>
+                        
+                        <a class="toc-item" href="tls.html">TLS</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test" href="../debug-test/index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">API references and tutorials</a>
+                                     › 
+                                    
+                                    <a href="connectivity.html">Connectivity</a>
+                                     › 
+                                    
+                                    <a href="bluetooth-apis.html">Bluetooth APIs</a>
+                                     › 
+                                    
+                                    <a href="gap.html">GAP</a>
+                                    
+                                    
+                                </div>
+                                <h1>GAP</h1><p>The Generic Access Profile is the layer of the stack that handles connectivity tasks. This includes link establishment and termination, advertising and scanning.</p><p>Devices with data to publish can use GAP to advertise. They can include the data in the advertisement itself, inside the scan response, or leave a peer device to query it after the connection has been established.</p><p>The other side of the process is the act of scanning, which listens for advertisements, allows you to query the advertisers for more data through a scan request or connect in order to query the peer device for the data you want.</p><p>Advertising, scanning and connection all have parameters that let you find a compromise between desired power consumption levels, latency and efficiency of these processes.</p><h2 id="advertising">Advertising</h2><p>Advertising consists of broadcasting at a regular interval a small amount of data containing valuable information about the device. Peer devices listening on BLE advertising channels may scan these packets.</p><p>Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information.</p><h2 id="scanning">Scanning</h2><p>Scanning consists of listening for peer advertising packets. From a scan, a device can identify devices available in its environment.</p><p>If the device scans actively, it sends scan request to scannable advertisers and collects their scan responses.</p><h2 id="extended-and-periodic-advertising">Extended and periodic advertising</h2><p>BLE controllers supporting Bluetooth 5.0 may offer additional advertising and scanning options. Use <code>isFeatureSupported()</code> to check feature availability.</p><p>Extended advertising may use multiple PHYs and spread the payload across many packets. This allows for much larger payloads. In this scenario, advertising is split across primary advertising on the advertising channels and secondary advertising using channels normally used for sending data to connected devices.</p><p>Similarly, if the controller supports periodic advertising, you may use periodic advertising to send changing data to many peers. Each peer needs to scan the advertisements on the primary channels and create a sync with a periodic advertisement it's interested in.</p><p>There may be many advertising sets active at one time on a single advertiser. This allows it to advertise different data at the same time, possibly to different peers.</p><p>Devices that do not support extended and periodic advertising will not see these advertisements. You may use legacy advertising alongside extended advertising, running at the same time, to support older devices in the environment.</p><h2 id="privacy">Privacy</h2><p>Privacy is a feature that allows a device to avoid being tracked by other (untrusted) devices. The device achieves it by periodically generating a new random address. The random address may be a resolvable random address, enabling trusted devices to recognize it as belonging to the same device. These trusted devices receive an Identity Resolution Key (IRK) during pairing. The SecurityManager handles this and relies on the other device accepting and storing the IRK.</p><p>You need to enable privacy by calling <code>enablePrivacy()</code> after initializing the SecurityManager because privacy requires SecurityManager to handle IRKs. Set the behavior of privacy enabled devices by using <code>setCentralPrivacyConfiguration()</code>, which specifies what the device should be with devices using random addresses, and <code>setPeripheralPrivacyConfiguration</code>. Random addresses that privacy enabled devices generate can be of two types: resolvable (by devices who have the IRK) and unresolvable. You can't use unresolvable addresses for connecting and connectable advertising; therefore, use a resolvable one for these, regardless of the privacy configuration.</p><h2 id="modulation-schemes">Modulation schemes</h2><p>When supported by the host and controller, you can select different modulation schemes:</p><ul>
+<li>LE 1M PHY.</li>
+<li>LE 2M PHY.</li>
+<li>LE coded PHY.</li>
+</ul><p>These provide different compromises between bandwidth, power usage and error resiliency (see BLUETOOTH SPECIFICATION Version 5.0 Vol 1, Part A - 1.2).</p><p>You may set preferred PHYs (separately for RX and TX) using <code>setPreferredPhys()</code>. You may also set the currently used PHYs on a selected connection using <code>setPhy()</code>. Both of these settings are only advisory. The controller is allowed to make its own decision on the best PHY to use based on your request, the peer's supported features and the connection's physical conditions.</p><p>You may query the currently used PHY using <code>readPhy()</code>, which returns the result through a call to the registered event handler. You may register the handler with <code>setEventHandler()</code>. The events inform about the currently used PHY and of any changes to PHYs, which the controller or the peer may trigger autonomously.</p><h2 id="data-length-over-the-air-mtu">Data length (over-the-air MTU)</h2><p>In addition to modulation schemes, Maximum Transmission Unit (MTU) size also strongly affects throughput. Newer controllers allow you to negotiate bigger MTUs. Because each packet contains overhead, bigger packets maximize throughput.</p><p>There are two separate MTUs to consider: the <code>ATT_MTU</code> (maximum attribute size) and data length. <code>GattServer</code> and <code>GattClient</code> affect <code>ATT_MTU</code>. <code>Gap</code> only deals with data length, which is the maximum size of the packet that carries attributes that are fragmented across many such packets.</p><p>The default value of data length supported by all controllers is 23 octets. If both controllers support data length extension and a higher value is negotiated, the BLE stack will call <code>onDataLengthChange</code> in the <code>Gap::EventHandler</code> registered by the user.</p><p><code>ATT_MTU</code> and data length are independent of each other.</p><h2 id="gap-class-reference">GAP class reference</h2><div class="api-include-block">
+<div class="api-header">
+<a href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank">
+<i class="fa fa-folder-o"></i>
+<b class="filename">Gap Class Reference</b>
+</a>
+</div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="nested-classes"></a>
+Data Structures</span></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/structble_1_1_gap_1_1_event_handler.html" target="_blank">EventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Definition of the general handler of <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank" title="Define device discovery, connection and link management procedures. ">Gap</a> related events.  <a href="../mbed-os-api-doxy/structble_1_1_gap_1_1_event_handler.html#details" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/structble_1_1_gap_1_1_preferred_connection_params__t.html" target="_blank">PreferredConnectionParams_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Preferred connection parameter display in Generic Access Service.  <a href="../mbed-os-api-doxy/structble_1_1_gap_1_1_preferred_connection_params__t.html#details" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-types"></a>
+Public Types</span></td></tr>
+<tr class="memitem:a4e3092800194afccf3179b65e4a54c16"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">FunctionPointerWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank">Gap</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a4e3092800194afccf3179b65e4a54c16" target="_blank">GapShutdownCallback_t</a></td></tr>
+<tr class="memdesc:a4e3092800194afccf3179b65e4a54c16"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank" title="Define device discovery, connection and link management procedures. ">Gap</a> shutdown event handler.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a4e3092800194afccf3179b65e4a54c16" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae1743c9b5310f137250977b36eb65233"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="../mbed-os-api-doxy/class_call_chain_of_function_pointers_with_context.html" target="_blank">CallChainOfFunctionPointersWithContext</a>&lt; const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank">Gap</a> * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ae1743c9b5310f137250977b36eb65233" target="_blank">GapShutdownCallbackChain_t</a></td></tr>
+<tr class="memdesc:ae1743c9b5310f137250977b36eb65233"><td class="mdescLeft"> </td><td class="mdescRight">Callchain of gap shutdown event handler.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ae1743c9b5310f137250977b36eb65233" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</span></td></tr>
+<tr class="memitem:a69a6df1d2238b823ade935417a39e14e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a69a6df1d2238b823ade935417a39e14e" target="_blank">setEventHandler</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1_gap_1_1_event_handler.html" target="_blank">EventHandler</a> *handler)</td></tr>
+<tr class="memdesc:a69a6df1d2238b823ade935417a39e14e"><td class="mdescLeft"> </td><td class="mdescRight">Assign the event handler implementation that will be used by the gap module to signal events back to the application.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a69a6df1d2238b823ade935417a39e14e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:acc992a6d66d069ad4c08abdd01cf7f99"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#acc992a6d66d069ad4c08abdd01cf7f99" target="_blank">isFeatureSupported</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1controller__supported__features__t.html" target="_blank">controller_supported_features_t</a> feature)</td></tr>
+<tr class="memdesc:acc992a6d66d069ad4c08abdd01cf7f99"><td class="mdescLeft"> </td><td class="mdescRight">Check controller support for a specific feature.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#acc992a6d66d069ad4c08abdd01cf7f99" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aaf494130dd318bfe1d0710259c64c7b1"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#aaf494130dd318bfe1d0710259c64c7b1" target="_blank">getMaxAdvertisingSetNumber</a> ()</td></tr>
+<tr class="memdesc:aaf494130dd318bfe1d0710259c64c7b1"><td class="mdescLeft"> </td><td class="mdescRight">Return currently available number of supported advertising sets.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#aaf494130dd318bfe1d0710259c64c7b1" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:adfae0b088490fa5f0c34d4c9e7df88ce"><td align="right" class="memItemLeft" valign="top">uint16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#adfae0b088490fa5f0c34d4c9e7df88ce" target="_blank">getMaxAdvertisingDataLength</a> ()</td></tr>
+<tr class="memdesc:adfae0b088490fa5f0c34d4c9e7df88ce"><td class="mdescLeft"> </td><td class="mdescRight">Return maximum advertising data length supported.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#adfae0b088490fa5f0c34d4c9e7df88ce" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:abf144679f62aebda7132bd5ce2853f99"><td align="right" class="memItemLeft" valign="top">uint16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#abf144679f62aebda7132bd5ce2853f99" target="_blank">getMaxConnectableAdvertisingDataLength</a> ()</td></tr>
+<tr class="memdesc:abf144679f62aebda7132bd5ce2853f99"><td class="mdescLeft"> </td><td class="mdescRight">Return maximum advertising data length supported for connectable advertising.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#abf144679f62aebda7132bd5ce2853f99" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:acb91f30d336a727689a92159405a6d67"><td align="right" class="memItemLeft" valign="top">uint16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#acb91f30d336a727689a92159405a6d67" target="_blank">getMaxActiveSetAdvertisingDataLength</a> ()</td></tr>
+<tr class="memdesc:acb91f30d336a727689a92159405a6d67"><td class="mdescLeft"> </td><td class="mdescRight">Return maximum advertising data length you may set if advertising set is active.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#acb91f30d336a727689a92159405a6d67" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a286e497d5472f9639c006c1b91ef3f2f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a286e497d5472f9639c006c1b91ef3f2f" target="_blank">createAdvertisingSet</a> (advertising_handle_t *handle, const <a class="el" href="../mbed-os-api-doxy/classble_1_1_advertising_parameters.html" target="_blank">AdvertisingParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:a286e497d5472f9639c006c1b91ef3f2f"><td class="mdescLeft"> </td><td class="mdescRight">Create an advertising set and apply the passed in parameters.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a286e497d5472f9639c006c1b91ef3f2f" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ac300f61e1a47aa092d8615672df4efdf"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ac300f61e1a47aa092d8615672df4efdf" target="_blank">destroyAdvertisingSet</a> (advertising_handle_t handle)</td></tr>
+<tr class="memdesc:ac300f61e1a47aa092d8615672df4efdf"><td class="mdescLeft"> </td><td class="mdescRight">Remove the advertising set (resets its set parameters).  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ac300f61e1a47aa092d8615672df4efdf" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae509cb544427e27a9aefcd4a4e1e5cd4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ae509cb544427e27a9aefcd4a4e1e5cd4" target="_blank">setAdvertisingParameters</a> (advertising_handle_t handle, const <a class="el" href="../mbed-os-api-doxy/classble_1_1_advertising_parameters.html" target="_blank">AdvertisingParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:ae509cb544427e27a9aefcd4a4e1e5cd4"><td class="mdescLeft"> </td><td class="mdescRight">Set advertising parameters of an existing set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ae509cb544427e27a9aefcd4a4e1e5cd4" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a612f7eb738bc3742b6502b994a18df84"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a612f7eb738bc3742b6502b994a18df84" target="_blank">setAdvertisingPayload</a> (advertising_handle_t handle, <a class="el" href="../mbed-os-api-doxy/structmbed_1_1_span.html" target="_blank">mbed::Span</a>&lt; const uint8_t &gt; payload)</td></tr>
+<tr class="memdesc:a612f7eb738bc3742b6502b994a18df84"><td class="mdescLeft"> </td><td class="mdescRight">Set new advertising payload for a given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a612f7eb738bc3742b6502b994a18df84" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7233000dd08110c333cc076291a72359"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a7233000dd08110c333cc076291a72359" target="_blank">setAdvertisingScanResponse</a> (advertising_handle_t handle, <a class="el" href="../mbed-os-api-doxy/structmbed_1_1_span.html" target="_blank">mbed::Span</a>&lt; const uint8_t &gt; response)</td></tr>
+<tr class="memdesc:a7233000dd08110c333cc076291a72359"><td class="mdescLeft"> </td><td class="mdescRight">Set new advertising scan response for a given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a7233000dd08110c333cc076291a72359" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a49774a7becc9d4fa30dfeba697ca709a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a49774a7becc9d4fa30dfeba697ca709a" target="_blank">startAdvertising</a> (advertising_handle_t handle, adv_duration_t maxDuration=adv_duration_t::forever(), uint8_t maxEvents=0)</td></tr>
+<tr class="memdesc:a49774a7becc9d4fa30dfeba697ca709a"><td class="mdescLeft"> </td><td class="mdescRight">Start advertising using the given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a49774a7becc9d4fa30dfeba697ca709a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:af89fb9defe24515ebabacfd4e1b15c7f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#af89fb9defe24515ebabacfd4e1b15c7f" target="_blank">stopAdvertising</a> (advertising_handle_t handle)</td></tr>
+<tr class="memdesc:af89fb9defe24515ebabacfd4e1b15c7f"><td class="mdescLeft"> </td><td class="mdescRight">Stop advertising given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#af89fb9defe24515ebabacfd4e1b15c7f" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:af5ae529642bc0fae3777be1be018d746"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#af5ae529642bc0fae3777be1be018d746" target="_blank">isAdvertisingActive</a> (advertising_handle_t handle)</td></tr>
+<tr class="memdesc:af5ae529642bc0fae3777be1be018d746"><td class="mdescLeft"> </td><td class="mdescRight">Check if advertising is active for a given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#af5ae529642bc0fae3777be1be018d746" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a3d69981ddaa8991bbff5d659293cc923"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a3d69981ddaa8991bbff5d659293cc923" target="_blank">setPeriodicAdvertisingParameters</a> (advertising_handle_t handle, periodic_interval_t periodicAdvertisingIntervalMin, periodic_interval_t periodicAdvertisingIntervalMax, bool advertiseTxPower=true)</td></tr>
+<tr class="memdesc:a3d69981ddaa8991bbff5d659293cc923"><td class="mdescLeft"> </td><td class="mdescRight">Set periodic advertising parameters for a given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a3d69981ddaa8991bbff5d659293cc923" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aa03b1767475be88059c1f3d57e2b8dbb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#aa03b1767475be88059c1f3d57e2b8dbb" target="_blank">setPeriodicAdvertisingPayload</a> (advertising_handle_t handle, <a class="el" href="../mbed-os-api-doxy/structmbed_1_1_span.html" target="_blank">mbed::Span</a>&lt; const uint8_t &gt; payload)</td></tr>
+<tr class="memdesc:aa03b1767475be88059c1f3d57e2b8dbb"><td class="mdescLeft"> </td><td class="mdescRight">Set new periodic advertising payload for a given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#aa03b1767475be88059c1f3d57e2b8dbb" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a41d8b36cc64d3b55dadf1f122929c78e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a41d8b36cc64d3b55dadf1f122929c78e" target="_blank">startPeriodicAdvertising</a> (advertising_handle_t handle)</td></tr>
+<tr class="memdesc:a41d8b36cc64d3b55dadf1f122929c78e"><td class="mdescLeft"> </td><td class="mdescRight">Start periodic advertising for a given set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a41d8b36cc64d3b55dadf1f122929c78e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7aa519a1531e4d23fce22316655ddde4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a7aa519a1531e4d23fce22316655ddde4" target="_blank">stopPeriodicAdvertising</a> (advertising_handle_t handle)</td></tr>
+<tr class="memdesc:a7aa519a1531e4d23fce22316655ddde4"><td class="mdescLeft"> </td><td class="mdescRight">Stop periodic advertising for a given set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a7aa519a1531e4d23fce22316655ddde4" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a0baacc76285a82766c6301a5b5d31425"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a0baacc76285a82766c6301a5b5d31425" target="_blank">isPeriodicAdvertisingActive</a> (advertising_handle_t handle)</td></tr>
+<tr class="memdesc:a0baacc76285a82766c6301a5b5d31425"><td class="mdescLeft"> </td><td class="mdescRight">Check if periodic advertising is active for a given advertising set.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a0baacc76285a82766c6301a5b5d31425" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a9a939b0d8c504c97be57121f581e19bd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a9a939b0d8c504c97be57121f581e19bd" target="_blank">setScanParameters</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_scan_parameters.html" target="_blank">ScanParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:a9a939b0d8c504c97be57121f581e19bd"><td class="mdescLeft"> </td><td class="mdescRight">Set new scan parameters.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a9a939b0d8c504c97be57121f581e19bd" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a8620a0e528b6af9cb4914dd5c4429ead"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a8620a0e528b6af9cb4914dd5c4429ead" target="_blank">startScan</a> (scan_duration_t duration=scan_duration_t::forever(), duplicates_filter_t filtering=duplicates_filter_t::DISABLE, scan_period_t period=scan_period_t(0))</td></tr>
+<tr class="memdesc:a8620a0e528b6af9cb4914dd5c4429ead"><td class="mdescLeft"> </td><td class="mdescRight">Start scanning.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a8620a0e528b6af9cb4914dd5c4429ead" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae0c4b406e0d805361ca1a7e95a839294"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ae0c4b406e0d805361ca1a7e95a839294" target="_blank">stopScan</a> ()</td></tr>
+<tr class="memdesc:ae0c4b406e0d805361ca1a7e95a839294"><td class="mdescLeft"> </td><td class="mdescRight">Stop the ongoing scanning procedure.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ae0c4b406e0d805361ca1a7e95a839294" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ac5c166edddee9015b3dc704f4edefabb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ac5c166edddee9015b3dc704f4edefabb" target="_blank">createSync</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1peer__address__type__t.html" target="_blank">peer_address_type_t</a> peerAddressType, const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">address_t</a> &amp;peerAddress, uint8_t sid, slave_latency_t maxPacketSkip, sync_timeout_t timeout)</td></tr>
+<tr class="memdesc:ac5c166edddee9015b3dc704f4edefabb"><td class="mdescLeft"> </td><td class="mdescRight">Synchronize with periodic advertising from an advertiser and begin receiving periodic advertising packets.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ac5c166edddee9015b3dc704f4edefabb" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ad049ae908967efa78827f42b4f522c3b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ad049ae908967efa78827f42b4f522c3b" target="_blank">createSync</a> (slave_latency_t maxPacketSkip, sync_timeout_t timeout)</td></tr>
+<tr class="memdesc:ad049ae908967efa78827f42b4f522c3b"><td class="mdescLeft"> </td><td class="mdescRight">Synchronize with periodic advertising from an advertiser and begin receiving periodic advertising packets.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ad049ae908967efa78827f42b4f522c3b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a9d04ac3c7336908b1dbc40458e93d0f0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a9d04ac3c7336908b1dbc40458e93d0f0" target="_blank">cancelCreateSync</a> ()</td></tr>
+<tr class="memdesc:a9d04ac3c7336908b1dbc40458e93d0f0"><td class="mdescLeft"> </td><td class="mdescRight">Cancel sync attempt.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a9d04ac3c7336908b1dbc40458e93d0f0" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a39d68540e7f34301b194c5ce553e3c8b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a39d68540e7f34301b194c5ce553e3c8b" target="_blank">terminateSync</a> (periodic_sync_handle_t handle)</td></tr>
+<tr class="memdesc:a39d68540e7f34301b194c5ce553e3c8b"><td class="mdescLeft"> </td><td class="mdescRight">Stop reception of the periodic advertising identified by the handle.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a39d68540e7f34301b194c5ce553e3c8b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ace6833992e85078d905aafc966cdad0b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ace6833992e85078d905aafc966cdad0b" target="_blank">addDeviceToPeriodicAdvertiserList</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1peer__address__type__t.html" target="_blank">peer_address_type_t</a> peerAddressType, const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">address_t</a> &amp;peerAddress, advertising_sid_t sid)</td></tr>
+<tr class="memdesc:ace6833992e85078d905aafc966cdad0b"><td class="mdescLeft"> </td><td class="mdescRight">Add device to the periodic advertiser list.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ace6833992e85078d905aafc966cdad0b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a1c8ad6de1625af84e51736f56fd04fd0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a1c8ad6de1625af84e51736f56fd04fd0" target="_blank">removeDeviceFromPeriodicAdvertiserList</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1peer__address__type__t.html" target="_blank">peer_address_type_t</a> peerAddressType, const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">address_t</a> &amp;peerAddress, advertising_sid_t sid)</td></tr>
+<tr class="memdesc:a1c8ad6de1625af84e51736f56fd04fd0"><td class="mdescLeft"> </td><td class="mdescRight">Remove device from the periodic advertiser list.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a1c8ad6de1625af84e51736f56fd04fd0" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a90078ed3317a95fb7a1e70a070e8528c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a90078ed3317a95fb7a1e70a070e8528c" target="_blank">clearPeriodicAdvertiserList</a> ()</td></tr>
+<tr class="memdesc:a90078ed3317a95fb7a1e70a070e8528c"><td class="mdescLeft"> </td><td class="mdescRight">Remove all devices from periodic advertiser list.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a90078ed3317a95fb7a1e70a070e8528c" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a830d826395a182037c9a1e964c213a34"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a830d826395a182037c9a1e964c213a34" target="_blank">getMaxPeriodicAdvertiserListSize</a> ()</td></tr>
+<tr class="memdesc:a830d826395a182037c9a1e964c213a34"><td class="mdescLeft"> </td><td class="mdescRight">Get number of devices that can be added to the periodic advertiser list.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a830d826395a182037c9a1e964c213a34" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a2664fd241cc2353a27e4a63e615b077a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a2664fd241cc2353a27e4a63e615b077a" target="_blank">connect</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1peer__address__type__t.html" target="_blank">peer_address_type_t</a> peerAddressType, const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">address_t</a> &amp;peerAddress, const <a class="el" href="../mbed-os-api-doxy/classble_1_1_connection_parameters.html" target="_blank">ConnectionParameters</a> &amp;connectionParams)</td></tr>
+<tr class="memdesc:a2664fd241cc2353a27e4a63e615b077a"><td class="mdescLeft"> </td><td class="mdescRight">Initiate a connection to a peer.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a2664fd241cc2353a27e4a63e615b077a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a860ba2dedaed972cf58a82df15a6486e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a860ba2dedaed972cf58a82df15a6486e" target="_blank">cancelConnect</a> ()</td></tr>
+<tr class="memdesc:a860ba2dedaed972cf58a82df15a6486e"><td class="mdescLeft"> </td><td class="mdescRight">Cancel the connection attempt.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a860ba2dedaed972cf58a82df15a6486e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:af6b505aeaf99ae7812ccf7c4e43fbf7d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#af6b505aeaf99ae7812ccf7c4e43fbf7d" target="_blank">readPhy</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">connection_handle_t</a> connection)</td></tr>
+<tr class="memdesc:af6b505aeaf99ae7812ccf7c4e43fbf7d"><td class="mdescLeft"> </td><td class="mdescRight">Read the PHY used by the transmitter and the receiver on a connection.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#af6b505aeaf99ae7812ccf7c4e43fbf7d" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a3d020dd9cc3389fd6101ddbbfc47f85a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a3d020dd9cc3389fd6101ddbbfc47f85a" target="_blank">setPreferredPhys</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1phy__set__t.html" target="_blank">phy_set_t</a> *txPhys, const <a class="el" href="../mbed-os-api-doxy/classble_1_1phy__set__t.html" target="_blank">phy_set_t</a> *rxPhys)</td></tr>
+<tr class="memdesc:a3d020dd9cc3389fd6101ddbbfc47f85a"><td class="mdescLeft"> </td><td class="mdescRight">Set the preferred PHYs to use in a connection.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a3d020dd9cc3389fd6101ddbbfc47f85a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:af15f7f276671b0971265a6dd3a5ae91d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#af15f7f276671b0971265a6dd3a5ae91d" target="_blank">setPhy</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">connection_handle_t</a> connection, const <a class="el" href="../mbed-os-api-doxy/classble_1_1phy__set__t.html" target="_blank">phy_set_t</a> *txPhys, const <a class="el" href="../mbed-os-api-doxy/classble_1_1phy__set__t.html" target="_blank">phy_set_t</a> *rxPhys, <a class="el" href="../mbed-os-api-doxy/structble_1_1coded__symbol__per__bit__t.html" target="_blank">coded_symbol_per_bit_t</a> codedSymbol)</td></tr>
+<tr class="memdesc:af15f7f276671b0971265a6dd3a5ae91d"><td class="mdescLeft"> </td><td class="mdescRight">Update the PHY used by a connection.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#af15f7f276671b0971265a6dd3a5ae91d" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:afa2249d9bfe05dabbd49ce326b5a56eb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#afa2249d9bfe05dabbd49ce326b5a56eb" target="_blank">enablePrivacy</a> (bool enable)</td></tr>
+<tr class="memdesc:afa2249d9bfe05dabbd49ce326b5a56eb"><td class="mdescLeft"> </td><td class="mdescRight">Enable or disable privacy mode of the local device.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#afa2249d9bfe05dabbd49ce326b5a56eb" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a35765c8a64f53448fbb56daffdf0c85e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a35765c8a64f53448fbb56daffdf0c85e" target="_blank">setPeripheralPrivacyConfiguration</a> (const peripheral_privacy_configuration_t *configuration)</td></tr>
+<tr class="memdesc:a35765c8a64f53448fbb56daffdf0c85e"><td class="mdescLeft"> </td><td class="mdescRight">Set the privacy configuration used by the peripheral role.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a35765c8a64f53448fbb56daffdf0c85e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a016855a6d089703a3dc40156dbf4b26e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a016855a6d089703a3dc40156dbf4b26e" target="_blank">getPeripheralPrivacyConfiguration</a> (peripheral_privacy_configuration_t *configuration)</td></tr>
+<tr class="memdesc:a016855a6d089703a3dc40156dbf4b26e"><td class="mdescLeft"> </td><td class="mdescRight">Get the privacy configuration used by the peripheral role.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a016855a6d089703a3dc40156dbf4b26e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a9da1be6e492792e23273e61ee31d268a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a9da1be6e492792e23273e61ee31d268a" target="_blank">setCentralPrivacyConfiguration</a> (const central_privacy_configuration_t *configuration)</td></tr>
+<tr class="memdesc:a9da1be6e492792e23273e61ee31d268a"><td class="mdescLeft"> </td><td class="mdescRight">Set the privacy configuration used by the central role.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a9da1be6e492792e23273e61ee31d268a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a99c11277059823ed1a64f60bd29d0e48"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a99c11277059823ed1a64f60bd29d0e48" target="_blank">getCentralPrivacyConfiguration</a> (central_privacy_configuration_t *configuration)</td></tr>
+<tr class="memdesc:a99c11277059823ed1a64f60bd29d0e48"><td class="mdescLeft"> </td><td class="mdescRight">Get the privacy configuration used by the central role.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a99c11277059823ed1a64f60bd29d0e48" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a49cf83173348ac0ff2667a194054eb24"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a49cf83173348ac0ff2667a194054eb24" target="_blank">getMaxWhitelistSize</a> () const </td></tr>
+<tr class="memdesc:a49cf83173348ac0ff2667a194054eb24"><td class="mdescLeft"> </td><td class="mdescRight">Get the maximum size of the whitelist.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a49cf83173348ac0ff2667a194054eb24" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:acee41138a0ea5bba61201d84a5f425bb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#acee41138a0ea5bba61201d84a5f425bb" target="_blank">getWhitelist</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1whitelist__t.html" target="_blank">whitelist_t</a> &amp;whitelist) const </td></tr>
+<tr class="memdesc:acee41138a0ea5bba61201d84a5f425bb"><td class="mdescLeft"> </td><td class="mdescRight">Get the Link Layer to use the internal whitelist when scanning, advertising or initiating a connection depending on the filter policies.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#acee41138a0ea5bba61201d84a5f425bb" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a5113efa33a6a06ee66c44acdc0b70490"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a5113efa33a6a06ee66c44acdc0b70490" target="_blank">setWhitelist</a> (const <a class="el" href="../mbed-os-api-doxy/structble_1_1whitelist__t.html" target="_blank">whitelist_t</a> &amp;whitelist)</td></tr>
+<tr class="memdesc:a5113efa33a6a06ee66c44acdc0b70490"><td class="mdescLeft"> </td><td class="mdescRight">Set the value of the whitelist to be used during GAP procedures.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a5113efa33a6a06ee66c44acdc0b70490" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a2053a396fa658d8d2badb562f49ad19b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a2053a396fa658d8d2badb562f49ad19b" target="_blank">getAddress</a> (own_address_type_t &amp;typeP, <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">address_t</a> &amp;address)</td></tr>
+<tr class="memdesc:a2053a396fa658d8d2badb562f49ad19b"><td class="mdescLeft"> </td><td class="mdescRight">Fetch the current address and its type.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a2053a396fa658d8d2badb562f49ad19b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7e9ddee179d9477b59535f5d031a054b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a7e9ddee179d9477b59535f5d031a054b" target="_blank">reset</a> ()</td></tr>
+<tr class="memdesc:a7e9ddee179d9477b59535f5d031a054b"><td class="mdescLeft"> </td><td class="mdescRight">Reset the <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank" title="Define device discovery, connection and link management procedures. ">Gap</a> instance.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a7e9ddee179d9477b59535f5d031a054b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a0d8fa0a9fc3a5f7b0116e71bb0ebe31f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a0d8fa0a9fc3a5f7b0116e71bb0ebe31f" target="_blank">onShutdown</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a4e3092800194afccf3179b65e4a54c16" target="_blank">GapShutdownCallback_t</a> &amp;callback)</td></tr>
+<tr class="memdesc:a0d8fa0a9fc3a5f7b0116e71bb0ebe31f"><td class="mdescLeft"> </td><td class="mdescRight">Register a <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank" title="Define device discovery, connection and link management procedures. ">Gap</a> shutdown event handler.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a0d8fa0a9fc3a5f7b0116e71bb0ebe31f" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae97f38ba0661bb87a47e9295659fd4b4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae97f38ba0661bb87a47e9295659fd4b4"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ae97f38ba0661bb87a47e9295659fd4b4" target="_blank">onShutdown</a> (T *objPtr, void(T::*memberPtr)(const <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank">Gap</a> *))</td></tr>
+<tr class="memdesc:ae97f38ba0661bb87a47e9295659fd4b4"><td class="mdescLeft"> </td><td class="mdescRight">Register a <a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html" target="_blank" title="Define device discovery, connection and link management procedures. ">Gap</a> shutdown event handler.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#ae97f38ba0661bb87a47e9295659fd4b4" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a0168cd7e6b11110376155a9ce99b758a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#ae1743c9b5310f137250977b36eb65233" target="_blank">GapShutdownCallbackChain_t</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a0168cd7e6b11110376155a9ce99b758a" target="_blank">onShutdown</a> ()</td></tr>
+<tr class="memdesc:a0168cd7e6b11110376155a9ce99b758a"><td class="mdescLeft"> </td><td class="mdescRight">Access the callchain of shutdown event handler.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a0168cd7e6b11110376155a9ce99b758a" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</span></td></tr>
+<tr class="memitem:a7c61e99739a3dc0fa117ed735e0d2fd1"><td align="right" class="memItemLeft" valign="top">static <a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_gap.html#a7c61e99739a3dc0fa117ed735e0d2fd1" target="_blank">getRandomAddressType</a> (<a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">ble::address_t</a> address, <a class="el" href="../mbed-os-api-doxy/structble_1_1random__address__type__t.html" target="_blank">ble::random_address_type_t</a> *addressType)</td></tr>
+<tr class="memdesc:a7c61e99739a3dc0fa117ed735e0d2fd1"><td class="mdescLeft"> </td><td class="mdescRight">Return the type of a random address.  <a href="../mbed-os-api-doxy/classble_1_1_gap.html#a7c61e99739a3dc0fa117ed735e0d2fd1" target="_blank">More...</a><br/></td></tr>
+</tbody></table>
+</div><h2 id="gap-example">GAP example</h2><p>Here is an example demonstrating how to use the GAP API to advertise, scan, connect and disconnect and how parameters influence efficiency of these actions.</p><div class="code-include-block">
+<div class="code-header">
+<a href="https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GAP/source/main.cpp" target="_blank"><i class="fa fa-file-code-o"></i> <b class="filename">main.cpp</b></a>
+</div>
+<pre><code>/* mbed Microcontroller Library
+ * Copyright (c) 2006-2018 ARM Limited
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include &lt;events/mbed_events.h&gt;
+#include "ble/BLE.h"
+#include "pretty_printer.h"
+
+/** This example demonstrates all the basic setup required
+ *  to advertise and scan.
+ *
+ *  It contains a single class that performs both scans and advertisements.
+ *
+ *  The demonstrations happens in sequence, after each "mode" ends
+ *  the demo jumps to the next mode to continue.
+ *
+ *  You may connect to the device during advertising and if you advertise
+ *  this demo will try to connect during the scanning phase. Connection
+ *  will terminate the phase early. At the end of the phase some stats
+ *  will be shown about the phase.
+ */
+
+/* demo config */
+/* you can adjust these parameters and see the effect on the performance */
+
+/* Advertising parameters are mainly defined by an advertising type and
+ * and an interval between advertisements. Lower interval increases the
+ * chances of being seen at the cost of increased power usage.
+ *
+ * The Bluetooth controller may run concurrent operations with the radio;
+ * to help it, a minimum and maximum advertising interval should be
+ * provided.
+ *
+ * Most bluetooth time units are specific to each operation. For example
+ * adv_interval_t is expressed in multiples of 625 microseconds. If precision
+ * is not require you may use a conversion from milliseconds.
+ */
+static const ble::AdvertisingParameters advertising_params(
+    ble::advertising_type_t::CONNECTABLE_UNDIRECTED,
+    ble::adv_interval_t(ble::millisecond_t(25)), /* this could also be expressed as ble::adv_interval_t(40) */
+    ble::adv_interval_t(ble::millisecond_t(50)) /* this could also be expressed as ble::adv_interval_t(80) */
+);
+
+/* if the controller support it we can advertise multiple sets */
+static const ble::AdvertisingParameters extended_advertising_params(
+    ble::advertising_type_t::NON_CONNECTABLE_UNDIRECTED,
+    ble::adv_interval_t(600),
+    ble::adv_interval_t(800)
+);
+
+static const std::chrono::milliseconds advertising_duration = 10000ms;
+
+/* Scanning happens repeatedly and is defined by:
+ *  - The scan interval which is the time (in 0.625us) between each scan cycle.
+ *  - The scan window which is the scanning time (in 0.625us) during a cycle.
+ * If the scanning process is active, the local device sends scan requests
+ * to discovered peer to get additional data.
+ */
+static const ble::ScanParameters scan_params(
+    ble::phy_t::LE_1M,
+    ble::scan_interval_t(80),
+    ble::scan_window_t(60),
+    false /* active scanning */
+);
+
+static const ble::scan_duration_t scan_duration(ble::millisecond_t(10000));
+
+/* config end */
+
+events::EventQueue event_queue;
+
+using namespace std::chrono;
+using std::milli;
+using namespace std::literals::chrono_literals;
+
+/* Delay between steps */
+static const std::chrono::milliseconds delay = 3000ms;
+
+/** Demonstrate advertising, scanning and connecting */
+class GapDemo : private mbed::NonCopyable&lt;GapDemo&gt;, public ble::Gap::EventHandler
+{
+public:
+    GapDemo(BLE&amp; ble, events::EventQueue&amp; event_queue) :
+        _ble(ble),
+        _gap(ble.gap()),
+        _event_queue(event_queue)
+    {
+    }
+
+    ~GapDemo()
+    {
+        if (_ble.hasInitialized()) {
+            _ble.shutdown();
+        }
+    }
+
+    /** Start BLE interface initialisation */
+    void run()
+    {
+        /* handle gap events */
+        _gap.setEventHandler(this);
+
+        ble_error_t error = _ble.init(this, &amp;GapDemo::on_init_complete);
+        if (error) {
+            print_error(error, "Error returned by BLE::init");
+            return;
+        }
+
+        /* this will not return until shutdown */
+        _event_queue.dispatch_forever();
+    }
+
+private:
+    /** This is called when BLE interface is initialised and starts the first mode */
+    void on_init_complete(BLE::InitializationCompleteCallbackContext *event)
+    {
+        if (event-&gt;error) {
+            print_error(event-&gt;error, "Error during the initialisation");
+            return;
+        }
+
+        print_mac_address();
+
+        /* setup the default phy used in connection to 2M to reduce power consumption */
+        if (_gap.isFeatureSupported(ble::controller_supported_features_t::LE_2M_PHY)) {
+            ble::phy_set_t phys(/* 1M */ false, /* 2M */ true, /* coded */ false);
+
+            ble_error_t error = _gap.setPreferredPhys(/* tx */&amp;phys, /* rx */&amp;phys);
+
+            /* PHY 2M communication will only take place if both peers support it */
+            if (error) {
+                print_error(error, "GAP::setPreferedPhys failed");
+            }
+        } else {
+            /* otherwise it will use 1M by default */
+        }
+
+        /* all calls are serialised on the user thread through the event queue */
+        _event_queue.call(this, &amp;GapDemo::advertise);
+    }
+
+    /** Set up and start advertising */
+    void advertise()
+    {
+        ble_error_t error = _gap.setAdvertisingParameters(ble::LEGACY_ADVERTISING_HANDLE, advertising_params);
+        if (error) {
+            print_error(error, "Gap::setAdvertisingParameters() failed");
+            return;
+        }
+
+        /* to create a payload we'll use a helper class that builds a valid payload */
+        /* AdvertisingDataSimpleBuilder is a wrapper over AdvertisingDataBuilder that allocated the buffer for us */
+        ble::AdvertisingDataSimpleBuilder&lt;ble::LEGACY_ADVERTISING_MAX_SIZE&gt; data_builder;
+
+        /* builder methods can be chained together as they return the builder object */
+        data_builder.setFlags().setName("Legacy Set");
+
+        /* Set payload for the set */
+        error = _gap.setAdvertisingPayload(ble::LEGACY_ADVERTISING_HANDLE, data_builder.getAdvertisingData());
+        if (error) {
+            print_error(error, "Gap::setAdvertisingPayload() failed");
+            return;
+        }
+
+        /* Start advertising the set */
+        error = _gap.startAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+        if (error) {
+            print_error(error, "Gap::startAdvertising() failed");
+            return;
+        }
+
+        printf(
+            "\r\nAdvertising started (type: 0x%x, interval: [%d : %d]ms)\r\n",
+            advertising_params.getType(),
+            advertising_params.getMinPrimaryInterval().valueInMs(),
+            advertising_params.getMaxPrimaryInterval().valueInMs()
+        );
+
+#if BLE_FEATURE_EXTENDED_ADVERTISING
+        /* if we support extended advertising we'll also additionally advertise another set at the same time */
+        if (_gap.isFeatureSupported(ble::controller_supported_features_t::LE_EXTENDED_ADVERTISING)) {
+            /* With Bluetooth 5; it is possible to advertise concurrently multiple
+             * payloads at different rate. The combination of payload and its associated
+             * parameters is named an advertising set. To refer to these advertising
+             * sets the Bluetooth system use an advertising set handle that needs to
+             * be created first.
+             * The only exception is the legacy advertising handle which is usable
+             * on Bluetooth 4 and Bluetooth 5 system. It is created at startup and
+             * its lifecycle is managed by the system.
+             */
+            ble_error_t error = _gap.createAdvertisingSet(&amp;_extended_adv_handle, extended_advertising_params);
+            if (error) {
+                print_error(error, "Gap::createAdvertisingSet() failed");
+                return;
+            }
+
+            /* we can reuse the builder, we just replace the name */
+            data_builder.setName("Extended Set");
+
+            /* Set payload for the set */
+            error = _gap.setAdvertisingPayload(_extended_adv_handle, data_builder.getAdvertisingData());
+            if (error) {
+                print_error(error, "Gap::setAdvertisingPayload() failed");
+                return;
+            }
+
+            /* Start advertising the set */
+            error = _gap.startAdvertising(_extended_adv_handle);
+            if (error) {
+                print_error(error, "Gap::startAdvertising() failed");
+                return;
+            }
+
+            printf(
+                "Advertising started (type: 0x%x, interval: [%d : %d]ms)\r\n",
+                extended_advertising_params.getType(),
+                extended_advertising_params.getMinPrimaryInterval().valueInMs(),
+                extended_advertising_params.getMaxPrimaryInterval().valueInMs()
+            );
+        }
+#endif // BLE_FEATURE_EXTENDED_ADVERTISING
+
+        _demo_duration.reset();
+        _demo_duration.start();
+
+        /* this will stop advertising if no connection takes place in the meantime */
+        _cancel_handle = _event_queue.call_in(advertising_duration, [this]{ end_advertising_mode(); });
+    }
+
+    /** Set up and start scanning */
+    void scan()
+    {
+        ble_error_t error = _gap.setScanParameters(scan_params);
+        if (error) {
+            print_error(error, "Error caused by Gap::setScanParameters");
+            return;
+        }
+
+        /* start scanning and attach a callback that will handle advertisements
+         * and scan requests responses */
+        error = _gap.startScan(scan_duration);
+        if (error) {
+            print_error(error, "Error caused by Gap::startScan");
+            return;
+        }
+
+        printf("\r\nScanning started (interval: %dms, window: %dms, timeout: %dms).\r\n",
+               scan_params.get1mPhyConfiguration().getInterval().valueInMs(),
+               scan_params.get1mPhyConfiguration().getWindow().valueInMs(),
+               scan_duration.valueInMs());
+
+        _demo_duration.reset();
+        _demo_duration.start();
+    }
+
+    /* helper function to hide the casts */
+    int read_demo_duration_in_ms()
+    {
+        return duration_cast&lt;duration&lt;int, milli&gt;&gt;(_demo_duration.elapsed_time()).count();
+    }
+
+private:
+    /* Gap::EventHandler */
+
+    /** Look at scan payload to find a peer device and connect to it */
+    void onAdvertisingReport(const ble::AdvertisingReportEvent &amp;event) override
+    {
+        /* keep track of scan events for performance reporting */
+        _scan_count++;
+
+        /* don't bother with analysing scan result if we're already connecting */
+        if (_is_connecting) {
+            return;
+        }
+
+        /* only look at events from devices at a close range */
+        if (event.getRssi() &lt; -65) {
+            return;
+        }
+
+        ble::AdvertisingDataParser adv_parser(event.getPayload());
+
+        /* parse the advertising payload, looking for a discoverable device */
+        while (adv_parser.hasNext()) {
+            ble::AdvertisingDataParser::element_t field = adv_parser.next();
+
+            /* skip non discoverable device */
+            if (field.type != ble::adv_data_type_t::FLAGS ||
+                field.value.size() != 1 ||
+                !ble::adv_data_flags_t(field.value[0]).getGeneralDiscoverable()) {
+                continue;
+            }
+
+            /* connect to a discoverable device */
+
+            /* abort timeout as the mode will end on disconnection */
+            _event_queue.cancel(_cancel_handle);
+
+            printf("We found a connectable device\r\n");
+            ble_error_t error = _gap.connect(
+                event.getPeerAddressType(),
+                event.getPeerAddress(),
+                ble::ConnectionParameters() // use the default connection parameters
+            );
+            if (error) {
+                print_error(error, "Error caused by Gap::connect");
+                return;
+            }
+
+            /* we may have already scan events waiting
+             * to be processed so we need to remember
+             * that we are already connecting and ignore them */
+            _is_connecting = true;
+            return;
+        }
+    }
+
+    void onAdvertisingEnd(const ble::AdvertisingEndEvent &amp;event) override
+    {
+        if (event.isConnected()) {
+            printf("Stopped advertising early due to connection\r\n");
+        }
+    }
+
+    void onAdvertisingStart(const ble::AdvertisingStartEvent &amp;event) override
+    {
+        printf("Advertising set %d started\r\n", event.getAdvHandle());
+    }
+
+    void onScanTimeout(const ble::ScanTimeoutEvent&amp;) override
+    {
+        printf("Stopped scanning due to timeout parameter\r\n");
+        _event_queue.call(this, &amp;GapDemo::end_scanning_mode);
+    }
+
+    /** This is called by Gap to notify the application we connected,
+     *  in our case it immediately disconnects */
+    void onConnectionComplete(const ble::ConnectionCompleteEvent &amp;event) override
+    {
+        _is_connecting = false;
+        _demo_duration.stop();
+
+#if BLE_FEATURE_EXTENDED_ADVERTISING
+        if (!_is_in_scanning_phase) {
+            /* if we have more than one advertising sets one of them might still be active */
+            if (_extended_adv_handle != ble::INVALID_ADVERTISING_HANDLE) {
+                /* if it's still active, stop it */
+                if (_gap.isAdvertisingActive(_extended_adv_handle)) {
+                    _gap.stopAdvertising(_extended_adv_handle);
+                } else if (_gap.isAdvertisingActive(ble::LEGACY_ADVERTISING_HANDLE)) {
+                    _gap.stopAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+                }
+            }
+        }
+#endif // BLE_FEATURE_EXTENDED_ADVERTISING
+
+        if (event.getStatus() != BLE_ERROR_NONE) {
+            print_error(event.getStatus(), "Connection failed");
+            return;
+        }
+
+        printf("Connected in %dms\r\n", read_demo_duration_in_ms());
+
+        /* cancel the connect timeout since we connected */
+        _event_queue.cancel(_cancel_handle);
+
+        _cancel_handle = _event_queue.call_in(
+            delay,
+            [this, handle=event.getConnectionHandle()]{
+                _gap.disconnect(handle, ble::local_disconnection_reason_t::USER_TERMINATION);
+            }
+        );
+
+    }
+
+    /** This is called by Gap to notify the application we disconnected,
+     *  in our case it calls next_demo_mode() to progress the demo */
+    void onDisconnectionComplete(const ble::DisconnectionCompleteEvent &amp;event) override
+    {
+        printf("Disconnected\r\n");
+
+        /* if it wasn't us disconnecting then we should cancel our attempt */
+        if (event.getReason() == ble::disconnection_reason_t::REMOTE_USER_TERMINATED_CONNECTION) {
+            _event_queue.cancel(_cancel_handle);
+        }
+
+        if (_is_in_scanning_phase) {
+            _event_queue.call(this, &amp;GapDemo::end_scanning_mode);
+        } else {
+            _event_queue.call(this, &amp;GapDemo::end_advertising_mode);
+        }
+    }
+
+    /**
+     * Implementation of Gap::EventHandler::onReadPhy
+     */
+    void onReadPhy(
+        ble_error_t error,
+        ble::connection_handle_t connectionHandle,
+        ble::phy_t txPhy,
+        ble::phy_t rxPhy
+    ) override
+    {
+        if (error) {
+            printf(
+                "Phy read on connection %d failed with error code %s\r\n",
+                connectionHandle, BLE::errorToString(error)
+            );
+        } else {
+            printf(
+                "Phy read on connection %d - Tx Phy: %s, Rx Phy: %s\r\n",
+                connectionHandle, phy_to_string(txPhy), phy_to_string(rxPhy)
+            );
+        }
+    }
+
+    /**
+     * Implementation of Gap::EventHandler::onPhyUpdateComplete
+     */
+    void onPhyUpdateComplete(
+        ble_error_t error,
+        ble::connection_handle_t connectionHandle,
+        ble::phy_t txPhy,
+        ble::phy_t rxPhy
+    ) override
+    {
+        if (error) {
+            printf(
+                "Phy update on connection: %d failed with error code %s\r\n",
+                connectionHandle, BLE::errorToString(error)
+            );
+        } else {
+            printf(
+                "Phy update on connection %d - Tx Phy: %s, Rx Phy: %s\r\n",
+                connectionHandle, phy_to_string(txPhy), phy_to_string(rxPhy)
+            );
+        }
+    }
+
+    /**
+     * Implementation of Gap::EventHandler::onDataLengthChange
+     */
+    void onDataLengthChange(
+        ble::connection_handle_t connectionHandle,
+        uint16_t txSize,
+        uint16_t rxSize
+    ) override
+    {
+        printf(
+            "Data length changed on the connection %d.\r\n"
+            "Maximum sizes for over the air packets are:\r\n"
+            "%d octets for transmit and %d octets for receive.\r\n",
+            connectionHandle, txSize, rxSize
+        );
+    }
+
+private:
+    /** Finish the mode by shutting down advertising or scanning and move to the next mode. */
+    void end_scanning_mode()
+    {
+        print_scanning_performance();
+        ble_error_t error = _gap.stopScan();
+
+        if (error) {
+            print_error(error, "Error caused by Gap::stopScan");
+        }
+
+        _is_in_scanning_phase = false;
+        _scan_count = 0;
+
+        _event_queue.call_in(delay, this, &amp;GapDemo::advertise);
+    }
+
+    void end_advertising_mode()
+    {
+        print_advertising_performance();
+
+        _gap.stopAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+
+#if BLE_FEATURE_EXTENDED_ADVERTISING
+        if (_extended_adv_handle != ble::INVALID_ADVERTISING_HANDLE) {
+            /* if it's still active, stop it */
+            if (_gap.isAdvertisingActive(_extended_adv_handle)) {
+                ble_error_t error = _gap.stopAdvertising(_extended_adv_handle);
+                if (error) {
+                    print_error(error, "Error caused by Gap::stopAdvertising");
+                }
+            }
+
+            ble_error_t error = _gap.destroyAdvertisingSet(_extended_adv_handle);
+            if (error) {
+                print_error(error, "Error caused by Gap::destroyAdvertisingSet");
+            }
+
+            _extended_adv_handle = ble::INVALID_ADVERTISING_HANDLE;
+        }
+#endif // BLE_FEATURE_EXTENDED_ADVERTISING
+
+        _is_in_scanning_phase = true;
+
+        _event_queue.call_in(delay, [this]{ scan(); });
+    }
+
+    /** print some information about our radio activity */
+    void print_scanning_performance()
+    {
+        /* measure time from mode start, may have been stopped by timeout */
+        uint16_t duration_ms = read_demo_duration_in_ms();
+
+        /* convert ms into timeslots for accurate calculation as internally
+         * all durations are in timeslots (0.625ms) */
+        uint16_t duration_ts = ble::scan_interval_t(ble::millisecond_t(duration_ms)).value();
+        uint16_t interval_ts = scan_params.get1mPhyConfiguration().getInterval().value();
+        uint16_t window_ts = scan_params.get1mPhyConfiguration().getWindow().value();
+        /* this is how long we scanned for in timeslots */
+        uint16_t rx_ts = (duration_ts / interval_ts) * window_ts;
+        /* convert to milliseconds */
+        uint16_t rx_ms = ble::scan_interval_t(rx_ts).valueInMs();
+
+        printf(
+            "We have scanned for %dms with an interval of %d"
+            " timeslots and a window of %d timeslots\r\n",
+            duration_ms, interval_ts, window_ts
+        );
+
+        printf("We have been listening on the radio for at least %dms\r\n", rx_ms);
+    }
+
+    /** print some information about our radio activity */
+    void print_advertising_performance()
+    {
+        /* measure time from mode start, may have been stopped by timeout */
+        uint16_t duration_ms = read_demo_duration_in_ms();
+
+        /* convert ms into timeslots for accurate calculation as internally
+         * all durations are in timeslots (0.625ms) */
+        uint16_t duration_ts = ble::adv_interval_t(ble::millisecond_t(duration_ms)).value();
+        uint16_t interval_ts = advertising_params.getMaxPrimaryInterval().value();
+        /* this is how many times we advertised */
+        uint16_t events = (duration_ts / interval_ts);
+        uint16_t extended_events = 0;
+
+#if BLE_FEATURE_EXTENDED_ADVERTISING
+        if (_extended_adv_handle != ble::INVALID_ADVERTISING_HANDLE) {
+            duration_ts = ble::adv_interval_t(ble::millisecond_t(duration_ms)).value();
+            interval_ts = extended_advertising_params.getMaxPrimaryInterval().value();
+            /* this is how many times we advertised */
+            extended_events = (duration_ts / interval_ts);
+        }
+#endif // BLE_FEATURE_EXTENDED_ADVERTISING
+
+        printf("We have advertised for %dms\r\n", duration_ms);
+
+        /* non-scannable and non-connectable advertising
+         * skips rx events saving on power consumption */
+        if (advertising_params.getType() == ble::advertising_type_t::NON_CONNECTABLE_UNDIRECTED) {
+            printf("We created at least %d tx events\r\n", events);
+        } else {
+            printf("We created at least %d tx and rx events\r\n", events);
+        }
+
+#if BLE_FEATURE_EXTENDED_ADVERTISING
+        if (extended_events) {
+            if (extended_advertising_params.getType() == ble::advertising_type_t::NON_CONNECTABLE_UNDIRECTED) {
+                printf("We created at least %d tx events with extended advertising\r\n", extended_events);
+            } else {
+                printf("We created at least %d tx and rx events with extended advertising\r\n", extended_events);
+            }
+        }
+
+#endif // BLE_FEATURE_EXTENDED_ADVERTISING
+    }
+
+private:
+    BLE &amp;_ble;
+    ble::Gap &amp;_gap;
+    events::EventQueue &amp;_event_queue;
+
+    /* Keep track of our progress through demo modes */
+    bool _is_in_scanning_phase = false;
+    bool _is_connecting = false;
+
+    /* Remember the call id of the function on _event_queue
+     * so we can cancel it if we need to end the phase early */
+    int _cancel_handle = 0;
+
+    /* Measure performance of our advertising/scanning */
+    Timer _demo_duration;
+    size_t _scan_count = 0;
+
+#if BLE_FEATURE_EXTENDED_ADVERTISING
+    ble::advertising_handle_t _extended_adv_handle = ble::INVALID_ADVERTISING_HANDLE;
+#endif // BLE_FEATURE_EXTENDED_ADVERTISING
+};
+
+/** Schedule processing of events from the BLE middleware in the event queue. */
+void schedule_ble_events(BLE::OnEventsToProcessCallbackContext *context)
+{
+    event_queue.call(Callback&lt;void()&gt;(&amp;context-&gt;ble, &amp;BLE::processEvents));
+}
+
+int main()
+{
+    BLE &amp;ble = BLE::Instance();
+
+    /* this will inform us off all events so we can schedule their handling
+     * using our event queue */
+    ble.onEventsToProcess(schedule_ble_events);
+
+    GapDemo demo(ble, event_queue);
+
+    demo.run();
+
+    return 0;
+}
+
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="bluetooth-apis.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="gattserver.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/apis/gap.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:14:53 GMT -->
+</html>

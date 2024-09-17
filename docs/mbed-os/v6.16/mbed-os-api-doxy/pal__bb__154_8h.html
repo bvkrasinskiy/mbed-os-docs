@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/pal__bb__154_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:25:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | pal_bb_154.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="pal__bb__154_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/pal__bb__154_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/pal__bb__154_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_33de8441f7b8b108cc48249435a2d2bd.html">cordio_stack</a></li><li class="navelem"><a class="el" href="dir_6fc83f110ac7b78308b9c9a83505d3ae.html">platform</a></li><li class="navelem"><a class="el" href="dir_ae9c649c7a09c8aa8044c62ed1ada47e.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">pal_bb_154.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>IEEE 802.15.4 MAC Baseband driver interface file.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="pal__types_8h_source.html">pal_types.h</a>"</code><br/>
+</div>
+<p><a href="pal__bb__154_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pal_bb154_chan__t.html">PalBb154Chan_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">802.15.4 channelization parameters.  <a href="struct_pal_bb154_chan__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pal_bb154_op_param__t.html">PalBb154OpParam_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Operation parameters.  <a href="struct_pal_bb154_op_param__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pal_bb154_tx_buf_desc.html">PalBb154TxBufDesc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Transmit buffer descriptor.  <a href="struct_pal_bb154_tx_buf_desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pal_bb154_drv_stats__t.html">PalBb154DrvStats_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Baseband driver statistics.  <a href="struct_pal_bb154_drv_stats__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pal_bb154_drv_pib__tag.html">PalBb154DrvPib_tag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">MAC PIB for driver.  <a href="struct_pal_bb154_drv_pib__tag.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2f38df3f367ed38c47cf144c051a1e09"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a2f38df3f367ed38c47cf144c051a1e09">PAL_BB_154_MIN_RX_BUF_CNT</a>   2</td></tr>
+<tr class="memdesc:a2f38df3f367ed38c47cf144c051a1e09"><td class="mdescLeft"> </td><td class="mdescRight">Minimum number of receive buffers.  <a href="#a2f38df3f367ed38c47cf144c051a1e09">More...</a><br/></td></tr>
+<tr class="separator:a2f38df3f367ed38c47cf144c051a1e09"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa1b0aececc50e6854c77e2c337fc9099"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aa1b0aececc50e6854c77e2c337fc9099">PAL_BB_154_RX_BUF_CNT</a>   2</td></tr>
+<tr class="separator:aa1b0aececc50e6854c77e2c337fc9099"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad0ab4fcbb32baf2337e64626f9b0a76a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ad0ab4fcbb32baf2337e64626f9b0a76a">PAL_BB_154_FLAG_TX_RX_AUTO_ACK</a>   (<a class="el" href="pal__bb__154_8h.html#a70bd01545ca54514ee53e0eb670b9562a93d6acf4c99953f880ac87ced10a19fb">PAL_BB_154_FLAG_TX_AUTO_RX_ACK</a> | <a class="el" href="pal__bb__154_8h.html#a70bd01545ca54514ee53e0eb670b9562a45523b48712b057e3547adea63659a6c">PAL_BB_154_FLAG_RX_AUTO_TX_ACK</a>)</td></tr>
+<tr class="memdesc:ad0ab4fcbb32baf2337e64626f9b0a76a"><td class="mdescLeft"> </td><td class="mdescRight">PAL_BB_154_FLAG_TX_RX_AUTO_ACK.  <a href="#ad0ab4fcbb32baf2337e64626f9b0a76a">More...</a><br/></td></tr>
+<tr class="separator:ad0ab4fcbb32baf2337e64626f9b0a76a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a93ffd77979fb915e187d3db48679d569"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a93ffd77979fb915e187d3db48679d569">PAL_BB_154_SYMB_TO_US</a>(x)                                       ((x) * 16)</td></tr>
+<tr class="separator:a93ffd77979fb915e187d3db48679d569"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30e43797adcd1b4956816d0596a082a2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a30e43797adcd1b4956816d0596a082a2">PAL_BB_154_SYMB_TO_MS</a>(x)                                       (((x) * 16) / 1000)</td></tr>
+<tr class="separator:a30e43797adcd1b4956816d0596a082a2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab860f6413be3c889d8954970c5e0007a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ab860f6413be3c889d8954970c5e0007a">PAL_BB_154_US_TO_SYMB</a>(x)                                       ((x) / 16)</td></tr>
+<tr class="separator:ab860f6413be3c889d8954970c5e0007a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6d64a4ad1b6e8c8f8d3bc7f9f72fe3a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ae6d64a4ad1b6e8c8f8d3bc7f9f72fe3a">PAL_BB_154_TPT_TO_MS</a>(x)                                         (((x) * 15723) &gt;&gt; 10)</td></tr>
+<tr class="separator:ae6d64a4ad1b6e8c8f8d3bc7f9f72fe3a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6036ab174cf7b669f1473f5d5fac71d6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a6036ab174cf7b669f1473f5d5fac71d6">PAL_BB_154_ED_THRESHOLD</a>   -75</td></tr>
+<tr class="memdesc:a6036ab174cf7b669f1473f5d5fac71d6"><td class="mdescLeft"> </td><td class="mdescRight">Energy detect threshold in dBm.  <a href="#a6036ab174cf7b669f1473f5d5fac71d6">More...</a><br/></td></tr>
+<tr class="separator:a6036ab174cf7b669f1473f5d5fac71d6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaccd934396dc7f817b79e7b9e1dfb0ba"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aaccd934396dc7f817b79e7b9e1dfb0ba">PAL_BB_154_FRAME_CONTROL_LEN</a>   2</td></tr>
+<tr class="memdesc:aaccd934396dc7f817b79e7b9e1dfb0ba"><td class="mdescLeft"> </td><td class="mdescRight">Size of frame control in octets.  <a href="#aaccd934396dc7f817b79e7b9e1dfb0ba">More...</a><br/></td></tr>
+<tr class="separator:aaccd934396dc7f817b79e7b9e1dfb0ba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a821c40eba9a0f1657291f8beeab45413"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a821c40eba9a0f1657291f8beeab45413">PAL_BB_154_FCS_LEN</a>   2</td></tr>
+<tr class="memdesc:a821c40eba9a0f1657291f8beeab45413"><td class="mdescLeft"> </td><td class="mdescRight">Size of FCS in octets.  <a href="#a821c40eba9a0f1657291f8beeab45413">More...</a><br/></td></tr>
+<tr class="separator:a821c40eba9a0f1657291f8beeab45413"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af5696bddbbf1ebbc22a0862852fbbf4f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#af5696bddbbf1ebbc22a0862852fbbf4f">PAL_BB_154_FCS_INIT_VALUE</a>   0x0000</td></tr>
+<tr class="memdesc:af5696bddbbf1ebbc22a0862852fbbf4f"><td class="mdescLeft"> </td><td class="mdescRight">FCS initialization value.  <a href="#af5696bddbbf1ebbc22a0862852fbbf4f">More...</a><br/></td></tr>
+<tr class="separator:af5696bddbbf1ebbc22a0862852fbbf4f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad2e308db1237e2e2ad6802ded262067e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ad2e308db1237e2e2ad6802ded262067e">PAL_BB_154_FC_FRAME_TYPE_SHIFT</a>   0</td></tr>
+<tr class="memdesc:ad2e308db1237e2e2ad6802ded262067e"><td class="mdescLeft"> </td><td class="mdescRight">Frame control bits and fields.  <a href="#ad2e308db1237e2e2ad6802ded262067e">More...</a><br/></td></tr>
+<tr class="separator:ad2e308db1237e2e2ad6802ded262067e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af5f583e03e6c99fd1ae30a757e708891"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#af5f583e03e6c99fd1ae30a757e708891">PAL_BB_154_FC_FRAME_TYPE_MASK</a>   0x0007</td></tr>
+<tr class="separator:af5f583e03e6c99fd1ae30a757e708891"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a22e66b9b9ce989fa9fd0fd3be10282e9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a22e66b9b9ce989fa9fd0fd3be10282e9">PAL_BB_154_FC_FRAME_TYPE_CD_MASK</a>   0x0001</td></tr>
+<tr class="separator:a22e66b9b9ce989fa9fd0fd3be10282e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac7c03cdc6075d645e13dcd8e0d24d2ed"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ac7c03cdc6075d645e13dcd8e0d24d2ed">PAL_BB_154_FC_FRAME_TYPE_CMD_MASK</a>   0x0003</td></tr>
+<tr class="separator:ac7c03cdc6075d645e13dcd8e0d24d2ed"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae7c4bacdd786420609435368e17d8ab7"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ae7c4bacdd786420609435368e17d8ab7">PAL_BB_154_FC_FRAME_TYPE</a>(x)                   (((x) &amp; <a class="el" href="pal__bb__154_8h.html#af5f583e03e6c99fd1ae30a757e708891">PAL_BB_154_FC_FRAME_TYPE_MASK</a>)/*&gt;&gt; <a class="el" href="pal__bb__154_8h.html#ad2e308db1237e2e2ad6802ded262067e">PAL_BB_154_FC_FRAME_TYPE_SHIFT</a>*/)</td></tr>
+<tr class="separator:ae7c4bacdd786420609435368e17d8ab7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2aa94885d1ffefa9b587e5ca9079edec"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a2aa94885d1ffefa9b587e5ca9079edec">PAL_BB_154_FC_LEGACY_SEC_TEST</a>(x)         (((x) &amp; (PAL_BB_154_FC_SECURITY_ENABLED_MASK | PAL_BB_154_FC_FRAME_VERSION_MASK)) == PAL_BB_154_FC_SECURITY_ENABLED_MASK)</td></tr>
+<tr class="memdesc:a2aa94885d1ffefa9b587e5ca9079edec"><td class="mdescLeft"> </td><td class="mdescRight">Mask for checking legacy security.  <a href="#a2aa94885d1ffefa9b587e5ca9079edec">More...</a><br/></td></tr>
+<tr class="separator:a2aa94885d1ffefa9b587e5ca9079edec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a294818e5d9b5c3e49842190c54d17520"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a294818e5d9b5c3e49842190c54d17520">PAL_BB_154_FC_FRAME_TYPE_FP_TEST</a>   (PAL_BB_154_FC_ACK_REQUEST_MASK | <a class="el" href="pal__bb__154_8h.html#ac7c03cdc6075d645e13dcd8e0d24d2ed">PAL_BB_154_FC_FRAME_TYPE_CMD_MASK</a>)</td></tr>
+<tr class="memdesc:a294818e5d9b5c3e49842190c54d17520"><td class="mdescLeft"> </td><td class="mdescRight">Mask for checking frame pending processing based on ack. requested and being a MAC command frame.  <a href="#a294818e5d9b5c3e49842190c54d17520">More...</a><br/></td></tr>
+<tr class="separator:a294818e5d9b5c3e49842190c54d17520"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a191d293581dd3274dc6f57e022a51cdb"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a191d293581dd3274dc6f57e022a51cdb">PAL_BB_154_FC_FRAME_TYPE_ACK_TEST</a>   (PAL_BB_154_FC_ACK_REQUEST_MASK | <a class="el" href="pal__bb__154_8h.html#a22e66b9b9ce989fa9fd0fd3be10282e9">PAL_BB_154_FC_FRAME_TYPE_CD_MASK</a>)</td></tr>
+<tr class="memdesc:a191d293581dd3274dc6f57e022a51cdb"><td class="mdescLeft"> </td><td class="mdescRight">Mask for checking ack. sending based on ack. requested and being a MAC command or data frame.  <a href="#a191d293581dd3274dc6f57e022a51cdb">More...</a><br/></td></tr>
+<tr class="separator:a191d293581dd3274dc6f57e022a51cdb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9052014399bab2de1950922e79220c0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ae9052014399bab2de1950922e79220c0">PAL_BB_154_SCAN_MAX_PD_ENTRIES</a>   16</td></tr>
+<tr class="separator:ae9052014399bab2de1950922e79220c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6a4ee33e487fb48989bcad7946128274"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a6a4ee33e487fb48989bcad7946128274">PAL_BB_154_SCAN_MAX_ED_ENTRIES</a>   16</td></tr>
+<tr class="separator:a6a4ee33e487fb48989bcad7946128274"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa88b01838c30cd1572588baaa84334b5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aa88b01838c30cd1572588baaa84334b5">PAL_BB_154_SYMBOL_DURATION</a>   16</td></tr>
+<tr class="memdesc:aa88b01838c30cd1572588baaa84334b5"><td class="mdescLeft"> </td><td class="mdescRight">Symbol duration in microseconds (2450 MHz O-QPSK).  <a href="#aa88b01838c30cd1572588baaa84334b5">More...</a><br/></td></tr>
+<tr class="separator:aa88b01838c30cd1572588baaa84334b5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aabbf109d75c99a008b204c39dbd9ddc2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aabbf109d75c99a008b204c39dbd9ddc2">PAL_BB_154_ED_DURATION</a>   8</td></tr>
+<tr class="memdesc:aabbf109d75c99a008b204c39dbd9ddc2"><td class="mdescLeft"> </td><td class="mdescRight">ED duration in symbols (802.15.4-2006 6.9.7).  <a href="#aabbf109d75c99a008b204c39dbd9ddc2">More...</a><br/></td></tr>
+<tr class="separator:aabbf109d75c99a008b204c39dbd9ddc2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab6ac8e6401d79bac9e5812038b0bb486"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ab6ac8e6401d79bac9e5812038b0bb486">PAL_BB_154_SYMBOLS_PER_OCTET</a>   2</td></tr>
+<tr class="memdesc:ab6ac8e6401d79bac9e5812038b0bb486"><td class="mdescLeft"> </td><td class="mdescRight">The number of symbols per octets for the current PHY (2450 MHz O-QPSK).  <a href="#ab6ac8e6401d79bac9e5812038b0bb486">More...</a><br/></td></tr>
+<tr class="separator:ab6ac8e6401d79bac9e5812038b0bb486"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a82bf2d57cf7caa71b16f841ce9dc563d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a82bf2d57cf7caa71b16f841ce9dc563d">PAL_BB_154_PREAMBLE_FIELD_LENGTH</a>   8</td></tr>
+<tr class="memdesc:a82bf2d57cf7caa71b16f841ce9dc563d"><td class="mdescLeft"> </td><td class="mdescRight">Preamble field length in symbols (2450 MHz O-QPSK).  <a href="#a82bf2d57cf7caa71b16f841ce9dc563d">More...</a><br/></td></tr>
+<tr class="separator:a82bf2d57cf7caa71b16f841ce9dc563d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7e326692f6cfcffdf77c48255236a02a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a7e326692f6cfcffdf77c48255236a02a">PAL_BB_154_SFD_FIELD_LENGTH</a>   2</td></tr>
+<tr class="memdesc:a7e326692f6cfcffdf77c48255236a02a"><td class="mdescLeft"> </td><td class="mdescRight">SFD field length in symbols (2450 MHz O-QPSK).  <a href="#a7e326692f6cfcffdf77c48255236a02a">More...</a><br/></td></tr>
+<tr class="separator:a7e326692f6cfcffdf77c48255236a02a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf6d21dfda87b8ff3e19fa748cb1acb1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aaf6d21dfda87b8ff3e19fa748cb1acb1">PAL_BB_154_aMaxPHYPacketSize</a>   127</td></tr>
+<tr class="memdesc:aaf6d21dfda87b8ff3e19fa748cb1acb1"><td class="mdescLeft"> </td><td class="mdescRight">The maximum PSDU size (in octets) the PHY shall be able to receive.  <a href="#aaf6d21dfda87b8ff3e19fa748cb1acb1">More...</a><br/></td></tr>
+<tr class="separator:aaf6d21dfda87b8ff3e19fa748cb1acb1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac49b251f61e688adb9bf330f72633305"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ac49b251f61e688adb9bf330f72633305">PAL_BB_154_aTurnaroundTime</a>   12</td></tr>
+<tr class="memdesc:ac49b251f61e688adb9bf330f72633305"><td class="mdescLeft"> </td><td class="mdescRight">RX-to-TX or TX-to-RX maximum turnaround time (in symbol periods).  <a href="#ac49b251f61e688adb9bf330f72633305">More...</a><br/></td></tr>
+<tr class="separator:ac49b251f61e688adb9bf330f72633305"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a210a47aeabe41fc4a5e4809634f7e258"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a210a47aeabe41fc4a5e4809634f7e258">PAL_BB_154_phySHRDuration</a>   10</td></tr>
+<tr class="memdesc:a210a47aeabe41fc4a5e4809634f7e258"><td class="mdescLeft"> </td><td class="mdescRight">SHR duration for 802.15.4-2006. (2.4GHz PHY)  <a href="#a210a47aeabe41fc4a5e4809634f7e258">More...</a><br/></td></tr>
+<tr class="separator:a210a47aeabe41fc4a5e4809634f7e258"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a07946f78a2a43c45de22ee34315f381c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a07946f78a2a43c45de22ee34315f381c">PAL_BB_154_phySymbolsPerOctet</a>   2</td></tr>
+<tr class="memdesc:a07946f78a2a43c45de22ee34315f381c"><td class="mdescLeft"> </td><td class="mdescRight">Symbols per octet for 802.15.4-2006. (2.4GHz PHY)  <a href="#a07946f78a2a43c45de22ee34315f381c">More...</a><br/></td></tr>
+<tr class="separator:a07946f78a2a43c45de22ee34315f381c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1e7d4d16fb4d5c8ac4aa66022d8842ac"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a1e7d4d16fb4d5c8ac4aa66022d8842ac">PAL_BB_154_aBaseSlotDuration</a>   60</td></tr>
+<tr class="memdesc:a1e7d4d16fb4d5c8ac4aa66022d8842ac"><td class="mdescLeft"> </td><td class="mdescRight">The number of symbols forming a superframe slot when the superframe order is equal to 0.  <a href="#a1e7d4d16fb4d5c8ac4aa66022d8842ac">More...</a><br/></td></tr>
+<tr class="separator:a1e7d4d16fb4d5c8ac4aa66022d8842ac"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4d2973302d6d9452e742d4384f92e796"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a4d2973302d6d9452e742d4384f92e796">PAL_BB_154_aBaseSuperframeDuration</a>   (<a class="el" href="pal__bb__154_8h.html#a1e7d4d16fb4d5c8ac4aa66022d8842ac">PAL_BB_154_aBaseSlotDuration</a> * <a class="el" href="pal__bb__154_8h.html#a960789677ede2ac7bb2c43fb0c4b304e">PAL_BB_154_aNumSuperframeSlots</a>)</td></tr>
+<tr class="memdesc:a4d2973302d6d9452e742d4384f92e796"><td class="mdescLeft"> </td><td class="mdescRight">The number of symbols forming a superframe when the superframe order is equal to 0.  <a href="#a4d2973302d6d9452e742d4384f92e796">More...</a><br/></td></tr>
+<tr class="separator:a4d2973302d6d9452e742d4384f92e796"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9d1c561fd76ee8585e7e0d25e13a3c0a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a9d1c561fd76ee8585e7e0d25e13a3c0a">PAL_BB_154_aGTSDescPersistenceTime</a>   4</td></tr>
+<tr class="memdesc:a9d1c561fd76ee8585e7e0d25e13a3c0a"><td class="mdescLeft"> </td><td class="mdescRight">The number of superframes in which a GTS descriptor exists in the beacon frame of the PAN coordinator.  <a href="#a9d1c561fd76ee8585e7e0d25e13a3c0a">More...</a><br/></td></tr>
+<tr class="separator:a9d1c561fd76ee8585e7e0d25e13a3c0a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aece37a32a33e0d26cfa415b1944ff42e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aece37a32a33e0d26cfa415b1944ff42e">PAL_BB_154_aMaxBeaconOverhead</a>   75</td></tr>
+<tr class="memdesc:aece37a32a33e0d26cfa415b1944ff42e"><td class="mdescLeft"> </td><td class="mdescRight">The maximum number of octets added by the MAC sublayer to the MAC payload of a beacon frame.  <a href="#aece37a32a33e0d26cfa415b1944ff42e">More...</a><br/></td></tr>
+<tr class="separator:aece37a32a33e0d26cfa415b1944ff42e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2cd49e68879acb4b8fd6cc0d515d677e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a2cd49e68879acb4b8fd6cc0d515d677e">PAL_BB_154_aMaxBeaconPayloadLength</a>   (<a class="el" href="pal__bb__154_8h.html#aaf6d21dfda87b8ff3e19fa748cb1acb1">PAL_BB_154_aMaxPHYPacketSize</a> - <a class="el" href="pal__bb__154_8h.html#aece37a32a33e0d26cfa415b1944ff42e">PAL_BB_154_aMaxBeaconOverhead</a>)</td></tr>
+<tr class="memdesc:a2cd49e68879acb4b8fd6cc0d515d677e"><td class="mdescLeft"> </td><td class="mdescRight">The maximum beacon payload length.  <a href="#a2cd49e68879acb4b8fd6cc0d515d677e">More...</a><br/></td></tr>
+<tr class="separator:a2cd49e68879acb4b8fd6cc0d515d677e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab7ddef8c583000a899dcd72da4ddd212"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ab7ddef8c583000a899dcd72da4ddd212">PAL_BB_154_aMaxLostBeacons</a>   4</td></tr>
+<tr class="memdesc:ab7ddef8c583000a899dcd72da4ddd212"><td class="mdescLeft"> </td><td class="mdescRight">The number of consecutive lost beacons that will cause the MAC sublayer of a receiving device to declare a loss of synchronization.  <a href="#ab7ddef8c583000a899dcd72da4ddd212">More...</a><br/></td></tr>
+<tr class="separator:ab7ddef8c583000a899dcd72da4ddd212"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8dba67cca98b857db5bdcc419d6f3aa8"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a8dba67cca98b857db5bdcc419d6f3aa8">PAL_BB_154_aMaxMPDUUnsecuredOverhead</a>   25</td></tr>
+<tr class="memdesc:a8dba67cca98b857db5bdcc419d6f3aa8"><td class="mdescLeft"> </td><td class="mdescRight">The maximum number of octets added by the MAC sublayer to the PSDU without security.  <a href="#a8dba67cca98b857db5bdcc419d6f3aa8">More...</a><br/></td></tr>
+<tr class="separator:a8dba67cca98b857db5bdcc419d6f3aa8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a64d19e245af39eeff36dfe65c2f49cd5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a64d19e245af39eeff36dfe65c2f49cd5">PAL_BB_154_aMaxSIFSFrameSize</a>   18</td></tr>
+<tr class="memdesc:a64d19e245af39eeff36dfe65c2f49cd5"><td class="mdescLeft"> </td><td class="mdescRight">The maximum size of an MPDU, in octets, that can be followed by a SIFS period.  <a href="#a64d19e245af39eeff36dfe65c2f49cd5">More...</a><br/></td></tr>
+<tr class="separator:a64d19e245af39eeff36dfe65c2f49cd5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa0fda1314bd95fb94691a65d789489f9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aa0fda1314bd95fb94691a65d789489f9">PAL_BB_154_aMinCAPLength</a>   440</td></tr>
+<tr class="memdesc:aa0fda1314bd95fb94691a65d789489f9"><td class="mdescLeft"> </td><td class="mdescRight">The minimum number of symbols forming the CAP. This ensures that MAC commands can still be transferred to devices when GTSs are being used. An exception to this minimum shall be allowed for the accommodation of the temporary increase in the beacon frame length needed to perform GTS maintenance.  <a href="#aa0fda1314bd95fb94691a65d789489f9">More...</a><br/></td></tr>
+<tr class="separator:aa0fda1314bd95fb94691a65d789489f9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a22d7bb499bba78f7d7ffac954c1fb7e5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a22d7bb499bba78f7d7ffac954c1fb7e5">PAL_BB_154_aMinMPDUOverhead</a>   9</td></tr>
+<tr class="memdesc:a22d7bb499bba78f7d7ffac954c1fb7e5"><td class="mdescLeft"> </td><td class="mdescRight">The minimum number of octets added by the MAC sublayer to the PSDU.  <a href="#a22d7bb499bba78f7d7ffac954c1fb7e5">More...</a><br/></td></tr>
+<tr class="separator:a22d7bb499bba78f7d7ffac954c1fb7e5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a960789677ede2ac7bb2c43fb0c4b304e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a960789677ede2ac7bb2c43fb0c4b304e">PAL_BB_154_aNumSuperframeSlots</a>   16</td></tr>
+<tr class="memdesc:a960789677ede2ac7bb2c43fb0c4b304e"><td class="mdescLeft"> </td><td class="mdescRight">The number of slots contained in any superframe.  <a href="#a960789677ede2ac7bb2c43fb0c4b304e">More...</a><br/></td></tr>
+<tr class="separator:a960789677ede2ac7bb2c43fb0c4b304e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a484afb0b25b1956b7749b410cc111b6d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a484afb0b25b1956b7749b410cc111b6d">PAL_BB_154_aUnitBackoffPeriod</a>   20</td></tr>
+<tr class="memdesc:a484afb0b25b1956b7749b410cc111b6d"><td class="mdescLeft"> </td><td class="mdescRight">The number of symbols forming the basic time period used by the CSMA-CA algorithm.  <a href="#a484afb0b25b1956b7749b410cc111b6d">More...</a><br/></td></tr>
+<tr class="separator:a484afb0b25b1956b7749b410cc111b6d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a428eccb4de9125d4044dfa0d137f75d9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a428eccb4de9125d4044dfa0d137f75d9">PAL_BB_154_TX_FRAME_PTR</a>(x)                     ((uint8_t *)(((<a class="el" href="pal__bb__154_8h.html#a189e27de27aef5034bd99cacaf393656">PalBb154TxBufDesc_t</a> *)(x))+1))</td></tr>
+<tr class="memdesc:a428eccb4de9125d4044dfa0d137f75d9"><td class="mdescLeft"> </td><td class="mdescRight">PAL_BB_154_TX_FRAME_PTR.  <a href="#a428eccb4de9125d4044dfa0d137f75d9">More...</a><br/></td></tr>
+<tr class="separator:a428eccb4de9125d4044dfa0d137f75d9"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a47ef120c9668a92bc4aaec69e9d2930b"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a47ef120c9668a92bc4aaec69e9d2930b">PalBb154TxIsr_t</a>) (uint8_t flags)</td></tr>
+<tr class="memdesc:a47ef120c9668a92bc4aaec69e9d2930b"><td class="mdescLeft"> </td><td class="mdescRight">Transmit complete ISR callback signature.  <a href="#a47ef120c9668a92bc4aaec69e9d2930b">More...</a><br/></td></tr>
+<tr class="separator:a47ef120c9668a92bc4aaec69e9d2930b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9f776508d9b55c76136e22dac4e533c7"><td align="right" class="memItemLeft" valign="top">typedef uint8_t(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a9f776508d9b55c76136e22dac4e533c7">PalBb154FPIsr_t</a>) (uint8_t srcAddrMode, uint64_t srcAddr)</td></tr>
+<tr class="memdesc:a9f776508d9b55c76136e22dac4e533c7"><td class="mdescLeft"> </td><td class="mdescRight">Frame pending check callback.  <a href="#a9f776508d9b55c76136e22dac4e533c7">More...</a><br/></td></tr>
+<tr class="separator:a9f776508d9b55c76136e22dac4e533c7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a692ff48ad736635e8a2801d5dea274f9"><td align="right" class="memItemLeft" valign="top">typedef uint8_t(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a692ff48ad736635e8a2801d5dea274f9">PalBb154RxIsr_t</a>) (uint8_t *pBuf, uint16_t len, int8_t rssi, uint32_t timestamp, uint8_t flags)</td></tr>
+<tr class="memdesc:a692ff48ad736635e8a2801d5dea274f9"><td class="mdescLeft"> </td><td class="mdescRight">Receive complete ISR callback signature.  <a href="#a692ff48ad736635e8a2801d5dea274f9">More...</a><br/></td></tr>
+<tr class="separator:a692ff48ad736635e8a2801d5dea274f9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af42bdb5259e58f6c140b9aa2698e17b4"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#af42bdb5259e58f6c140b9aa2698e17b4">PalBb154EdIsr_t</a>) (int8_t rssi)</td></tr>
+<tr class="memdesc:af42bdb5259e58f6c140b9aa2698e17b4"><td class="mdescLeft"> </td><td class="mdescRight">CCA or energy detect complete ISR callback signature.  <a href="#af42bdb5259e58f6c140b9aa2698e17b4">More...</a><br/></td></tr>
+<tr class="separator:af42bdb5259e58f6c140b9aa2698e17b4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a57d193540779158a2fa0d2e8cbee27a3"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a57d193540779158a2fa0d2e8cbee27a3">PalBb154Err_t</a>) (uint8_t status)</td></tr>
+<tr class="memdesc:a57d193540779158a2fa0d2e8cbee27a3"><td class="mdescLeft"> </td><td class="mdescRight">Driver error callback signature.  <a href="#a57d193540779158a2fa0d2e8cbee27a3">More...</a><br/></td></tr>
+<tr class="separator:a57d193540779158a2fa0d2e8cbee27a3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a299e2928b7cc175ebab288dc565d3fba"><td align="right" class="memItemLeft" valign="top">typedef void *(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a299e2928b7cc175ebab288dc565d3fba">PalBb154Alloc_t</a>) (uint16_t len)</td></tr>
+<tr class="memdesc:a299e2928b7cc175ebab288dc565d3fba"><td class="mdescLeft"> </td><td class="mdescRight">Buffer free callback signature.  <a href="#a299e2928b7cc175ebab288dc565d3fba">More...</a><br/></td></tr>
+<tr class="separator:a299e2928b7cc175ebab288dc565d3fba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0e3090bbde164fc414a3bfd4c5a0d0ec"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a0e3090bbde164fc414a3bfd4c5a0d0ec">PalBb154Free_t</a>) (void *pBuf)</td></tr>
+<tr class="memdesc:a0e3090bbde164fc414a3bfd4c5a0d0ec"><td class="mdescLeft"> </td><td class="mdescRight">Buffer free callback signature.  <a href="#a0e3090bbde164fc414a3bfd4c5a0d0ec">More...</a><br/></td></tr>
+<tr class="separator:a0e3090bbde164fc414a3bfd4c5a0d0ec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a189e27de27aef5034bd99cacaf393656"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="struct_pal_bb154_tx_buf_desc.html">PalBb154TxBufDesc</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a189e27de27aef5034bd99cacaf393656">PalBb154TxBufDesc_t</a></td></tr>
+<tr class="memdesc:a189e27de27aef5034bd99cacaf393656"><td class="mdescLeft"> </td><td class="mdescRight">Transmit buffer descriptor.  <a href="#a189e27de27aef5034bd99cacaf393656">More...</a><br/></td></tr>
+<tr class="separator:a189e27de27aef5034bd99cacaf393656"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab76c7076475339962a3a9e20f9c63874"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="struct_pal_bb154_drv_pib__tag.html">PalBb154DrvPib_tag</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ab76c7076475339962a3a9e20f9c63874">PalBb154DrvPib_t</a></td></tr>
+<tr class="memdesc:ab76c7076475339962a3a9e20f9c63874"><td class="mdescLeft"> </td><td class="mdescRight">MAC PIB for driver.  <a href="#ab76c7076475339962a3a9e20f9c63874">More...</a><br/></td></tr>
+<tr class="separator:ab76c7076475339962a3a9e20f9c63874"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab0c70c80e9e860eb53b5157ee357646f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ab0c70c80e9e860eb53b5157ee357646f">PalBb154Init</a> (void)</td></tr>
+<tr class="memdesc:ab0c70c80e9e860eb53b5157ee357646f"><td class="mdescLeft"> </td><td class="mdescRight">Initialize the 802.15.4 baseband driver.  <a href="#ab0c70c80e9e860eb53b5157ee357646f">More...</a><br/></td></tr>
+<tr class="separator:ab0c70c80e9e860eb53b5157ee357646f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abb487c899e0233425b3b0dad7eb45fff"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#abb487c899e0233425b3b0dad7eb45fff">PalBb154Register</a> (<a class="el" href="pal__bb__154_8h.html#a299e2928b7cc175ebab288dc565d3fba">PalBb154Alloc_t</a> allocCback, <a class="el" href="pal__bb__154_8h.html#a0e3090bbde164fc414a3bfd4c5a0d0ec">PalBb154Free_t</a> freeCback)</td></tr>
+<tr class="memdesc:abb487c899e0233425b3b0dad7eb45fff"><td class="mdescLeft"> </td><td class="mdescRight">Register callbacks for the 802.15.4 baseband driver.  <a href="#abb487c899e0233425b3b0dad7eb45fff">More...</a><br/></td></tr>
+<tr class="separator:abb487c899e0233425b3b0dad7eb45fff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6ee60a0cd37f73ff2137ae7e88ccfbd4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a6ee60a0cd37f73ff2137ae7e88ccfbd4">PalBb154Enable</a> (void)</td></tr>
+<tr class="memdesc:a6ee60a0cd37f73ff2137ae7e88ccfbd4"><td class="mdescLeft"> </td><td class="mdescRight">Enable the BB hardware.  <a href="#a6ee60a0cd37f73ff2137ae7e88ccfbd4">More...</a><br/></td></tr>
+<tr class="separator:a6ee60a0cd37f73ff2137ae7e88ccfbd4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3493fd0b4436853ae2c3a05079b75dc7"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a3493fd0b4436853ae2c3a05079b75dc7">PalBb154Disable</a> (void)</td></tr>
+<tr class="memdesc:a3493fd0b4436853ae2c3a05079b75dc7"><td class="mdescLeft"> </td><td class="mdescRight">Disable the BB hardware.  <a href="#a3493fd0b4436853ae2c3a05079b75dc7">More...</a><br/></td></tr>
+<tr class="separator:a3493fd0b4436853ae2c3a05079b75dc7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a798c4f411334b2b976c7e5c1d7ed5d68"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a798c4f411334b2b976c7e5c1d7ed5d68">PalBb154SetChannelParam</a> (const <a class="el" href="struct_pal_bb154_chan__t.html">PalBb154Chan_t</a> *pParam)</td></tr>
+<tr class="memdesc:a798c4f411334b2b976c7e5c1d7ed5d68"><td class="mdescLeft"> </td><td class="mdescRight">Set channelization parameters.  <a href="#a798c4f411334b2b976c7e5c1d7ed5d68">More...</a><br/></td></tr>
+<tr class="separator:a798c4f411334b2b976c7e5c1d7ed5d68"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a90bc8cd092813f5f86870de4ac0aa91a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a90bc8cd092813f5f86870de4ac0aa91a">PalBb154ResetChannelParam</a> (void)</td></tr>
+<tr class="memdesc:a90bc8cd092813f5f86870de4ac0aa91a"><td class="mdescLeft"> </td><td class="mdescRight">Reset channelization parameters.  <a href="#a90bc8cd092813f5f86870de4ac0aa91a">More...</a><br/></td></tr>
+<tr class="separator:a90bc8cd092813f5f86870de4ac0aa91a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8e552732bf708d9a55768851bd09573d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a8e552732bf708d9a55768851bd09573d">PalBb154SetOpParams</a> (const <a class="el" href="struct_pal_bb154_op_param__t.html">PalBb154OpParam_t</a> *pOpParam)</td></tr>
+<tr class="memdesc:a8e552732bf708d9a55768851bd09573d"><td class="mdescLeft"> </td><td class="mdescRight">Set the operation parameters.  <a href="#a8e552732bf708d9a55768851bd09573d">More...</a><br/></td></tr>
+<tr class="separator:a8e552732bf708d9a55768851bd09573d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30eeaa223c2cd020683c975b42cae3fe"><td align="right" class="memItemLeft" valign="top"><a class="el" href="pal__bb__154_8h.html#ab76c7076475339962a3a9e20f9c63874">PalBb154DrvPib_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a30eeaa223c2cd020683c975b42cae3fe">PalBb154GetDrvPIB</a> (void)</td></tr>
+<tr class="memdesc:a30eeaa223c2cd020683c975b42cae3fe"><td class="mdescLeft"> </td><td class="mdescRight">Get Driver PIB.  <a href="#a30eeaa223c2cd020683c975b42cae3fe">More...</a><br/></td></tr>
+<tr class="separator:a30eeaa223c2cd020683c975b42cae3fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae261c0bec9709ed22998a4a83e242ef8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ae261c0bec9709ed22998a4a83e242ef8">PalBb154FlushPIB</a> (void)</td></tr>
+<tr class="memdesc:ae261c0bec9709ed22998a4a83e242ef8"><td class="mdescLeft"> </td><td class="mdescRight">Flushes PIB attributes to hardware.  <a href="#ae261c0bec9709ed22998a4a83e242ef8">More...</a><br/></td></tr>
+<tr class="separator:ae261c0bec9709ed22998a4a83e242ef8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1a00d60575ea9965faf590a517449c27"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a1a00d60575ea9965faf590a517449c27">PalBb154ClearRxBufs</a> (void)</td></tr>
+<tr class="memdesc:a1a00d60575ea9965faf590a517449c27"><td class="mdescLeft"> </td><td class="mdescRight">Clear all received buffers (active and queued).  <a href="#a1a00d60575ea9965faf590a517449c27">More...</a><br/></td></tr>
+<tr class="separator:a1a00d60575ea9965faf590a517449c27"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5df3919d67c0ee5280e8cf9813167af0"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a5df3919d67c0ee5280e8cf9813167af0">PalBb154ReclaimRxFrame</a> (uint8_t *pRxFrame)</td></tr>
+<tr class="memdesc:a5df3919d67c0ee5280e8cf9813167af0"><td class="mdescLeft"> </td><td class="mdescRight">Reclaim the buffer associated with the received frame.  <a href="#a5df3919d67c0ee5280e8cf9813167af0">More...</a><br/></td></tr>
+<tr class="separator:a5df3919d67c0ee5280e8cf9813167af0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a45f8a2d7e276dc9e8f69525bab48fec3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a45f8a2d7e276dc9e8f69525bab48fec3">PalBb154BuildRxBufQueue</a> (uint8_t num)</td></tr>
+<tr class="memdesc:a45f8a2d7e276dc9e8f69525bab48fec3"><td class="mdescLeft"> </td><td class="mdescRight">Build receive buffer queue.  <a href="#a45f8a2d7e276dc9e8f69525bab48fec3">More...</a><br/></td></tr>
+<tr class="separator:a45f8a2d7e276dc9e8f69525bab48fec3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a390a0bfc8d16a38bc05c171e8f71fb94"><td align="right" class="memItemLeft" valign="top">uint8_t * </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a390a0bfc8d16a38bc05c171e8f71fb94">PalBb154GetPayloadPtr</a> (uint8_t *pFrame, uint16_t fctl)</td></tr>
+<tr class="memdesc:a390a0bfc8d16a38bc05c171e8f71fb94"><td class="mdescLeft"> </td><td class="mdescRight">Get payload pointer.  <a href="#a390a0bfc8d16a38bc05c171e8f71fb94">More...</a><br/></td></tr>
+<tr class="separator:a390a0bfc8d16a38bc05c171e8f71fb94"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6173e8aa50d69ec03332bfa814a9baf1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a6173e8aa50d69ec03332bfa814a9baf1">PalBb154Tx</a> (<a class="el" href="pal__bb__154_8h.html#a189e27de27aef5034bd99cacaf393656">PalBb154TxBufDesc_t</a> *pDesc, uint8_t cnt, uint32_t due, uint8_t now)</td></tr>
+<tr class="memdesc:a6173e8aa50d69ec03332bfa814a9baf1"><td class="mdescLeft"> </td><td class="mdescRight">Transmit a packet.  <a href="#a6173e8aa50d69ec03332bfa814a9baf1">More...</a><br/></td></tr>
+<tr class="separator:a6173e8aa50d69ec03332bfa814a9baf1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af280b982e017d4b6490c33f225439400"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#af280b982e017d4b6490c33f225439400">PalBb154Rx</a> (uint32_t due, uint8_t now, uint32_t timeout)</td></tr>
+<tr class="memdesc:af280b982e017d4b6490c33f225439400"><td class="mdescLeft"> </td><td class="mdescRight">Receive a packet.  <a href="#af280b982e017d4b6490c33f225439400">More...</a><br/></td></tr>
+<tr class="separator:af280b982e017d4b6490c33f225439400"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a72dc973ba27c361677675777a99fb71f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a72dc973ba27c361677675777a99fb71f">PalBb154Ed</a> (uint32_t due, uint8_t now)</td></tr>
+<tr class="memdesc:a72dc973ba27c361677675777a99fb71f"><td class="mdescLeft"> </td><td class="mdescRight">Perform energy detect.  <a href="#a72dc973ba27c361677675777a99fb71f">More...</a><br/></td></tr>
+<tr class="separator:a72dc973ba27c361677675777a99fb71f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aac5e6534dca553fa8f8d3c51f01ea9b3"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#aac5e6534dca553fa8f8d3c51f01ea9b3">PalBb154Off</a> (void)</td></tr>
+<tr class="memdesc:aac5e6534dca553fa8f8d3c51f01ea9b3"><td class="mdescLeft"> </td><td class="mdescRight">Cancel any pending operation.  <a href="#aac5e6534dca553fa8f8d3c51f01ea9b3">More...</a><br/></td></tr>
+<tr class="separator:aac5e6534dca553fa8f8d3c51f01ea9b3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9a8b461ad0b38bad804c7b96d7765ca7"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a9a8b461ad0b38bad804c7b96d7765ca7">PalBb154RssiToLqi</a> (int8_t rssi)</td></tr>
+<tr class="memdesc:a9a8b461ad0b38bad804c7b96d7765ca7"><td class="mdescLeft"> </td><td class="mdescRight">Convert RSSI to LQI.  <a href="#a9a8b461ad0b38bad804c7b96d7765ca7">More...</a><br/></td></tr>
+<tr class="separator:a9a8b461ad0b38bad804c7b96d7765ca7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a308df23d6a14b3ed43b4f560a9abfb0c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a308df23d6a14b3ed43b4f560a9abfb0c">PalBb154GetLastRssi</a> (uint8_t *pBuf)</td></tr>
+<tr class="memdesc:a308df23d6a14b3ed43b4f560a9abfb0c"><td class="mdescLeft"> </td><td class="mdescRight">Return the last received RSSI.  <a href="#a308df23d6a14b3ed43b4f560a9abfb0c">More...</a><br/></td></tr>
+<tr class="separator:a308df23d6a14b3ed43b4f560a9abfb0c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1102ceb728efb7e6d4efd22af9e59bb0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a1102ceb728efb7e6d4efd22af9e59bb0">PalBb154ContinuousTx</a> (uint8_t rfChan, uint8_t modulation, uint8_t txPhy, int8_t power)</td></tr>
+<tr class="memdesc:a1102ceb728efb7e6d4efd22af9e59bb0"><td class="mdescLeft"> </td><td class="mdescRight">Enter Continuous Transmit mode.  <a href="#a1102ceb728efb7e6d4efd22af9e59bb0">More...</a><br/></td></tr>
+<tr class="separator:a1102ceb728efb7e6d4efd22af9e59bb0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad406499696e234467aa2826105e239d4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#ad406499696e234467aa2826105e239d4">PalBb154ContinuousRx</a> (uint8_t rfChan, uint8_t rxPhy)</td></tr>
+<tr class="memdesc:ad406499696e234467aa2826105e239d4"><td class="mdescLeft"> </td><td class="mdescRight">Enter Continuous Receive mode.  <a href="#ad406499696e234467aa2826105e239d4">More...</a><br/></td></tr>
+<tr class="separator:ad406499696e234467aa2826105e239d4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a71280a45df30b8684eabc4e9915907f3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a71280a45df30b8684eabc4e9915907f3">PalBb154ContinuousStop</a> (void)</td></tr>
+<tr class="memdesc:a71280a45df30b8684eabc4e9915907f3"><td class="mdescLeft"> </td><td class="mdescRight">Stop Continous Transmit or Receive mode.  <a href="#a71280a45df30b8684eabc4e9915907f3">More...</a><br/></td></tr>
+<tr class="separator:a71280a45df30b8684eabc4e9915907f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7f8be640c4f4ff7a2da3f051dbe94f5f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="pal__bb__154_8h.html#a7f8be640c4f4ff7a2da3f051dbe94f5f">PalBb154DrvGetStats</a> (<a class="el" href="struct_pal_bb154_drv_stats__t.html">PalBb154DrvStats_t</a> *pStats)</td></tr>
+<tr class="memdesc:a7f8be640c4f4ff7a2da3f051dbe94f5f"><td class="mdescLeft"> </td><td class="mdescRight">Get baseband driver statistics.  <a href="#a7f8be640c4f4ff7a2da3f051dbe94f5f">More...</a><br/></td></tr>
+<tr class="separator:a7f8be640c4f4ff7a2da3f051dbe94f5f"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>IEEE 802.15.4 MAC Baseband driver interface file. </p>
+<p>Copyright (c) 2016-2019 Arm Ltd. All Rights Reserved.</p>
+<p>Copyright (c) 2019-2020 Packetcraft, Inc.</p>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">http://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+
+<p>Definition in file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a1e7d4d16fb4d5c8ac4aa66022d8842ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aBaseSlotDuration   60</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of symbols forming a superframe slot when the superframe order is equal to 0. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00259">259</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4d2973302d6d9452e742d4384f92e796"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aBaseSuperframeDuration   (<a class="el" href="pal__bb__154_8h.html#a1e7d4d16fb4d5c8ac4aa66022d8842ac">PAL_BB_154_aBaseSlotDuration</a> * <a class="el" href="pal__bb__154_8h.html#a960789677ede2ac7bb2c43fb0c4b304e">PAL_BB_154_aNumSuperframeSlots</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of symbols forming a superframe when the superframe order is equal to 0. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00262">262</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9d1c561fd76ee8585e7e0d25e13a3c0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aGTSDescPersistenceTime   4</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of superframes in which a GTS descriptor exists in the beacon frame of the PAN coordinator. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00268">268</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aece37a32a33e0d26cfa415b1944ff42e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMaxBeaconOverhead   75</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The maximum number of octets added by the MAC sublayer to the MAC payload of a beacon frame. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00271">271</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cd49e68879acb4b8fd6cc0d515d677e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMaxBeaconPayloadLength   (<a class="el" href="pal__bb__154_8h.html#aaf6d21dfda87b8ff3e19fa748cb1acb1">PAL_BB_154_aMaxPHYPacketSize</a> - <a class="el" href="pal__bb__154_8h.html#aece37a32a33e0d26cfa415b1944ff42e">PAL_BB_154_aMaxBeaconOverhead</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The maximum beacon payload length. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00274">274</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7ddef8c583000a899dcd72da4ddd212"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMaxLostBeacons   4</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of consecutive lost beacons that will cause the MAC sublayer of a receiving device to declare a loss of synchronization. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00278">278</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8dba67cca98b857db5bdcc419d6f3aa8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMaxMPDUUnsecuredOverhead   25</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The maximum number of octets added by the MAC sublayer to the PSDU without security. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00281">281</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf6d21dfda87b8ff3e19fa748cb1acb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMaxPHYPacketSize   127</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The maximum PSDU size (in octets) the PHY shall be able to receive. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00242">242</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a64d19e245af39eeff36dfe65c2f49cd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMaxSIFSFrameSize   18</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The maximum size of an MPDU, in octets, that can be followed by a SIFS period. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00284">284</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0fda1314bd95fb94691a65d789489f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMinCAPLength   440</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The minimum number of symbols forming the CAP. This ensures that MAC commands can still be transferred to devices when GTSs are being used. An exception to this minimum shall be allowed for the accommodation of the temporary increase in the beacon frame length needed to perform GTS maintenance. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00291">291</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22d7bb499bba78f7d7ffac954c1fb7e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aMinMPDUOverhead   9</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The minimum number of octets added by the MAC sublayer to the PSDU. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00294">294</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a960789677ede2ac7bb2c43fb0c4b304e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aNumSuperframeSlots   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of slots contained in any superframe. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00297">297</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac49b251f61e688adb9bf330f72633305"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aTurnaroundTime   12</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>RX-to-TX or TX-to-RX maximum turnaround time (in symbol periods). </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00245">245</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a484afb0b25b1956b7749b410cc111b6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_aUnitBackoffPeriod   20</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of symbols forming the basic time period used by the CSMA-CA algorithm. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00300">300</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aabbf109d75c99a008b204c39dbd9ddc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_ED_DURATION   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>ED duration in symbols (802.15.4-2006 6.9.7). </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00220">220</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6036ab174cf7b669f1473f5d5fac71d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_ED_THRESHOLD   -75</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Energy detect threshold in dBm. </p>
+<p>10 dBm above 802.15.4 specified -85 dBm </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00149">149</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7c4bacdd786420609435368e17d8ab7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   (((x) &amp; <a class="el" href="pal__bb__154_8h.html#af5f583e03e6c99fd1ae30a757e708891">PAL_BB_154_FC_FRAME_TYPE_MASK</a>)/*&gt;&gt; <a class="el" href="pal__bb__154_8h.html#ad2e308db1237e2e2ad6802ded262067e">PAL_BB_154_FC_FRAME_TYPE_SHIFT</a>*/)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Optimized bit 0. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00170">170</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a191d293581dd3274dc6f57e022a51cdb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE_ACK_TEST   (PAL_BB_154_FC_ACK_REQUEST_MASK | <a class="el" href="pal__bb__154_8h.html#a22e66b9b9ce989fa9fd0fd3be10282e9">PAL_BB_154_FC_FRAME_TYPE_CD_MASK</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Mask for checking ack. sending based on ack. requested and being a MAC command or data frame. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00207">207</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22e66b9b9ce989fa9fd0fd3be10282e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE_CD_MASK   0x0001</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Convenient way of checking if MAC command or data. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00168">168</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7c03cdc6075d645e13dcd8e0d24d2ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE_CMD_MASK   0x0003</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Convenient way of checking if MAC command. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00169">169</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a294818e5d9b5c3e49842190c54d17520"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE_FP_TEST   (PAL_BB_154_FC_ACK_REQUEST_MASK | <a class="el" href="pal__bb__154_8h.html#ac7c03cdc6075d645e13dcd8e0d24d2ed">PAL_BB_154_FC_FRAME_TYPE_CMD_MASK</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Mask for checking frame pending processing based on ack. requested and being a MAC command frame. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00204">204</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5f583e03e6c99fd1ae30a757e708891"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE_MASK   0x0007</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Bitmask. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00167">167</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2e308db1237e2e2ad6802ded262067e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_FRAME_TYPE_SHIFT   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Frame control bits and fields. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00166">166</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2aa94885d1ffefa9b587e5ca9079edec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FC_LEGACY_SEC_TEST</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   (((x) &amp; (PAL_BB_154_FC_SECURITY_ENABLED_MASK | PAL_BB_154_FC_FRAME_VERSION_MASK)) == PAL_BB_154_FC_SECURITY_ENABLED_MASK)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Mask for checking legacy security. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00201">201</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5696bddbbf1ebbc22a0862852fbbf4f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FCS_INIT_VALUE   0x0000</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>FCS initialization value. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00163">163</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a821c40eba9a0f1657291f8beeab45413"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FCS_LEN   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Size of FCS in octets. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00160">160</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0ab4fcbb32baf2337e64626f9b0a76a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FLAG_TX_RX_AUTO_ACK   (<a class="el" href="pal__bb__154_8h.html#a70bd01545ca54514ee53e0eb670b9562a93d6acf4c99953f880ac87ced10a19fb">PAL_BB_154_FLAG_TX_AUTO_RX_ACK</a> | <a class="el" href="pal__bb__154_8h.html#a70bd01545ca54514ee53e0eb670b9562a45523b48712b057e3547adea63659a6c">PAL_BB_154_FLAG_RX_AUTO_TX_ACK</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>PAL_BB_154_FLAG_TX_RX_AUTO_ACK. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00138">138</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaccd934396dc7f817b79e7b9e1dfb0ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_FRAME_CONTROL_LEN   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Size of frame control in octets. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00157">157</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f38df3f367ed38c47cf144c051a1e09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_MIN_RX_BUF_CNT   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Minimum number of receive buffers. </p>
+<p>PAL_BB_154_MIN_RX_BUF_CNT. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00039">39</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a210a47aeabe41fc4a5e4809634f7e258"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_phySHRDuration   10</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHR duration for 802.15.4-2006. (2.4GHz PHY) </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00253">253</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07946f78a2a43c45de22ee34315f381c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_phySymbolsPerOctet   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Symbols per octet for 802.15.4-2006. (2.4GHz PHY) </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00256">256</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82bf2d57cf7caa71b16f841ce9dc563d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_PREAMBLE_FIELD_LENGTH   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Preamble field length in symbols (2450 MHz O-QPSK). </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00231">231</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1b0aececc50e6854c77e2c337fc9099"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_RX_BUF_CNT   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>PAL_BB_154_RX_BUF_CNT. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00040">40</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a4ee33e487fb48989bcad7946128274"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SCAN_MAX_ED_ENTRIES   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Note - can't have more than 16 for 2.4GHz. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00210">210</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9052014399bab2de1950922e79220c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SCAN_MAX_PD_ENTRIES   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Note - arbitrary number and could make it easy by sending all beacons using beacon notify indication. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00209">209</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e326692f6cfcffdf77c48255236a02a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SFD_FIELD_LENGTH   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SFD field length in symbols (2450 MHz O-QPSK). </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00234">234</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30e43797adcd1b4956816d0596a082a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SYMB_TO_MS</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   (((x) * 16) / 1000)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>PAL_BB_154_SYMB_TO_MS. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00142">142</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93ffd77979fb915e187d3db48679d569"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SYMB_TO_US</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   ((x) * 16)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>PAL_BB_154_SYMB_TO_US. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00141">141</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa88b01838c30cd1572588baaa84334b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SYMBOL_DURATION   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Symbol duration in microseconds (2450 MHz O-QPSK). </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00217">217</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6ac8e6401d79bac9e5812038b0bb486"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_SYMBOLS_PER_OCTET   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The number of symbols per octets for the current PHY (2450 MHz O-QPSK). </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00223">223</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6d64a4ad1b6e8c8f8d3bc7f9f72fe3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_TPT_TO_MS</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   (((x) * 15723) &gt;&gt; 10)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>15723/1024 approximates to 15.36 </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00146">146</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a428eccb4de9125d4044dfa0d137f75d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_TX_FRAME_PTR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   ((uint8_t *)(((<a class="el" href="pal__bb__154_8h.html#a189e27de27aef5034bd99cacaf393656">PalBb154TxBufDesc_t</a> *)(x))+1))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>PAL_BB_154_TX_FRAME_PTR. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00359">359</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab860f6413be3c889d8954970c5e0007a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PAL_BB_154_US_TO_SYMB</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">x</td><td>)</td>
+          <td>   ((x) / 16)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>PAL_BB_154_US_TO_SYMB. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00143">143</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a299e2928b7cc175ebab288dc565d3fba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void*(* PalBb154Alloc_t) (uint16_t len)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Buffer free callback signature. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00334">334</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab76c7076475339962a3a9e20f9c63874"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="struct_pal_bb154_drv_pib__tag.html">PalBb154DrvPib_tag</a>  <a class="el" href="pal__bb__154_8h.html#ab76c7076475339962a3a9e20f9c63874">PalBb154DrvPib_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MAC PIB for driver. </p>
+
+</div>
+</div>
+<a class="anchor" id="af42bdb5259e58f6c140b9aa2698e17b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* PalBb154EdIsr_t) (int8_t rssi)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>CCA or energy detect complete ISR callback signature. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00328">328</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57d193540779158a2fa0d2e8cbee27a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* PalBb154Err_t) (uint8_t status)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Driver error callback signature. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00331">331</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f776508d9b55c76136e22dac4e533c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef uint8_t(* PalBb154FPIsr_t) (uint8_t srcAddrMode, uint64_t srcAddr)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Frame pending check callback. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00322">322</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e3090bbde164fc414a3bfd4c5a0d0ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* PalBb154Free_t) (void *pBuf)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Buffer free callback signature. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00337">337</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a692ff48ad736635e8a2801d5dea274f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef uint8_t(* PalBb154RxIsr_t) (uint8_t *pBuf, uint16_t len, int8_t rssi, uint32_t timestamp, uint8_t flags)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Receive complete ISR callback signature. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00325">325</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a189e27de27aef5034bd99cacaf393656"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="struct_pal_bb154_tx_buf_desc.html">PalBb154TxBufDesc</a>  <a class="el" href="pal__bb__154_8h.html#a189e27de27aef5034bd99cacaf393656">PalBb154TxBufDesc_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Transmit buffer descriptor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a47ef120c9668a92bc4aaec69e9d2930b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* PalBb154TxIsr_t) (uint8_t flags)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Transmit complete ISR callback signature. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00319">319</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a19ec6beb56ffd72599a9e41ec1024563"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Driver status flags. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a19ec6beb56ffd72599a9e41ec1024563ab0ce176fca8c691893fa798d0919fc28"></a>PAL_BB_154_FLAG_RX_ACK_CMPL </td><td class="fielddoc">
+<p>Rx ack. completed. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a19ec6beb56ffd72599a9e41ec1024563a66b687995a731a22c49e8f659f06f475"></a>PAL_BB_154_FLAG_TX_ACK_CMPL </td><td class="fielddoc">
+<p>Tx ack. completed. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a19ec6beb56ffd72599a9e41ec1024563abac1725081cc26bccefdbf5b379f86b4"></a>PAL_BB_154_FLAG_RX_ACK_START </td><td class="fielddoc">
+<p>Rx ack. started. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a19ec6beb56ffd72599a9e41ec1024563a960c762a5a6f1962bb070e62ba121a7a"></a>PAL_BB_154_FLAG_TX_ACK_START </td><td class="fielddoc">
+<p>Tx ack. started. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00043">43</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70bd01545ca54514ee53e0eb670b9562"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Operation flags. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a70bd01545ca54514ee53e0eb670b9562a93d6acf4c99953f880ac87ced10a19fb"></a>PAL_BB_154_FLAG_TX_AUTO_RX_ACK </td><td class="fielddoc">
+<p>Automatically wait for ACK after transmit completes. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a70bd01545ca54514ee53e0eb670b9562a45523b48712b057e3547adea63659a6c"></a>PAL_BB_154_FLAG_RX_AUTO_TX_ACK </td><td class="fielddoc">
+<p>Automatically send ACK after receive completes. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a70bd01545ca54514ee53e0eb670b9562a35827952db4bcb62726c540f43df76f8"></a>PAL_BB_154_FLAG_RX_WHILE_ED </td><td class="fielddoc">
+<p>Receive any packet detected while performing ED. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a70bd01545ca54514ee53e0eb670b9562ad5e76dca2c6aceb727e1413f58620714"></a>PAL_BB_154_FLAG_DIS_CCA </td><td class="fielddoc">
+<p>Disable CCA before transmit. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a70bd01545ca54514ee53e0eb670b9562a9893c8410bdbf40bc584e445dd1f79d1"></a>PAL_BB_154_FLAG_RAW </td><td class="fielddoc">
+<p>Treat as raw frame </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00052">52</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb8d583a31cccbb8cf9b452a8e298063"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Receive flags. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aeb8d583a31cccbb8cf9b452a8e298063aeca75a3b4b9ce84e3292fd08453296e6"></a>PAL_BB_154_RX_FLAG_GO_IDLE </td><td class="fielddoc">
+<p>Can go idle. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aeb8d583a31cccbb8cf9b452a8e298063ad0fd440a92677a1204d300f7a53bdfb3"></a>PAL_BB_154_RX_FLAG_SET_ACK_FP </td><td class="fielddoc">
+<p>Set frame pending in ack. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00062">62</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a730c1c73ca745c2887e55fe7f3fd354a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="pal__bb__154_8h.html#a730c1c73ca745c2887e55fe7f3fd354a">PalBb154AddrMode_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Addressing mode. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00074">74</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc21aa782bf513790e794e70c6f02da7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="pal__bb__154_8h.html#abc21aa782bf513790e794e70c6f02da7">PalBb154CmdType_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Values of MAC command type. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00105">105</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba934b0d423d355ac67255d7a3895dfc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="pal__bb__154_8h.html#aba934b0d423d355ac67255d7a3895dfc">PalBb154DevType_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MAC device type (vendor specific). </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aba934b0d423d355ac67255d7a3895dfca358cf703e01e2ef66021101075698db9"></a>PAL_BB_154_DEV_TYPE_DEVICE </td><td class="fielddoc">
+<p>Device is not a coordinator </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aba934b0d423d355ac67255d7a3895dfca41b7abc8e3efe58c83b5700a975d031e"></a>PAL_BB_154_DEV_TYPE_COORD </td><td class="fielddoc">
+<p>Device is a coordinator but not a PAN coordinator </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aba934b0d423d355ac67255d7a3895dfcae27495cc968b45057f5526579149b130"></a>PAL_BB_154_DEV_TYPE_PAN_COORD </td><td class="fielddoc">
+<p>Device is a PAN coordinator </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00119">119</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97b2a81708faad4fd9ecae2e0c036cef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="pal__bb__154_8h.html#a97b2a81708faad4fd9ecae2e0c036cef">PalBb154FrameType_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Values of frame type in FC. </p>
+
+<p>Definition at line <a class="el" href="pal__bb__154_8h_source.html#l00087">87</a> of file <a class="el" href="pal__bb__154_8h_source.html">pal_bb_154.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a45f8a2d7e276dc9e8f69525bab48fec3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154BuildRxBufQueue </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Build receive buffer queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">len</td><td>Length of each receive buffer. </td></tr>
+    <tr><td class="paramname">num</td><td>Number of buffers to load into the queue. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1a00d60575ea9965faf590a517449c27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154ClearRxBufs </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear all received buffers (active and queued). </p>
+<p>Calling this routine will clear and free the active receive buffer (if any) and all queued receive buffers. This should only be called when the operation is terminating. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad406499696e234467aa2826105e239d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154ContinuousRx </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>rfChan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>rxPhy</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enter Continuous Receive mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">rfChan</td><td>Physical channel number </td></tr>
+    <tr><td class="paramname">rxPhy</td><td>PHY type </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a71280a45df30b8684eabc4e9915907f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154ContinuousStop </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Stop Continous Transmit or Receive mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1102ceb728efb7e6d4efd22af9e59bb0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154ContinuousTx </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>rfChan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>modulation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>txPhy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t </td>
+          <td class="paramname"><em>power</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enter Continuous Transmit mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">rfChan</td><td>Physical channel number </td></tr>
+    <tr><td class="paramname">modulation</td><td>Modulation type (0 disables) </td></tr>
+    <tr><td class="paramname">txPhy</td><td>PHY type </td></tr>
+    <tr><td class="paramname">power</td><td>Pransmit power (dBm) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3493fd0b4436853ae2c3a05079b75dc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Disable </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Disable the BB hardware. </p>
+<p>This routine signals the BB hardware to go into low power (disable power and clocks). This routine is called after all 802.15.4 operations are disabled. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7f8be640c4f4ff7a2da3f051dbe94f5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154DrvGetStats </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_pal_bb154_drv_stats__t.html">PalBb154DrvStats_t</a> * </td>
+          <td class="paramname"><em>pStats</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get baseband driver statistics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pStats</td><td>Storage for statistics. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a72dc973ba27c361677675777a99fb71f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Ed </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>due</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>now</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Perform energy detect. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">due</td><td>Due time for energy detect (if <em>now</em> is FALSE). </td></tr>
+    <tr><td class="paramname">now</td><td>TRUE if energy detect should occur minimal delay.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Perform energy detect and return energy level to assess channel status. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6ee60a0cd37f73ff2137ae7e88ccfbd4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Enable </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enable the BB hardware. </p>
+<p>This routine brings the BB hardware out of low power (enable power and clocks). This routine is called just before a 802.15.4 BOD is executed. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae261c0bec9709ed22998a4a83e242ef8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154FlushPIB </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Flushes PIB attributes to hardware. </p>
+<p>Calling this routine will flush all PIB attributes that have a hardware counterpart to the respective registers in hardware. </p>
+
+</div>
+</div>
+<a class="anchor" id="a30eeaa223c2cd020683c975b42cae3fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="pal__bb__154_8h.html#ab76c7076475339962a3a9e20f9c63874">PalBb154DrvPib_t</a>* PalBb154GetDrvPIB </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get Driver PIB. </p>
+<dl class="section return"><dt>Returns</dt><dd>Driver PIB pointer.</dd></dl>
+<p>Calling this routine retun a pointer to the driver PIB. </p>
+
+</div>
+</div>
+<a class="anchor" id="a308df23d6a14b3ed43b4f560a9abfb0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154GetLastRssi </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pBuf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Return the last received RSSI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pBuf</td><td>Storage for results – first element is integer dBm, second is fractional </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a390a0bfc8d16a38bc05c171e8f71fb94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t* PalBb154GetPayloadPtr </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t </td>
+          <td class="paramname"><em>fctl</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get payload pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pFrame</td><td>Frame buffer pointing to first octet of frame </td></tr>
+    <tr><td class="paramname">fctl</td><td>Frame control field</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to frame payload or NULL if illegal addr mode combo.</dd></dl>
+<p>Obtains the source and destination addresses from the frame. If either parameter is NULL, simply skips past the fields </p>
+
+</div>
+</div>
+<a class="anchor" id="ab0c70c80e9e860eb53b5157ee357646f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Init </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize the 802.15.4 baseband driver. </p>
+<p>One-time initialization of baseband resources. This routine can be used to setup software driver resources, load RF trim parameters and execute RF calibrations.</p>
+<p>This routine should block until the BB hardware is completely initialized. </p>
+
+</div>
+</div>
+<a class="anchor" id="aac5e6534dca553fa8f8d3c51f01ea9b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t PalBb154Off </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Cancel any pending operation. </p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if pending operation could be cancelled.</dd></dl>
+<p>Cancel any pending operation. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5df3919d67c0ee5280e8cf9813167af0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t PalBb154ReclaimRxFrame </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pRxFrame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reclaim the buffer associated with the received frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pRxFrame</td><td>Pointer to the received frame.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Total number of receive buffers queued.</dd></dl>
+<p>Calling this routine will put the buffer associated with the received frame back onto the receive queue. Note the actual buffer pointer may not be the same as the frame pointer dependent on driver implementation. If the queue is empty when the driver expects to transition to the receive state, the driver will instead move into the off state. </p>
+
+</div>
+</div>
+<a class="anchor" id="abb487c899e0233425b3b0dad7eb45fff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Register </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pal__bb__154_8h.html#a299e2928b7cc175ebab288dc565d3fba">PalBb154Alloc_t</a> </td>
+          <td class="paramname"><em>allocCback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pal__bb__154_8h.html#a0e3090bbde164fc414a3bfd4c5a0d0ec">PalBb154Free_t</a> </td>
+          <td class="paramname"><em>freeCback</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Register callbacks for the 802.15.4 baseband driver. </p>
+
+</div>
+</div>
+<a class="anchor" id="a90bc8cd092813f5f86870de4ac0aa91a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154ResetChannelParam </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reset channelization parameters. </p>
+<p>Calling this routine will reset (clear) the channelization parameters. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9a8b461ad0b38bad804c7b96d7765ca7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t PalBb154RssiToLqi </td>
+          <td>(</td>
+          <td class="paramtype">int8_t </td>
+          <td class="paramname"><em>rssi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Convert RSSI to LQI. </p>
+<dl class="section return"><dt>Returns</dt><dd>LQI value.</dd></dl>
+<p>Converts RSSI value into equivalent LQI value from 0 to 0xFF. </p>
+
+</div>
+</div>
+<a class="anchor" id="af280b982e017d4b6490c33f225439400"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Rx </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>due</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>now</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>timeout</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Receive a packet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">due</td><td>Due time for receive (if <em>now</em> is FALSE). </td></tr>
+    <tr><td class="paramname">now</td><td>TRUE if packet should be received with minimal delay. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a798c4f411334b2b976c7e5c1d7ed5d68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154SetChannelParam </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_pal_bb154_chan__t.html">PalBb154Chan_t</a> * </td>
+          <td class="paramname"><em>pParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set channelization parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pParam</td><td>Channelization parameters.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Calling this routine will set parameters for all future transmit, receive, and energy detect operations until this routine is called again providing new parameters.</p>
+<dl class="section note"><dt>Note</dt><dd><em>pParam</em> is not guaranteed to be static and is only valid in the context of the call to this routine. Therefore parameters requiring persistence should be copied. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e552732bf708d9a55768851bd09573d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154SetOpParams </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_pal_bb154_op_param__t.html">PalBb154OpParam_t</a> * </td>
+          <td class="paramname"><em>pOpParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set the operation parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pOpParam</td><td>Operations parameters.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Calling this routine will set parameters for all future transmit, receive, ED, and CCA operations until this routine is called again providing new parameters.</p>
+<dl class="section note"><dt>Note</dt><dd><em>pOpParam</em> is not guaranteed to be static and is only valid in the context of the call to this routine. Therefore parameters requiring persistence should be copied. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6173e8aa50d69ec03332bfa814a9baf1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void PalBb154Tx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pal__bb__154_8h.html#a189e27de27aef5034bd99cacaf393656">PalBb154TxBufDesc_t</a> * </td>
+          <td class="paramname"><em>pDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>cnt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>due</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>now</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Transmit a packet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pDesc</td><td>Chain of transmit buffer descriptors. </td></tr>
+    <tr><td class="paramname">cnt</td><td>Number of descriptors. </td></tr>
+    <tr><td class="paramname">due</td><td>Due time for transmit (if <em>now</em> is FALSE). </td></tr>
+    <tr><td class="paramname">now</td><td>TRUE if packet should be transmitted with minimal delay. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/pal__bb__154_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:25:49 GMT -->
+</html>

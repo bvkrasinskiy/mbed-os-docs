@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/utest__case_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:10:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | utest_case.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="utest__case_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/utest__case_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/utest__case_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_c6fb7cfc6dd92a7f08bce53368056667.html">features</a></li><li class="navelem"><a class="el" href="dir_7b9915a6b90f4633002965b77ce294d4.html">frameworks</a></li><li class="navelem"><a class="el" href="dir_5699a11c10a2fdcc134a379e6195f69a.html">utest</a></li><li class="navelem"><a class="el" href="dir_5d0f3f0706ce921b033e8a49e16a520d.html">utest</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">utest_case.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/****************************************************************************</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * Copyright (c) 2015, ARM Limited, All Rights Reserved</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> * SPDX-License-Identifier: Apache-2.0</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> * Licensed under the Apache License, Version 2.0 (the "License"); you may</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * not use this file except in compliance with the License.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * You may obtain a copy of the License at</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> * http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> * See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * limitations under the License.</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> ****************************************************************************</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> */</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="preprocessor">#ifndef UTEST_CASES_H</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="preprocessor">#define UTEST_CASES_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#include "utest/utest_types.h"</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#include "utest/utest_default_handlers.h"</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> </div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="keyword">namespace </span><a class="code" href="namespaceutest.html">utest</a> {<span class="comment"></span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="comment">/** \addtogroup frameworks */</span><span class="comment"></span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment">/** @{*/</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="keyword">namespace </span>v1 {<span class="comment"></span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment">    /**</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment">     * POD data structure of the Case class.</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment">     * Unlike the Case class it can be used as a POD and be put in ROM.</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment">     *</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="comment">     * @warning Initialization of handlers with either default_handler or </span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment">     * ignore_handler helpers will prevent the object to be a POD. Prefer usage </span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment">     * of NULL in favor of ignore_handler or \verbatim &lt;handler_type&gt;(1) \endverbatim for default </span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="comment">     * handler.</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">     *</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">     * @see Case.</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment">     */</span></div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structutest_1_1v1_1_1case__t.html">   44</a></span>     <span class="keyword">struct </span><a class="code" href="structutest_1_1v1_1_1case__t.html">case_t</a></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>     {<span class="comment"></span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="comment">        /**</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="comment">         * Textual description of the test case</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="comment">         */</span></div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__frameworks.html#ga68344fa88cf4e86b5079fd69a5c22d57">   49</a></span>         <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="group__frameworks.html#ga68344fa88cf4e86b5079fd69a5c22d57">description</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment"></span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment">        /**</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">         * Primitive test case handler</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment">         * This is called only if the case setup succeeded. It is followed by</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">         * the test case teardown handler.</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment">         */</span></div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__frameworks.html#ga883066ab3c0b7e4ec4c4fc79be50b2a2">   56</a></span>         <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga47023813314597a578c5a5cb9f46fc9d">case_handler_t</a> <a class="code" href="group__frameworks.html#ga883066ab3c0b7e4ec4c4fc79be50b2a2">handler</a>;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment"></span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment">        /**</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment">         * @see case_control_handler_t</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="comment">         */</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group__frameworks.html#gabecef992179f0fb702c37dd31b25218f">   61</a></span>         <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9b6cf551e9f273263103f2bb18a6858b">case_control_handler_t</a> <a class="code" href="group__frameworks.html#gabecef992179f0fb702c37dd31b25218f">control_handler</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="comment"></span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment">        /**</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">         * @see case_call_count_handler_t</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="comment">         */</span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group__frameworks.html#ga9d77ae87be98a647ab059087d2749eee">   66</a></span>         <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9727b396157b786da73d838e308cad92">case_call_count_handler_t</a> <a class="code" href="group__frameworks.html#ga9d77ae87be98a647ab059087d2749eee">repeat_count_handler</a>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> <span class="comment"></span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment">        /**</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">         * Handler called before the execution of the case handler. It sets up</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">         * the case environment.</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">         */</span></div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__frameworks.html#ga1ed101bf93f293e9f7e54b69c3f0a58a">   72</a></span>         <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga54599c60cbf544784d361db93571cfd1">case_setup_handler_t</a> <a class="code" href="group__frameworks.html#ga1ed101bf93f293e9f7e54b69c3f0a58a">setup_handler</a>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment"></span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">        /**</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment">         * Handler called after the execution of the case handler. It cleans up</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">         * the case environment.</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">         */</span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__frameworks.html#ga6c8eb63c30ea765b3f6ff538b4088fa7">   78</a></span>         <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> <a class="code" href="group__frameworks.html#ga6c8eb63c30ea765b3f6ff538b4088fa7">teardown_handler</a>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment"></span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">        /**</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="comment">         * Handler called whenever a faillure occur; at any stage of the case</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">         * execution (including setup and teardown).</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">         */</span></div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">   84</a></span>         <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>     };</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="comment"></span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment">    /** Test case wrapper class.</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment">     *</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment">     * This class contains the description of the test case and all handlers</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">     * for setting up, running the test case, tearing down and handling failures.</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> <span class="comment">     *</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment">     * By default you only need to provide a description and a test case handler.</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">     * You may override the setup, teardown and failure handlers, but you do not have to.</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">     * If you do not override these handler, the specified default handlers will be called.</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">     *</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">     * These constructors are overloaded to allow you a comfortable declaration of all your</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">     * callbacks.</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="comment">     * The order is always:</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment">     *  - description (required)</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment">     *  - setup handler (optional)</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment">     *  - test case handler (required)</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment">     *  - teardown handler (optional)</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment">     *  - failure handler (optional)</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">     *</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">     * @note While you can specify an empty test case (ie. use `ignore_handler` for all callbacks),</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">     *       the harness will abort the test unconditionally.</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment">     */</span></div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classutest_1_1v1_1_1_case.html">  108</a></span>     <span class="keyword">class </span><a class="code" href="classutest_1_1v1_1_1_case.html">Case</a> : <span class="keyword">private</span> <a class="code" href="structutest_1_1v1_1_1case__t.html">case_t</a></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>     {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>     <span class="keyword">public</span>:</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>         <span class="comment">// overloads for case_handler_t</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="group__frameworks.html#ga68344fa88cf4e86b5079fd69a5c22d57">description</a>,</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga54599c60cbf544784d361db93571cfd1">case_setup_handler_t</a> <a class="code" href="group__frameworks.html#ga1ed101bf93f293e9f7e54b69c3f0a58a">setup_handler</a>,</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga47023813314597a578c5a5cb9f46fc9d">case_handler_t</a> case_handler,</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> <a class="code" href="group__frameworks.html#ga6c8eb63c30ea765b3f6ff538b4088fa7">teardown_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>,</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> </div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga47023813314597a578c5a5cb9f46fc9d">case_handler_t</a> case_handler,</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> </div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga47023813314597a578c5a5cb9f46fc9d">case_handler_t</a> case_handler,</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> <a class="code" href="group__frameworks.html#ga6c8eb63c30ea765b3f6ff538b4088fa7">teardown_handler</a>,</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> </div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>         <span class="comment">// overloads for case_control_handler_t</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga54599c60cbf544784d361db93571cfd1">case_setup_handler_t</a> setup_handler,</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9b6cf551e9f273263103f2bb18a6858b">case_control_handler_t</a> case_handler,</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> teardown_handler = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>,</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> </div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9b6cf551e9f273263103f2bb18a6858b">case_control_handler_t</a> case_handler,</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> </div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9b6cf551e9f273263103f2bb18a6858b">case_control_handler_t</a> case_handler,</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> teardown_handler,</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>              <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> </div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>         <span class="comment">// overloads for case_call_count_handler_t</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga54599c60cbf544784d361db93571cfd1">case_setup_handler_t</a> setup_handler,</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9727b396157b786da73d838e308cad92">case_call_count_handler_t</a> case_handler,</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> teardown_handler = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>,</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> </div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9727b396157b786da73d838e308cad92">case_call_count_handler_t</a> case_handler,</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> </div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>         <a class="code" href="classutest_1_1v1_1_1_case.html">Case</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *description,</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga9727b396157b786da73d838e308cad92">case_call_count_handler_t</a> case_handler,</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">case_teardown_handler_t</a> teardown_handler,</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>             <span class="keyword">const</span> <a class="code" href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">case_failure_handler_t</a> <a class="code" href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">failure_handler</a> = <a class="code" href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">default_handler</a>);</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> </div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment"></span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">        /// @returns the textual description of the test case</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment"></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* get_description() <span class="keyword">const</span>;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment"></span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">        /// @returns `true` if setup, test and teardown handlers are set to `ignore_handler`</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment"></span>        <span class="keywordtype">bool</span> is_empty() <span class="keyword">const</span>;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> </div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>     <span class="keyword">private</span>:</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>         <span class="comment">// IMPORTANT: No data members shall be declared inside this class.</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>         <span class="comment">// Data members shall be declared in case_t to preserve the layout</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>         <span class="comment">// and the compatibility between the two types.</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> </div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classutest_1_1v1_1_1_harness.html">Harness</a>;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classutest_1_1v1_1_1_specification.html">Specification</a>;</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>     };</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> </div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> }   <span class="comment">// namespace v1</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> }   <span class="comment">// namespace utest</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> </div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="preprocessor"> #endif // UTEST_CASES_H</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment"></span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">/** @}*/</span></div><div class="ttc" id="classutest_1_1v1_1_1_case_html"><div class="ttname"><a href="classutest_1_1v1_1_1_case.html">utest::v1::Case</a></div><div class="ttdoc">Test case wrapper class. </div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00108">utest_case.h:108</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga54599c60cbf544784d361db93571cfd1"><div class="ttname"><a href="group__frameworks.html#ga54599c60cbf544784d361db93571cfd1">utest::v1::case_setup_handler_t</a></div><div class="ttdeci">utest::v1::status_t(* case_setup_handler_t)(const Case *const source, const size_t index_of_case)</div><div class="ttdoc">Test case setup handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__types_8h_source.html#l00326">utest_types.h:326</a></div></div>
+<div class="ttc" id="classutest_1_1v1_1_1_harness_html"><div class="ttname"><a href="classutest_1_1v1_1_1_harness.html">utest::v1::Harness</a></div><div class="ttdoc">Test Harness. </div><div class="ttdef"><b>Definition:</b> <a href="utest__harness_8h_source.html#l00046">utest_harness.h:46</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga883066ab3c0b7e4ec4c4fc79be50b2a2"><div class="ttname"><a href="group__frameworks.html#ga883066ab3c0b7e4ec4c4fc79be50b2a2">utest::v1::case_t::handler</a></div><div class="ttdeci">const case_handler_t handler</div><div class="ttdoc">Primitive test case handler This is called only if the case setup succeeded. </div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00056">utest_case.h:56</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga0d4c7981e774369c6d3f6758934aae94"><div class="ttname"><a href="group__frameworks.html#ga0d4c7981e774369c6d3f6758934aae94">utest::v1::case_teardown_handler_t</a></div><div class="ttdeci">utest::v1::status_t(* case_teardown_handler_t)(const Case *const source, const size_t passed, const size_t failed, const failure_t reason)</div><div class="ttdoc">Test case teardown handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__types_8h_source.html#l00372">utest_types.h:372</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga340f5772905e1ac3a07dd6e723094867"><div class="ttname"><a href="group__frameworks.html#ga340f5772905e1ac3a07dd6e723094867">utest::v1::default_handler</a></div><div class="ttdeci">static const struct utest::v1::@26 default_handler</div><div class="ttdoc">Default handler hint. </div></div>
+<div class="ttc" id="group__frameworks_html_ga68344fa88cf4e86b5079fd69a5c22d57"><div class="ttname"><a href="group__frameworks.html#ga68344fa88cf4e86b5079fd69a5c22d57">utest::v1::case_t::description</a></div><div class="ttdeci">const char * description</div><div class="ttdoc">Textual description of the test case. </div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00049">utest_case.h:49</a></div></div>
+<div class="ttc" id="structutest_1_1v1_1_1case__t_html"><div class="ttname"><a href="structutest_1_1v1_1_1case__t.html">utest::v1::case_t</a></div><div class="ttdoc">POD data structure of the Case class. </div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00044">utest_case.h:44</a></div></div>
+<div class="ttc" id="classutest_1_1v1_1_1_specification_html"><div class="ttname"><a href="classutest_1_1v1_1_1_specification.html">utest::v1::Specification</a></div><div class="ttdoc">Test specification containing the setup and teardown handlers and test cases. </div><div class="ttdef"><b>Definition:</b> <a href="utest__specification_8h_source.html#l00048">utest_specification.h:48</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga47023813314597a578c5a5cb9f46fc9d"><div class="ttname"><a href="group__frameworks.html#ga47023813314597a578c5a5cb9f46fc9d">utest::v1::case_handler_t</a></div><div class="ttdeci">void(* case_handler_t)(void)</div><div class="ttdoc">Primitive test case handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__types_8h_source.html#l00334">utest_types.h:334</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga6c8eb63c30ea765b3f6ff538b4088fa7"><div class="ttname"><a href="group__frameworks.html#ga6c8eb63c30ea765b3f6ff538b4088fa7">utest::v1::case_t::teardown_handler</a></div><div class="ttdeci">const case_teardown_handler_t teardown_handler</div><div class="ttdoc">Handler called after the execution of the case handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00078">utest_case.h:78</a></div></div>
+<div class="ttc" id="group__frameworks_html_gad0499c8efa5126dd697808a18f20c9a5"><div class="ttname"><a href="group__frameworks.html#gad0499c8efa5126dd697808a18f20c9a5">utest::v1::case_failure_handler_t</a></div><div class="ttdeci">utest::v1::status_t(* case_failure_handler_t)(const Case *const source, const failure_t reason)</div><div class="ttdoc">Test case failure handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__types_8h_source.html#l00386">utest_types.h:386</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga9727b396157b786da73d838e308cad92"><div class="ttname"><a href="group__frameworks.html#ga9727b396157b786da73d838e308cad92">utest::v1::case_call_count_handler_t</a></div><div class="ttdeci">control_t(* case_call_count_handler_t)(const size_t call_count)</div><div class="ttdoc">Test case handler (repeatable) </div><div class="ttdef"><b>Definition:</b> <a href="utest__types_8h_source.html#l00356">utest_types.h:356</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga1ed101bf93f293e9f7e54b69c3f0a58a"><div class="ttname"><a href="group__frameworks.html#ga1ed101bf93f293e9f7e54b69c3f0a58a">utest::v1::case_t::setup_handler</a></div><div class="ttdeci">const case_setup_handler_t setup_handler</div><div class="ttdoc">Handler called before the execution of the case handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00072">utest_case.h:72</a></div></div>
+<div class="ttc" id="namespaceutest_html"><div class="ttname"><a href="namespaceutest.html">utest</a></div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00029">utest_case.h:29</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga9b6cf551e9f273263103f2bb18a6858b"><div class="ttname"><a href="group__frameworks.html#ga9b6cf551e9f273263103f2bb18a6858b">utest::v1::case_control_handler_t</a></div><div class="ttdeci">control_t(* case_control_handler_t)(void)</div><div class="ttdoc">Complex test case handler. </div><div class="ttdef"><b>Definition:</b> <a href="utest__types_8h_source.html#l00344">utest_types.h:344</a></div></div>
+<div class="ttc" id="group__frameworks_html_gabecef992179f0fb702c37dd31b25218f"><div class="ttname"><a href="group__frameworks.html#gabecef992179f0fb702c37dd31b25218f">utest::v1::case_t::control_handler</a></div><div class="ttdeci">const case_control_handler_t control_handler</div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00061">utest_case.h:61</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga9d77ae87be98a647ab059087d2749eee"><div class="ttname"><a href="group__frameworks.html#ga9d77ae87be98a647ab059087d2749eee">utest::v1::case_t::repeat_count_handler</a></div><div class="ttdeci">const case_call_count_handler_t repeat_count_handler</div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00066">utest_case.h:66</a></div></div>
+<div class="ttc" id="group__frameworks_html_ga8b5e226f2daa5f09a0076a5a7588d85c"><div class="ttname"><a href="group__frameworks.html#ga8b5e226f2daa5f09a0076a5a7588d85c">utest::v1::case_t::failure_handler</a></div><div class="ttdeci">const case_failure_handler_t failure_handler</div><div class="ttdoc">Handler called whenever a faillure occur; at any stage of the case execution (including setup and tea...</div><div class="ttdef"><b>Definition:</b> <a href="utest__case_8h_source.html#l00084">utest_case.h:84</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/utest__case_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:10:40 GMT -->
+</html>

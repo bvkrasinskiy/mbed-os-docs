@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/group___ro_t-_service-_a_p_i.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:01:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | RoT-Service-API</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group___ro_t-_service-_a_p_i.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/group___ro_t-_service-_a_p_i.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/group___ro_t-_service-_a_p_i.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">RoT-Service-API<div class="ingroups"><a class="el" href="group___s_p_m.html">SPM</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The C interface for a root of trust (RoT) Service in a partition.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaa3fe4f2beb0a0ad0a456317f3606fad3"><td align="right" class="memItemLeft" valign="top">psa_signal_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#gaa3fe4f2beb0a0ad0a456317f3606fad3">psa_wait</a> (psa_signal_t signal_mask, uint32_t timeout)</td></tr>
+<tr class="memdesc:gaa3fe4f2beb0a0ad0a456317f3606fad3"><td class="mdescLeft"> </td><td class="mdescRight">Return the signals that have been asserted.  <a href="#gaa3fe4f2beb0a0ad0a456317f3606fad3">More...</a><br/></td></tr>
+<tr class="separator:gaa3fe4f2beb0a0ad0a456317f3606fad3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga83e6731fb800e7876e2dd02abfbeb166"><td align="right" class="memItemLeft" valign="top">psa_status_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga83e6731fb800e7876e2dd02abfbeb166">psa_get</a> (psa_signal_t signal, <a class="el" href="structpsa__msg__t.html">psa_msg_t</a> *msg)</td></tr>
+<tr class="memdesc:ga83e6731fb800e7876e2dd02abfbeb166"><td class="mdescLeft"> </td><td class="mdescRight">Get the message that corresponds to a given signal.  <a href="#ga83e6731fb800e7876e2dd02abfbeb166">More...</a><br/></td></tr>
+<tr class="separator:ga83e6731fb800e7876e2dd02abfbeb166"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga129fff0a216f369e7148d409c66ef2da"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga129fff0a216f369e7148d409c66ef2da">psa_set_rhandle</a> (psa_handle_t msg_handle, void *rhandle)</td></tr>
+<tr class="memdesc:ga129fff0a216f369e7148d409c66ef2da"><td class="mdescLeft"> </td><td class="mdescRight">Associate the caller-provided private data with a specified handle.  <a href="#ga129fff0a216f369e7148d409c66ef2da">More...</a><br/></td></tr>
+<tr class="separator:ga129fff0a216f369e7148d409c66ef2da"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5ff78e9ee31c8d96067acb4fb789c516"><td align="right" class="memItemLeft" valign="top">size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga5ff78e9ee31c8d96067acb4fb789c516">psa_read</a> (psa_handle_t msg_handle, uint32_t invec_idx, void *buf, size_t num_bytes)</td></tr>
+<tr class="memdesc:ga5ff78e9ee31c8d96067acb4fb789c516"><td class="mdescLeft"> </td><td class="mdescRight">Copy up to <em>len</em> bytes from position <em>offset</em> within the client message payload into the Secure Partition buffer <em>buffer</em>.  <a href="#ga5ff78e9ee31c8d96067acb4fb789c516">More...</a><br/></td></tr>
+<tr class="separator:ga5ff78e9ee31c8d96067acb4fb789c516"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga61711326aa92b92e5ec1924a0c590fed"><td align="right" class="memItemLeft" valign="top">size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga61711326aa92b92e5ec1924a0c590fed">psa_skip</a> (psa_handle_t msg_handle, uint32_t invec_idx, size_t num_bytes)</td></tr>
+<tr class="memdesc:ga61711326aa92b92e5ec1924a0c590fed"><td class="mdescLeft"> </td><td class="mdescRight">Advance the current read offset by skipping <em>num_bytes</em> bytes for input vector indexed by @а invec_idx.  <a href="#ga61711326aa92b92e5ec1924a0c590fed">More...</a><br/></td></tr>
+<tr class="separator:ga61711326aa92b92e5ec1924a0c590fed"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7a1aa9bfd59b75f0d6b8d2abb31e6744"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga7a1aa9bfd59b75f0d6b8d2abb31e6744">psa_write</a> (psa_handle_t msg_handle, uint32_t outvec_idx, const void *buffer, size_t num_bytes)</td></tr>
+<tr class="memdesc:ga7a1aa9bfd59b75f0d6b8d2abb31e6744"><td class="mdescLeft"> </td><td class="mdescRight">Write a response payload of <em>bytes</em> bytes starting at position <em>offset</em> in the client's response buffer.  <a href="#ga7a1aa9bfd59b75f0d6b8d2abb31e6744">More...</a><br/></td></tr>
+<tr class="separator:ga7a1aa9bfd59b75f0d6b8d2abb31e6744"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6ce3709300f25293b9ffde22df5a8c40"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga6ce3709300f25293b9ffde22df5a8c40">psa_reply</a> (psa_handle_t msg_handle, psa_status_t status)</td></tr>
+<tr class="memdesc:ga6ce3709300f25293b9ffde22df5a8c40"><td class="mdescLeft"> </td><td class="mdescRight">Complete handling of specific message and unblocks the client.  <a href="#ga6ce3709300f25293b9ffde22df5a8c40">More...</a><br/></td></tr>
+<tr class="separator:ga6ce3709300f25293b9ffde22df5a8c40"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa9fde667932666fc438b5b83b7f9cf6a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#gaa9fde667932666fc438b5b83b7f9cf6a">psa_notify</a> (int32_t partition_id)</td></tr>
+<tr class="memdesc:gaa9fde667932666fc438b5b83b7f9cf6a"><td class="mdescLeft"> </td><td class="mdescRight">Send a doorbell signal to a specific partition that is listening for that signal type.  <a href="#gaa9fde667932666fc438b5b83b7f9cf6a">More...</a><br/></td></tr>
+<tr class="separator:gaa9fde667932666fc438b5b83b7f9cf6a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac17a7ad57e4c95b031f0ec638c3dad78"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#gac17a7ad57e4c95b031f0ec638c3dad78">psa_clear</a> (void)</td></tr>
+<tr class="memdesc:gac17a7ad57e4c95b031f0ec638c3dad78"><td class="mdescLeft"> </td><td class="mdescRight">Clear the doorbell signal.  <a href="#gac17a7ad57e4c95b031f0ec638c3dad78">More...</a><br/></td></tr>
+<tr class="separator:gac17a7ad57e4c95b031f0ec638c3dad78"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2b0e923422d772bdf29771b5986d22ee"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group___ro_t-_service-_a_p_i.html#ga2b0e923422d772bdf29771b5986d22ee">psa_eoi</a> (uint32_t irq_signal)</td></tr>
+<tr class="memdesc:ga2b0e923422d772bdf29771b5986d22ee"><td class="mdescLeft"> </td><td class="mdescRight">Inform the SPM that an interrupt has been handled (end of interrupt).  <a href="#ga2b0e923422d772bdf29771b5986d22ee">More...</a><br/></td></tr>
+<tr class="separator:ga2b0e923422d772bdf29771b5986d22ee"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>The C interface for a root of trust (RoT) Service in a partition. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gac17a7ad57e4c95b031f0ec638c3dad78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void psa_clear </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear the doorbell signal. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga2b0e923422d772bdf29771b5986d22ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void psa_eoi </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>irq_signal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Inform the SPM that an interrupt has been handled (end of interrupt). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">irq_signal</td><td>The interrupt signal that has been processed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga83e6731fb800e7876e2dd02abfbeb166"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">psa_status_t psa_get </td>
+          <td>(</td>
+          <td class="paramtype">psa_signal_t </td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpsa__msg__t.html">psa_msg_t</a> * </td>
+          <td class="paramname"><em>msg</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the message that corresponds to a given signal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">signal</td><td>An asserted signal returned from <a class="el" href="group___ro_t-_service-_a_p_i.html#gaa3fe4f2beb0a0ad0a456317f3606fad3" title="Return the signals that have been asserted. ">psa_wait()</a>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">msg</td><td>Pointer to a <a class="el" href="structpsa__msg.html" title="Structure containing the PSA IPC message sent from a client partition to an RoT Service. ">psa_msg</a> structure. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 for success or<br/>
+ <em>PSA_ERR_NOMSG</em> if the message could not be delivered. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa9fde667932666fc438b5b83b7f9cf6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void psa_notify </td>
+          <td>(</td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>partition_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Send a doorbell signal to a specific partition that is listening for that signal type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">partition_id</td><td>partition ID of the target partition. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5ff78e9ee31c8d96067acb4fb789c516"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">size_t psa_read </td>
+          <td>(</td>
+          <td class="paramtype">psa_handle_t </td>
+          <td class="paramname"><em>msg_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>invec_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>num_bytes</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Copy up to <em>len</em> bytes from position <em>offset</em> within the client message payload into the Secure Partition buffer <em>buffer</em>. </p>
+<p><br/>
+ </p><dl class="section note"><dt>Note</dt><dd>Callers should know how much data is available to read based on the<br/>
+ <em>size</em> attribute of the <a class="el" href="structpsa__msg.html" title="Structure containing the PSA IPC message sent from a client partition to an RoT Service. ">psa_msg</a> structure returned from <a class="el" href="group___ro_t-_service-_a_p_i.html#ga83e6731fb800e7876e2dd02abfbeb166" title="Get the message that corresponds to a given signal. ">psa_get()</a>.<br/>
+ The copy is truncated if the requested range extends beyond the end of the payload.<br/>
+ In such a case, the remaining space in <em>buffer</em> is not modified.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">msg_handle</td><td>Handle for the client's message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">invec_idx</td><td><a class="el" href="structpsa__invec.html" title="Structure that describes a scatter-gather input buffer. ">psa_invec</a> index to be read. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buf</td><td>Buffer to copy the requested data to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_bytes</td><td>Number of bytes to read from the client's message payload. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes copied or 0 if offset is greater than the size attribute of <a class="el" href="structpsa__msg.html" title="Structure containing the PSA IPC message sent from a client partition to an RoT Service. ">psa_msg</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6ce3709300f25293b9ffde22df5a8c40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void psa_reply </td>
+          <td>(</td>
+          <td class="paramtype">psa_handle_t </td>
+          <td class="paramname"><em>msg_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">psa_status_t </td>
+          <td class="paramname"><em>status</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Complete handling of specific message and unblocks the client. </p>
+<p>A return code must be specified, which is sent to the client.<br/>
+Negative return code represent errors; positive integers are application-specific.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">msg_handle</td><td>Handle for the client's message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">status</td><td>Message result value to be reported to the client. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga129fff0a216f369e7148d409c66ef2da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void psa_set_rhandle </td>
+          <td>(</td>
+          <td class="paramtype">psa_handle_t </td>
+          <td class="paramname"><em>msg_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>rhandle</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Associate the caller-provided private data with a specified handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">msg_handle</td><td>Handle for the caller's message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rhandle</td><td>Reverse handle allocated by the Root of Trust Service. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga61711326aa92b92e5ec1924a0c590fed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">size_t psa_skip </td>
+          <td>(</td>
+          <td class="paramtype">psa_handle_t </td>
+          <td class="paramname"><em>msg_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>invec_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>num_bytes</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Advance the current read offset by skipping <em>num_bytes</em> bytes for input vector indexed by @а invec_idx. </p>
+<p><br/>
+If <em>num_bytes</em> is greater than the remaining number of bytes in the vector, then all the remaining bytes are skipped.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">msg_handle</td><td>Handle for the client's message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">invec_idx</td><td><a class="el" href="structpsa__invec.html" title="Structure that describes a scatter-gather input buffer. ">psa_invec</a> index to be skipped. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_bytes</td><td>Number of bytes to skip. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes skipped or 0 if offset is greater than the size attribute of <a class="el" href="structpsa__msg.html" title="Structure containing the PSA IPC message sent from a client partition to an RoT Service. ">psa_msg</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa3fe4f2beb0a0ad0a456317f3606fad3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">psa_signal_t psa_wait </td>
+          <td>(</td>
+          <td class="paramtype">psa_signal_t </td>
+          <td class="paramname"><em>signal_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>timeout</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Return the signals that have been asserted. </p>
+<p><br/>
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">signal_mask</td><td>A set of signals to query. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>timeout value:<br/>
+ <em>PSA_BLOCK</em> block the caller until any signal is asserted.<br/>
+ <em>PSA_POLL</em> Returns immediately. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>asserted signals. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7a1aa9bfd59b75f0d6b8d2abb31e6744"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void psa_write </td>
+          <td>(</td>
+          <td class="paramtype">psa_handle_t </td>
+          <td class="paramname"><em>msg_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>outvec_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>num_bytes</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Write a response payload of <em>bytes</em> bytes starting at position <em>offset</em> in the client's response buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>If the caller writes data beyond the client's response buffer size (<em>response_size</em> attribute of the <a class="el" href="structpsa__msg.html" title="Structure containing the PSA IPC message sent from a client partition to an RoT Service. ">psa_msg</a> structure returned from <a class="el" href="group___ro_t-_service-_a_p_i.html#ga83e6731fb800e7876e2dd02abfbeb166" title="Get the message that corresponds to a given signal. ">psa_get()</a>) a fatal error occurs.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">msg_handle</td><td>Handle for the client's message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outvec_idx</td><td><a class="el" href="structpsa__outvec.html" title="Structure which describes a scatter-gather output buffer. ">psa_outvec</a> index to be written to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Buffer with the data to write. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_bytes</td><td>Number of bytes to write. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/group___ro_t-_service-_a_p_i.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:01:11 GMT -->
+</html>

@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-pelion/machine-learning-with-tensorflow-and-mbed-os.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:17:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <meta content="How to go to production with Mbed OS-based IoT devices, the Pelion IoT platform and Arm Treasure Data (Data Management)" name="description"/>
+        
+        <title>Machine learning with TensorFlow and Mbed OS - Reference designs and end-to-end information | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="machine-learning-with-tensorflow-and-mbed-os.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-pelion/machine-learning-with-tensorflow-and-mbed-os.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-pelion/machine-learning-with-tensorflow-and-mbed-os.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis" href="../apis/index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test" href="../debug-test/index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion active-doc" href="index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Device Management for Mbed OS</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="from-evaluation-to-production-for-iot-devices.html">From evaluation to production for IoT devices</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="machine-learning-with-tensorflow-and-mbed-os.html">Machine learning with TensorFlow and Mbed OS</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="#using-the-example-application">Using the example application</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#prerequisites">Prerequisites</a>
+                        
+                        <a class="toc-item" href="#download-build-and-install-the-application">Download, build and install the application</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="#how-tensorflow-and-the-application-work">How TensorFlow and the application work</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#convolutional-neural-networks">Convolutional neural networks</a>
+                        
+                        <a class="toc-item" href="#feature-generation-with-fast-fourier-transform">Feature generation with Fast Fourier transform</a>
+                        
+                        <a class="toc-item" href="#recognition-and-windowing">Recognition and windowing</a>
+                        
+                        <a class="toc-item" href="#interpreting-the-results">Interpreting the results</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="#retrain-the-machine-learning-model">Retrain the machine learning model</a>
+                    
+                    
+                    <a class="toc-item" href="#background-converting-the-trained-model">Background: Converting the trained model</a>
+                    
+                    
+                    <a class="toc-item" href="#downloading-the-model-and-creating-a-c-file">Downloading the model and creating a C file</a>
+                    
+                    
+                    <a class="toc-item" href="#modify-the-application-code">Modify the application code</a>
+                    
+                    
+                    <a class="toc-item" href="#troubleshooting">Troubleshooting</a>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">Reference designs and end-to-end information</a>
+                                     › 
+                                    
+                                    <a href="machine-learning-with-tensorflow-and-mbed-os.html">Machine learning with TensorFlow and Mbed OS</a>
+                                    
+                                    
+                                </div>
+                                <h1>Machine learning with TensorFlow and Mbed OS</h1><p>As an IoT developer, you might think of machine learning as a server-side technology: sensors on your device capture data and send it to the cloud, where Machine Learning (ML) models on hefty machines make sense of it. A network connection is obligatory, and you are going to expect some latency, not to mention hosting costs.</p><p>But with the launch of <a href="https://www.tensorflow.org/lite/microcontrollers">TensorFlow Lite for Microcontrollers</a>, you can run machine learning inference on extremely low-power devices, like Arm Cortex-M series-based microcontrollers. You can deploy your ML models to the IoT devices themselves, bringing ML closer to your sensors, remove your reliance on a network connection, and skip the round trip to the server for lower latency whilst having the benefit of reducing your power consumption compared to transferring data over a wireless connection.</p><p>This is especially exciting for IoT, because lower network use means lower power consumption. You can also better guarantee the security and privacy of your users, since you do not need to send data back to the cloud unless you know for sure that it is relevant.</p><p>In this guide, you will learn how to perform machine learning inference on an Arm Cortex-M microcontroller with TensorFlow Lite for Microcontrollers. You will deploy a sample application we wrote that uses the microphone on the K66F and a TensorFlow machine learning model to detect the words “yes” and “no”.</p><p>The guide has step by step instructions for installing and running the application, followed by information about how TensorFlow and the application work. Finally, it shows you how to retrain the ML model with new words.</p><h2 id="using-the-example-application">Using the example application</h2><p><strong>Important:</strong> We recommend running the following commands from inside the Mbed CLI terminal that gets launched with the Mbed CLI Application. This is because it will be much quicker to set up, because it resolves all your environment dependencies automatically.</p><h3 id="prerequisites">Prerequisites</h3><p>Here is what you will need to complete the guide:</p><ul>
+<li>
+<p><a href="../build-tools/install-and-set-up.html">Mbed CLI (version 1.10.4)</a>.</p>
+</li>
+<li>
+<p>The <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads">GNU Arm Embedded</a> toolchain <a href="../build-tools/index.html">that Mbed CLI supports</a>.</p>
+<p>Configure Mbed CLI to find your GNU installation:</p>
+<pre><code>mbed config -G GCC_ARM_PATH &lt;path_to_your_arm_toolchain&gt;/bin
+</code></pre>
+</li>
+<li>
+<p>Make 3.82 or newer (if you are using an older version, see the troubleshooting section for instructions).</p>
+<p><span class="notes"><strong>Note</strong>: On a Mac, you might have to use gmake instead of make.</span></p>
+</li>
+<li>
+<p>Python 3.7.</p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/unix_commands/xxd.htm">xxd</a> which is a command-line utility that creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form.</p>
+</li>
+<li>
+<p>A development board that can run <a href="https://www.tensorflow.org/lite/microcontrollers#supported_platforms">TensorFlow Lite for Microcontrollers</a>. We tested on the <a href="https://os.mbed.com/platforms/FRDM-K66F/">NXP FRDM-K66F</a> development board.</p>
+</li>
+<li>
+<p>A mini-USB cable.</p>
+<p><span class="notes"><strong>Note</strong>: This tutorial has been tested on Ubuntu 20.04 LTS. If you are using a Windows machine, we recommend using virtualization software to create a virtual Linux machine to run this tutorial.</span></p>
+</li>
+</ul><h3 id="download-build-and-install-the-application">Download, build and install the application</h3><ol>
+<li>
+<p>Navigate to the directory where you keep code projects.</p>
+</li>
+<li>
+<p>Download the TensorFlow Lite source code:</p>
+<pre><code>git clone https://github.com/tensorflow/tensorflow.git
+</code></pre>
+</li>
+<li>
+<p>Navigate into the project directory:</p>
+<pre><code>cd tensorflow/tensorflow/lite/micro/mbed/
+</code></pre>
+</li>
+<li>
+<p>Change the DebugLog function to use UnbufferedSerial instead since the Serial API was deprecated in Mbed OS 6:</p>
+<pre><code>nano debug_log.cc
+
+extern "C" void DebugLog(const char* s) {
+  printf("%s", s);
+ }
+</code></pre>
+</li>
+<li>
+<p>Build the project</p>
+<pre><code>cd ../../../../
+
+make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project
+</code></pre>
+<p>This creates a folder in <code>tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed</code> that contains the source and header files for the example application, Mbed OS driver files, and a README.</p>
+</li>
+<li>
+<p>Navigate into the <code>mbed</code> folder:</p>
+<pre><code>cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
+</code></pre>
+</li>
+<li>
+<p>Connect your board to your computer over USB. On your board, when the Ethernet port is facing you, the micro USB port is to its left.
+Your board appears as storage on your computer. If your system does not recognize the board with the <code>mbed detect</code> command, follow the instructions for setting up <a href="https://armmbed.github.io/DAPLink/?board=FRDM-K66F">DAPLink</a>.</p>
+</li>
+<li>
+<p>Execute the following to flash the application onto the board:</p>
+<pre><code>mbed config root .
+
+mbed deploy
+
+mbed update mbed-os-6.4.0
+
+mbed compile -m K66F -t GCC_ARM --flash --sterm
+</code></pre>
+<p><span class="notes"><strong>Note</strong>: The <code>mbed config root .</code> command is a non-standard method used by TensorFlow to initialize the project in the current directoy. The typical way for mbed projects to do this is with the use of <code>mbed init</code>. </span></p>
+</li>
+<li>
+<p>Speak into the board's microphone: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port:</p>
+<pre><code>Heard yes (208) @116448ms  
+Heard unknown (241) @117984ms  
+Heard no (201) @124992ms
+</code></pre>
+</li>
+</ol><p>the output shows found_command, score and current_time as described in the command_responder.cc file.
+Congratulations! You are now running a machine learning model that can recognise keywords on an Arm Cortex-M4 microcontroller, directly on your K66F.</p><p>It is easy to change the behavior of our program, but is it difficult to modify the machine learning model itself? The answer is no, and the section <a href="https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/retrain-the-machine-learning-model">Retrain the machine learning model</a> will show you how. First, let's review what the application is doing - and how.</p><h2 id="how-tensorflow-and-the-application-work">How TensorFlow and the application work</h2><p>Let’s explore the project files on <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/micro_speech">for the speech example</a> and learn how this TensorFlow Lite for Microcontrollers example works.</p><p>The application samples audio from the microphone on the K66F. The audio is run through a Fast Fourier transform to create a spectrogram. The spectrogram is then fed into a pre-trained machine learning model. The model uses a <a href="https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks">convolutional neural network</a> to identify whether the sample represents “yes”, “no”, an unknown input or silence. We will explore how this works in more detail later in the guide.</p><p>Here are descriptions of some interesting source files:</p><ul>
+<li>
+<p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/nxp_k66f/audio_provider.cc">nxp_k66f/audio_provider.cc</a>: Captures audio from the microphone on the board.</p>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc">micro_features/micro_features_generator.cc</a>: Uses a Fast Fourier transform to create a spectrogram from audio.</p>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/model.cc">micro_features/model.cc</a>: This file is the machine learning model itself, represented by a large array of unsigned char values.</p>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc">command_responder.cc</a>: Called every time a potential command has been identified.</p>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/main.cc">main.cc</a>: The entry point for the Mbed OS program, which runs the machine learning model using TensorFlow Lite for Microcontrollers.</p>
+</li>
+</ul><h3 id="convolutional-neural-networks">Convolutional neural networks</h3><p>Convolutional networks are a type of deep neural network. These networks are designed to identify features in multidimensional vectors. The information in these vectors is contained in the relationships between groups of adjacent values.</p><p>These networks are usually used to analyse images. An image is a good example of the multidimensional vectors described above, in which a group of adjacent pixels might represent a shape, a pattern, or a texture. During training, a convolutional network can identify these features and learn what they represent. The network can learn how simple image features, like lines or edges, fit together into more complex features, like an eye or an ear. The network can also learn how those features are combined to form an input image, like a photo of a human face. This means that a convolutional network can learn to distinguish between different classes of input image, for example a photo of a person and a photo of a dog.</p><p>While they are often applied to images, which are 2D grids of pixels, a convolutional network can be used with any multidimensional vector input. In the example in this guide, a convolutional network has been trained on a spectrogram that represents 1 second of audio bucketed into multiple frequencies.</p><p>The following image is a visual representation of the audio. The network in our sample has learned which features in this image come together to represent a "yes", and which come together to represent a "no".</p><p><span class="images"><img alt='Spectrogram of "yes" and "no"' src="images/tf_spectogram2.jpg"/></span></p><p>To generate this spectrogram, we use an interesting technique that is described in the next section.</p><h3 id="feature-generation-with-fast-fourier-transform">Feature generation with Fast Fourier transform</h3><p>In our code, each spectrogram is represented as a 2D array, with 43 columns and 49 rows. Each row represents a 30ms sample of audio that is split into 43 frequency buckets.</p><p>To create each row, we run a 30ms slice of audio input through a Fast Fourier transform. Fast Fourier transform analyses the frequency distribution of audio in the sample and creates an array of 256 frequency buckets, each with a value from 0 to 255. These buckets are averaged together into groups of 6, leaving us with 43 buckets. The code in the file <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc">micro_features/micro_features_generator.cc</a> performs this action.</p><p>To build the entire 2D array, we combine the results of running the Fast Fourier transform on 49 consecutive 30ms slices of audio, with each slice overlapping the last by 10ms, as illustrated below:</p><p><span class="images"><img alt="Diagram of audio sampling" src="images/tf_fft.jpg"/></span></p><p>You can see how the 30ms sample window is moved forward by 20ms each time until it has covered the full one-second sample. The resulting spectrogram is passed into the convolutional model.</p><h3 id="recognition-and-windowing">Recognition and windowing</h3><p>The process of capturing one second of audio and converting it into a spectrogram leaves us with something that our ML model can interpret. The model outputs a probability score for each category it understands (yes, no, unknown, and silence). The probability score indicates whether the audio is likely to belong to that category.</p><p>The model was trained on the one-second samples of audio we saw above. In the training data, the word “yes” or “no” is spoken at the start of the sample, and the entire word is contained within that one-second. However, when the application is running, there is no guarantee that a user will begin speaking at the very beginning of our one-second sample. If the user starts saying “yes” at the end of the sample instead of the beginning, the model might not be able to understand the word. This is because the model uses the position of the features within the sample to help predict which word was spoken.</p><p>To solve this problem, our code runs inference as often as it can, depending on the speed of the device, and averages all of the results within a rolling 1000ms window. The code in the file <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.cc">recognize_commands.cc</a> performs this action. When the average for a given category in a set of predictions goes above the threshold, as defined in <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.h">recognize_commands.h</a>, we can assume a valid result.</p><h3 id="interpreting-the-results">Interpreting the results</h3><p>The RespondToCommand method in <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc">command_responder.cc</a> is called when a command has been recognized. This results in a line being printed to the serial port.</p><h2 id="retrain-the-machine-learning-model">Retrain the machine learning model</h2><p>The model that we are using for speech recognition was trained on a dataset of one-second spoken commands called the <a href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech Commands Dataset</a>. The dataset contains examples of ten words: yes, no, up, down, left, right, on, off, stop, go.</p><p>While the model in this sample was originally trained to recognise “yes” and “no”, the TensorFlow Lite for Microcontrollers source contains scripts that make it easy to retrain the model to classify any other combination of these words.</p><p>We are going to use another pre-trained model to recognise “up” and “down”:</p><ol>
+<li>Look at how the TensorFlow model gets converted to the TensorFlow Lite format.</li>
+<li>Download a model that has been trained and frozen using TensorFlow.</li>
+<li>Convert the TensorFlow Lite model into a C source file.</li>
+<li>Modify the code and deploy to the board.</li>
+</ol><p><span class="tips"><strong>Tip:</strong> Building TensorFlow and training the model will each take a couple of hours on an average computer. We will not perform this at this stage. If you are interested in the full flow, including the training of the model, refer to the <a href="https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/supplementary-information-model-training">Supplementary information: model training</a> guide.</span></p><h2 id="background-converting-the-trained-model">Background: Converting the trained model</h2><p>To get a converted model that can run on the controller itself from the trained model, we need to run a conversion script: the <a href="https://www.tensorflow.org/lite/convert">TensorFlow Lite converter</a>. This tool makes our model as small and efficient as possible, and converts it to a TensorFlow Lite FlatBuffer. To reduce the size of the model, we used a technique called <a href="https://www.tensorflow.org/lite/performance/post_training_quantization">quantization</a>. All weights and activations in the model get converted from 32-bit floating point format to an 8-bit and fixed-point format, as you can see in the following command:</p><p><span class="images"><img alt="Convert the model to the TensorFlow Lite format code" src="images/tf_convert_model.png"/></span></p><p>This conversion will not only reduce the size of the network traffic, but will also avoid the more computationally expensive floating points.</p><p>To save time, in this guide we skip the conversion step and instead download a converted model.</p><h2 id="downloading-the-model-and-creating-a-c-file">Downloading the model and creating a C file</h2><ol>
+<li>
+<p>Download the <a href="https://developer.arm.com/-/media/Files/downloads/Machine learning how-to guides/tiny_conv.tflite?revision=495eb362-4325-49b8-b3ba-3141df0c9b95&amp;la=en&amp;hash=0F37BA2C5DE95A1561979CDD18973171767A47C3">tiny_conv.tflite file</a>.</p>
+</li>
+<li>
+<p>Convert this model into a C file that works with Mbed OS projects.</p>
+<p>Use a tool called xxd to generate a file called <code>model.cc</code>:</p>
+<pre><code>xxd -i  tiny_conv.tflite &gt; ../micro_features/model.cc
+</code></pre>
+</li>
+<li>
+<p>Update <code>model.cc</code> so that it is compatible with our code:</p>
+<ol>
+<li>
+<p>Open the file. The top two lines should look similar to the following code, although the exact variable name and hex values may be different:</p>
+<pre><code>const  unsigned  char  g_model[] DATA_ALIGN_ATTRIBUTE = {  
+0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
+</code></pre>
+</li>
+<li>
+<p>Add the <code>include</code> from the following snippet and change the variable declaration without changing the hex values:</p>
+<pre><code>#include "tensorflow/lite/micro/examples/micro_speech/micro_features/model.h"  
+const unsigned char g_tiny_conv_micro_features_model_data[] = {  
+0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
+</code></pre>
+</li>
+<li>
+<p>Go to the bottom of the file and find the unsigned int variable:</p>
+<pre><code>unsigned int tiny_conv_tflite_len = 18216;
+</code></pre>
+</li>
+<li>
+<p>Change the declaration to the following code, but do not change the value assigned to it, as it is automatically generated to indicate the size of the model. Even if your number is different from the one in this guide:"</p>
+<pre><code>const int g_tiny_conv_micro_features_model_data_len = 18216;
+</code></pre>
+</li>
+<li>
+<p>Save the file.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Copy the <code>model.cc</code> file into the <code>tensorflow/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed/tensorflow/lite/micro/examples/micro_speech/micro_features</code> directory.</p>
+</li>
+</ol><h2 id="modify-the-application-code">Modify the application code</h2><p>If you build and run your code now, your ML model knows the words “up” and “down”, but your application assumes that the words are “yes” and “no”. Let’s update the references and the user interface so that the appropriate words are printed.</p><ol>
+<li>
+<p>Navigate to the <code>tensorflow/lite/micro/examples/micro_speech/</code> directory and open the file <code>micro_features/micro_model_settings.cc</code>.</p>
+<p>You see the following category labels:</p>
+<pre><code>const char* kCategoryLabels[kCategoryCount] = {  
+"silence",  
+"unknown",  
+"yes",  
+"no",  
+};
+</code></pre>
+<p>The code uses this array to map the output of the model to the correct value. Because we specified our <code>WANTED_WORDS</code> as “up, down” in the training script, we should update this array to reflect these words in the same order.</p>
+</li>
+<li>
+<p>Edit the code so that "up" replaces "yes" and "down" replaces "no":</p>
+<pre><code>const char* kCategoryLabels[kCategoryCount] = {  
+"silence",  
+"unknown",  
+"up",  
+"down",  
+};
+</code></pre>
+</li>
+<li>
+<p>Navigate back to the mbed directory:</p>
+<pre><code>cd &lt;path_to_tensorflow&gt;/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
+</code></pre>
+</li>
+<li>
+<p>Rebuild the project:</p>
+<pre><code>mbed compile -m K66F -t GCC_ARM --flash --sterm
+</code></pre>
+</li>
+</ol><p>You can now say “up” and “down” to update the display.</p><h2 id="troubleshooting">Troubleshooting</h2><p>We have found some common errors that users face and have listed them here to help you get started with your application as quickly as possible.</p><ul>
+<li>
+<p>If you encounter:</p>
+<pre><code>Mbed CLI issues or Error: collect2: error: ld returned 1 exit status
+</code></pre>
+<p>Purge the cache with the following command:</p>
+<pre><code>mbed cache purge
+</code></pre>
+<p>You probably also have a stale BUILD folder. Clean up your directory and try again:</p>
+<pre><code>rm -rf BUILD
+</code></pre>
+</li>
+<li>
+<p>If your terminal is wrapping your text as show here:</p>
+<p><span class="images"><img alt="Error prompt wrapping around line" src="images/tf_troubleshooting.png"/></span></p>
+<p>In your terminal, type:</p>
+<pre><code>export PS1='\u@\h: '
+</code></pre>
+<p>For a more minimalist type:</p>
+<pre><code>export PS1='&gt; '
+</code></pre>
+</li>
+<li>
+<p>Error: <code>-bash: mbed: command not found</code></p>
+<p>Your Mbed CLI installation isn't working properly. We recommend <a href="../build-tools/install-and-set-up.html">using the installers</a>.</p>
+<p>If you installed manually, make sure to follow the <a href="../build-tools/install-and-set-up.html">instructions for configuring the compiler location</a>.</p>
+</li>
+</ul>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="from-evaluation-to-production-for-iot-devices.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-pelion/machine-learning-with-tensorflow-and-mbed-os.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:17:06 GMT -->
+</html>

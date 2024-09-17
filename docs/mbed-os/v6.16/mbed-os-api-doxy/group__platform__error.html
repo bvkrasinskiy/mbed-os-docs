@@ -1,0 +1,2599 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__platform__error.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:13:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Error functions</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__platform__error.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__platform__error.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__platform__error.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Error functions<div class="ingroups"><a class="el" href="group__mbed-os-public.html">Public API</a> » <a class="el" href="group__platform-public-api.html">Platform</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct__mbed__error__ctx.html">_mbed_error_ctx</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">mbed_error_ctx struct  <a href="struct__mbed__error__ctx.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gabf4319d25959e2acb4eb4952b47d3467"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gabf4319d25959e2acb4eb4952b47d3467">MBED_CONF_PLATFORM_MAX_ERROR_FILENAME_LEN</a>   16</td></tr>
+<tr class="memdesc:gabf4319d25959e2acb4eb4952b47d3467"><td class="mdescLeft"> </td><td class="mdescRight">Define this macro to include filenames in error context.  <a href="#gabf4319d25959e2acb4eb4952b47d3467">More...</a><br/></td></tr>
+<tr class="separator:gabf4319d25959e2acb4eb4952b47d3467"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf8b9ac2efbc0e61495eff570ee237bb4"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gaf8b9ac2efbc0e61495eff570ee237bb4">MBED_DEFINE_POSIX_ERROR</a>(error_name,  error_code)  </td></tr>
+<tr class="memdesc:gaf8b9ac2efbc0e61495eff570ee237bb4"><td class="mdescLeft"> </td><td class="mdescRight">Macro for defining a POSIX error status.  <a href="#gaf8b9ac2efbc0e61495eff570ee237bb4">More...</a><br/></td></tr>
+<tr class="separator:gaf8b9ac2efbc0e61495eff570ee237bb4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga74d9e9981105a2666a46437fea26e9f7"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga74d9e9981105a2666a46437fea26e9f7">MBED_DEFINE_SYSTEM_ERROR</a>(error_name,  error_code)  </td></tr>
+<tr class="memdesc:ga74d9e9981105a2666a46437fea26e9f7"><td class="mdescLeft"> </td><td class="mdescRight">Macro for defining a System error status.  <a href="#ga74d9e9981105a2666a46437fea26e9f7">More...</a><br/></td></tr>
+<tr class="separator:ga74d9e9981105a2666a46437fea26e9f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6eb1433f283d2a78dc537a92ee3c23b9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga6eb1433f283d2a78dc537a92ee3c23b9">MBED_DEFINE_CUSTOM_ERROR</a>(error_name,  error_code)  </td></tr>
+<tr class="memdesc:ga6eb1433f283d2a78dc537a92ee3c23b9"><td class="mdescLeft"> </td><td class="mdescRight">Macro for defining a Custom error status.  <a href="#ga6eb1433f283d2a78dc537a92ee3c23b9">More...</a><br/></td></tr>
+<tr class="separator:ga6eb1433f283d2a78dc537a92ee3c23b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac2b443788fe39d895af654832560018e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gac2b443788fe39d895af654832560018e">MBED_WARNING1</a>(error_status,  error_msg,  error_value)         <a class="el" href="group__platform__error.html#gafe6c82d3d640eb92bc4cbcbf1240d16c">mbed_warning</a>( error_status, (const char *)error_msg, (uint32_t)error_value, NULL, 0 )</td></tr>
+<tr class="memdesc:gac2b443788fe39d895af654832560018e"><td class="mdescLeft"> </td><td class="mdescRight">Macros for setting a system warning.  <a href="#gac2b443788fe39d895af654832560018e">More...</a><br/></td></tr>
+<tr class="separator:gac2b443788fe39d895af654832560018e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa8d93cb4611c1646bbcdf91dac8661d7"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gaa8d93cb4611c1646bbcdf91dac8661d7">MBED_ERROR1</a>(error_status,  error_msg,  error_value)             <a class="el" href="group__platform__error.html#ga14636cd8b11abefffad1a1f50df6ffc5">mbed_error</a>( error_status, (const char *)error_msg, (uint32_t)error_value, NULL, 0 )</td></tr>
+<tr class="memdesc:gaa8d93cb4611c1646bbcdf91dac8661d7"><td class="mdescLeft"> </td><td class="mdescRight">Macros for setting a fatal system error.  <a href="#gaa8d93cb4611c1646bbcdf91dac8661d7">More...</a><br/></td></tr>
+<tr class="separator:gaa8d93cb4611c1646bbcdf91dac8661d7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa717a19648f030dd91e6ae4c0e97bd99"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gaa717a19648f030dd91e6ae4c0e97bd99">MBED_MAKE_SYSTEM_ERROR</a>(module,  error_code)                                     MAKE_MBED_ERROR(MBED_ERROR_TYPE_SYSTEM, module, error_code)</td></tr>
+<tr class="memdesc:gaa717a19648f030dd91e6ae4c0e97bd99"><td class="mdescLeft"> </td><td class="mdescRight">Call this Macro to generate a mbed_error_status_t value for a System error.  <a href="#gaa717a19648f030dd91e6ae4c0e97bd99">More...</a><br/></td></tr>
+<tr class="separator:gaa717a19648f030dd91e6ae4c0e97bd99"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga783bdc12313b642f6bd7e1273e404842"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga783bdc12313b642f6bd7e1273e404842">MBED_MAKE_CUSTOM_ERROR</a>(module,  error_code)                                     MAKE_MBED_ERROR(MBED_ERROR_TYPE_CUSTOM, module, error_code)</td></tr>
+<tr class="memdesc:ga783bdc12313b642f6bd7e1273e404842"><td class="mdescLeft"> </td><td class="mdescRight">Call this Macro to generate a mbed_error_status_t value for a Custom error.  <a href="#ga783bdc12313b642f6bd7e1273e404842">More...</a><br/></td></tr>
+<tr class="separator:ga783bdc12313b642f6bd7e1273e404842"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6649d7282e26a990a66cb17e35419c8c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga6649d7282e26a990a66cb17e35419c8c">MBED_MAKE_ERROR</a>(module,  error_code)                                                   <a class="el" href="group__platform__error.html#gaa717a19648f030dd91e6ae4c0e97bd99">MBED_MAKE_SYSTEM_ERROR</a>(module, error_code)</td></tr>
+<tr class="memdesc:ga6649d7282e26a990a66cb17e35419c8c"><td class="mdescLeft"> </td><td class="mdescRight">Call this Macro to generate a mbed_error_status_t value for a System error.  <a href="#ga6649d7282e26a990a66cb17e35419c8c">More...</a><br/></td></tr>
+<tr class="separator:ga6649d7282e26a990a66cb17e35419c8c"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga59a8e4f484a02c888997744d20b2fcd9"><td align="right" class="memItemLeft" valign="top">typedef int </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a></td></tr>
+<tr class="memdesc:ga59a8e4f484a02c888997744d20b2fcd9"><td class="mdescLeft"> </td><td class="mdescRight">mbed_error_status_t description  <a href="#ga59a8e4f484a02c888997744d20b2fcd9">More...</a><br/></td></tr>
+<tr class="separator:ga59a8e4f484a02c888997744d20b2fcd9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab4fa06ec918b327e99437390589aa33b"><td align="right" class="memItemLeft" valign="top">typedef enum <a class="el" href="group__platform__error.html#gabb0bb9108eb224fbeff23fe6b9184da5">_mbed_error_type_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gab4fa06ec918b327e99437390589aa33b">mbed_error_type_t</a></td></tr>
+<tr class="memdesc:gab4fa06ec918b327e99437390589aa33b"><td class="mdescLeft"> </td><td class="mdescRight">mbed_error_type_t definition  <a href="#gab4fa06ec918b327e99437390589aa33b">More...</a><br/></td></tr>
+<tr class="separator:gab4fa06ec918b327e99437390589aa33b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafa9d5aa01ebc98ca2c35e38a90a034e3"><td align="right" class="memItemLeft" valign="top">typedef enum <a class="el" href="group__platform__error.html#ga15480e07be1f3d739a3db83bf79ab0b8">_mbed_module_type</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gafa9d5aa01ebc98ca2c35e38a90a034e3">mbed_module_type_t</a></td></tr>
+<tr class="memdesc:gafa9d5aa01ebc98ca2c35e38a90a034e3"><td class="mdescLeft"> </td><td class="mdescRight">mbed_module_type_t definition  <a href="#gafa9d5aa01ebc98ca2c35e38a90a034e3">More...</a><br/></td></tr>
+<tr class="separator:gafa9d5aa01ebc98ca2c35e38a90a034e3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad87e3ef6bad78969fb0d6f94fb250d91"><td align="right" class="memItemLeft" valign="top">typedef enum <a class="el" href="group__platform__error.html#ga292468b340fd2b976d59baf2f3d1edc0">_mbed_error_code</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gad87e3ef6bad78969fb0d6f94fb250d91">mbed_error_code_t</a></td></tr>
+<tr class="memdesc:gad87e3ef6bad78969fb0d6f94fb250d91"><td class="mdescLeft"> </td><td class="mdescRight">mbed_error_code_t definition  <a href="#gad87e3ef6bad78969fb0d6f94fb250d91">More...</a><br/></td></tr>
+<tr class="separator:gad87e3ef6bad78969fb0d6f94fb250d91"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5233ff22ce852f21aa37b40bf23fa262"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="struct__mbed__error__ctx.html">_mbed_error_ctx</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a></td></tr>
+<tr class="memdesc:ga5233ff22ce852f21aa37b40bf23fa262"><td class="mdescLeft"> </td><td class="mdescRight">mbed_error_ctx struct  <a href="#ga5233ff22ce852f21aa37b40bf23fa262">More...</a><br/></td></tr>
+<tr class="separator:ga5233ff22ce852f21aa37b40bf23fa262"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa9e0983712dcdee4244826cbc5c9fe82"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gaa9e0983712dcdee4244826cbc5c9fe82">mbed_error_hook_t</a>) (const <a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_ctx)</td></tr>
+<tr class="memdesc:gaa9e0983712dcdee4244826cbc5c9fe82"><td class="mdescLeft"> </td><td class="mdescRight">Callback/Error hook function prototype.  <a href="#gaa9e0983712dcdee4244826cbc5c9fe82">More...</a><br/></td></tr>
+<tr class="separator:gaa9e0983712dcdee4244826cbc5c9fe82"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gabc561ef2adcee0d1aef1917f40828a42"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__toolchain.html#gab7676a6962d493ab9e0c692e942d618a">MBED_NORETURN</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42">error</a> (const char *format,...) MBED_PRINTF(1</td></tr>
+<tr class="memdesc:gabc561ef2adcee0d1aef1917f40828a42"><td class="mdescLeft"> </td><td class="mdescRight">To generate a fatal compile-time error, you can use the pre-processor <a class="el" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42" title="To generate a fatal compile-time error, you can use the pre-processor error directive. ">error</a> directive.  <a href="#gabc561ef2adcee0d1aef1917f40828a42">More...</a><br/></td></tr>
+<tr class="separator:gabc561ef2adcee0d1aef1917f40828a42"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga09487d3e2245243426228b9109fac4c3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga09487d3e2245243426228b9109fac4c3">mbed_error_hook</a> (const <a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_context)</td></tr>
+<tr class="memdesc:ga09487d3e2245243426228b9109fac4c3"><td class="mdescLeft"> </td><td class="mdescRight">Callback/Error hook function.  <a href="#ga09487d3e2245243426228b9109fac4c3">More...</a><br/></td></tr>
+<tr class="separator:ga09487d3e2245243426228b9109fac4c3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1d17dd54b0a9c3b5dbd052c72069ea16"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga1d17dd54b0a9c3b5dbd052c72069ea16">mbed_error_reboot_callback</a> (<a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_context)</td></tr>
+<tr class="memdesc:ga1d17dd54b0a9c3b5dbd052c72069ea16"><td class="mdescLeft"> </td><td class="mdescRight">Callback function for reporting error context during boot up.  <a href="#ga1d17dd54b0a9c3b5dbd052c72069ea16">More...</a><br/></td></tr>
+<tr class="separator:ga1d17dd54b0a9c3b5dbd052c72069ea16"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafe8237d3e86d290f5db8ae4718e307a4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gafe8237d3e86d290f5db8ae4718e307a4">mbed_error_initialize</a> (void)</td></tr>
+<tr class="memdesc:gafe8237d3e86d290f5db8ae4718e307a4"><td class="mdescLeft"> </td><td class="mdescRight">Initialize error handling system, this is called by the mbed-os boot sequence.  <a href="#gafe8237d3e86d290f5db8ae4718e307a4">More...</a><br/></td></tr>
+<tr class="separator:gafe8237d3e86d290f5db8ae4718e307a4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf2e5bd0f2140b4d0d1bebf8f4497fba7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gaf2e5bd0f2140b4d0d1bebf8f4497fba7">mbed_get_reboot_error_info</a> (<a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_info)</td></tr>
+<tr class="memdesc:gaf2e5bd0f2140b4d0d1bebf8f4497fba7"><td class="mdescLeft"> </td><td class="mdescRight">Call this function to retrieve the error context after a fatal error which triggered a system reboot.  <a href="#gaf2e5bd0f2140b4d0d1bebf8f4497fba7">More...</a><br/></td></tr>
+<tr class="separator:gaf2e5bd0f2140b4d0d1bebf8f4497fba7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf06b4d1f81532c631cdc82c5f899be49"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gaf06b4d1f81532c631cdc82c5f899be49">mbed_reset_reboot_error_info</a> (void)</td></tr>
+<tr class="memdesc:gaf06b4d1f81532c631cdc82c5f899be49"><td class="mdescLeft"> </td><td class="mdescRight">Calling this function resets the current reboot context captured by the system(stored in special crash data RAM region).  <a href="#gaf06b4d1f81532c631cdc82c5f899be49">More...</a><br/></td></tr>
+<tr class="separator:gaf06b4d1f81532c631cdc82c5f899be49"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga648a41d0b748aa86659c6f957f55bf77"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga648a41d0b748aa86659c6f957f55bf77">mbed_reset_reboot_count</a> (void)</td></tr>
+<tr class="memdesc:ga648a41d0b748aa86659c6f957f55bf77"><td class="mdescLeft"> </td><td class="mdescRight">Calling this function resets the current reboot count stored as part of error context captured in special crash data RAM region.  <a href="#ga648a41d0b748aa86659c6f957f55bf77">More...</a><br/></td></tr>
+<tr class="separator:ga648a41d0b748aa86659c6f957f55bf77"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafe6c82d3d640eb92bc4cbcbf1240d16c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gafe6c82d3d640eb92bc4cbcbf1240d16c">mbed_warning</a> (<a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> error_status, const char *error_msg, unsigned int error_value, const char *filename, int line_number)</td></tr>
+<tr class="memdesc:gafe6c82d3d640eb92bc4cbcbf1240d16c"><td class="mdescLeft"> </td><td class="mdescRight">Call this function to set a system error/warning.  <a href="#gafe6c82d3d640eb92bc4cbcbf1240d16c">More...</a><br/></td></tr>
+<tr class="separator:gafe6c82d3d640eb92bc4cbcbf1240d16c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7ad6669860429f7c5efdbf4d6f4d1163"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga7ad6669860429f7c5efdbf4d6f4d1163">mbed_get_first_error</a> (void)</td></tr>
+<tr class="memdesc:ga7ad6669860429f7c5efdbf4d6f4d1163"><td class="mdescLeft"> </td><td class="mdescRight">Returns the first system error reported.  <a href="#ga7ad6669860429f7c5efdbf4d6f4d1163">More...</a><br/></td></tr>
+<tr class="separator:ga7ad6669860429f7c5efdbf4d6f4d1163"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4f088688456fdc7328f7c63d74f84974"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga4f088688456fdc7328f7c63d74f84974">mbed_get_last_error</a> (void)</td></tr>
+<tr class="memdesc:ga4f088688456fdc7328f7c63d74f84974"><td class="mdescLeft"> </td><td class="mdescRight">Returns the most recent system error reported.  <a href="#ga4f088688456fdc7328f7c63d74f84974">More...</a><br/></td></tr>
+<tr class="separator:ga4f088688456fdc7328f7c63d74f84974"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga15b0888ffaffa46d0c12864a0bd79a97"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga15b0888ffaffa46d0c12864a0bd79a97">mbed_get_error_count</a> (void)</td></tr>
+<tr class="memdesc:ga15b0888ffaffa46d0c12864a0bd79a97"><td class="mdescLeft"> </td><td class="mdescRight">Returns the number of system errors reported after boot.  <a href="#ga15b0888ffaffa46d0c12864a0bd79a97">More...</a><br/></td></tr>
+<tr class="separator:ga15b0888ffaffa46d0c12864a0bd79a97"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4075a1dddb5b9a29c7fee773f5fbaf18"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga4075a1dddb5b9a29c7fee773f5fbaf18">mbed_get_error_in_progress</a> (void)</td></tr>
+<tr class="memdesc:ga4075a1dddb5b9a29c7fee773f5fbaf18"><td class="mdescLeft"> </td><td class="mdescRight">Returns whether we are processing a fatal mbed error.  <a href="#ga4075a1dddb5b9a29c7fee773f5fbaf18">More...</a><br/></td></tr>
+<tr class="separator:ga4075a1dddb5b9a29c7fee773f5fbaf18"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga14636cd8b11abefffad1a1f50df6ffc5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__toolchain.html#gab7676a6962d493ab9e0c692e942d618a">MBED_NORETURN</a> <a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga14636cd8b11abefffad1a1f50df6ffc5">mbed_error</a> (<a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> error_status, const char *error_msg, unsigned int error_value, const char *filename, int line_number)</td></tr>
+<tr class="memdesc:ga14636cd8b11abefffad1a1f50df6ffc5"><td class="mdescLeft"> </td><td class="mdescRight">Call this function to set a fatal system error and halt the system.  <a href="#ga14636cd8b11abefffad1a1f50df6ffc5">More...</a><br/></td></tr>
+<tr class="separator:ga14636cd8b11abefffad1a1f50df6ffc5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gabb228a6687a11c0ea9754934eecd0e7c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#gabb228a6687a11c0ea9754934eecd0e7c">mbed_set_error_hook</a> (<a class="el" href="group__platform__error.html#gaa9e0983712dcdee4244826cbc5c9fe82">mbed_error_hook_t</a> custom_error_hook)</td></tr>
+<tr class="memdesc:gabb228a6687a11c0ea9754934eecd0e7c"><td class="mdescLeft"> </td><td class="mdescRight">Registers an application defined error callback with the error handling system.  <a href="#gabb228a6687a11c0ea9754934eecd0e7c">More...</a><br/></td></tr>
+<tr class="separator:gabb228a6687a11c0ea9754934eecd0e7c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga72960573f3475edfc35d992443aee803"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga72960573f3475edfc35d992443aee803">mbed_get_first_error_info</a> (<a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_info)</td></tr>
+<tr class="memdesc:ga72960573f3475edfc35d992443aee803"><td class="mdescLeft"> </td><td class="mdescRight">Reads the first error context information captured.  <a href="#ga72960573f3475edfc35d992443aee803">More...</a><br/></td></tr>
+<tr class="separator:ga72960573f3475edfc35d992443aee803"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga079b1a491f8eecb1f61d5632e5f2cfd3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga079b1a491f8eecb1f61d5632e5f2cfd3">mbed_get_last_error_info</a> (<a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_info)</td></tr>
+<tr class="memdesc:ga079b1a491f8eecb1f61d5632e5f2cfd3"><td class="mdescLeft"> </td><td class="mdescRight">Reads the last error context information captured.  <a href="#ga079b1a491f8eecb1f61d5632e5f2cfd3">More...</a><br/></td></tr>
+<tr class="separator:ga079b1a491f8eecb1f61d5632e5f2cfd3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9448aa809d11d03b6186c33ec75c7d64"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga9448aa809d11d03b6186c33ec75c7d64">mbed_clear_all_errors</a> (void)</td></tr>
+<tr class="memdesc:ga9448aa809d11d03b6186c33ec75c7d64"><td class="mdescLeft"> </td><td class="mdescRight">Clears the last error, first error, error count and all entries in the error history.  <a href="#ga9448aa809d11d03b6186c33ec75c7d64">More...</a><br/></td></tr>
+<tr class="separator:ga9448aa809d11d03b6186c33ec75c7d64"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga628a461fe8b2edaba6ab57649c4f811f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga628a461fe8b2edaba6ab57649c4f811f">mbed_make_error</a> (<a class="el" href="group__platform__error.html#gab4fa06ec918b327e99437390589aa33b">mbed_error_type_t</a> error_type, <a class="el" href="group__platform__error.html#gafa9d5aa01ebc98ca2c35e38a90a034e3">mbed_module_type_t</a> module, <a class="el" href="group__platform__error.html#gad87e3ef6bad78969fb0d6f94fb250d91">mbed_error_code_t</a> error_code)</td></tr>
+<tr class="memdesc:ga628a461fe8b2edaba6ab57649c4f811f"><td class="mdescLeft"> </td><td class="mdescRight">Generates a mbed_error_status_t value based on passed in values for type, module and error code.  <a href="#ga628a461fe8b2edaba6ab57649c4f811f">More...</a><br/></td></tr>
+<tr class="separator:ga628a461fe8b2edaba6ab57649c4f811f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga320d6382cda78b2d7cd3973b9bce110b"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga320d6382cda78b2d7cd3973b9bce110b">mbed_get_error_hist_count</a> (void)</td></tr>
+<tr class="memdesc:ga320d6382cda78b2d7cd3973b9bce110b"><td class="mdescLeft"> </td><td class="mdescRight">Returns the current number of entries in the error history, if there has been more than max number of errors logged the number returned will be max depth of error history.  <a href="#ga320d6382cda78b2d7cd3973b9bce110b">More...</a><br/></td></tr>
+<tr class="separator:ga320d6382cda78b2d7cd3973b9bce110b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9e8af60c063087eb196cfea753225d29"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga9e8af60c063087eb196cfea753225d29">mbed_get_error_hist_info</a> (int index, <a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_info)</td></tr>
+<tr class="memdesc:ga9e8af60c063087eb196cfea753225d29"><td class="mdescLeft"> </td><td class="mdescRight">Reads the error context information for a specific error from error history, specified by the index.  <a href="#ga9e8af60c063087eb196cfea753225d29">More...</a><br/></td></tr>
+<tr class="separator:ga9e8af60c063087eb196cfea753225d29"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga14e631b66cba2c1049ca9311a58ef379"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__error.html#ga14e631b66cba2c1049ca9311a58ef379">mbed_save_error_hist</a> (const char *path)</td></tr>
+<tr class="memdesc:ga14e631b66cba2c1049ca9311a58ef379"><td class="mdescLeft"> </td><td class="mdescRight">Saves the error history information to a file.  <a href="#ga14e631b66cba2c1049ca9311a58ef379">More...</a><br/></td></tr>
+<tr class="separator:ga14e631b66cba2c1049ca9311a58ef379"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="gabf4319d25959e2acb4eb4952b47d3467"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_CONF_PLATFORM_MAX_ERROR_FILENAME_LEN   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Define this macro to include filenames in error context. </p>
+<p>For release builds, do not include filename to save memory. MBED_PLATFORM_CONF_ERROR_FILENAME_CAPTURE_ENABLEDDefine this macro to enable error history MBED_PLATFORM_CONF_ERROR_HIST_ENABLED </p>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00045">45</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6eb1433f283d2a78dc537a92ee3c23b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_DEFINE_CUSTOM_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_code </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">MBED_ERROR_CODE_##error_name = MBED_CUSTOM_ERROR_BASE + error_code,  \</div><div class="line">                      MBED_ERROR_##error_name = MAKE_MBED_ERROR(MBED_ERROR_TYPE_CUSTOM, MBED_MODULE_UNKNOWN, MBED_ERROR_CODE_##error_name)</div></div><!-- fragment -->
+<p>Macro for defining a Custom error status. </p>
+<p>This macro is used to define custom error values in mbed_error_code_t enumeration. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_name</td><td>Name of the error without the ERROR_ prefix </td></tr>
+    <tr><td class="paramname">error_code</td><td>Error code value to be used, must be between 4097 and 65535(inclusive). </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00138">138</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf8b9ac2efbc0e61495eff570ee237bb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_DEFINE_POSIX_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_code </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">MBED_ERROR_CODE_##error_name = error_code,  \</div><div class="line">                     MBED_ERROR_##error_name = -(MBED_POSIX_ERROR_BASE + error_code)</div></div><!-- fragment -->
+<p>Macro for defining a POSIX error status. </p>
+<p>This macro is mainly used to define POSIX error values in mbed_error_code_t enumeration. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_name</td><td>Name of the error without the ERROR_ prefix </td></tr>
+    <tr><td class="paramname">error_code</td><td>Error code value to be used, must be between 1 and 255(inclusive). </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00118">118</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga74d9e9981105a2666a46437fea26e9f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_DEFINE_SYSTEM_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_code </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">MBED_ERROR_CODE_##error_name = MBED_SYSTEM_ERROR_BASE + error_code,  \</div><div class="line">                      MBED_ERROR_##error_name = MAKE_MBED_ERROR(MBED_ERROR_TYPE_SYSTEM, MBED_MODULE_UNKNOWN, MBED_ERROR_CODE_##error_name)</div></div><!-- fragment -->
+<p>Macro for defining a System error status. </p>
+<p>This macro is used to define System error values in mbed_error_code_t enumeration. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_name</td><td>Name of the error without the ERROR_ prefix </td></tr>
+    <tr><td class="paramname">error_code</td><td>Error code value to be used, must be between 256 and 4096(inclusive). </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00128">128</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa8d93cb4611c1646bbcdf91dac8661d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_ERROR1</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_status, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_msg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_value </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   <a class="el" href="group__platform__error.html#ga14636cd8b11abefffad1a1f50df6ffc5">mbed_error</a>( error_status, (const char *)error_msg, (uint32_t)error_value, NULL, 0 )</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Macros for setting a fatal system error. </p>
+<p>These macros will log the error, prints the error report and halts the system. Its a wrapper for calling mbed_error API. There are 2 versions of this macro. MBED_ERROR takes status and message. MBED_ERROR1 takes an additional context specific argument </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_status</td><td>mbed_error_status_t status to be set(See mbed_error_status_t enum above for available error status values). </td></tr>
+    <tr><td class="paramname">error_msg</td><td>The error message to be printed out to STDIO/Serial. </td></tr>
+    <tr><td class="paramname">error_value</td><td>Value associated with the error status. This would depend on error code/error scenario. Only available with MBED_ERROR1 </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Does not return</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> MBED_ERROR( MBED_ERROR_MUTEX_LOCK_FAILED, "MyDriver: Can't lock driver Mutex" )</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> MBED_ERROR1( MBED_ERROR_MUTEX_LOCK_FAILED, "MyDriver: Can't lock driver Mutex", &amp;my_mutex )</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The macro calls mbed_error API with filename and line number info without caller explicitly passing them. Since this macro is a wrapper for mbed_error API callers should process the return value from this macro which is the return value from calling mbed_error API. </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00199">199</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga783bdc12313b642f6bd7e1273e404842"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_MAKE_CUSTOM_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">module, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_code </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   MAKE_MBED_ERROR(MBED_ERROR_TYPE_CUSTOM, module, error_code)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Call this Macro to generate a mbed_error_status_t value for a Custom error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">module</td><td>Module generating the error code. If its unknown, pass MBED_MODULE_UNKNOWN. See mbed_module_type_t for module types. </td></tr>
+    <tr><td class="paramname">error_code</td><td>The mbed_error_code_t code to be used in generating the mbed_error_status_t. See mbed_error_code_t for error codes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> mbed_error_status_t custom_error = MBED_MAKE_CUSTOM_ERROR( MBED_MODULE_APPLICATION, 0xDEAD//16-bit custom error code )</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>This macro generate mbed_error_status_t-es with error type set to MBED_ERROR_TYPE_CUSTOM </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00926">926</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6649d7282e26a990a66cb17e35419c8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_MAKE_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">module, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_code </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   <a class="el" href="group__platform__error.html#gaa717a19648f030dd91e6ae4c0e97bd99">MBED_MAKE_SYSTEM_ERROR</a>(module, error_code)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Call this Macro to generate a mbed_error_status_t value for a System error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">module</td><td>Module generating the error code. If its unknown, pass MBED_MODULE_UNKNOWN. See mbed_module_type_t for module types. </td></tr>
+    <tr><td class="paramname">error_code</td><td>The mbed_error_code_t code to be used in generating the mbed_error_status_t. See mbed_error_code_t for error codes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> mbed_error_status_t new_error = MBED_MAKE_ERROR( MODULE_DRIVER_USB, MBED_ERROR_INITIALIZATION_FAILED )</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>This macro generate mbed_error_status_t-es with error type set to MBED_ERROR_TYPE_SYSTEM </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00941">941</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa717a19648f030dd91e6ae4c0e97bd99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_MAKE_SYSTEM_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">module, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_code </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   MAKE_MBED_ERROR(MBED_ERROR_TYPE_SYSTEM, module, error_code)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Call this Macro to generate a mbed_error_status_t value for a System error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">module</td><td>Module generating the error code. If its unknown, pass MBED_MODULE_UNKNOWN. See mbed_module_type_t for module types. </td></tr>
+    <tr><td class="paramname">error_code</td><td>The mbed_error_code_t code to be used in generating the mbed_error_status_t. See mbed_error_code_t for error codes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> mbed_error_status_t driver_error = MBED_MAKE_SYSTEM_ERROR( MODULE_DRIVER_USB, MBED_ERROR_CODE_INITIALIZATION_FAILED )</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>This macro generate mbed_error_status_t-es with error type set to MBED_ERROR_TYPE_SYSTEM </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00911">911</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac2b443788fe39d895af654832560018e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_WARNING1</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_status, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_msg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">error_value </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   <a class="el" href="group__platform__error.html#gafe6c82d3d640eb92bc4cbcbf1240d16c">mbed_warning</a>( error_status, (const char *)error_msg, (uint32_t)error_value, NULL, 0 )</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Macros for setting a system warning. </p>
+<p>These macros will log the error, Its a wrapper for calling mbed_warning API. There are 2 versions of this macro. MBED_WARNING takes status and message. MBED_WARNING1 takes an additional context specific argument </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_status</td><td>mbed_error_status_t status to be set(See mbed_error_status_t enum above for available error status values). </td></tr>
+    <tr><td class="paramname">error_msg</td><td>The error message to be printed out to STDIO/Serial. </td></tr>
+    <tr><td class="paramname">error_value</td><td>Value associated with the error status. This would depend on error code/error scenario.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> MBED_WARNING( ERROR_INVALID_SIZE, "MyDriver: Invalid size in read" )</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> MBED_WARNING1( ERROR_INVALID_SIZE, "MyDriver: Invalid size in read", size_val )</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The macro calls mbed_warning API with filename and line number info without caller explicitly passing them. Since this macro is a wrapper for mbed_warning API callers should process the return value from this macro which is the return value from calling mbed_error API. </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00168">168</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="gad87e3ef6bad78969fb0d6f94fb250d91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef enum <a class="el" href="group__platform__error.html#ga292468b340fd2b976d59baf2f3d1edc0">_mbed_error_code</a>  <a class="el" href="group__platform__error.html#gad87e3ef6bad78969fb0d6f94fb250d91">mbed_error_code_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_error_code_t definition </p>
+<p>mbed_error_code_t enumeration defines the Error codes and Error status values for MBED_MODULE_UNKNOWN.<br/>
+It defines all of POSIX Error Codes/Statuses and Mbed System Error Codes/Statuses.<br/>
+<br/>
+ </p><dl class="section note"><dt>Note</dt><dd>POSIX Error codes are defined using the macro MBED_DEFINE_POSIX_ERROR<br/>
+For example <a class="el" href="group__platform__error.html#gaf8b9ac2efbc0e61495eff570ee237bb4" title="Macro for defining a POSIX error status. ">MBED_DEFINE_POSIX_ERROR( EPERM, EPERM )</a>. This effectively defines the following values:<br/>
+ ERROR_CODE_EPERM = EPERM<br/>
+ ERROR_EPERM = -EPERM<br/>
+ POSIX Error codes are defined using the macro MBED_DEFINE_POSIX_ERROR<br/>
+For example <a class="el" href="group__platform__error.html#gaf8b9ac2efbc0e61495eff570ee237bb4" title="Macro for defining a POSIX error status. ">MBED_DEFINE_POSIX_ERROR( EPERM, EPERM )</a>. This macro defines the following values:<br/>
+ ERROR_CODE_EPERM = MBED_POSIX_ERROR_BASE+EPERM<br/>
+ ERROR_EPERM = -(MBED_POSIX_ERROR_BASE+EPERM)<br/>
+Its effectively equivalent to:<br/>
+ ERROR_CODE_EPERM = 1<br/>
+ ERROR_EPERM = -1<br/>
+All POSIX error codes currently supported by MbedOS(defined in <a class="el" href="mbed__retarget_8h_source.html">mbed_retarget.h</a>) are defined using the MBED_DEFINE_POSIX_ERROR macro.<br/>
+<br/>
+Below are the POSIX error codes and the description:<br/>
+<pre class="fragment">EPERM                      1        Operation not permitted
+ENOENT                     2        No such file or directory
+ESRCH                      3        No such process
+EINTR                      4        Interrupted system call
+EIO                        5        I/O error
+ENXIO                      6        No such device or address
+E2BIG                      7        Argument list too long
+ENOEXEC                    8        Exec format error
+EBADF                      9        Bad file number
+ECHILD                     10       No child processes
+EAGAIN                     11       Try again
+ENOMEM                     12       Out of memory
+EACCES                     13       Permission denied
+EFAULT                     14       Bad address
+ENOTBLK                    15       Block device required
+EBUSY                      16       Device or resource busy
+EEXIST                     17       File exists
+EXDEV                      18       Cross-device link
+ENODEV                     19       No such device
+ENOTDIR                    20       Not a directory
+EISDIR                     21       Is a directory
+EINVAL                     22       Invalid argument
+ENFILE                     23       File table overflow
+EMFILE                     24       Too many open files
+ENOTTY                     25       Not a typewriter
+ETXTBSY                    26       Text file busy
+EFBIG                      27       File too large
+ENOSPC                     28       No space left on device
+ESPIPE                     29       Illegal seek
+EROFS                      30       Read-only file system
+EMLINK                     31       Too many links
+EPIPE                      32       Broken pipe
+EDOM                       33       Math argument out of domain of func
+ERANGE                     34       Math result not representable
+EDEADLK                    35       Resource deadlock would occur
+ENAMETOOLONG               36       File name too long
+ENOLCK                     37       No record locks available
+ENOSYS                     38       Function not implemented
+ENOTEMPTY                  39       Directory not empty
+ELOOP                      40       Too many symbolic links encountered
+EWOULDBLOCK                EAGAIN   Operation would block
+ENOMSG                     42       No message of desired type
+EIDRM                      43       Identifier removed
+ECHRNG                     44       Channel number out of range
+EL2NSYNC                   45       Level 2 not synchronized
+EL3HLT                     46       Level 3 halted
+EL3RST                     47       Level 3 reset
+ELNRNG                     48       Link number out of range
+EUNATCH                    49       Protocol driver not attached
+ENOCSI                     50       No CSI structure available
+EL2HLT                     51       Level 2 halted
+EBADE                      52       Invalid exchange
+EBADR                      53       Invalid request descriptor
+EXFULL                     54       Exchange full
+ENOANO                     55       No anode
+EBADRQC                    56       Invalid request code
+EBADSLT                    57       Invalid slot
+EDEADLOCK                  EDEADLK  Resource deadlock would occur
+EBFONT                     59       Bad font file format
+ENOSTR                     60       Device not a stream
+ENODATA                    61       No data available
+ETIME                      62       Timer expired
+ENOSR                      63       Out of streams resources
+ENONET                     64       Machine is not on the network
+ENOPKG                     65       Package not installed
+EREMOTE                    66       Object is remote
+ENOLINK                    67       Link has been severed
+EADV                       68       Advertise error
+ESRMNT                     69       Srmount error
+ECOMM                      70       Communication error on send
+EPROTO                     71       Protocol error
+EMULTIHOP                  72       Multihop attempted
+EDOTDOT                    73       RFS specific error
+EBADMSG                    74       Not a data message
+EOVERFLOW                  75       Value too large for defined data type
+ENOTUNIQ                   76       Name not unique on network
+EBADFD                     77       File descriptor in bad state
+EREMCHG                    78       Remote address changed
+ELIBACC                    79       Can not access a needed shared library
+ELIBBAD                    80       Accessing a corrupted shared library
+ELIBSCN                    81       .lib section in a.out corrupted
+ELIBMAX                    82       Attempting to link in too many shared libraries
+ELIBEXEC                   83       Cannot exec a shared library directly
+EILSEQ                     84       Illegal byte sequence
+ERESTART                   85       Interrupted system call should be restarted
+ESTRPIPE                   86       Streams pipe error
+EUSERS                     87       Too many users
+ENOTSOCK                   88       Socket operation on non-socket
+EDESTADDRREQ               89       Destination address required
+EMSGSIZE                   90       Message too long
+EPROTOTYPE                 91       Protocol wrong type for socket
+ENOPROTOOPT                92       Protocol not available
+EPROTONOSUPPORT            93       Protocol not supported
+ESOCKTNOSUPPORT            94       Socket type not supported
+EOPNOTSUPP                 95       Operation not supported on transport endpoint
+EPFNOSUPPORT               96       Protocol family not supported
+EAFNOSUPPORT               97       Address family not supported by protocol
+EADDRINUSE                 98       Address already in use
+EADDRNOTAVAIL              99       Cannot assign requested address
+ENETDOWN                   100      Network is down
+ENETUNREACH                101      Network is unreachable
+ENETRESET                  102      Network dropped connection because of reset
+ECONNABORTED               103      Software caused connection abort
+ECONNRESET                 104      Connection reset by peer
+ENOBUFS                    105      No buffer space available
+EISCONN                    106      Transport endpoint is already connected
+ENOTCONN                   107      Transport endpoint is not connected
+ESHUTDOWN                  108      Cannot send after transport endpoint shutdown
+ETOOMANYREFS               109      Too many references: cannot splice
+ETIMEDOUT                  110      Connection timed out
+ECONNREFUSED               111      Connection refused
+EHOSTDOWN                  112      Host is down
+EHOSTUNREACH               113      No route to host
+EALREADY                   114      Operation already in progress
+EINPROGRESS                115      Operation now in progress
+ESTALE                     116      Stale NFS file handle
+EUCLEAN                    117      Structure needs cleaning
+ENOTNAM                    118      Not a XENIX named type file
+ENAVAIL                    119      No XENIX semaphores available
+EISNAM                     120      Is a named type file
+EREMOTEIO                  121      Remote I/O error
+EDQUOT                     122      Quota exceeded
+ENOMEDIUM                  123      No medium found
+EMEDIUMTYPE                124      Wrong medium type
+ECANCELED                  125      Operation Canceled
+ENOKEY                     126      Required key not available
+EKEYEXPIRED                127      Key has expired
+EKEYREVOKED                128      Key has been revoked
+EKEYREJECTED               129      Key was rejected by service
+EOWNERDEAD                 130      Owner died
+ENOTRECOVERABLE            131      State not recoverable
+</pre></dd>
+<dd>
+MbedOS System Error codes are defined using the macro MBED_DEFINE_SYSTEM_ERROR<br/>
+For example <a class="el" href="group__platform__error.html#ga74d9e9981105a2666a46437fea26e9f7" title="Macro for defining a System error status. ">MBED_DEFINE_SYSTEM_ERROR( INVALID_ARGUMENT ,1 )</a> macro defines the following values:<br/>
+ ERROR_CODE_INVALID_ARGUMENT = MBED_SYSTEM_ERROR_BASE+1<br/>
+ ERROR_INVALID_ARGUMENT = MAKE_MBED_ERROR(ERROR_TYPE_SYSTEM, MBED_MODULE_UNKNOWN, ERROR_CODE_INVALID_ARGUMENT)<br/>
+Its effectively equivalent to:<br/>
+ ERROR_CODE_INVALID_ARGUMENT = 1<br/>
+ ERROR_INVALID_ARGUMENT = 0x80FF0001<br/>
+ (Note that MODULE field is set to MBED_MODULE_UNKNOWN) New System Error codes should be defined using MBED_DEFINE_SYSTEM_ERROR macro and must have an unique error code value<br/>
+passed as the second argument in the MBED_DEFINE_SYSTEM_ERROR macro.<br/>
+<br/>
+Below are the Mbed System error codes and the description: <pre class="fragment">UNKNOWN                    256      Unknown error
+INVALID_ARGUMENT           257      Invalid Argument
+INVALID_DATA               258      Invalid data
+INVALID_FORMAT             259      Invalid format
+INVALID_INDEX              260      Invalid Index
+INVALID_SIZE               261      Invalid Size
+INVALID_OPERATION          262      Invalid Operation
+NOT_FOUND                  263      Not Found
+ACCESS_DENIED              264      Access Denied
+NOT_SUPPORTED              265      Not supported
+BUFFER_FULL                266      Buffer Full
+MEDIA_FULL                 267      Media/Disk Full
+ALREADY_IN_USE             268      Already in use
+TIMEOUT                    269      Timeout error
+NOT_READY                  270      Not Ready
+FAILED_OPERATION           271      Requested Operation failed
+OPERATION_PROHIBITED       272      Operation prohibited
+OPERATION_ABORTED          273      Operation failed
+WRITE_PROTECTED            274      Attempt to write to write-protected resource
+NO_RESPONSE                275      No response
+SEMAPHORE_LOCK_FAILED      276      Semaphore lock failed
+MUTEX_LOCK_FAILED          277      Mutex lock failed
+SEMAPHORE_UNLOCK_FAILED    278      Semaphore unlock failed
+MUTEX_UNLOCK_FAILED        279      Mutex unlock failed
+CRC_ERROR                  280      CRC error or mismatch
+OPEN_FAILED                281      Open failed
+CLOSE_FAILED               282      Close failed
+READ_FAILED                283      Read failed
+WRITE_FAILED               284      Write failed
+INITIALIZATION_FAILED      285      Initialization failed
+BOOT_FAILURE               286      Boot failure
+OUT_OF_MEMORY              287      Out of memory
+OUT_OF_RESOURCES           288      Out of resources
+ALLOC_FAILED               289      Alloc failed
+FREE_FAILED                290      Free failed
+OVERFLOW                   291      Overflow error
+UNDERFLOW                  292      Underflow error
+STACK_OVERFLOW             293      Stack overflow error
+ISR_QUEUE_OVERFLOW         294      ISR queue overflow
+TIMER_QUEUE_OVERFLOW       295      Timer Queue overflow
+CLIB_SPACE_UNAVAILABLE     296      Standard library error - Space unavailable
+CLIB_EXCEPTION             297      Standard library error - Exception
+CLIB_MUTEX_INIT_FAILURE    298      Standard library error - Mutex Init failure
+CREATE_FAILED              299      Create failed
+DELETE_FAILED              300      Delete failed
+THREAD_CREATE_FAILED       301      Thread Create failed
+THREAD_DELETE_FAILED       302      Thread Delete failed
+PROHIBITED_IN_ISR_CONTEXT  303      Operation Prohibited in ISR context
+PINMAP_INVALID             304      Pinmap Invalid
+RTOS_EVENT                 305      Unknown Rtos Error
+RTOS_THREAD_EVENT          306      Rtos Thread Error
+RTOS_MUTEX_EVENT           307      Rtos Mutex Error
+RTOS_SEMAPHORE_EVENT       308      Rtos Semaphore Error
+RTOS_MEMORY_POOL_EVENT     309      Rtos Memory Pool Error
+RTOS_TIMER_EVENT           310      Rtos Timer Error
+RTOS_EVENT_FLAGS_EVENT     311      Rtos Event flags Error
+RTOS_MESSAGE_QUEUE_EVENT   312      Rtos Message queue Error
+DEVICE_BUSY                313      Device Busy
+CONFIG_UNSUPPORTED         314      Configuration not supported
+CONFIG_MISMATCH            315      Configuration mismatch
+ALREADY_INITIALIZED        316      Already initialized
+HARDFAULT_EXCEPTION        317      HardFault exception
+MEMMANAGE_EXCEPTION        318      MemManage exception
+BUSFAULT_EXCEPTION         319      BusFault exception
+USAGEFAULT_EXCEPTION       320      UsageFault exception
+BLE_NO_FRAME_INITIALIZED,  321      BLE No frame initialized
+BLE_BACKEND_CREATION_FAILED 322     BLE Backend creation failed
+BLE_BACKEND_NOT_INITIALIZED 323     BLE Backend not initialized
+ASSERTION_FAILED           324      Assertion Failed
+AUTHENTICATION_FAILED      325      Authentication Failed
+RBP_AUTHENTICATION_FAILED  326      Rollback Protect Authentication Failed
+</pre></dd>
+<dd>
+Custom Error codes can be defined using the macro DEFINE_CUSTOM_ERROR<br/>
+This is mainly meant to capture non-generic error codes specific to a device. For example DEFINE_CUSTOM_ERROR( MY_CUSTOM_ERROR ,1 ) macro defines the following values:<br/>
+ ERROR_CODE_MY_CUSTOM_ERROR = MBED_CUSTOM_ERROR_BASE+1<br/>
+ ERROR_MY_CUSTOM_ERROR = MAKE_MBED_ERROR(ERROR_TYPE_CUSTOM, MBED_MODULE_UNKNOWN, ERROR_CODE_MY_CUSTOM_ERROR)<br/>
+Its effectively equivalent to:<br/>
+ ERROR_CODE_MY_CUSTOM_ERROR = 4097<br/>
+ ERROR_MY_CUSTOM_ERROR = 0xA0FF1001<br/>
+ (Note that MODULE field is set to MBED_MODULE_UNKNOWN) <br/>
+<br/>
+ </dd>
+<dd>
+<b>Using error codes:</b> <br/>
+POSIX error codes may be used in modules/functions currently using POSIX error codes and switching them to Mbed-OS error codes may cause interoperability issues. For example, some of the filesystem, network stack implementations may need to use POSIX error codes in order to keep them compatible with other modules interfacing with them, and may continue to use POSIX error codes.</dd></dl>
+<p>In all other cases, like for any native development of Mbed-OS modules Mbed-OS error codes should be used. This makes it easy to use Mbed-OS error reporting/logging infrastructure and makes debugging error scenarios much more efficient.</p>
+<dl class="section note"><dt>Note</dt><dd><b>Searching for error codes in mbed-os source tree:</b> <br/>
+If you get an error report as below which you want to search for in mbed-os source tree, first take note of "Error Code" number. <br/>
+For example, the below error report has an error code of <b>259</b>. Find the error name associated with the error code and in this case its <b>INVALID_FORMAT</b>. <br/>
+Use that error name(<b>INVALID_FORMAT</b>) to search the source tree for code locations setting that specific error code. <br/>
+If the Error module reported is not 255(which indicates unknown module), you can also use that to narrow down to the specific component reporting the error. See mbed_module_type_t enum above for module mapping. <br/>
+ <pre class="fragment">++ MbedOS Error Info ++
+Error Status: 0x80FF013D Code: 317 Module: 255
+Error Message: Fault exception
+Location: 0x5CD1
+Error Value: 0x4A2A
+Current Thread: Id: 0x20001E80 Entry: 0x5EB1 StackSize: 0x1000 StackMem: 0x20000E80 SP: 0x2002FF90
+For more info, visit: https://mbed.com/s/error?error=0x80FF013D&amp;mbedos=999999&amp;core=0x410FC241&amp;compile=1&amp;ver=5060528
+-- MbedOS Error Info --
+</pre> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5233ff22ce852f21aa37b40bf23fa262"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="struct__mbed__error__ctx.html">_mbed_error_ctx</a>  <a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_error_ctx struct </p>
+<p>This struct captures the context information at the time of error.<br/>
+It primarily contains information about the thread where the error originated,<br/>
+filename/line number of the source file where the error occurred, a context specific error value(error_value)<br/>
+and the address where the error originated.<br/>
+ </p><dl class="section note"><dt>Note</dt><dd>Below are the members of mbed_error_ctx struct<br/>
+ error_status mbed_error_status_t value for this error<br/>
+ error_function_address Address where the error occurred<br/>
+ thread_id ID of the thread which generated the error<br/>
+ thread_entry_address Entry function of the thread which generated the error<br/>
+ thread_stack_size Stack Size of the thread which generated the error<br/>
+ thread_stack_mem Stack Top of the thread which generated the error<br/>
+ thread_current_sp Current Stack Pointer of the thread which generated the error<br/>
+ error_value A context/error specific value associated with this error<br/>
+ error_filename Filename where the error originated<br/>
+ error_line_number Line number in error_filename where the error originated<br/>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa9e0983712dcdee4244826cbc5c9fe82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* mbed_error_hook_t) (const <a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> *error_ctx)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Callback/Error hook function prototype. </p>
+<p>Applications needing a callback when an error is reported can use mbed_set_error_hook function to register a callback/error hook function using the following prototype. When an error happens in the system error handling implementation will invoke this callback with the mbed_error_status_t reported and the error context at the time of error. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_ctx</td><td>Error context structure associated with this error. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00951">951</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga59a8e4f484a02c888997744d20b2fcd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef int <a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_error_status_t description </p>
+<p>mbed_error_status_t type represents the error status values under MbedOS. mbed_error_status_t values are signed integers and always be negative.<br/>
+ Internally its encoded as below with bit-fields representing error type, module and error code:<br/>
+<br/>
+ mbed_error_status_t Status Encoding:<br/>
+ </p><pre class="fragment">| 31 Always Negative | 30-29(2 bits)  | 28-24              | 23-16(8 bits) | 15-0(16 bits) |
+| -1                 | TYPE           | (unused/reserved)  | MODULE TYPE   | ERROR CODE    |
+</pre><p>The error status value range for each error type is as follows:<br/>
+ POSIX Error Status-es - 0xFFFFFFFF to 0xFFFFFF01(-1 -255) - This corresponds to POSIX error codes represented as negative.<br/>
+ System Error Status-es - 0x80XX0100 to 0x80XX0FFF - This corresponds to System error codes range(all values are negative). Bits 23-16 will be module type(marked with XX)<br/>
+ Custom Error Status-es - 0xA0XX1000 to 0xA0XXFFFF - This corresponds to Custom error codes range(all values are negative). Bits 23-16 will be module type(marked with XX)<br/>
+<br/>
+ The ERROR CODE(values encoded into ERROR CODE bit-field in mbed_error_status_t) value range for each error type is also separated as below:<br/>
+ POSIX Error Codes - 1 to 255.<br/>
+ System Error Codes - 256 to 4095.<br/>
+ Custom Error Codes - 4096 to 65535.<br/>
+ </p><dl class="section note"><dt>Note</dt><dd>POSIX error codes are always encoded as negative of their actual value. For example, EPERM is encoded as -EPERM. And, the MODULE TYPE for POSIX error codes are always encoded as MBED_MODULE_UNKNOWN.<br/>
+ This is to enable easy injection of POSIX error codes into MbedOS error handling system without altering the actual POSIX error values.<br/>
+ Accordingly, POSIX error codes are represented as -1 to -255 under MbedOS error status representation. </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00110">110</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab4fa06ec918b327e99437390589aa33b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef enum <a class="el" href="group__platform__error.html#gabb0bb9108eb224fbeff23fe6b9184da5">_mbed_error_type_t</a>  <a class="el" href="group__platform__error.html#gab4fa06ec918b327e99437390589aa33b">mbed_error_type_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_error_type_t definition </p>
+<dl class="section note"><dt>Note</dt><dd>This enumeration defines the Error types supported. The value of these enum values will be encoded into mbed_error_status_t TYPE field.<br/>
+ See mbed_error_status_t description for more info.<br/>
+ MBED_ERROR_TYPE_SYSTEM - Used to indicate that the error status is of System defined Error type.<br/>
+ MBED_ERROR_TYPE_CUSTOM - Used to indicate that the error status is of Custom defined Error type.<br/>
+ MBED_ERROR_TYPE_POSIX - Used to indicate that the error status is of POSIX error type.<br/>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafa9d5aa01ebc98ca2c35e38a90a034e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef enum <a class="el" href="group__platform__error.html#ga15480e07be1f3d739a3db83bf79ab0b8">_mbed_module_type</a>  <a class="el" href="group__platform__error.html#gafa9d5aa01ebc98ca2c35e38a90a034e3">mbed_module_type_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_module_type_t definition </p>
+<dl class="section note"><dt>Note</dt><dd>This enumeration defines the module types. The value of these enum values will be encoded into mbed_error_status_t MODULE field.<br/>
+<br/>
+ See mbed_error_status_t description for more info.<br/>
+ MBED_MODULE_UNKNOWN - This module type can be used if caller of the mbed_error/mbed_warning doesn't know who is the actual originator of the error.<br/>
+ Other module values can be used to provide more info on who/where the error originated from.<br/>
+<br/>
+ For example, if I2C driver is the component originating the error you can use MBED_MODULE_DRIVER_I2C to provide more info.<br/>
+ Its used in call to MBED_MAKE_ERROR/MBED_MAKE_SYSTEM_ERROR/MBED_MAKE_CUSTOM_ERROR macros.<br/>
+ <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> Example: mbed_error_status_t i2c_driver_error = MBED_MAKE_ERROR( MBED_MODULE_DRIVER_I2C, MBED_ERROR_CONFIG_UNSUPPORTED );</div></div><!-- fragment --></dd>
+<dd>
+<br/>
+ Below are the module code mappings:<br/>
+<pre class="fragment"> MBED_MODULE_APPLICATION                     0       Application
+ MBED_MODULE_PLATFORM                        1       Platform
+ MBED_MODULE_KERNEL                          2       RTX Kernel
+ MBED_MODULE_NETWORK_STACK                   3       Network stack
+ MBED_MODULE_HAL                             4       HAL - Hardware Abstraction Layer
+ MBED_MODULE_MEMORY_SUBSYSTEM                5       Memory Subsystem
+ MBED_MODULE_FILESYSTEM                      6       Filesystem
+ MBED_MODULE_BLOCK_DEVICE                    7       Block device
+ MBED_MODULE_DRIVER                          8       Driver
+ MBED_MODULE_DRIVER_SERIAL                   9       Serial Driver
+ MBED_MODULE_DRIVER_RTC                      10      RTC Driver
+ MBED_MODULE_DRIVER_I2C                      11      I2C Driver
+ MBED_MODULE_DRIVER_SPI                      12      SPI Driver
+ MBED_MODULE_DRIVER_GPIO                     13      GPIO Driver
+ MBED_MODULE_DRIVER_ANALOG                   14      Analog Driver
+ MBED_MODULE_DRIVER_DIGITAL                  15      DigitalIO Driver
+ MBED_MODULE_DRIVER_CAN                      16      CAN Driver
+ MBED_MODULE_DRIVER_ETHERNET                 17      Ethernet Driver
+ MBED_MODULE_DRIVER_CRC                      18      CRC Module
+ MBED_MODULE_DRIVER_PWM                      19      PWM Driver
+ MBED_MODULE_DRIVER_QSPI                     20      QSPI Driver
+ MBED_MODULE_DRIVER_USB                      21      USB Driver
+ MBED_MODULE_TARGET_SDK                      22      SDK
+ MBED_MODULE_BLE                             23      BLE
+ MBED_MODULE_NETWORK_STATS                   24      Network Statistics
+
+ MBED_MODULE_UNKNOWN                         255     Unknown module</pre> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ga292468b340fd2b976d59baf2f3d1edc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__platform__error.html#ga292468b340fd2b976d59baf2f3d1edc0">_mbed_error_code</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_error_code_t definition </p>
+<p>mbed_error_code_t enumeration defines the Error codes and Error status values for MBED_MODULE_UNKNOWN.<br/>
+It defines all of POSIX Error Codes/Statuses and Mbed System Error Codes/Statuses.<br/>
+<br/>
+ </p><dl class="section note"><dt>Note</dt><dd>POSIX Error codes are defined using the macro MBED_DEFINE_POSIX_ERROR<br/>
+For example <a class="el" href="group__platform__error.html#gaf8b9ac2efbc0e61495eff570ee237bb4" title="Macro for defining a POSIX error status. ">MBED_DEFINE_POSIX_ERROR( EPERM, EPERM )</a>. This effectively defines the following values:<br/>
+ ERROR_CODE_EPERM = EPERM<br/>
+ ERROR_EPERM = -EPERM<br/>
+ POSIX Error codes are defined using the macro MBED_DEFINE_POSIX_ERROR<br/>
+For example <a class="el" href="group__platform__error.html#gaf8b9ac2efbc0e61495eff570ee237bb4" title="Macro for defining a POSIX error status. ">MBED_DEFINE_POSIX_ERROR( EPERM, EPERM )</a>. This macro defines the following values:<br/>
+ ERROR_CODE_EPERM = MBED_POSIX_ERROR_BASE+EPERM<br/>
+ ERROR_EPERM = -(MBED_POSIX_ERROR_BASE+EPERM)<br/>
+Its effectively equivalent to:<br/>
+ ERROR_CODE_EPERM = 1<br/>
+ ERROR_EPERM = -1<br/>
+All POSIX error codes currently supported by MbedOS(defined in <a class="el" href="mbed__retarget_8h_source.html">mbed_retarget.h</a>) are defined using the MBED_DEFINE_POSIX_ERROR macro.<br/>
+<br/>
+Below are the POSIX error codes and the description:<br/>
+<pre class="fragment">EPERM                      1        Operation not permitted
+ENOENT                     2        No such file or directory
+ESRCH                      3        No such process
+EINTR                      4        Interrupted system call
+EIO                        5        I/O error
+ENXIO                      6        No such device or address
+E2BIG                      7        Argument list too long
+ENOEXEC                    8        Exec format error
+EBADF                      9        Bad file number
+ECHILD                     10       No child processes
+EAGAIN                     11       Try again
+ENOMEM                     12       Out of memory
+EACCES                     13       Permission denied
+EFAULT                     14       Bad address
+ENOTBLK                    15       Block device required
+EBUSY                      16       Device or resource busy
+EEXIST                     17       File exists
+EXDEV                      18       Cross-device link
+ENODEV                     19       No such device
+ENOTDIR                    20       Not a directory
+EISDIR                     21       Is a directory
+EINVAL                     22       Invalid argument
+ENFILE                     23       File table overflow
+EMFILE                     24       Too many open files
+ENOTTY                     25       Not a typewriter
+ETXTBSY                    26       Text file busy
+EFBIG                      27       File too large
+ENOSPC                     28       No space left on device
+ESPIPE                     29       Illegal seek
+EROFS                      30       Read-only file system
+EMLINK                     31       Too many links
+EPIPE                      32       Broken pipe
+EDOM                       33       Math argument out of domain of func
+ERANGE                     34       Math result not representable
+EDEADLK                    35       Resource deadlock would occur
+ENAMETOOLONG               36       File name too long
+ENOLCK                     37       No record locks available
+ENOSYS                     38       Function not implemented
+ENOTEMPTY                  39       Directory not empty
+ELOOP                      40       Too many symbolic links encountered
+EWOULDBLOCK                EAGAIN   Operation would block
+ENOMSG                     42       No message of desired type
+EIDRM                      43       Identifier removed
+ECHRNG                     44       Channel number out of range
+EL2NSYNC                   45       Level 2 not synchronized
+EL3HLT                     46       Level 3 halted
+EL3RST                     47       Level 3 reset
+ELNRNG                     48       Link number out of range
+EUNATCH                    49       Protocol driver not attached
+ENOCSI                     50       No CSI structure available
+EL2HLT                     51       Level 2 halted
+EBADE                      52       Invalid exchange
+EBADR                      53       Invalid request descriptor
+EXFULL                     54       Exchange full
+ENOANO                     55       No anode
+EBADRQC                    56       Invalid request code
+EBADSLT                    57       Invalid slot
+EDEADLOCK                  EDEADLK  Resource deadlock would occur
+EBFONT                     59       Bad font file format
+ENOSTR                     60       Device not a stream
+ENODATA                    61       No data available
+ETIME                      62       Timer expired
+ENOSR                      63       Out of streams resources
+ENONET                     64       Machine is not on the network
+ENOPKG                     65       Package not installed
+EREMOTE                    66       Object is remote
+ENOLINK                    67       Link has been severed
+EADV                       68       Advertise error
+ESRMNT                     69       Srmount error
+ECOMM                      70       Communication error on send
+EPROTO                     71       Protocol error
+EMULTIHOP                  72       Multihop attempted
+EDOTDOT                    73       RFS specific error
+EBADMSG                    74       Not a data message
+EOVERFLOW                  75       Value too large for defined data type
+ENOTUNIQ                   76       Name not unique on network
+EBADFD                     77       File descriptor in bad state
+EREMCHG                    78       Remote address changed
+ELIBACC                    79       Can not access a needed shared library
+ELIBBAD                    80       Accessing a corrupted shared library
+ELIBSCN                    81       .lib section in a.out corrupted
+ELIBMAX                    82       Attempting to link in too many shared libraries
+ELIBEXEC                   83       Cannot exec a shared library directly
+EILSEQ                     84       Illegal byte sequence
+ERESTART                   85       Interrupted system call should be restarted
+ESTRPIPE                   86       Streams pipe error
+EUSERS                     87       Too many users
+ENOTSOCK                   88       Socket operation on non-socket
+EDESTADDRREQ               89       Destination address required
+EMSGSIZE                   90       Message too long
+EPROTOTYPE                 91       Protocol wrong type for socket
+ENOPROTOOPT                92       Protocol not available
+EPROTONOSUPPORT            93       Protocol not supported
+ESOCKTNOSUPPORT            94       Socket type not supported
+EOPNOTSUPP                 95       Operation not supported on transport endpoint
+EPFNOSUPPORT               96       Protocol family not supported
+EAFNOSUPPORT               97       Address family not supported by protocol
+EADDRINUSE                 98       Address already in use
+EADDRNOTAVAIL              99       Cannot assign requested address
+ENETDOWN                   100      Network is down
+ENETUNREACH                101      Network is unreachable
+ENETRESET                  102      Network dropped connection because of reset
+ECONNABORTED               103      Software caused connection abort
+ECONNRESET                 104      Connection reset by peer
+ENOBUFS                    105      No buffer space available
+EISCONN                    106      Transport endpoint is already connected
+ENOTCONN                   107      Transport endpoint is not connected
+ESHUTDOWN                  108      Cannot send after transport endpoint shutdown
+ETOOMANYREFS               109      Too many references: cannot splice
+ETIMEDOUT                  110      Connection timed out
+ECONNREFUSED               111      Connection refused
+EHOSTDOWN                  112      Host is down
+EHOSTUNREACH               113      No route to host
+EALREADY                   114      Operation already in progress
+EINPROGRESS                115      Operation now in progress
+ESTALE                     116      Stale NFS file handle
+EUCLEAN                    117      Structure needs cleaning
+ENOTNAM                    118      Not a XENIX named type file
+ENAVAIL                    119      No XENIX semaphores available
+EISNAM                     120      Is a named type file
+EREMOTEIO                  121      Remote I/O error
+EDQUOT                     122      Quota exceeded
+ENOMEDIUM                  123      No medium found
+EMEDIUMTYPE                124      Wrong medium type
+ECANCELED                  125      Operation Canceled
+ENOKEY                     126      Required key not available
+EKEYEXPIRED                127      Key has expired
+EKEYREVOKED                128      Key has been revoked
+EKEYREJECTED               129      Key was rejected by service
+EOWNERDEAD                 130      Owner died
+ENOTRECOVERABLE            131      State not recoverable
+</pre></dd>
+<dd>
+MbedOS System Error codes are defined using the macro MBED_DEFINE_SYSTEM_ERROR<br/>
+For example <a class="el" href="group__platform__error.html#ga74d9e9981105a2666a46437fea26e9f7" title="Macro for defining a System error status. ">MBED_DEFINE_SYSTEM_ERROR( INVALID_ARGUMENT ,1 )</a> macro defines the following values:<br/>
+ ERROR_CODE_INVALID_ARGUMENT = MBED_SYSTEM_ERROR_BASE+1<br/>
+ ERROR_INVALID_ARGUMENT = MAKE_MBED_ERROR(ERROR_TYPE_SYSTEM, MBED_MODULE_UNKNOWN, ERROR_CODE_INVALID_ARGUMENT)<br/>
+Its effectively equivalent to:<br/>
+ ERROR_CODE_INVALID_ARGUMENT = 1<br/>
+ ERROR_INVALID_ARGUMENT = 0x80FF0001<br/>
+ (Note that MODULE field is set to MBED_MODULE_UNKNOWN) New System Error codes should be defined using MBED_DEFINE_SYSTEM_ERROR macro and must have an unique error code value<br/>
+passed as the second argument in the MBED_DEFINE_SYSTEM_ERROR macro.<br/>
+<br/>
+Below are the Mbed System error codes and the description: <pre class="fragment">UNKNOWN                    256      Unknown error
+INVALID_ARGUMENT           257      Invalid Argument
+INVALID_DATA               258      Invalid data
+INVALID_FORMAT             259      Invalid format
+INVALID_INDEX              260      Invalid Index
+INVALID_SIZE               261      Invalid Size
+INVALID_OPERATION          262      Invalid Operation
+NOT_FOUND                  263      Not Found
+ACCESS_DENIED              264      Access Denied
+NOT_SUPPORTED              265      Not supported
+BUFFER_FULL                266      Buffer Full
+MEDIA_FULL                 267      Media/Disk Full
+ALREADY_IN_USE             268      Already in use
+TIMEOUT                    269      Timeout error
+NOT_READY                  270      Not Ready
+FAILED_OPERATION           271      Requested Operation failed
+OPERATION_PROHIBITED       272      Operation prohibited
+OPERATION_ABORTED          273      Operation failed
+WRITE_PROTECTED            274      Attempt to write to write-protected resource
+NO_RESPONSE                275      No response
+SEMAPHORE_LOCK_FAILED      276      Semaphore lock failed
+MUTEX_LOCK_FAILED          277      Mutex lock failed
+SEMAPHORE_UNLOCK_FAILED    278      Semaphore unlock failed
+MUTEX_UNLOCK_FAILED        279      Mutex unlock failed
+CRC_ERROR                  280      CRC error or mismatch
+OPEN_FAILED                281      Open failed
+CLOSE_FAILED               282      Close failed
+READ_FAILED                283      Read failed
+WRITE_FAILED               284      Write failed
+INITIALIZATION_FAILED      285      Initialization failed
+BOOT_FAILURE               286      Boot failure
+OUT_OF_MEMORY              287      Out of memory
+OUT_OF_RESOURCES           288      Out of resources
+ALLOC_FAILED               289      Alloc failed
+FREE_FAILED                290      Free failed
+OVERFLOW                   291      Overflow error
+UNDERFLOW                  292      Underflow error
+STACK_OVERFLOW             293      Stack overflow error
+ISR_QUEUE_OVERFLOW         294      ISR queue overflow
+TIMER_QUEUE_OVERFLOW       295      Timer Queue overflow
+CLIB_SPACE_UNAVAILABLE     296      Standard library error - Space unavailable
+CLIB_EXCEPTION             297      Standard library error - Exception
+CLIB_MUTEX_INIT_FAILURE    298      Standard library error - Mutex Init failure
+CREATE_FAILED              299      Create failed
+DELETE_FAILED              300      Delete failed
+THREAD_CREATE_FAILED       301      Thread Create failed
+THREAD_DELETE_FAILED       302      Thread Delete failed
+PROHIBITED_IN_ISR_CONTEXT  303      Operation Prohibited in ISR context
+PINMAP_INVALID             304      Pinmap Invalid
+RTOS_EVENT                 305      Unknown Rtos Error
+RTOS_THREAD_EVENT          306      Rtos Thread Error
+RTOS_MUTEX_EVENT           307      Rtos Mutex Error
+RTOS_SEMAPHORE_EVENT       308      Rtos Semaphore Error
+RTOS_MEMORY_POOL_EVENT     309      Rtos Memory Pool Error
+RTOS_TIMER_EVENT           310      Rtos Timer Error
+RTOS_EVENT_FLAGS_EVENT     311      Rtos Event flags Error
+RTOS_MESSAGE_QUEUE_EVENT   312      Rtos Message queue Error
+DEVICE_BUSY                313      Device Busy
+CONFIG_UNSUPPORTED         314      Configuration not supported
+CONFIG_MISMATCH            315      Configuration mismatch
+ALREADY_INITIALIZED        316      Already initialized
+HARDFAULT_EXCEPTION        317      HardFault exception
+MEMMANAGE_EXCEPTION        318      MemManage exception
+BUSFAULT_EXCEPTION         319      BusFault exception
+USAGEFAULT_EXCEPTION       320      UsageFault exception
+BLE_NO_FRAME_INITIALIZED,  321      BLE No frame initialized
+BLE_BACKEND_CREATION_FAILED 322     BLE Backend creation failed
+BLE_BACKEND_NOT_INITIALIZED 323     BLE Backend not initialized
+ASSERTION_FAILED           324      Assertion Failed
+AUTHENTICATION_FAILED      325      Authentication Failed
+RBP_AUTHENTICATION_FAILED  326      Rollback Protect Authentication Failed
+</pre></dd>
+<dd>
+Custom Error codes can be defined using the macro DEFINE_CUSTOM_ERROR<br/>
+This is mainly meant to capture non-generic error codes specific to a device. For example DEFINE_CUSTOM_ERROR( MY_CUSTOM_ERROR ,1 ) macro defines the following values:<br/>
+ ERROR_CODE_MY_CUSTOM_ERROR = MBED_CUSTOM_ERROR_BASE+1<br/>
+ ERROR_MY_CUSTOM_ERROR = MAKE_MBED_ERROR(ERROR_TYPE_CUSTOM, MBED_MODULE_UNKNOWN, ERROR_CODE_MY_CUSTOM_ERROR)<br/>
+Its effectively equivalent to:<br/>
+ ERROR_CODE_MY_CUSTOM_ERROR = 4097<br/>
+ ERROR_MY_CUSTOM_ERROR = 0xA0FF1001<br/>
+ (Note that MODULE field is set to MBED_MODULE_UNKNOWN) <br/>
+<br/>
+ </dd>
+<dd>
+<b>Using error codes:</b> <br/>
+POSIX error codes may be used in modules/functions currently using POSIX error codes and switching them to Mbed-OS error codes may cause interoperability issues. For example, some of the filesystem, network stack implementations may need to use POSIX error codes in order to keep them compatible with other modules interfacing with them, and may continue to use POSIX error codes.</dd></dl>
+<p>In all other cases, like for any native development of Mbed-OS modules Mbed-OS error codes should be used. This makes it easy to use Mbed-OS error reporting/logging infrastructure and makes debugging error scenarios much more efficient.</p>
+<dl class="section note"><dt>Note</dt><dd><b>Searching for error codes in mbed-os source tree:</b> <br/>
+If you get an error report as below which you want to search for in mbed-os source tree, first take note of "Error Code" number. <br/>
+For example, the below error report has an error code of <b>259</b>. Find the error name associated with the error code and in this case its <b>INVALID_FORMAT</b>. <br/>
+Use that error name(<b>INVALID_FORMAT</b>) to search the source tree for code locations setting that specific error code. <br/>
+If the Error module reported is not 255(which indicates unknown module), you can also use that to narrow down to the specific component reporting the error. See mbed_module_type_t enum above for module mapping. <br/>
+ <pre class="fragment">++ MbedOS Error Info ++
+Error Status: 0x80FF013D Code: 317 Module: 255
+Error Message: Fault exception
+Location: 0x5CD1
+Error Value: 0x4A2A
+Current Thread: Id: 0x20001E80 Entry: 0x5EB1 StackSize: 0x1000 StackMem: 0x20000E80 SP: 0x2002FF90
+For more info, visit: https://mbed.com/s/error?error=0x80FF013D&amp;mbedos=999999&amp;core=0x410FC241&amp;compile=1&amp;ver=5060528
+-- MbedOS Error Info --
+</pre> </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00590">590</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabb0bb9108eb224fbeff23fe6b9184da5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__platform__error.html#gabb0bb9108eb224fbeff23fe6b9184da5">_mbed_error_type_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_error_type_t definition </p>
+<dl class="section note"><dt>Note</dt><dd>This enumeration defines the Error types supported. The value of these enum values will be encoded into mbed_error_status_t TYPE field.<br/>
+ See mbed_error_status_t description for more info.<br/>
+ MBED_ERROR_TYPE_SYSTEM - Used to indicate that the error status is of System defined Error type.<br/>
+ MBED_ERROR_TYPE_CUSTOM - Used to indicate that the error status is of Custom defined Error type.<br/>
+ MBED_ERROR_TYPE_POSIX - Used to indicate that the error status is of POSIX error type.<br/>
+</dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00214">214</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga15480e07be1f3d739a3db83bf79ab0b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__platform__error.html#ga15480e07be1f3d739a3db83bf79ab0b8">_mbed_module_type</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mbed_module_type_t definition </p>
+<dl class="section note"><dt>Note</dt><dd>This enumeration defines the module types. The value of these enum values will be encoded into mbed_error_status_t MODULE field.<br/>
+<br/>
+ See mbed_error_status_t description for more info.<br/>
+ MBED_MODULE_UNKNOWN - This module type can be used if caller of the mbed_error/mbed_warning doesn't know who is the actual originator of the error.<br/>
+ Other module values can be used to provide more info on who/where the error originated from.<br/>
+<br/>
+ For example, if I2C driver is the component originating the error you can use MBED_MODULE_DRIVER_I2C to provide more info.<br/>
+ Its used in call to MBED_MAKE_ERROR/MBED_MAKE_SYSTEM_ERROR/MBED_MAKE_CUSTOM_ERROR macros.<br/>
+ <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> Example: mbed_error_status_t i2c_driver_error = MBED_MAKE_ERROR( MBED_MODULE_DRIVER_I2C, MBED_ERROR_CONFIG_UNSUPPORTED );</div></div><!-- fragment --></dd>
+<dd>
+<br/>
+ Below are the module code mappings:<br/>
+<pre class="fragment"> MBED_MODULE_APPLICATION                     0       Application
+ MBED_MODULE_PLATFORM                        1       Platform
+ MBED_MODULE_KERNEL                          2       RTX Kernel
+ MBED_MODULE_NETWORK_STACK                   3       Network stack
+ MBED_MODULE_HAL                             4       HAL - Hardware Abstraction Layer
+ MBED_MODULE_MEMORY_SUBSYSTEM                5       Memory Subsystem
+ MBED_MODULE_FILESYSTEM                      6       Filesystem
+ MBED_MODULE_BLOCK_DEVICE                    7       Block device
+ MBED_MODULE_DRIVER                          8       Driver
+ MBED_MODULE_DRIVER_SERIAL                   9       Serial Driver
+ MBED_MODULE_DRIVER_RTC                      10      RTC Driver
+ MBED_MODULE_DRIVER_I2C                      11      I2C Driver
+ MBED_MODULE_DRIVER_SPI                      12      SPI Driver
+ MBED_MODULE_DRIVER_GPIO                     13      GPIO Driver
+ MBED_MODULE_DRIVER_ANALOG                   14      Analog Driver
+ MBED_MODULE_DRIVER_DIGITAL                  15      DigitalIO Driver
+ MBED_MODULE_DRIVER_CAN                      16      CAN Driver
+ MBED_MODULE_DRIVER_ETHERNET                 17      Ethernet Driver
+ MBED_MODULE_DRIVER_CRC                      18      CRC Module
+ MBED_MODULE_DRIVER_PWM                      19      PWM Driver
+ MBED_MODULE_DRIVER_QSPI                     20      QSPI Driver
+ MBED_MODULE_DRIVER_USB                      21      USB Driver
+ MBED_MODULE_TARGET_SDK                      22      SDK
+ MBED_MODULE_BLE                             23      BLE
+ MBED_MODULE_NETWORK_STATS                   24      Network Statistics
+
+ MBED_MODULE_UNKNOWN                         255     Unknown module</pre> </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__error_8h_source.html#l00270">270</a> of file <a class="el" href="mbed__error_8h_source.html">mbed_error.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gabc561ef2adcee0d1aef1917f40828a42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__toolchain.html#gab7676a6962d493ab9e0c692e942d618a">MBED_NORETURN</a> void error </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname"><em>...</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>To generate a fatal compile-time error, you can use the pre-processor <a class="el" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42" title="To generate a fatal compile-time error, you can use the pre-processor error directive. ">error</a> directive. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">format</td><td>C string that contains data stream to be printed. Code snippets below show valid format.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #error "That shouldn't have happened!"</div></div><!-- fragment --><p>If the compiler evaluates this line, it will report the error and stop the compile.</p>
+<p>For example, you could use this to check some user-defined compile-time variables:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #define NUM_PORTS 7</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> #if (NUM_PORTS &gt; 4)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     #error "NUM_PORTS must be less than 4"</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> #endif</div></div><!-- fragment --><p>Reporting Run-Time Errors: To generate a fatal run-time error, you can use the mbed <a class="el" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42" title="To generate a fatal compile-time error, you can use the pre-processor error directive. ">error()</a> function.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> error("That shouldn't have happened!");</div></div><!-- fragment --><p>If the mbed running the program executes this function, it will print the message via the USB serial port, and then die with the blue lights of death!</p>
+<p>The message can use printf-style formatting, so you can report variables in the message too. For example, you could use this to check a run-time condition:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> if(x &gt;= 5) {</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>     error("expected x to be less than 5, but got %d", x);</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> }</div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="ga9448aa809d11d03b6186c33ec75c7d64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_clear_all_errors </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clears the last error, first error, error count and all entries in the error history. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_SUCCESS on success. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga14636cd8b11abefffad1a1f50df6ffc5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__toolchain.html#gab7676a6962d493ab9e0c692e942d618a">MBED_NORETURN</a> <a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_error </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td>
+          <td class="paramname"><em>error_status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>error_msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int </td>
+          <td class="paramname"><em>error_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>line_number</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Call this function to set a fatal system error and halt the system. </p>
+<p>This function will log the fatal error with the context info and prints the error report and halts the system.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_status</td><td>mbed_error_status_t status to be set(See mbed_error_status_t enum above for available error status values). </td></tr>
+    <tr><td class="paramname">error_msg</td><td>The error message to be printed out to STDIO/Serial. </td></tr>
+    <tr><td class="paramname">error_value</td><td>Value associated with the error status. This would depend on error code/error scenario. </td></tr>
+    <tr><td class="paramname">filename</td><td>Name of the source file originating the error( Most callers can pass <b>FILE</b> here ). </td></tr>
+    <tr><td class="paramname">line_number</td><td>The line number of the source file originating the error( Most callers can pass <b>LINE</b> here ) . </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Does not return.</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> mbed_error( MBED_ERROR_PROHIBITED_OPERATION, "Prohibited operation tried", 0, __FILE__, __LINE__ )</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>See MBED_WARNING/MBED_ERROR macros which provides a wrapper on this API </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga09487d3e2245243426228b9109fac4c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void mbed_error_hook </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> * </td>
+          <td class="paramname"><em>error_context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Callback/Error hook function. </p>
+<p>If application implementation needs to receive this callback when an error is reported, mbed_error_hook function should be overridden with custom implementation. When an error happens in the system error handling implementation will invoke this callback with the mbed_error_status_t reported and the error context at the time of error. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_ctx</td><td>Error context structure associated with this error. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafe8237d3e86d290f5db8ae4718e307a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_error_initialize </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize error handling system, this is called by the mbed-os boot sequence. </p>
+<p>This is not required to be called by Application unless the boot sequence is overridden by the system implementation. NOTE: If MBED_CONF_PLATFORM_FATAL_ERROR_AUTO_REBOOT_ENABLED is enabled and if the current reboot count exceeds MBED_CONF_PLATFORM_ERROR_REBOOT_MAX the system will halt when this function is called, and in such cases the caller will not get the control back. Also note that calling this function may trigger <a class="el" href="group__platform__error.html#ga1d17dd54b0a9c3b5dbd052c72069ea16" title="Callback function for reporting error context during boot up. ">mbed_error_reboot_callback()</a> if application side overides <a class="el" href="group__platform__error.html#ga1d17dd54b0a9c3b5dbd052c72069ea16" title="Callback function for reporting error context during boot up. ">mbed_error_reboot_callback()</a>. </p><dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS on success. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1d17dd54b0a9c3b5dbd052c72069ea16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void mbed_error_reboot_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> * </td>
+          <td class="paramname"><em>error_context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Callback function for reporting error context during boot up. </p>
+<p>When MbedOS error handling system detects a fatal error it will auto-reboot the system(if MBED_CONF_PLATFORM_FATAL_ERROR_AUTO_REBOOT_ENABLED is enabled) after capturing the error info in special crash data RAM region. Once rebooted, MbedOS initialization routines will call this function with a pointer to the captured mbed_error_ctx structure. If application implementation needs to receive this callback, mbed_error_reboot_callback function should be overridden with custom implementation. By default it's defined as a WEAK function in mbed_error.c. Note that this callback will be invoked before the system starts executing main() function. So the implementation of the callback should be aware any resource limitations/availability of resources which are yet to be initialized by application main().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_ctx</td><td>Error context structure associated with this error. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga15b0888ffaffa46d0c12864a0bd79a97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int mbed_get_error_count </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns the number of system errors reported after boot. </p>
+<dl class="section return"><dt>Returns</dt><dd>int Number of errors reported. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga320d6382cda78b2d7cd3973b9bce110b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int mbed_get_error_hist_count </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns the current number of entries in the error history, if there has been more than max number of errors logged the number returned will be max depth of error history. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current number of entries in the error history. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9e8af60c063087eb196cfea753225d29"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_get_error_hist_info </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> * </td>
+          <td class="paramname"><em>error_info</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads the error context information for a specific error from error history, specified by the index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">index</td><td>index of the error context entry in the history to be retrieved.<br/>
+ The number of entries in the error history is configured during build and the max index depends on max depth of error history.<br/>
+ index = 0 points to the oldest entry in the history, and index = (max history depth - 1) points to the latest entry in the error history.<br/>
+</td></tr>
+    <tr><td class="paramname">error_info</td><td>This is the mbed_error_context info captured as part of the error history. The caller should pass a pointer to mbed_error_context struct allocated by the caller. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_SUCCESS on success. MBED_ERROR_INVALID_ARGUMENT in case of invalid index </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4075a1dddb5b9a29c7fee773f5fbaf18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool mbed_get_error_in_progress </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns whether we are processing a fatal mbed error. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool Whether a fatal error has occurred. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7ad6669860429f7c5efdbf4d6f4d1163"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_get_first_error </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns the first system error reported. </p>
+<dl class="section return"><dt>Returns</dt><dd>mbed_error_status_t code logged for the first error or MBED_SUCCESS if no errors are logged. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga72960573f3475edfc35d992443aee803"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_get_first_error_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> * </td>
+          <td class="paramname"><em>error_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads the first error context information captured. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_info</td><td>This is the mbed_error_context info captured as part of the first mbed_error call. The caller should pass a pointer to mbed_error_context struct allocated by the caller. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_SUCCESS on success. MBED_ERROR_INVALID_ARGUMENT in case of invalid index </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4f088688456fdc7328f7c63d74f84974"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_get_last_error </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns the most recent system error reported. </p>
+<dl class="section return"><dt>Returns</dt><dd>mbed_error_status_t code logged for the last error or MBED_SUCCESS if no errors are logged. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga079b1a491f8eecb1f61d5632e5f2cfd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_get_last_error_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> * </td>
+          <td class="paramname"><em>error_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads the last error context information captured. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_info</td><td>This is the mbed_error_context info captured as part of the last mbed_error call. The caller should pass a pointer to mbed_error_context struct allocated by the caller. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_ERROR_SUCCESS on success. MBED_ERROR_INVALID_ARGUMENT in case of invalid index </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf2e5bd0f2140b4d0d1bebf8f4497fba7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_get_reboot_error_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga5233ff22ce852f21aa37b40bf23fa262">mbed_error_ctx</a> * </td>
+          <td class="paramname"><em>error_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Call this function to retrieve the error context after a fatal error which triggered a system reboot. </p>
+<p>The function retrieves the error context stored in crash-report ram area which is preserved over reboot. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_info</td><td>Pointer to mbed_error_ctx struct allocated by the caller. This is the mbed_error_ctx info captured as part of the fatal error which triggered the reboot. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_SUCCESS on success. MBED_ERROR_INVALID_ARGUMENT in case of invalid error_info pointer MBED_ERROR_ITEM_NOT_FOUND if no reboot context is currently captured by the system </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga628a461fe8b2edaba6ab57649c4f811f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_make_error </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#gab4fa06ec918b327e99437390589aa33b">mbed_error_type_t</a> </td>
+          <td class="paramname"><em>error_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#gafa9d5aa01ebc98ca2c35e38a90a034e3">mbed_module_type_t</a> </td>
+          <td class="paramname"><em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#gad87e3ef6bad78969fb0d6f94fb250d91">mbed_error_code_t</a> </td>
+          <td class="paramname"><em>error_code</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Generates a mbed_error_status_t value based on passed in values for type, module and error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_type</td><td>Error type based on mbed_error_type_t enum. </td></tr>
+    <tr><td class="paramname">module</td><td>Module type based on mbed_module_type_t enum. </td></tr>
+    <tr><td class="paramname">error_code</td><td>Error codes defined by mbed_error_code_t enum </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_ERROR_SUCCESS on success. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga648a41d0b748aa86659c6f957f55bf77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_reset_reboot_count </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Calling this function resets the current reboot count stored as part of error context captured in special crash data RAM region. </p>
+<p>The function will also update the CRC value stored as part of error context accordingly. </p><dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS on success. MBED_ERROR_ITEM_NOT_FOUND if no reboot context is currently captured by the system </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf06b4d1f81532c631cdc82c5f899be49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_reset_reboot_error_info </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Calling this function resets the current reboot context captured by the system(stored in special crash data RAM region). </p>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS on success. MBED_ERROR_ITEM_NOT_FOUND if no reboot context is currently captured by the system </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga14e631b66cba2c1049ca9311a58ef379"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_save_error_hist </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Saves the error history information to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">path</td><td>path to the file in the filesystem </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_ERROR_SUCCESS on success. MBED_ERROR_WRITE_FAILED if writing to file failed MBED_ERROR_INVALID_ARGUMENT if path is not valid</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Filesystem support is required in order for this function to work. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabb228a6687a11c0ea9754934eecd0e7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_set_error_hook </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#gaa9e0983712dcdee4244826cbc5c9fe82">mbed_error_hook_t</a> </td>
+          <td class="paramname"><em>custom_error_hook</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Registers an application defined error callback with the error handling system. </p>
+<p>This function will be called with error context info whenever system handles a mbed_error/mbed_warning call NOTE: This function should be implemented for re-entrancy as multiple threads may invoke mbed_error which may cause error hook to be called. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">custom_error_hook</td><td>mbed_error_status_t status to be set(See mbed_error_status_t enum above for available error status values). </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_SUCCESS on success. MBED_ERROR_INVALID_ARGUMENT in case of NULL for custom_error_hook</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> mbed_error_status_t my_custom_error_hook(mbed_error_status_t error_status, const mbed_error_ctx *error_ctx) {</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>    //Do something with the error_status or error_ctx</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> }</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> </div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> mbed_set_error_hook( my_custom_error_hook )</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The error hook function implementation should be re-entrant.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated:</a></b></dt><dd>You should use an overridden <a class="el" href="group__platform__error.html#ga09487d3e2245243426228b9109fac4c3" title="Callback/Error hook function. ">mbed_error_hook()</a> function if you like to catch errors in your application. With <a class="el" href="group__platform__error.html#gabb228a6687a11c0ea9754934eecd0e7c" title="Registers an application defined error callback with the error handling system. ">mbed_set_error_hook()</a> it is not possible to catch errors before your application started. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafe6c82d3d640eb92bc4cbcbf1240d16c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> mbed_warning </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__platform__error.html#ga59a8e4f484a02c888997744d20b2fcd9">mbed_error_status_t</a> </td>
+          <td class="paramname"><em>error_status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>error_msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int </td>
+          <td class="paramname"><em>error_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>line_number</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Call this function to set a system error/warning. </p>
+<p>This function will log the error status with the context info and return to caller.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error_status</td><td>mbed_error_status_t status to be set(See mbed_error_status_t enum above for available error status values). </td></tr>
+    <tr><td class="paramname">error_msg</td><td>The error message to be printed out to STDIO/Serial. </td></tr>
+    <tr><td class="paramname">error_value</td><td>Value associated with the error status. This would depend on error code/error scenario. </td></tr>
+    <tr><td class="paramname">filename</td><td>Name of the source file originating the error( Most callers can pass <b>FILE</b> here ). </td></tr>
+    <tr><td class="paramname">line_number</td><td>The line number of the source file originating the error( Most callers can pass <b>LINE</b> here ) . </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or MBED_SUCCESS. MBED_ERROR_INVALID_ARGUMENT if called with invalid error status/codes</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> mbed_error( ERROR_OUT_OF_MEMORY, "Out of memory error", 0, __FILE__, __LINE__ )</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>See MBED_WARNING/MBED_ERROR macros which provides a wrapper on this API </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__platform__error.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:13:40 GMT -->
+</html>

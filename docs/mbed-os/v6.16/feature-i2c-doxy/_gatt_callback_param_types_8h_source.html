@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/_gatt_callback_param_types_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:07:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | GattCallbackParamTypes.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_gatt_callback_param_types_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/_gatt_callback_param_types_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/_gatt_callback_param_types_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_c6fb7cfc6dd92a7f08bce53368056667.html">features</a></li><li class="navelem"><a class="el" href="dir_1a2cb981a250e98ade62842b93f3d73b.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_f2373152d1a0b7cee2b02bcb5bbf4ab6.html">ble</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GattCallbackParamTypes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/* mbed Microcontroller Library</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * Copyright (c) 2006-2013 ARM Limited</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> * you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * You may obtain a copy of the License at</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *     http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> * limitations under the License.</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> */</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> </div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="preprocessor">#ifndef MBED_BLE_GATT_CALLBACK_PARAM_TYPES_H__</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="preprocessor">#define MBED_BLE_GATT_CALLBACK_PARAM_TYPES_H__</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"></span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment">/**</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> * @addtogroup ble</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> * @{</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment"> * @addtogroup gatt</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment"> * @{</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="comment"> */</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="comment"></span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="comment">/**</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="comment"> * GATT Write event definition.</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="comment"> *</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="comment"> * Instances of this type are created and passed to user registered callbacks</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment"> * whether the GattServer has received a write request or a GattClient has</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment"> * received a write response.</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment"> *</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment"> * @attention The GattServer only populates the fields offset, len and data</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment"> * when it has received a write request. Callbacks attached to the GattClient</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment"> * do not use those fields.</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="comment"> *</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment"> * @attention The GattClient only populates the fields status and error_code</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment"> * when it has received a write response. Callbacks attached to the GattServer</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="comment"> * do not use those fields.</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment"> */</span></div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html">   42</a></span> <span class="keyword">struct </span><a class="code" href="struct_gatt_write_callback_params.html">GattWriteCallbackParams</a> {<span class="comment"></span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment">    /**</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment">     * Enumeration of allowed write operations.</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment">     */</span></div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3f">   46</a></span>     <span class="keyword">enum</span> <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3f">WriteOp_t</a> {<span class="comment"></span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="comment">        /**</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="comment">         * Invalid operation.</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="comment">         */</span></div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa310dc72dd94edcb09d2c681abdd80a4e">   50</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa310dc72dd94edcb09d2c681abdd80a4e">OP_INVALID</a> = 0x00,</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment"></span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">        /**</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment">         * Write request.</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">         */</span></div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fae2bf337a86547f97f1ff789e02105d14">   55</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fae2bf337a86547f97f1ff789e02105d14">OP_WRITE_REQ</a> = 0x01,</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment"></span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">        /**</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment">         * Write command.</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment">         */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3faf1405800d0cf05fa511b799ecb2738c9">   60</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3faf1405800d0cf05fa511b799ecb2738c9">OP_WRITE_CMD</a> = 0x02,</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment"></span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="comment">        /**</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment">         * Signed write command.</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">         */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa8d701bd957f295aff3c42382aa134541">   65</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa8d701bd957f295aff3c42382aa134541">OP_SIGN_WRITE_CMD</a> = 0x03,</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment"></span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> <span class="comment">        /**</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment">         * Prepare write request.</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">         */</span></div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa4cca987826f99dd9a70f807421ca4cad">   70</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa4cca987826f99dd9a70f807421ca4cad">OP_PREP_WRITE_REQ</a> = 0x04,</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment"></span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment">        /**</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">         * Execute write request: cancel all prepared writes.</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">         */</span></div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa27da038d91a489d7521ed13d80f3f1ce">   75</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa27da038d91a489d7521ed13d80f3f1ce">OP_EXEC_WRITE_REQ_CANCEL</a> = 0x05,</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment"></span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">        /**</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment">         * Execute write request: immediately execute all prepared writes.</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">         */</span></div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa718a4b1f3c10407eb975aa45fd196859">   80</a></span>         <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa718a4b1f3c10407eb975aa45fd196859">OP_EXEC_WRITE_REQ_NOW</a> = 0x06,</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>     };</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment"></span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">    /**</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment">     * Handle of the connection that triggered the event.</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment">     */</span></div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">   86</a></span>     <a class="code" href="namespaceble.html#af5f34d537045518aa5462a3d42a4b38f">ble::connection_handle_t</a> <a class="code" href="struct_gatt_write_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">connHandle</a>;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment"></span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment">    /**</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment">     * Handle of the attribute to which the write operation applies.</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">     */</span></div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">   91</a></span>     <a class="code" href="class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4">GattAttribute::Handle_t</a> <a class="code" href="struct_gatt_write_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">handle</a>;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment"></span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">    /**</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">     * Type of the write operation.</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">     */</span></div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#ae5a3559b6e31e1e822824618060897f3">   96</a></span>     <a class="code" href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3f">WriteOp_t</a> <a class="code" href="struct_gatt_write_callback_params.html#ae5a3559b6e31e1e822824618060897f3">writeOp</a>;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> </div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>     <span class="keyword">union </span>{<span class="comment"></span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment">        /**</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment">         * Offset within the attribute value to be written.</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment">         *</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment">         * @attention Reserved for GattServer registered callbacks.</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment">         */</span></div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#ac681806181c80437cfab37335f62ff39">  104</a></span>         uint16_t <a class="code" href="struct_gatt_write_callback_params.html#ac681806181c80437cfab37335f62ff39">offset</a>;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment"></span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">        /**</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment">         * Status of the GattClient Write operation.</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">         *</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">         * @attention Reserved for GattClient registered callbacks.</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">         */</span></div><div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a6e65241f13d04c6af2c8fea857cbb41e">  111</a></span>         <a class="code" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> <a class="code" href="struct_gatt_write_callback_params.html#a6e65241f13d04c6af2c8fea857cbb41e">status</a>;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>     };</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> </div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>     <span class="keyword">union </span>{<span class="comment"></span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment">        /**</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">         * Length (in bytes) of the data to write.</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment">         *</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment">         * @attention Reserved for GattServer registered callbacks.</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment">         */</span></div><div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a8aed22e2c7b283705ec82e0120515618">  120</a></span>         uint16_t <a class="code" href="struct_gatt_write_callback_params.html#a8aed22e2c7b283705ec82e0120515618">len</a>;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment"></span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">        /**</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">         * Error code of the GattClient Write operation.</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="comment">         *</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment">         * @attention Reserved for GattClient registered callbacks.</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">         */</span></div><div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a45998c0b4dd5717ced32282d45d4ef9b">  127</a></span>         uint8_t <a class="code" href="struct_gatt_write_callback_params.html#a45998c0b4dd5717ced32282d45d4ef9b">error_code</a>;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>     };</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment"></span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">    /**</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment">     * Pointer to the data to write.</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">     *</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment">     * @attention Data may not persist beyond the callback scope.</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">     *</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">     * @attention Reserved for GattServer registered callbacks.</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">     */</span></div><div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="struct_gatt_write_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">  137</a></span>     <span class="keyword">const</span> uint8_t *<a class="code" href="struct_gatt_write_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">data</a>;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> };</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment"></span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment">/**</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment"> * GATT Read event definition.</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment"> *</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment"> * Instances of this type are created and passed to user registered callbacks</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment"> * whether the GattServer has received a read request or a GattClient has</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment"> * received a read response.</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment"> *</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment"> * @attention The GattClient only populates the fields status and error_code</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment"> * when it has received a read response. Callbacks attached to the GattServer</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment"> * do not use those fields.</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment"> */</span></div><div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html">  151</a></span> <span class="keyword">struct </span><a class="code" href="struct_gatt_read_callback_params.html">GattReadCallbackParams</a> {<span class="comment"></span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">    /**</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment">     * Handle of the connection that triggered the event.</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">     */</span></div><div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">  155</a></span>     <a class="code" href="namespaceble.html#af5f34d537045518aa5462a3d42a4b38f">ble::connection_handle_t</a> <a class="code" href="struct_gatt_read_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">connHandle</a>;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment"></span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">    /**</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">     * Attribute Handle to which the read operation applies.</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">     */</span></div><div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">  160</a></span>     <a class="code" href="class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4">GattAttribute::Handle_t</a> <a class="code" href="struct_gatt_read_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">handle</a>;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment"></span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">    /**</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">     * Offset within the attribute value read.</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">     */</span></div><div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#ac681806181c80437cfab37335f62ff39">  165</a></span>     uint16_t <a class="code" href="struct_gatt_read_callback_params.html#ac681806181c80437cfab37335f62ff39">offset</a>;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> </div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>     <span class="keyword">union </span>{<span class="comment"></span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">        /**</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment">         * Length in bytes of the data read.</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">         */</span></div><div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#a8aed22e2c7b283705ec82e0120515618">  171</a></span>         uint16_t <a class="code" href="struct_gatt_read_callback_params.html#a8aed22e2c7b283705ec82e0120515618">len</a>;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment"></span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">        /**</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment">         * Error code of the GattClient read operation.</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">         *</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">         * @attention Reserved for GattClient registered callbacks.</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">         *</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">         * @attention set if status is not equal to BLE_ERROR_NONE; otherwise,</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">         * this field is interpreted as len.</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">         */</span></div><div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#a45998c0b4dd5717ced32282d45d4ef9b">  181</a></span>         uint8_t <a class="code" href="struct_gatt_read_callback_params.html#a45998c0b4dd5717ced32282d45d4ef9b">error_code</a>;</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>     };</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment"></span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">    /**</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">     * Pointer to the data read.</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment">     *</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment">     * @attention Data may not persist beyond the callback scope.</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment">     */</span></div><div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">  189</a></span>     <span class="keyword">const</span> uint8_t *<a class="code" href="struct_gatt_read_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">data</a>;</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment"></span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="comment">    /**</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment">     * Status of the GattClient Read operation.</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">     *</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment">     * @attention Reserved for GattClient registered callbacks.</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment">     */</span></div><div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="struct_gatt_read_callback_params.html#a6e65241f13d04c6af2c8fea857cbb41e">  196</a></span>     <a class="code" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> <a class="code" href="struct_gatt_read_callback_params.html#a6e65241f13d04c6af2c8fea857cbb41e">status</a>;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> };</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment"></span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">/**</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment"> * @addtogroup server</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment"> * @{</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment"> */</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="comment"></span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="comment">/**</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="comment"> * Enumeration of allowed values returned by read or write authorization process.</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="comment"> */</span></div><div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="group__server.html#ga5a9b81b1ca19b93e4d5df3cf98f1f7a1">  207</a></span> <span class="keyword">enum</span> <a class="code" href="group__server.html#ga5a9b81b1ca19b93e4d5df3cf98f1f7a1">GattAuthCallbackReply_t</a> {<span class="comment"></span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment">    /**</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">     * Success.</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment">     */</span></div><div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a01b2f5a01ce00d80597a8a9372ac4a99">  211</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a01b2f5a01ce00d80597a8a9372ac4a99">AUTH_CALLBACK_REPLY_SUCCESS</a> = 0x00,</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment"></span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">    /**</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment">     * ATT Error: Invalid attribute handle.</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">     */</span></div><div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a90455ac7146290cb6ddc1eefb63ab165">  216</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a90455ac7146290cb6ddc1eefb63ab165">AUTH_CALLBACK_REPLY_ATTERR_INVALID_HANDLE</a> = 0x0101,</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment"></span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="comment">    /**</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment">     * ATT Error: Read not permitted.</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment">     */</span></div><div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ad83cb591c85a4dcb30a9eadf041bb90d">  221</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ad83cb591c85a4dcb30a9eadf041bb90d">AUTH_CALLBACK_REPLY_ATTERR_READ_NOT_PERMITTED</a> = 0x0102,</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="comment"></span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment">    /**</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="comment">     * ATT Error: Write not permitted.</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment">     */</span></div><div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1adc54409e4e2c829f1fd8890a9c7101e4">  226</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1adc54409e4e2c829f1fd8890a9c7101e4">AUTH_CALLBACK_REPLY_ATTERR_WRITE_NOT_PERMITTED</a> = 0x0103,</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment"></span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment">    /**</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">     * ATT Error: Authenticated link required.</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">     */</span></div><div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1aa3ce6baa8ecf6972be3e918768e52d5f">  231</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1aa3ce6baa8ecf6972be3e918768e52d5f">AUTH_CALLBACK_REPLY_ATTERR_INSUF_AUTHENTICATION</a> = 0x0105,</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment"></span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> <span class="comment">    /**</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="comment">     * ATT Error: The specified offset was past the end of the attribute.</span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment">     */</span></div><div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a940cf0dfe22ecf688960264c3603d9f7">  236</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a940cf0dfe22ecf688960264c3603d9f7">AUTH_CALLBACK_REPLY_ATTERR_INVALID_OFFSET</a> = 0x0107,</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment"></span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment">    /**</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">     * ATT Error: Used in ATT as "insufficient authorization".</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">     */</span></div><div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a58e3f722ffc8edc030ce4fd671af6489">  241</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a58e3f722ffc8edc030ce4fd671af6489">AUTH_CALLBACK_REPLY_ATTERR_INSUF_AUTHORIZATION</a> = 0x0108,</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment"></span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment">    /**</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment">     * ATT Error: Used in ATT as "prepare queue full".</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="comment">     */</span></div><div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a98a514e092c1bca8e3e00efa94955bef">  246</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a98a514e092c1bca8e3e00efa94955bef">AUTH_CALLBACK_REPLY_ATTERR_PREPARE_QUEUE_FULL</a> = 0x0109,</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment"></span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">    /**</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment">     * ATT Error: Used in ATT as "attribute not found".</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment">     */</span></div><div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a0950931aa886b5fa65c36a4c50c9a88a">  251</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a0950931aa886b5fa65c36a4c50c9a88a">AUTH_CALLBACK_REPLY_ATTERR_ATTRIBUTE_NOT_FOUND</a> = 0x010A,</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment"></span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment">    /**</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment">     * ATT Error: Attribute cannot be read or written using read/write blob</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment">     * requests.</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment">     */</span></div><div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a2bae26f0492c5a0013a1221ed3c20de8">  257</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a2bae26f0492c5a0013a1221ed3c20de8">AUTH_CALLBACK_REPLY_ATTERR_ATTRIBUTE_NOT_LONG</a> = 0x010B,</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment"></span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">    /**</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">     * ATT Error: Invalid value size.</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment">     */</span></div><div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a1143b69b8863bbd8853b2293d4909d48">  262</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a1143b69b8863bbd8853b2293d4909d48">AUTH_CALLBACK_REPLY_ATTERR_INVALID_ATT_VAL_LENGTH</a> = 0x010D,</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment"></span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment">    /**</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment">     * ATT Error: Encrypted link required.</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment">     */</span></div><div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ae1829dd08468d6d1c190b8367d3a68bd">  267</a></span>     <a class="code" href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ae1829dd08468d6d1c190b8367d3a68bd">AUTH_CALLBACK_REPLY_ATTERR_INSUF_RESOURCES</a> = 0x0111,</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> };</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="comment"></span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment">/**</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment"> * GATT write authorization request event.</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment"> */</span></div><div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html">  273</a></span> <span class="keyword">struct </span><a class="code" href="struct_gatt_write_auth_callback_params.html">GattWriteAuthCallbackParams</a> {<span class="comment"></span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="comment">    /**</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="comment">     * Handle of the connection that triggered the event.</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">     */</span></div><div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">  277</a></span>     <a class="code" href="namespaceble.html#af5f34d537045518aa5462a3d42a4b38f">ble::connection_handle_t</a> <a class="code" href="struct_gatt_write_auth_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">connHandle</a>;</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment"></span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment">    /**</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment">     * Attribute Handle to which the write operation applies.</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">     */</span></div><div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">  282</a></span>     <a class="code" href="class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4">GattAttribute::Handle_t</a> <a class="code" href="struct_gatt_write_auth_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">handle</a>;</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment"></span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment">    /**</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">     * Offset for the write operation.</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment">     */</span></div><div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html#ac681806181c80437cfab37335f62ff39">  287</a></span>     uint16_t <a class="code" href="struct_gatt_write_auth_callback_params.html#ac681806181c80437cfab37335f62ff39">offset</a>;</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment"></span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment">    /**</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment">     * Length of the incoming data.</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="comment">     */</span></div><div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html#a8aed22e2c7b283705ec82e0120515618">  292</a></span>     uint16_t <a class="code" href="struct_gatt_write_auth_callback_params.html#a8aed22e2c7b283705ec82e0120515618">len</a>;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="comment"></span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">    /**</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">     * Incoming data.</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment">     */</span></div><div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">  297</a></span>     <span class="keyword">const</span> uint8_t *<a class="code" href="struct_gatt_write_auth_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">data</a>;</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment"></span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment">    /**</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">     * Authorization result.</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="comment">     *</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> <span class="comment">     * The callback sets this parameter. If the value is set to</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="comment">     * AUTH_CALLBACK_REPLY_SUCCESS, then the write request is accepted;</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment">     * otherwise, an error code is returned to the peer client.</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment">     */</span></div><div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="struct_gatt_write_auth_callback_params.html#ae145d9b8928874b23528a7efe7e16d84">  306</a></span>     <a class="code" href="group__server.html#ga5a9b81b1ca19b93e4d5df3cf98f1f7a1">GattAuthCallbackReply_t</a> <a class="code" href="struct_gatt_write_auth_callback_params.html#ae145d9b8928874b23528a7efe7e16d84">authorizationReply</a>;</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> };</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span> <span class="comment"></span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="comment">/**</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment"> * GATT read authorization request event.</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment"> */</span></div><div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html">  312</a></span> <span class="keyword">struct </span><a class="code" href="struct_gatt_read_auth_callback_params.html">GattReadAuthCallbackParams</a> {<span class="comment"></span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment">    /**</span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment">     * The handle of the connection that triggered the event.</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> <span class="comment">     */</span></div><div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">  316</a></span>     <a class="code" href="namespaceble.html#af5f34d537045518aa5462a3d42a4b38f">ble::connection_handle_t</a> <a class="code" href="struct_gatt_read_auth_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">connHandle</a>;</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> <span class="comment"></span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="comment">    /**</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> <span class="comment">     * Attribute Handle to which the read operation applies.</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="comment">     */</span></div><div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">  321</a></span>     <a class="code" href="class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4">GattAttribute::Handle_t</a> <a class="code" href="struct_gatt_read_auth_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">handle</a>;</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span> <span class="comment"></span></div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> <span class="comment">    /**</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span> <span class="comment">     * Offset for the read operation.</span></div><div class="line"><a name="l00325"></a><span class="lineno">  325</span> <span class="comment">     */</span></div><div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html#ac681806181c80437cfab37335f62ff39">  326</a></span>     uint16_t <a class="code" href="struct_gatt_read_auth_callback_params.html#ac681806181c80437cfab37335f62ff39">offset</a>;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span> <span class="comment"></span></div><div class="line"><a name="l00328"></a><span class="lineno">  328</span> <span class="comment">    /**</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span> <span class="comment">     * Optional: new length of the outgoing data.</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span> <span class="comment">     */</span></div><div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html#a8aed22e2c7b283705ec82e0120515618">  331</a></span>     uint16_t <a class="code" href="struct_gatt_read_auth_callback_params.html#a8aed22e2c7b283705ec82e0120515618">len</a>;</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="comment"></span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> <span class="comment">    /**</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="comment">     * Optional: new outgoing data. Leave at NULL if data is unchanged.</span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span> <span class="comment">     */</span></div><div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html#abe222f6d3581e7920dcad5306cc906a8">  336</a></span>     uint8_t *<a class="code" href="struct_gatt_read_auth_callback_params.html#abe222f6d3581e7920dcad5306cc906a8">data</a>;</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span> <span class="comment"></span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span> <span class="comment">    /**</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span> <span class="comment">     * Authorization result.</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span> <span class="comment">     *</span></div><div class="line"><a name="l00341"></a><span class="lineno">  341</span> <span class="comment">     * The callback sets this parameter. If the value is set to</span></div><div class="line"><a name="l00342"></a><span class="lineno">  342</span> <span class="comment">     * AUTH_CALLBACK_REPLY_SUCCESS, then the read request is accepted;</span></div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> <span class="comment">     * otherwise, an error code is returned to the peer client.</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> <span class="comment">     */</span></div><div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="struct_gatt_read_auth_callback_params.html#ae145d9b8928874b23528a7efe7e16d84">  345</a></span>     <a class="code" href="group__server.html#ga5a9b81b1ca19b93e4d5df3cf98f1f7a1">GattAuthCallbackReply_t</a> <a class="code" href="struct_gatt_read_auth_callback_params.html#ae145d9b8928874b23528a7efe7e16d84">authorizationReply</a>;</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> };</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="comment"></span></div><div class="line"><a name="l00348"></a><span class="lineno">  348</span> <span class="comment">/**</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span> <span class="comment"> * Handle Value Notification/Indication event.</span></div><div class="line"><a name="l00350"></a><span class="lineno">  350</span> <span class="comment"> *</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span> <span class="comment"> * The GattClient generates this type of event upon the reception of a</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span> <span class="comment"> * Handle Value Notification or Indication.</span></div><div class="line"><a name="l00353"></a><span class="lineno">  353</span> <span class="comment"> *</span></div><div class="line"><a name="l00354"></a><span class="lineno">  354</span> <span class="comment"> * The event is passed to callbacks registered by GattClient::onHVX().</span></div><div class="line"><a name="l00355"></a><span class="lineno">  355</span> <span class="comment"> */</span></div><div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="struct_gatt_h_v_x_callback_params.html">  356</a></span> <span class="keyword">struct </span><a class="code" href="struct_gatt_h_v_x_callback_params.html">GattHVXCallbackParams</a> {<span class="comment"></span></div><div class="line"><a name="l00357"></a><span class="lineno">  357</span> <span class="comment">    /**</span></div><div class="line"><a name="l00358"></a><span class="lineno">  358</span> <span class="comment">     * The handle of the connection that triggered the event.</span></div><div class="line"><a name="l00359"></a><span class="lineno">  359</span> <span class="comment">     */</span></div><div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="struct_gatt_h_v_x_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">  360</a></span>     <a class="code" href="namespaceble.html#af5f34d537045518aa5462a3d42a4b38f">ble::connection_handle_t</a> <a class="code" href="struct_gatt_h_v_x_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">connHandle</a>;</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span> <span class="comment"></span></div><div class="line"><a name="l00362"></a><span class="lineno">  362</span> <span class="comment">    /**</span></div><div class="line"><a name="l00363"></a><span class="lineno">  363</span> <span class="comment">     * Attribute Handle to which the HVx operation applies.</span></div><div class="line"><a name="l00364"></a><span class="lineno">  364</span> <span class="comment">     */</span></div><div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="struct_gatt_h_v_x_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">  365</a></span>     <a class="code" href="class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4">GattAttribute::Handle_t</a> <a class="code" href="struct_gatt_h_v_x_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">handle</a>;</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span> <span class="comment"></span></div><div class="line"><a name="l00367"></a><span class="lineno">  367</span> <span class="comment">    /**</span></div><div class="line"><a name="l00368"></a><span class="lineno">  368</span> <span class="comment">     * Indication or Notification, see HVXType_t.</span></div><div class="line"><a name="l00369"></a><span class="lineno">  369</span> <span class="comment">     */</span></div><div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="struct_gatt_h_v_x_callback_params.html#a01d4205f1ac36c92ad68786c33eb5595">  370</a></span>     <a class="code" href="group__common.html#gac50e4dd3988f0925d2aa31725daf4b92">HVXType_t</a> <a class="code" href="struct_gatt_h_v_x_callback_params.html#a01d4205f1ac36c92ad68786c33eb5595">type</a>;</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span> <span class="comment"></span></div><div class="line"><a name="l00372"></a><span class="lineno">  372</span> <span class="comment">    /**</span></div><div class="line"><a name="l00373"></a><span class="lineno">  373</span> <span class="comment">     * Attribute value length.</span></div><div class="line"><a name="l00374"></a><span class="lineno">  374</span> <span class="comment">     */</span></div><div class="line"><a name="l00375"></a><span class="lineno"><a class="line" href="struct_gatt_h_v_x_callback_params.html#a8aed22e2c7b283705ec82e0120515618">  375</a></span>     uint16_t <a class="code" href="struct_gatt_h_v_x_callback_params.html#a8aed22e2c7b283705ec82e0120515618">len</a>;</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span> <span class="comment"></span></div><div class="line"><a name="l00377"></a><span class="lineno">  377</span> <span class="comment">    /**</span></div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> <span class="comment">     * Attribute value.</span></div><div class="line"><a name="l00379"></a><span class="lineno">  379</span> <span class="comment">     */</span></div><div class="line"><a name="l00380"></a><span class="lineno"><a class="line" href="struct_gatt_h_v_x_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">  380</a></span>     <span class="keyword">const</span> uint8_t *<a class="code" href="struct_gatt_h_v_x_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">data</a>;</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span> </div><div class="line"><a name="l00382"></a><span class="lineno">  382</span> };</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span> <span class="comment"></span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span> <span class="comment">/**</span></div><div class="line"><a name="l00385"></a><span class="lineno">  385</span> <span class="comment"> * @}</span></div><div class="line"><a name="l00386"></a><span class="lineno">  386</span> <span class="comment"> * @}</span></div><div class="line"><a name="l00387"></a><span class="lineno">  387</span> <span class="comment"> * @}</span></div><div class="line"><a name="l00388"></a><span class="lineno">  388</span> <span class="comment"> */</span></div><div class="line"><a name="l00389"></a><span class="lineno">  389</span> </div><div class="line"><a name="l00390"></a><span class="lineno">  390</span> <span class="preprocessor">#endif </span><span class="comment">/*MBED_BLE_GATT_CALLBACK_PARAM_TYPES_H__*/</span><span class="preprocessor"></span></div><div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3fa718a4b1f3c10407eb975aa45fd196859"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa718a4b1f3c10407eb975aa45fd196859">GattWriteCallbackParams::OP_EXEC_WRITE_REQ_NOW</a></div><div class="ttdoc">Execute write request: immediately execute all prepared writes. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00080">GattCallbackParamTypes.h:80</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html_aa24ff278a9abc1fd3198bbe101bcd525"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">GattWriteAuthCallbackParams::handle</a></div><div class="ttdeci">GattAttribute::Handle_t handle</div><div class="ttdoc">Attribute Handle to which the write operation applies. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00282">GattCallbackParamTypes.h:282</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ae1829dd08468d6d1c190b8367d3a68bd"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ae1829dd08468d6d1c190b8367d3a68bd">AUTH_CALLBACK_REPLY_ATTERR_INSUF_RESOURCES</a></div><div class="ttdoc">ATT Error: Encrypted link required. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00267">GattCallbackParamTypes.h:267</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html_ae145d9b8928874b23528a7efe7e16d84"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html#ae145d9b8928874b23528a7efe7e16d84">GattWriteAuthCallbackParams::authorizationReply</a></div><div class="ttdeci">GattAuthCallbackReply_t authorizationReply</div><div class="ttdoc">Authorization result. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00306">GattCallbackParamTypes.h:306</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_ac681806181c80437cfab37335f62ff39"><div class="ttname"><a href="struct_gatt_read_callback_params.html#ac681806181c80437cfab37335f62ff39">GattReadCallbackParams::offset</a></div><div class="ttdeci">uint16_t offset</div><div class="ttdoc">Offset within the attribute value read. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00165">GattCallbackParamTypes.h:165</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html_a579f5164b5b16e18ddcdb0296ef81799"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">GattWriteAuthCallbackParams::data</a></div><div class="ttdeci">const uint8_t * data</div><div class="ttdoc">Incoming data. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00297">GattCallbackParamTypes.h:297</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a579f5164b5b16e18ddcdb0296ef81799"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">GattWriteCallbackParams::data</a></div><div class="ttdeci">const uint8_t * data</div><div class="ttdoc">Pointer to the data to write. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00137">GattCallbackParamTypes.h:137</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a4e9ddf946f19b9478b02c5445aeb7dcb"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">GattWriteCallbackParams::connHandle</a></div><div class="ttdeci">ble::connection_handle_t connHandle</div><div class="ttdoc">Handle of the connection that triggered the event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00086">GattCallbackParamTypes.h:86</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_a45998c0b4dd5717ced32282d45d4ef9b"><div class="ttname"><a href="struct_gatt_read_callback_params.html#a45998c0b4dd5717ced32282d45d4ef9b">GattReadCallbackParams::error_code</a></div><div class="ttdeci">uint8_t error_code</div><div class="ttdoc">Error code of the GattClient read operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00181">GattCallbackParamTypes.h:181</a></div></div>
+<div class="ttc" id="namespaceble_html_af5f34d537045518aa5462a3d42a4b38f"><div class="ttname"><a href="namespaceble.html#af5f34d537045518aa5462a3d42a4b38f">ble::connection_handle_t</a></div><div class="ttdeci">uintptr_t connection_handle_t</div><div class="ttdoc">Opaque reference to a connection. </div><div class="ttdef"><b>Definition:</b> <a href="_b_l_e_types_8h_source.html#l00086">BLETypes.h:86</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a45998c0b4dd5717ced32282d45d4ef9b"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a45998c0b4dd5717ced32282d45d4ef9b">GattWriteCallbackParams::error_code</a></div><div class="ttdeci">uint8_t error_code</div><div class="ttdoc">Error code of the GattClient Write operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00127">GattCallbackParamTypes.h:127</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html">GattWriteAuthCallbackParams</a></div><div class="ttdoc">GATT write authorization request event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00273">GattCallbackParamTypes.h:273</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1aa3ce6baa8ecf6972be3e918768e52d5f"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1aa3ce6baa8ecf6972be3e918768e52d5f">AUTH_CALLBACK_REPLY_ATTERR_INSUF_AUTHENTICATION</a></div><div class="ttdoc">ATT Error: Authenticated link required. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00231">GattCallbackParamTypes.h:231</a></div></div>
+<div class="ttc" id="struct_gatt_h_v_x_callback_params_html"><div class="ttname"><a href="struct_gatt_h_v_x_callback_params.html">GattHVXCallbackParams</a></div><div class="ttdoc">Handle Value Notification/Indication event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00356">GattCallbackParamTypes.h:356</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a90455ac7146290cb6ddc1eefb63ab165"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a90455ac7146290cb6ddc1eefb63ab165">AUTH_CALLBACK_REPLY_ATTERR_INVALID_HANDLE</a></div><div class="ttdoc">ATT Error: Invalid attribute handle. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00216">GattCallbackParamTypes.h:216</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3fa27da038d91a489d7521ed13d80f3f1ce"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa27da038d91a489d7521ed13d80f3f1ce">GattWriteCallbackParams::OP_EXEC_WRITE_REQ_CANCEL</a></div><div class="ttdoc">Execute write request: cancel all prepared writes. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00075">GattCallbackParamTypes.h:75</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html">GattReadAuthCallbackParams</a></div><div class="ttdoc">GATT read authorization request event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00312">GattCallbackParamTypes.h:312</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3fa4cca987826f99dd9a70f807421ca4cad"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa4cca987826f99dd9a70f807421ca4cad">GattWriteCallbackParams::OP_PREP_WRITE_REQ</a></div><div class="ttdoc">Prepare write request. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00070">GattCallbackParamTypes.h:70</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3fa310dc72dd94edcb09d2c681abdd80a4e"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa310dc72dd94edcb09d2c681abdd80a4e">GattWriteCallbackParams::OP_INVALID</a></div><div class="ttdoc">Invalid operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00050">GattCallbackParamTypes.h:50</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html_ae145d9b8928874b23528a7efe7e16d84"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html#ae145d9b8928874b23528a7efe7e16d84">GattReadAuthCallbackParams::authorizationReply</a></div><div class="ttdeci">GattAuthCallbackReply_t authorizationReply</div><div class="ttdoc">Authorization result. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00345">GattCallbackParamTypes.h:345</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3faf1405800d0cf05fa511b799ecb2738c9"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3faf1405800d0cf05fa511b799ecb2738c9">GattWriteCallbackParams::OP_WRITE_CMD</a></div><div class="ttdoc">Write command. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00060">GattCallbackParamTypes.h:60</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_ac681806181c80437cfab37335f62ff39"><div class="ttname"><a href="struct_gatt_write_callback_params.html#ac681806181c80437cfab37335f62ff39">GattWriteCallbackParams::offset</a></div><div class="ttdeci">uint16_t offset</div><div class="ttdoc">Offset within the attribute value to be written. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00104">GattCallbackParamTypes.h:104</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1adc54409e4e2c829f1fd8890a9c7101e4"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1adc54409e4e2c829f1fd8890a9c7101e4">AUTH_CALLBACK_REPLY_ATTERR_WRITE_NOT_PERMITTED</a></div><div class="ttdoc">ATT Error: Write not permitted. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00226">GattCallbackParamTypes.h:226</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a940cf0dfe22ecf688960264c3603d9f7"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a940cf0dfe22ecf688960264c3603d9f7">AUTH_CALLBACK_REPLY_ATTERR_INVALID_OFFSET</a></div><div class="ttdoc">ATT Error: The specified offset was past the end of the attribute. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00236">GattCallbackParamTypes.h:236</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_a4e9ddf946f19b9478b02c5445aeb7dcb"><div class="ttname"><a href="struct_gatt_read_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">GattReadCallbackParams::connHandle</a></div><div class="ttdeci">ble::connection_handle_t connHandle</div><div class="ttdoc">Handle of the connection that triggered the event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00155">GattCallbackParamTypes.h:155</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a2bae26f0492c5a0013a1221ed3c20de8"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a2bae26f0492c5a0013a1221ed3c20de8">AUTH_CALLBACK_REPLY_ATTERR_ATTRIBUTE_NOT_LONG</a></div><div class="ttdoc">ATT Error: Attribute cannot be read or written using read/write blob requests. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00257">GattCallbackParamTypes.h:257</a></div></div>
+<div class="ttc" id="class_gatt_attribute_html_a2ffe413dd7b6a0775ebbabc58f8f48d4"><div class="ttname"><a href="class_gatt_attribute.html#a2ffe413dd7b6a0775ebbabc58f8f48d4">GattAttribute::Handle_t</a></div><div class="ttdeci">ble::attribute_handle_t Handle_t</div><div class="ttdoc">Representation of an attribute handle. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_attribute_8h_source.html#l00067">GattAttribute.h:67</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a01b2f5a01ce00d80597a8a9372ac4a99"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a01b2f5a01ce00d80597a8a9372ac4a99">AUTH_CALLBACK_REPLY_SUCCESS</a></div><div class="ttdoc">Success. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00211">GattCallbackParamTypes.h:211</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html_a4e9ddf946f19b9478b02c5445aeb7dcb"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">GattReadAuthCallbackParams::connHandle</a></div><div class="ttdeci">ble::connection_handle_t connHandle</div><div class="ttdoc">The handle of the connection that triggered the event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00316">GattCallbackParamTypes.h:316</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html_a8aed22e2c7b283705ec82e0120515618"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html#a8aed22e2c7b283705ec82e0120515618">GattReadAuthCallbackParams::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdoc">Optional: new length of the outgoing data. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00331">GattCallbackParamTypes.h:331</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_a6e65241f13d04c6af2c8fea857cbb41e"><div class="ttname"><a href="struct_gatt_read_callback_params.html#a6e65241f13d04c6af2c8fea857cbb41e">GattReadCallbackParams::status</a></div><div class="ttdeci">ble_error_t status</div><div class="ttdoc">Status of the GattClient Read operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00196">GattCallbackParamTypes.h:196</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html"><div class="ttname"><a href="struct_gatt_write_callback_params.html">GattWriteCallbackParams</a></div><div class="ttdoc">GATT Write event definition. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00042">GattCallbackParamTypes.h:42</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ad83cb591c85a4dcb30a9eadf041bb90d"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1ad83cb591c85a4dcb30a9eadf041bb90d">AUTH_CALLBACK_REPLY_ATTERR_READ_NOT_PERMITTED</a></div><div class="ttdoc">ATT Error: Read not permitted. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00221">GattCallbackParamTypes.h:221</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a8aed22e2c7b283705ec82e0120515618"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a8aed22e2c7b283705ec82e0120515618">GattWriteCallbackParams::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdoc">Length (in bytes) of the data to write. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00120">GattCallbackParamTypes.h:120</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3fa8d701bd957f295aff3c42382aa134541"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fa8d701bd957f295aff3c42382aa134541">GattWriteCallbackParams::OP_SIGN_WRITE_CMD</a></div><div class="ttdoc">Signed write command. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00065">GattCallbackParamTypes.h:65</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html"><div class="ttname"><a href="struct_gatt_read_callback_params.html">GattReadCallbackParams</a></div><div class="ttdoc">GATT Read event definition. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00151">GattCallbackParamTypes.h:151</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html_abe222f6d3581e7920dcad5306cc906a8"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html#abe222f6d3581e7920dcad5306cc906a8">GattReadAuthCallbackParams::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdoc">Optional: new outgoing data. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00336">GattCallbackParamTypes.h:336</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_a8aed22e2c7b283705ec82e0120515618"><div class="ttname"><a href="struct_gatt_read_callback_params.html#a8aed22e2c7b283705ec82e0120515618">GattReadCallbackParams::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdoc">Length in bytes of the data read. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00171">GattCallbackParamTypes.h:171</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a0950931aa886b5fa65c36a4c50c9a88a"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a0950931aa886b5fa65c36a4c50c9a88a">AUTH_CALLBACK_REPLY_ATTERR_ATTRIBUTE_NOT_FOUND</a></div><div class="ttdoc">ATT Error: Used in ATT as "attribute not found". </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00251">GattCallbackParamTypes.h:251</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a98a514e092c1bca8e3e00efa94955bef"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a98a514e092c1bca8e3e00efa94955bef">AUTH_CALLBACK_REPLY_ATTERR_PREPARE_QUEUE_FULL</a></div><div class="ttdoc">ATT Error: Used in ATT as "prepare queue full". </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00246">GattCallbackParamTypes.h:246</a></div></div>
+<div class="ttc" id="struct_gatt_h_v_x_callback_params_html_a579f5164b5b16e18ddcdb0296ef81799"><div class="ttname"><a href="struct_gatt_h_v_x_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">GattHVXCallbackParams::data</a></div><div class="ttdeci">const uint8_t * data</div><div class="ttdoc">Attribute value. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00380">GattCallbackParamTypes.h:380</a></div></div>
+<div class="ttc" id="group__common_html_gac50e4dd3988f0925d2aa31725daf4b92"><div class="ttname"><a href="group__common.html#gac50e4dd3988f0925d2aa31725daf4b92">HVXType_t</a></div><div class="ttdeci">HVXType_t</div><div class="ttdoc">Handle Value Notification/Indication event. </div><div class="ttdef"><b>Definition:</b> <a href="blecommon_8h_source.html#l00231">blecommon.h:231</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_ae5a3559b6e31e1e822824618060897f3"><div class="ttname"><a href="struct_gatt_write_callback_params.html#ae5a3559b6e31e1e822824618060897f3">GattWriteCallbackParams::writeOp</a></div><div class="ttdeci">WriteOp_t writeOp</div><div class="ttdoc">Type of the write operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00096">GattCallbackParamTypes.h:96</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html_ac681806181c80437cfab37335f62ff39"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html#ac681806181c80437cfab37335f62ff39">GattWriteAuthCallbackParams::offset</a></div><div class="ttdeci">uint16_t offset</div><div class="ttdoc">Offset for the write operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00287">GattCallbackParamTypes.h:287</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html_a8aed22e2c7b283705ec82e0120515618"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html#a8aed22e2c7b283705ec82e0120515618">GattWriteAuthCallbackParams::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdoc">Length of the incoming data. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00292">GattCallbackParamTypes.h:292</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a6e65241f13d04c6af2c8fea857cbb41e"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a6e65241f13d04c6af2c8fea857cbb41e">GattWriteCallbackParams::status</a></div><div class="ttdeci">ble_error_t status</div><div class="ttdoc">Status of the GattClient Write operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00111">GattCallbackParamTypes.h:111</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_aa24ff278a9abc1fd3198bbe101bcd525"><div class="ttname"><a href="struct_gatt_write_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">GattWriteCallbackParams::handle</a></div><div class="ttdeci">GattAttribute::Handle_t handle</div><div class="ttdoc">Handle of the attribute to which the write operation applies. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00091">GattCallbackParamTypes.h:91</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html_aa24ff278a9abc1fd3198bbe101bcd525"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">GattReadAuthCallbackParams::handle</a></div><div class="ttdeci">GattAttribute::Handle_t handle</div><div class="ttdoc">Attribute Handle to which the read operation applies. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00321">GattCallbackParamTypes.h:321</a></div></div>
+<div class="ttc" id="struct_gatt_write_auth_callback_params_html_a4e9ddf946f19b9478b02c5445aeb7dcb"><div class="ttname"><a href="struct_gatt_write_auth_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">GattWriteAuthCallbackParams::connHandle</a></div><div class="ttdeci">ble::connection_handle_t connHandle</div><div class="ttdoc">Handle of the connection that triggered the event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00277">GattCallbackParamTypes.h:277</a></div></div>
+<div class="ttc" id="struct_gatt_h_v_x_callback_params_html_a8aed22e2c7b283705ec82e0120515618"><div class="ttname"><a href="struct_gatt_h_v_x_callback_params.html#a8aed22e2c7b283705ec82e0120515618">GattHVXCallbackParams::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdoc">Attribute value length. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00375">GattCallbackParamTypes.h:375</a></div></div>
+<div class="ttc" id="struct_gatt_h_v_x_callback_params_html_a01d4205f1ac36c92ad68786c33eb5595"><div class="ttname"><a href="struct_gatt_h_v_x_callback_params.html#a01d4205f1ac36c92ad68786c33eb5595">GattHVXCallbackParams::type</a></div><div class="ttdeci">HVXType_t type</div><div class="ttdoc">Indication or Notification, see HVXType_t. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00370">GattCallbackParamTypes.h:370</a></div></div>
+<div class="ttc" id="struct_gatt_h_v_x_callback_params_html_aa24ff278a9abc1fd3198bbe101bcd525"><div class="ttname"><a href="struct_gatt_h_v_x_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">GattHVXCallbackParams::handle</a></div><div class="ttdeci">GattAttribute::Handle_t handle</div><div class="ttdoc">Attribute Handle to which the HVx operation applies. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00365">GattCallbackParamTypes.h:365</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a1143b69b8863bbd8853b2293d4909d48"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a1143b69b8863bbd8853b2293d4909d48">AUTH_CALLBACK_REPLY_ATTERR_INVALID_ATT_VAL_LENGTH</a></div><div class="ttdoc">ATT Error: Invalid value size. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00262">GattCallbackParamTypes.h:262</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_a579f5164b5b16e18ddcdb0296ef81799"><div class="ttname"><a href="struct_gatt_read_callback_params.html#a579f5164b5b16e18ddcdb0296ef81799">GattReadCallbackParams::data</a></div><div class="ttdeci">const uint8_t * data</div><div class="ttdoc">Pointer to the data read. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00189">GattCallbackParamTypes.h:189</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3f"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3f">GattWriteCallbackParams::WriteOp_t</a></div><div class="ttdeci">WriteOp_t</div><div class="ttdoc">Enumeration of allowed write operations. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00046">GattCallbackParamTypes.h:46</a></div></div>
+<div class="ttc" id="group__server_html_ga5a9b81b1ca19b93e4d5df3cf98f1f7a1"><div class="ttname"><a href="group__server.html#ga5a9b81b1ca19b93e4d5df3cf98f1f7a1">GattAuthCallbackReply_t</a></div><div class="ttdeci">GattAuthCallbackReply_t</div><div class="ttdoc">Enumeration of allowed values returned by read or write authorization process. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00207">GattCallbackParamTypes.h:207</a></div></div>
+<div class="ttc" id="group__server_html_gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a58e3f722ffc8edc030ce4fd671af6489"><div class="ttname"><a href="group__server.html#gga5a9b81b1ca19b93e4d5df3cf98f1f7a1a58e3f722ffc8edc030ce4fd671af6489">AUTH_CALLBACK_REPLY_ATTERR_INSUF_AUTHORIZATION</a></div><div class="ttdoc">ATT Error: Used in ATT as "insufficient authorization". </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00241">GattCallbackParamTypes.h:241</a></div></div>
+<div class="ttc" id="struct_gatt_write_callback_params_html_a5471c5942a59a16d20317a0ce8ddcb3fae2bf337a86547f97f1ff789e02105d14"><div class="ttname"><a href="struct_gatt_write_callback_params.html#a5471c5942a59a16d20317a0ce8ddcb3fae2bf337a86547f97f1ff789e02105d14">GattWriteCallbackParams::OP_WRITE_REQ</a></div><div class="ttdoc">Write request. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00055">GattCallbackParamTypes.h:55</a></div></div>
+<div class="ttc" id="struct_gatt_read_callback_params_html_aa24ff278a9abc1fd3198bbe101bcd525"><div class="ttname"><a href="struct_gatt_read_callback_params.html#aa24ff278a9abc1fd3198bbe101bcd525">GattReadCallbackParams::handle</a></div><div class="ttdeci">GattAttribute::Handle_t handle</div><div class="ttdoc">Attribute Handle to which the read operation applies. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00160">GattCallbackParamTypes.h:160</a></div></div>
+<div class="ttc" id="struct_gatt_read_auth_callback_params_html_ac681806181c80437cfab37335f62ff39"><div class="ttname"><a href="struct_gatt_read_auth_callback_params.html#ac681806181c80437cfab37335f62ff39">GattReadAuthCallbackParams::offset</a></div><div class="ttdeci">uint16_t offset</div><div class="ttdoc">Offset for the read operation. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00326">GattCallbackParamTypes.h:326</a></div></div>
+<div class="ttc" id="group__common_html_ga6fb48b8f40e280c30d2ae3bd0c3712c4"><div class="ttname"><a href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a></div><div class="ttdeci">ble_error_t</div><div class="ttdoc">Error codes for the BLE API. </div><div class="ttdef"><b>Definition:</b> <a href="blecommon_8h_source.html#l00147">blecommon.h:147</a></div></div>
+<div class="ttc" id="struct_gatt_h_v_x_callback_params_html_a4e9ddf946f19b9478b02c5445aeb7dcb"><div class="ttname"><a href="struct_gatt_h_v_x_callback_params.html#a4e9ddf946f19b9478b02c5445aeb7dcb">GattHVXCallbackParams::connHandle</a></div><div class="ttdeci">ble::connection_handle_t connHandle</div><div class="ttdoc">The handle of the connection that triggered the event. </div><div class="ttdef"><b>Definition:</b> <a href="_gatt_callback_param_types_8h_source.html#l00360">GattCallbackParamTypes.h:360</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/_gatt_callback_param_types_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:07:25 GMT -->
+</html>

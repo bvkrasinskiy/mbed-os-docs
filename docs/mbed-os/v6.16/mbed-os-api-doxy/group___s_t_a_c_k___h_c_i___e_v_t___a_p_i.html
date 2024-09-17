@@ -1,0 +1,2701 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:15:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | STACK_HCI_EVT_API</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#typedef-members">Typedefs</a>  </div>
+  <div class="headertitle">
+<div class="title">STACK_HCI_EVT_API</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_conn_cmpl_evt__t.html">hciLeConnCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE connection complete event.  <a href="structhci_le_conn_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_disconnect_cmpl_evt__t.html">hciDisconnectCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Disconnect complete event.  <a href="structhci_disconnect_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_conn_update_cmpl_evt__t.html">hciLeConnUpdateCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE connection update complete event.  <a href="structhci_le_conn_update_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_create_conn_cancel_cmd_cmpl_evt__t.html">hciLeCreateConnCancelCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE create connection cancel command complete event.  <a href="structhci_le_create_conn_cancel_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_adv_report_evt__t.html">hciLeAdvReportEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE advertising report event.  <a href="structhci_le_adv_report_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_ext_adv_report_evt__t.html">hciLeExtAdvReportEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE extended advertising report.  <a href="structhci_le_ext_adv_report_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_scan_timeout_evt__t.html">hciLeScanTimeoutEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE scan timeout.  <a href="structhci_le_scan_timeout_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_adv_set_term_evt__t.html">hciLeAdvSetTermEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE advertising set terminated.  <a href="structhci_le_adv_set_term_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_scan_req_rcvd_evt__t.html">hciLeScanReqRcvdEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE scan request received.  <a href="structhci_le_scan_req_rcvd_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_per_adv_sync_est_evt__t.html">hciLePerAdvSyncEstEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising sync established.  <a href="structhci_le_per_adv_sync_est_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_per_adv_report_evt__t.html">hciLePerAdvReportEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising report.  <a href="structhci_le_per_adv_report_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_per_adv_sync_lost_evt__t.html">hciLePerAdvSyncLostEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising synch lost.  <a href="structhci_le_per_adv_sync_lost_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_per_adv_sync_trsf_rcvd_evt__t.html">HciLePerAdvSyncTrsfRcvdEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising sync transfer received.  <a href="struct_hci_le_per_adv_sync_trsf_rcvd_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_ch_sel_algo_evt__t.html">hciLeChSelAlgoEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE channel selection algorithm.  <a href="structhci_le_ch_sel_algo_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_rssi_cmd_cmpl_evt__t.html">hciReadRssiCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Read RSSI command complete event.  <a href="structhci_read_rssi_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_chan_map_cmd_cmpl_evt__t.html">hciReadChanMapCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE Read channel map command complete event.  <a href="structhci_read_chan_map_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_tx_pwr_lvl_cmd_cmpl_evt__t.html">hciReadTxPwrLvlCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Read transmit power level command complete event.  <a href="structhci_read_tx_pwr_lvl_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_remote_ver_info_cmpl_evt__t.html">hciReadRemoteVerInfoCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Read remote version information complete event.  <a href="structhci_read_remote_ver_info_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_remote_feat_cmpl_evt__t.html">hciLeReadRemoteFeatCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read remote features complete event.  <a href="structhci_le_read_remote_feat_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_ltk_req_repl_cmd_cmpl_evt__t.html">hciLeLtkReqReplCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE LTK request reply command complete event.  <a href="structhci_le_ltk_req_repl_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_ltk_req_neg_repl_cmd_cmpl_evt__t.html">hciLeLtkReqNegReplCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE LTK request negative reply command complete event.  <a href="structhci_le_ltk_req_neg_repl_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_enc_key_refresh_cmpl__t.html">hciEncKeyRefreshCmpl_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Encryption key refresh complete event.  <a href="structhci_enc_key_refresh_cmpl__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_enc_change_evt__t.html">hciEncChangeEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Encryption change event.  <a href="structhci_enc_change_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_ltk_req_evt__t.html">hciLeLtkReqEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE LTK request event.  <a href="structhci_le_ltk_req_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_vendor_spec_cmd_status_evt__t.html">hciVendorSpecCmdStatusEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Vendor specific command status event.  <a href="structhci_vendor_spec_cmd_status_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_vendor_spec_cmd_cmpl_evt__t.html">hciVendorSpecCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Vendor specific command complete event.  <a href="structhci_vendor_spec_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_vendor_spec_evt__t.html">hciVendorSpecEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Vendor specific event.  <a href="structhci_vendor_spec_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_hw_error_evt__t.html">hciHwErrorEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Hardware error event.  <a href="structhci_hw_error_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_encrypt_cmd_cmpl_evt__t.html">hciLeEncryptCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE encrypt command complete event.  <a href="structhci_le_encrypt_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_rand_cmd_cmpl_evt__t.html">hciLeRandCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE rand command complete event.  <a href="structhci_le_rand_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_rem_conn_param_rep_evt__t.html">hciLeRemConnParamRepEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE remote connection parameter request reply command complete event.  <a href="structhci_le_rem_conn_param_rep_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_rem_conn_param_neg_rep_evt__t.html">hciLeRemConnParamNegRepEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE remote connection parameter request negative reply command complete event.  <a href="structhci_le_rem_conn_param_neg_rep_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_def_data_len_evt__t.html">hciLeReadDefDataLenEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read suggested default data len command complete event.  <a href="structhci_le_read_def_data_len_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_write_def_data_len_evt__t.html">hciLeWriteDefDataLenEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE write suggested default data len command complete event.  <a href="structhci_le_write_def_data_len_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_set_data_len_evt__t.html">hciLeSetDataLenEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set data len command complete event.  <a href="structhci_le_set_data_len_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_max_data_len_evt__t.html">hciLeReadMaxDataLenEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read maximum data len command complete event.  <a href="structhci_le_read_max_data_len_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_rem_conn_param_req_evt__t.html">hciLeRemConnParamReqEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE remote connetion parameter request event.  <a href="structhci_le_rem_conn_param_req_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_data_len_change_evt__t.html">hciLeDataLenChangeEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE data length change event.  <a href="structhci_le_data_len_change_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_p256_cmpl_evt__t.html">hciLeP256CmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE local p256 ecc key command complete event.  <a href="structhci_le_p256_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_gen_dh_key_evt__t.html">hciLeGenDhKeyEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE generate DH key command complete event.  <a href="structhci_le_gen_dh_key_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_peer_res_addr_cmd_cmpl_evt__t.html">hciLeReadPeerResAddrCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read peer resolving address command complete event.  <a href="structhci_le_read_peer_res_addr_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_local_res_addr_cmd_cmpl_evt__t.html">hciLeReadLocalResAddrCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read local resolving address command complete event.  <a href="structhci_le_read_local_res_addr_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_set_addr_res_enable_cmd_cmpl_evt__t.html">hciLeSetAddrResEnableCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set address resolving enable command complete event.  <a href="structhci_le_set_addr_res_enable_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_add_dev_to_res_list_cmd_cmpl_evt__t.html">hciLeAddDevToResListCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE add device to resolving list command complete event.  <a href="structhci_le_add_dev_to_res_list_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_rem_dev_from_res_list_cmd_cmpl_evt__t.html">hciLeRemDevFromResListCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE remove device from resolving list command complete event.  <a href="structhci_le_rem_dev_from_res_list_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_clear_res_list_cmd_cmpl_evt__t.html">hciLeClearResListCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE clear resolving list command complete event.  <a href="structhci_le_clear_res_list_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_write_auth_payload_to_cmd_cmpl_evt__t.html">hciWriteAuthPayloadToCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Write authenticated payload to command complete event.  <a href="structhci_write_auth_payload_to_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_auth_payload_to_expired_evt__t.html">hciAuthPayloadToExpiredEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Authenticated payload to expire event.  <a href="structhci_auth_payload_to_expired_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_phy_cmd_cmpl_evt__t.html">hciLeReadPhyCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read PHY command complete event.  <a href="structhci_le_read_phy_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_set_def_phy_cmd_cmpl_evt__t.html">hciLeSetDefPhyCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set default PHY command complete event.  <a href="structhci_le_set_def_phy_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_phy_update_evt__t.html">hciLePhyUpdateEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE PHY update complete event.  <a href="structhci_le_phy_update_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_per_adv_sync_trsf_cmd_cmpl_evt__t.html">hciLePerAdvSyncTrsfCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising sync transfer command complete event.  <a href="structhci_le_per_adv_sync_trsf_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_per_adv_set_info_trsf_cmd_cmpl_evt__t.html">hciLePerAdvSetInfoTrsfCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set periodic advertising set info transfer command complete event.  <a href="structhci_le_per_adv_set_info_trsf_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_conn_i_q_report_evt__t.html">hciLeConnIQReportEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE connection IQ report.  <a href="structhci_le_conn_i_q_report_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_cte_req_failed_evt__t.html">hciLeCteReqFailedEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE CTE request failed event.  <a href="structhci_le_cte_req_failed_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_set_conn_cte_rx_params_cmd_cmpl_evt__t.html">hciLeSetConnCteRxParamsCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set connection CTE receive parameters command complete event.  <a href="structhci_le_set_conn_cte_rx_params_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_set_conn_cte_tx_params_cmd_cmpl_evt__t.html">hciLeSetConnCteTxParamsCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set connection CTE transmit parameters command complete event.  <a href="structhci_le_set_conn_cte_tx_params_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_conn_cte_req_enable_cmd_cmpl_evt__t.html">hciLeConnCteReqEnableCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE connection CTE request enable command complete event.  <a href="structhci_le_conn_cte_req_enable_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_conn_cte_rsp_enable_cmd_cmpl_evt__t.html">hciLeConnCteRspEnableCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE connection CTE response enable command complete event.  <a href="structhci_le_conn_cte_rsp_enable_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_read_antenna_info_cmd_cmpl_evt__t.html">hciLeReadAntennaInfoCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE read antenna information command complete event.  <a href="structhci_le_read_antenna_info_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_cis_est_evt__t.html">HciLeCisEstEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE CIS established event.  <a href="struct_hci_le_cis_est_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_cis_req_evt__t.html">HciLeCisReqEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE CIS request event.  <a href="struct_hci_le_cis_req_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_req_peer_sca_cmpl_evt__t__t.html">HciLeReqPeerScaCmplEvt_t_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE request peer SCA complete.  <a href="struct_hci_le_req_peer_sca_cmpl_evt__t__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_set_cig_params_cmd_cmpl_evt__t.html">hciLeSetCigParamsCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE set CIG parameters command complete event.  <a href="structhci_le_set_cig_params_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_remove_cig_cmd_cmpl_evt__t.html">hciLeRemoveCigCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE remove CIG command complete event.  <a href="structhci_le_remove_cig_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_create_big_cmpl_evt__t.html">HciLeCreateBigCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE Create BIG complete event.  <a href="struct_hci_le_create_big_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_terminate_big_cmpl_evt__t.html">HciLeTerminateBigCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE Terminate BIG complete event.  <a href="struct_hci_le_terminate_big_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_big_term_sync_cmpl_evt__t.html">HciLeBigTermSyncCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG Terminate Sync complete event.  <a href="struct_hci_le_big_term_sync_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_big_sync_est_evt__t.html">HciLeBigSyncEstEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG Sync Established event.  <a href="struct_hci_le_big_sync_est_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_big_sync_lost_evt__t.html">HciLeBigSyncLostEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG sync lost event.  <a href="struct_hci_le_big_sync_lost_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_le_big_info_adv_rpt_evt__t.html">HciLeBigInfoAdvRptEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG Info Advertising Report event.  <a href="struct_hci_le_big_info_adv_rpt_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_setup_iso_data_path_cmd_cmpl_evt__t.html">hciLeSetupIsoDataPathCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE setup ISO data path command complete event.  <a href="structhci_le_setup_iso_data_path_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_le_remove_iso_data_path_cmd_cmpl_evt__t.html">hciLeRemoveIsoDataPathCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">LE remove ISO data path command complete event.  <a href="structhci_le_remove_iso_data_path_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_config_data_path_cmd_cmpl_evt__t.html">hciConfigDataPathCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Config data path command complete event.  <a href="structhci_config_data_path_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_std_codec_info__t.html">HciStdCodecInfo_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Standard codec info block.  <a href="struct_hci_std_codec_info__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_vs_codec_info__t.html">HciVsCodecInfo_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Vendor-specific codec info block.  <a href="struct_hci_vs_codec_info__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_local_sup_codecs_cmd_cmpl_evt__t.html">hciReadLocalSupCodecsCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Read local supported codecs command complete event.  <a href="structhci_read_local_sup_codecs_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hci_codec_cap__t.html">HciCodecCap_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Codec capability block.  <a href="struct_hci_codec_cap__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_local_sup_codec_cap_cmd_cmpl_evt__t.html">hciReadLocalSupCodecCapCmdCmplEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Read local supported codec capabilities command complete event.  <a href="structhci_read_local_sup_codec_cap_cmd_cmpl_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_read_local_sup_ctr_dly_cmd_cmpl_evt__t.html">hciReadLocalSupCtrDlyCmdCmplEvt_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structhci_local_ver_info__t.html">hciLocalVerInfo_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Local version information.  <a href="structhci_local_ver_info__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">union  </td><td class="memItemRight" valign="bottom"><a class="el" href="unionhci_evt__t.html">hciEvt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Union of all event types.  <a href="unionhci_evt__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga1b08f74d64cad116ce035b6a117680d0"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga1b08f74d64cad116ce035b6a117680d0">hciEvtCback_t</a>) (<a class="el" href="unionhci_evt__t.html">hciEvt_t</a> *pEvent)</td></tr>
+<tr class="memdesc:ga1b08f74d64cad116ce035b6a117680d0"><td class="mdescLeft"> </td><td class="mdescRight">HCI event callback type.  <a href="#ga1b08f74d64cad116ce035b6a117680d0">More...</a><br/></td></tr>
+<tr class="separator:ga1b08f74d64cad116ce035b6a117680d0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga85253dd79a3977d4cb2d5c01ff98ebb4"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga85253dd79a3977d4cb2d5c01ff98ebb4">hciSecCback_t</a>) (<a class="el" href="unionhci_evt__t.html">hciEvt_t</a> *pEvent)</td></tr>
+<tr class="memdesc:ga85253dd79a3977d4cb2d5c01ff98ebb4"><td class="mdescLeft"> </td><td class="mdescRight">HCI security callback type.  <a href="#ga85253dd79a3977d4cb2d5c01ff98ebb4">More...</a><br/></td></tr>
+<tr class="separator:ga85253dd79a3977d4cb2d5c01ff98ebb4"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+HCI Internal Event Codes</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp22f4517b27e80d0d60bd9be326ef32cb"></a>Proprietary HCI event codes for handling HCI events in callbacks. </p>
+</td></tr>
+<tr class="memitem:ga72e6c4362ed3214f30c624b986ef219f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga72e6c4362ed3214f30c624b986ef219f">HCI_RESET_SEQ_CMPL_CBACK_EVT</a>   0</td></tr>
+<tr class="memdesc:ga72e6c4362ed3214f30c624b986ef219f"><td class="mdescLeft"> </td><td class="mdescRight">Reset sequence complete.  <a href="#ga72e6c4362ed3214f30c624b986ef219f">More...</a><br/></td></tr>
+<tr class="separator:ga72e6c4362ed3214f30c624b986ef219f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga175652c86e9c64bf54918f5d09a38152"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga175652c86e9c64bf54918f5d09a38152">HCI_LE_CONN_CMPL_CBACK_EVT</a>   1</td></tr>
+<tr class="memdesc:ga175652c86e9c64bf54918f5d09a38152"><td class="mdescLeft"> </td><td class="mdescRight">LE connection complete.  <a href="#ga175652c86e9c64bf54918f5d09a38152">More...</a><br/></td></tr>
+<tr class="separator:ga175652c86e9c64bf54918f5d09a38152"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac7c99c69f2544ed2ff923295b8108293"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gac7c99c69f2544ed2ff923295b8108293">HCI_LE_ENHANCED_CONN_CMPL_CBACK_EVT</a>   2</td></tr>
+<tr class="memdesc:gac7c99c69f2544ed2ff923295b8108293"><td class="mdescLeft"> </td><td class="mdescRight">LE enhanced connection complete.  <a href="#gac7c99c69f2544ed2ff923295b8108293">More...</a><br/></td></tr>
+<tr class="separator:gac7c99c69f2544ed2ff923295b8108293"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad428db32b865cce37b17fc6efdcdbfdc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gad428db32b865cce37b17fc6efdcdbfdc">HCI_DISCONNECT_CMPL_CBACK_EVT</a>   3</td></tr>
+<tr class="memdesc:gad428db32b865cce37b17fc6efdcdbfdc"><td class="mdescLeft"> </td><td class="mdescRight">Disconnect complete.  <a href="#gad428db32b865cce37b17fc6efdcdbfdc">More...</a><br/></td></tr>
+<tr class="separator:gad428db32b865cce37b17fc6efdcdbfdc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab3dbe47a1e73d722ca37b0ccb4ae23bf"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gab3dbe47a1e73d722ca37b0ccb4ae23bf">HCI_LE_CONN_UPDATE_CMPL_CBACK_EVT</a>   4</td></tr>
+<tr class="memdesc:gab3dbe47a1e73d722ca37b0ccb4ae23bf"><td class="mdescLeft"> </td><td class="mdescRight">LE connection update complete.  <a href="#gab3dbe47a1e73d722ca37b0ccb4ae23bf">More...</a><br/></td></tr>
+<tr class="separator:gab3dbe47a1e73d722ca37b0ccb4ae23bf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga849d782de82e8204193210b226561eda"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga849d782de82e8204193210b226561eda">HCI_LE_CREATE_CONN_CANCEL_CMD_CMPL_CBACK_EVT</a>   5</td></tr>
+<tr class="memdesc:ga849d782de82e8204193210b226561eda"><td class="mdescLeft"> </td><td class="mdescRight">LE create connection cancel command complete.  <a href="#ga849d782de82e8204193210b226561eda">More...</a><br/></td></tr>
+<tr class="separator:ga849d782de82e8204193210b226561eda"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga40e5a53afb2cca2e29e3117e503a9f59"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga40e5a53afb2cca2e29e3117e503a9f59">HCI_LE_ADV_REPORT_CBACK_EVT</a>   6</td></tr>
+<tr class="memdesc:ga40e5a53afb2cca2e29e3117e503a9f59"><td class="mdescLeft"> </td><td class="mdescRight">LE advertising report.  <a href="#ga40e5a53afb2cca2e29e3117e503a9f59">More...</a><br/></td></tr>
+<tr class="separator:ga40e5a53afb2cca2e29e3117e503a9f59"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8bc3180b82a06ed61cca58e316d41131"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga8bc3180b82a06ed61cca58e316d41131">HCI_READ_RSSI_CMD_CMPL_CBACK_EVT</a>   7</td></tr>
+<tr class="memdesc:ga8bc3180b82a06ed61cca58e316d41131"><td class="mdescLeft"> </td><td class="mdescRight">Read RSSI command complete.  <a href="#ga8bc3180b82a06ed61cca58e316d41131">More...</a><br/></td></tr>
+<tr class="separator:ga8bc3180b82a06ed61cca58e316d41131"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga68af085c9054e7fdc6c84fadfbe86054"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga68af085c9054e7fdc6c84fadfbe86054">HCI_LE_READ_CHAN_MAP_CMD_CMPL_CBACK_EVT</a>   8</td></tr>
+<tr class="memdesc:ga68af085c9054e7fdc6c84fadfbe86054"><td class="mdescLeft"> </td><td class="mdescRight">LE Read channel map command complete.  <a href="#ga68af085c9054e7fdc6c84fadfbe86054">More...</a><br/></td></tr>
+<tr class="separator:ga68af085c9054e7fdc6c84fadfbe86054"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga992bf63a1b2131d0bf85ad5295a6aae0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga992bf63a1b2131d0bf85ad5295a6aae0">HCI_READ_TX_PWR_LVL_CMD_CMPL_CBACK_EVT</a>   9</td></tr>
+<tr class="memdesc:ga992bf63a1b2131d0bf85ad5295a6aae0"><td class="mdescLeft"> </td><td class="mdescRight">Read transmit power level command complete.  <a href="#ga992bf63a1b2131d0bf85ad5295a6aae0">More...</a><br/></td></tr>
+<tr class="separator:ga992bf63a1b2131d0bf85ad5295a6aae0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8017e9009a67907670414fc8d84b8a73"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga8017e9009a67907670414fc8d84b8a73">HCI_READ_REMOTE_VER_INFO_CMPL_CBACK_EVT</a>   10</td></tr>
+<tr class="memdesc:ga8017e9009a67907670414fc8d84b8a73"><td class="mdescLeft"> </td><td class="mdescRight">Read remote version information complete.  <a href="#ga8017e9009a67907670414fc8d84b8a73">More...</a><br/></td></tr>
+<tr class="separator:ga8017e9009a67907670414fc8d84b8a73"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9affb5b58185cbc7c9a0229749bd3829"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga9affb5b58185cbc7c9a0229749bd3829">HCI_LE_READ_REMOTE_FEAT_CMPL_CBACK_EVT</a>   11</td></tr>
+<tr class="memdesc:ga9affb5b58185cbc7c9a0229749bd3829"><td class="mdescLeft"> </td><td class="mdescRight">LE read remote features complete.  <a href="#ga9affb5b58185cbc7c9a0229749bd3829">More...</a><br/></td></tr>
+<tr class="separator:ga9affb5b58185cbc7c9a0229749bd3829"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae6029cff59aa1dbc812e3aecd08e1c33"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gae6029cff59aa1dbc812e3aecd08e1c33">HCI_LE_LTK_REQ_REPL_CMD_CMPL_CBACK_EVT</a>   12</td></tr>
+<tr class="memdesc:gae6029cff59aa1dbc812e3aecd08e1c33"><td class="mdescLeft"> </td><td class="mdescRight">LE LTK request reply command complete.  <a href="#gae6029cff59aa1dbc812e3aecd08e1c33">More...</a><br/></td></tr>
+<tr class="separator:gae6029cff59aa1dbc812e3aecd08e1c33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga54aab0f3ab07553fb1a7a536b8ba813d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga54aab0f3ab07553fb1a7a536b8ba813d">HCI_LE_LTK_REQ_NEG_REPL_CMD_CMPL_CBACK_EVT</a>   13</td></tr>
+<tr class="memdesc:ga54aab0f3ab07553fb1a7a536b8ba813d"><td class="mdescLeft"> </td><td class="mdescRight">LE LTK request negative reply command complete.  <a href="#ga54aab0f3ab07553fb1a7a536b8ba813d">More...</a><br/></td></tr>
+<tr class="separator:ga54aab0f3ab07553fb1a7a536b8ba813d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1d46e9004bd946f6cb42f2f1509a06fe"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga1d46e9004bd946f6cb42f2f1509a06fe">HCI_ENC_KEY_REFRESH_CMPL_CBACK_EVT</a>   14</td></tr>
+<tr class="memdesc:ga1d46e9004bd946f6cb42f2f1509a06fe"><td class="mdescLeft"> </td><td class="mdescRight">Encryption key refresh complete.  <a href="#ga1d46e9004bd946f6cb42f2f1509a06fe">More...</a><br/></td></tr>
+<tr class="separator:ga1d46e9004bd946f6cb42f2f1509a06fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7e728af449606b1c791c88f68ba601c5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga7e728af449606b1c791c88f68ba601c5">HCI_ENC_CHANGE_CBACK_EVT</a>   15</td></tr>
+<tr class="memdesc:ga7e728af449606b1c791c88f68ba601c5"><td class="mdescLeft"> </td><td class="mdescRight">Encryption change.  <a href="#ga7e728af449606b1c791c88f68ba601c5">More...</a><br/></td></tr>
+<tr class="separator:ga7e728af449606b1c791c88f68ba601c5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9923cd5ff27cb5a3e8b56b5651b6d8ba"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga9923cd5ff27cb5a3e8b56b5651b6d8ba">HCI_LE_LTK_REQ_CBACK_EVT</a>   16</td></tr>
+<tr class="memdesc:ga9923cd5ff27cb5a3e8b56b5651b6d8ba"><td class="mdescLeft"> </td><td class="mdescRight">LE LTK request.  <a href="#ga9923cd5ff27cb5a3e8b56b5651b6d8ba">More...</a><br/></td></tr>
+<tr class="separator:ga9923cd5ff27cb5a3e8b56b5651b6d8ba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac2c21311c6a3f2b6e9d4301b2f446c35"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gac2c21311c6a3f2b6e9d4301b2f446c35">HCI_VENDOR_SPEC_CMD_STATUS_CBACK_EVT</a>   17</td></tr>
+<tr class="memdesc:gac2c21311c6a3f2b6e9d4301b2f446c35"><td class="mdescLeft"> </td><td class="mdescRight">Vendor specific command status.  <a href="#gac2c21311c6a3f2b6e9d4301b2f446c35">More...</a><br/></td></tr>
+<tr class="separator:gac2c21311c6a3f2b6e9d4301b2f446c35"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1e2f449dca5ff330096b5d068cbb9d9b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga1e2f449dca5ff330096b5d068cbb9d9b">HCI_VENDOR_SPEC_CMD_CMPL_CBACK_EVT</a>   18</td></tr>
+<tr class="memdesc:ga1e2f449dca5ff330096b5d068cbb9d9b"><td class="mdescLeft"> </td><td class="mdescRight">Vendor specific command complete.  <a href="#ga1e2f449dca5ff330096b5d068cbb9d9b">More...</a><br/></td></tr>
+<tr class="separator:ga1e2f449dca5ff330096b5d068cbb9d9b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga82e0296b720d94f74605cbdd83c6b1a1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga82e0296b720d94f74605cbdd83c6b1a1">HCI_VENDOR_SPEC_CBACK_EVT</a>   19</td></tr>
+<tr class="memdesc:ga82e0296b720d94f74605cbdd83c6b1a1"><td class="mdescLeft"> </td><td class="mdescRight">Vendor specific.  <a href="#ga82e0296b720d94f74605cbdd83c6b1a1">More...</a><br/></td></tr>
+<tr class="separator:ga82e0296b720d94f74605cbdd83c6b1a1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5ed21306d84b00a0bb5f342baa542019"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga5ed21306d84b00a0bb5f342baa542019">HCI_HW_ERROR_CBACK_EVT</a>   20</td></tr>
+<tr class="memdesc:ga5ed21306d84b00a0bb5f342baa542019"><td class="mdescLeft"> </td><td class="mdescRight">Hardware error.  <a href="#ga5ed21306d84b00a0bb5f342baa542019">More...</a><br/></td></tr>
+<tr class="separator:ga5ed21306d84b00a0bb5f342baa542019"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4766885338be7c83d08e98dd11180d2e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga4766885338be7c83d08e98dd11180d2e">HCI_LE_ADD_DEV_TO_RES_LIST_CMD_CMPL_CBACK_EVT</a>   21</td></tr>
+<tr class="memdesc:ga4766885338be7c83d08e98dd11180d2e"><td class="mdescLeft"> </td><td class="mdescRight">LE add device to resolving list command complete.  <a href="#ga4766885338be7c83d08e98dd11180d2e">More...</a><br/></td></tr>
+<tr class="separator:ga4766885338be7c83d08e98dd11180d2e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae6894c99a31760c09b28bbc4ec9cfa68"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gae6894c99a31760c09b28bbc4ec9cfa68">HCI_LE_REM_DEV_FROM_RES_LIST_CMD_CMPL_CBACK_EVT</a>   22</td></tr>
+<tr class="memdesc:gae6894c99a31760c09b28bbc4ec9cfa68"><td class="mdescLeft"> </td><td class="mdescRight">LE remove device from resolving command complete.  <a href="#gae6894c99a31760c09b28bbc4ec9cfa68">More...</a><br/></td></tr>
+<tr class="separator:gae6894c99a31760c09b28bbc4ec9cfa68"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga039ffbb03b7beec1e53ee097c9386c1f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga039ffbb03b7beec1e53ee097c9386c1f">HCI_LE_CLEAR_RES_LIST_CMD_CMPL_CBACK_EVT</a>   23</td></tr>
+<tr class="memdesc:ga039ffbb03b7beec1e53ee097c9386c1f"><td class="mdescLeft"> </td><td class="mdescRight">LE clear resolving list command complete.  <a href="#ga039ffbb03b7beec1e53ee097c9386c1f">More...</a><br/></td></tr>
+<tr class="separator:ga039ffbb03b7beec1e53ee097c9386c1f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1b1a615ea8e7d1088397ea196fd09f74"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga1b1a615ea8e7d1088397ea196fd09f74">HCI_LE_READ_PEER_RES_ADDR_CMD_CMPL_CBACK_EVT</a>   24</td></tr>
+<tr class="memdesc:ga1b1a615ea8e7d1088397ea196fd09f74"><td class="mdescLeft"> </td><td class="mdescRight">LE read peer resolving address command complete.  <a href="#ga1b1a615ea8e7d1088397ea196fd09f74">More...</a><br/></td></tr>
+<tr class="separator:ga1b1a615ea8e7d1088397ea196fd09f74"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafe4fdb9c665af4cd7f08dd2753689c4b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gafe4fdb9c665af4cd7f08dd2753689c4b">HCI_LE_READ_LOCAL_RES_ADDR_CMD_CMPL_CBACK_EVT</a>   25</td></tr>
+<tr class="memdesc:gafe4fdb9c665af4cd7f08dd2753689c4b"><td class="mdescLeft"> </td><td class="mdescRight">LE read local resolving address command complete.  <a href="#gafe4fdb9c665af4cd7f08dd2753689c4b">More...</a><br/></td></tr>
+<tr class="separator:gafe4fdb9c665af4cd7f08dd2753689c4b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6193fb00ac87a7ab6241e597239c72e1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga6193fb00ac87a7ab6241e597239c72e1">HCI_LE_SET_ADDR_RES_ENABLE_CMD_CMPL_CBACK_EVT</a>   26</td></tr>
+<tr class="memdesc:ga6193fb00ac87a7ab6241e597239c72e1"><td class="mdescLeft"> </td><td class="mdescRight">LE set address resolving enable command complete.  <a href="#ga6193fb00ac87a7ab6241e597239c72e1">More...</a><br/></td></tr>
+<tr class="separator:ga6193fb00ac87a7ab6241e597239c72e1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaec13836e23a33fcca0c2504b9decd951"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaec13836e23a33fcca0c2504b9decd951">HCI_LE_ENCRYPT_CMD_CMPL_CBACK_EVT</a>   27</td></tr>
+<tr class="memdesc:gaec13836e23a33fcca0c2504b9decd951"><td class="mdescLeft"> </td><td class="mdescRight">LE encrypt command complete.  <a href="#gaec13836e23a33fcca0c2504b9decd951">More...</a><br/></td></tr>
+<tr class="separator:gaec13836e23a33fcca0c2504b9decd951"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga62bec2fafae2ea894973f84a1e1def52"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga62bec2fafae2ea894973f84a1e1def52">HCI_LE_RAND_CMD_CMPL_CBACK_EVT</a>   28</td></tr>
+<tr class="memdesc:ga62bec2fafae2ea894973f84a1e1def52"><td class="mdescLeft"> </td><td class="mdescRight">LE rand command complete.  <a href="#ga62bec2fafae2ea894973f84a1e1def52">More...</a><br/></td></tr>
+<tr class="separator:ga62bec2fafae2ea894973f84a1e1def52"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga67004fcea5c267bd7d2b71468be5ccf6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga67004fcea5c267bd7d2b71468be5ccf6">HCI_LE_REM_CONN_PARAM_REP_CMD_CMPL_CBACK_EVT</a>   29</td></tr>
+<tr class="memdesc:ga67004fcea5c267bd7d2b71468be5ccf6"><td class="mdescLeft"> </td><td class="mdescRight">LE remote connection parameter request reply complete.  <a href="#ga67004fcea5c267bd7d2b71468be5ccf6">More...</a><br/></td></tr>
+<tr class="separator:ga67004fcea5c267bd7d2b71468be5ccf6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8a185b81a3d27dd9ac49f8862d5336ab"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga8a185b81a3d27dd9ac49f8862d5336ab">HCI_LE_REM_CONN_PARAM_NEG_REP_CMD_CMPL_CBACK_EVT</a>   30</td></tr>
+<tr class="memdesc:ga8a185b81a3d27dd9ac49f8862d5336ab"><td class="mdescLeft"> </td><td class="mdescRight">LE remote connection parameter request negative reply complete.  <a href="#ga8a185b81a3d27dd9ac49f8862d5336ab">More...</a><br/></td></tr>
+<tr class="separator:ga8a185b81a3d27dd9ac49f8862d5336ab"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafc44f99a1e75c67bce479f175deaf4ee"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gafc44f99a1e75c67bce479f175deaf4ee">HCI_LE_READ_DEF_DATA_LEN_CMD_CMPL_CBACK_EVT</a>   31</td></tr>
+<tr class="memdesc:gafc44f99a1e75c67bce479f175deaf4ee"><td class="mdescLeft"> </td><td class="mdescRight">LE read suggested default data length command complete.  <a href="#gafc44f99a1e75c67bce479f175deaf4ee">More...</a><br/></td></tr>
+<tr class="separator:gafc44f99a1e75c67bce479f175deaf4ee"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab031eb175d813f3e97776ca844b4a5f5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gab031eb175d813f3e97776ca844b4a5f5">HCI_LE_WRITE_DEF_DATA_LEN_CMD_CMPL_CBACK_EVT</a>   32</td></tr>
+<tr class="memdesc:gab031eb175d813f3e97776ca844b4a5f5"><td class="mdescLeft"> </td><td class="mdescRight">LE write suggested default data length command complete.  <a href="#gab031eb175d813f3e97776ca844b4a5f5">More...</a><br/></td></tr>
+<tr class="separator:gab031eb175d813f3e97776ca844b4a5f5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3141a5b348effb3257e575d1b6aae00d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga3141a5b348effb3257e575d1b6aae00d">HCI_LE_SET_DATA_LEN_CMD_CMPL_CBACK_EVT</a>   33</td></tr>
+<tr class="memdesc:ga3141a5b348effb3257e575d1b6aae00d"><td class="mdescLeft"> </td><td class="mdescRight">LE set data length command complete.  <a href="#ga3141a5b348effb3257e575d1b6aae00d">More...</a><br/></td></tr>
+<tr class="separator:ga3141a5b348effb3257e575d1b6aae00d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6c69d1831869e27c4409d8f440846313"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga6c69d1831869e27c4409d8f440846313">HCI_LE_READ_MAX_DATA_LEN_CMD_CMPL_CBACK_EVT</a>   34</td></tr>
+<tr class="memdesc:ga6c69d1831869e27c4409d8f440846313"><td class="mdescLeft"> </td><td class="mdescRight">LE read maximum data length command complete.  <a href="#ga6c69d1831869e27c4409d8f440846313">More...</a><br/></td></tr>
+<tr class="separator:ga6c69d1831869e27c4409d8f440846313"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae523f6d8a322de3d32cfc3277ca6ed93"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gae523f6d8a322de3d32cfc3277ca6ed93">HCI_LE_REM_CONN_PARAM_REQ_CBACK_EVT</a>   35</td></tr>
+<tr class="memdesc:gae523f6d8a322de3d32cfc3277ca6ed93"><td class="mdescLeft"> </td><td class="mdescRight">LE remote connection parameter request.  <a href="#gae523f6d8a322de3d32cfc3277ca6ed93">More...</a><br/></td></tr>
+<tr class="separator:gae523f6d8a322de3d32cfc3277ca6ed93"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0e11986926ec3bedb0f12c890f5bc115"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga0e11986926ec3bedb0f12c890f5bc115">HCI_LE_DATA_LEN_CHANGE_CBACK_EVT</a>   36</td></tr>
+<tr class="memdesc:ga0e11986926ec3bedb0f12c890f5bc115"><td class="mdescLeft"> </td><td class="mdescRight">LE data length change.  <a href="#ga0e11986926ec3bedb0f12c890f5bc115">More...</a><br/></td></tr>
+<tr class="separator:ga0e11986926ec3bedb0f12c890f5bc115"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac1bb71f52fc9f812b38c58387ef2ca79"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gac1bb71f52fc9f812b38c58387ef2ca79">HCI_LE_READ_LOCAL_P256_PUB_KEY_CMPL_CBACK_EVT</a>   37</td></tr>
+<tr class="memdesc:gac1bb71f52fc9f812b38c58387ef2ca79"><td class="mdescLeft"> </td><td class="mdescRight">LE read local P-256 public key.  <a href="#gac1bb71f52fc9f812b38c58387ef2ca79">More...</a><br/></td></tr>
+<tr class="separator:gac1bb71f52fc9f812b38c58387ef2ca79"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0ea430a969f84b36bedca3a002251e23"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga0ea430a969f84b36bedca3a002251e23">HCI_LE_GENERATE_DHKEY_CMPL_CBACK_EVT</a>   38</td></tr>
+<tr class="memdesc:ga0ea430a969f84b36bedca3a002251e23"><td class="mdescLeft"> </td><td class="mdescRight">LE generate DHKey complete.  <a href="#ga0ea430a969f84b36bedca3a002251e23">More...</a><br/></td></tr>
+<tr class="separator:ga0ea430a969f84b36bedca3a002251e23"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gade5d95d33ad4edebe7d7c12b46cb5242"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gade5d95d33ad4edebe7d7c12b46cb5242">HCI_WRITE_AUTH_PAYLOAD_TO_CMD_CMPL_CBACK_EVT</a>   39</td></tr>
+<tr class="memdesc:gade5d95d33ad4edebe7d7c12b46cb5242"><td class="mdescLeft"> </td><td class="mdescRight">Write authenticated payload timeout command complete.  <a href="#gade5d95d33ad4edebe7d7c12b46cb5242">More...</a><br/></td></tr>
+<tr class="separator:gade5d95d33ad4edebe7d7c12b46cb5242"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga57afb489df312c47fd3a5c11ef127869"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga57afb489df312c47fd3a5c11ef127869">HCI_AUTH_PAYLOAD_TO_EXPIRED_CBACK_EVT</a>   40</td></tr>
+<tr class="memdesc:ga57afb489df312c47fd3a5c11ef127869"><td class="mdescLeft"> </td><td class="mdescRight">Authenticated payload timeout expired event.  <a href="#ga57afb489df312c47fd3a5c11ef127869">More...</a><br/></td></tr>
+<tr class="separator:ga57afb489df312c47fd3a5c11ef127869"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga218e538e96c53b3f2c3d98c9b93ccbfa"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga218e538e96c53b3f2c3d98c9b93ccbfa">HCI_LE_READ_PHY_CMD_CMPL_CBACK_EVT</a>   41</td></tr>
+<tr class="memdesc:ga218e538e96c53b3f2c3d98c9b93ccbfa"><td class="mdescLeft"> </td><td class="mdescRight">LE read phy command complete.  <a href="#ga218e538e96c53b3f2c3d98c9b93ccbfa">More...</a><br/></td></tr>
+<tr class="separator:ga218e538e96c53b3f2c3d98c9b93ccbfa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga228ffff7ab9866651189204403c6df3d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga228ffff7ab9866651189204403c6df3d">HCI_LE_SET_DEF_PHY_CMD_CMPL_CBACK_EVT</a>   42</td></tr>
+<tr class="memdesc:ga228ffff7ab9866651189204403c6df3d"><td class="mdescLeft"> </td><td class="mdescRight">LE set default phy command complete.  <a href="#ga228ffff7ab9866651189204403c6df3d">More...</a><br/></td></tr>
+<tr class="separator:ga228ffff7ab9866651189204403c6df3d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae88d3950983a95c2c392d512ac1dc30f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gae88d3950983a95c2c392d512ac1dc30f">HCI_LE_PHY_UPDATE_CMPL_CBACK_EVT</a>   43</td></tr>
+<tr class="memdesc:gae88d3950983a95c2c392d512ac1dc30f"><td class="mdescLeft"> </td><td class="mdescRight">LE phy update complete.  <a href="#gae88d3950983a95c2c392d512ac1dc30f">More...</a><br/></td></tr>
+<tr class="separator:gae88d3950983a95c2c392d512ac1dc30f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0c5d7e7bf62432ae89bd34f2289006fe"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga0c5d7e7bf62432ae89bd34f2289006fe">HCI_LE_EXT_ADV_REPORT_CBACK_EVT</a>   44</td></tr>
+<tr class="memdesc:ga0c5d7e7bf62432ae89bd34f2289006fe"><td class="mdescLeft"> </td><td class="mdescRight">LE extended advertising report.  <a href="#ga0c5d7e7bf62432ae89bd34f2289006fe">More...</a><br/></td></tr>
+<tr class="separator:ga0c5d7e7bf62432ae89bd34f2289006fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1e2c7a1e107141c726b59116cc4a2951"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga1e2c7a1e107141c726b59116cc4a2951">HCI_LE_SCAN_TIMEOUT_CBACK_EVT</a>   45</td></tr>
+<tr class="memdesc:ga1e2c7a1e107141c726b59116cc4a2951"><td class="mdescLeft"> </td><td class="mdescRight">LE scan timeout event.  <a href="#ga1e2c7a1e107141c726b59116cc4a2951">More...</a><br/></td></tr>
+<tr class="separator:ga1e2c7a1e107141c726b59116cc4a2951"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9bd592cd068e996d68ee03825408f03d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga9bd592cd068e996d68ee03825408f03d">HCI_LE_ADV_SET_TERM_CBACK_EVT</a>   46</td></tr>
+<tr class="memdesc:ga9bd592cd068e996d68ee03825408f03d"><td class="mdescLeft"> </td><td class="mdescRight">LE advertising set terminated event.  <a href="#ga9bd592cd068e996d68ee03825408f03d">More...</a><br/></td></tr>
+<tr class="separator:ga9bd592cd068e996d68ee03825408f03d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaeb2c16b883e900d3eefe4e1f7a8cedb7"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaeb2c16b883e900d3eefe4e1f7a8cedb7">HCI_LE_SCAN_REQ_RCVD_CBACK_EVT</a>   47</td></tr>
+<tr class="memdesc:gaeb2c16b883e900d3eefe4e1f7a8cedb7"><td class="mdescLeft"> </td><td class="mdescRight">LE scan request received event.  <a href="#gaeb2c16b883e900d3eefe4e1f7a8cedb7">More...</a><br/></td></tr>
+<tr class="separator:gaeb2c16b883e900d3eefe4e1f7a8cedb7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga86d0022f9447ed45a06992a072d87c0c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga86d0022f9447ed45a06992a072d87c0c">HCI_LE_PER_ADV_SYNC_EST_CBACK_EVT</a>   48</td></tr>
+<tr class="memdesc:ga86d0022f9447ed45a06992a072d87c0c"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising sync established event.  <a href="#ga86d0022f9447ed45a06992a072d87c0c">More...</a><br/></td></tr>
+<tr class="separator:ga86d0022f9447ed45a06992a072d87c0c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga03c814c72ea705b3c83f848e42657fcb"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga03c814c72ea705b3c83f848e42657fcb">HCI_LE_PER_ADV_REPORT_CBACK_EVT</a>   49</td></tr>
+<tr class="memdesc:ga03c814c72ea705b3c83f848e42657fcb"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising report event.  <a href="#ga03c814c72ea705b3c83f848e42657fcb">More...</a><br/></td></tr>
+<tr class="separator:ga03c814c72ea705b3c83f848e42657fcb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0d5f579e6e304b5270eed483eacd11d6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga0d5f579e6e304b5270eed483eacd11d6">HCI_LE_PER_ADV_SYNC_LOST_CBACK_EVT</a>   50</td></tr>
+<tr class="memdesc:ga0d5f579e6e304b5270eed483eacd11d6"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising synch lost event.  <a href="#ga0d5f579e6e304b5270eed483eacd11d6">More...</a><br/></td></tr>
+<tr class="separator:ga0d5f579e6e304b5270eed483eacd11d6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaeb1a33e6c31342546e09aff622793b60"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaeb1a33e6c31342546e09aff622793b60">HCI_LE_CH_SEL_ALGO_CBACK_EVT</a>   51</td></tr>
+<tr class="memdesc:gaeb1a33e6c31342546e09aff622793b60"><td class="mdescLeft"> </td><td class="mdescRight">LE channel selection algorithm event.  <a href="#gaeb1a33e6c31342546e09aff622793b60">More...</a><br/></td></tr>
+<tr class="separator:gaeb1a33e6c31342546e09aff622793b60"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad18ed167811e35a415038db61eae4932"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gad18ed167811e35a415038db61eae4932">HCI_LE_SCAN_ENABLE_CMD_CMPL_CBACK_EVT</a>   52</td></tr>
+<tr class="memdesc:gad18ed167811e35a415038db61eae4932"><td class="mdescLeft"> </td><td class="mdescRight">LE scan enable command complete.  <a href="#gad18ed167811e35a415038db61eae4932">More...</a><br/></td></tr>
+<tr class="separator:gad18ed167811e35a415038db61eae4932"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae0e8024b194f8ebe33629b96e3d6e9b7"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gae0e8024b194f8ebe33629b96e3d6e9b7">HCI_LE_ADV_ENABLE_CMD_CMPL_CBACK_EVT</a>   53</td></tr>
+<tr class="memdesc:gae0e8024b194f8ebe33629b96e3d6e9b7"><td class="mdescLeft"> </td><td class="mdescRight">LE advertise enable command complete.  <a href="#gae0e8024b194f8ebe33629b96e3d6e9b7">More...</a><br/></td></tr>
+<tr class="separator:gae0e8024b194f8ebe33629b96e3d6e9b7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad1813bf572b3a77c0eaf621a61293d16"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gad1813bf572b3a77c0eaf621a61293d16">HCI_LE_EXT_SCAN_ENABLE_CMD_CMPL_CBACK_EVT</a>   54</td></tr>
+<tr class="memdesc:gad1813bf572b3a77c0eaf621a61293d16"><td class="mdescLeft"> </td><td class="mdescRight">LE extended scan enable command complete.  <a href="#gad1813bf572b3a77c0eaf621a61293d16">More...</a><br/></td></tr>
+<tr class="separator:gad1813bf572b3a77c0eaf621a61293d16"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaacdb3549e53cd7d6fb0ee2908e2bae3b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaacdb3549e53cd7d6fb0ee2908e2bae3b">HCI_LE_EXT_ADV_ENABLE_CMD_CMPL_CBACK_EVT</a>   55</td></tr>
+<tr class="memdesc:gaacdb3549e53cd7d6fb0ee2908e2bae3b"><td class="mdescLeft"> </td><td class="mdescRight">LE extended advertise enable command complete.  <a href="#gaacdb3549e53cd7d6fb0ee2908e2bae3b">More...</a><br/></td></tr>
+<tr class="separator:gaacdb3549e53cd7d6fb0ee2908e2bae3b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga00e3fed14f616fb7b1be80e5c9c601f8"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga00e3fed14f616fb7b1be80e5c9c601f8">HCI_LE_PER_ADV_ENABLE_CMD_CMPL_CBACK_EVT</a>   56</td></tr>
+<tr class="memdesc:ga00e3fed14f616fb7b1be80e5c9c601f8"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertise enable command complete.  <a href="#ga00e3fed14f616fb7b1be80e5c9c601f8">More...</a><br/></td></tr>
+<tr class="separator:ga00e3fed14f616fb7b1be80e5c9c601f8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaed4501a5c2658720fb6ddfb083dd8f3d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaed4501a5c2658720fb6ddfb083dd8f3d">HCI_LE_SET_RAND_ADDR_CMD_CMPL_CBACK_EVT</a>   57</td></tr>
+<tr class="memdesc:gaed4501a5c2658720fb6ddfb083dd8f3d"><td class="mdescLeft"> </td><td class="mdescRight">LE set random address command complete.  <a href="#gaed4501a5c2658720fb6ddfb083dd8f3d">More...</a><br/></td></tr>
+<tr class="separator:gaed4501a5c2658720fb6ddfb083dd8f3d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaca939f98b749ee91339199bee4fea2e6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaca939f98b749ee91339199bee4fea2e6">HCI_LE_PER_SYNC_TRSF_RCVD_CBACK_EVT</a>   58</td></tr>
+<tr class="memdesc:gaca939f98b749ee91339199bee4fea2e6"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising sync transfer received event.  <a href="#gaca939f98b749ee91339199bee4fea2e6">More...</a><br/></td></tr>
+<tr class="separator:gaca939f98b749ee91339199bee4fea2e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad53ecd197e94bbd5f33be36b0f3f9d1d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gad53ecd197e94bbd5f33be36b0f3f9d1d">HCI_LE_PER_ADV_SYNC_TRSF_CMD_CMPL_CBACK_EVT</a>   59</td></tr>
+<tr class="memdesc:gad53ecd197e94bbd5f33be36b0f3f9d1d"><td class="mdescLeft"> </td><td class="mdescRight">LE periodic advertising sync transfer command complete.  <a href="#gad53ecd197e94bbd5f33be36b0f3f9d1d">More...</a><br/></td></tr>
+<tr class="separator:gad53ecd197e94bbd5f33be36b0f3f9d1d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga84605e81680baf278b064c5b2e75eb1c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga84605e81680baf278b064c5b2e75eb1c">HCI_LE_PER_ADV_SET_INFO_TRSF_CMD_CMPL_CBACK_EVT</a>   60</td></tr>
+<tr class="memdesc:ga84605e81680baf278b064c5b2e75eb1c"><td class="mdescLeft"> </td><td class="mdescRight">LE set periodic advertising set info transfer command complete.  <a href="#ga84605e81680baf278b064c5b2e75eb1c">More...</a><br/></td></tr>
+<tr class="separator:ga84605e81680baf278b064c5b2e75eb1c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga409c318c9d820adb34910894383449c3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga409c318c9d820adb34910894383449c3">HCI_LE_CONN_IQ_REPORT_CBACK_EVT</a>   61</td></tr>
+<tr class="memdesc:ga409c318c9d820adb34910894383449c3"><td class="mdescLeft"> </td><td class="mdescRight">LE connection IQ report event.  <a href="#ga409c318c9d820adb34910894383449c3">More...</a><br/></td></tr>
+<tr class="separator:ga409c318c9d820adb34910894383449c3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf3718154c0c5331c83beeb3b3e1a51f0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaf3718154c0c5331c83beeb3b3e1a51f0">HCI_LE_CTE_REQ_FAILED_CBACK_EVT</a>   62</td></tr>
+<tr class="memdesc:gaf3718154c0c5331c83beeb3b3e1a51f0"><td class="mdescLeft"> </td><td class="mdescRight">LE CTE request failed event.  <a href="#gaf3718154c0c5331c83beeb3b3e1a51f0">More...</a><br/></td></tr>
+<tr class="separator:gaf3718154c0c5331c83beeb3b3e1a51f0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3e60dd4e70f769ba718bdc6cc325c342"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga3e60dd4e70f769ba718bdc6cc325c342">HCI_LE_SET_CONN_CTE_RX_PARAMS_CMD_CMPL_CBACK_EVT</a>   63</td></tr>
+<tr class="memdesc:ga3e60dd4e70f769ba718bdc6cc325c342"><td class="mdescLeft"> </td><td class="mdescRight">LE set connection CTE receive parameters command complete.  <a href="#ga3e60dd4e70f769ba718bdc6cc325c342">More...</a><br/></td></tr>
+<tr class="separator:ga3e60dd4e70f769ba718bdc6cc325c342"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3cf84bedac807ac1372c4c338d92deea"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga3cf84bedac807ac1372c4c338d92deea">HCI_LE_SET_CONN_CTE_TX_PARAMS_CMD_CMPL_CBACK_EVT</a>   64</td></tr>
+<tr class="memdesc:ga3cf84bedac807ac1372c4c338d92deea"><td class="mdescLeft"> </td><td class="mdescRight">LE set connection CTE transmit parameters command complete.  <a href="#ga3cf84bedac807ac1372c4c338d92deea">More...</a><br/></td></tr>
+<tr class="separator:ga3cf84bedac807ac1372c4c338d92deea"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4040143ddd5e1c29e88a26f4ba3be0f2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga4040143ddd5e1c29e88a26f4ba3be0f2">HCI_LE_CONN_CTE_REQ_ENABLE_CMD_CMPL_CBACK_EVT</a>   65</td></tr>
+<tr class="memdesc:ga4040143ddd5e1c29e88a26f4ba3be0f2"><td class="mdescLeft"> </td><td class="mdescRight">LE connection CTE request enable command complete.  <a href="#ga4040143ddd5e1c29e88a26f4ba3be0f2">More...</a><br/></td></tr>
+<tr class="separator:ga4040143ddd5e1c29e88a26f4ba3be0f2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad798e505716daac396d61595178b22be"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gad798e505716daac396d61595178b22be">HCI_LE_CONN_CTE_RSP_ENABLE_CMD_CMPL_CBACK_EVT</a>   66</td></tr>
+<tr class="memdesc:gad798e505716daac396d61595178b22be"><td class="mdescLeft"> </td><td class="mdescRight">LE connection CTE response enable command complete.  <a href="#gad798e505716daac396d61595178b22be">More...</a><br/></td></tr>
+<tr class="separator:gad798e505716daac396d61595178b22be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga34f161fba4156db420aa98984dc68c24"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga34f161fba4156db420aa98984dc68c24">HCI_LE_READ_ANTENNA_INFO_CMD_CMPL_CBACK_EVT</a>   67</td></tr>
+<tr class="memdesc:ga34f161fba4156db420aa98984dc68c24"><td class="mdescLeft"> </td><td class="mdescRight">LE read antenna information command complete.  <a href="#ga34f161fba4156db420aa98984dc68c24">More...</a><br/></td></tr>
+<tr class="separator:ga34f161fba4156db420aa98984dc68c24"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga142421ac363838c27be1c845659b970e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga142421ac363838c27be1c845659b970e">HCI_LE_CIS_EST_CBACK_EVT</a>   68</td></tr>
+<tr class="memdesc:ga142421ac363838c27be1c845659b970e"><td class="mdescLeft"> </td><td class="mdescRight">LE CIS established event.  <a href="#ga142421ac363838c27be1c845659b970e">More...</a><br/></td></tr>
+<tr class="separator:ga142421ac363838c27be1c845659b970e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7ab1e655deeb5ce381e70a8e63e32cf2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga7ab1e655deeb5ce381e70a8e63e32cf2">HCI_LE_CIS_REQ_CBACK_EVT</a>   69</td></tr>
+<tr class="memdesc:ga7ab1e655deeb5ce381e70a8e63e32cf2"><td class="mdescLeft"> </td><td class="mdescRight">LE CIS request event.  <a href="#ga7ab1e655deeb5ce381e70a8e63e32cf2">More...</a><br/></td></tr>
+<tr class="separator:ga7ab1e655deeb5ce381e70a8e63e32cf2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga78475edcfd346b5c2b794bdefabea869"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga78475edcfd346b5c2b794bdefabea869">HCI_CIS_DISCONNECT_CMPL_CBACK_EVT</a>   70</td></tr>
+<tr class="memdesc:ga78475edcfd346b5c2b794bdefabea869"><td class="mdescLeft"> </td><td class="mdescRight">CIS disconnect complete.  <a href="#ga78475edcfd346b5c2b794bdefabea869">More...</a><br/></td></tr>
+<tr class="separator:ga78475edcfd346b5c2b794bdefabea869"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9e6671431a452bb931c4c4c4cfc28525"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga9e6671431a452bb931c4c4c4cfc28525">HCI_LE_REQ_PEER_SCA_CBACK_EVT</a>   71</td></tr>
+<tr class="memdesc:ga9e6671431a452bb931c4c4c4cfc28525"><td class="mdescLeft"> </td><td class="mdescRight">LE Request peer SCA complete.  <a href="#ga9e6671431a452bb931c4c4c4cfc28525">More...</a><br/></td></tr>
+<tr class="separator:ga9e6671431a452bb931c4c4c4cfc28525"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac6a8fbb3f3162d04eec9f66364531fca"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gac6a8fbb3f3162d04eec9f66364531fca">HCI_LE_SET_CIG_PARAMS_CMD_CMPL_CBACK_EVT</a>   72</td></tr>
+<tr class="memdesc:gac6a8fbb3f3162d04eec9f66364531fca"><td class="mdescLeft"> </td><td class="mdescRight">LE set CIG parameters command complete.  <a href="#gac6a8fbb3f3162d04eec9f66364531fca">More...</a><br/></td></tr>
+<tr class="separator:gac6a8fbb3f3162d04eec9f66364531fca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gabdfe75ce94d80b327d438d409b10fc68"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gabdfe75ce94d80b327d438d409b10fc68">HCI_LE_REMOVE_CIG_CMD_CMPL_CBACK_EVT</a>   73</td></tr>
+<tr class="memdesc:gabdfe75ce94d80b327d438d409b10fc68"><td class="mdescLeft"> </td><td class="mdescRight">LE remove CIG command complete.  <a href="#gabdfe75ce94d80b327d438d409b10fc68">More...</a><br/></td></tr>
+<tr class="separator:gabdfe75ce94d80b327d438d409b10fc68"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2aea0739699044270526a5b7ee038f35"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga2aea0739699044270526a5b7ee038f35">HCI_LE_SETUP_ISO_DATA_PATH_CMD_CMPL_CBACK_EVT</a>   74</td></tr>
+<tr class="memdesc:ga2aea0739699044270526a5b7ee038f35"><td class="mdescLeft"> </td><td class="mdescRight">LE setup ISO data path command complete.  <a href="#ga2aea0739699044270526a5b7ee038f35">More...</a><br/></td></tr>
+<tr class="separator:ga2aea0739699044270526a5b7ee038f35"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae48293b0f3d3e28a991d1e764b150d2a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gae48293b0f3d3e28a991d1e764b150d2a">HCI_LE_REMOVE_ISO_DATA_PATH_CMD_CMPL_CBACK_EVT</a>   75</td></tr>
+<tr class="memdesc:gae48293b0f3d3e28a991d1e764b150d2a"><td class="mdescLeft"> </td><td class="mdescRight">LE remove ISO data path command complete.  <a href="#gae48293b0f3d3e28a991d1e764b150d2a">More...</a><br/></td></tr>
+<tr class="separator:gae48293b0f3d3e28a991d1e764b150d2a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf14512fbf8665ff1dcd8f09359480968"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaf14512fbf8665ff1dcd8f09359480968">HCI_CONFIG_DATA_PATH_CMD_CMPL_CBACK_EVT</a>   76</td></tr>
+<tr class="memdesc:gaf14512fbf8665ff1dcd8f09359480968"><td class="mdescLeft"> </td><td class="mdescRight">Configure data path command complete.  <a href="#gaf14512fbf8665ff1dcd8f09359480968">More...</a><br/></td></tr>
+<tr class="separator:gaf14512fbf8665ff1dcd8f09359480968"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga60660ca65fd6593c115ef0a4edcc04cd"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga60660ca65fd6593c115ef0a4edcc04cd">HCI_READ_LOCAL_SUP_CODECS_CMD_CMPL_CBACK_EVT</a>   77</td></tr>
+<tr class="memdesc:ga60660ca65fd6593c115ef0a4edcc04cd"><td class="mdescLeft"> </td><td class="mdescRight">Read local supported codecs command complete.  <a href="#ga60660ca65fd6593c115ef0a4edcc04cd">More...</a><br/></td></tr>
+<tr class="separator:ga60660ca65fd6593c115ef0a4edcc04cd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaee33e33ac28b22da3e2f871046a22a52"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaee33e33ac28b22da3e2f871046a22a52">HCI_READ_LOCAL_SUP_CODEC_CAP_CMD_CMPL_CBACK_EVT</a>   78</td></tr>
+<tr class="memdesc:gaee33e33ac28b22da3e2f871046a22a52"><td class="mdescLeft"> </td><td class="mdescRight">Read local supported codec capabilities command complete.  <a href="#gaee33e33ac28b22da3e2f871046a22a52">More...</a><br/></td></tr>
+<tr class="separator:gaee33e33ac28b22da3e2f871046a22a52"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga04c41aecf3aa06ef95caa42feb40db46"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga04c41aecf3aa06ef95caa42feb40db46">HCI_READ_LOCAL_SUP_CTR_DLY_CMD_CMPL_CBACK_EVT</a>   79</td></tr>
+<tr class="memdesc:ga04c41aecf3aa06ef95caa42feb40db46"><td class="mdescLeft"> </td><td class="mdescRight">Read local supported controller delay command complete.  <a href="#ga04c41aecf3aa06ef95caa42feb40db46">More...</a><br/></td></tr>
+<tr class="separator:ga04c41aecf3aa06ef95caa42feb40db46"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1dfeeb9bc37871cd339fba695e61ac28"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga1dfeeb9bc37871cd339fba695e61ac28">HCI_LE_CREATE_BIG_CMPL_CBACK_EVT</a>   80</td></tr>
+<tr class="memdesc:ga1dfeeb9bc37871cd339fba695e61ac28"><td class="mdescLeft"> </td><td class="mdescRight">LE create BIG complete.  <a href="#ga1dfeeb9bc37871cd339fba695e61ac28">More...</a><br/></td></tr>
+<tr class="separator:ga1dfeeb9bc37871cd339fba695e61ac28"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac027502ccb6e25905733297dbfb19303"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gac027502ccb6e25905733297dbfb19303">HCI_LE_TERM_BIG_CMPL_CBACK_EVT</a>   81</td></tr>
+<tr class="memdesc:gac027502ccb6e25905733297dbfb19303"><td class="mdescLeft"> </td><td class="mdescRight">LE terminate BIG complete.  <a href="#gac027502ccb6e25905733297dbfb19303">More...</a><br/></td></tr>
+<tr class="separator:gac027502ccb6e25905733297dbfb19303"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaeadaa8e39b4d718d442b0c7291bf54ca"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gaeadaa8e39b4d718d442b0c7291bf54ca">HCI_LE_BIG_SYNC_EST_CBACK_EVT</a>   82</td></tr>
+<tr class="memdesc:gaeadaa8e39b4d718d442b0c7291bf54ca"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG sync established.  <a href="#gaeadaa8e39b4d718d442b0c7291bf54ca">More...</a><br/></td></tr>
+<tr class="separator:gaeadaa8e39b4d718d442b0c7291bf54ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac217d72ecb16ed5b3b0bbe8fd12d411a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#gac217d72ecb16ed5b3b0bbe8fd12d411a">HCI_LE_BIG_SYNC_LOST_CBACK_EVT</a>   83</td></tr>
+<tr class="memdesc:gac217d72ecb16ed5b3b0bbe8fd12d411a"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG sync lost.  <a href="#gac217d72ecb16ed5b3b0bbe8fd12d411a">More...</a><br/></td></tr>
+<tr class="separator:gac217d72ecb16ed5b3b0bbe8fd12d411a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8f694c515478140c24f761adc37e378f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga8f694c515478140c24f761adc37e378f">HCI_LE_BIG_TERM_SYNC_CMPL_CBACK_EVT</a>   84</td></tr>
+<tr class="memdesc:ga8f694c515478140c24f761adc37e378f"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG terminate sync complete.  <a href="#ga8f694c515478140c24f761adc37e378f">More...</a><br/></td></tr>
+<tr class="separator:ga8f694c515478140c24f761adc37e378f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5213eb470dae9611bd6ed8307ea813ca"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html#ga5213eb470dae9611bd6ed8307ea813ca">HCI_LE_BIG_INFO_ADV_REPORT_CBACK_EVT</a>   85</td></tr>
+<tr class="memdesc:ga5213eb470dae9611bd6ed8307ea813ca"><td class="mdescLeft"> </td><td class="mdescRight">LE BIG Info advertising report.  <a href="#ga5213eb470dae9611bd6ed8307ea813ca">More...</a><br/></td></tr>
+<tr class="separator:ga5213eb470dae9611bd6ed8307ea813ca"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ga57afb489df312c47fd3a5c11ef127869"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_AUTH_PAYLOAD_TO_EXPIRED_CBACK_EVT   40</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Authenticated payload timeout expired event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00087">87</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga78475edcfd346b5c2b794bdefabea869"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_CIS_DISCONNECT_CMPL_CBACK_EVT   70</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>CIS disconnect complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00117">117</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf14512fbf8665ff1dcd8f09359480968"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_CONFIG_DATA_PATH_CMD_CMPL_CBACK_EVT   76</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure data path command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00123">123</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad428db32b865cce37b17fc6efdcdbfdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_DISCONNECT_CMPL_CBACK_EVT   3</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Disconnect complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00050">50</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7e728af449606b1c791c88f68ba601c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_ENC_CHANGE_CBACK_EVT   15</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Encryption change. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00062">62</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1d46e9004bd946f6cb42f2f1509a06fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_ENC_KEY_REFRESH_CMPL_CBACK_EVT   14</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Encryption key refresh complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00061">61</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5ed21306d84b00a0bb5f342baa542019"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_HW_ERROR_CBACK_EVT   20</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Hardware error. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00067">67</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4766885338be7c83d08e98dd11180d2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_ADD_DEV_TO_RES_LIST_CMD_CMPL_CBACK_EVT   21</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE add device to resolving list command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00068">68</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae0e8024b194f8ebe33629b96e3d6e9b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_ADV_ENABLE_CMD_CMPL_CBACK_EVT   53</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE advertise enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00100">100</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga40e5a53afb2cca2e29e3117e503a9f59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_ADV_REPORT_CBACK_EVT   6</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE advertising report. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00053">53</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9bd592cd068e996d68ee03825408f03d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_ADV_SET_TERM_CBACK_EVT   46</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE advertising set terminated event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00093">93</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5213eb470dae9611bd6ed8307ea813ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_BIG_INFO_ADV_REPORT_CBACK_EVT   85</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE BIG Info advertising report. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00132">132</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaeadaa8e39b4d718d442b0c7291bf54ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_BIG_SYNC_EST_CBACK_EVT   82</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE BIG sync established. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00129">129</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac217d72ecb16ed5b3b0bbe8fd12d411a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_BIG_SYNC_LOST_CBACK_EVT   83</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE BIG sync lost. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00130">130</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8f694c515478140c24f761adc37e378f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_BIG_TERM_SYNC_CMPL_CBACK_EVT   84</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE BIG terminate sync complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00131">131</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaeb1a33e6c31342546e09aff622793b60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CH_SEL_ALGO_CBACK_EVT   51</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE channel selection algorithm event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00098">98</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga142421ac363838c27be1c845659b970e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CIS_EST_CBACK_EVT   68</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE CIS established event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00115">115</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7ab1e655deeb5ce381e70a8e63e32cf2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CIS_REQ_CBACK_EVT   69</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE CIS request event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00116">116</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga039ffbb03b7beec1e53ee097c9386c1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CLEAR_RES_LIST_CMD_CMPL_CBACK_EVT   23</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE clear resolving list command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00070">70</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga175652c86e9c64bf54918f5d09a38152"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CONN_CMPL_CBACK_EVT   1</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE connection complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00048">48</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4040143ddd5e1c29e88a26f4ba3be0f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CONN_CTE_REQ_ENABLE_CMD_CMPL_CBACK_EVT   65</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE connection CTE request enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00112">112</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad798e505716daac396d61595178b22be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CONN_CTE_RSP_ENABLE_CMD_CMPL_CBACK_EVT   66</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE connection CTE response enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00113">113</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga409c318c9d820adb34910894383449c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CONN_IQ_REPORT_CBACK_EVT   61</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE connection IQ report event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00108">108</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab3dbe47a1e73d722ca37b0ccb4ae23bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CONN_UPDATE_CMPL_CBACK_EVT   4</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE connection update complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00051">51</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1dfeeb9bc37871cd339fba695e61ac28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CREATE_BIG_CMPL_CBACK_EVT   80</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE create BIG complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00127">127</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga849d782de82e8204193210b226561eda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CREATE_CONN_CANCEL_CMD_CMPL_CBACK_EVT   5</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE create connection cancel command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00052">52</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf3718154c0c5331c83beeb3b3e1a51f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_CTE_REQ_FAILED_CBACK_EVT   62</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE CTE request failed event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00109">109</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0e11986926ec3bedb0f12c890f5bc115"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_DATA_LEN_CHANGE_CBACK_EVT   36</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE data length change. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00083">83</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaec13836e23a33fcca0c2504b9decd951"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_ENCRYPT_CMD_CMPL_CBACK_EVT   27</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE encrypt command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00074">74</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac7c99c69f2544ed2ff923295b8108293"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_ENHANCED_CONN_CMPL_CBACK_EVT   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE enhanced connection complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00049">49</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaacdb3549e53cd7d6fb0ee2908e2bae3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_EXT_ADV_ENABLE_CMD_CMPL_CBACK_EVT   55</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE extended advertise enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00102">102</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0c5d7e7bf62432ae89bd34f2289006fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_EXT_ADV_REPORT_CBACK_EVT   44</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE extended advertising report. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00091">91</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad1813bf572b3a77c0eaf621a61293d16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_EXT_SCAN_ENABLE_CMD_CMPL_CBACK_EVT   54</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE extended scan enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00101">101</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0ea430a969f84b36bedca3a002251e23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_GENERATE_DHKEY_CMPL_CBACK_EVT   38</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE generate DHKey complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00085">85</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9923cd5ff27cb5a3e8b56b5651b6d8ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_LTK_REQ_CBACK_EVT   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE LTK request. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00063">63</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga54aab0f3ab07553fb1a7a536b8ba813d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_LTK_REQ_NEG_REPL_CMD_CMPL_CBACK_EVT   13</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE LTK request negative reply command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00060">60</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae6029cff59aa1dbc812e3aecd08e1c33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_LTK_REQ_REPL_CMD_CMPL_CBACK_EVT   12</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE LTK request reply command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00059">59</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga00e3fed14f616fb7b1be80e5c9c601f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_ADV_ENABLE_CMD_CMPL_CBACK_EVT   56</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE periodic advertise enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00103">103</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga03c814c72ea705b3c83f848e42657fcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_ADV_REPORT_CBACK_EVT   49</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE periodic advertising report event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00096">96</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga84605e81680baf278b064c5b2e75eb1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_ADV_SET_INFO_TRSF_CMD_CMPL_CBACK_EVT   60</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set periodic advertising set info transfer command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00107">107</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga86d0022f9447ed45a06992a072d87c0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_ADV_SYNC_EST_CBACK_EVT   48</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE periodic advertising sync established event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00095">95</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0d5f579e6e304b5270eed483eacd11d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_ADV_SYNC_LOST_CBACK_EVT   50</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE periodic advertising synch lost event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00097">97</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad53ecd197e94bbd5f33be36b0f3f9d1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_ADV_SYNC_TRSF_CMD_CMPL_CBACK_EVT   59</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE periodic advertising sync transfer command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00106">106</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaca939f98b749ee91339199bee4fea2e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PER_SYNC_TRSF_RCVD_CBACK_EVT   58</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE periodic advertising sync transfer received event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00105">105</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae88d3950983a95c2c392d512ac1dc30f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_PHY_UPDATE_CMPL_CBACK_EVT   43</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE phy update complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00090">90</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga62bec2fafae2ea894973f84a1e1def52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_RAND_CMD_CMPL_CBACK_EVT   28</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE rand command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00075">75</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga34f161fba4156db420aa98984dc68c24"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_ANTENNA_INFO_CMD_CMPL_CBACK_EVT   67</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read antenna information command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00114">114</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga68af085c9054e7fdc6c84fadfbe86054"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_CHAN_MAP_CMD_CMPL_CBACK_EVT   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE Read channel map command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00055">55</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafc44f99a1e75c67bce479f175deaf4ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_DEF_DATA_LEN_CMD_CMPL_CBACK_EVT   31</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read suggested default data length command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00078">78</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac1bb71f52fc9f812b38c58387ef2ca79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_LOCAL_P256_PUB_KEY_CMPL_CBACK_EVT   37</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read local P-256 public key. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00084">84</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafe4fdb9c665af4cd7f08dd2753689c4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_LOCAL_RES_ADDR_CMD_CMPL_CBACK_EVT   25</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read local resolving address command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00072">72</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6c69d1831869e27c4409d8f440846313"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_MAX_DATA_LEN_CMD_CMPL_CBACK_EVT   34</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read maximum data length command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00081">81</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1b1a615ea8e7d1088397ea196fd09f74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_PEER_RES_ADDR_CMD_CMPL_CBACK_EVT   24</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read peer resolving address command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00071">71</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga218e538e96c53b3f2c3d98c9b93ccbfa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_PHY_CMD_CMPL_CBACK_EVT   41</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read phy command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00088">88</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9affb5b58185cbc7c9a0229749bd3829"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_READ_REMOTE_FEAT_CMPL_CBACK_EVT   11</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE read remote features complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00058">58</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8a185b81a3d27dd9ac49f8862d5336ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REM_CONN_PARAM_NEG_REP_CMD_CMPL_CBACK_EVT   30</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE remote connection parameter request negative reply complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00077">77</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga67004fcea5c267bd7d2b71468be5ccf6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REM_CONN_PARAM_REP_CMD_CMPL_CBACK_EVT   29</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE remote connection parameter request reply complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00076">76</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae523f6d8a322de3d32cfc3277ca6ed93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REM_CONN_PARAM_REQ_CBACK_EVT   35</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE remote connection parameter request. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00082">82</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae6894c99a31760c09b28bbc4ec9cfa68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REM_DEV_FROM_RES_LIST_CMD_CMPL_CBACK_EVT   22</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE remove device from resolving command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00069">69</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabdfe75ce94d80b327d438d409b10fc68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REMOVE_CIG_CMD_CMPL_CBACK_EVT   73</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE remove CIG command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00120">120</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae48293b0f3d3e28a991d1e764b150d2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REMOVE_ISO_DATA_PATH_CMD_CMPL_CBACK_EVT   75</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE remove ISO data path command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00122">122</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9e6671431a452bb931c4c4c4cfc28525"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_REQ_PEER_SCA_CBACK_EVT   71</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE Request peer SCA complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00118">118</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad18ed167811e35a415038db61eae4932"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SCAN_ENABLE_CMD_CMPL_CBACK_EVT   52</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE scan enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00099">99</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaeb2c16b883e900d3eefe4e1f7a8cedb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SCAN_REQ_RCVD_CBACK_EVT   47</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE scan request received event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00094">94</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1e2c7a1e107141c726b59116cc4a2951"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SCAN_TIMEOUT_CBACK_EVT   45</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE scan timeout event. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00092">92</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6193fb00ac87a7ab6241e597239c72e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_ADDR_RES_ENABLE_CMD_CMPL_CBACK_EVT   26</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set address resolving enable command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00073">73</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac6a8fbb3f3162d04eec9f66364531fca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_CIG_PARAMS_CMD_CMPL_CBACK_EVT   72</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set CIG parameters command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00119">119</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3e60dd4e70f769ba718bdc6cc325c342"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_CONN_CTE_RX_PARAMS_CMD_CMPL_CBACK_EVT   63</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set connection CTE receive parameters command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00110">110</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3cf84bedac807ac1372c4c338d92deea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_CONN_CTE_TX_PARAMS_CMD_CMPL_CBACK_EVT   64</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set connection CTE transmit parameters command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00111">111</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3141a5b348effb3257e575d1b6aae00d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_DATA_LEN_CMD_CMPL_CBACK_EVT   33</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set data length command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00080">80</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga228ffff7ab9866651189204403c6df3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_DEF_PHY_CMD_CMPL_CBACK_EVT   42</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set default phy command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00089">89</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaed4501a5c2658720fb6ddfb083dd8f3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SET_RAND_ADDR_CMD_CMPL_CBACK_EVT   57</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE set random address command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00104">104</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2aea0739699044270526a5b7ee038f35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_SETUP_ISO_DATA_PATH_CMD_CMPL_CBACK_EVT   74</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE setup ISO data path command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00121">121</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac027502ccb6e25905733297dbfb19303"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_TERM_BIG_CMPL_CBACK_EVT   81</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE terminate BIG complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00128">128</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab031eb175d813f3e97776ca844b4a5f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_LE_WRITE_DEF_DATA_LEN_CMD_CMPL_CBACK_EVT   32</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LE write suggested default data length command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00079">79</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaee33e33ac28b22da3e2f871046a22a52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_READ_LOCAL_SUP_CODEC_CAP_CMD_CMPL_CBACK_EVT   78</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Read local supported codec capabilities command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00125">125</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga60660ca65fd6593c115ef0a4edcc04cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_READ_LOCAL_SUP_CODECS_CMD_CMPL_CBACK_EVT   77</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Read local supported codecs command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00124">124</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga04c41aecf3aa06ef95caa42feb40db46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_READ_LOCAL_SUP_CTR_DLY_CMD_CMPL_CBACK_EVT   79</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Read local supported controller delay command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00126">126</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8017e9009a67907670414fc8d84b8a73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_READ_REMOTE_VER_INFO_CMPL_CBACK_EVT   10</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Read remote version information complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00057">57</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8bc3180b82a06ed61cca58e316d41131"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_READ_RSSI_CMD_CMPL_CBACK_EVT   7</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Read RSSI command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00054">54</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga992bf63a1b2131d0bf85ad5295a6aae0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_READ_TX_PWR_LVL_CMD_CMPL_CBACK_EVT   9</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Read transmit power level command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00056">56</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga72e6c4362ed3214f30c624b986ef219f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_RESET_SEQ_CMPL_CBACK_EVT   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reset sequence complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00047">47</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga82e0296b720d94f74605cbdd83c6b1a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_VENDOR_SPEC_CBACK_EVT   19</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Vendor specific. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00066">66</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1e2f449dca5ff330096b5d068cbb9d9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_VENDOR_SPEC_CMD_CMPL_CBACK_EVT   18</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Vendor specific command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00065">65</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac2c21311c6a3f2b6e9d4301b2f446c35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_VENDOR_SPEC_CMD_STATUS_CBACK_EVT   17</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Vendor specific command status. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00064">64</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gade5d95d33ad4edebe7d7c12b46cb5242"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define HCI_WRITE_AUTH_PAYLOAD_TO_CMD_CMPL_CBACK_EVT   39</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Write authenticated payload timeout command complete. </p>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l00086">86</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ga1b08f74d64cad116ce035b6a117680d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* hciEvtCback_t) (<a class="el" href="unionhci_evt__t.html">hciEvt_t</a> *pEvent)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>HCI event callback type. </p>
+<p>This callback function sends events from HCI to the stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pEvent</td><td>Pointer to HCI callback event structure.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l01211">1211</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga85253dd79a3977d4cb2d5c01ff98ebb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* hciSecCback_t) (<a class="el" href="unionhci_evt__t.html">hciEvt_t</a> *pEvent)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>HCI security callback type. </p>
+<p>This callback function sends certain security events from HCI to the stack. The security events passed in this callback are the LE Rand Command Complete event and the LE Encrypt Command Complete event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pEvt</td><td>Pointer to HCK callback event structure.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+
+<p>Definition at line <a class="el" href="hci__api_8h_source.html#l01223">1223</a> of file <a class="el" href="hci__api_8h_source.html">hci_api.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group___s_t_a_c_k___h_c_i___e_v_t___a_p_i.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:15:09 GMT -->
+</html>

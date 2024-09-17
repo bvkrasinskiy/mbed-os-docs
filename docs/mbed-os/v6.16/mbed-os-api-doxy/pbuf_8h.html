@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/pbuf_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:25:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | pbuf.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="pbuf_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/pbuf_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/pbuf_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_656714f9000830b7293277f30e3fdca8.html">lwipstack</a></li><li class="navelem"><a class="el" href="dir_51bed4128c7c35e28f2b56d9a4d3889d.html">lwip</a></li><li class="navelem"><a class="el" href="dir_a2f77adba6621efb54744c8be588cd6c.html">src</a></li><li class="navelem"><a class="el" href="dir_d881691941f72a257ee32ad5471a029d.html">include</a></li><li class="navelem"><a class="el" href="dir_3fb69e7ecf761e536af7cd2ef4e3092c.html">lwip</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle">
+<div class="title">pbuf.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>pbuf API  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="opt_8h_source.html">lwip/opt.h</a>"</code><br/>
+<code>#include "<a class="el" href="err_8h_source.html">lwip/err.h</a>"</code><br/>
+</div>
+<p><a href="pbuf_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structpbuf.html">pbuf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Main packet buffer struct.  <a href="structpbuf.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structpbuf__rom.html">pbuf_rom</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Helper struct for const-correctness only.  <a href="structpbuf__rom.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a64174c5169b48dc17674324afd9c63b9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a64174c5169b48dc17674324afd9c63b9">LWIP_SUPPORT_CUSTOM_PBUF</a>   ((<a class="el" href="group__lwip__opts__ipv4.html#gaf85c8bdd5035b6cada790b4cc2a209a4">IP_FRAG</a> &amp;&amp; !<a class="el" href="group__lwip__opts__netif.html#gabafb9f64a80e51b56c0abbcfc1f7e04e">LWIP_NETIF_TX_SINGLE_PBUF</a>) || (<a class="el" href="group__lwip__opts__ipv6.html#ga872e3bb3fe2212156d66b18fccc9643f">LWIP_IPV6</a> &amp;&amp; <a class="el" href="group__lwip__opts__ipv6.html#ga9ab6269f3087f6d9f7b2c7181ef043c3">LWIP_IPV6_FRAG</a>))</td></tr>
+<tr class="memdesc:a64174c5169b48dc17674324afd9c63b9"><td class="mdescLeft"> </td><td class="mdescRight">LWIP_SUPPORT_CUSTOM_PBUF==1: Custom pbufs behave much like their pbuf type but they are allocated by external code (initialised by calling pbuf_alloced_custom()) and when pbuf_free gives up their last reference, they are freed by calling pbuf_custom-&gt;custom_free_function().  <a href="#a64174c5169b48dc17674324afd9c63b9">More...</a><br/></td></tr>
+<tr class="separator:a64174c5169b48dc17674324afd9c63b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a894d91d811fd986f3cc3da828fa7beb3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a894d91d811fd986f3cc3da828fa7beb3">PBUF_NEEDS_COPY</a>(p)   ((p)-&gt;type_internal &amp; <a class="el" href="pbuf_8h.html#a02789ca67766def65000b58f7fe7d03b">PBUF_TYPE_FLAG_DATA_VOLATILE</a>)</td></tr>
+<tr class="memdesc:a894d91d811fd986f3cc3da828fa7beb3"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="pbuf_8h.html#a894d91d811fd986f3cc3da828fa7beb3" title="PBUF_NEEDS_COPY(p): return a boolean value indicating whether the given pbuf needs to be copied in or...">PBUF_NEEDS_COPY(p)</a>: return a boolean value indicating whether the given pbuf needs to be copied in order to be kept around beyond the current call stack without risking being corrupted.  <a href="#a894d91d811fd986f3cc3da828fa7beb3">More...</a><br/></td></tr>
+<tr class="separator:a894d91d811fd986f3cc3da828fa7beb3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a49ab2c0662378f268ed8209bd54aaedf"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a49ab2c0662378f268ed8209bd54aaedf">PBUF_TYPE_FLAG_STRUCT_DATA_CONTIGUOUS</a>   0x80</td></tr>
+<tr class="memdesc:a49ab2c0662378f268ed8209bd54aaedf"><td class="mdescLeft"> </td><td class="mdescRight">Indicates that the payload directly follows the struct pbuf.  <a href="#a49ab2c0662378f268ed8209bd54aaedf">More...</a><br/></td></tr>
+<tr class="separator:a49ab2c0662378f268ed8209bd54aaedf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a02789ca67766def65000b58f7fe7d03b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a02789ca67766def65000b58f7fe7d03b">PBUF_TYPE_FLAG_DATA_VOLATILE</a>   0x40</td></tr>
+<tr class="memdesc:a02789ca67766def65000b58f7fe7d03b"><td class="mdescLeft"> </td><td class="mdescRight">Indicates the data stored in this pbuf can change.  <a href="#a02789ca67766def65000b58f7fe7d03b">More...</a><br/></td></tr>
+<tr class="separator:a02789ca67766def65000b58f7fe7d03b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a97d4db8e0f127f61af0016c184c865ca"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a97d4db8e0f127f61af0016c184c865ca">PBUF_TYPE_ALLOC_SRC_MASK</a>   0x0F</td></tr>
+<tr class="memdesc:a97d4db8e0f127f61af0016c184c865ca"><td class="mdescLeft"> </td><td class="mdescRight">4 bits are reserved for 16 allocation sources (e.g.  <a href="#a97d4db8e0f127f61af0016c184c865ca">More...</a><br/></td></tr>
+<tr class="separator:a97d4db8e0f127f61af0016c184c865ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a567a0dfa01b0e5540f9416a200ed163f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a567a0dfa01b0e5540f9416a200ed163f">PBUF_ALLOC_FLAG_RX</a>   0x0100</td></tr>
+<tr class="memdesc:a567a0dfa01b0e5540f9416a200ed163f"><td class="mdescLeft"> </td><td class="mdescRight">Indicates this pbuf is used for RX (if not set, indicates use for TX).  <a href="#a567a0dfa01b0e5540f9416a200ed163f">More...</a><br/></td></tr>
+<tr class="separator:a567a0dfa01b0e5540f9416a200ed163f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a426883d928f8f3e8fd066e616159d78f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a426883d928f8f3e8fd066e616159d78f">PBUF_ALLOC_FLAG_DATA_CONTIGUOUS</a>   0x0200</td></tr>
+<tr class="memdesc:a426883d928f8f3e8fd066e616159d78f"><td class="mdescLeft"> </td><td class="mdescRight">Indicates the application needs the pbuf payload to be in one piece.  <a href="#a426883d928f8f3e8fd066e616159d78f">More...</a><br/></td></tr>
+<tr class="separator:a426883d928f8f3e8fd066e616159d78f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa1f62ba9dc5d462e67e33c4be64c601a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#aa1f62ba9dc5d462e67e33c4be64c601a">PBUF_TYPE_ALLOC_SRC_MASK_APP_MIN</a>   0x03</td></tr>
+<tr class="memdesc:aa1f62ba9dc5d462e67e33c4be64c601a"><td class="mdescLeft"> </td><td class="mdescRight">First pbuf allocation type for applications.  <a href="#aa1f62ba9dc5d462e67e33c4be64c601a">More...</a><br/></td></tr>
+<tr class="separator:aa1f62ba9dc5d462e67e33c4be64c601a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aad686ef346759a221abdb45f64649816"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#aad686ef346759a221abdb45f64649816">PBUF_TYPE_ALLOC_SRC_MASK_APP_MAX</a>   <a class="el" href="pbuf_8h.html#a97d4db8e0f127f61af0016c184c865ca">PBUF_TYPE_ALLOC_SRC_MASK</a></td></tr>
+<tr class="memdesc:aad686ef346759a221abdb45f64649816"><td class="mdescLeft"> </td><td class="mdescRight">Last pbuf allocation type for applications.  <a href="#aad686ef346759a221abdb45f64649816">More...</a><br/></td></tr>
+<tr class="separator:aad686ef346759a221abdb45f64649816"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a018a6499e357f8a1373321f802a82930"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a018a6499e357f8a1373321f802a82930">PBUF_FLAG_PUSH</a>   0x01U</td></tr>
+<tr class="memdesc:a018a6499e357f8a1373321f802a82930"><td class="mdescLeft"> </td><td class="mdescRight">indicates this packet's data should be immediately passed to the application  <a href="#a018a6499e357f8a1373321f802a82930">More...</a><br/></td></tr>
+<tr class="separator:a018a6499e357f8a1373321f802a82930"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af78a7e1815dc0e31884d095b666d997f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#af78a7e1815dc0e31884d095b666d997f">PBUF_FLAG_IS_CUSTOM</a>   0x02U</td></tr>
+<tr class="memdesc:af78a7e1815dc0e31884d095b666d997f"><td class="mdescLeft"> </td><td class="mdescRight">indicates this is a custom pbuf: pbuf_free calls pbuf_custom-&gt;custom_free_function() when the last reference is released (plus custom PBUF_RAM cannot be trimmed)  <a href="#af78a7e1815dc0e31884d095b666d997f">More...</a><br/></td></tr>
+<tr class="separator:af78a7e1815dc0e31884d095b666d997f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab8ad153151a8c157335d9c0cedc007e6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#ab8ad153151a8c157335d9c0cedc007e6">PBUF_FLAG_MCASTLOOP</a>   0x04U</td></tr>
+<tr class="memdesc:ab8ad153151a8c157335d9c0cedc007e6"><td class="mdescLeft"> </td><td class="mdescRight">indicates this pbuf is UDP multicast to be looped back  <a href="#ab8ad153151a8c157335d9c0cedc007e6">More...</a><br/></td></tr>
+<tr class="separator:ab8ad153151a8c157335d9c0cedc007e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6772c16662bbb78597399add086500c0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a6772c16662bbb78597399add086500c0">PBUF_FLAG_LLBCAST</a>   0x08U</td></tr>
+<tr class="memdesc:a6772c16662bbb78597399add086500c0"><td class="mdescLeft"> </td><td class="mdescRight">indicates this pbuf was received as link-level broadcast  <a href="#a6772c16662bbb78597399add086500c0">More...</a><br/></td></tr>
+<tr class="separator:a6772c16662bbb78597399add086500c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac0d56cde47aca24ef410d730d7c89887"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#ac0d56cde47aca24ef410d730d7c89887">PBUF_FLAG_LLMCAST</a>   0x10U</td></tr>
+<tr class="memdesc:ac0d56cde47aca24ef410d730d7c89887"><td class="mdescLeft"> </td><td class="mdescRight">indicates this pbuf was received as link-level multicast  <a href="#ac0d56cde47aca24ef410d730d7c89887">More...</a><br/></td></tr>
+<tr class="separator:ac0d56cde47aca24ef410d730d7c89887"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a36a915aa2f6a188baa2862881407971e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#a36a915aa2f6a188baa2862881407971e">PBUF_FLAG_TCP_FIN</a>   0x20U</td></tr>
+<tr class="memdesc:a36a915aa2f6a188baa2862881407971e"><td class="mdescLeft"> </td><td class="mdescRight">indicates this pbuf includes a TCP FIN flag  <a href="#a36a915aa2f6a188baa2862881407971e">More...</a><br/></td></tr>
+<tr class="separator:a36a915aa2f6a188baa2862881407971e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac54b0f161128a32c7419c33b893a5106"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="pbuf_8h.html#ac54b0f161128a32c7419c33b893a5106">PBUF_POOL_FREE_OOSEQ</a>   1</td></tr>
+<tr class="memdesc:ac54b0f161128a32c7419c33b893a5106"><td class="mdescLeft"> </td><td class="mdescRight">Define this to 0 to prevent freeing ooseq pbufs when the PBUF_POOL is empty.  <a href="#ac54b0f161128a32c7419c33b893a5106">More...</a><br/></td></tr>
+<tr class="separator:ac54b0f161128a32c7419c33b893a5106"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>pbuf API </p>
+
+<p>Definition in file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a64174c5169b48dc17674324afd9c63b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define LWIP_SUPPORT_CUSTOM_PBUF   ((<a class="el" href="group__lwip__opts__ipv4.html#gaf85c8bdd5035b6cada790b4cc2a209a4">IP_FRAG</a> &amp;&amp; !<a class="el" href="group__lwip__opts__netif.html#gabafb9f64a80e51b56c0abbcfc1f7e04e">LWIP_NETIF_TX_SINGLE_PBUF</a>) || (<a class="el" href="group__lwip__opts__ipv6.html#ga872e3bb3fe2212156d66b18fccc9643f">LWIP_IPV6</a> &amp;&amp; <a class="el" href="group__lwip__opts__ipv6.html#ga9ab6269f3087f6d9f7b2c7181ef043c3">LWIP_IPV6_FRAG</a>))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LWIP_SUPPORT_CUSTOM_PBUF==1: Custom pbufs behave much like their pbuf type but they are allocated by external code (initialised by calling pbuf_alloced_custom()) and when pbuf_free gives up their last reference, they are freed by calling pbuf_custom-&gt;custom_free_function(). </p>
+<p>Currently, the pbuf_custom code is only needed for one specific configuration of IP_FRAG, unless required by external driver/application code. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00055">55</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a426883d928f8f3e8fd066e616159d78f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_ALLOC_FLAG_DATA_CONTIGUOUS   0x0200</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates the application needs the pbuf payload to be in one piece. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00131">131</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a567a0dfa01b0e5540f9416a200ed163f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_ALLOC_FLAG_RX   0x0100</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates this pbuf is used for RX (if not set, indicates use for TX). </p>
+<p>This information can be used to keep some spare RX buffers e.g. for receiving TCP ACKs to unblock a connection) </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00129">129</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af78a7e1815dc0e31884d095b666d997f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_FLAG_IS_CUSTOM   0x02U</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>indicates this is a custom pbuf: pbuf_free calls pbuf_custom-&gt;custom_free_function() when the last reference is released (plus custom PBUF_RAM cannot be trimmed) </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00175">175</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6772c16662bbb78597399add086500c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_FLAG_LLBCAST   0x08U</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>indicates this pbuf was received as link-level broadcast </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00179">179</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0d56cde47aca24ef410d730d7c89887"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_FLAG_LLMCAST   0x10U</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>indicates this pbuf was received as link-level multicast </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00181">181</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8ad153151a8c157335d9c0cedc007e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_FLAG_MCASTLOOP   0x04U</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>indicates this pbuf is UDP multicast to be looped back </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00177">177</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a018a6499e357f8a1373321f802a82930"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_FLAG_PUSH   0x01U</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>indicates this packet's data should be immediately passed to the application </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00172">172</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36a915aa2f6a188baa2862881407971e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_FLAG_TCP_FIN   0x20U</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>indicates this pbuf includes a TCP FIN flag </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00183">183</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a894d91d811fd986f3cc3da828fa7beb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_NEEDS_COPY</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">p</td><td>)</td>
+          <td>   ((p)-&gt;type_internal &amp; <a class="el" href="pbuf_8h.html#a02789ca67766def65000b58f7fe7d03b">PBUF_TYPE_FLAG_DATA_VOLATILE</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="pbuf_8h.html#a894d91d811fd986f3cc3da828fa7beb3" title="PBUF_NEEDS_COPY(p): return a boolean value indicating whether the given pbuf needs to be copied in or...">PBUF_NEEDS_COPY(p)</a>: return a boolean value indicating whether the given pbuf needs to be copied in order to be kept around beyond the current call stack without risking being corrupted. </p>
+<p>The default setting provides safety: it will make a copy iof any pbuf chain that does not consist entirely of PBUF_ROM type pbufs. For setups with zero-copy support, it may be redefined to evaluate to true in all cases, for example. However, doing so also has an effect on the application side: any buffers that are <em>not</em> copied must also <em>not</em> be reused by the application after passing them to lwIP. For example, when setting PBUF_NEEDS_COPY to (0), after using udp_send() with a PBUF_RAM pbuf, the application must free the pbuf immediately, rather than reusing it for other purposes. For more background information on this, see tasks #6735 and #7896, and bugs #11400 and #49914. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00072">72</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac54b0f161128a32c7419c33b893a5106"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_POOL_FREE_OOSEQ   1</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Define this to 0 to prevent freeing ooseq pbufs when the PBUF_POOL is empty. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00252">252</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97d4db8e0f127f61af0016c184c865ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_TYPE_ALLOC_SRC_MASK   0x0F</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>4 bits are reserved for 16 allocation sources (e.g. </p>
+<p>heap, pool1, pool2, etc) Internally, we use: 0=heap, 1=MEMP_PBUF, 2=MEMP_PBUF_POOL -&gt; 13 types free </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00125">125</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad686ef346759a221abdb45f64649816"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_TYPE_ALLOC_SRC_MASK_APP_MAX   <a class="el" href="pbuf_8h.html#a97d4db8e0f127f61af0016c184c865ca">PBUF_TYPE_ALLOC_SRC_MASK</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Last pbuf allocation type for applications. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00139">139</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1f62ba9dc5d462e67e33c4be64c601a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_TYPE_ALLOC_SRC_MASK_APP_MIN   0x03</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>First pbuf allocation type for applications. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00137">137</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a02789ca67766def65000b58f7fe7d03b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_TYPE_FLAG_DATA_VOLATILE   0x40</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates the data stored in this pbuf can change. </p>
+<p>If this pbuf needs to be queued, it must be copied/duplicated. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00122">122</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a49ab2c0662378f268ed8209bd54aaedf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define PBUF_TYPE_FLAG_STRUCT_DATA_CONTIGUOUS   0x80</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates that the payload directly follows the struct pbuf. </p>
+<p>This makes pbuf_header work in both directions. </p>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00119">119</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="aee1baa59bb2f85ba575b5a8619ac1ebf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="pbuf_8h.html#aee1baa59bb2f85ba575b5a8619ac1ebf">pbuf_layer</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enumeration of pbuf layers. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aee1baa59bb2f85ba575b5a8619ac1ebfa2ded3594a3977f8bf9cf09552be327b5"></a>PBUF_TRANSPORT </td><td class="fielddoc">
+<p>Includes spare room for transport layer header, e.g. </p>
+<p>UDP header. Use this if you intend to pass the pbuf to functions like udp_send(). </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aee1baa59bb2f85ba575b5a8619ac1ebfafcc1e506061ba69dfa142eb6b3da5f13"></a>PBUF_IP </td><td class="fielddoc">
+<p>Includes spare room for IP header. </p>
+<p>Use this if you intend to pass the pbuf to functions like raw_send(). </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aee1baa59bb2f85ba575b5a8619ac1ebfab4de441e737330558b609a990cd17346"></a>PBUF_LINK </td><td class="fielddoc">
+<p>Includes spare room for link layer header (ethernet header). </p>
+<p>Use this if you intend to pass the pbuf to functions like ethernet_output(). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__lwip__opts__pbuf.html#ga35998a3d56af9940e6a80bb372597685" title="PBUF_LINK_HLEN: the number of bytes that should be allocated for a link level header. ">PBUF_LINK_HLEN</a> </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aee1baa59bb2f85ba575b5a8619ac1ebfa0ff039585f05f9208bcb66c2d37783e2"></a>PBUF_RAW_TX </td><td class="fielddoc">
+<p>Includes spare room for additional encapsulation header before ethernet headers (e.g. </p>
+<p>802.11). Use this if you intend to pass the pbuf to functions like netif-&gt;linkoutput(). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__lwip__opts__pbuf.html#ga6e1ba1875ae5168a17b53d83597bc1de" title="PBUF_LINK_ENCAPSULATION_HLEN: the number of bytes that should be allocated for an additional encapsul...">PBUF_LINK_ENCAPSULATION_HLEN</a> </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aee1baa59bb2f85ba575b5a8619ac1ebfa21116654fbab6d5a4dfeb87a1bb8f0ba"></a>PBUF_RAW </td><td class="fielddoc">
+<p>Use this for input packets in a netif driver when calling netif-&gt;input() in the most common case - ethernet-layer netif driver. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00089">89</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7e0e32fcc292c0d7107721766ed92fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="pbuf_8h.html#ab7e0e32fcc292c0d7107721766ed92fb">pbuf_type</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enumeration of pbuf types. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ab7e0e32fcc292c0d7107721766ed92fbac5e9f28455bca98944a030d4b84ecfab"></a>PBUF_RAM </td><td class="fielddoc">
+<p>pbuf data is stored in RAM, used for TX mostly, struct pbuf and its payload are allocated in one piece of contiguous memory (so the first payload byte can be calculated from struct pbuf). </p>
+<p>pbuf_alloc() allocates PBUF_RAM pbufs as unchained pbufs (although that might change in future versions). This should be used for all OUTGOING packets (TX). </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab7e0e32fcc292c0d7107721766ed92fbac120b0fe39efe35bb682e4aa3b82e2c9"></a>PBUF_ROM </td><td class="fielddoc">
+<p>pbuf data is stored in ROM, i.e. </p>
+<p>struct pbuf and its payload are located in totally different memory areas. Since it points to ROM, payload does not have to be copied when queued for transmission. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab7e0e32fcc292c0d7107721766ed92fbac9b6ba960fdea6f2e8f35c8313b77e4e"></a>PBUF_REF </td><td class="fielddoc">
+<p>pbuf comes from the pbuf pool. </p>
+<p>Much like PBUF_ROM but payload might change so it has to be duplicated when queued before transmitting, depending on who has a 'ref' to it. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab7e0e32fcc292c0d7107721766ed92fbae969347127387b9b59a23ccd24b76d21"></a>PBUF_POOL </td><td class="fielddoc">
+<p>pbuf payload refers to RAM. </p>
+<p>This one comes from a pool and should be used for RX. Payload can be chained (scatter-gather RX) but like PBUF_RAM, struct pbuf and its payload are allocated in one piece of contiguous memory (so the first payload byte can be calculated from struct pbuf). Don't use this for TX, if the pool becomes empty e.g. because of TCP queuing, you are unable to receive TCP acks! </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="pbuf_8h_source.html#l00145">145</a> of file <a class="el" href="pbuf_8h_source.html">pbuf.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/pbuf_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:25:52 GMT -->
+</html>

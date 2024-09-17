@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_a_t_handler.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:16:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | ATHandler Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="classmbed_1_1_a_t_handler.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_a_t_handler.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_a_t_handler.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><b>mbed</b></li><li class="navelem"><a class="el" href="classmbed_1_1_a_t_handler.html">ATHandler</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ATHandler Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Class for sending AT commands and parsing AT responses.  
+ <a href="classmbed_1_1_a_t_handler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_a_t_handler_8h_source.html">ATHandler.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a505519cd954e4ae87fe28826093abe0d"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a505519cd954e4ae87fe28826093abe0d">ATHandler</a> (<a class="el" href="classmbed_1_1_file_handle.html">FileHandle</a> *fh, <a class="el" href="classevents_1_1_event_queue.html">events::EventQueue</a> &amp;queue, uint32_t timeout, const char *output_delimiter, uint16_t send_delay=0)</td></tr>
+<tr class="memdesc:a505519cd954e4ae87fe28826093abe0d"><td class="mdescLeft"> </td><td class="mdescRight">Constructor.  <a href="#a505519cd954e4ae87fe28826093abe0d">More...</a><br/></td></tr>
+<tr class="separator:a505519cd954e4ae87fe28826093abe0d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afdbab906b80cbe6206a3ca08a7ecb4d9"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#afdbab906b80cbe6206a3ca08a7ecb4d9">ATHandler</a> (<a class="el" href="classmbed_1_1_file_handle.html">FileHandle</a> *fh, <a class="el" href="classevents_1_1_event_queue.html">events::EventQueue</a> &amp;queue, mbed::chrono::milliseconds_u32 timeout, const char *output_delimiter, std::chrono::duration&lt; uint16_t, std::milli &gt; send_delay=std::chrono::milliseconds(0))</td></tr>
+<tr class="memdesc:afdbab906b80cbe6206a3ca08a7ecb4d9"><td class="mdescLeft"> </td><td class="mdescRight">Constructor.  <a href="#afdbab906b80cbe6206a3ca08a7ecb4d9">More...</a><br/></td></tr>
+<tr class="separator:afdbab906b80cbe6206a3ca08a7ecb4d9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a74f30cb991d16046511742de2c644ced"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classmbed_1_1_file_handle.html">FileHandle</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a74f30cb991d16046511742de2c644ced">get_file_handle</a> ()</td></tr>
+<tr class="memdesc:a74f30cb991d16046511742de2c644ced"><td class="mdescLeft"> </td><td class="mdescRight">Return used file handle.  <a href="#a74f30cb991d16046511742de2c644ced">More...</a><br/></td></tr>
+<tr class="separator:a74f30cb991d16046511742de2c644ced"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa81aed607133209dade63a226818224d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#aa81aed607133209dade63a226818224d">lock</a> ()</td></tr>
+<tr class="memdesc:aa81aed607133209dade63a226818224d"><td class="mdescLeft"> </td><td class="mdescRight">Locks the mutex for file handle if AT_HANDLER_MUTEX is defined.  <a href="#aa81aed607133209dade63a226818224d">More...</a><br/></td></tr>
+<tr class="separator:aa81aed607133209dade63a226818224d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9278be8203e1c42e2619179882ae4403"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a9278be8203e1c42e2619179882ae4403">unlock</a> ()</td></tr>
+<tr class="memdesc:a9278be8203e1c42e2619179882ae4403"><td class="mdescLeft"> </td><td class="mdescRight">Unlocks the mutex for file handle if AT_HANDLER_MUTEX is defined.  <a href="#a9278be8203e1c42e2619179882ae4403">More...</a><br/></td></tr>
+<tr class="separator:a9278be8203e1c42e2619179882ae4403"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30a107a0b46c626d38b509d45522740b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a30a107a0b46c626d38b509d45522740b">unlock_return_error</a> ()</td></tr>
+<tr class="memdesc:a30a107a0b46c626d38b509d45522740b"><td class="mdescLeft"> </td><td class="mdescRight">Locks the mutex for file handle if AT_HANDLER_MUTEX is defined and returns the last error.  <a href="#a30a107a0b46c626d38b509d45522740b">More...</a><br/></td></tr>
+<tr class="separator:a30a107a0b46c626d38b509d45522740b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aafade422b098e9d5f32d7db472a49295"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#aafade422b098e9d5f32d7db472a49295">set_urc_handler</a> (const char *prefix, <a class="el" href="classmbed_1_1_callback.html">Callback</a>&lt; void()&gt; callback)</td></tr>
+<tr class="memdesc:aafade422b098e9d5f32d7db472a49295"><td class="mdescLeft"> </td><td class="mdescRight">Set callback function for URC.  <a href="#aafade422b098e9d5f32d7db472a49295">More...</a><br/></td></tr>
+<tr class="separator:aafade422b098e9d5f32d7db472a49295"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab71818694a269a511d852a8a3a8858e7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ab71818694a269a511d852a8a3a8858e7">get_last_error</a> () const </td></tr>
+<tr class="memdesc:ab71818694a269a511d852a8a3a8858e7"><td class="mdescLeft"> </td><td class="mdescRight">returns the last error while parsing AT responses.  <a href="#ab71818694a269a511d852a8a3a8858e7">More...</a><br/></td></tr>
+<tr class="separator:ab71818694a269a511d852a8a3a8858e7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a37ea58c3431ef438ec7b563ed6039917"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structmbed_1_1device__err__t.html">device_err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a37ea58c3431ef438ec7b563ed6039917">get_last_device_error</a> () const </td></tr>
+<tr class="memdesc:a37ea58c3431ef438ec7b563ed6039917"><td class="mdescLeft"> </td><td class="mdescRight">returns the last device error while parsing AT responses.  <a href="#a37ea58c3431ef438ec7b563ed6039917">More...</a><br/></td></tr>
+<tr class="separator:a37ea58c3431ef438ec7b563ed6039917"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a077d7ca5be9dd42253ed7d375e8f2511"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a077d7ca5be9dd42253ed7d375e8f2511">set_at_timeout</a> (uint32_t timeout_milliseconds, bool default_timeout=false)</td></tr>
+<tr class="memdesc:a077d7ca5be9dd42253ed7d375e8f2511"><td class="mdescLeft"> </td><td class="mdescRight">Set timeout in milliseconds for AT commands.  <a href="#a077d7ca5be9dd42253ed7d375e8f2511">More...</a><br/></td></tr>
+<tr class="separator:a077d7ca5be9dd42253ed7d375e8f2511"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a51e773bb652428f9cd091db48ab0ea00"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a51e773bb652428f9cd091db48ab0ea00">set_at_timeout</a> (mbed::chrono::milliseconds_u32 timeout, bool default_timeout=false)</td></tr>
+<tr class="memdesc:a51e773bb652428f9cd091db48ab0ea00"><td class="mdescLeft"> </td><td class="mdescRight">Set timeout in milliseconds for AT commands.  <a href="#a51e773bb652428f9cd091db48ab0ea00">More...</a><br/></td></tr>
+<tr class="separator:a51e773bb652428f9cd091db48ab0ea00"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaba238ba396aff9525ade172d0078c9c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#aaba238ba396aff9525ade172d0078c9c">restore_at_timeout</a> ()</td></tr>
+<tr class="memdesc:aaba238ba396aff9525ade172d0078c9c"><td class="mdescLeft"> </td><td class="mdescRight">Restore timeout to previous timeout.  <a href="#aaba238ba396aff9525ade172d0078c9c">More...</a><br/></td></tr>
+<tr class="separator:aaba238ba396aff9525ade172d0078c9c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afc021e1f6d5e6619942e33f9d6d63cda"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#afc021e1f6d5e6619942e33f9d6d63cda">clear_error</a> ()</td></tr>
+<tr class="memdesc:afc021e1f6d5e6619942e33f9d6d63cda"><td class="mdescLeft"> </td><td class="mdescRight">Clear pending error flag.  <a href="#afc021e1f6d5e6619942e33f9d6d63cda">More...</a><br/></td></tr>
+<tr class="separator:afc021e1f6d5e6619942e33f9d6d63cda"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adac116554b543b7c4228c018a85882f5"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#adac116554b543b7c4228c018a85882f5">flush</a> ()</td></tr>
+<tr class="memdesc:adac116554b543b7c4228c018a85882f5"><td class="mdescLeft"> </td><td class="mdescRight">Flushes the underlying stream.  <a href="#adac116554b543b7c4228c018a85882f5">More...</a><br/></td></tr>
+<tr class="separator:adac116554b543b7c4228c018a85882f5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab94148c9e6284e96c9a59f338043468c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ab94148c9e6284e96c9a59f338043468c">process_oob</a> ()</td></tr>
+<tr class="memdesc:ab94148c9e6284e96c9a59f338043468c"><td class="mdescLeft"> </td><td class="mdescRight">Tries to find oob's from the AT response.  <a href="#ab94148c9e6284e96c9a59f338043468c">More...</a><br/></td></tr>
+<tr class="separator:ab94148c9e6284e96c9a59f338043468c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a457d28c782590107c21c9d1f20d33b1a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a457d28c782590107c21c9d1f20d33b1a">set_is_filehandle_usable</a> (bool usable)</td></tr>
+<tr class="memdesc:a457d28c782590107c21c9d1f20d33b1a"><td class="mdescLeft"> </td><td class="mdescRight">Set is file handle usable.  <a href="#a457d28c782590107c21c9d1f20d33b1a">More...</a><br/></td></tr>
+<tr class="separator:a457d28c782590107c21c9d1f20d33b1a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a31762aa4618c53bfd48740e663eee226"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a31762aa4618c53bfd48740e663eee226">sync</a> (int timeout_ms)</td></tr>
+<tr class="memdesc:a31762aa4618c53bfd48740e663eee226"><td class="mdescLeft"> </td><td class="mdescRight">Synchronize AT command and response handling to modem.  <a href="#a31762aa4618c53bfd48740e663eee226">More...</a><br/></td></tr>
+<tr class="separator:a31762aa4618c53bfd48740e663eee226"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a207ff5c4ee9e3d039a0b2e2a4412e92d"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a207ff5c4ee9e3d039a0b2e2a4412e92d">sync</a> (std::chrono::duration&lt; int, std::milli &gt; timeout)</td></tr>
+<tr class="memdesc:a207ff5c4ee9e3d039a0b2e2a4412e92d"><td class="mdescLeft"> </td><td class="mdescRight">Synchronize AT command and response handling to modem.  <a href="#a207ff5c4ee9e3d039a0b2e2a4412e92d">More...</a><br/></td></tr>
+<tr class="separator:a207ff5c4ee9e3d039a0b2e2a4412e92d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7580bbb7064195821566bcc82d5ed780"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a7580bbb7064195821566bcc82d5ed780">set_send_delay</a> (uint16_t send_delay)</td></tr>
+<tr class="memdesc:a7580bbb7064195821566bcc82d5ed780"><td class="mdescLeft"> </td><td class="mdescRight">Sets the delay to be applied before sending any AT command.  <a href="#a7580bbb7064195821566bcc82d5ed780">More...</a><br/></td></tr>
+<tr class="separator:a7580bbb7064195821566bcc82d5ed780"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3ba85104ed0d29e2a9b3084d55bfd3f8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a3ba85104ed0d29e2a9b3084d55bfd3f8">set_baud</a> (int baud_rate)</td></tr>
+<tr class="memdesc:a3ba85104ed0d29e2a9b3084d55bfd3f8"><td class="mdescLeft"> </td><td class="mdescRight">Sets <a class="el" href="classmbed_1_1_buffered_serial.html" title="Class providing buffered UART communication functionality using separate circular buffer for send and...">BufferedSerial</a> filehandle to given baud rate.  <a href="#a3ba85104ed0d29e2a9b3084d55bfd3f8">More...</a><br/></td></tr>
+<tr class="separator:a3ba85104ed0d29e2a9b3084d55bfd3f8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a900219a8d5252cb7280db899af53d8d5"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a900219a8d5252cb7280db899af53d8d5">cmd_start</a> (const char *cmd)</td></tr>
+<tr class="memdesc:a900219a8d5252cb7280db899af53d8d5"><td class="mdescLeft"> </td><td class="mdescRight">Starts the command writing by clearing the last error and writing the given command.  <a href="#a900219a8d5252cb7280db899af53d8d5">More...</a><br/></td></tr>
+<tr class="separator:a900219a8d5252cb7280db899af53d8d5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac17d518ca423dc60e4e85f36ed4bf207"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ac17d518ca423dc60e4e85f36ed4bf207">cmd_start_stop</a> (const char *cmd, const char *cmd_chr, const char *format="",...)</td></tr>
+<tr class="memdesc:ac17d518ca423dc60e4e85f36ed4bf207"><td class="mdescLeft"> </td><td class="mdescRight">cmd_start_stop Starts an AT command, writes given variadic arguments and stops the command.  <a href="#ac17d518ca423dc60e4e85f36ed4bf207">More...</a><br/></td></tr>
+<tr class="separator:ac17d518ca423dc60e4e85f36ed4bf207"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30e05620bce15b5d5a931d13dcef4e6c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a30e05620bce15b5d5a931d13dcef4e6c">at_cmd_str</a> (const char *cmd, const char *cmd_chr, char *resp_buf, size_t resp_buf_size, const char *format="",...)</td></tr>
+<tr class="memdesc:a30e05620bce15b5d5a931d13dcef4e6c"><td class="mdescLeft"> </td><td class="mdescRight">at_cmd_str Send an AT command and read a single string response.  <a href="#a30e05620bce15b5d5a931d13dcef4e6c">More...</a><br/></td></tr>
+<tr class="separator:a30e05620bce15b5d5a931d13dcef4e6c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a336639d035f497dd07a8a3ba11288329"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a336639d035f497dd07a8a3ba11288329">at_cmd_int</a> (const char *cmd, const char *cmd_chr, int &amp;resp, const char *format="",...)</td></tr>
+<tr class="memdesc:a336639d035f497dd07a8a3ba11288329"><td class="mdescLeft"> </td><td class="mdescRight">at_cmd_int Send an AT command and read a single integer response.  <a href="#a336639d035f497dd07a8a3ba11288329">More...</a><br/></td></tr>
+<tr class="separator:a336639d035f497dd07a8a3ba11288329"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a393a528a7e78b47f2c90bc00c72d63f1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a393a528a7e78b47f2c90bc00c72d63f1">at_cmd_discard</a> (const char *cmd, const char *cmd_chr, const char *format="",...)</td></tr>
+<tr class="memdesc:a393a528a7e78b47f2c90bc00c72d63f1"><td class="mdescLeft"> </td><td class="mdescRight">at_cmd_discard Send an AT command and read and discard a response.  <a href="#a393a528a7e78b47f2c90bc00c72d63f1">More...</a><br/></td></tr>
+<tr class="separator:a393a528a7e78b47f2c90bc00c72d63f1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5ff234a6913ad346a4bfe0a8425cd588"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a5ff234a6913ad346a4bfe0a8425cd588">write_int</a> (int32_t param)</td></tr>
+<tr class="memdesc:a5ff234a6913ad346a4bfe0a8425cd588"><td class="mdescLeft"> </td><td class="mdescRight">Writes integer type AT command subparameter.  <a href="#a5ff234a6913ad346a4bfe0a8425cd588">More...</a><br/></td></tr>
+<tr class="separator:a5ff234a6913ad346a4bfe0a8425cd588"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9d7c4559eb06163a0a9aaf0d877899f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ae9d7c4559eb06163a0a9aaf0d877899f">write_string</a> (const char *param, bool useQuotations=true)</td></tr>
+<tr class="memdesc:ae9d7c4559eb06163a0a9aaf0d877899f"><td class="mdescLeft"> </td><td class="mdescRight">Writes string type AT command subparamater.  <a href="#ae9d7c4559eb06163a0a9aaf0d877899f">More...</a><br/></td></tr>
+<tr class="separator:ae9d7c4559eb06163a0a9aaf0d877899f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2dd55f415913f04d817fb10a39d7ca84"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a2dd55f415913f04d817fb10a39d7ca84">cmd_stop</a> ()</td></tr>
+<tr class="memdesc:a2dd55f415913f04d817fb10a39d7ca84"><td class="mdescLeft"> </td><td class="mdescRight">Stops the AT command by writing command-line terminator CR to mark command as finished.  <a href="#a2dd55f415913f04d817fb10a39d7ca84">More...</a><br/></td></tr>
+<tr class="separator:a2dd55f415913f04d817fb10a39d7ca84"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af6dbe09c3fff913f92732c7d69819ef4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#af6dbe09c3fff913f92732c7d69819ef4">cmd_stop_read_resp</a> ()</td></tr>
+<tr class="memdesc:af6dbe09c3fff913f92732c7d69819ef4"><td class="mdescLeft"> </td><td class="mdescRight">Stops the AT command by writing command-line terminator CR to mark command as finished and reads the OK/ERROR response.  <a href="#af6dbe09c3fff913f92732c7d69819ef4">More...</a><br/></td></tr>
+<tr class="separator:af6dbe09c3fff913f92732c7d69819ef4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5adaf3cca2e051d08a53a097a5221124"><td align="right" class="memItemLeft" valign="top">size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a5adaf3cca2e051d08a53a097a5221124">write_bytes</a> (const uint8_t *data, size_t len)</td></tr>
+<tr class="memdesc:a5adaf3cca2e051d08a53a097a5221124"><td class="mdescLeft"> </td><td class="mdescRight">Write bytes without any subparameter delimiters, such as comma.  <a href="#a5adaf3cca2e051d08a53a097a5221124">More...</a><br/></td></tr>
+<tr class="separator:a5adaf3cca2e051d08a53a097a5221124"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2f72756c558ab782f6d42101c252d204"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a2f72756c558ab782f6d42101c252d204">set_stop_tag</a> (const char *stop_tag_seq)</td></tr>
+<tr class="memdesc:a2f72756c558ab782f6d42101c252d204"><td class="mdescLeft"> </td><td class="mdescRight">Sets the stop tag for the current scope (response/information response/element) Parameter's reading routines will stop the reading when such tag is found and will set the found flag.  <a href="#a2f72756c558ab782f6d42101c252d204">More...</a><br/></td></tr>
+<tr class="separator:a2f72756c558ab782f6d42101c252d204"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae894311930cee46c248fbea56e464947"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ae894311930cee46c248fbea56e464947">set_delimiter</a> (char delimiter)</td></tr>
+<tr class="memdesc:ae894311930cee46c248fbea56e464947"><td class="mdescLeft"> </td><td class="mdescRight">Sets the delimiter between parameters or between elements of the information response.  <a href="#ae894311930cee46c248fbea56e464947">More...</a><br/></td></tr>
+<tr class="separator:ae894311930cee46c248fbea56e464947"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a029dc63406814f507b45dc44d9ca1e85"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a029dc63406814f507b45dc44d9ca1e85">set_default_delimiter</a> ()</td></tr>
+<tr class="memdesc:a029dc63406814f507b45dc44d9ca1e85"><td class="mdescLeft"> </td><td class="mdescRight">Sets the delimiter to default value defined by DEFAULT_DELIMITER.  <a href="#a029dc63406814f507b45dc44d9ca1e85">More...</a><br/></td></tr>
+<tr class="separator:a029dc63406814f507b45dc44d9ca1e85"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1de88c96f89f3c688af8741ab5ac9f4f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a1de88c96f89f3c688af8741ab5ac9f4f">use_delimiter</a> (bool use_delimiter)</td></tr>
+<tr class="memdesc:a1de88c96f89f3c688af8741ab5ac9f4f"><td class="mdescLeft"> </td><td class="mdescRight">Defines behaviour for using or ignoring the delimiter within an AT command.  <a href="#a1de88c96f89f3c688af8741ab5ac9f4f">More...</a><br/></td></tr>
+<tr class="separator:a1de88c96f89f3c688af8741ab5ac9f4f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad2382b87d41b065a6e60865f1b65eede"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ad2382b87d41b065a6e60865f1b65eede">skip_param</a> (uint32_t count=1)</td></tr>
+<tr class="memdesc:ad2382b87d41b065a6e60865f1b65eede"><td class="mdescLeft"> </td><td class="mdescRight">Consumes the reading buffer up to the delimiter or stop_tag.  <a href="#ad2382b87d41b065a6e60865f1b65eede">More...</a><br/></td></tr>
+<tr class="separator:ad2382b87d41b065a6e60865f1b65eede"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4edf5a7828ef0f808626aabd1b73d655"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a4edf5a7828ef0f808626aabd1b73d655">skip_param</a> (ssize_t len, uint32_t count)</td></tr>
+<tr class="memdesc:a4edf5a7828ef0f808626aabd1b73d655"><td class="mdescLeft"> </td><td class="mdescRight">Consumes the given length from the reading buffer.  <a href="#a4edf5a7828ef0f808626aabd1b73d655">More...</a><br/></td></tr>
+<tr class="separator:a4edf5a7828ef0f808626aabd1b73d655"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0fb1dcfb751cd1c82ded46e77f9a0b97"><td align="right" class="memItemLeft" valign="top">ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a0fb1dcfb751cd1c82ded46e77f9a0b97">read_bytes</a> (uint8_t *buf, size_t len)</td></tr>
+<tr class="memdesc:a0fb1dcfb751cd1c82ded46e77f9a0b97"><td class="mdescLeft"> </td><td class="mdescRight">Reads given number of bytes from receiving buffer without checking any subparameter delimiters, such as comma.  <a href="#a0fb1dcfb751cd1c82ded46e77f9a0b97">More...</a><br/></td></tr>
+<tr class="separator:a0fb1dcfb751cd1c82ded46e77f9a0b97"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a120a6e8827564d213d6187789f7d806d"><td align="right" class="memItemLeft" valign="top">ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a120a6e8827564d213d6187789f7d806d">read_string</a> (char *str, size_t size, bool read_even_stop_tag=false)</td></tr>
+<tr class="memdesc:a120a6e8827564d213d6187789f7d806d"><td class="mdescLeft"> </td><td class="mdescRight">Reads chars from reading buffer.  <a href="#a120a6e8827564d213d6187789f7d806d">More...</a><br/></td></tr>
+<tr class="separator:a120a6e8827564d213d6187789f7d806d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2381971ab84015d5402fb9434ad3bb96"><td align="right" class="memItemLeft" valign="top">ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a2381971ab84015d5402fb9434ad3bb96">read_hex_string</a> (char *str, size_t size)</td></tr>
+<tr class="memdesc:a2381971ab84015d5402fb9434ad3bb96"><td class="mdescLeft"> </td><td class="mdescRight">Reads chars representing hex ascii values and converts them to the corresponding chars.  <a href="#a2381971ab84015d5402fb9434ad3bb96">More...</a><br/></td></tr>
+<tr class="separator:a2381971ab84015d5402fb9434ad3bb96"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6223165d7cb55a498c199dbba827009a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a6223165d7cb55a498c199dbba827009a">write_hex_string</a> (const char *str, size_t size, bool quote_string=true)</td></tr>
+<tr class="memdesc:a6223165d7cb55a498c199dbba827009a"><td class="mdescLeft"> </td><td class="mdescRight">Converts contained chars to their hex ascii value and writes the resulting string to the file handle For example: "AV" to "4156".  <a href="#a6223165d7cb55a498c199dbba827009a">More...</a><br/></td></tr>
+<tr class="separator:a6223165d7cb55a498c199dbba827009a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a11b484214cd9eceb5f0dd60a9736c00a"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a11b484214cd9eceb5f0dd60a9736c00a">read_int</a> ()</td></tr>
+<tr class="memdesc:a11b484214cd9eceb5f0dd60a9736c00a"><td class="mdescLeft"> </td><td class="mdescRight">Reads as string and converts result to integer.  <a href="#a11b484214cd9eceb5f0dd60a9736c00a">More...</a><br/></td></tr>
+<tr class="separator:a11b484214cd9eceb5f0dd60a9736c00a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af7ac839cc3d1caeffd607c5d50595199"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#af7ac839cc3d1caeffd607c5d50595199">resp_start</a> (const char *prefix=NULL, bool stop=false)</td></tr>
+<tr class="memdesc:af7ac839cc3d1caeffd607c5d50595199"><td class="mdescLeft"> </td><td class="mdescRight">This looks for necessary matches: prefix, OK, ERROR, URCs and sets the correct scope.  <a href="#af7ac839cc3d1caeffd607c5d50595199">More...</a><br/></td></tr>
+<tr class="separator:af7ac839cc3d1caeffd607c5d50595199"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa925296e303a73aefb7c655891cd8536"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#aa925296e303a73aefb7c655891cd8536">resp_stop</a> ()</td></tr>
+<tr class="memdesc:aa925296e303a73aefb7c655891cd8536"><td class="mdescLeft"> </td><td class="mdescRight">Ends all scopes starting from current scope.  <a href="#aa925296e303a73aefb7c655891cd8536">More...</a><br/></td></tr>
+<tr class="separator:aa925296e303a73aefb7c655891cd8536"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5b74bd98550cea394d6167b7e932d755"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a5b74bd98550cea394d6167b7e932d755">info_resp</a> ()</td></tr>
+<tr class="memdesc:a5b74bd98550cea394d6167b7e932d755"><td class="mdescLeft"> </td><td class="mdescRight">Looks for matching the prefix given to <a class="el" href="classmbed_1_1_a_t_handler.html#af7ac839cc3d1caeffd607c5d50595199" title="This looks for necessary matches: prefix, OK, ERROR, URCs and sets the correct scope. ">resp_start()</a> call.  <a href="#a5b74bd98550cea394d6167b7e932d755">More...</a><br/></td></tr>
+<tr class="separator:a5b74bd98550cea394d6167b7e932d755"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae87c8ed27b84ae7e11989532bfe3b2bc"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#ae87c8ed27b84ae7e11989532bfe3b2bc">info_elem</a> (char start_tag)</td></tr>
+<tr class="memdesc:ae87c8ed27b84ae7e11989532bfe3b2bc"><td class="mdescLeft"> </td><td class="mdescRight">Looks for matching the start tag.  <a href="#ae87c8ed27b84ae7e11989532bfe3b2bc">More...</a><br/></td></tr>
+<tr class="separator:ae87c8ed27b84ae7e11989532bfe3b2bc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a06ea6d4622ad75a9e34f0bf0fa5c6a1e"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a06ea6d4622ad75a9e34f0bf0fa5c6a1e">consume_to_stop_tag</a> ()</td></tr>
+<tr class="memdesc:a06ea6d4622ad75a9e34f0bf0fa5c6a1e"><td class="mdescLeft"> </td><td class="mdescRight">Consumes the received content until current stop tag is found.  <a href="#a06ea6d4622ad75a9e34f0bf0fa5c6a1e">More...</a><br/></td></tr>
+<tr class="separator:a06ea6d4622ad75a9e34f0bf0fa5c6a1e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8d7cb6728c39e60ed0d77e1dcef8bc3e"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a8d7cb6728c39e60ed0d77e1dcef8bc3e">get_3gpp_error</a> ()</td></tr>
+<tr class="memdesc:a8d7cb6728c39e60ed0d77e1dcef8bc3e"><td class="mdescLeft"> </td><td class="mdescRight">Return the last 3GPP error code.  <a href="#a8d7cb6728c39e60ed0d77e1dcef8bc3e">More...</a><br/></td></tr>
+<tr class="separator:a8d7cb6728c39e60ed0d77e1dcef8bc3e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5a4b964705563b60a19700a9cda7aa2d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a5a4b964705563b60a19700a9cda7aa2d">set_debug</a> (bool debug_on)</td></tr>
+<tr class="memdesc:a5a4b964705563b60a19700a9cda7aa2d"><td class="mdescLeft"> </td><td class="mdescRight">AT debugging, when enabled will print all data read and written, non-printable chars are printed as "[%d]".  <a href="#a5a4b964705563b60a19700a9cda7aa2d">More...</a><br/></td></tr>
+<tr class="separator:a5a4b964705563b60a19700a9cda7aa2d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8499d6a4b3f5bb21b96fb6543de46381"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_a_t_handler.html#a8499d6a4b3f5bb21b96fb6543de46381">get_debug</a> () const </td></tr>
+<tr class="memdesc:a8499d6a4b3f5bb21b96fb6543de46381"><td class="mdescLeft"> </td><td class="mdescRight">Get degug state set by <a class="el" href="classmbed_1_1_a_t_handler.html#a5a4b964705563b60a19700a9cda7aa2d">set_debug</a>.  <a href="#a8499d6a4b3f5bb21b96fb6543de46381">More...</a><br/></td></tr>
+<tr class="separator:a8499d6a4b3f5bb21b96fb6543de46381"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for sending AT commands and parsing AT responses. </p>
+
+<p>Definition at line <a class="el" href="_a_t_handler_8h_source.html#l00068">68</a> of file <a class="el" href="_a_t_handler_8h_source.html">ATHandler.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a505519cd954e4ae87fe28826093abe0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_a_t_handler.html">ATHandler</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_file_handle.html">FileHandle</a> * </td>
+          <td class="paramname"><em>fh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classevents_1_1_event_queue.html">events::EventQueue</a> &amp; </td>
+          <td class="paramname"><em>queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>output_delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t </td>
+          <td class="paramname"><em>send_delay</em> = <code>0</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fh</td><td>file handle used for reading AT responses and writing AT commands </td></tr>
+    <tr><td class="paramname">queue</td><td>Event queue used to transfer sigio events to this thread </td></tr>
+    <tr><td class="paramname">timeout</td><td><a class="el" href="classmbed_1_1_timeout.html">Timeout</a> when reading for AT response </td></tr>
+    <tr><td class="paramname">output_delimiter</td><td>delimiter used when parsing at responses, "\r" should be used as output_delimiter </td></tr>
+    <tr><td class="paramname">send_delay</td><td>the minimum delay in ms between the end of last response and the beginning of a new command </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afdbab906b80cbe6206a3ca08a7ecb4d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_a_t_handler.html">ATHandler</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_file_handle.html">FileHandle</a> * </td>
+          <td class="paramname"><em>fh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classevents_1_1_event_queue.html">events::EventQueue</a> &amp; </td>
+          <td class="paramname"><em>queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mbed::chrono::milliseconds_u32 </td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>output_delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::duration&lt; uint16_t, std::milli &gt; </td>
+          <td class="paramname"><em>send_delay</em> = <code>std::chrono::milliseconds(0)</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fh</td><td>file handle used for reading AT responses and writing AT commands </td></tr>
+    <tr><td class="paramname">queue</td><td>Event queue used to transfer sigio events to this thread </td></tr>
+    <tr><td class="paramname">timeout</td><td><a class="el" href="classmbed_1_1_timeout.html">Timeout</a> when reading for AT response </td></tr>
+    <tr><td class="paramname">output_delimiter</td><td>delimiter used when parsing at responses, "\r" should be used as output_delimiter </td></tr>
+    <tr><td class="paramname">send_delay</td><td>the minimum delay in ms between the end of last response and the beginning of a new command </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a393a528a7e78b47f2c90bc00c72d63f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> at_cmd_discard </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd_chr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>format</em> = <code>""</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname"><em>...</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>at_cmd_discard Send an AT command and read and discard a response. </p>
+<p>Locks and unlocks <a class="el" href="classmbed_1_1_a_t_handler.html" title="Class for sending AT commands and parsing AT responses. ">ATHandler</a> for operation </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">cmd</td><td>AT command in form +&lt;CMD&gt; (will be used also in response reading, no extra chars allowed) </td></tr>
+    <tr><td class="paramname">cmd_chr</td><td>Char to be added to specific AT command: '?', '=' or ''. Will be used as such so '=1' is valid as well. </td></tr>
+    <tr><td class="paramname">format</td><td>Format string for variadic arguments to be added to AT command; No separator needed. Use d for integer, s for string and b for byte string (requires 2 arguments: string and length) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>last error that happened when parsing AT responses </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a336639d035f497dd07a8a3ba11288329"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> at_cmd_int </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd_chr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp; </td>
+          <td class="paramname"><em>resp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>format</em> = <code>""</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname"><em>...</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>at_cmd_int Send an AT command and read a single integer response. </p>
+<p>Locks and unlocks <a class="el" href="classmbed_1_1_a_t_handler.html" title="Class for sending AT commands and parsing AT responses. ">ATHandler</a> for operation </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">cmd</td><td>AT command in form +&lt;CMD&gt; (will be used also in response reading, no extra chars allowed) </td></tr>
+    <tr><td class="paramname">cmd_chr</td><td>Char to be added to specific AT command: '?', '=' or ''. Will be used as such so '=1' is valid as well. </td></tr>
+    <tr><td class="paramname">resp</td><td>Integer to hold response </td></tr>
+    <tr><td class="paramname">format</td><td>Format string for variadic arguments to be added to AT command; No separator needed. Use d for integer, s for string and b for byte string (requires 2 arguments: string and length) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>last error that happened when parsing AT responses </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a30e05620bce15b5d5a931d13dcef4e6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> at_cmd_str </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd_chr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>resp_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>resp_buf_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>format</em> = <code>""</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname"><em>...</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>at_cmd_str Send an AT command and read a single string response. </p>
+<p>Locks and unlocks <a class="el" href="classmbed_1_1_a_t_handler.html" title="Class for sending AT commands and parsing AT responses. ">ATHandler</a> for operation </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">cmd</td><td>AT command in form +&lt;CMD&gt; (will be used also in response reading, no extra chars allowed) </td></tr>
+    <tr><td class="paramname">cmd_chr</td><td>Char to be added to specific AT command: '?', '=' or ''. Will be used as such so '=1' is valid as well. </td></tr>
+    <tr><td class="paramname">resp_buf</td><td>Response buffer </td></tr>
+    <tr><td class="paramname">resp_buf_size</td><td>Response buffer size </td></tr>
+    <tr><td class="paramname">format</td><td>Format string for variadic arguments to be added to AT command; No separator needed. Use d for integer, s for string and b for byte string (requires 2 arguments: string and length) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>last error that happened when parsing AT responses </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc021e1f6d5e6619942e33f9d6d63cda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void clear_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear pending error flag. </p>
+<p>By default, error is cleared only in <a class="el" href="classmbed_1_1_a_t_handler.html#aa81aed607133209dade63a226818224d" title="Locks the mutex for file handle if AT_HANDLER_MUTEX is defined. ">lock()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a900219a8d5252cb7280db899af53d8d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_start </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Starts the command writing by clearing the last error and writing the given command. </p>
+<p>In case of failure when writing, the last error is set to NSAPI_ERROR_DEVICE_ERROR.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">cmd</td><td>AT command to be written to modem </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac17d518ca423dc60e4e85f36ed4bf207"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_start_stop </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>cmd_chr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>format</em> = <code>""</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname"><em>...</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>cmd_start_stop Starts an AT command, writes given variadic arguments and stops the command. </p>
+<p>Use this command when you need multiple response parameters to be handled. NOTE: Does not lock <a class="el" href="classmbed_1_1_a_t_handler.html" title="Class for sending AT commands and parsing AT responses. ">ATHandler</a> for process!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">cmd</td><td>AT command in form +&lt;CMD&gt; (will be used also in response reading, no extra chars allowed) </td></tr>
+    <tr><td class="paramname">cmd_chr</td><td>Char to be added to specific AT command: '?', '=' or ''. Will be used as such so '=1' is valid as well. </td></tr>
+    <tr><td class="paramname">format</td><td>Format string for variadic arguments to be added to AT command; No separator needed. Use d for integer, s for string and b for byte string (requires 2 arguments: string and length) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2dd55f415913f04d817fb10a39d7ca84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Stops the AT command by writing command-line terminator CR to mark command as finished. </p>
+
+</div>
+</div>
+<a class="anchor" id="af6dbe09c3fff913f92732c7d69819ef4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_stop_read_resp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Stops the AT command by writing command-line terminator CR to mark command as finished and reads the OK/ERROR response. </p>
+
+</div>
+</div>
+<a class="anchor" id="a06ea6d4622ad75a9e34f0bf0fa5c6a1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool consume_to_stop_tag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Consumes the received content until current stop tag is found. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if stop tag is found, false otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adac116554b543b7c4228c018a85882f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void flush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Flushes the underlying stream. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d7cb6728c39e60ed0d77e1dcef8bc3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int get_3gpp_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Return the last 3GPP error code. </p>
+<dl class="section return"><dt>Returns</dt><dd>last 3GPP error code </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8499d6a4b3f5bb21b96fb6543de46381"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool get_debug </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get degug state set by <a class="el" href="classmbed_1_1_a_t_handler.html#a5a4b964705563b60a19700a9cda7aa2d">set_debug</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>current state of debug </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a74f30cb991d16046511742de2c644ced"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_file_handle.html">FileHandle</a>* get_file_handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Return used file handle. </p>
+<dl class="section return"><dt>Returns</dt><dd>used file handle </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a37ea58c3431ef438ec7b563ed6039917"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="structmbed_1_1device__err__t.html">device_err_t</a> get_last_device_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>returns the last device error while parsing AT responses. </p>
+<p>Actually AT error (CME/CMS).</p>
+<dl class="section return"><dt>Returns</dt><dd>last error struct <a class="el" href="structmbed_1_1device__err__t.html" title="AT response error with error code and type. ">device_err_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab71818694a269a511d852a8a3a8858e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> get_last_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>returns the last error while parsing AT responses. </p>
+<dl class="section return"><dt>Returns</dt><dd>last error </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae87c8ed27b84ae7e11989532bfe3b2bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool info_elem </td>
+          <td>(</td>
+          <td class="paramtype">char </td>
+          <td class="paramname"><em>start_tag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Looks for matching the start tag. </p>
+<p>If needed, it ends the scope of a previous element. Sets the element scope if start tag is found and information response scope if start tag is not found.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">start_tag</td><td>tag to be matched to begin parsing an element of an information response </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if new element is found, false otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5b74bd98550cea394d6167b7e932d755"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool info_resp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Looks for matching the prefix given to <a class="el" href="classmbed_1_1_a_t_handler.html#af7ac839cc3d1caeffd607c5d50595199" title="This looks for necessary matches: prefix, OK, ERROR, URCs and sets the correct scope. ">resp_start()</a> call. </p>
+<p>If needed, it ends the scope of a previous information response. Sets the information response scope if new prefix is found and response scope if prefix is not found.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if prefix defined for information response is not empty string and is found, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa81aed607133209dade63a226818224d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Locks the mutex for file handle if AT_HANDLER_MUTEX is defined. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab94148c9e6284e96c9a59f338043468c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void process_oob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Tries to find oob's from the AT response. </p>
+<p>Call the urc callback if one is found. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0fb1dcfb751cd1c82ded46e77f9a0b97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">ssize_t read_bytes </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>len</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads given number of bytes from receiving buffer without checking any subparameter delimiters, such as comma. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">buf</td><td>output buffer for the read </td></tr>
+    <tr><td class="paramname">len</td><td>maximum number of bytes to read </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of successfully read bytes or -1 in case of error </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2381971ab84015d5402fb9434ad3bb96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">ssize_t read_hex_string </td>
+          <td>(</td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads chars representing hex ascii values and converts them to the corresponding chars. </p>
+<p>For example: "4156" to "AV". Terminates with null. Skips the quotation marks. Stops on delimiter or stop tag.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">str</td><td>output buffer for the read </td></tr>
+    <tr><td class="paramname">size</td><td>maximum number of chars to output </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>length of output string or -1 in case of read timeout before delimiter or stop tag is found </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a11b484214cd9eceb5f0dd60a9736c00a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t read_int </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads as string and converts result to integer. </p>
+<p>Supports only non-negative integers.</p>
+<dl class="section return"><dt>Returns</dt><dd>the non-negative integer or -1 in case of error. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a120a6e8827564d213d6187789f7d806d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">ssize_t read_string </td>
+          <td>(</td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>read_even_stop_tag</em> = <code>false</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reads chars from reading buffer. </p>
+<p>Terminates with null. Skips the quotation marks. Stops on delimiter or stop tag.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">str</td><td>output buffer for the read </td></tr>
+    <tr><td class="paramname">size</td><td>maximum number of chars to output including NULL </td></tr>
+    <tr><td class="paramname">read_even_stop_tag</td><td>if true then try to read even if the stop tag was found previously </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>length of output string or -1 in case of read timeout before delimiter or stop tag is found </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af7ac839cc3d1caeffd607c5d50595199"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void resp_start </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>prefix</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>stop</em> = <code>false</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This looks for necessary matches: prefix, OK, ERROR, URCs and sets the correct scope. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">prefix</td><td>string to be matched from receiving buffer. If not NULL and match succeeds, then scope will be set as information response(info_type) </td></tr>
+    <tr><td class="paramname">stop</td><td>flag to indicate if we go to information response scope or not. (needed when nothing is expected to be received anymore after the prefix match: sms case: "&gt; ", bc95 reboot case) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa925296e303a73aefb7c655891cd8536"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void resp_stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Ends all scopes starting from current scope. </p>
+<p>Consumes everything until the scope's stop tag is found, then goes to next scope until response scope is ending. URC match is checked during response scope ending, for every new line / CRLF.</p>
+<p>Possible sequence: element scope -&gt; information response scope -&gt; response scope </p>
+
+</div>
+</div>
+<a class="anchor" id="aaba238ba396aff9525ade172d0078c9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void restore_at_timeout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Restore timeout to previous timeout. </p>
+<p>Handy if there is a need to change timeout temporarily. </p>
+
+</div>
+</div>
+<a class="anchor" id="a077d7ca5be9dd42253ed7d375e8f2511"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_at_timeout </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>timeout_milliseconds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>default_timeout</em> = <code>false</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set timeout in milliseconds for AT commands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">timeout_milliseconds</td><td><a class="el" href="classmbed_1_1_timeout.html">Timeout</a> in milliseconds </td></tr>
+    <tr><td class="paramname">default_timeout</td><td>Store as default timeout </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a51e773bb652428f9cd091db48ab0ea00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_at_timeout </td>
+          <td>(</td>
+          <td class="paramtype">mbed::chrono::milliseconds_u32 </td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>default_timeout</em> = <code>false</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set timeout in milliseconds for AT commands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">timeout</td><td><a class="el" href="classmbed_1_1_timeout.html">Timeout</a> in milliseconds </td></tr>
+    <tr><td class="paramname">default_timeout</td><td>Store as default timeout </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3ba85104ed0d29e2a9b3084d55bfd3f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_baud </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>baud_rate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets <a class="el" href="classmbed_1_1_buffered_serial.html" title="Class providing buffered UART communication functionality using separate circular buffer for send and...">BufferedSerial</a> filehandle to given baud rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">baud_rate</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a4b964705563b60a19700a9cda7aa2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_debug </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>debug_on</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>AT debugging, when enabled will print all data read and written, non-printable chars are printed as "[%d]". </p>
+<p>AT debug can be enabled at compile time using MBED_CONF_CELLULAR_DEBUG_AT flag or at runtime calling <a class="el" href="classmbed_1_1_a_t_handler.html#a5a4b964705563b60a19700a9cda7aa2d" title='AT debugging, when enabled will print all data read and written, non-printable chars are printed as "...'>set_debug()</a>. Note that MBED_CONF_MBED_TRACE_ENABLE must also be enabled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">debug_on</td><td>Enable/disable debugging </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a029dc63406814f507b45dc44d9ca1e85"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_default_delimiter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the delimiter to default value defined by DEFAULT_DELIMITER. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae894311930cee46c248fbea56e464947"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_delimiter </td>
+          <td>(</td>
+          <td class="paramtype">char </td>
+          <td class="paramname"><em>delimiter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the delimiter between parameters or between elements of the information response. </p>
+<p>Parameter's reading routines will stop when such char is read.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">delimiter</td><td>char to be set as _delimiter </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a457d28c782590107c21c9d1f20d33b1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_is_filehandle_usable </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>usable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set is file handle usable. </p>
+<p>Some situations like after going to data mode, file handle is not usable anymore. Any items in queue are not to be processed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">usable</td><td>true for usable filehandle </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7580bbb7064195821566bcc82d5ed780"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_send_delay </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t </td>
+          <td class="paramname"><em>send_delay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the delay to be applied before sending any AT command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">send_delay</td><td>the minimum delay in ms between the end of last response and the beginning of a new command </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f72756c558ab782f6d42101c252d204"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_stop_tag </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>stop_tag_seq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the stop tag for the current scope (response/information response/element) Parameter's reading routines will stop the reading when such tag is found and will set the found flag. </p>
+<p>Consume routines will read everything until such tag is found.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">stop_tag_seq</td><td>string to be set as stop tag </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aafade422b098e9d5f32d7db472a49295"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_urc_handler </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_callback.html">Callback</a>&lt; void()&gt; </td>
+          <td class="paramname"><em>callback</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set callback function for URC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">prefix</td><td>URC text to look for, e.g. "+CMTI:". Maximum length is MBED_CONF_CELLULAR_AT_HANDLER_BUFFER_SIZE. </td></tr>
+    <tr><td class="paramname">callback</td><td>function to call on prefix, or 0 to remove callback </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad2382b87d41b065a6e60865f1b65eede"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void skip_param </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>count</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Consumes the reading buffer up to the delimiter or stop_tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">count</td><td>number of parameters to be skipped </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4edf5a7828ef0f808626aabd1b73d655"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void skip_param </td>
+          <td>(</td>
+          <td class="paramtype">ssize_t </td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>count</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Consumes the given length from the reading buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">len</td><td>length to be consumed from reading buffer </td></tr>
+    <tr><td class="paramname">count</td><td>number of parameters to be skipped </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a31762aa4618c53bfd48740e663eee226"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool sync </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>timeout_ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Synchronize AT command and response handling to modem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">timeout_ms</td><td><a class="el" href="classmbed_1_1_a_t_handler.html" title="Class for sending AT commands and parsing AT responses. ">ATHandler</a> timeout when trying to sync. Will be restored when function returns. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true is synchronization was successful, false in case of failure </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a207ff5c4ee9e3d039a0b2e2a4412e92d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool sync </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::duration&lt; int, std::milli &gt; </td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Synchronize AT command and response handling to modem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">timeout</td><td><a class="el" href="classmbed_1_1_a_t_handler.html" title="Class for sending AT commands and parsing AT responses. ">ATHandler</a> timeout when trying to sync. Will be restored when function returns. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true is synchronization was successful, false in case of failure </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9278be8203e1c42e2619179882ae4403"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void unlock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Unlocks the mutex for file handle if AT_HANDLER_MUTEX is defined. </p>
+
+</div>
+</div>
+<a class="anchor" id="a30a107a0b46c626d38b509d45522740b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> unlock_return_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Locks the mutex for file handle if AT_HANDLER_MUTEX is defined and returns the last error. </p>
+<dl class="section return"><dt>Returns</dt><dd>last error that happened when parsing AT responses </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1de88c96f89f3c688af8741ab5ac9f4f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void use_delimiter </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>use_delimiter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Defines behaviour for using or ignoring the delimiter within an AT command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">use_delimiter</td><td>indicating if delimiter should be used or not </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5adaf3cca2e051d08a53a097a5221124"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">size_t write_bytes </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>len</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Write bytes without any subparameter delimiters, such as comma. </p>
+<p>In case of failure when writing, the last error is set to NSAPI_ERROR_DEVICE_ERROR.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">data</td><td>bytes to be written to modem </td></tr>
+    <tr><td class="paramname">len</td><td>length of data string</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of characters successfully written </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6223165d7cb55a498c199dbba827009a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void write_hex_string </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>quote_string</em> = <code>true</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Converts contained chars to their hex ascii value and writes the resulting string to the file handle For example: "AV" to "4156". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">str</td><td>input buffer to be converted to hex ascii </td></tr>
+    <tr><td class="paramname">size</td><td>of the input param str </td></tr>
+    <tr><td class="paramname">quote_string</td><td>if true it will add the double-quote character at beginning and end of string </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ff234a6913ad346a4bfe0a8425cd588"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void write_int </td>
+          <td>(</td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Writes integer type AT command subparameter. </p>
+<p>Starts with the delimiter if not the first param after cmd_start. In case of failure when writing, the last error is set to NSAPI_ERROR_DEVICE_ERROR.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">param</td><td>int to be written to modem as AT command subparameter </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9d7c4559eb06163a0a9aaf0d877899f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void write_string </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>useQuotations</em> = <code>true</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Writes string type AT command subparamater. </p>
+<p>Quotes are added to surround the given string. Starts with the delimiter if not the first param after cmd_start. In case of failure when writing, the last error is set to NSAPI_ERROR_DEVICE_ERROR.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">param</td><td>string to be written to modem as AT command subparameter </td></tr>
+    <tr><td class="paramname">useQuotations</td><td>flag indicating whether the string should be included in quotation marks </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_a_t_handler.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:16:49 GMT -->
+</html>

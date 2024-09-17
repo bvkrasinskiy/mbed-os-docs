@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/sys_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | sys.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="sys_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/sys_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/sys_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_656714f9000830b7293277f30e3fdca8.html">lwipstack</a></li><li class="navelem"><a class="el" href="dir_51bed4128c7c35e28f2b56d9a4d3889d.html">lwip</a></li><li class="navelem"><a class="el" href="dir_a2f77adba6621efb54744c8be588cd6c.html">src</a></li><li class="navelem"><a class="el" href="dir_d881691941f72a257ee32ad5471a029d.html">include</a></li><li class="navelem"><a class="el" href="dir_3fb69e7ecf761e536af7cd2ef4e3092c.html">lwip</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">sys.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>OS abstraction layer.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="opt_8h_source.html">lwip/opt.h</a>"</code><br/>
+<code>#include "<a class="el" href="err_8h_source.html">lwip/err.h</a>"</code><br/>
+<code>#include "arch/sys_arch.h"</code><br/>
+</div>
+<p><a href="sys_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac1495030a8ab5e1f3c89e42ced527c5b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ac1495030a8ab5e1f3c89e42ced527c5b">SYS_ARCH_TIMEOUT</a>   0xffffffffUL</td></tr>
+<tr class="memdesc:ac1495030a8ab5e1f3c89e42ced527c5b"><td class="mdescLeft"> </td><td class="mdescRight">Return code for timeouts from sys_arch_mbox_fetch and sys_arch_sem_wait.  <a href="#ac1495030a8ab5e1f3c89e42ced527c5b">More...</a><br/></td></tr>
+<tr class="separator:ac1495030a8ab5e1f3c89e42ced527c5b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab0571e67edca0132b144106e9b319ef9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ab0571e67edca0132b144106e9b319ef9">SYS_MBOX_EMPTY</a>   <a class="el" href="sys_8h.html#ac1495030a8ab5e1f3c89e42ced527c5b">SYS_ARCH_TIMEOUT</a></td></tr>
+<tr class="memdesc:ab0571e67edca0132b144106e9b319ef9"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="sys_8h.html#ab7841780b31ba9c0a39a440aad1fca13" title="For now, we map straight to sys_arch implementation. ">sys_mbox_tryfetch()</a> returns SYS_MBOX_EMPTY if appropriate.  <a href="#ab0571e67edca0132b144106e9b319ef9">More...</a><br/></td></tr>
+<tr class="separator:ab0571e67edca0132b144106e9b319ef9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7bada49634cd3b28b28bdcedd763a1e6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a7bada49634cd3b28b28bdcedd763a1e6">LWIP_COMPAT_MUTEX</a>   0</td></tr>
+<tr class="memdesc:a7bada49634cd3b28b28bdcedd763a1e6"><td class="mdescLeft"> </td><td class="mdescRight">Define LWIP_COMPAT_MUTEX if the port has no mutexes and binary semaphores should be used instead.  <a href="#a7bada49634cd3b28b28bdcedd763a1e6">More...</a><br/></td></tr>
+<tr class="separator:a7bada49634cd3b28b28bdcedd763a1e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab7c0d03e5a3fbd776ffaf76da0511e55"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ab7c0d03e5a3fbd776ffaf76da0511e55">sys_sem_wait</a>(sem)                                   <a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f">sys_arch_sem_wait</a>(sem, 0)</td></tr>
+<tr class="memdesc:ab7c0d03e5a3fbd776ffaf76da0511e55"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a semaphore - forever/no timeout.  <a href="#ab7c0d03e5a3fbd776ffaf76da0511e55">More...</a><br/></td></tr>
+<tr class="separator:ab7c0d03e5a3fbd776ffaf76da0511e55"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6eaa50e3720ab7a37bdb21893192105f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a6eaa50e3720ab7a37bdb21893192105f">sys_sem_valid_val</a>(sem)             <a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4">sys_sem_valid</a>(&amp;(sem))</td></tr>
+<tr class="memdesc:a6eaa50e3720ab7a37bdb21893192105f"><td class="mdescLeft"> </td><td class="mdescRight">Same as <a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4" title="Returns 1 if the semaphore is valid, 0 if it is not valid. ">sys_sem_valid()</a> but taking a value, not a pointer.  <a href="#a6eaa50e3720ab7a37bdb21893192105f">More...</a><br/></td></tr>
+<tr class="separator:a6eaa50e3720ab7a37bdb21893192105f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2556e570f6973a6f4d57d0e76ef190d8"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a2556e570f6973a6f4d57d0e76ef190d8">sys_sem_set_invalid_val</a>(sem)   <a class="el" href="sys_8h.html#a42a2ab32afbf41a4146a9d135224ef33">sys_sem_set_invalid</a>(&amp;(sem))</td></tr>
+<tr class="memdesc:a2556e570f6973a6f4d57d0e76ef190d8"><td class="mdescLeft"> </td><td class="mdescRight">Same as <a class="el" href="sys_8h.html#a42a2ab32afbf41a4146a9d135224ef33" title="Invalidate a semaphore so that sys_sem_valid() returns 0. ">sys_sem_set_invalid()</a> but taking a value, not a pointer.  <a href="#a2556e570f6973a6f4d57d0e76ef190d8">More...</a><br/></td></tr>
+<tr class="separator:a2556e570f6973a6f4d57d0e76ef190d8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab7841780b31ba9c0a39a440aad1fca13"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ab7841780b31ba9c0a39a440aad1fca13">sys_mbox_tryfetch</a>(mbox,  msg)   <a class="el" href="sys_8h.html#afab441b130b4ec417012835dbe1e497c">sys_arch_mbox_tryfetch</a>(mbox, msg)</td></tr>
+<tr class="memdesc:ab7841780b31ba9c0a39a440aad1fca13"><td class="mdescLeft"> </td><td class="mdescRight">For now, we map straight to sys_arch implementation.  <a href="#ab7841780b31ba9c0a39a440aad1fca13">More...</a><br/></td></tr>
+<tr class="separator:ab7841780b31ba9c0a39a440aad1fca13"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac59a002741411822b5ffc06754d552dc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ac59a002741411822b5ffc06754d552dc">sys_mbox_valid_val</a>(mbox)             <a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d">sys_mbox_valid</a>(&amp;(mbox))</td></tr>
+<tr class="memdesc:ac59a002741411822b5ffc06754d552dc"><td class="mdescLeft"> </td><td class="mdescRight">Same as <a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d" title="Returns 1 if the mailbox is valid, 0 if it is not valid. ">sys_mbox_valid()</a> but taking a value, not a pointer.  <a href="#ac59a002741411822b5ffc06754d552dc">More...</a><br/></td></tr>
+<tr class="separator:ac59a002741411822b5ffc06754d552dc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae293feebb61d36f2db99be53702b8203"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ae293feebb61d36f2db99be53702b8203">sys_mbox_set_invalid_val</a>(mbox)   <a class="el" href="sys_8h.html#a53ddec9d7f5500c5b1d982cd17493172">sys_mbox_set_invalid</a>(&amp;(mbox))</td></tr>
+<tr class="memdesc:ae293feebb61d36f2db99be53702b8203"><td class="mdescLeft"> </td><td class="mdescRight">Same as <a class="el" href="sys_8h.html#a53ddec9d7f5500c5b1d982cd17493172" title="Invalidate a mailbox so that sys_mbox_valid() returns 0. ">sys_mbox_set_invalid()</a> but taking a value, not a pointer.  <a href="#ae293feebb61d36f2db99be53702b8203">More...</a><br/></td></tr>
+<tr class="separator:ae293feebb61d36f2db99be53702b8203"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a945395fa326214fc9736487242710a90"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a945395fa326214fc9736487242710a90">SYS_ARCH_DECL_PROTECT</a>(lev)</td></tr>
+<tr class="memdesc:a945395fa326214fc9736487242710a90"><td class="mdescLeft"> </td><td class="mdescRight">SYS_LIGHTWEIGHT_PROT define SYS_LIGHTWEIGHT_PROT in lwipopts.h if you want inter-task protection for certain critical regions during buffer allocation, deallocation and memory allocation and deallocation.  <a href="#a945395fa326214fc9736487242710a90">More...</a><br/></td></tr>
+<tr class="separator:a945395fa326214fc9736487242710a90"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae30a77bf6bd69bfcc5f235eaad54f2b9"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ae30a77bf6bd69bfcc5f235eaad54f2b9">lwip_thread_fn</a>) (void *arg)</td></tr>
+<tr class="memdesc:ae30a77bf6bd69bfcc5f235eaad54f2b9"><td class="mdescLeft"> </td><td class="mdescRight">Function prototype for thread functions.  <a href="#ae30a77bf6bd69bfcc5f235eaad54f2b9">More...</a><br/></td></tr>
+<tr class="separator:ae30a77bf6bd69bfcc5f235eaad54f2b9"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a38e7dae1fd88b338eb1cd97f110f3897"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a38e7dae1fd88b338eb1cd97f110f3897">sys_mutex_new</a> (<a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:a38e7dae1fd88b338eb1cd97f110f3897"><td class="mdescLeft"> </td><td class="mdescRight">Create a new mutex.  <a href="#a38e7dae1fd88b338eb1cd97f110f3897">More...</a><br/></td></tr>
+<tr class="separator:a38e7dae1fd88b338eb1cd97f110f3897"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4d4eb9afe5965fa2661dd54ff55d616a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a4d4eb9afe5965fa2661dd54ff55d616a">sys_mutex_lock</a> (<a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:a4d4eb9afe5965fa2661dd54ff55d616a"><td class="mdescLeft"> </td><td class="mdescRight">Blocks the thread until the mutex can be grabbed.  <a href="#a4d4eb9afe5965fa2661dd54ff55d616a">More...</a><br/></td></tr>
+<tr class="separator:a4d4eb9afe5965fa2661dd54ff55d616a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5568f68898fe9d5735f9ce2f665624fb"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a5568f68898fe9d5735f9ce2f665624fb">sys_mutex_unlock</a> (<a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:a5568f68898fe9d5735f9ce2f665624fb"><td class="mdescLeft"> </td><td class="mdescRight">Releases the mutex previously locked through '<a class="el" href="sys_8h.html#a4d4eb9afe5965fa2661dd54ff55d616a" title="Blocks the thread until the mutex can be grabbed. ">sys_mutex_lock()</a>'.  <a href="#a5568f68898fe9d5735f9ce2f665624fb">More...</a><br/></td></tr>
+<tr class="separator:a5568f68898fe9d5735f9ce2f665624fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a16336ce68b741e98204102ca4bc84dd9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a16336ce68b741e98204102ca4bc84dd9">sys_mutex_free</a> (<a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:a16336ce68b741e98204102ca4bc84dd9"><td class="mdescLeft"> </td><td class="mdescRight">Deallocates a mutex.  <a href="#a16336ce68b741e98204102ca4bc84dd9">More...</a><br/></td></tr>
+<tr class="separator:a16336ce68b741e98204102ca4bc84dd9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aebe83ba90a6d9c23cdb3eb5d49562c4a"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#aebe83ba90a6d9c23cdb3eb5d49562c4a">sys_mutex_valid</a> (<a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:aebe83ba90a6d9c23cdb3eb5d49562c4a"><td class="mdescLeft"> </td><td class="mdescRight">Returns 1 if the mutes is valid, 0 if it is not valid.  <a href="#aebe83ba90a6d9c23cdb3eb5d49562c4a">More...</a><br/></td></tr>
+<tr class="separator:aebe83ba90a6d9c23cdb3eb5d49562c4a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3f392725971dc837aa56dd7e45fa7ca8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a3f392725971dc837aa56dd7e45fa7ca8">sys_mutex_set_invalid</a> (<a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:a3f392725971dc837aa56dd7e45fa7ca8"><td class="mdescLeft"> </td><td class="mdescRight">Invalidate a mutex so that <a class="el" href="sys_8h.html#aebe83ba90a6d9c23cdb3eb5d49562c4a" title="Returns 1 if the mutes is valid, 0 if it is not valid. ">sys_mutex_valid()</a> returns 0.  <a href="#a3f392725971dc837aa56dd7e45fa7ca8">More...</a><br/></td></tr>
+<tr class="separator:a3f392725971dc837aa56dd7e45fa7ca8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af99da9e34a71855285c535183133dfde"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#af99da9e34a71855285c535183133dfde">sys_sem_new</a> (<a class="el" href="structsys__sem__t.html">sys_sem_t</a> *sem, u8_t count)</td></tr>
+<tr class="memdesc:af99da9e34a71855285c535183133dfde"><td class="mdescLeft"> </td><td class="mdescRight">Create a new semaphore Creates a new semaphore.  <a href="#af99da9e34a71855285c535183133dfde">More...</a><br/></td></tr>
+<tr class="separator:af99da9e34a71855285c535183133dfde"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf800273061fcc3f8200fd4e1b9ca875"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#aaf800273061fcc3f8200fd4e1b9ca875">sys_sem_signal</a> (<a class="el" href="structsys__sem__t.html">sys_sem_t</a> *sem)</td></tr>
+<tr class="memdesc:aaf800273061fcc3f8200fd4e1b9ca875"><td class="mdescLeft"> </td><td class="mdescRight">Signals a semaphore.  <a href="#aaf800273061fcc3f8200fd4e1b9ca875">More...</a><br/></td></tr>
+<tr class="separator:aaf800273061fcc3f8200fd4e1b9ca875"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8d364c5037778acb21c3df675db81b4f"><td align="right" class="memItemLeft" valign="top">u32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f">sys_arch_sem_wait</a> (<a class="el" href="structsys__sem__t.html">sys_sem_t</a> *sem, u32_t timeout)</td></tr>
+<tr class="memdesc:a8d364c5037778acb21c3df675db81b4f"><td class="mdescLeft"> </td><td class="mdescRight">Blocks the thread while waiting for the semaphore to be signaled.  <a href="#a8d364c5037778acb21c3df675db81b4f">More...</a><br/></td></tr>
+<tr class="separator:a8d364c5037778acb21c3df675db81b4f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a83b781f96c30e915c752065a757da283"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a83b781f96c30e915c752065a757da283">sys_sem_free</a> (<a class="el" href="structsys__sem__t.html">sys_sem_t</a> *sem)</td></tr>
+<tr class="memdesc:a83b781f96c30e915c752065a757da283"><td class="mdescLeft"> </td><td class="mdescRight">Deallocates a semaphore.  <a href="#a83b781f96c30e915c752065a757da283">More...</a><br/></td></tr>
+<tr class="separator:a83b781f96c30e915c752065a757da283"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a09a6c052ddaf799139efc56adfa087e4"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4">sys_sem_valid</a> (<a class="el" href="structsys__sem__t.html">sys_sem_t</a> *sem)</td></tr>
+<tr class="memdesc:a09a6c052ddaf799139efc56adfa087e4"><td class="mdescLeft"> </td><td class="mdescRight">Returns 1 if the semaphore is valid, 0 if it is not valid.  <a href="#a09a6c052ddaf799139efc56adfa087e4">More...</a><br/></td></tr>
+<tr class="separator:a09a6c052ddaf799139efc56adfa087e4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a42a2ab32afbf41a4146a9d135224ef33"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a42a2ab32afbf41a4146a9d135224ef33">sys_sem_set_invalid</a> (<a class="el" href="structsys__sem__t.html">sys_sem_t</a> *sem)</td></tr>
+<tr class="memdesc:a42a2ab32afbf41a4146a9d135224ef33"><td class="mdescLeft"> </td><td class="mdescRight">Invalidate a semaphore so that <a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4" title="Returns 1 if the semaphore is valid, 0 if it is not valid. ">sys_sem_valid()</a> returns 0.  <a href="#a42a2ab32afbf41a4146a9d135224ef33">More...</a><br/></td></tr>
+<tr class="separator:a42a2ab32afbf41a4146a9d135224ef33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b8786f43e779953e8b74e983c88682e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a6b8786f43e779953e8b74e983c88682e">sys_msleep</a> (u32_t ms)</td></tr>
+<tr class="memdesc:a6b8786f43e779953e8b74e983c88682e"><td class="mdescLeft"> </td><td class="mdescRight">Sleep for specified number of ms.  <a href="#a6b8786f43e779953e8b74e983c88682e">More...</a><br/></td></tr>
+<tr class="separator:a6b8786f43e779953e8b74e983c88682e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab9793f30642de06ce87827e9adbe30cc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ab9793f30642de06ce87827e9adbe30cc">sys_mbox_new</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox, int size)</td></tr>
+<tr class="memdesc:ab9793f30642de06ce87827e9adbe30cc"><td class="mdescLeft"> </td><td class="mdescRight">Creates an empty mailbox for maximum "size" elements.  <a href="#ab9793f30642de06ce87827e9adbe30cc">More...</a><br/></td></tr>
+<tr class="separator:ab9793f30642de06ce87827e9adbe30cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9d068386a3c53dd01b8af99c3ef77555"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a9d068386a3c53dd01b8af99c3ef77555">sys_mbox_post</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox, void *msg)</td></tr>
+<tr class="memdesc:a9d068386a3c53dd01b8af99c3ef77555"><td class="mdescLeft"> </td><td class="mdescRight">Post a message to an mbox - may not fail -&gt; blocks if full, only to be used from tasks NOT from ISR!  <a href="#a9d068386a3c53dd01b8af99c3ef77555">More...</a><br/></td></tr>
+<tr class="separator:a9d068386a3c53dd01b8af99c3ef77555"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa36345e48a49d67cbb0878cd4cbd2195"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#aa36345e48a49d67cbb0878cd4cbd2195">sys_mbox_trypost</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox, void *msg)</td></tr>
+<tr class="memdesc:aa36345e48a49d67cbb0878cd4cbd2195"><td class="mdescLeft"> </td><td class="mdescRight">Try to post a message to an mbox - may fail if full.  <a href="#aa36345e48a49d67cbb0878cd4cbd2195">More...</a><br/></td></tr>
+<tr class="separator:aa36345e48a49d67cbb0878cd4cbd2195"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af677a6e76adb7650a3020fdb3cb8429a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#af677a6e76adb7650a3020fdb3cb8429a">sys_mbox_trypost_fromisr</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox, void *msg)</td></tr>
+<tr class="memdesc:af677a6e76adb7650a3020fdb3cb8429a"><td class="mdescLeft"> </td><td class="mdescRight">Try to post a message to an mbox - may fail if full.  <a href="#af677a6e76adb7650a3020fdb3cb8429a">More...</a><br/></td></tr>
+<tr class="separator:af677a6e76adb7650a3020fdb3cb8429a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6464cd77cf6799bd8b3d6c840166a2e8"><td align="right" class="memItemLeft" valign="top">u32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a6464cd77cf6799bd8b3d6c840166a2e8">sys_arch_mbox_fetch</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox, void **msg, u32_t timeout)</td></tr>
+<tr class="memdesc:a6464cd77cf6799bd8b3d6c840166a2e8"><td class="mdescLeft"> </td><td class="mdescRight">Blocks the thread until a message arrives in the mailbox, but does not block the thread longer than "timeout" milliseconds (similar to the <a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f" title="Blocks the thread while waiting for the semaphore to be signaled. ">sys_arch_sem_wait()</a> function).  <a href="#a6464cd77cf6799bd8b3d6c840166a2e8">More...</a><br/></td></tr>
+<tr class="separator:a6464cd77cf6799bd8b3d6c840166a2e8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afab441b130b4ec417012835dbe1e497c"><td align="right" class="memItemLeft" valign="top">u32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#afab441b130b4ec417012835dbe1e497c">sys_arch_mbox_tryfetch</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox, void **msg)</td></tr>
+<tr class="memdesc:afab441b130b4ec417012835dbe1e497c"><td class="mdescLeft"> </td><td class="mdescRight">This is similar to sys_arch_mbox_fetch, however if a message is not present in the mailbox, it immediately returns with the code SYS_MBOX_EMPTY.  <a href="#afab441b130b4ec417012835dbe1e497c">More...</a><br/></td></tr>
+<tr class="separator:afab441b130b4ec417012835dbe1e497c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac641a45812155d2234ef80dd6412882f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ac641a45812155d2234ef80dd6412882f">sys_mbox_free</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox)</td></tr>
+<tr class="memdesc:ac641a45812155d2234ef80dd6412882f"><td class="mdescLeft"> </td><td class="mdescRight">Deallocates a mailbox.  <a href="#ac641a45812155d2234ef80dd6412882f">More...</a><br/></td></tr>
+<tr class="separator:ac641a45812155d2234ef80dd6412882f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8bcfab4bd791dd33f69a778e7585275d"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d">sys_mbox_valid</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox)</td></tr>
+<tr class="memdesc:a8bcfab4bd791dd33f69a778e7585275d"><td class="mdescLeft"> </td><td class="mdescRight">Returns 1 if the mailbox is valid, 0 if it is not valid.  <a href="#a8bcfab4bd791dd33f69a778e7585275d">More...</a><br/></td></tr>
+<tr class="separator:a8bcfab4bd791dd33f69a778e7585275d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a53ddec9d7f5500c5b1d982cd17493172"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a53ddec9d7f5500c5b1d982cd17493172">sys_mbox_set_invalid</a> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox)</td></tr>
+<tr class="memdesc:a53ddec9d7f5500c5b1d982cd17493172"><td class="mdescLeft"> </td><td class="mdescRight">Invalidate a mailbox so that <a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d" title="Returns 1 if the mailbox is valid, 0 if it is not valid. ">sys_mbox_valid()</a> returns 0.  <a href="#a53ddec9d7f5500c5b1d982cd17493172">More...</a><br/></td></tr>
+<tr class="separator:a53ddec9d7f5500c5b1d982cd17493172"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0d596afdd8dbcfad320172d39b0f607a"><td align="right" class="memItemLeft" valign="top">sys_thread_t </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a0d596afdd8dbcfad320172d39b0f607a">sys_thread_new</a> (const char *name, <a class="el" href="sys_8h.html#ae30a77bf6bd69bfcc5f235eaad54f2b9">lwip_thread_fn</a> thread, void *arg, int stacksize, int prio)</td></tr>
+<tr class="memdesc:a0d596afdd8dbcfad320172d39b0f607a"><td class="mdescLeft"> </td><td class="mdescRight">The only thread function: Starts a new thread named "name" with priority "prio" that will begin its execution in the function "thread()".  <a href="#a0d596afdd8dbcfad320172d39b0f607a">More...</a><br/></td></tr>
+<tr class="separator:a0d596afdd8dbcfad320172d39b0f607a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af411a8bc6b7ed4b0af9114e10c959448"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#af411a8bc6b7ed4b0af9114e10c959448">sys_init</a> (void)</td></tr>
+<tr class="memdesc:af411a8bc6b7ed4b0af9114e10c959448"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="sys_8h.html#af411a8bc6b7ed4b0af9114e10c959448" title="sys_init() must be called before anything else. ">sys_init()</a> must be called before anything else.  <a href="#af411a8bc6b7ed4b0af9114e10c959448">More...</a><br/></td></tr>
+<tr class="separator:af411a8bc6b7ed4b0af9114e10c959448"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac89f307e8b360eaf821b461a4f26753a"><td align="right" class="memItemLeft" valign="top">u32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#ac89f307e8b360eaf821b461a4f26753a">sys_jiffies</a> (void)</td></tr>
+<tr class="memdesc:ac89f307e8b360eaf821b461a4f26753a"><td class="mdescLeft"> </td><td class="mdescRight">Ticks/jiffies since power up.  <a href="#ac89f307e8b360eaf821b461a4f26753a">More...</a><br/></td></tr>
+<tr class="separator:ac89f307e8b360eaf821b461a4f26753a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a11316ac1e77418c6fa4ab8869e3fa199"><td align="right" class="memItemLeft" valign="top">u32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="sys_8h.html#a11316ac1e77418c6fa4ab8869e3fa199">sys_now</a> (void)</td></tr>
+<tr class="memdesc:a11316ac1e77418c6fa4ab8869e3fa199"><td class="mdescLeft"> </td><td class="mdescRight">Returns the current time in milliseconds, may be the same as sys_jiffies or at least based on it.  <a href="#a11316ac1e77418c6fa4ab8869e3fa199">More...</a><br/></td></tr>
+<tr class="separator:a11316ac1e77418c6fa4ab8869e3fa199"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>OS abstraction layer. </p>
+
+<p>Definition in file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a7bada49634cd3b28b28bdcedd763a1e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define LWIP_COMPAT_MUTEX   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Define LWIP_COMPAT_MUTEX if the port has no mutexes and binary semaphores should be used instead. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00108">108</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a945395fa326214fc9736487242710a90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SYS_ARCH_DECL_PROTECT</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">lev</td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SYS_LIGHTWEIGHT_PROT define SYS_LIGHTWEIGHT_PROT in lwipopts.h if you want inter-task protection for certain critical regions during buffer allocation, deallocation and memory allocation and deallocation. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00497">497</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1495030a8ab5e1f3c89e42ced527c5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SYS_ARCH_TIMEOUT   0xffffffffUL</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Return code for timeouts from sys_arch_mbox_fetch and sys_arch_sem_wait. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00087">87</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0571e67edca0132b144106e9b319ef9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SYS_MBOX_EMPTY   <a class="el" href="sys_8h.html#ac1495030a8ab5e1f3c89e42ced527c5b">SYS_ARCH_TIMEOUT</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="sys_8h.html#ab7841780b31ba9c0a39a440aad1fca13" title="For now, we map straight to sys_arch implementation. ">sys_mbox_tryfetch()</a> returns SYS_MBOX_EMPTY if appropriate. </p>
+<p>For now we use the same magic value, but we allow this to change in future. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00092">92</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae293feebb61d36f2db99be53702b8203"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define sys_mbox_set_invalid_val</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">mbox</td><td>)</td>
+          <td>   <a class="el" href="sys_8h.html#a53ddec9d7f5500c5b1d982cd17493172">sys_mbox_set_invalid</a>(&amp;(mbox))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="sys_8h.html#a53ddec9d7f5500c5b1d982cd17493172" title="Invalidate a mailbox so that sys_mbox_valid() returns 0. ">sys_mbox_set_invalid()</a> but taking a value, not a pointer. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00401">401</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7841780b31ba9c0a39a440aad1fca13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define sys_mbox_tryfetch</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">mbox, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">msg </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   <a class="el" href="sys_8h.html#afab441b130b4ec417012835dbe1e497c">sys_arch_mbox_tryfetch</a>(mbox, msg)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>For now, we map straight to sys_arch implementation. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00360">360</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac59a002741411822b5ffc06754d552dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define sys_mbox_valid_val</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">mbox</td><td>)</td>
+          <td>   <a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d">sys_mbox_valid</a>(&amp;(mbox))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d" title="Returns 1 if the mailbox is valid, 0 if it is not valid. ">sys_mbox_valid()</a> but taking a value, not a pointer. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00395">395</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2556e570f6973a6f4d57d0e76ef190d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define sys_sem_set_invalid_val</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">sem</td><td>)</td>
+          <td>   <a class="el" href="sys_8h.html#a42a2ab32afbf41a4146a9d135224ef33">sys_sem_set_invalid</a>(&amp;(sem))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="sys_8h.html#a42a2ab32afbf41a4146a9d135224ef33" title="Invalidate a semaphore so that sys_sem_valid() returns 0. ">sys_sem_set_invalid()</a> but taking a value, not a pointer. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00258">258</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6eaa50e3720ab7a37bdb21893192105f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define sys_sem_valid_val</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">sem</td><td>)</td>
+          <td>   <a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4">sys_sem_valid</a>(&amp;(sem))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4" title="Returns 1 if the semaphore is valid, 0 if it is not valid. ">sys_sem_valid()</a> but taking a value, not a pointer. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00252">252</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7c0d03e5a3fbd776ffaf76da0511e55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define sys_sem_wait</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">sem</td><td>)</td>
+          <td>   <a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f">sys_arch_sem_wait</a>(sem, 0)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a semaphore - forever/no timeout. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00227">227</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ae30a77bf6bd69bfcc5f235eaad54f2b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* lwip_thread_fn) (void *arg)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Function prototype for thread functions. </p>
+
+<p>Definition at line <a class="el" href="sys_8h_source.html#l00098">98</a> of file <a class="el" href="sys_8h_source.html">sys.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a6464cd77cf6799bd8b3d6c840166a2e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">u32_t sys_arch_mbox_fetch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void ** </td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32_t </td>
+          <td class="paramname"><em>timeout</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Blocks the thread until a message arrives in the mailbox, but does not block the thread longer than "timeout" milliseconds (similar to the <a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f" title="Blocks the thread while waiting for the semaphore to be signaled. ">sys_arch_sem_wait()</a> function). </p>
+<p>If "timeout" is 0, the thread should be blocked until a message arrives. The "msg" argument is a result parameter that is set by the function (i.e., by doing "*msg =
+ptr"). The "msg" parameter maybe NULL to indicate that the message should be dropped. The return values are the same as for the <a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f" title="Blocks the thread while waiting for the semaphore to be signaled. ">sys_arch_sem_wait()</a> function: SYS_ARCH_TIMEOUT if there was a timeout, any other value if a messages is received.</p>
+<p>Note that a function with a similar name, sys_mbox_fetch(), is implemented by lwIP.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>mbox to get a message from </td></tr>
+    <tr><td class="paramname">msg</td><td>pointer where the message is stored </td></tr>
+    <tr><td class="paramname">timeout</td><td>maximum time (in milliseconds) to wait for a message (0 = wait forever) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SYS_ARCH_TIMEOUT on timeout, any other value if a message has been received </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afab441b130b4ec417012835dbe1e497c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">u32_t sys_arch_mbox_tryfetch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void ** </td>
+          <td class="paramname"><em>msg</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This is similar to sys_arch_mbox_fetch, however if a message is not present in the mailbox, it immediately returns with the code SYS_MBOX_EMPTY. </p>
+<p>On success 0 is returned. To allow for efficient implementations, this can be defined as a function-like macro in sys_arch.h instead of a normal function. For example, a naive implementation could be: #define sys_arch_mbox_tryfetch(mbox,msg) sys_arch_mbox_fetch(mbox,msg,1) although this would introduce unnecessary delays.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>mbox to get a message from </td></tr>
+    <tr><td class="paramname">msg</td><td>pointer where the message is stored </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 (milliseconds) if a message has been received or SYS_MBOX_EMPTY if the mailbox is empty </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8d364c5037778acb21c3df675db81b4f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">u32_t sys_arch_sem_wait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__sem__t.html">sys_sem_t</a> * </td>
+          <td class="paramname"><em>sem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32_t </td>
+          <td class="paramname"><em>timeout</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Blocks the thread while waiting for the semaphore to be signaled. </p>
+<p>If the "timeout" argument is non-zero, the thread should only be blocked for the specified time (measured in milliseconds). If the "timeout" argument is zero, the thread should be blocked until the semaphore is signalled.</p>
+<p>The return value is SYS_ARCH_TIMEOUT if the semaphore wasn't signaled within the specified time or any other value if it was signaled (with or without waiting). Notice that lwIP implements a function with a similar name, <a class="el" href="sys_8h.html#ab7c0d03e5a3fbd776ffaf76da0511e55" title="Wait for a semaphore - forever/no timeout. ">sys_sem_wait()</a>, that uses the <a class="el" href="sys_8h.html#a8d364c5037778acb21c3df675db81b4f" title="Blocks the thread while waiting for the semaphore to be signaled. ">sys_arch_sem_wait()</a> function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">sem</td><td>the semaphore to wait for </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout in milliseconds to wait (0 = wait forever) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SYS_ARCH_TIMEOUT on timeout, any other value on success </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af411a8bc6b7ed4b0af9114e10c959448"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_init </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="sys_8h.html#af411a8bc6b7ed4b0af9114e10c959448" title="sys_init() must be called before anything else. ">sys_init()</a> must be called before anything else. </p>
+<p>Initialize the sys_arch layer. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac89f307e8b360eaf821b461a4f26753a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">u32_t sys_jiffies </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Ticks/jiffies since power up. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac641a45812155d2234ef80dd6412882f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mbox_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Deallocates a mailbox. </p>
+<p>If there are messages still present in the mailbox when the mailbox is deallocated, it is an indication of a programming error in lwIP and the developer should be notified.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>mbox to delete </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab9793f30642de06ce87827e9adbe30cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> sys_mbox_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Creates an empty mailbox for maximum "size" elements. </p>
+<p>Elements stored in mailboxes are pointers. You have to define macros "_MBOX_SIZE" in your lwipopts.h, or ignore this parameter in your implementation and use a default size. If the mailbox has been created, ERR_OK should be returned. Returning any other error will provide a hint what went wrong, but except for assertions, no real error handling is implemented.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>pointer to the mbox to create </td></tr>
+    <tr><td class="paramname">size</td><td>(minimum) number of messages in this mbox </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ERR_OK if successful, another err_t otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d068386a3c53dd01b8af99c3ef77555"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mbox_post </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>msg</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Post a message to an mbox - may not fail -&gt; blocks if full, only to be used from tasks NOT from ISR! </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>mbox to posts the message </td></tr>
+    <tr><td class="paramname">msg</td><td>message to post (ATTENTION: can be NULL) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a53ddec9d7f5500c5b1d982cd17493172"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mbox_set_invalid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Invalidate a mailbox so that <a class="el" href="sys_8h.html#a8bcfab4bd791dd33f69a778e7585275d" title="Returns 1 if the mailbox is valid, 0 if it is not valid. ">sys_mbox_valid()</a> returns 0. </p>
+<p>ATTENTION: This does NOT mean that the mailbox shall be deallocated: <a class="el" href="sys_8h.html#ac641a45812155d2234ef80dd6412882f" title="Deallocates a mailbox. ">sys_mbox_free()</a> is always called before calling this function! This may also be a define, in which case the function is not prototyped. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa36345e48a49d67cbb0878cd4cbd2195"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> sys_mbox_trypost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>msg</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Try to post a message to an mbox - may fail if full. </p>
+<p>Can be used from ISR (if the sys arch layer allows this). Returns ERR_MEM if it is full, else, ERR_OK if the "msg" is posted.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>mbox to posts the message </td></tr>
+    <tr><td class="paramname">msg</td><td>message to post (ATTENTION: can be NULL) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af677a6e76adb7650a3020fdb3cb8429a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> sys_mbox_trypost_fromisr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>msg</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Try to post a message to an mbox - may fail if full. </p>
+<p>To be be used from ISR. Returns ERR_MEM if it is full, else, ERR_OK if the "msg" is posted.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mbox</td><td>mbox to posts the message </td></tr>
+    <tr><td class="paramname">msg</td><td>message to post (ATTENTION: can be NULL) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8bcfab4bd791dd33f69a778e7585275d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int sys_mbox_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> * </td>
+          <td class="paramname"><em>mbox</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the mailbox is valid, 0 if it is not valid. </p>
+<p>When using pointers, a simple way is to check the pointer for != NULL. When directly using OS structures, implementing this may be more complex. This may also be a define, in which case the function is not prototyped. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6b8786f43e779953e8b74e983c88682e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_msleep </td>
+          <td>(</td>
+          <td class="paramtype">u32_t </td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sleep for specified number of ms. </p>
+
+</div>
+</div>
+<a class="anchor" id="a16336ce68b741e98204102ca4bc84dd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mutex_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> * </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Deallocates a mutex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mutex</td><td>the mutex to delete </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d4eb9afe5965fa2661dd54ff55d616a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mutex_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> * </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Blocks the thread until the mutex can be grabbed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mutex</td><td>the mutex to lock </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a38e7dae1fd88b338eb1cd97f110f3897"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> sys_mutex_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> * </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a new mutex. </p>
+<p>Note that mutexes are expected to not be taken recursively by the lwIP code, so both implementation types (recursive or non-recursive) should work. The mutex is allocated to the memory that 'mutex' points to (which can be both a pointer or the actual OS structure). If the mutex has been created, ERR_OK should be returned. Returning any other error will provide a hint what went wrong, but except for assertions, no real error handling is implemented.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mutex</td><td>pointer to the mutex to create </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ERR_OK if successful, another err_t otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3f392725971dc837aa56dd7e45fa7ca8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mutex_set_invalid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> * </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Invalidate a mutex so that <a class="el" href="sys_8h.html#aebe83ba90a6d9c23cdb3eb5d49562c4a" title="Returns 1 if the mutes is valid, 0 if it is not valid. ">sys_mutex_valid()</a> returns 0. </p>
+<p>ATTENTION: This does NOT mean that the mutex shall be deallocated: <a class="el" href="sys_8h.html#a16336ce68b741e98204102ca4bc84dd9" title="Deallocates a mutex. ">sys_mutex_free()</a> is always called before calling this function! This may also be a define, in which case the function is not prototyped. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5568f68898fe9d5735f9ce2f665624fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_mutex_unlock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> * </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Releases the mutex previously locked through '<a class="el" href="sys_8h.html#a4d4eb9afe5965fa2661dd54ff55d616a" title="Blocks the thread until the mutex can be grabbed. ">sys_mutex_lock()</a>'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mutex</td><td>the mutex to unlock </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aebe83ba90a6d9c23cdb3eb5d49562c4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int sys_mutex_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__mutex__t.html">sys_mutex_t</a> * </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the mutes is valid, 0 if it is not valid. </p>
+<p>When using pointers, a simple way is to check the pointer for != NULL. When directly using OS structures, implementing this may be more complex. This may also be a define, in which case the function is not prototyped. </p>
+
+</div>
+</div>
+<a class="anchor" id="a11316ac1e77418c6fa4ab8869e3fa199"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">u32_t sys_now </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns the current time in milliseconds, may be the same as sys_jiffies or at least based on it. </p>
+<p>Don't care for wraparound, this is only used for time diffs. Not implementing this function means you cannot use some modules (e.g. TCP timestamps, internal timeouts for NO_SYS==1). </p>
+
+</div>
+</div>
+<a class="anchor" id="a83b781f96c30e915c752065a757da283"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_sem_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__sem__t.html">sys_sem_t</a> * </td>
+          <td class="paramname"><em>sem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Deallocates a semaphore. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">sem</td><td>semaphore to delete </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af99da9e34a71855285c535183133dfde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__infrastructure__errors.html#gaf02d9da80fd66b4f986d2c53d7231ddb">err_t</a> sys_sem_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__sem__t.html">sys_sem_t</a> * </td>
+          <td class="paramname"><em>sem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u8_t </td>
+          <td class="paramname"><em>count</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a new semaphore Creates a new semaphore. </p>
+<p>The semaphore is allocated to the memory that 'sem' points to (which can be both a pointer or the actual OS structure). The "count" argument specifies the initial state of the semaphore (which is either 0 or 1). If the semaphore has been created, ERR_OK should be returned. Returning any other error will provide a hint what went wrong, but except for assertions, no real error handling is implemented.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">sem</td><td>pointer to the semaphore to create </td></tr>
+    <tr><td class="paramname">count</td><td>initial count of the semaphore </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ERR_OK if successful, another err_t otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a42a2ab32afbf41a4146a9d135224ef33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_sem_set_invalid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__sem__t.html">sys_sem_t</a> * </td>
+          <td class="paramname"><em>sem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Invalidate a semaphore so that <a class="el" href="sys_8h.html#a09a6c052ddaf799139efc56adfa087e4" title="Returns 1 if the semaphore is valid, 0 if it is not valid. ">sys_sem_valid()</a> returns 0. </p>
+<p>ATTENTION: This does NOT mean that the semaphore shall be deallocated: <a class="el" href="sys_8h.html#a83b781f96c30e915c752065a757da283" title="Deallocates a semaphore. ">sys_sem_free()</a> is always called before calling this function! This may also be a define, in which case the function is not prototyped. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf800273061fcc3f8200fd4e1b9ca875"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sys_sem_signal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__sem__t.html">sys_sem_t</a> * </td>
+          <td class="paramname"><em>sem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Signals a semaphore. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">sem</td><td>the semaphore to signal </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a09a6c052ddaf799139efc56adfa087e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int sys_sem_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsys__sem__t.html">sys_sem_t</a> * </td>
+          <td class="paramname"><em>sem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the semaphore is valid, 0 if it is not valid. </p>
+<p>When using pointers, a simple way is to check the pointer for != NULL. When directly using OS structures, implementing this may be more complex. This may also be a define, in which case the function is not prototyped. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d596afdd8dbcfad320172d39b0f607a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">sys_thread_t sys_thread_new </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sys_8h.html#ae30a77bf6bd69bfcc5f235eaad54f2b9">lwip_thread_fn</a> </td>
+          <td class="paramname"><em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>stacksize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>prio</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The only thread function: Starts a new thread named "name" with priority "prio" that will begin its execution in the function "thread()". </p>
+<p>The "arg" argument will be passed as an argument to the thread() function. The stack size to used for this thread is the "stacksize" parameter. The id of the new thread is returned. Both the id and the priority are system dependent. ATTENTION: although this function returns a value, it MUST NOT FAIL (ports have to assert this!)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">name</td><td>human-readable name for the thread (used for debugging purposes) </td></tr>
+    <tr><td class="paramname">thread</td><td>thread-function </td></tr>
+    <tr><td class="paramname">arg</td><td>parameter passed to 'thread' </td></tr>
+    <tr><td class="paramname">stacksize</td><td>stack size in bytes for the new thread (may be ignored by ports) </td></tr>
+    <tr><td class="paramname">prio</td><td>priority of the new thread (may be ignored by ports) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/sys_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:39 GMT -->
+</html>

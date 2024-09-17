@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/_lo_ra_w_a_n_stack_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:07:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | LoRaWANStack.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_lo_ra_w_a_n_stack_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/_lo_ra_w_a_n_stack_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/_lo_ra_w_a_n_stack_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_c6fb7cfc6dd92a7f08bce53368056667.html">features</a></li><li class="navelem"><a class="el" href="dir_cdc70d4ef701944efac0a567ecdcada8.html">lorawan</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LoRaWANStack.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_lo_ra_w_a_n_stack_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * \file      LoRaWANStack.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> * \brief     LoRaWAN stack layer implementation</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * \copyright Revised BSD License, see LICENSE.TXT file include in the project</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> * \code</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *                ______                              _</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *               / _____)             _              | |</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *              ( (____  _____ ____ _| |_ _____  ____| |__</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *               \____ \| ___ |    (_   _) ___ |/ ___)  _ \</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *               _____) ) ____| | | || |_| ____( (___| | | |</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *              (______/|_____)_|_|_| \__)_____)\____)_| |_|</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> *              (C)2013 Semtech</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *               ___ _____ _   ___ _  _____ ___  ___  ___ ___</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *              / __|_   _/_\ / __| |/ / __/ _ \| _ \/ __| __|</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *              \__ \ | |/ _ \ (__| ' &lt;| _| (_) |   / (__| _|</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *              |___/ |_/_/ \_\___|_|\_\_| \___/|_|_\\___|___|</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> *              embedded.connectivity.solutions===============</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> *</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment"> * \endcode</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment"> *</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="comment"> * \author    Miguel Luis ( Semtech )</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="comment"> *</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="comment"> * \author    Gregory Cristian ( Semtech )</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="comment"> *</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="comment"> * \author    Daniel Jaeckle ( STACKFORCE )</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="comment"> *</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment"> * \defgroup  LoRaWAN stack layer that controls MAC layer underneath</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment"> *</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment"> * License: Revised BSD License, see LICENSE.TXT file include in the project</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment"> *</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment"> * Copyright (c) 2017, Arm Limited and affiliates.</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment"> *</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="comment"> * SPDX-License-Identifier: BSD-3-Clause</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment"> */</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="preprocessor">#ifndef LORAWANSTACK_H_</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="preprocessor">#define LORAWANSTACK_H_</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="preprocessor">#include "events/EventQueue.h"</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="preprocessor">#include "platform/mbed_atomic.h"</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="preprocessor">#include "platform/Callback.h"</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="preprocessor">#include "platform/NonCopyable.h"</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="preprocessor">#include "platform/ScopedLock.h"</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="preprocessor">#include "<a class="code" href="_lo_ra_mac_8h.html">lorastack/mac/LoRaMac.h</a>"</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="preprocessor">#include "system/LoRaWANTimer.h"</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="preprocessor">#include "<a class="code" href="lorawan__data__structures_8h.html">system/lorawan_data_structures.h</a>"</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="preprocessor">#include "LoRaRadio.h"</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="keyword">class </span><a class="code" href="class_lo_ra_p_h_y.html">LoRaPHY</a>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment"></span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">/** LoRaWANStack Class</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment"> * A controller layer for LoRaWAN MAC and PHY</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment"> */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_lo_ra_w_a_n_stack.html">   60</a></span> <span class="keyword">class </span><a class="code" href="class_lo_ra_w_a_n_stack.html">LoRaWANStack</a>: <span class="keyword">private</span> <a class="code" href="classmbed_1_1_non_copyable.html">mbed::NonCopyable</a>&lt;LoRaWANStack&gt; {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="keyword">public</span>:</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>     <a class="code" href="class_lo_ra_w_a_n_stack.html">LoRaWANStack</a>();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment"></span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="comment">    /** Binds PHY layer and radio driver to stack.</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment">     *</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> <span class="comment">     * MAC layer is totally detached from the PHY layer so the stack layer</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment">     * needs to play the role of an arbitrator.</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">     * This API sets the PHY layer object to stack and bind the radio driver</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">     * object from the application to the PHY layer.</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">     * Also initialises radio callback handles which the radio driver will</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment">     * use in order to report events.</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">     *</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">     * @param radio            LoRaRadio object, i.e., the radio driver</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment">     * @param phy              LoRaPHY object.</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">     *</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">     */</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>     <span class="keywordtype">void</span> <a class="code" href="class_lo_ra_w_a_n_stack.html#a9c7dc3fbc4b7b1e02e08277e01c7ce72">bind_phy_and_radio_driver</a>(<a class="code" href="class_lo_ra_radio.html">LoRaRadio</a> &amp;radio, <a class="code" href="class_lo_ra_p_h_y.html">LoRaPHY</a> &amp;phy);</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment"></span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">    /** End device initialization.</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="comment">     * @param queue            A pointer to an EventQueue passed from the application.</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">     * @return                 LORAWAN_STATUS_OK on success, a negative error code on failure.</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">     */</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#af82da8b623c66a3c5e2f4ca5365a6f1e">initialize_mac_layer</a>(<a class="code" href="classevents_1_1_event_queue.html">events::EventQueue</a> *queue);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment"></span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="comment">    /** Sets all callbacks for the application.</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment">     *</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment">     * @param callbacks        A pointer to the structure carrying callbacks.</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment">     * @return                 LORAWAN_STATUS_OK on success, a negative error code on failure.</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">     */</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a7102f82191672dc92b40aa6e49f1c2ef">set_lora_callbacks</a>(<span class="keyword">const</span> <a class="code" href="structlorawan__app__callbacks__t.html">lorawan_app_callbacks_t</a> *callbacks);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment"></span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">    /** Connect OTAA or ABP using Mbed-OS config system</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">     *</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">     * @return    For ABP:  If everything goes well, LORAWAN_STATUS_OK is returned for first call followed by</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">     *                      a 'CONNECTED' event. Otherwise a negative error code is returned.</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">     *                      Any subsequent call will return LORAWAN_STATUS_ALREADY_CONNECTED and no event follows.</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="comment">     *</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment">     *            For OTAA: When a JoinRequest is sent, LORAWAN_STATUS_CONNECT_IN_PROGRESS is returned for the first call.</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment">     *                      Any subsequent call will return either LORAWAN_STATUS_BUSY (if the previous request for connection</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment">     *                      is still underway) or LORAWAN_STATUS_ALREADY_CONNECTED (if a network was already joined successfully).</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment">     *                      A 'CONNECTED' event is sent to the application when the JoinAccept is received.</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment">     */</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a9a5fbbd691856011894d0854ba70abc2">connect</a>();</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment"></span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">    /** Connect OTAA or ABP with parameters</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment">     *</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">     * @param connect  Options for an end device connection to the gateway.</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">     *</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">     * @return    For ABP:  If everything goes well, LORAWAN_STATUS_OK is returned for first call followed by</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">     *                      a 'CONNECTED' event. Otherwise a negative error code is returned.</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">     *                      Any subsequent call will return LORAWAN_STATUS_ALREADY_CONNECTED and no event follows.</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">     *</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="comment">     *            For OTAA: When a JoinRequest is sent, LORAWAN_STATUS_CONNECT_IN_PROGRESS is returned for the first call.</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment">     *                      Any subsequent call will return either LORAWAN_STATUS_BUSY (if the previous request for connection</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">     *                      is still underway) or LORAWAN_STATUS_ALREADY_CONNECTED (if a network was already joined successfully).</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment">     *                      A 'CONNECTED' event is sent to the application when the JoinAccept is received.</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment">     */</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a9a5fbbd691856011894d0854ba70abc2">connect</a>(<span class="keyword">const</span> <a class="code" href="structlorawan__connect.html">lorawan_connect_t</a> &amp;connect);</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment"></span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment">    /** Adds channels to use.</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">     *</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">     * You can provide a list of channels with appropriate parameters filled</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="comment">     * in. However, this list is not absolute. In some regions, a CF</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment">     * list gets implemented by default, which means that the network can overwrite your channel</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">     * frequency settings right after receiving a Join Accept. You may try</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">     * to set up any channel or channels after that and if the channel requested</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">     * is already active, the request is silently ignored. A negative error</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment">     * code is returned if there is any problem with parameters.</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">     *</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment">     * You need to ensure that the base station nearby supports the channel or channels being added.</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">     *</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment">     * If your list includes a default channel (a channel where Join Requests</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">     * are received) you cannot fully configure the channel parameters.</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">     * Either leave the channel settings to default or check your</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">     * corresponding PHY layer implementation. For example, LoRaPHYE868.</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="comment">     *</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> <span class="comment">     * @param  channel_plan     A list of channels or a single channel.</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment">     *</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK on success, a negative error</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment">     *                          code on failure.</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">     */</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#aee1922ecdb78c2e0be17173604548b3d">add_channels</a>(<span class="keyword">const</span> <a class="code" href="structlora__channelplan.html">lorawan_channelplan_t</a> &amp;channel_plan);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment"></span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">    /** Removes a channel from the list.</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">     *</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">     * @param channel_id        Index of the channel being removed</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">     *</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK on success, a negative error</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">     *                          code on failure.</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment">     */</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a3ea844fa439f6a06aad461354680ecd2">remove_a_channel</a>(uint8_t channel_id);</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment"></span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">    /** Removes a previously set channel plan.</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment">     *</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK on success, a negative error</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">     *                          code on failure.</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">     */</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a43579f157ad6f248a21eb5b4d7f082d5">drop_channel_list</a>();</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment"></span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">    /** Gets a list of currently enabled channels .</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">     *</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">     * @param channel_plan      The channel plan structure to store final result.</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">     *</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK on success, a negative error</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">     *                          code on failure.</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment">     */</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a78888fff5ad8b15f08096edd38e5691f">get_enabled_channels</a>(<a class="code" href="structlora__channelplan.html">lorawan_channelplan_t</a> &amp;channel_plan);</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment"></span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">    /** Sets up a retry counter for confirmed messages.</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="comment">     *</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment">     * Valid only for confirmed messages. This API sets the number of times the</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">     * stack will retry a CONFIRMED message before giving up and reporting an</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment">     * error.</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">     *</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">     * @param count             The number of retries for confirmed messages.</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">     *</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK or a negative error code.</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">     */</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#ab7377280c8ace25220086f6fd8c59e71">set_confirmed_msg_retry</a>(uint8_t count);</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">    /** Sets up the data rate.</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">     *</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">     * `set_datarate()` first verifies whether the data rate given is valid or not.</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">     * If it is valid, the system sets the given data rate to the channel.</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment">     *</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment">     * @param data_rate   The intended data rate, for example DR_0 or DR_1.</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment">     *                    Note that the macro DR_* can mean different</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="comment">     *                    things in different regions.</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment">     *</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="comment">     * @return            LORAWAN_STATUS_OK if everything goes well, otherwise</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment">     *                    a negative error code.</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">     */</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a5d9ce4a64d4cac42e3cec688486ca4b9">set_channel_data_rate</a>(uint8_t data_rate);</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment"></span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment">    /** Enables ADR.</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment">     *</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment">     * @param adr_enabled       0 ADR disabled, 1 ADR enabled.</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">     *</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK on success, a negative error</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">     *                          code on failure.</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">     */</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a6a66fc30e96234b25e090cf472c341ee">enable_adaptive_datarate</a>(<span class="keywordtype">bool</span> adr_enabled);</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="comment"></span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="comment">    /** Send message to gateway</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="comment">     *</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="comment">     * @param port              The application port number. Port numbers 0 and 224</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment">     *                          are reserved, whereas port numbers from 1 to 223</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">     *                          (0x01 to 0xDF) are valid port numbers.</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment">     *                          Anything out of this range is illegal.</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="comment">     *</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment">     * @param data              A pointer to the data being sent. The ownership of the</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">     *                          buffer is not transferred. The data is copied to the</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment">     *                          internal buffers.</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">     *</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">     * @param length            The size of data in bytes.</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">     *</span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="comment">     * @param flags             A flag used to determine what type of</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment">     *                          message is being sent, for example:</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment">     *</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> <span class="comment">     *                          MSG_UNCONFIRMED_FLAG = 0x01</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="comment">     *                          MSG_CONFIRMED_FLAG = 0x02</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment">     *                          MSG_MULTICAST_FLAG = 0x04</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="comment">     *                          MSG_PROPRIETARY_FLAG = 0x08</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment">     *                          MSG_MULTICAST_FLAG and MSG_PROPRIETARY_FLAG can be</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment">     *                          used in conjunction with MSG_UNCONFIRMED_FLAG and</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment">     *                          MSG_CONFIRMED_FLAG depending on the intended use.</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment">     *</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">     *                          MSG_PROPRIETARY_FLAG|MSG_CONFIRMED_FLAG mask will set</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">     *                          a confirmed message flag for a proprietary message.</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="comment">     *                          MSG_CONFIRMED_FLAG and MSG_UNCONFIRMED_FLAG are</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment">     *                          mutually exclusive.</span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> <span class="comment">     *</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="comment">     * @param null_allowed      Internal use only. Needed for sending empty packet</span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment">     *                          having CONFIRMED bit on.</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">     *</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment">     * @param allow_port_0      Internal use only. Needed for flushing MAC commands.</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment">     *</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">     * @return                  The number of bytes sent, or</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">     *                          LORAWAN_STATUS_WOULD_BLOCK if another TX is</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="comment">     *                          ongoing, or a negative error code on failure.</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment">     */</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>     int16_t <a class="code" href="class_lo_ra_w_a_n_stack.html#a827257a9fc2cf5ab07382a61820e54de">handle_tx</a>(uint8_t port, <span class="keyword">const</span> uint8_t *data,</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>                       uint16_t length, uint8_t flags,</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>                       <span class="keywordtype">bool</span> null_allowed = <span class="keyword">false</span>, <span class="keywordtype">bool</span> allow_port_0 = <span class="keyword">false</span>);</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="comment"></span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">    /** Receives a message from the Network Server.</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">     *</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment">     * @param data              A pointer to buffer where the received data will be</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment">     *                          stored.</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="comment">     *</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment">     * @param length            The size of data in bytes</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment">     *</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment">     * @param port              The application port number. Port numbers 0 and 224</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment">     *                          are reserved, whereas port numbers from 1 to 223</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment">     *                          (0x01 to 0xDF) are valid port numbers.</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="comment">     *                          Anything out of this range is illegal.</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">     *</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">     *                          In return will contain the number of port to which</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">     *                          message was received.</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment">     *</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment">     * @param flags             A flag is used to determine what type of</span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment">     *                          message is being received, for example:</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment">     *</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment">     *                          MSG_UNCONFIRMED_FLAG = 0x01,</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment">     *                          MSG_CONFIRMED_FLAG = 0x02</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <span class="comment">     *                          MSG_MULTICAST_FLAG = 0x04,</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="comment">     *                          MSG_PROPRIETARY_FLAG = 0x08</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="comment">     *</span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment">     *                          MSG_MULTICAST_FLAG and MSG_PROPRIETARY_FLAG can be</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment">     *                          used in conjunction with MSG_UNCONFIRMED_FLAG and</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment">     *                          MSG_CONFIRMED_FLAG depending on the intended use.</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="comment">     *</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="comment">     *                          MSG_PROPRIETARY_FLAG|MSG_CONFIRMED_FLAG mask will set</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="comment">     *                          a confirmed message flag for a proprietary message.</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">     *</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment">     *                          MSG_CONFIRMED_FLAG and MSG_UNCONFIRMED_FLAG are</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment">     *                          not mutually exclusive, i.e., the user can subscribe to</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment">     *                          receive both CONFIRMED AND UNCONFIRMED messages at</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment">     *                          the same time.</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">     *</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment">     *                          In return will contain the flags to determine what kind</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment">     *                          of message was received.</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment">     *</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">     * @param validate_params   If set to true, the given port and flags values will be checked</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment">     *                          against the values received with the message. If values do not</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment">     *                          match, LORAWAN_STATUS_WOULD_BLOCK will be returned.</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment">     *</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment">     * @return                  It could be one of these:</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment">     *                             i)   0 if there is nothing else to read.</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="comment">     *                             ii)  Number of bytes written to user buffer.</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="comment">     *                             iii) LORAWAN_STATUS_WOULD_BLOCK if there is</span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="comment">     *                                  nothing available to read at the moment.</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">     *                             iv)  A negative error code on failure.</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">     */</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>     int16_t <a class="code" href="class_lo_ra_w_a_n_stack.html#aa5ebf3028e41bbb2661645e3d7569a3c">handle_rx</a>(uint8_t *data, uint16_t length, uint8_t &amp;port, <span class="keywordtype">int</span> &amp;flags, <span class="keywordtype">bool</span> validate_params);</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment"></span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment">    /** Send Link Check Request MAC command.</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment">     *</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">     *</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="comment">     * This API schedules a Link Check Request command (LinkCheckReq) for the network</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> <span class="comment">     * server and once the response, i.e., LinkCheckAns MAC command is received</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="comment">     * from the Network Server, an event is generated.</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment">     *</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment">     * A callback function for the link check response must be set prior to using</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span> <span class="comment">     * this API, otherwise a LORAWAN_STATUS_PARAMETER_INVALID error is thrown.</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> <span class="comment">     *</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span> <span class="comment">     * @return          LORAWAN_STATUS_OK on successfully queuing a request, or</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="comment">     *                  a negative error code on failure.</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment">     *</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">     */</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a8e25db58fa8eed611773ed1463b19bfd">set_link_check_request</a>();</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment"></span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment">    /** Removes link check request sticky MAC command.</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> <span class="comment">     *</span></div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="comment">     * Any already queued request may still get entertained. However, no new</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> <span class="comment">     * requests will be made.</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="comment">     */</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>     <span class="keywordtype">void</span> <a class="code" href="class_lo_ra_w_a_n_stack.html#a89501d355cea0abb4010dd34c25641bd">remove_link_check_request</a>();</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="comment"></span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> <span class="comment">    /** Shuts down the LoRaWAN protocol.</span></div><div class="line"><a name="l00322"></a><span class="lineno">  322</span> <span class="comment">     *</span></div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> <span class="comment">     * In response to the user call for disconnection, the stack shuts down itself.</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span> <span class="comment">     *</span></div><div class="line"><a name="l00325"></a><span class="lineno">  325</span> <span class="comment">     * @return          LORAWAN_STATUS_DEVICE_OFF on successfully shutdown.</span></div><div class="line"><a name="l00326"></a><span class="lineno">  326</span> <span class="comment">     */</span></div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a63b6aeb3902bce24d1aeddea4608b2e8">shutdown</a>();</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span> <span class="comment"></span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span> <span class="comment">    /** Change device class</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span> <span class="comment">     *</span></div><div class="line"><a name="l00331"></a><span class="lineno">  331</span> <span class="comment">     * Change current device class.</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="comment">     *</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> <span class="comment">     * @param    device_class   The device class</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="comment">     *</span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span> <span class="comment">     * @return                  LORAWAN_STATUS_OK on success,</span></div><div class="line"><a name="l00336"></a><span class="lineno">  336</span> <span class="comment">     *                          LORAWAN_STATUS_UNSUPPORTED is requested class is not supported,</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span> <span class="comment">     *                          or other negative error code if request failed.</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span> <span class="comment">     */</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#aabd4402fe5a56856517c604dc0f3a4ea">set_device_class</a>(<span class="keyword">const</span> <a class="code" href="lorawan__types_8h.html#a594f261dd34319dca9994f181ff1c087">device_class_t</a> &amp;device_class);</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span> <span class="comment"></span></div><div class="line"><a name="l00341"></a><span class="lineno">  341</span> <span class="comment">    /** Acquire TX meta-data</span></div><div class="line"><a name="l00342"></a><span class="lineno">  342</span> <span class="comment">     *</span></div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> <span class="comment">     * Upon successful transmission, TX meta-data will be made available</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> <span class="comment">     *</span></div><div class="line"><a name="l00345"></a><span class="lineno">  345</span> <span class="comment">     * @param    metadata    A reference to the inbound structure which will be</span></div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> <span class="comment">     *                       filled with any TX meta-data if available.</span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="comment">     *</span></div><div class="line"><a name="l00348"></a><span class="lineno">  348</span> <span class="comment">     * @return               LORAWAN_STATUS_OK if successful,</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span> <span class="comment">     *                       LORAWAN_STATUS_METADATA_NOT_AVAILABLE otherwise</span></div><div class="line"><a name="l00350"></a><span class="lineno">  350</span> <span class="comment">     */</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#ac232804559b8feb839f640006c5d5f67">acquire_tx_metadata</a>(<a class="code" href="structlorawan__tx__metadata.html">lorawan_tx_metadata</a> &amp;metadata);</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span> <span class="comment"></span></div><div class="line"><a name="l00353"></a><span class="lineno">  353</span> <span class="comment">    /** Acquire RX meta-data</span></div><div class="line"><a name="l00354"></a><span class="lineno">  354</span> <span class="comment">     *</span></div><div class="line"><a name="l00355"></a><span class="lineno">  355</span> <span class="comment">     * Upon successful reception, RX meta-data will be made available</span></div><div class="line"><a name="l00356"></a><span class="lineno">  356</span> <span class="comment">     *</span></div><div class="line"><a name="l00357"></a><span class="lineno">  357</span> <span class="comment">     * @param    metadata    A reference to the inbound structure which will be</span></div><div class="line"><a name="l00358"></a><span class="lineno">  358</span> <span class="comment">     *                       filled with any RX meta-data if available.</span></div><div class="line"><a name="l00359"></a><span class="lineno">  359</span> <span class="comment">     *</span></div><div class="line"><a name="l00360"></a><span class="lineno">  360</span> <span class="comment">     * @return               LORAWAN_STATUS_OK if successful,</span></div><div class="line"><a name="l00361"></a><span class="lineno">  361</span> <span class="comment">     *                       LORAWAN_STATUS_METADATA_NOT_AVAILABLE otherwise</span></div><div class="line"><a name="l00362"></a><span class="lineno">  362</span> <span class="comment">     */</span></div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a85403a09260327027f5faa101003960e">acquire_rx_metadata</a>(<a class="code" href="structlorawan__rx__metadata.html">lorawan_rx_metadata</a> &amp;metadata);</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span> <span class="comment"></span></div><div class="line"><a name="l00365"></a><span class="lineno">  365</span> <span class="comment">    /** Acquire backoff meta-data</span></div><div class="line"><a name="l00366"></a><span class="lineno">  366</span> <span class="comment">     *</span></div><div class="line"><a name="l00367"></a><span class="lineno">  367</span> <span class="comment">     * Get hold of backoff time after which the transmission will take place.</span></div><div class="line"><a name="l00368"></a><span class="lineno">  368</span> <span class="comment">     *</span></div><div class="line"><a name="l00369"></a><span class="lineno">  369</span> <span class="comment">     * @param    backoff     A reference to the inbound integer which will be</span></div><div class="line"><a name="l00370"></a><span class="lineno">  370</span> <span class="comment">     *                       filled with any backoff meta-data if available.</span></div><div class="line"><a name="l00371"></a><span class="lineno">  371</span> <span class="comment">     *</span></div><div class="line"><a name="l00372"></a><span class="lineno">  372</span> <span class="comment">     * @return               LORAWAN_STATUS_OK if successful,</span></div><div class="line"><a name="l00373"></a><span class="lineno">  373</span> <span class="comment">     *                       LORAWAN_STATUS_METADATA_NOT_AVAILABLE otherwise</span></div><div class="line"><a name="l00374"></a><span class="lineno">  374</span> <span class="comment">     */</span></div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#ab33cf7c41586726d6b4260b323116de3">acquire_backoff_metadata</a>(<span class="keywordtype">int</span> &amp;backoff);</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span> <span class="comment"></span></div><div class="line"><a name="l00377"></a><span class="lineno">  377</span> <span class="comment">    /** Stops sending</span></div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> <span class="comment">     *</span></div><div class="line"><a name="l00379"></a><span class="lineno">  379</span> <span class="comment">     * Stop sending any outstanding messages if they are not yet queued for</span></div><div class="line"><a name="l00380"></a><span class="lineno">  380</span> <span class="comment">     * transmission, i.e., if the backoff timer is nhot elapsed yet.</span></div><div class="line"><a name="l00381"></a><span class="lineno">  381</span> <span class="comment">     *</span></div><div class="line"><a name="l00382"></a><span class="lineno">  382</span> <span class="comment">     * @return               LORAWAN_STATUS_OK if the transmission is cancelled.</span></div><div class="line"><a name="l00383"></a><span class="lineno">  383</span> <span class="comment">     *                       LORAWAN_STATUS_BUSY otherwise.</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span> <span class="comment">     */</span></div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> <a class="code" href="class_lo_ra_w_a_n_stack.html#a015e0c9dcbb321ea29af37fe39e0f1d3">stop_sending</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span> </div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>     <span class="keywordtype">void</span> lock(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>     {</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>         _loramac.<a class="code" href="class_lo_ra_mac.html#aeb99ff49b4a6d5157416f9b5bd0d9c2c">lock</a>();</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>     }</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>     <span class="keywordtype">void</span> unlock(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>     {</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>         _loramac.unlock();</div><div class="line"><a name="l00394"></a><span class="lineno">  394</span>     }</div><div class="line"><a name="l00395"></a><span class="lineno">  395</span> </div><div class="line"><a name="l00396"></a><span class="lineno">  396</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00397"></a><span class="lineno">  397</span>     <span class="keyword">typedef</span> <a class="code" href="classmbed_1_1_scoped_lock.html">mbed::ScopedLock&lt;LoRaWANStack&gt;</a> <a class="code" href="classmbed_1_1_scoped_lock.html">Lock</a>;<span class="comment"></span></div><div class="line"><a name="l00398"></a><span class="lineno">  398</span> <span class="comment">    /**</span></div><div class="line"><a name="l00399"></a><span class="lineno">  399</span> <span class="comment">     * Checks if the user provided port is valid or not</span></div><div class="line"><a name="l00400"></a><span class="lineno">  400</span> <span class="comment">     */</span></div><div class="line"><a name="l00401"></a><span class="lineno">  401</span>     <span class="keywordtype">bool</span> is_port_valid(uint8_t port, <span class="keywordtype">bool</span> allow_port_0 = <span class="keyword">false</span>);</div><div class="line"><a name="l00402"></a><span class="lineno">  402</span> <span class="comment"></span></div><div class="line"><a name="l00403"></a><span class="lineno">  403</span> <span class="comment">    /**</span></div><div class="line"><a name="l00404"></a><span class="lineno">  404</span> <span class="comment">     * State machine for stack controller layer.</span></div><div class="line"><a name="l00405"></a><span class="lineno">  405</span> <span class="comment">     */</span></div><div class="line"><a name="l00406"></a><span class="lineno">  406</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> state_controller(<a class="code" href="lorawan__data__structures_8h.html#a7e221798e6b53bae81830e3ec8ba2c0a">device_states_t</a> new_state);</div><div class="line"><a name="l00407"></a><span class="lineno">  407</span> <span class="comment"></span></div><div class="line"><a name="l00408"></a><span class="lineno">  408</span> <span class="comment">    /**</span></div><div class="line"><a name="l00409"></a><span class="lineno">  409</span> <span class="comment">     * Helpers for state controller</span></div><div class="line"><a name="l00410"></a><span class="lineno">  410</span> <span class="comment">     */</span></div><div class="line"><a name="l00411"></a><span class="lineno">  411</span>     <span class="keywordtype">void</span> process_uninitialized_state(<a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> &amp;op_status);</div><div class="line"><a name="l00412"></a><span class="lineno">  412</span>     <span class="keywordtype">void</span> process_idle_state(<a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> &amp;op_status);</div><div class="line"><a name="l00413"></a><span class="lineno">  413</span>     <span class="keywordtype">void</span> process_connected_state();</div><div class="line"><a name="l00414"></a><span class="lineno">  414</span>     <span class="keywordtype">void</span> process_connecting_state(<a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> &amp;op_status);</div><div class="line"><a name="l00415"></a><span class="lineno">  415</span>     <span class="keywordtype">void</span> process_joining_state(<a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> &amp;op_status);</div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>     <span class="keywordtype">void</span> process_scheduling_state(<a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> &amp;op_status);</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>     <span class="keywordtype">void</span> process_status_check_state();</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>     <span class="keywordtype">void</span> process_shutdown_state(<a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> &amp;op_status);</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>     <span class="keywordtype">void</span> state_machine_run_to_completion(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span> <span class="comment"></span></div><div class="line"><a name="l00421"></a><span class="lineno">  421</span> <span class="comment">    /**</span></div><div class="line"><a name="l00422"></a><span class="lineno">  422</span> <span class="comment">     * Handles MLME indications</span></div><div class="line"><a name="l00423"></a><span class="lineno">  423</span> <span class="comment">     */</span></div><div class="line"><a name="l00424"></a><span class="lineno">  424</span>     <span class="keywordtype">void</span> mlme_indication_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00425"></a><span class="lineno">  425</span> <span class="comment"></span></div><div class="line"><a name="l00426"></a><span class="lineno">  426</span> <span class="comment">    /**</span></div><div class="line"><a name="l00427"></a><span class="lineno">  427</span> <span class="comment">     * Handles an MLME confirmation</span></div><div class="line"><a name="l00428"></a><span class="lineno">  428</span> <span class="comment">     */</span></div><div class="line"><a name="l00429"></a><span class="lineno">  429</span>     <span class="keywordtype">void</span> mlme_confirm_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span> <span class="comment"></span></div><div class="line"><a name="l00431"></a><span class="lineno">  431</span> <span class="comment">    /**</span></div><div class="line"><a name="l00432"></a><span class="lineno">  432</span> <span class="comment">     * Handles an MCPS confirmation</span></div><div class="line"><a name="l00433"></a><span class="lineno">  433</span> <span class="comment">     */</span></div><div class="line"><a name="l00434"></a><span class="lineno">  434</span>     <span class="keywordtype">void</span> mcps_confirm_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00435"></a><span class="lineno">  435</span> <span class="comment"></span></div><div class="line"><a name="l00436"></a><span class="lineno">  436</span> <span class="comment">    /**</span></div><div class="line"><a name="l00437"></a><span class="lineno">  437</span> <span class="comment">     * Handles an MCPS indication</span></div><div class="line"><a name="l00438"></a><span class="lineno">  438</span> <span class="comment">     */</span></div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>     <span class="keywordtype">void</span> mcps_indication_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span> <span class="comment"></span></div><div class="line"><a name="l00441"></a><span class="lineno">  441</span> <span class="comment">    /**</span></div><div class="line"><a name="l00442"></a><span class="lineno">  442</span> <span class="comment">     * Sets up user application port</span></div><div class="line"><a name="l00443"></a><span class="lineno">  443</span> <span class="comment">     */</span></div><div class="line"><a name="l00444"></a><span class="lineno">  444</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> set_application_port(uint8_t port, <span class="keywordtype">bool</span> allow_port_0 = <span class="keyword">false</span>);</div><div class="line"><a name="l00445"></a><span class="lineno">  445</span> <span class="comment"></span></div><div class="line"><a name="l00446"></a><span class="lineno">  446</span> <span class="comment">    /**</span></div><div class="line"><a name="l00447"></a><span class="lineno">  447</span> <span class="comment">     * Handles connection internally</span></div><div class="line"><a name="l00448"></a><span class="lineno">  448</span> <span class="comment">     */</span></div><div class="line"><a name="l00449"></a><span class="lineno">  449</span>     <a class="code" href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a> handle_connect(<span class="keywordtype">bool</span> is_otaa);</div><div class="line"><a name="l00450"></a><span class="lineno">  450</span> </div><div class="line"><a name="l00451"></a><span class="lineno">  451</span> <span class="comment"></span></div><div class="line"><a name="l00452"></a><span class="lineno">  452</span> <span class="comment">    /** Send event to application.</span></div><div class="line"><a name="l00453"></a><span class="lineno">  453</span> <span class="comment">     *</span></div><div class="line"><a name="l00454"></a><span class="lineno">  454</span> <span class="comment">     * @param  event            The event to be sent.</span></div><div class="line"><a name="l00455"></a><span class="lineno">  455</span> <span class="comment">     */</span></div><div class="line"><a name="l00456"></a><span class="lineno">  456</span>     <span class="keywordtype">void</span> send_event_to_application(<span class="keyword">const</span> <a class="code" href="lorawan__types_8h.html#a733821b5f7d1f8a3f3a58ced0959544b">lorawan_event_t</a> event) <span class="keyword">const</span>;</div><div class="line"><a name="l00457"></a><span class="lineno">  457</span> <span class="comment"></span></div><div class="line"><a name="l00458"></a><span class="lineno">  458</span> <span class="comment">    /** Send empty uplink message to network.</span></div><div class="line"><a name="l00459"></a><span class="lineno">  459</span> <span class="comment">     *</span></div><div class="line"><a name="l00460"></a><span class="lineno">  460</span> <span class="comment">     * Sends an empty confirmed message to gateway.</span></div><div class="line"><a name="l00461"></a><span class="lineno">  461</span> <span class="comment">     *</span></div><div class="line"><a name="l00462"></a><span class="lineno">  462</span> <span class="comment">     * @param  port            The event to be sent.</span></div><div class="line"><a name="l00463"></a><span class="lineno">  463</span> <span class="comment">     */</span></div><div class="line"><a name="l00464"></a><span class="lineno">  464</span>     <span class="keywordtype">void</span> send_automatic_uplink_message(uint8_t port);</div><div class="line"><a name="l00465"></a><span class="lineno">  465</span> <span class="comment"></span></div><div class="line"><a name="l00466"></a><span class="lineno">  466</span> <span class="comment">    /**</span></div><div class="line"><a name="l00467"></a><span class="lineno">  467</span> <span class="comment">     * TX interrupt handlers and corresponding processors</span></div><div class="line"><a name="l00468"></a><span class="lineno">  468</span> <span class="comment">     */</span></div><div class="line"><a name="l00469"></a><span class="lineno">  469</span>     <span class="keywordtype">void</span> tx_interrupt_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00470"></a><span class="lineno">  470</span>     <span class="keywordtype">void</span> tx_timeout_interrupt_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00471"></a><span class="lineno">  471</span>     <span class="keywordtype">void</span> process_transmission(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00472"></a><span class="lineno">  472</span>     <span class="keywordtype">void</span> process_transmission_timeout(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00473"></a><span class="lineno">  473</span> <span class="comment"></span></div><div class="line"><a name="l00474"></a><span class="lineno">  474</span> <span class="comment">    /**</span></div><div class="line"><a name="l00475"></a><span class="lineno">  475</span> <span class="comment">     * RX interrupt handlers and corresponding processors</span></div><div class="line"><a name="l00476"></a><span class="lineno">  476</span> <span class="comment">     */</span></div><div class="line"><a name="l00477"></a><span class="lineno">  477</span>     <span class="keywordtype">void</span> rx_interrupt_handler(<span class="keyword">const</span> uint8_t *payload, uint16_t size, int16_t rssi,</div><div class="line"><a name="l00478"></a><span class="lineno">  478</span>                               int8_t snr);</div><div class="line"><a name="l00479"></a><span class="lineno">  479</span>     <span class="keywordtype">void</span> rx_timeout_interrupt_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00480"></a><span class="lineno">  480</span>     <span class="keywordtype">void</span> rx_error_interrupt_handler(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00481"></a><span class="lineno">  481</span>     <span class="keywordtype">void</span> process_reception(<span class="keyword">const</span> uint8_t *payload, uint16_t size, int16_t rssi,</div><div class="line"><a name="l00482"></a><span class="lineno">  482</span>                            int8_t snr);</div><div class="line"><a name="l00483"></a><span class="lineno">  483</span>     <span class="keywordtype">void</span> process_reception_timeout(<span class="keywordtype">bool</span> is_timeout);</div><div class="line"><a name="l00484"></a><span class="lineno">  484</span> </div><div class="line"><a name="l00485"></a><span class="lineno">  485</span>     <span class="keywordtype">int</span> convert_to_msg_flag(<span class="keyword">const</span> <a class="code" href="lorawan__data__structures_8h.html#aa9b3684dffd361db2ac3bb19f45c7c77">mcps_type_t</a> type);</div><div class="line"><a name="l00486"></a><span class="lineno">  486</span> </div><div class="line"><a name="l00487"></a><span class="lineno">  487</span>     <span class="keywordtype">void</span> make_tx_metadata_available(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00488"></a><span class="lineno">  488</span>     <span class="keywordtype">void</span> make_rx_metadata_available(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00489"></a><span class="lineno">  489</span> </div><div class="line"><a name="l00490"></a><span class="lineno">  490</span>     <span class="keywordtype">void</span> handle_scheduling_failure(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00491"></a><span class="lineno">  491</span> </div><div class="line"><a name="l00492"></a><span class="lineno">  492</span>     <span class="keywordtype">void</span> post_process_tx_with_reception(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00493"></a><span class="lineno">  493</span>     <span class="keywordtype">void</span> post_process_tx_no_reception(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00494"></a><span class="lineno">  494</span> </div><div class="line"><a name="l00495"></a><span class="lineno">  495</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00496"></a><span class="lineno">  496</span>     <a class="code" href="class_lo_ra_mac.html">LoRaMac</a> _loramac;</div><div class="line"><a name="l00497"></a><span class="lineno">  497</span>     <a class="code" href="structradio__events.html">radio_events_t</a> <a class="code" href="structradio__events.html">radio_events</a>;</div><div class="line"><a name="l00498"></a><span class="lineno">  498</span>     <a class="code" href="lorawan__data__structures_8h.html#a7e221798e6b53bae81830e3ec8ba2c0a">device_states_t</a> _device_current_state;</div><div class="line"><a name="l00499"></a><span class="lineno">  499</span>     <a class="code" href="structlorawan__app__callbacks__t.html">lorawan_app_callbacks_t</a> _callbacks;</div><div class="line"><a name="l00500"></a><span class="lineno">  500</span>     <a class="code" href="structlorawan__session.html">lorawan_session_t</a> _lw_session;</div><div class="line"><a name="l00501"></a><span class="lineno">  501</span>     <a class="code" href="structloramac__tx__message__t.html">loramac_tx_message_t</a> _tx_msg;</div><div class="line"><a name="l00502"></a><span class="lineno">  502</span>     <a class="code" href="structloramac__rx__message__t.html">loramac_rx_message_t</a> _rx_msg;</div><div class="line"><a name="l00503"></a><span class="lineno">  503</span>     <a class="code" href="structlorawan__tx__metadata.html">lorawan_tx_metadata</a> _tx_metadata;</div><div class="line"><a name="l00504"></a><span class="lineno">  504</span>     <a class="code" href="structlorawan__rx__metadata.html">lorawan_rx_metadata</a> _rx_metadata;</div><div class="line"><a name="l00505"></a><span class="lineno">  505</span>     uint8_t _num_retry;</div><div class="line"><a name="l00506"></a><span class="lineno">  506</span>     uint8_t _qos_cnt;</div><div class="line"><a name="l00507"></a><span class="lineno">  507</span>     uint32_t _ctrl_flags;</div><div class="line"><a name="l00508"></a><span class="lineno">  508</span>     uint8_t _app_port;</div><div class="line"><a name="l00509"></a><span class="lineno">  509</span>     <span class="keywordtype">bool</span> _link_check_requested;</div><div class="line"><a name="l00510"></a><span class="lineno">  510</span>     <span class="keywordtype">bool</span> _automatic_uplink_ongoing;</div><div class="line"><a name="l00511"></a><span class="lineno">  511</span>     <a class="code" href="structcore__util__atomic__flag.html">core_util_atomic_flag</a> _rx_payload_in_use;</div><div class="line"><a name="l00512"></a><span class="lineno">  512</span>     uint8_t _rx_payload[<a class="code" href="lorawan__data__structures_8h.html#a54769799fcc79d1d3fd1f19f123cc57b">LORAMAC_PHY_MAXPAYLOAD</a>];</div><div class="line"><a name="l00513"></a><span class="lineno">  513</span>     <a class="code" href="classevents_1_1_event_queue.html">events::EventQueue</a> *_queue;</div><div class="line"><a name="l00514"></a><span class="lineno">  514</span>     <a class="code" href="lorawan__data__structures_8h.html#ac4d7b9e2b0448787d12d6a397eb800db">lorawan_time_t</a> _tx_timestamp;</div><div class="line"><a name="l00515"></a><span class="lineno">  515</span> };</div><div class="line"><a name="l00516"></a><span class="lineno">  516</span> </div><div class="line"><a name="l00517"></a><span class="lineno">  517</span> <span class="preprocessor">#endif </span><span class="comment">/* LORAWANSTACK_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="class_lo_ra_w_a_n_stack_html_a015e0c9dcbb321ea29af37fe39e0f1d3"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a015e0c9dcbb321ea29af37fe39e0f1d3">LoRaWANStack::stop_sending</a></div><div class="ttdeci">lorawan_status_t stop_sending(void)</div><div class="ttdoc">Stops sending. </div></div>
+<div class="ttc" id="structlorawan__rx__metadata_html"><div class="ttname"><a href="structlorawan__rx__metadata.html">lorawan_rx_metadata</a></div><div class="ttdoc">Meta-data collection for the received packet. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__types_8h_source.html#l00652">lorawan_types.h:652</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html">LoRaWANStack</a></div><div class="ttdoc">LoRaWANStack Class A controller layer for LoRaWAN MAC and PHY. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_w_a_n_stack_8h_source.html#l00060">LoRaWANStack.h:60</a></div></div>
+<div class="ttc" id="lorawan__types_8h_html_a733821b5f7d1f8a3f3a58ced0959544b"><div class="ttname"><a href="lorawan__types_8h.html#a733821b5f7d1f8a3f3a58ced0959544b">lorawan_event_t</a></div><div class="ttdeci">enum lora_events lorawan_event_t</div><div class="ttdoc">Events needed to announce stack operation results. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a827257a9fc2cf5ab07382a61820e54de"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a827257a9fc2cf5ab07382a61820e54de">LoRaWANStack::handle_tx</a></div><div class="ttdeci">int16_t handle_tx(uint8_t port, const uint8_t *data, uint16_t length, uint8_t flags, bool null_allowed=false, bool allow_port_0=false)</div><div class="ttdoc">Send message to gateway. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a85403a09260327027f5faa101003960e"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a85403a09260327027f5faa101003960e">LoRaWANStack::acquire_rx_metadata</a></div><div class="ttdeci">lorawan_status_t acquire_rx_metadata(lorawan_rx_metadata &amp;metadata)</div><div class="ttdoc">Acquire RX meta-data. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a5d9ce4a64d4cac42e3cec688486ca4b9"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a5d9ce4a64d4cac42e3cec688486ca4b9">LoRaWANStack::set_channel_data_rate</a></div><div class="ttdeci">lorawan_status_t set_channel_data_rate(uint8_t data_rate)</div><div class="ttdoc">Sets up the data rate. </div></div>
+<div class="ttc" id="structlorawan__tx__metadata_html"><div class="ttname"><a href="structlorawan__tx__metadata.html">lorawan_tx_metadata</a></div><div class="ttdoc">Meta-data collection for a transmission. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__types_8h_source.html#l00622">lorawan_types.h:622</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a89501d355cea0abb4010dd34c25641bd"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a89501d355cea0abb4010dd34c25641bd">LoRaWANStack::remove_link_check_request</a></div><div class="ttdeci">void remove_link_check_request()</div><div class="ttdoc">Removes link check request sticky MAC command. </div></div>
+<div class="ttc" id="classmbed_1_1_scoped_lock_html"><div class="ttname"><a href="classmbed_1_1_scoped_lock.html">mbed::ScopedLock</a></div><div class="ttdoc">RAII-style mechanism for owning a lock of Lockable object for the duration of a scoped block...</div><div class="ttdef"><b>Definition:</b> <a href="_scoped_lock_8h_source.html#l00063">ScopedLock.h:63</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a3ea844fa439f6a06aad461354680ecd2"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a3ea844fa439f6a06aad461354680ecd2">LoRaWANStack::remove_a_channel</a></div><div class="ttdeci">lorawan_status_t remove_a_channel(uint8_t channel_id)</div><div class="ttdoc">Removes a channel from the list. </div></div>
+<div class="ttc" id="class_lo_ra_mac_html"><div class="ttname"><a href="class_lo_ra_mac.html">LoRaMac</a></div><div class="ttdoc">LoRaMac Class Implementation of LoRaWAN MAC layer. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8h_source.html#l00062">LoRaMac.h:62</a></div></div>
+<div class="ttc" id="classevents_1_1_event_queue_html"><div class="ttname"><a href="classevents_1_1_event_queue.html">events::EventQueue</a></div><div class="ttdoc">EventQueue. </div><div class="ttdef"><b>Definition:</b> <a href="_event_queue_8h_source.html#l00060">EventQueue.h:60</a></div></div>
+<div class="ttc" id="structloramac__rx__message__t_html"><div class="ttname"><a href="structloramac__rx__message__t.html">loramac_rx_message_t</a></div><div class="ttdoc">loramac_rx_message_t </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__data__structures_8h_source.html#l00959">lorawan_data_structures.h:959</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a6a66fc30e96234b25e090cf472c341ee"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a6a66fc30e96234b25e090cf472c341ee">LoRaWANStack::enable_adaptive_datarate</a></div><div class="ttdeci">lorawan_status_t enable_adaptive_datarate(bool adr_enabled)</div><div class="ttdoc">Enables ADR. </div></div>
+<div class="ttc" id="lorawan__types_8h_html_a594f261dd34319dca9994f181ff1c087"><div class="ttname"><a href="lorawan__types_8h.html#a594f261dd34319dca9994f181ff1c087">device_class_t</a></div><div class="ttdeci">device_class_t</div><div class="ttdoc">LoRaWAN device classes definition. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__types_8h_source.html#l00059">lorawan_types.h:59</a></div></div>
+<div class="ttc" id="structloramac__tx__message__t_html"><div class="ttname"><a href="structloramac__tx__message__t.html">loramac_tx_message_t</a></div><div class="ttdoc">Stack level TX message structure. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__data__structures_8h_source.html#l00855">lorawan_data_structures.h:855</a></div></div>
+<div class="ttc" id="_lo_ra_mac_8h_html"><div class="ttname"><a href="_lo_ra_mac_8h.html">LoRaMac.h</a></div><div class="ttdoc">LoRa MAC layer implementation. </div></div>
+<div class="ttc" id="structcore__util__atomic__flag_html"><div class="ttname"><a href="structcore__util__atomic__flag.html">core_util_atomic_flag</a></div><div class="ttdoc">A lock-free, primitive atomic flag. </div><div class="ttdef"><b>Definition:</b> <a href="mbed__atomic_8h_source.html#l00115">mbed_atomic.h:115</a></div></div>
+<div class="ttc" id="classmbed_1_1_non_copyable_html"><div class="ttname"><a href="classmbed_1_1_non_copyable.html">mbed::NonCopyable</a></div><div class="ttdoc">Prevents generation of copy constructor and copy assignment operator in derived classes. </div><div class="ttdef"><b>Definition:</b> <a href="_non_copyable_8h_source.html#l00169">NonCopyable.h:169</a></div></div>
+<div class="ttc" id="lorawan__data__structures_8h_html_ac4d7b9e2b0448787d12d6a397eb800db"><div class="ttname"><a href="lorawan__data__structures_8h.html#ac4d7b9e2b0448787d12d6a397eb800db">lorawan_time_t</a></div><div class="ttdeci">uint32_t lorawan_time_t</div><div class="ttdoc">Timer time variable definition. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__data__structures_8h_source.html#l00044">lorawan_data_structures.h:44</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_aee1922ecdb78c2e0be17173604548b3d"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#aee1922ecdb78c2e0be17173604548b3d">LoRaWANStack::add_channels</a></div><div class="ttdeci">lorawan_status_t add_channels(const lorawan_channelplan_t &amp;channel_plan)</div><div class="ttdoc">Adds channels to use. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_ac232804559b8feb839f640006c5d5f67"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#ac232804559b8feb839f640006c5d5f67">LoRaWANStack::acquire_tx_metadata</a></div><div class="ttdeci">lorawan_status_t acquire_tx_metadata(lorawan_tx_metadata &amp;metadata)</div><div class="ttdoc">Acquire TX meta-data. </div></div>
+<div class="ttc" id="class_lo_ra_p_h_y_html"><div class="ttname"><a href="class_lo_ra_p_h_y.html">LoRaPHY</a></div><div class="ttdoc">LoRaPHY Class Parent class for LoRa regional PHY implementations. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_p_h_y_8h_source.html#l00046">LoRaPHY.h:46</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a63b6aeb3902bce24d1aeddea4608b2e8"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a63b6aeb3902bce24d1aeddea4608b2e8">LoRaWANStack::shutdown</a></div><div class="ttdeci">lorawan_status_t shutdown()</div><div class="ttdoc">Shuts down the LoRaWAN protocol. </div></div>
+<div class="ttc" id="lorawan__data__structures_8h_html_a54769799fcc79d1d3fd1f19f123cc57b"><div class="ttname"><a href="lorawan__data__structures_8h.html#a54769799fcc79d1d3fd1f19f123cc57b">LORAMAC_PHY_MAXPAYLOAD</a></div><div class="ttdeci">#define LORAMAC_PHY_MAXPAYLOAD</div><div class="ttdoc">Maximum PHY layer payload size for reception. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__data__structures_8h_source.html#l00068">lorawan_data_structures.h:68</a></div></div>
+<div class="ttc" id="lorawan__data__structures_8h_html_a7e221798e6b53bae81830e3ec8ba2c0a"><div class="ttname"><a href="lorawan__data__structures_8h.html#a7e221798e6b53bae81830e3ec8ba2c0a">device_states_t</a></div><div class="ttdeci">enum device_states device_states_t</div><div class="ttdoc">End-device states. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a78888fff5ad8b15f08096edd38e5691f"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a78888fff5ad8b15f08096edd38e5691f">LoRaWANStack::get_enabled_channels</a></div><div class="ttdeci">lorawan_status_t get_enabled_channels(lorawan_channelplan_t &amp;channel_plan)</div><div class="ttdoc">Gets a list of currently enabled channels . </div></div>
+<div class="ttc" id="structlorawan__app__callbacks__t_html"><div class="ttname"><a href="structlorawan__app__callbacks__t.html">lorawan_app_callbacks_t</a></div><div class="ttdoc">Stack level callback functions. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__types_8h_source.html#l00247">lorawan_types.h:247</a></div></div>
+<div class="ttc" id="lorawan__types_8h_html_a9efa78377307e6772301c80921b56872"><div class="ttname"><a href="lorawan__types_8h.html#a9efa78377307e6772301c80921b56872">lorawan_status_t</a></div><div class="ttdeci">enum lorawan_status lorawan_status_t</div><div class="ttdoc">lorawan_status_t contains status codes in response to stack operations </div></div>
+<div class="ttc" id="structlorawan__connect_html"><div class="ttname"><a href="structlorawan__connect.html">lorawan_connect</a></div><div class="ttdoc">lorawan_connect_t structure </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__types_8h_source.html#l00171">lorawan_types.h:171</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a7102f82191672dc92b40aa6e49f1c2ef"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a7102f82191672dc92b40aa6e49f1c2ef">LoRaWANStack::set_lora_callbacks</a></div><div class="ttdeci">lorawan_status_t set_lora_callbacks(const lorawan_app_callbacks_t *callbacks)</div><div class="ttdoc">Sets all callbacks for the application. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_aa5ebf3028e41bbb2661645e3d7569a3c"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#aa5ebf3028e41bbb2661645e3d7569a3c">LoRaWANStack::handle_rx</a></div><div class="ttdeci">int16_t handle_rx(uint8_t *data, uint16_t length, uint8_t &amp;port, int &amp;flags, bool validate_params)</div><div class="ttdoc">Receives a message from the Network Server. </div></div>
+<div class="ttc" id="structlorawan__session_html"><div class="ttname"><a href="structlorawan__session.html">lorawan_session</a></div><div class="ttdoc">LoRaWAN session. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__data__structures_8h_source.html#l00971">lorawan_data_structures.h:971</a></div></div>
+<div class="ttc" id="structradio__events_html"><div class="ttname"><a href="structradio__events.html">radio_events</a></div><div class="ttdoc">Reporting functions for upper layers. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_radio_8h_source.html#l00389">LoRaRadio.h:389</a></div></div>
+<div class="ttc" id="class_lo_ra_mac_html_aeb99ff49b4a6d5157416f9b5bd0d9c2c"><div class="ttname"><a href="class_lo_ra_mac.html#aeb99ff49b4a6d5157416f9b5bd0d9c2c">LoRaMac::lock</a></div><div class="ttdeci">void lock(void)</div><div class="ttdoc">These locks trample through to the upper layers and make the stack thread safe. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8h_source.html#l00436">LoRaMac.h:436</a></div></div>
+<div class="ttc" id="structlora__channelplan_html"><div class="ttname"><a href="structlora__channelplan.html">lora_channelplan</a></div><div class="ttdoc">DO NOT MODIFY, WILL BREAK THE API! </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__types_8h_source.html#l00349">lorawan_types.h:349</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a9a5fbbd691856011894d0854ba70abc2"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a9a5fbbd691856011894d0854ba70abc2">LoRaWANStack::connect</a></div><div class="ttdeci">lorawan_status_t connect()</div><div class="ttdoc">Connect OTAA or ABP using Mbed-OS config system. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a9c7dc3fbc4b7b1e02e08277e01c7ce72"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a9c7dc3fbc4b7b1e02e08277e01c7ce72">LoRaWANStack::bind_phy_and_radio_driver</a></div><div class="ttdeci">void bind_phy_and_radio_driver(LoRaRadio &amp;radio, LoRaPHY &amp;phy)</div><div class="ttdoc">Binds PHY layer and radio driver to stack. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_ab7377280c8ace25220086f6fd8c59e71"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#ab7377280c8ace25220086f6fd8c59e71">LoRaWANStack::set_confirmed_msg_retry</a></div><div class="ttdeci">lorawan_status_t set_confirmed_msg_retry(uint8_t count)</div><div class="ttdoc">Sets up a retry counter for confirmed messages. </div></div>
+<div class="ttc" id="lorawan__data__structures_8h_html_aa9b3684dffd361db2ac3bb19f45c7c77"><div class="ttname"><a href="lorawan__data__structures_8h.html#aa9b3684dffd361db2ac3bb19f45c7c77">mcps_type_t</a></div><div class="ttdeci">mcps_type_t</div><div class="ttdoc">LoRaMAC data services. </div><div class="ttdef"><b>Definition:</b> <a href="lorawan__data__structures_8h_source.html#l00556">lorawan_data_structures.h:556</a></div></div>
+<div class="ttc" id="lorawan__data__structures_8h_html"><div class="ttname"><a href="lorawan__data__structures_8h.html">lorawan_data_structures.h</a></div><div class="ttdoc">Contains common data structures used by Mbed-OS LoRaWAN mplementation. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a8e25db58fa8eed611773ed1463b19bfd"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a8e25db58fa8eed611773ed1463b19bfd">LoRaWANStack::set_link_check_request</a></div><div class="ttdeci">lorawan_status_t set_link_check_request()</div><div class="ttdoc">Send Link Check Request MAC command. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_af82da8b623c66a3c5e2f4ca5365a6f1e"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#af82da8b623c66a3c5e2f4ca5365a6f1e">LoRaWANStack::initialize_mac_layer</a></div><div class="ttdeci">lorawan_status_t initialize_mac_layer(events::EventQueue *queue)</div><div class="ttdoc">End device initialization. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_a43579f157ad6f248a21eb5b4d7f082d5"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#a43579f157ad6f248a21eb5b4d7f082d5">LoRaWANStack::drop_channel_list</a></div><div class="ttdeci">lorawan_status_t drop_channel_list()</div><div class="ttdoc">Removes a previously set channel plan. </div></div>
+<div class="ttc" id="class_lo_ra_radio_html"><div class="ttname"><a href="class_lo_ra_radio.html">LoRaRadio</a></div><div class="ttdoc">Interface for the radios, containing the main functions that a radio needs, and five callback functio...</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_radio_8h_source.html#l00440">LoRaRadio.h:440</a></div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_aabd4402fe5a56856517c604dc0f3a4ea"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#aabd4402fe5a56856517c604dc0f3a4ea">LoRaWANStack::set_device_class</a></div><div class="ttdeci">lorawan_status_t set_device_class(const device_class_t &amp;device_class)</div><div class="ttdoc">Change device class. </div></div>
+<div class="ttc" id="class_lo_ra_w_a_n_stack_html_ab33cf7c41586726d6b4260b323116de3"><div class="ttname"><a href="class_lo_ra_w_a_n_stack.html#ab33cf7c41586726d6b4260b323116de3">LoRaWANStack::acquire_backoff_metadata</a></div><div class="ttdeci">lorawan_status_t acquire_backoff_metadata(int &amp;backoff)</div><div class="ttdoc">Acquire backoff meta-data. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/_lo_ra_w_a_n_stack_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:07:51 GMT -->
+</html>

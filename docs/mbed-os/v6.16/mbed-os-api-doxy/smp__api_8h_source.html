@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | smp_api.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="smp__api_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__api_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__api_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_33de8441f7b8b108cc48249435a2d2bd.html">cordio_stack</a></li><li class="navelem"><a class="el" href="dir_3940a4f0546291bcd68aa891290cb6c5.html">ble-host</a></li><li class="navelem"><a class="el" href="dir_099b3dd08bcbe558212de83e1db8f329.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">smp_api.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="smp__api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/*!</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *  \file</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *  \brief  SMP subsystem API.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *  Copyright (c) 2010-2019 Arm Ltd. All Rights Reserved.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *  Copyright (c) 2019-2020 Packetcraft, Inc.</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *  </span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *  Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *  you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *  You may obtain a copy of the License at</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *  </span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *  </span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *  distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *  See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> *  limitations under the License.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="preprocessor">#ifndef SMP_API_H</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#define SMP_API_H</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="preprocessor">#include "<a class="code" href="wsf__os_8h.html">wsf_os.h</a>"</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="preprocessor">#include "<a class="code" href="smp__defs_8h.html">smp_defs.h</a>"</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "<a class="code" href="dm__api_8h.html">dm_api.h</a>"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span> {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment"></span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment">/*! \addtogroup STACK_SMP_API</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment"> *  \{ */</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment">  Macros</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment"></span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">/** \name SMP Events</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment"> * Events recognized and handled by the SMP state machine.</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment">/**@{*/</span><span class="comment"></span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="comment">/*! \brief Event handler messages for SMP state machines */</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="keyword">enum</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> {</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a05238f82b1637b399ae86978b88203f5">   49</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a05238f82b1637b399ae86978b88203f5">SMP_MSG_API_PAIR_REQ</a> = 1,               <span class="comment">/*!&lt; \brief API pairing request */</span></div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a45c1d06b4fa4e0573f7192747d27021c">   50</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a45c1d06b4fa4e0573f7192747d27021c">SMP_MSG_API_PAIR_RSP</a>,                   <span class="comment">/*!&lt; \brief API pairing response */</span></div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a20a4ab69e32e0ba9f9ee0497295a2283">   51</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a20a4ab69e32e0ba9f9ee0497295a2283">SMP_MSG_API_CANCEL_REQ</a>,                 <span class="comment">/*!&lt; \brief API cancel request */</span></div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ac7f2aa2350bb5f3d0ed8170fa631d8a6">   52</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ac7f2aa2350bb5f3d0ed8170fa631d8a6">SMP_MSG_API_AUTH_RSP</a>,                   <span class="comment">/*!&lt; \brief API pin response */</span></div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1aea0918047a3a2fae20db10047e3c3046">   53</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1aea0918047a3a2fae20db10047e3c3046">SMP_MSG_API_SECURITY_REQ</a>,               <span class="comment">/*!&lt; \brief API security request */</span></div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab88715d942e6db74395734689501650f">   54</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab88715d942e6db74395734689501650f">SMP_MSG_CMD_PKT</a>,                        <span class="comment">/*!&lt; \brief SMP command packet received */</span></div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a3268160f7192c3dd8ddc5d29607630db">   55</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a3268160f7192c3dd8ddc5d29607630db">SMP_MSG_CMD_PAIRING_FAILED</a>,             <span class="comment">/*!&lt; \brief SMP pairing failed packet received */</span></div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab37937035fa327cd9463c01c086f5920">   56</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab37937035fa327cd9463c01c086f5920">SMP_MSG_DM_ENCRYPT_CMPL</a>,                <span class="comment">/*!&lt; \brief Link encrypted */</span></div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ad913155215d46450b42a63973164040d">   57</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ad913155215d46450b42a63973164040d">SMP_MSG_DM_ENCRYPT_FAILED</a>,              <span class="comment">/*!&lt; \brief Link encryption failed */</span></div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ac4e6fca6a2134df94288a273e3c3eacf">   58</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ac4e6fca6a2134df94288a273e3c3eacf">SMP_MSG_DM_CONN_CLOSE</a>,                  <span class="comment">/*!&lt; \brief Connection closed */</span></div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a7ecfe261e07d6ab1c3a8e7873299e6fa">   59</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a7ecfe261e07d6ab1c3a8e7873299e6fa">SMP_MSG_WSF_AES_CMPL</a>,                   <span class="comment">/*!&lt; \brief AES calculation complete */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab95ea22805a9f6940f619e4d7e21030a">   60</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab95ea22805a9f6940f619e4d7e21030a">SMP_MSG_INT_SEND_NEXT_KEY</a>,              <span class="comment">/*!&lt; \brief Send next key to be distributed */</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4ca39bfd7ae72c81679a70c3bb21039b">   61</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4ca39bfd7ae72c81679a70c3bb21039b">SMP_MSG_INT_MAX_ATTEMPTS</a>,               <span class="comment">/*!&lt; \brief Maximum pairing attempts reached */</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a43f14ff1c69079252fd92c0c5c917a1a">   62</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a43f14ff1c69079252fd92c0c5c917a1a">SMP_MSG_INT_PAIRING_CMPL</a>,               <span class="comment">/*!&lt; \brief Pairing complete */</span></div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4951c98f8f0e53c49ec587276ed02784">   63</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4951c98f8f0e53c49ec587276ed02784">SMP_MSG_INT_RSP_TIMEOUT</a>,                <span class="comment">/*!&lt; \brief Pairing protocol response timeout */</span></div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1aef6bcac46ae2411785bb389efd78c212">   64</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1aef6bcac46ae2411785bb389efd78c212">SMP_MSG_INT_WI_TIMEOUT</a>,                 <span class="comment">/*!&lt; \brief Pairing protocol wait interval timeout */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab6e53180decf529a30ccfff069957cf4">   65</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab6e53180decf529a30ccfff069957cf4">SMP_MSG_INT_LESC</a>,                       <span class="comment">/*!&lt; \brief Pair with Secure Connections */</span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a1f4a85e7a0980697b8714afc0c79bf46">   66</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a1f4a85e7a0980697b8714afc0c79bf46">SMP_MSG_INT_LEGACY</a>,                     <span class="comment">/*!&lt; \brief Pair with Legacy Security */</span></div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4355827fccb38f0622a2746263d7b610">   67</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4355827fccb38f0622a2746263d7b610">SMP_MSG_INT_JW_NC</a>,                      <span class="comment">/*!&lt; \brief LESC Just-Works/Numeric Comparison pairing */</span></div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5ee1a8f384f16ec3d88718a7d30a4f0a">   68</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5ee1a8f384f16ec3d88718a7d30a4f0a">SMP_MSG_INT_PASSKEY</a>,                    <span class="comment">/*!&lt; \brief LESC Passkey pairing */</span></div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ada4edc375ac4cf95e50c6c0e0ee2b636">   69</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ada4edc375ac4cf95e50c6c0e0ee2b636">SMP_MSG_INT_OOB</a>,                        <span class="comment">/*!&lt; \brief LESC Out-of-Band Pairing */</span></div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5eb597a50c3450d8b74673cd4b8ad3ad">   70</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5eb597a50c3450d8b74673cd4b8ad3ad">SMP_MSG_API_USER_CONFIRM</a>,               <span class="comment">/*!&lt; \brief User confirms valid numeric comparison */</span></div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1abbf1e15559242d665e0586434816c50b">   71</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1abbf1e15559242d665e0586434816c50b">SMP_MSG_API_USER_KEYPRESS</a>,              <span class="comment">/*!&lt; \brief User keypress in passkey pairing */</span></div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a367a234e535aa6af5fa0da075918e7d9">   72</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a367a234e535aa6af5fa0da075918e7d9">SMP_MSG_API_KEYPRESS_CMPL</a>,              <span class="comment">/*!&lt; \brief User keypress complete in passkey pairing */</span></div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ad79f7a3305ef643602f288932eb8fba4">   73</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ad79f7a3305ef643602f288932eb8fba4">SMP_MSG_WSF_ECC_CMPL</a>,                   <span class="comment">/*!&lt; \brief WSF ECC operation complete */</span></div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a0561c845020030cabd0f6e9865f92e25">   74</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a0561c845020030cabd0f6e9865f92e25">SMP_MSG_INT_PK_NEXT</a>,                    <span class="comment">/*!&lt; \brief Continue to next passkey bit */</span></div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a88bc0e3ce72d8fef0a57f7468f289e3e">   75</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a88bc0e3ce72d8fef0a57f7468f289e3e">SMP_MSG_INT_PK_CMPL</a>,                    <span class="comment">/*!&lt; \brief Passkey operation complete */</span></div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a16701e215091389f2963793c7d8dd597">   76</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a16701e215091389f2963793c7d8dd597">SMP_MSG_WSF_CMAC_CMPL</a>,                  <span class="comment">/*!&lt; \brief WSF CMAC operation complete */</span></div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab3af2f2475816603c6558f7547dcbdbc">   77</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab3af2f2475816603c6558f7547dcbdbc">SMP_MSG_DH_CHECK_FAILURE</a>,               <span class="comment">/*!&lt; \brief DHKey check failure */</span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a68f1d8136061017bde16a5900a0e30da">   78</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a68f1d8136061017bde16a5900a0e30da">SMP_MSG_EARLY_CNF</a>,                      <span class="comment">/*!&lt; \brief An early Confirm from the initiator in passkey pairing */</span></div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5039c1a354cb01ce43c7cb68288b13e5">   79</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5039c1a354cb01ce43c7cb68288b13e5">SMP_MSG_INT_CLEANUP</a>,                    <span class="comment">/*!&lt; \brief Cleanup control information and return to IDLE state */</span></div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1add5638b4265567f4a844b559c8791f2c">   80</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1add5638b4265567f4a844b559c8791f2c">SMP_NUM_MSGS</a>                            <span class="comment">/*!&lt; \brief Number of SMP message types. */</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> };<span class="comment"></span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">/**@}*/</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment"></span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment">/**@{*/</span><span class="comment"></span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment">/*! \brief Additional SMP messages */</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="keyword">enum</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> {</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggacedc21792913cbec6ca54f6981c5eddda6eec9cbfbb7c3aa4ee114ac0345efe2c">   88</a></span>   <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggacedc21792913cbec6ca54f6981c5eddda6eec9cbfbb7c3aa4ee114ac0345efe2c">SMP_DB_SERVICE_IND</a> = <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1add5638b4265567f4a844b559c8791f2c">SMP_NUM_MSGS</a>       <span class="comment">/*!&lt; \brief SMP DB Service timer indication */</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> };<span class="comment"></span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">/**@}*/</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">  Data Types</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment"></span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">/*! \brief Configurable parameters */</span></div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html">   97</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> {</div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#a996851fb3c605f52222f53aa9b9bb934">   99</a></span>   uint32_t            <a class="code" href="structsmp_cfg__t.html#a996851fb3c605f52222f53aa9b9bb934">attemptTimeout</a>;     <span class="comment">/*!&lt; \brief 'Repeated attempts' timeout in msec */</span></div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#abf2829615d1ccdc178f4a00bc127efba">  100</a></span>   uint8_t             <a class="code" href="structsmp_cfg__t.html#abf2829615d1ccdc178f4a00bc127efba">ioCap</a>;              <span class="comment">/*!&lt; \brief I/O Capability */</span></div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#a2e9906fe811b492dc500c5515379e16a">  101</a></span>   uint8_t             <a class="code" href="structsmp_cfg__t.html#a2e9906fe811b492dc500c5515379e16a">minKeyLen</a>;          <span class="comment">/*!&lt; \brief Minimum encryption key length */</span></div><div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#a97dffa311c731d49a8219fe368d31d74">  102</a></span>   uint8_t             <a class="code" href="structsmp_cfg__t.html#a97dffa311c731d49a8219fe368d31d74">maxKeyLen</a>;          <span class="comment">/*!&lt; \brief Maximum encryption key length */</span></div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#aa041d36f1d64e4563102ef645f961bf2">  103</a></span>   uint8_t             <a class="code" href="structsmp_cfg__t.html#aa041d36f1d64e4563102ef645f961bf2">maxAttempts</a>;        <span class="comment">/*!&lt; \brief Attempts to trigger 'repeated attempts' timeout */</span></div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#a536021868da51b49d25b2b99f1fda5c3">  104</a></span>   uint8_t             <a class="code" href="structsmp_cfg__t.html#a536021868da51b49d25b2b99f1fda5c3">auth</a>;               <span class="comment">/*!&lt; \brief Device authentication requirements */</span></div><div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#a86aba40a02dcd56ef90c1550225aaefe">  105</a></span>   uint32_t            <a class="code" href="structsmp_cfg__t.html#a86aba40a02dcd56ef90c1550225aaefe">maxAttemptTimeout</a>;  <span class="comment">/*!&lt; \brief Maximum 'Repeated attempts' timeout in msec */</span></div><div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#a08aff8295039954226a36058c6767a11">  106</a></span>   uint32_t            <a class="code" href="structsmp_cfg__t.html#a08aff8295039954226a36058c6767a11">attemptDecTimeout</a>;  <span class="comment">/*!&lt; \brief Time msec before attemptExp decreases */</span></div><div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structsmp_cfg__t.html#ac3183e1232c27364c3b70d21e80f20d5">  107</a></span>   uint16_t            <a class="code" href="structsmp_cfg__t.html#ac3183e1232c27364c3b70d21e80f20d5">attemptExp</a>;         <span class="comment">/*!&lt; \brief Exponent to raise attemptTimeout on maxAttempts */</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> } <a class="code" href="structsmp_cfg__t.html">smpCfg_t</a>;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment"></span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">/*! \brief Data type for SMP_MSG_API_PAIR_REQ and SMP_MSG_API_PAIR_RSP */</span></div><div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structsmp_dm_pair__t.html">  111</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> {</div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structsmp_dm_pair__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  113</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>         <a class="code" href="structsmp_dm_pair__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;        <span class="comment">/*!&lt; \brief Message header */</span></div><div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structsmp_dm_pair__t.html#a01318f39f3b3471bd44bf2f322331788">  114</a></span>   uint8_t             <a class="code" href="structsmp_dm_pair__t.html#a01318f39f3b3471bd44bf2f322331788">oob</a>;        <span class="comment">/*!&lt; \brief Out-of-band data present flag */</span></div><div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structsmp_dm_pair__t.html#a536021868da51b49d25b2b99f1fda5c3">  115</a></span>   uint8_t             <a class="code" href="structsmp_dm_pair__t.html#a536021868da51b49d25b2b99f1fda5c3">auth</a>;       <span class="comment">/*!&lt; \brief authentication flags */</span></div><div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structsmp_dm_pair__t.html#aca7af163f56afc2ed4382f543493647b">  116</a></span>   uint8_t             <a class="code" href="structsmp_dm_pair__t.html#aca7af163f56afc2ed4382f543493647b">iKeyDist</a>;   <span class="comment">/*!&lt; \brief Initiator key distribution flags */</span></div><div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structsmp_dm_pair__t.html#ad239e9a0b5ea2385e8ee7bf2a1a2c89d">  117</a></span>   uint8_t             <a class="code" href="structsmp_dm_pair__t.html#ad239e9a0b5ea2385e8ee7bf2a1a2c89d">rKeyDist</a>;   <span class="comment">/*!&lt; \brief Responder key distribution flags */</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> } <a class="code" href="structsmp_dm_pair__t.html">smpDmPair_t</a>;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment"></span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment">/*! \brief Data type for SMP_MSG_API_AUTH_RSP */</span></div><div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structsmp_dm_auth_rsp__t.html">  121</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> {</div><div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structsmp_dm_auth_rsp__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  123</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>         <a class="code" href="structsmp_dm_auth_rsp__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;                    <span class="comment">/*!&lt; \brief Message header */</span></div><div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structsmp_dm_auth_rsp__t.html#a3c6830ec46883f4149dcee51ba03484b">  124</a></span>   uint8_t             authData[<a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga5520e1f9e64f5b44a8d77362cee87675">SMP_OOB_LEN</a>];  <span class="comment">/*!&lt; \brief Authentication data to display */</span></div><div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="structsmp_dm_auth_rsp__t.html#ac99a5c7343bb8a50c6f5e4fa7799d6e1">  125</a></span>   uint8_t             <a class="code" href="structsmp_dm_auth_rsp__t.html#ac99a5c7343bb8a50c6f5e4fa7799d6e1">authDataLen</a>;            <span class="comment">/*!&lt; \brief Length of authentication data */</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> } <a class="code" href="structsmp_dm_auth_rsp__t.html">smpDmAuthRsp_t</a>;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment"></span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">/*! \brief Data type for SMP_MSG_API_USER_KEYPRESS */</span></div><div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structsmp_dm_keypress__t.html">  129</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> {</div><div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structsmp_dm_keypress__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  131</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>         <a class="code" href="structsmp_dm_keypress__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;        <span class="comment">/*!&lt; \brief Message header */</span></div><div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="structsmp_dm_keypress__t.html#a9de1b2e35dbb5a952b46f640b2e12160">  132</a></span>   uint8_t             <a class="code" href="structsmp_dm_keypress__t.html#a9de1b2e35dbb5a952b46f640b2e12160">keypress</a>;   <span class="comment">/*!&lt; \brief Keypress */</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> } <a class="code" href="structsmp_dm_keypress__t.html">smpDmKeypress_t</a>;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment"></span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">/*! \brief Data type for SMP_MSG_API_SECURITY_REQ */</span></div><div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="structsmp_dm_security_req__t.html">  136</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> {</div><div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="structsmp_dm_security_req__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  138</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>         <a class="code" href="structsmp_dm_security_req__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;   <span class="comment">/*!&lt; \brief Message header */</span></div><div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="structsmp_dm_security_req__t.html#a536021868da51b49d25b2b99f1fda5c3">  139</a></span>   uint8_t             <a class="code" href="structsmp_dm_security_req__t.html#a536021868da51b49d25b2b99f1fda5c3">auth</a>;  <span class="comment">/*!&lt; \brief Authentication flags */</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> } <a class="code" href="structsmp_dm_security_req__t.html">smpDmSecurityReq_t</a>;</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment"></span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">/*! \brief Union SMP DM message data types */</span></div><div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="unionsmp_dm_msg__t.html">  143</a></span> <span class="keyword">typedef</span> <span class="keyword">union</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> {</div><div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="unionsmp_dm_msg__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  145</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>         <a class="code" href="unionsmp_dm_msg__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;           <span class="comment">/*!&lt; \brief Message header */</span></div><div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="unionsmp_dm_msg__t.html#a1d3a4dd9be04cea5acc49b63b186277b">  146</a></span>   <a class="code" href="structsmp_dm_pair__t.html">smpDmPair_t</a>         <a class="code" href="unionsmp_dm_msg__t.html#a1d3a4dd9be04cea5acc49b63b186277b">pair</a>;          <span class="comment">/*!&lt; \brief Pairing request/response message */</span></div><div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="unionsmp_dm_msg__t.html#a0f602532d29c0675f2bf47842f3cf327">  147</a></span>   <a class="code" href="structsmp_dm_auth_rsp__t.html">smpDmAuthRsp_t</a>      <a class="code" href="unionsmp_dm_msg__t.html#a0f602532d29c0675f2bf47842f3cf327">authRsp</a>;       <span class="comment">/*!&lt; \brief Authentication message */</span></div><div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="unionsmp_dm_msg__t.html#adcda6b96f0531bd4ea37701ea8bf395f">  148</a></span>   <a class="code" href="structsmp_dm_security_req__t.html">smpDmSecurityReq_t</a>  <a class="code" href="unionsmp_dm_msg__t.html#adcda6b96f0531bd4ea37701ea8bf395f">securityReq</a>;   <span class="comment">/*!&lt; \brief Security Request message */</span></div><div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="unionsmp_dm_msg__t.html#aae43a2efcb2f51a91d451fb692062a1e">  149</a></span>   <a class="code" href="structsmp_dm_keypress__t.html">smpDmKeypress_t</a>     <a class="code" href="unionsmp_dm_msg__t.html#aae43a2efcb2f51a91d451fb692062a1e">keypress</a>;      <span class="comment">/*!&lt; \brief Keypress message */</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> } <a class="code" href="unionsmp_dm_msg__t.html">smpDmMsg_t</a>;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment"></span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_SMP_API */</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> </div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment">  Global Variables;</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment"></span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">/*! \addtogroup STACK_INIT</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment"> *  \{ */</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment"></span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">/** \name SMP Configuration Structure</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment"> * Pointer to structure containing initialization details of the SMP Subsystem.  To be configured</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment"> * by Application.</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">/**@{*/</span><span class="comment"></span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">/*! \brief Configuration pointer */</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="keyword">extern</span> <a class="code" href="structsmp_cfg__t.html">smpCfg_t</a> *<a class="code" href="group___s_t_a_c_k___i_n_i_t.html#ga94550e4437d356cfec09b6f7eed3e1c2">pSmpCfg</a>;<span class="comment"></span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">/**@}*/</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment"></span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_INIT */</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> </div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">  Function Declarations</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment"></span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">/*! \addtogroup STACK_SMP_API</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment"> *  \{ */</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment"></span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">/** \name SMP Initialization Functions</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment"> * Legacy and Secure Connections initialization for Initiator and Responder roles.</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">/**@{*/</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> </div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">/*!</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment"> *  \brief  Initialize SMP initiator role.</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment"> *</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="comment"> */</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga38ca86d43c447c4e6917f6c8c86f76b8">SmpiInit</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> </div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment">/*!</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment"> *  \brief  Initialize SMP responder role.</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment"> *</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment"> */</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga61ce2b237147234f4fbc1737495838a5">SmprInit</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> </div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="comment">/*!</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="comment"> *  \brief  Initialize SMP initiator role utilizing BTLE Secure Connections.</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="comment"> *</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="comment"> */</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#gae7572def7eb8d254e6d95a99b7a747c2">SmpiScInit</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> </div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment">/*!</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment"> *  \brief  Initialize SMP responder role utilizing BTLE Secure Connections.</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment"> *</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment"> */</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#gaadd478794180f219147a5a7c5dc421c6">SmprScInit</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> </div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> <span class="comment">/*!</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="comment"> *  \brief  Use this SMP init function when SMP is not supported.</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment"> *</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment"> */</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga1350212d099acde4d34eaf94ab893810">SmpNonInit</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment"></span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">/**@}*/</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment"></span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="comment">/** \name SMP DM Interface Functions</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment"> * Functions that allow the DM to send messages to SMP.</span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="comment">/**@{*/</span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> </div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment">/*!</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment"> *  \brief  This function is called by DM to send a message to SMP.</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment"> *</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment"> *  \param  pMsg      Pointer to message structure.</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="comment"> *</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment"> */</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#gaedecbc2f47f2b82dd519ce2ab2e9bab2">SmpDmMsgSend</a>(<a class="code" href="unionsmp_dm_msg__t.html">smpDmMsg_t</a> *pMsg);</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> </div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">/*!</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment"> *  \brief  This function is called by DM to notify SMP of encrypted link status.</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment"> *</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="comment"> *  \param  pMsg    Pointer to HCI message structure.</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment"> *</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment"> */</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga943ec5805ceb8e6003a574bec467fa60">SmpDmEncryptInd</a>(<a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a> *pMsg);</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> </div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">/*!</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment"> *  \brief  Check if LE Secure Connections is enabled on the connection.</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment"> *</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment"> *  \param  connId    Connection identifier.</span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment"> *</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment"> *  \return TRUE is Secure Connections is enabled, else FALSE</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment"> */</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> bool_t <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#gaee2dfde3965ab56279a4ec740447003f">SmpDmLescEnabled</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId);</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> </div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment">/*!</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment"> *  \brief  Return the STK for the given connection.</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment"> *</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="comment"> *  \param  connId    Connection identifier.</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="comment"> *  \param  pSecLevel Returns the security level of pairing when STK was created.</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="comment"> *</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment"> *  \return Pointer to STK or NULL if not available.</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment"> */</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> uint8_t *<a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#gadd46eb38cb570f0ff92634237d4e2710">SmpDmGetStk</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t *pSecLevel);</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> </div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment">/*!</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment"> *  \brief  Format a cancel message with consideration for the attempts counter</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment"> *</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment"> *  \param  connId  Connection Id.</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment"> *  \param  pHdr    Pointer to header of message to fill.</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment"> *  \param  status  Status to include.</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment"> *</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment"> *  \return none.</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment"> */</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga46d68e8665a5605d1e7a72217a710dd0">SmpScGetCancelMsgWithReattempt</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a> *pHdr, uint8_t status);</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> </div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">/*!</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment"> *  \brief  Initialize the SMP Database.</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment"> *</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment"> */</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#gad54bfe72096723f0b5ef527cd3f2aa61">SmpDbInit</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> </div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment">/*!</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment"> *  \brief  Called to force the DhKey to zero for qualification test purposes.</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span> <span class="comment"> *</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> <span class="comment"> *  \param  enable  TRUE - Force DhKey to zero.  FALSE - Use calculated key</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span> <span class="comment"> *</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment"> */</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga67b5e271ebfabade0e9a4f9f9ac63e2e">SmpScEnableZeroDhKey</a>(bool_t enable);</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment"></span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment">/**@}*/</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> <span class="comment"></span></div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_SMP_API */</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> </div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> };</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> </div><div class="line"><a name="l00322"></a><span class="lineno">  322</span> <span class="preprocessor">#endif </span><span class="comment">/* SMP_API_H */</span><span class="preprocessor"></span></div><div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_gaedecbc2f47f2b82dd519ce2ab2e9bab2"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#gaedecbc2f47f2b82dd519ce2ab2e9bab2">SmpDmMsgSend</a></div><div class="ttdeci">void SmpDmMsgSend(smpDmMsg_t *pMsg)</div><div class="ttdoc">This function is called by DM to send a message to SMP. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_gadd46eb38cb570f0ff92634237d4e2710"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#gadd46eb38cb570f0ff92634237d4e2710">SmpDmGetStk</a></div><div class="ttdeci">uint8_t * SmpDmGetStk(dmConnId_t connId, uint8_t *pSecLevel)</div><div class="ttdoc">Return the STK for the given connection. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggacedc21792913cbec6ca54f6981c5eddda6eec9cbfbb7c3aa4ee114ac0345efe2c"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggacedc21792913cbec6ca54f6981c5eddda6eec9cbfbb7c3aa4ee114ac0345efe2c">SMP_DB_SERVICE_IND</a></div><div class="ttdoc">SMP DB Service timer indication. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00088">smp_api.h:88</a></div></div>
+<div class="ttc" id="unionsmp_dm_msg__t_html_aae43a2efcb2f51a91d451fb692062a1e"><div class="ttname"><a href="unionsmp_dm_msg__t.html#aae43a2efcb2f51a91d451fb692062a1e">smpDmMsg_t::keypress</a></div><div class="ttdeci">smpDmKeypress_t keypress</div><div class="ttdoc">Keypress message. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00149">smp_api.h:149</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1aea0918047a3a2fae20db10047e3c3046"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1aea0918047a3a2fae20db10047e3c3046">SMP_MSG_API_SECURITY_REQ</a></div><div class="ttdoc">API security request. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00053">smp_api.h:53</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ad79f7a3305ef643602f288932eb8fba4"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ad79f7a3305ef643602f288932eb8fba4">SMP_MSG_WSF_ECC_CMPL</a></div><div class="ttdoc">WSF ECC operation complete. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00073">smp_api.h:73</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___d_m___a_p_i_html_ga794e39c17c1fca021019a1a71017c29f"><div class="ttname"><a href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a></div><div class="ttdeci">uint8_t dmConnId_t</div><div class="ttdoc">Connection identifier. </div><div class="ttdef"><b>Definition:</b> <a href="dm__api_8h_source.html#l00588">dm_api.h:588</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ab88715d942e6db74395734689501650f"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab88715d942e6db74395734689501650f">SMP_MSG_CMD_PKT</a></div><div class="ttdoc">SMP command packet received. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00054">smp_api.h:54</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a7ecfe261e07d6ab1c3a8e7873299e6fa"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a7ecfe261e07d6ab1c3a8e7873299e6fa">SMP_MSG_WSF_AES_CMPL</a></div><div class="ttdoc">AES calculation complete. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00059">smp_api.h:59</a></div></div>
+<div class="ttc" id="unionsmp_dm_msg__t_html_adcda6b96f0531bd4ea37701ea8bf395f"><div class="ttname"><a href="unionsmp_dm_msg__t.html#adcda6b96f0531bd4ea37701ea8bf395f">smpDmMsg_t::securityReq</a></div><div class="ttdeci">smpDmSecurityReq_t securityReq</div><div class="ttdoc">Security Request message. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00148">smp_api.h:148</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a5eb597a50c3450d8b74673cd4b8ad3ad"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5eb597a50c3450d8b74673cd4b8ad3ad">SMP_MSG_API_USER_CONFIRM</a></div><div class="ttdoc">User confirms valid numeric comparison. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00070">smp_api.h:70</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ab6e53180decf529a30ccfff069957cf4"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab6e53180decf529a30ccfff069957cf4">SMP_MSG_INT_LESC</a></div><div class="ttdoc">Pair with Secure Connections. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00065">smp_api.h:65</a></div></div>
+<div class="ttc" id="structsmp_dm_keypress__t_html_a9de1b2e35dbb5a952b46f640b2e12160"><div class="ttname"><a href="structsmp_dm_keypress__t.html#a9de1b2e35dbb5a952b46f640b2e12160">smpDmKeypress_t::keypress</a></div><div class="ttdeci">uint8_t keypress</div><div class="ttdoc">Keypress. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00132">smp_api.h:132</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ad913155215d46450b42a63973164040d"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ad913155215d46450b42a63973164040d">SMP_MSG_DM_ENCRYPT_FAILED</a></div><div class="ttdoc">Link encryption failed. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00057">smp_api.h:57</a></div></div>
+<div class="ttc" id="structsmp_dm_keypress__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structsmp_dm_keypress__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">smpDmKeypress_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdoc">Message header. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00131">smp_api.h:131</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a43f14ff1c69079252fd92c0c5c917a1a"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a43f14ff1c69079252fd92c0c5c917a1a">SMP_MSG_INT_PAIRING_CMPL</a></div><div class="ttdoc">Pairing complete. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00062">smp_api.h:62</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a4951c98f8f0e53c49ec587276ed02784"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4951c98f8f0e53c49ec587276ed02784">SMP_MSG_INT_RSP_TIMEOUT</a></div><div class="ttdoc">Pairing protocol response timeout. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00063">smp_api.h:63</a></div></div>
+<div class="ttc" id="structsmp_dm_auth_rsp__t_html"><div class="ttname"><a href="structsmp_dm_auth_rsp__t.html">smpDmAuthRsp_t</a></div><div class="ttdoc">Data type for SMP_MSG_API_AUTH_RSP. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00121">smp_api.h:121</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_a2e9906fe811b492dc500c5515379e16a"><div class="ttname"><a href="structsmp_cfg__t.html#a2e9906fe811b492dc500c5515379e16a">smpCfg_t::minKeyLen</a></div><div class="ttdeci">uint8_t minKeyLen</div><div class="ttdoc">Minimum encryption key length. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00101">smp_api.h:101</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_gaadd478794180f219147a5a7c5dc421c6"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#gaadd478794180f219147a5a7c5dc421c6">SmprScInit</a></div><div class="ttdeci">void SmprScInit(void)</div><div class="ttdoc">Initialize SMP responder role utilizing BTLE Secure Connections. </div></div>
+<div class="ttc" id="unionsmp_dm_msg__t_html_a1d3a4dd9be04cea5acc49b63b186277b"><div class="ttname"><a href="unionsmp_dm_msg__t.html#a1d3a4dd9be04cea5acc49b63b186277b">smpDmMsg_t::pair</a></div><div class="ttdeci">smpDmPair_t pair</div><div class="ttdoc">Pairing request/response message. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00146">smp_api.h:146</a></div></div>
+<div class="ttc" id="structsmp_dm_security_req__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structsmp_dm_security_req__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">smpDmSecurityReq_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdoc">Message header. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00138">smp_api.h:138</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_a86aba40a02dcd56ef90c1550225aaefe"><div class="ttname"><a href="structsmp_cfg__t.html#a86aba40a02dcd56ef90c1550225aaefe">smpCfg_t::maxAttemptTimeout</a></div><div class="ttdeci">uint32_t maxAttemptTimeout</div><div class="ttdoc">Maximum &amp;#39;Repeated attempts&amp;#39; timeout in msec. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00105">smp_api.h:105</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga67b5e271ebfabade0e9a4f9f9ac63e2e"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga67b5e271ebfabade0e9a4f9f9ac63e2e">SmpScEnableZeroDhKey</a></div><div class="ttdeci">void SmpScEnableZeroDhKey(bool_t enable)</div><div class="ttdoc">Called to force the DhKey to zero for qualification test purposes. </div></div>
+<div class="ttc" id="unionsmp_dm_msg__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="unionsmp_dm_msg__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">smpDmMsg_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdoc">Message header. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00145">smp_api.h:145</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_gaee2dfde3965ab56279a4ec740447003f"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#gaee2dfde3965ab56279a4ec740447003f">SmpDmLescEnabled</a></div><div class="ttdeci">bool_t SmpDmLescEnabled(dmConnId_t connId)</div><div class="ttdoc">Check if LE Secure Connections is enabled on the connection. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a5039c1a354cb01ce43c7cb68288b13e5"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5039c1a354cb01ce43c7cb68288b13e5">SMP_MSG_INT_CLEANUP</a></div><div class="ttdoc">Cleanup control information and return to IDLE state. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00079">smp_api.h:79</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_gae7572def7eb8d254e6d95a99b7a747c2"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#gae7572def7eb8d254e6d95a99b7a747c2">SmpiScInit</a></div><div class="ttdeci">void SmpiScInit(void)</div><div class="ttdoc">Initialize SMP initiator role utilizing BTLE Secure Connections. </div></div>
+<div class="ttc" id="structsmp_dm_keypress__t_html"><div class="ttname"><a href="structsmp_dm_keypress__t.html">smpDmKeypress_t</a></div><div class="ttdoc">Data type for SMP_MSG_API_USER_KEYPRESS. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00129">smp_api.h:129</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_abf2829615d1ccdc178f4a00bc127efba"><div class="ttname"><a href="structsmp_cfg__t.html#abf2829615d1ccdc178f4a00bc127efba">smpCfg_t::ioCap</a></div><div class="ttdeci">uint8_t ioCap</div><div class="ttdoc">I/O Capability. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00100">smp_api.h:100</a></div></div>
+<div class="ttc" id="structsmp_dm_pair__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structsmp_dm_pair__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">smpDmPair_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdoc">Message header. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00113">smp_api.h:113</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a1f4a85e7a0980697b8714afc0c79bf46"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a1f4a85e7a0980697b8714afc0c79bf46">SMP_MSG_INT_LEGACY</a></div><div class="ttdoc">Pair with Legacy Security. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00066">smp_api.h:66</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a68f1d8136061017bde16a5900a0e30da"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a68f1d8136061017bde16a5900a0e30da">SMP_MSG_EARLY_CNF</a></div><div class="ttdoc">An early Confirm from the initiator in passkey pairing. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00078">smp_api.h:78</a></div></div>
+<div class="ttc" id="structsmp_dm_pair__t_html"><div class="ttname"><a href="structsmp_dm_pair__t.html">smpDmPair_t</a></div><div class="ttdoc">Data type for SMP_MSG_API_PAIR_REQ and SMP_MSG_API_PAIR_RSP. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00111">smp_api.h:111</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_aa041d36f1d64e4563102ef645f961bf2"><div class="ttname"><a href="structsmp_cfg__t.html#aa041d36f1d64e4563102ef645f961bf2">smpCfg_t::maxAttempts</a></div><div class="ttdeci">uint8_t maxAttempts</div><div class="ttdoc">Attempts to trigger &amp;#39;repeated attempts&amp;#39; timeout. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00103">smp_api.h:103</a></div></div>
+<div class="ttc" id="structsmp_dm_pair__t_html_a536021868da51b49d25b2b99f1fda5c3"><div class="ttname"><a href="structsmp_dm_pair__t.html#a536021868da51b49d25b2b99f1fda5c3">smpDmPair_t::auth</a></div><div class="ttdeci">uint8_t auth</div><div class="ttdoc">authentication flags </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00115">smp_api.h:115</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a367a234e535aa6af5fa0da075918e7d9"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a367a234e535aa6af5fa0da075918e7d9">SMP_MSG_API_KEYPRESS_CMPL</a></div><div class="ttdoc">User keypress complete in passkey pairing. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00072">smp_api.h:72</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a16701e215091389f2963793c7d8dd597"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a16701e215091389f2963793c7d8dd597">SMP_MSG_WSF_CMAC_CMPL</a></div><div class="ttdoc">WSF CMAC operation complete. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00076">smp_api.h:76</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ac4e6fca6a2134df94288a273e3c3eacf"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ac4e6fca6a2134df94288a273e3c3eacf">SMP_MSG_DM_CONN_CLOSE</a></div><div class="ttdoc">Connection closed. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00058">smp_api.h:58</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_ac3183e1232c27364c3b70d21e80f20d5"><div class="ttname"><a href="structsmp_cfg__t.html#ac3183e1232c27364c3b70d21e80f20d5">smpCfg_t::attemptExp</a></div><div class="ttdeci">uint16_t attemptExp</div><div class="ttdoc">Exponent to raise attemptTimeout on maxAttempts. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00107">smp_api.h:107</a></div></div>
+<div class="ttc" id="unionsmp_dm_msg__t_html_a0f602532d29c0675f2bf47842f3cf327"><div class="ttname"><a href="unionsmp_dm_msg__t.html#a0f602532d29c0675f2bf47842f3cf327">smpDmMsg_t::authRsp</a></div><div class="ttdeci">smpDmAuthRsp_t authRsp</div><div class="ttdoc">Authentication message. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00147">smp_api.h:147</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ab3af2f2475816603c6558f7547dcbdbc"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab3af2f2475816603c6558f7547dcbdbc">SMP_MSG_DH_CHECK_FAILURE</a></div><div class="ttdoc">DHKey check failure. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00077">smp_api.h:77</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a20a4ab69e32e0ba9f9ee0497295a2283"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a20a4ab69e32e0ba9f9ee0497295a2283">SMP_MSG_API_CANCEL_REQ</a></div><div class="ttdoc">API cancel request. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00051">smp_api.h:51</a></div></div>
+<div class="ttc" id="structsmp_dm_security_req__t_html"><div class="ttname"><a href="structsmp_dm_security_req__t.html">smpDmSecurityReq_t</a></div><div class="ttdoc">Data type for SMP_MSG_API_SECURITY_REQ. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00136">smp_api.h:136</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_a08aff8295039954226a36058c6767a11"><div class="ttname"><a href="structsmp_cfg__t.html#a08aff8295039954226a36058c6767a11">smpCfg_t::attemptDecTimeout</a></div><div class="ttdeci">uint32_t attemptDecTimeout</div><div class="ttdoc">Time msec before attemptExp decreases. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00106">smp_api.h:106</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ab95ea22805a9f6940f619e4d7e21030a"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab95ea22805a9f6940f619e4d7e21030a">SMP_MSG_INT_SEND_NEXT_KEY</a></div><div class="ttdoc">Send next key to be distributed. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00060">smp_api.h:60</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_a97dffa311c731d49a8219fe368d31d74"><div class="ttname"><a href="structsmp_cfg__t.html#a97dffa311c731d49a8219fe368d31d74">smpCfg_t::maxKeyLen</a></div><div class="ttdeci">uint8_t maxKeyLen</div><div class="ttdoc">Maximum encryption key length. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00102">smp_api.h:102</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_a996851fb3c605f52222f53aa9b9bb934"><div class="ttname"><a href="structsmp_cfg__t.html#a996851fb3c605f52222f53aa9b9bb934">smpCfg_t::attemptTimeout</a></div><div class="ttdeci">uint32_t attemptTimeout</div><div class="ttdoc">&amp;#39;Repeated attempts&amp;#39; timeout in msec </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00099">smp_api.h:99</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ab37937035fa327cd9463c01c086f5920"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ab37937035fa327cd9463c01c086f5920">SMP_MSG_DM_ENCRYPT_CMPL</a></div><div class="ttdoc">Link encrypted. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00056">smp_api.h:56</a></div></div>
+<div class="ttc" id="smp__defs_8h_html"><div class="ttname"><a href="smp__defs_8h.html">smp_defs.h</a></div><div class="ttdoc">Security manager constants and definitions from the Bluetooth specification. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a05238f82b1637b399ae86978b88203f5"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a05238f82b1637b399ae86978b88203f5">SMP_MSG_API_PAIR_REQ</a></div><div class="ttdoc">API pairing request. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00049">smp_api.h:49</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a88bc0e3ce72d8fef0a57f7468f289e3e"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a88bc0e3ce72d8fef0a57f7468f289e3e">SMP_MSG_INT_PK_CMPL</a></div><div class="ttdoc">Passkey operation complete. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00075">smp_api.h:75</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a3268160f7192c3dd8ddc5d29607630db"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a3268160f7192c3dd8ddc5d29607630db">SMP_MSG_CMD_PAIRING_FAILED</a></div><div class="ttdoc">SMP pairing failed packet received. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00055">smp_api.h:55</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga1350212d099acde4d34eaf94ab893810"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga1350212d099acde4d34eaf94ab893810">SmpNonInit</a></div><div class="ttdeci">void SmpNonInit(void)</div><div class="ttdoc">Use this SMP init function when SMP is not supported. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga943ec5805ceb8e6003a574bec467fa60"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga943ec5805ceb8e6003a574bec467fa60">SmpDmEncryptInd</a></div><div class="ttdeci">void SmpDmEncryptInd(wsfMsgHdr_t *pMsg)</div><div class="ttdoc">This function is called by DM to notify SMP of encrypted link status. </div></div>
+<div class="ttc" id="structsmp_dm_pair__t_html_a01318f39f3b3471bd44bf2f322331788"><div class="ttname"><a href="structsmp_dm_pair__t.html#a01318f39f3b3471bd44bf2f322331788">smpDmPair_t::oob</a></div><div class="ttdeci">uint8_t oob</div><div class="ttdoc">Out-of-band data present flag. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00114">smp_api.h:114</a></div></div>
+<div class="ttc" id="dm__api_8h_html"><div class="ttname"><a href="dm__api_8h.html">dm_api.h</a></div><div class="ttdoc">Device Manager subsystem API. </div></div>
+<div class="ttc" id="structsmp_dm_auth_rsp__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structsmp_dm_auth_rsp__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">smpDmAuthRsp_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdoc">Message header. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00123">smp_api.h:123</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ada4edc375ac4cf95e50c6c0e0ee2b636"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ada4edc375ac4cf95e50c6c0e0ee2b636">SMP_MSG_INT_OOB</a></div><div class="ttdoc">LESC Out-of-Band Pairing. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00069">smp_api.h:69</a></div></div>
+<div class="ttc" id="structsmp_dm_security_req__t_html_a536021868da51b49d25b2b99f1fda5c3"><div class="ttname"><a href="structsmp_dm_security_req__t.html#a536021868da51b49d25b2b99f1fda5c3">smpDmSecurityReq_t::auth</a></div><div class="ttdeci">uint8_t auth</div><div class="ttdoc">Authentication flags. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00139">smp_api.h:139</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a0561c845020030cabd0f6e9865f92e25"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a0561c845020030cabd0f6e9865f92e25">SMP_MSG_INT_PK_NEXT</a></div><div class="ttdoc">Continue to next passkey bit. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00074">smp_api.h:74</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a45c1d06b4fa4e0573f7192747d27021c"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a45c1d06b4fa4e0573f7192747d27021c">SMP_MSG_API_PAIR_RSP</a></div><div class="ttdoc">API pairing response. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00050">smp_api.h:50</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a5ee1a8f384f16ec3d88718a7d30a4f0a"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a5ee1a8f384f16ec3d88718a7d30a4f0a">SMP_MSG_INT_PASSKEY</a></div><div class="ttdoc">LESC Passkey pairing. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00068">smp_api.h:68</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga61ce2b237147234f4fbc1737495838a5"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga61ce2b237147234f4fbc1737495838a5">SmprInit</a></div><div class="ttdeci">void SmprInit(void)</div><div class="ttdoc">Initialize SMP responder role. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1ac7f2aa2350bb5f3d0ed8170fa631d8a6"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1ac7f2aa2350bb5f3d0ed8170fa631d8a6">SMP_MSG_API_AUTH_RSP</a></div><div class="ttdoc">API pin response. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00052">smp_api.h:52</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_gad54bfe72096723f0b5ef527cd3f2aa61"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#gad54bfe72096723f0b5ef527cd3f2aa61">SmpDbInit</a></div><div class="ttdeci">void SmpDbInit(void)</div><div class="ttdoc">Initialize the SMP Database. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga5520e1f9e64f5b44a8d77362cee87675"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga5520e1f9e64f5b44a8d77362cee87675">SMP_OOB_LEN</a></div><div class="ttdeci">#define SMP_OOB_LEN</div><div class="ttdoc">OOB Data length in bytes. </div><div class="ttdef"><b>Definition:</b> <a href="smp__defs_8h_source.html#l00052">smp_defs.h:52</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a4ca39bfd7ae72c81679a70c3bb21039b"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4ca39bfd7ae72c81679a70c3bb21039b">SMP_MSG_INT_MAX_ATTEMPTS</a></div><div class="ttdoc">Maximum pairing attempts reached. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00061">smp_api.h:61</a></div></div>
+<div class="ttc" id="structsmp_dm_pair__t_html_ad239e9a0b5ea2385e8ee7bf2a1a2c89d"><div class="ttname"><a href="structsmp_dm_pair__t.html#ad239e9a0b5ea2385e8ee7bf2a1a2c89d">smpDmPair_t::rKeyDist</a></div><div class="ttdeci">uint8_t rKeyDist</div><div class="ttdoc">Responder key distribution flags. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00117">smp_api.h:117</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html"><div class="ttname"><a href="structsmp_cfg__t.html">smpCfg_t</a></div><div class="ttdoc">Configurable parameters. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00097">smp_api.h:97</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1abbf1e15559242d665e0586434816c50b"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1abbf1e15559242d665e0586434816c50b">SMP_MSG_API_USER_KEYPRESS</a></div><div class="ttdoc">User keypress in passkey pairing. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00071">smp_api.h:71</a></div></div>
+<div class="ttc" id="unionsmp_dm_msg__t_html"><div class="ttname"><a href="unionsmp_dm_msg__t.html">smpDmMsg_t</a></div><div class="ttdoc">Union SMP DM message data types. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00143">smp_api.h:143</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga46d68e8665a5605d1e7a72217a710dd0"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga46d68e8665a5605d1e7a72217a710dd0">SmpScGetCancelMsgWithReattempt</a></div><div class="ttdeci">void SmpScGetCancelMsgWithReattempt(dmConnId_t connId, wsfMsgHdr_t *pHdr, uint8_t status)</div><div class="ttdoc">Format a cancel message with consideration for the attempts counter. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1aef6bcac46ae2411785bb389efd78c212"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1aef6bcac46ae2411785bb389efd78c212">SMP_MSG_INT_WI_TIMEOUT</a></div><div class="ttdoc">Pairing protocol wait interval timeout. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00064">smp_api.h:64</a></div></div>
+<div class="ttc" id="structsmp_dm_auth_rsp__t_html_ac99a5c7343bb8a50c6f5e4fa7799d6e1"><div class="ttname"><a href="structsmp_dm_auth_rsp__t.html#ac99a5c7343bb8a50c6f5e4fa7799d6e1">smpDmAuthRsp_t::authDataLen</a></div><div class="ttdeci">uint8_t authDataLen</div><div class="ttdoc">Length of authentication data. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00125">smp_api.h:125</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1a4355827fccb38f0622a2746263d7b610"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1a4355827fccb38f0622a2746263d7b610">SMP_MSG_INT_JW_NC</a></div><div class="ttdoc">LESC Just-Works/Numeric Comparison pairing. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00067">smp_api.h:67</a></div></div>
+<div class="ttc" id="wsf__os_8h_html"><div class="ttname"><a href="wsf__os_8h.html">wsf_os.h</a></div><div class="ttdoc">Software foundation OS API. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ga38ca86d43c447c4e6917f6c8c86f76b8"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ga38ca86d43c447c4e6917f6c8c86f76b8">SmpiInit</a></div><div class="ttdeci">void SmpiInit(void)</div><div class="ttdoc">Initialize SMP initiator role. </div></div>
+<div class="ttc" id="structwsf_msg_hdr__t_html"><div class="ttname"><a href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a></div><div class="ttdoc">Common message structure passed to event handler. </div><div class="ttdef"><b>Definition:</b> <a href="wsf__os_8h_source.html#l00106">wsf_os.h:106</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___i_n_i_t_html_ga94550e4437d356cfec09b6f7eed3e1c2"><div class="ttname"><a href="group___s_t_a_c_k___i_n_i_t.html#ga94550e4437d356cfec09b6f7eed3e1c2">pSmpCfg</a></div><div class="ttdeci">smpCfg_t * pSmpCfg</div><div class="ttdoc">Configuration pointer. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___s_m_p___a_p_i_html_ggaf59064efe753e6928fd91539a27503d1add5638b4265567f4a844b559c8791f2c"><div class="ttname"><a href="group___s_t_a_c_k___s_m_p___a_p_i.html#ggaf59064efe753e6928fd91539a27503d1add5638b4265567f4a844b559c8791f2c">SMP_NUM_MSGS</a></div><div class="ttdoc">Number of SMP message types. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00080">smp_api.h:80</a></div></div>
+<div class="ttc" id="structsmp_dm_pair__t_html_aca7af163f56afc2ed4382f543493647b"><div class="ttname"><a href="structsmp_dm_pair__t.html#aca7af163f56afc2ed4382f543493647b">smpDmPair_t::iKeyDist</a></div><div class="ttdeci">uint8_t iKeyDist</div><div class="ttdoc">Initiator key distribution flags. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00116">smp_api.h:116</a></div></div>
+<div class="ttc" id="structsmp_cfg__t_html_a536021868da51b49d25b2b99f1fda5c3"><div class="ttname"><a href="structsmp_cfg__t.html#a536021868da51b49d25b2b99f1fda5c3">smpCfg_t::auth</a></div><div class="ttdeci">uint8_t auth</div><div class="ttdoc">Device authentication requirements. </div><div class="ttdef"><b>Definition:</b> <a href="smp__api_8h_source.html#l00104">smp_api.h:104</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/smp__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:16 GMT -->
+</html>

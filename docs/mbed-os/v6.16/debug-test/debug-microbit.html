@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/debug-test/debug-microbit.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <title>Debugging the BBC micro:bit with pyOCD and GDB - Debugging and testing | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="debug-microbit.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/debug-test/debug-microbit.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/debug-test/debug-microbit.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis" href="../apis/index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test active-doc" href="index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Debugging</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="index.html">Methods</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="index.html">Debugging methods for Arm Mbed OS applications</a>
+                        
+                        <a class="toc-item" href="setting-up-a-local-debug-toolchain.html">Setting up a local debug toolchain</a>
+                        
+                        <a class="toc-item" href="memap.html">Static memory map analysis</a>
+                        
+                        <a class="toc-item" href="daplink.html">DAPLink</a>
+                        
+                        <a class="toc-item" href="troubleshooting-common-issues.html">Troubleshooting common issues</a>
+                        
+                        <a class="toc-item" href="analyzing-mbed-os-crash-dump.html">Analyzing Mbed OS crash dump</a>
+                        
+                        <a class="toc-item" href="compile-time-errors.html">Compile time errors</a>
+                        
+                        <a class="toc-item" href="debugging-using-printf-statements.html">Debugging using printf() statements</a>
+                        
+                        <a class="toc-item" href="debug-microbit.html">Debugging the BBC micro:bit with pyOCD and GDB</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="third-party-tools.html">Third party tools</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="eclipse.html">Eclipse</a>
+                        
+                        <a class="toc-item" href="keil-uvision.html">Keil uVision</a>
+                        
+                        <a class="toc-item" href="visual-studio-code.html">Visual Studio Code</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="test-tools.html">Test tools</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="test-tools.html">Testing</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="unit-testing.html">Unit testing</a>
+                        
+                        <a class="toc-item" href="greentea-for-testing-applications.html">Greentea for testing applications</a>
+                        
+                        <a class="toc-item" href="utest-asynchronous-c-test-harness.html">utest: asynchronous C++ test harness</a>
+                        
+                        <a class="toc-item" href="fast-models.html">Fast Models</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">Debugging and testing</a>
+                                     › 
+                                    
+                                    <a href="index.html">Debugging</a>
+                                     › 
+                                    
+                                    <a href="index.html">Methods</a>
+                                     › 
+                                    
+                                    <a href="debug-microbit.html">Debugging the BBC micro:bit with pyOCD and GDB</a>
+                                    
+                                    
+                                </div>
+                                <h1 id="debug-microbit">Debugging the BBC micro:bit with pyOCD and GDB</h1><p>This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.</p><p><span class="notes"><strong>Note:</strong> The micro:bit's processor is based on the Nordic nRF51.</span></p><h2 id="suggested-tools">Suggested tools</h2><ul>
+<li>Linux (4.1), but pyOCD and GDB work on Windows and macOS.</li>
+<li>pyOCD (0.4.5), which you can obtain on <a href="https://github.com/mbedmicro/pyOCD">GitHub</a>.</li>
+<li>arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at <a href="https://launchpad.net/gcc-arm-embedded">linaro</a>.</li>
+</ul><h2 id="looking-at-a-basic-program">Looking at a basic program</h2><p>Look at <code>hello.hex</code>, a program printing "hello world" to the serial console. You can find the hex file at <a href="https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex">hello.hex</a>.</p><p><span class="notes"><strong>Note:</strong> Shell commands begin with <code>$</code>, GDB commands with <code>(gdb)</code>.</span></p><h3 id="analysis">Analysis</h3><p>Start with an image for the micro:bit. It is supposed to print something on the serial output, but nothing appears.</p><p>The following command starts pyOCD with a soothing configuration:</p><pre><code>$ pyocd-gdbserver --persist -t nrf51 -bh -r
+INFO:root:Unsupported board found: 0224
+INFO:root:new board id detected: 022431864e45002d1013000000420000000033a24e45
+INFO:root:board allows 5 concurrent packets
+INFO:root:DAP SWD MODE initialised
+INFO:root:IDCODE: 0xBB11477
+INFO:root:4 hardware breakpoints, 0 literal comparators
+INFO:root:CPU core is Cortex-M0
+INFO:root:2 hardware watchpoints
+INFO:root:GDB server started at port:3333
+</code></pre><p><span class="tips"><strong>Tip:</strong> If you don't have permission to access the board on Linux, you can use <a href="https://os.mbed.com/comments/perm/9920/">this udev rule</a>. The option <code>-bh</code> tells pyOCD to use hardware breakpoints, and <code>-r</code> tells it to halt the target after a reset.</span></p><p>By default, the server listens for GDB commands on port 3333. It transfers those commands by USB to the interface chip. The interface chip, a Freescale Kinetis KL26, communicates those commands to the micro:bit's processor.</p><p>GDB needs to connect to pyOCD with the following command:</p><pre><code>$ arm-none-eabi-gdb
+(gdb) target remote :3333
+0x0001a01c in ?? ()
+</code></pre><p>Stop the processor, and load your program:</p><pre><code>(gdb) load hello.hex
+(gdb) mon reset
+</code></pre><p>This should display a progress bar in pyocd-gdbserver.</p><p><span class="tips"><strong>Tip:</strong> There is an example init script at the end. By adding <code>-x /path/to/initscript</code> to the GDB command, you can connect to pyOCD and load a program automatically.</span></p><p>The following command shows the location of the program counter:</p><pre><code>(gdb) x/x $pc
+0x0:	0x000007c0
+</code></pre><p><code>x</code> is the command to inspect memory, <code>/i</code> is the format and <code>$pc</code> is the address. <code>help x</code> gives you more format options.</p><p>By pressing Enter, you can display the four following bytes:</p><pre><code>(gdb)
+0x4:	0x000006d1
+</code></pre><p>This is the entry point address of the firmware. The first four bytes are its stack location. You can step instructions with <code>si</code>.</p><p>You can now start executing the image. Except for a hardfault, it should keep rolling until you interrupt it, with Control+C.</p><pre><code>(gdb) c
+Continuing.
+
+...
+
+^C
+Program received signal SIGINT, Interrupt.
+0x0001f31e in ?? ()
+</code></pre><p>This address already gives away a precious bit of information: you reached the application code. If you're using the S110 SoftDevice, the application is located after address 0x18000. You can verify this using a tool such as <a href="http://srecord.sourceforge.net/">srec_info</a>:</p><pre><code>$ srec_info hello.hex -intel
+Format: Intel Hexadecimal (MCS-86)
+Execution Start Address: 00018289
+Data:   000000 - 0007BF
+        001000 - 016917
+        018000 - 01C08F
+</code></pre><p>Here, SoftDevice (the firmware packed inside hello.hex) ends at 0x16917.</p><p>The hello application is located between addresses 0x18000 and 0x1c08f.</p><p>Those values are different if you use the S130 SoftDevice because the application will start at 0x1c000.</p><p>By continuing the flow and stopping it a few times, you can see how the program evolves:</p><pre><code>(gdb) c
+Continuing.
+^C
+Program received signal SIGINT, Interrupt.
+0x0001f31e in ?? ()
+(gdb) c
+Continuing.
+^C
+Program received signal SIGINT, Interrupt.
+0x0001f31e in ?? ()
+</code></pre><p>It seems stuck at 0x1f31e. To see the instruction, use the <code>i</code> formatter:</p><pre><code>(gdb) x /i $pc
+=&gt; 0x1f31e:	b.n	0x1f31e
+</code></pre><p>You've reached a branch-to-self (possibly compiled from <code>while(1)</code>), so it's not going any further.</p><p>It's either a deliberate infinite loop or a panic. An idle loop would have a <code>wfi</code> or <code>wfe</code> instruction in it, at least.</p><p>Look at the instruction stream leading to this loop. Most instructions are encoded on two bytes, but some need four. You want to see about four instructions before PC, which means the start address will be roughly <code>$pc - 8</code>:</p><pre><code>(gdb) x /4i $pc - 8
+   0x1f316:	mov	r1, sp                      ; Put sp into r1
+   0x1f318:	ldr	r0, [pc, #20] ; (0x1f330)   ; Load word at 0x1f330 into r0
+   0x1f31a:	bl	0x1ec86                     ; Call 0x1ec86
+=&gt; 0x1f31e:	b.n	0x1f31e                     ; Branch to self
+</code></pre><p>Understanding this requires a bit of knowledge about Arm assembly and calling conventions. A compiler that follows the Arm assembly procedure call standard (AAPCS) generated this code in C. In this document, Table 2 in section 5.1.1 defines how the compiler should use available registers when calling a function.</p><p>Registers r0 to r3 pass arguments to a function, which may return something into r0. Using <code>x</code>, you can inspect the content of those arguments:</p><pre><code>(gdb) x/xw 0x1f330
+0x1f330:	0x20002880
+</code></pre><p>r0 contains a pointer to address 0x20002880, which is the application RAM. This is probably a Serial object because you expect this call to be <code>serial.printf(string)</code>. You'll come back to this later. For the moment, see what is put in r1 before the call. It is a pointer to the stack. The called function (callee) is not supposed to modify the stack after the address <code>$sp</code> that it gets at the time of the call, so <code>$sp</code> is the same before and after the call:</p><pre><code>(gdb) x/4x $sp
+0x20003fe8:	0x6c6c6548	0x6f77206f	0x0d646c72	0x0000000a
+</code></pre><p>This looks like ascii characters. We can confirm this with the <code>/s</code> formatter:</p><pre><code>(gdb) x/s $sp
+0x20003fe8:	"Hello world\r\n"
+</code></pre><p><span class="notes"><strong>Note:</strong> Representation is little-endian, which means the word <code>0x6c6c6548</code> represents the sequence <code>[0x48, 0x65, 0x6c, 0x6c]</code> in memory.</span></p><p>Main called printf with the right arguments. Look at the value printf returned:</p><pre><code>(gdb) print $r0
+$1 = 13
+</code></pre><p>It returned 13, the number of letters successfully sent to the serial port.</p><p>The application did its job, but you still can't see anything on the serial output!</p><p>This issue is likely related to the Serial API configuration, most likely a wrong baudrate, because you can see garbled data on the console when executing the program multiple times.</p><p>A quick test confirms that the program is using baudrate 9600 instead of 115200, which is the default for the micro:bit runtime.</p><p>The next section shows how you can modify what is printed without rebuilding anything. If you feel adventurous, the following section shows one method of changing the baudrate to 115200 using only GDB.</p><h3 id="changing-the-printf-string">Changing the printf string</h3><p>You can now connect with a serial client at 9600 bauds and check that the program is printing something.</p><p>The main function passes address 0x20003fe8 to printf in R1, which reads it and sends each character to the serial port until it reaches a <code>\0</code>. Knowing that, you can modify the printed string.</p><p>First, put a breakpoint just before the <code>printf</code> call:</p><pre><code>(gdb) b *0x1f31a
+(gdb) mon reset
+(gdb) c
+Continuing.
+
+Breakpoint 4, 0x0001f31a in ?? ()
+(gdb)
+</code></pre><p>Then, change the string on the stack. Because the program ends right after this call with an infinite loop (and there is no other thread), you don't even have to worry about the following bytes on the stack. You only need to make sure that your string ends with a zero byte, and doesn't go over 0x20003fff. This means a maximum of 23 characters (plus the final <code>\0</code>).</p><pre><code>(gdb) set (char [24])*0x20003fe8 = "Hello microbit!\r\n"
+(gdb) c
+Continuing.
+</code></pre><p>The new string appears on your console.</p><h3 id="investigating-the-actual-bug">Investigating the actual bug</h3><p>After analyzing Arm Mbed's <a href="https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html">serial API</a>, you see that the Serial class inherits from SerialBase. From the assembly point of view, calling <code>serial_instance.printf(string)</code> is, in essence, like calling <code>Serial::printf(serial_instance, string)</code>. You saw previously that the instance's address is <code>r0 = 0x20002880</code>.</p><p>Because of the way the C++ compiler handles inheritance, the Serial class data looks like this in the memory:</p><pre><code>SerialBase {
+    ...
+    FunctionPointer _irq[2];        // 0x20002874
+    int             _baudrate;      // 0x2000287c
+
+    Serial {                        // 0x20002880
+        void *      vtable;
+        ...
+    }
+}
+</code></pre><p>Indeed, when you inspect this hypothetical <code>_baudrate</code> variable, it makes sense:</p><pre><code>(gdb) x /d 0x20002880 - 4
+0x2000287c: 9600
+</code></pre><p>The serial port on the device is configured to run at 9600 bits per second, whereas I attempted to read it at 115200 (which is the default for the micro:bit runtime).</p><p>To confirm this is the only issue, try to modify the value written to the device's BAUDRATE register. It is located at address 0x40002524, as described in section 29.10 of the nRF51 reference.</p><p>Add a watchpoint on its memory-mapped location, and restart the application:</p><pre><code>(gdb) watch *0x40002524
+Hardware watchpoint 1: *0x40002524
+(gdb) mon reset
+(gdb) c
+Continuing.
+
+Program received signal SIGTRAP, Trace/breakpoint trap.
+0x0001f520 in ?? ()
+(gdb) c
+Continuing.
+
+Program received signal SIGTRAP, Trace/breakpoint trap.
+0x0001f520 in ?? ()
+(gdb) print/x $lr
+$2 = 0x1ebf1
+(gdb) c
+Continuing.
+...
+</code></pre><p>This tells you that the register is written from two different locations. The program is interrupted right after the instruction that changes BAUDRATE, so the actual write is located at address 0x1f51e:</p><pre><code>(gdb) mon reset
+(gdb) c
+(gdb) x/i 0x1f51e
+0x1f51e:    str r0, [r1, #36]   ; 0x24
+(gdb) print/x $r1 + 36
+$3 = 0x40002524
+(gdb) print/x $r0
+$4 = 0x275000
+(gdb) print/x $lr
+$5 = 0x1f091
+</code></pre><p>In the same section of the nRF51 reference, you can see the values associated with each baudrate: 0x275000 corresponds to 9600, and 0x01D7E000 corresponds to 115200.</p><p>For the second break, LR is 0x1ebf1, which is different from the first call. This means that two different function calls set the baudrate. The actual code and functions don't matter. You can use the information you already have to do what you want, in the form of a breakpoint command:</p><pre><code>(gdb) del break 1                       ; Remove our previous watchpoint
+(gdb) break *0x1f51e if $lr == 0x1ebf1
+Breakpoint 2 at 0x1f51e
+</code></pre><p>This line tells pyOCD to set a breakpoint at address 0x1f51e and stop only when LR is 0x1ebf1, which is the last call to <code>serial_baud</code>.</p><p>Then, attach a command to this breakpoint, to modify the value put into BAUDRATE:</p><pre><code>(gdb) commands 2
+Type commands for breakpoint(s) 2, one per line.
+End with a line saying just "end".
+&gt;set $r0 = 0x01d7e000
+&gt;continue
+&gt;end
+</code></pre><p>Then execute your patch:</p><pre><code>(gdb) mon reset
+(gdb) c
+...
+Breakpoint 3, 0x0001f51e in ?? ()
+...
+</code></pre><p>You see "Hello world" written at 115200 bauds on your console.</p><h2 id="cheat-sheet">Cheat sheet</h2><h3 id="commands">Commands</h3><p>This section describes some useful commands.</p><pre><code>&lt;enter&gt; repeats the previous command
+
+b *0x18310, break           breakpoint on this address
+w *0x20003ffc, watch        watchpoint
+
+c, continue
+mon halt                    tell pyOCD to stop the target
+mon reset                   tell pyOCD to restart the target
+si, stepi                   step instruction
+
+info b                      breakpoint informations
+del 2                       delete breakpoint 2
+
+info reg                    show registers
+
+set *0x20002560 = (char)42  change a byte of memory
+set $pc = $pc + 2           change PC
+set $pc = *0x18004          go to application entry point (with s110)
+
+find 0x20000000, +0x4000, (char [14])"Hello world\r\n"
+                            Locate a 0-terminated string in RAM
+find 0x0, +0x40000, 0x2580  Locate a word in flash
+
+## By default, only flash and RAM are accessible. The following allows to
+## fiddle with memory mapped IO:
+mem 0x40000000 0x40001000   add the clock memory location.
+info mem
+
+## To show the value of LFCLKSRC:
+x/x 0x40000518              (0: RC clock, 1: external)
+
+## To change it:
+set *0x40000518 = 0
+
+In the same vein, inspect ARM system registers:
+mem 0xe000e000 0xe000f000
+x/x 0xe000ed28              show CFSR
+</code></pre><h3 id="example-gdb-init-script">Example: GDB init script</h3><p>Pure GDB scripts can be limited and cumbersome to write. If you want to automate, you can directly script pyOCD or GDB using Python.</p><p>To initialize GDB with the <code>-x</code> switch:</p><pre><code>set history save on
+set history size unlimited
+
+target remote :3333
+
+disp /i $pc
+
+## ARMv7-M peripherals
+mem 0x40000000 0x5fffffff
+
+## ARMv7-M system registers
+mem 0xe0000000 0xffffffff
+
+define run_program
+    load $arg0
+    mon reset
+    c
+end
+
+define show_context
+    ## function used by pc, below
+    set $before = $arg0
+
+    ## haem... Roughly two bytes per instruction.
+    if $before &gt; (int)$pc * 2
+        set $before = (int)$pc / 2
+    end
+    x /20i $pc - $before
+end
+
+define pc
+    if $argc &lt; 1
+        show_context 20
+    else
+        show_context $arg0
+    end
+end
+
+document run_program
+    Load a program and restart the target
+    Usage: run_program /path/to/image
+end
+
+document pc
+    Show 20 instructions surrounding the PC.
+    Usage: pc [BYTES_PRECEEDING]
+end
+</code></pre>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="debugging-using-printf-statements.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="third-party-tools.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/debug-test/debug-microbit.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:24 GMT -->
+</html>

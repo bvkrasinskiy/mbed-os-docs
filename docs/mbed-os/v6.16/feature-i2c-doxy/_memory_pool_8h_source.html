@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/_memory_pool_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:08:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | MemoryPool.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_memory_pool_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/_memory_pool_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/_memory_pool_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_6083bc4a5224c7a1cb00f2f18c2f6ca7.html">rtos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MemoryPool.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/* mbed Microcontroller Library</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * Copyright (c) 2006-2019 ARM Limited</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> * of this software and associated documentation files (the "Software"), to deal</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * in the Software without restriction, including without limitation the rights</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> * copies of the Software, and to permit persons to whom the Software is</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> * furnished to do so, subject to the following conditions:</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> * The above copyright notice and this permission notice shall be included in</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> * all copies or substantial portions of the Software.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> * SOFTWARE.</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> */</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="preprocessor">#ifndef MEMORYPOOL_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="preprocessor">#define MEMORYPOOL_H</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> </div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="preprocessor">#include "rtos/mbed_rtos_types.h"</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "rtos/mbed_rtos1_types.h"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#include "rtos/mbed_rtos_storage.h"</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#include "platform/NonCopyable.h"</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#include "platform/mbed_assert.h"</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="preprocessor">#include "Kernel.h"</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="preprocessor">#if MBED_CONF_RTOS_PRESENT || defined(DOXYGEN_ONLY)</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="keyword">namespace </span><a class="code" href="namespacertos.html">rtos</a> {<span class="comment"></span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment">/** \addtogroup rtos-public-api */</span><span class="comment"></span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment">/** @{*/</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="comment"></span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">/**</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment"> * \defgroup rtos_MemoryPool MemoryPool class</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment"> * @{</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment"> */</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment"></span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="comment">/** Define and manage fixed-size memory pools of objects of a given type.</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="comment">  @tparam  T         data type of a single object (element).</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="comment">  @tparam  queue_sz  maximum number of objects (elements) in the memory pool.</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="comment"></span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment"> @note</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment"> Memory considerations: The memory pool data store and control structures will be created on current thread's stack,</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment"> both for the mbed OS and underlying RTOS objects (static or dynamic RTOS memory pools are not being used).</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment">*/</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t pool_sz&gt;</div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html">   55</a></span> <span class="keyword">class </span><a class="code" href="classrtos_1_1_memory_pool.html">MemoryPool</a> : <span class="keyword">private</span> <a class="code" href="classmbed_1_1_non_copyable.html">mbed::NonCopyable</a>&lt;MemoryPool&lt;T, pool_sz&gt; &gt; {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>     MBED_STATIC_ASSERT(pool_sz &gt; 0, <span class="stringliteral">"Invalid memory pool size. Must be greater than 0."</span>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="keyword">public</span>:<span class="comment"></span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment">    /** Create and Initialize a memory pool.</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment">     *</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment">    */</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#ad84b296839bf3f443cd44918baa08592">   62</a></span>     <a class="code" href="classrtos_1_1_memory_pool.html#ad84b296839bf3f443cd44918baa08592">MemoryPool</a>()</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>     {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>         memset(_pool_mem, 0, <span class="keyword">sizeof</span>(_pool_mem));</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>         <a class="code" href="structos_memory_pool_attr__t.html">osMemoryPoolAttr_t</a> attr = { 0 };</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>         attr.<a class="code" href="structos_memory_pool_attr__t.html#ac24b31114b3e60ed1e41bf9a166aad6d">mp_mem</a> = _pool_mem;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>         attr.<a class="code" href="structos_memory_pool_attr__t.html#a2e5d8aa8630f560597dd5e85c86f8a73">mp_size</a> = <span class="keyword">sizeof</span>(_pool_mem);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>         attr.<a class="code" href="structos_memory_pool_attr__t.html#a8c66c30fe3b487298af0e70eb93a197a">cb_mem</a> = &amp;_obj_mem;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>         attr.<a class="code" href="structos_memory_pool_attr__t.html#a5c542fd75887b7be589b39a2062910de">cb_size</a> = <span class="keyword">sizeof</span>(_obj_mem);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>         _id = osMemoryPoolNew(pool_sz, <span class="keyword">sizeof</span>(T), &amp;attr);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>         <a class="code" href="group__platform___assert.html#ga07d05086e9e83ba1129461868cf49f27">MBED_ASSERT</a>(_id);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>     }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment"></span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">    /** Destroy a memory pool</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment">     *</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">    */</span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#a156294d0fe3e6e70fbc2708420e5dcd6">   78</a></span>     <a class="code" href="classrtos_1_1_memory_pool.html#a156294d0fe3e6e70fbc2708420e5dcd6">~MemoryPool</a>()</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>     {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>         osMemoryPoolDelete(_id);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>     }</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment"></span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">    /** Allocate a memory block from a memory pool, without blocking.</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment">      @return  address of the allocated memory block or nullptr in case of no memory available.</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment"></span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="comment">      @note You may call this function from ISR context.</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment">    */</span></div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#a78ec40e113b7bf548bd130a4fb3718d1">   88</a></span>     T *<a class="code" href="classrtos_1_1_memory_pool.html#a78ec40e113b7bf548bd130a4fb3718d1">alloc</a>(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>     {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>         <span class="keywordflow">return</span> (T *)osMemoryPoolAlloc(_id, 0);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>     }</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment"></span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">    /** Allocate a memory block from a memory pool, optionally blocking.</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">      @param   millisec  timeout value (osWaitForever to wait forever)</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">      @return  address of the allocated memory block or nullptr in case of no memory available.</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment"></span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">      @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="comment">    */</span></div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#ae7f986b1e99fc96f0ff59f41ea52c087">   99</a></span>     T *<a class="code" href="classrtos_1_1_memory_pool.html#ae7f986b1e99fc96f0ff59f41ea52c087">alloc_for</a>(uint32_t millisec)</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>     {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>         <span class="keywordflow">return</span> (T *)osMemoryPoolAlloc(_id, millisec);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>     }</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment"></span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">    /** Allocate a memory block from a memory pool, blocking.</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">      @param   millisec absolute timeout time, referenced to Kernel::get_ms_count().</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">      @return  address of the allocated memory block or nullptr in case of no memory available.</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment"></span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">      @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">      @note the underlying RTOS may have a limit to the maximum wait time</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">        due to internal 32-bit computations, but this is guaranteed to work if the</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">        wait is &lt;= 0x7fffffff milliseconds (~24 days). If the limit is exceeded,</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">        the wait will time out earlier than specified.</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">    */</span></div><div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#ab8d61f499dede9201b13d420124c0fed">  114</a></span>     T *<a class="code" href="classrtos_1_1_memory_pool.html#ab8d61f499dede9201b13d420124c0fed">alloc_until</a>(uint64_t millisec)</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>     {</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>         uint64_t now = <a class="code" href="namespacertos_1_1_kernel.html#a19d37a6ee49d4e132e82c3c4f3d0ca90">Kernel::get_ms_count</a>();</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>         uint32_t delay;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>         <span class="keywordflow">if</span> (now &gt;= millisec) {</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>             delay = 0;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (millisec - now &gt;= osWaitForever) {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>             delay = osWaitForever - 1;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>         } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>             delay = millisec - now;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>         }</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_memory_pool.html#ae7f986b1e99fc96f0ff59f41ea52c087">alloc_for</a>(delay);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>     }</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment"></span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">    /** Allocate a memory block from a memory pool, without blocking, and set memory block to zero.</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment">      @return  address of the allocated memory block or nullptr in case of no memory available.</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment"></span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment">      @note You may call this function from ISR context.</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">    */</span></div><div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#a57a7f1af6e0c1feb0fca6a10504a6b21">  133</a></span>     T *<a class="code" href="classrtos_1_1_memory_pool.html#a57a7f1af6e0c1feb0fca6a10504a6b21">calloc</a>(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>     {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>         T *item = <a class="code" href="classrtos_1_1_memory_pool.html#a78ec40e113b7bf548bd130a4fb3718d1">alloc</a>();</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>         <span class="keywordflow">if</span> (item != <span class="keyword">nullptr</span>) {</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>             memset(item, 0, <span class="keyword">sizeof</span>(T));</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>         }</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>         <span class="keywordflow">return</span> item;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>     }</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment"></span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">    /** Allocate a memory block from a memory pool, optionally blocking, and set memory block to zero.</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">      @param   millisec  timeout value (osWaitForever to wait forever)</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment">      @return  address of the allocated memory block or nullptr in case of no memory available.</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment"></span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">      @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">    */</span></div><div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#ac3facb777299ea49d9be79884fdbada3">  148</a></span>     T *<a class="code" href="classrtos_1_1_memory_pool.html#ac3facb777299ea49d9be79884fdbada3">calloc_for</a>(uint32_t millisec)</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>     {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>         T *item = <a class="code" href="classrtos_1_1_memory_pool.html#ae7f986b1e99fc96f0ff59f41ea52c087">alloc_for</a>(millisec);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>         <span class="keywordflow">if</span> (item != <span class="keyword">nullptr</span>) {</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>             memset(item, 0, <span class="keyword">sizeof</span>(T));</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>         }</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>         <span class="keywordflow">return</span> item;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>     }</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment"></span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">    /** Allocate a memory block from a memory pool, blocking, and set memory block to zero.</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">      @param   millisec absolute timeout time, referenced to Kernel::get_ms_count().</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">      @return  address of the allocated memory block or nullptr in case of no memory available.</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment"></span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">      @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">      @note the underlying RTOS may have a limit to the maximum wait time</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">        due to internal 32-bit computations, but this is guaranteed to work if the</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">        wait is &lt;= 0x7fffffff milliseconds (~24 days). If the limit is exceeded,</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">        the wait will time out earlier than specified.</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">    */</span></div><div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#adbfae7a1794bea0634a70eab32325c6c">  167</a></span>     T *<a class="code" href="classrtos_1_1_memory_pool.html#adbfae7a1794bea0634a70eab32325c6c">calloc_until</a>(uint64_t millisec)</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>     {</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>         T *item = <a class="code" href="classrtos_1_1_memory_pool.html#ab8d61f499dede9201b13d420124c0fed">alloc_until</a>(millisec);</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>         <span class="keywordflow">if</span> (item != <span class="keyword">nullptr</span>) {</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>             memset(item, 0, <span class="keyword">sizeof</span>(T));</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>         }</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>         <span class="keywordflow">return</span> item;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>     }</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment"></span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">    /** Free a memory block.</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">      @param   block  address of the allocated memory block to be freed.</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">      @return         osOK on successful deallocation, osErrorParameter if given memory block id</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">                      is nullptr or invalid, or osErrorResource if given memory block is in an</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">                      invalid memory pool state.</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">      @note You may call this function from ISR context.</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">    */</span></div><div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classrtos_1_1_memory_pool.html#a7d6a78f2054f1e24ea86f7f4c4df76c8">  184</a></span>     osStatus <a class="code" href="classrtos_1_1_memory_pool.html#a7d6a78f2054f1e24ea86f7f4c4df76c8">free</a>(T *block)</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>     {</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>         <span class="keywordflow">return</span> osMemoryPoolFree(_id, block);</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>     }</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> </div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>     osMemoryPoolId_t             _id;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>     <span class="keywordtype">char</span>                         _pool_mem[MBED_RTOS_STORAGE_MEM_POOL_MEM_SIZE(pool_sz, <span class="keyword">sizeof</span>(T))];</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>     <a class="code" href="structos_rtx_memory_pool__t.html">mbed_rtos_storage_mem_pool_t</a> _obj_mem;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> };<span class="comment"></span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment">/** @}*/</span><span class="comment"></span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment">/** @}*/</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> }</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="preprocessor">#endif</span></div><div class="ttc" id="classrtos_1_1_memory_pool_html_a156294d0fe3e6e70fbc2708420e5dcd6"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a156294d0fe3e6e70fbc2708420e5dcd6">rtos::MemoryPool::~MemoryPool</a></div><div class="ttdeci">~MemoryPool()</div><div class="ttdoc">Destroy a memory pool. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00078">MemoryPool.h:78</a></div></div>
+<div class="ttc" id="structos_rtx_memory_pool__t_html"><div class="ttname"><a href="structos_rtx_memory_pool__t.html">osRtxMemoryPool_t</a></div><div class="ttdoc">Memory Pool Control Block. </div><div class="ttdef"><b>Definition:</b> <a href="rtx__os_8h_source.html#l00223">rtx_os.h:223</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html"><div class="ttname"><a href="classrtos_1_1_memory_pool.html">rtos::MemoryPool</a></div><div class="ttdoc">Define and manage fixed-size memory pools of objects of a given type. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00055">MemoryPool.h:55</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_adbfae7a1794bea0634a70eab32325c6c"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#adbfae7a1794bea0634a70eab32325c6c">rtos::MemoryPool::calloc_until</a></div><div class="ttdeci">T * calloc_until(uint64_t millisec)</div><div class="ttdoc">Allocate a memory block from a memory pool, blocking, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00167">MemoryPool.h:167</a></div></div>
+<div class="ttc" id="structos_memory_pool_attr__t_html"><div class="ttname"><a href="structos_memory_pool_attr__t.html">osMemoryPoolAttr_t</a></div><div class="ttdoc">Attributes structure for memory pool. </div><div class="ttdef"><b>Definition:</b> <a href="cmsis__os2_8h_source.html#l00285">cmsis_os2.h:285</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ab8d61f499dede9201b13d420124c0fed"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ab8d61f499dede9201b13d420124c0fed">rtos::MemoryPool::alloc_until</a></div><div class="ttdeci">T * alloc_until(uint64_t millisec)</div><div class="ttdoc">Allocate a memory block from a memory pool, blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00114">MemoryPool.h:114</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ae7f986b1e99fc96f0ff59f41ea52c087"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ae7f986b1e99fc96f0ff59f41ea52c087">rtos::MemoryPool::alloc_for</a></div><div class="ttdeci">T * alloc_for(uint32_t millisec)</div><div class="ttdoc">Allocate a memory block from a memory pool, optionally blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00099">MemoryPool.h:99</a></div></div>
+<div class="ttc" id="structos_memory_pool_attr__t_html_a8c66c30fe3b487298af0e70eb93a197a"><div class="ttname"><a href="structos_memory_pool_attr__t.html#a8c66c30fe3b487298af0e70eb93a197a">osMemoryPoolAttr_t::cb_mem</a></div><div class="ttdeci">void * cb_mem</div><div class="ttdoc">memory for control block </div><div class="ttdef"><b>Definition:</b> <a href="cmsis__os2_8h_source.html#l00288">cmsis_os2.h:288</a></div></div>
+<div class="ttc" id="classmbed_1_1_non_copyable_html"><div class="ttname"><a href="classmbed_1_1_non_copyable.html">mbed::NonCopyable</a></div><div class="ttdoc">Prevents generation of copy constructor and copy assignment operator in derived classes. </div><div class="ttdef"><b>Definition:</b> <a href="_non_copyable_8h_source.html#l00169">NonCopyable.h:169</a></div></div>
+<div class="ttc" id="structos_memory_pool_attr__t_html_ac24b31114b3e60ed1e41bf9a166aad6d"><div class="ttname"><a href="structos_memory_pool_attr__t.html#ac24b31114b3e60ed1e41bf9a166aad6d">osMemoryPoolAttr_t::mp_mem</a></div><div class="ttdeci">void * mp_mem</div><div class="ttdoc">memory for data storage </div><div class="ttdef"><b>Definition:</b> <a href="cmsis__os2_8h_source.html#l00290">cmsis_os2.h:290</a></div></div>
+<div class="ttc" id="structos_memory_pool_attr__t_html_a5c542fd75887b7be589b39a2062910de"><div class="ttname"><a href="structos_memory_pool_attr__t.html#a5c542fd75887b7be589b39a2062910de">osMemoryPoolAttr_t::cb_size</a></div><div class="ttdeci">uint32_t cb_size</div><div class="ttdoc">size of provided memory for control block </div><div class="ttdef"><b>Definition:</b> <a href="cmsis__os2_8h_source.html#l00289">cmsis_os2.h:289</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a7d6a78f2054f1e24ea86f7f4c4df76c8"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a7d6a78f2054f1e24ea86f7f4c4df76c8">rtos::MemoryPool::free</a></div><div class="ttdeci">osStatus free(T *block)</div><div class="ttdoc">Free a memory block. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00184">MemoryPool.h:184</a></div></div>
+<div class="ttc" id="group__platform___assert_html_ga07d05086e9e83ba1129461868cf49f27"><div class="ttname"><a href="group__platform___assert.html#ga07d05086e9e83ba1129461868cf49f27">MBED_ASSERT</a></div><div class="ttdeci">#define MBED_ASSERT(expr)                                                            </div><div class="ttdoc">MBED_ASSERT Declare runtime assertions: results in runtime error if condition is false. </div><div class="ttdef"><b>Definition:</b> <a href="mbed__assert_8h_source.html#l00065">mbed_assert.h:65</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a57a7f1af6e0c1feb0fca6a10504a6b21"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a57a7f1af6e0c1feb0fca6a10504a6b21">rtos::MemoryPool::calloc</a></div><div class="ttdeci">T * calloc(void)</div><div class="ttdoc">Allocate a memory block from a memory pool, without blocking, and set memory block to zero...</div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00133">MemoryPool.h:133</a></div></div>
+<div class="ttc" id="namespacertos_1_1_kernel_html_a19d37a6ee49d4e132e82c3c4f3d0ca90"><div class="ttname"><a href="namespacertos_1_1_kernel.html#a19d37a6ee49d4e132e82c3c4f3d0ca90">rtos::Kernel::get_ms_count</a></div><div class="ttdeci">uint64_t get_ms_count()</div><div class="ttdoc">Read the current RTOS kernel millisecond tick count. </div></div>
+<div class="ttc" id="namespacertos_html"><div class="ttname"><a href="namespacertos.html">rtos</a></div><div class="ttdef"><b>Definition:</b> <a href="_task_base_8h_source.html#l00025">TaskBase.h:25</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ad84b296839bf3f443cd44918baa08592"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ad84b296839bf3f443cd44918baa08592">rtos::MemoryPool::MemoryPool</a></div><div class="ttdeci">MemoryPool()</div><div class="ttdoc">Create and Initialize a memory pool. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00062">MemoryPool.h:62</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ac3facb777299ea49d9be79884fdbada3"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ac3facb777299ea49d9be79884fdbada3">rtos::MemoryPool::calloc_for</a></div><div class="ttdeci">T * calloc_for(uint32_t millisec)</div><div class="ttdoc">Allocate a memory block from a memory pool, optionally blocking, and set memory block to zero...</div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00148">MemoryPool.h:148</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a78ec40e113b7bf548bd130a4fb3718d1"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a78ec40e113b7bf548bd130a4fb3718d1">rtos::MemoryPool::alloc</a></div><div class="ttdeci">T * alloc(void)</div><div class="ttdoc">Allocate a memory block from a memory pool, without blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00088">MemoryPool.h:88</a></div></div>
+<div class="ttc" id="structos_memory_pool_attr__t_html_a2e5d8aa8630f560597dd5e85c86f8a73"><div class="ttname"><a href="structos_memory_pool_attr__t.html#a2e5d8aa8630f560597dd5e85c86f8a73">osMemoryPoolAttr_t::mp_size</a></div><div class="ttdeci">uint32_t mp_size</div><div class="ttdoc">size of provided memory for data storage </div><div class="ttdef"><b>Definition:</b> <a href="cmsis__os2_8h_source.html#l00291">cmsis_os2.h:291</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/_memory_pool_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:08:07 GMT -->
+</html>

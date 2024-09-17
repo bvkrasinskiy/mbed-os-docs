@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/ns__cmdline_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:08:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | ns_cmdline.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="ns__cmdline_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/ns__cmdline_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/ns__cmdline_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_c6fb7cfc6dd92a7f08bce53368056667.html">features</a></li><li class="navelem"><a class="el" href="dir_7b9915a6b90f4633002965b77ce294d4.html">frameworks</a></li><li class="navelem"><a class="el" href="dir_870bb5caa4b51d6cd9a0576077c0f0c4.html">mbed-client-cli</a></li><li class="navelem"><a class="el" href="dir_9fa5caf2fcafa1e2a76ede69e2aeaf75.html">mbed-client-cli</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ns_cmdline.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Command line library - mbedOS shell.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br/>
+<code>#include &lt;stdint.h&gt;</code><br/>
+<code>#include &lt;stddef.h&gt;</code><br/>
+<code>#include &lt;stdbool.h&gt;</code><br/>
+</div>
+<p><a href="ns__cmdline_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a13252b943191bde4a1001dd3757e11d2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a13252b943191bde4a1001dd3757e11d2">CMDLINE_RETCODE_COMMAND_BUSY</a>   2</td></tr>
+<tr class="memdesc:a13252b943191bde4a1001dd3757e11d2"><td class="mdescLeft"> </td><td class="mdescRight">Command Busy.  <a href="#a13252b943191bde4a1001dd3757e11d2">More...</a><br/></td></tr>
+<tr class="separator:a13252b943191bde4a1001dd3757e11d2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa4ec81569acb81bd40fbf2689ca97adc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#aa4ec81569acb81bd40fbf2689ca97adc">CMDLINE_RETCODE_EXCUTING_CONTINUE</a>   1</td></tr>
+<tr class="memdesc:aa4ec81569acb81bd40fbf2689ca97adc"><td class="mdescLeft"> </td><td class="mdescRight">Execution continue in background.  <a href="#aa4ec81569acb81bd40fbf2689ca97adc">More...</a><br/></td></tr>
+<tr class="separator:aa4ec81569acb81bd40fbf2689ca97adc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa49acf1e2c537116bdaf737a13831962"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#aa49acf1e2c537116bdaf737a13831962">CMDLINE_RETCODE_SUCCESS</a>   0</td></tr>
+<tr class="memdesc:aa49acf1e2c537116bdaf737a13831962"><td class="mdescLeft"> </td><td class="mdescRight">Execution Success.  <a href="#aa49acf1e2c537116bdaf737a13831962">More...</a><br/></td></tr>
+<tr class="separator:aa49acf1e2c537116bdaf737a13831962"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5439f9bb9821b37d6a1f5b098cbda732"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a5439f9bb9821b37d6a1f5b098cbda732">CMDLINE_RETCODE_FAIL</a>   -1</td></tr>
+<tr class="memdesc:a5439f9bb9821b37d6a1f5b098cbda732"><td class="mdescLeft"> </td><td class="mdescRight">Execution Fail.  <a href="#a5439f9bb9821b37d6a1f5b098cbda732">More...</a><br/></td></tr>
+<tr class="separator:a5439f9bb9821b37d6a1f5b098cbda732"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b15ee50890a5d33b9ef5d0e638fd392"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a6b15ee50890a5d33b9ef5d0e638fd392">CMDLINE_RETCODE_INVALID_PARAMETERS</a>   -2</td></tr>
+<tr class="memdesc:a6b15ee50890a5d33b9ef5d0e638fd392"><td class="mdescLeft"> </td><td class="mdescRight">Command parameters was incorrect.  <a href="#a6b15ee50890a5d33b9ef5d0e638fd392">More...</a><br/></td></tr>
+<tr class="separator:a6b15ee50890a5d33b9ef5d0e638fd392"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a105de69d1a3d1f8f30467f12186bb7c3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a105de69d1a3d1f8f30467f12186bb7c3">CMDLINE_RETCODE_COMMAND_NOT_IMPLEMENTED</a>   -3</td></tr>
+<tr class="memdesc:a105de69d1a3d1f8f30467f12186bb7c3"><td class="mdescLeft"> </td><td class="mdescRight">Command not implemented.  <a href="#a105de69d1a3d1f8f30467f12186bb7c3">More...</a><br/></td></tr>
+<tr class="separator:a105de69d1a3d1f8f30467f12186bb7c3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a87d11a4aa48be449b2ab3e9526a31a90"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a87d11a4aa48be449b2ab3e9526a31a90">CMDLINE_RETCODE_COMMAND_CB_MISSING</a>   -4</td></tr>
+<tr class="memdesc:a87d11a4aa48be449b2ab3e9526a31a90"><td class="mdescLeft"> </td><td class="mdescRight">Command callback function missing.  <a href="#a87d11a4aa48be449b2ab3e9526a31a90">More...</a><br/></td></tr>
+<tr class="separator:a87d11a4aa48be449b2ab3e9526a31a90"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a873242f30f7ac2723a62cda2a2b4c5bb"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a873242f30f7ac2723a62cda2a2b4c5bb">CMDLINE_RETCODE_COMMAND_NOT_FOUND</a>   -5</td></tr>
+<tr class="memdesc:a873242f30f7ac2723a62cda2a2b4c5bb"><td class="mdescLeft"> </td><td class="mdescRight">Command not found.  <a href="#a873242f30f7ac2723a62cda2a2b4c5bb">More...</a><br/></td></tr>
+<tr class="separator:a873242f30f7ac2723a62cda2a2b4c5bb"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a174276cf8e6916f081a2fcaacef2a2b2"><td align="right" class="memItemLeft" valign="top">typedef void( </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a174276cf8e6916f081a2fcaacef2a2b2">cmd_print_t</a>) (const char *, va_list)</td></tr>
+<tr class="memdesc:a174276cf8e6916f081a2fcaacef2a2b2"><td class="mdescLeft"> </td><td class="mdescRight">typedef for print functions  <a href="#a174276cf8e6916f081a2fcaacef2a2b2">More...</a><br/></td></tr>
+<tr class="separator:a174276cf8e6916f081a2fcaacef2a2b2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a59b998c793872af57f93bf9341f4a5ed"><td align="right" class="memItemLeft" valign="top">typedef void( </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a59b998c793872af57f93bf9341f4a5ed">cmd_ready_cb_f</a>) (int)</td></tr>
+<tr class="memdesc:a59b998c793872af57f93bf9341f4a5ed"><td class="mdescLeft"> </td><td class="mdescRight">typedef for ready cb function  <a href="#a59b998c793872af57f93bf9341f4a5ed">More...</a><br/></td></tr>
+<tr class="separator:a59b998c793872af57f93bf9341f4a5ed"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a83f536b5da470edd1c915d9f7c83f0b0"><td align="right" class="memItemLeft" valign="top">typedef int( </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a83f536b5da470edd1c915d9f7c83f0b0">cmd_run_cb</a>) (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a83f536b5da470edd1c915d9f7c83f0b0"><td class="mdescLeft"> </td><td class="mdescRight">Callback called when your command is run.  <a href="#a83f536b5da470edd1c915d9f7c83f0b0">More...</a><br/></td></tr>
+<tr class="separator:a83f536b5da470edd1c915d9f7c83f0b0"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af4d5197c2b5a223024ae3bcf39f327fe"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#af4d5197c2b5a223024ae3bcf39f327fe">cmd_init</a> (<a class="el" href="ns__cmdline_8h.html#a174276cf8e6916f081a2fcaacef2a2b2">cmd_print_t</a> *outf)</td></tr>
+<tr class="memdesc:af4d5197c2b5a223024ae3bcf39f327fe"><td class="mdescLeft"> </td><td class="mdescRight">Initialize cmdline class.  <a href="#af4d5197c2b5a223024ae3bcf39f327fe">More...</a><br/></td></tr>
+<tr class="separator:af4d5197c2b5a223024ae3bcf39f327fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2dcddff7e47b2c7408e409ff15ff22d4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a2dcddff7e47b2c7408e409ff15ff22d4">cmd_ready</a> (int retcode)</td></tr>
+<tr class="memdesc:a2dcddff7e47b2c7408e409ff15ff22d4"><td class="mdescLeft"> </td><td class="mdescRight">Command ready function for <b>special</b> cases.  <a href="#a2dcddff7e47b2c7408e409ff15ff22d4">More...</a><br/></td></tr>
+<tr class="separator:a2dcddff7e47b2c7408e409ff15ff22d4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a18b10bb3c4931d2c33784dee841c2f58"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a18b10bb3c4931d2c33784dee841c2f58">cmd_set_ready_cb</a> (<a class="el" href="ns__cmdline_8h.html#a59b998c793872af57f93bf9341f4a5ed">cmd_ready_cb_f</a> *cb)</td></tr>
+<tr class="memdesc:a18b10bb3c4931d2c33784dee841c2f58"><td class="mdescLeft"> </td><td class="mdescRight">Configure cb which will be called after commands are executed or cmd_ready is called.  <a href="#a18b10bb3c4931d2c33784dee841c2f58">More...</a><br/></td></tr>
+<tr class="separator:a18b10bb3c4931d2c33784dee841c2f58"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac7404b1bbfe5b44c4e163fc4d0aa1a99"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ac7404b1bbfe5b44c4e163fc4d0aa1a99">cmd_next</a> (int retcode)</td></tr>
+<tr class="memdesc:ac7404b1bbfe5b44c4e163fc4d0aa1a99"><td class="mdescLeft"> </td><td class="mdescRight">execute next command if any  <a href="#ac7404b1bbfe5b44c4e163fc4d0aa1a99">More...</a><br/></td></tr>
+<tr class="separator:ac7404b1bbfe5b44c4e163fc4d0aa1a99"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0f6f6de2f7736cda363f37074f4c709c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a0f6f6de2f7736cda363f37074f4c709c">cmd_free</a> (void)</td></tr>
+<tr class="memdesc:a0f6f6de2f7736cda363f37074f4c709c"><td class="mdescLeft"> </td><td class="mdescRight">Free cmd class.  <a href="#a0f6f6de2f7736cda363f37074f4c709c">More...</a><br/></td></tr>
+<tr class="separator:a0f6f6de2f7736cda363f37074f4c709c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad67c8bf0ef43c150d8c1dd4f0e04f4f1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ad67c8bf0ef43c150d8c1dd4f0e04f4f1">cmd_reset</a> (void)</td></tr>
+<tr class="memdesc:ad67c8bf0ef43c150d8c1dd4f0e04f4f1"><td class="mdescLeft"> </td><td class="mdescRight">Reset cmdline to default values detach external commands, delete all variables and aliases.  <a href="#ad67c8bf0ef43c150d8c1dd4f0e04f4f1">More...</a><br/></td></tr>
+<tr class="separator:ad67c8bf0ef43c150d8c1dd4f0e04f4f1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1e27f24541af9f68c1b4d34ec840e7ba"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a1e27f24541af9f68c1b4d34ec840e7ba">cmd_history_size</a> (uint8_t max)</td></tr>
+<tr class="memdesc:a1e27f24541af9f68c1b4d34ec840e7ba"><td class="mdescLeft"> </td><td class="mdescRight">Configure command history size (default 32)  <a href="#a1e27f24541af9f68c1b4d34ec840e7ba">More...</a><br/></td></tr>
+<tr class="separator:a1e27f24541af9f68c1b4d34ec840e7ba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a566cc4518d2109747c9f8426f58480d6"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a566cc4518d2109747c9f8426f58480d6">cmd_printf</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a566cc4518d2109747c9f8426f58480d6"><td class="mdescLeft"> </td><td class="mdescRight">command line print function This function should be used when user want to print something to the console  <a href="#a566cc4518d2109747c9f8426f58480d6">More...</a><br/></td></tr>
+<tr class="separator:a566cc4518d2109747c9f8426f58480d6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2d846c0d824ba45e268d9aad1b2c9141"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a2d846c0d824ba45e268d9aad1b2c9141">cmd_vprintf</a> (const char *fmt, va_list ap)</td></tr>
+<tr class="memdesc:a2d846c0d824ba45e268d9aad1b2c9141"><td class="mdescLeft"> </td><td class="mdescRight">command line print function This function should be used when user want to print something to the console with vprintf functionality  <a href="#a2d846c0d824ba45e268d9aad1b2c9141">More...</a><br/></td></tr>
+<tr class="separator:a2d846c0d824ba45e268d9aad1b2c9141"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af60814926bb03978bb093342ce1dcd7c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#af60814926bb03978bb093342ce1dcd7c">cmd_out_func</a> (<a class="el" href="ns__cmdline_8h.html#a174276cf8e6916f081a2fcaacef2a2b2">cmd_print_t</a> *outf)</td></tr>
+<tr class="memdesc:af60814926bb03978bb093342ce1dcd7c"><td class="mdescLeft"> </td><td class="mdescRight">Reconfigure default cmdline out function (cmd_printf)  <a href="#af60814926bb03978bb093342ce1dcd7c">More...</a><br/></td></tr>
+<tr class="separator:af60814926bb03978bb093342ce1dcd7c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad3c1655694d36e5dd4bb186e0ac2e1ee"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ad3c1655694d36e5dd4bb186e0ac2e1ee">cmd_ctrl_func</a> (void(*sohf)(uint8_t c))</td></tr>
+<tr class="memdesc:ad3c1655694d36e5dd4bb186e0ac2e1ee"><td class="mdescLeft"> </td><td class="mdescRight">Configure function, which will be called when Ctrl+A is pressed.  <a href="#ad3c1655694d36e5dd4bb186e0ac2e1ee">More...</a><br/></td></tr>
+<tr class="separator:ad3c1655694d36e5dd4bb186e0ac2e1ee"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abdcd4466c0ea8183499e693c898aa912"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#abdcd4466c0ea8183499e693c898aa912">cmd_mutex_wait_func</a> (void(*mutex_wait_f)(void))</td></tr>
+<tr class="memdesc:abdcd4466c0ea8183499e693c898aa912"><td class="mdescLeft"> </td><td class="mdescRight">Configure mutex wait function By default, cmd_printf calls may not be thread safe, depending on the implementation of the used output.  <a href="#abdcd4466c0ea8183499e693c898aa912">More...</a><br/></td></tr>
+<tr class="separator:abdcd4466c0ea8183499e693c898aa912"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a39658b6b5cc381574302110cc17365ab"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a39658b6b5cc381574302110cc17365ab">cmd_mutex_release_func</a> (void(*mutex_release_f)(void))</td></tr>
+<tr class="memdesc:a39658b6b5cc381574302110cc17365ab"><td class="mdescLeft"> </td><td class="mdescRight">Configure mutex wait function By default, cmd_printf calls may not be thread safe, depending on the implementation of the used output.  <a href="#a39658b6b5cc381574302110cc17365ab">More...</a><br/></td></tr>
+<tr class="separator:a39658b6b5cc381574302110cc17365ab"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1330464b55064d8d4864f066a7f5c0e1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a1330464b55064d8d4864f066a7f5c0e1">cmd_mutex_lock</a> (void)</td></tr>
+<tr class="memdesc:a1330464b55064d8d4864f066a7f5c0e1"><td class="mdescLeft"> </td><td class="mdescRight">Retrieve output mutex lock This can be used to retrieve the output mutex when multiple cmd_printf/cmd_vprintf calls must be guaranteed to be grouped together in a thread safe manner.  <a href="#a1330464b55064d8d4864f066a7f5c0e1">More...</a><br/></td></tr>
+<tr class="separator:a1330464b55064d8d4864f066a7f5c0e1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2aa9d7247100e59e3d54a8da4bc41824"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a2aa9d7247100e59e3d54a8da4bc41824">cmd_mutex_unlock</a> (void)</td></tr>
+<tr class="memdesc:a2aa9d7247100e59e3d54a8da4bc41824"><td class="mdescLeft"> </td><td class="mdescRight">Release output mutex lock This can be used to release the output mutex once it has been retrieved with <a class="el" href="ns__cmdline_8h.html#a1330464b55064d8d4864f066a7f5c0e1" title="Retrieve output mutex lock This can be used to retrieve the output mutex when multiple cmd_printf/cmd...">cmd_mutex_lock()</a> Exact behaviour depends on the implementation of the configured mutex, but counting mutexes are required.  <a href="#a2aa9d7247100e59e3d54a8da4bc41824">More...</a><br/></td></tr>
+<tr class="separator:a2aa9d7247100e59e3d54a8da4bc41824"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2f9bd3b2b153779fa3263ae2a1e455a1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a2f9bd3b2b153779fa3263ae2a1e455a1">cmd_output</a> (void)</td></tr>
+<tr class="memdesc:a2f9bd3b2b153779fa3263ae2a1e455a1"><td class="mdescLeft"> </td><td class="mdescRight">Refresh output.  <a href="#a2f9bd3b2b153779fa3263ae2a1e455a1">More...</a><br/></td></tr>
+<tr class="separator:a2f9bd3b2b153779fa3263ae2a1e455a1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa14127c3a0928e91e5d8d27da2de8b9f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#aa14127c3a0928e91e5d8d27da2de8b9f">default_cmd_response_out</a> (const char *fmt, va_list ap)</td></tr>
+<tr class="memdesc:aa14127c3a0928e91e5d8d27da2de8b9f"><td class="mdescLeft"> </td><td class="mdescRight">default cmd response function, use stdout  <a href="#aa14127c3a0928e91e5d8d27da2de8b9f">More...</a><br/></td></tr>
+<tr class="separator:aa14127c3a0928e91e5d8d27da2de8b9f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af6e47d29750792566938dfbf656f9207"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#af6e47d29750792566938dfbf656f9207">cmd_init_screen</a> (void)</td></tr>
+<tr class="memdesc:af6e47d29750792566938dfbf656f9207"><td class="mdescLeft"> </td><td class="mdescRight">Initialize screen.  <a href="#af6e47d29750792566938dfbf656f9207">More...</a><br/></td></tr>
+<tr class="separator:af6e47d29750792566938dfbf656f9207"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a40a0ce650f64f6ecc47cf25953f1d2eb"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a40a0ce650f64f6ecc47cf25953f1d2eb">cmd_echo_state</a> (void)</td></tr>
+<tr class="memdesc:a40a0ce650f64f6ecc47cf25953f1d2eb"><td class="mdescLeft"> </td><td class="mdescRight">Get echo state.  <a href="#a40a0ce650f64f6ecc47cf25953f1d2eb">More...</a><br/></td></tr>
+<tr class="separator:a40a0ce650f64f6ecc47cf25953f1d2eb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac5766054498ba9838b80ddaa0d9f0e94"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ac5766054498ba9838b80ddaa0d9f0e94">cmd_echo_off</a> (void)</td></tr>
+<tr class="memdesc:ac5766054498ba9838b80ddaa0d9f0e94"><td class="mdescLeft"> </td><td class="mdescRight">Echo off.  <a href="#ac5766054498ba9838b80ddaa0d9f0e94">More...</a><br/></td></tr>
+<tr class="separator:ac5766054498ba9838b80ddaa0d9f0e94"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9d06e700ddf35a090c585d00fea4539c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a9d06e700ddf35a090c585d00fea4539c">cmd_echo_on</a> (void)</td></tr>
+<tr class="memdesc:a9d06e700ddf35a090c585d00fea4539c"><td class="mdescLeft"> </td><td class="mdescRight">Echo on.  <a href="#a9d06e700ddf35a090c585d00fea4539c">More...</a><br/></td></tr>
+<tr class="separator:a9d06e700ddf35a090c585d00fea4539c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:add139455afef07679c3da18a4631c984"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#add139455afef07679c3da18a4631c984">cmd_char_input</a> (int16_t u_data)</td></tr>
+<tr class="memdesc:add139455afef07679c3da18a4631c984"><td class="mdescLeft"> </td><td class="mdescRight">Enter character to console.  <a href="#add139455afef07679c3da18a4631c984">More...</a><br/></td></tr>
+<tr class="separator:add139455afef07679c3da18a4631c984"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a99697e0c3775372e1872a68a008acebc"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a99697e0c3775372e1872a68a008acebc">cmd_add</a> (const char *name, <a class="el" href="ns__cmdline_8h.html#a83f536b5da470edd1c915d9f7c83f0b0">cmd_run_cb</a> *callback, const char *<a class="el" href="structinfo.html">info</a>, const char *man)</td></tr>
+<tr class="memdesc:a99697e0c3775372e1872a68a008acebc"><td class="mdescLeft"> </td><td class="mdescRight">Add command to intepreter.  <a href="#a99697e0c3775372e1872a68a008acebc">More...</a><br/></td></tr>
+<tr class="separator:a99697e0c3775372e1872a68a008acebc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2b9a4d94823195a0edafa77b3a2ba290"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a2b9a4d94823195a0edafa77b3a2ba290">cmd_delete</a> (const char *name)</td></tr>
+<tr class="memdesc:a2b9a4d94823195a0edafa77b3a2ba290"><td class="mdescLeft"> </td><td class="mdescRight">delete command from intepreter  <a href="#a2b9a4d94823195a0edafa77b3a2ba290">More...</a><br/></td></tr>
+<tr class="separator:a2b9a4d94823195a0edafa77b3a2ba290"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a76cd7fd832d7203b9e88f20c6954760a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a76cd7fd832d7203b9e88f20c6954760a">cmd_exe</a> (char *str)</td></tr>
+<tr class="memdesc:a76cd7fd832d7203b9e88f20c6954760a"><td class="mdescLeft"> </td><td class="mdescRight">Command executer.  <a href="#a76cd7fd832d7203b9e88f20c6954760a">More...</a><br/></td></tr>
+<tr class="separator:a76cd7fd832d7203b9e88f20c6954760a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae280bff73322422ae27cadf932e3ff28"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ae280bff73322422ae27cadf932e3ff28">cmd_alias_add</a> (const char *alias, const char *value)</td></tr>
+<tr class="memdesc:ae280bff73322422ae27cadf932e3ff28"><td class="mdescLeft"> </td><td class="mdescRight">Add alias to interpreter.  <a href="#ae280bff73322422ae27cadf932e3ff28">More...</a><br/></td></tr>
+<tr class="separator:ae280bff73322422ae27cadf932e3ff28"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae2b49e6dbe0fe89185080d62d808b700"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ae2b49e6dbe0fe89185080d62d808b700">cmd_variable_add</a> (char *variable, char *value)</td></tr>
+<tr class="memdesc:ae2b49e6dbe0fe89185080d62d808b700"><td class="mdescLeft"> </td><td class="mdescRight">Add Variable to interpreter.  <a href="#ae2b49e6dbe0fe89185080d62d808b700">More...</a><br/></td></tr>
+<tr class="separator:ae2b49e6dbe0fe89185080d62d808b700"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6feb47e1b8515a49c639fa5c5c7ccef"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ae6feb47e1b8515a49c639fa5c5c7ccef">cmd_variable_add_int</a> (char *variable, int value)</td></tr>
+<tr class="memdesc:ae6feb47e1b8515a49c639fa5c5c7ccef"><td class="mdescLeft"> </td><td class="mdescRight">Add integer variable to interpreter.  <a href="#ae6feb47e1b8515a49c639fa5c5c7ccef">More...</a><br/></td></tr>
+<tr class="separator:ae6feb47e1b8515a49c639fa5c5c7ccef"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aef0558f848fbc8376bf5ce0734a27b90"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#aef0558f848fbc8376bf5ce0734a27b90">cmd_request_screen_size</a> (void)</td></tr>
+<tr class="memdesc:aef0558f848fbc8376bf5ce0734a27b90"><td class="mdescLeft"> </td><td class="mdescRight">Request screen size from host Response are stored to variables: COLUMNS and LINES - as integer values.  <a href="#aef0558f848fbc8376bf5ce0734a27b90">More...</a><br/></td></tr>
+<tr class="separator:aef0558f848fbc8376bf5ce0734a27b90"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa559f4d9b24f47ba16cdce7a4110a069"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#aa559f4d9b24f47ba16cdce7a4110a069">cmd_parameter_index</a> (int argc, char *argv[], const char *key)</td></tr>
+<tr class="memdesc:aa559f4d9b24f47ba16cdce7a4110a069"><td class="mdescLeft"> </td><td class="mdescRight">find command parameter index by key.  <a href="#aa559f4d9b24f47ba16cdce7a4110a069">More...</a><br/></td></tr>
+<tr class="separator:aa559f4d9b24f47ba16cdce7a4110a069"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a575e2b015db558bbb547967f70af6a79"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a575e2b015db558bbb547967f70af6a79">cmd_has_option</a> (int argc, char *argv[], const char *key)</td></tr>
+<tr class="memdesc:a575e2b015db558bbb547967f70af6a79"><td class="mdescLeft"> </td><td class="mdescRight">check if command option is present.  <a href="#a575e2b015db558bbb547967f70af6a79">More...</a><br/></td></tr>
+<tr class="separator:a575e2b015db558bbb547967f70af6a79"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa815259dae0926cade1a655cf9967e8a"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#aa815259dae0926cade1a655cf9967e8a">cmd_parameter_bool</a> (int argc, char *argv[], const char *key, bool *value)</td></tr>
+<tr class="memdesc:aa815259dae0926cade1a655cf9967e8a"><td class="mdescLeft"> </td><td class="mdescRight">find command parameter by key.  <a href="#aa815259dae0926cade1a655cf9967e8a">More...</a><br/></td></tr>
+<tr class="separator:aa815259dae0926cade1a655cf9967e8a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae105ddd78ca0b89b74df33ec7c43f0a5"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ae105ddd78ca0b89b74df33ec7c43f0a5">cmd_parameter_val</a> (int argc, char *argv[], const char *key, char **value)</td></tr>
+<tr class="memdesc:ae105ddd78ca0b89b74df33ec7c43f0a5"><td class="mdescLeft"> </td><td class="mdescRight">find command parameter by key and return value (next parameter).  <a href="#ae105ddd78ca0b89b74df33ec7c43f0a5">More...</a><br/></td></tr>
+<tr class="separator:ae105ddd78ca0b89b74df33ec7c43f0a5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a97dd4077441bb3436d062e04e5ca76ed"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a97dd4077441bb3436d062e04e5ca76ed">cmd_parameter_int</a> (int argc, char *argv[], const char *key, int32_t *value)</td></tr>
+<tr class="memdesc:a97dd4077441bb3436d062e04e5ca76ed"><td class="mdescLeft"> </td><td class="mdescRight">find command parameter by key and return value (next parameter) in integer.  <a href="#a97dd4077441bb3436d062e04e5ca76ed">More...</a><br/></td></tr>
+<tr class="separator:a97dd4077441bb3436d062e04e5ca76ed"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a920a2c5fb252c54a9a9c9f051226032d"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#a920a2c5fb252c54a9a9c9f051226032d">cmd_parameter_float</a> (int argc, char *argv[], const char *key, float *value)</td></tr>
+<tr class="memdesc:a920a2c5fb252c54a9a9c9f051226032d"><td class="mdescLeft"> </td><td class="mdescRight">find command parameter by key and return value (next parameter) in float.  <a href="#a920a2c5fb252c54a9a9c9f051226032d">More...</a><br/></td></tr>
+<tr class="separator:a920a2c5fb252c54a9a9c9f051226032d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae0003edbd1e748a9d61f0516a3aac3a3"><td align="right" class="memItemLeft" valign="top">char * </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ae0003edbd1e748a9d61f0516a3aac3a3">cmd_parameter_last</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:ae0003edbd1e748a9d61f0516a3aac3a3"><td class="mdescLeft"> </td><td class="mdescRight">Get last command line parameter as string.  <a href="#ae0003edbd1e748a9d61f0516a3aac3a3">More...</a><br/></td></tr>
+<tr class="separator:ae0003edbd1e748a9d61f0516a3aac3a3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad9d72a2b0c451920f10a1014964e61aa"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="ns__cmdline_8h.html#ad9d72a2b0c451920f10a1014964e61aa">cmd_parameter_timestamp</a> (int argc, char *argv[], const char *key, int64_t *value)</td></tr>
+<tr class="memdesc:ad9d72a2b0c451920f10a1014964e61aa"><td class="mdescLeft"> </td><td class="mdescRight">find command parameter by key and return value (next parameter) in int64.  <a href="#ad9d72a2b0c451920f10a1014964e61aa">More...</a><br/></td></tr>
+<tr class="separator:ad9d72a2b0c451920f10a1014964e61aa"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Command line library - mbedOS shell. </p>
+<p>Usage example:</p>
+<div class="fragment"><div class="line"> <span class="comment">//simple print function</span></div><div class="line"> <span class="keywordtype">void</span> myprint(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, va_list ap){ vprintf(fmt, ap); }</div><div class="line"> <span class="comment">// simple ready cb, which call next command to be execute</span></div><div class="line"> <span class="keywordtype">void</span> cmd_ready_cb(<span class="keywordtype">int</span> retcode) { <a class="code" href="ns__cmdline_8h.html#ac7404b1bbfe5b44c4e163fc4d0aa1a99">cmd_next</a>( retcode ); }</div><div class="line"></div><div class="line"> <span class="comment">// dummy command with some option</span></div><div class="line"> <span class="keywordtype">int</span> cmd_dummy(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]){</div><div class="line">  <span class="keywordflow">if</span>( <a class="code" href="ns__cmdline_8h.html#a575e2b015db558bbb547967f70af6a79">cmd_has_option</a>(argc, argv, <span class="stringliteral">"o"</span>) ) {</div><div class="line">    <a class="code" href="ns__cmdline_8h.html#a566cc4518d2109747c9f8426f58480d6">cmd_printf</a>(<span class="stringliteral">"This is o option"</span>);</div><div class="line">  } <span class="keywordflow">else</span> {</div><div class="line">    <span class="keywordflow">return</span> <a class="code" href="ns__cmdline_8h.html#a6b15ee50890a5d33b9ef5d0e638fd392">CMDLINE_RETCODE_INVALID_PARAMETERS</a>;</div><div class="line">  }</div><div class="line">  <span class="keywordflow">return</span> <a class="code" href="ns__cmdline_8h.html#aa49acf1e2c537116bdaf737a13831962">CMDLINE_RETCODE_SUCCESS</a>;</div><div class="line">}</div><div class="line"> <span class="comment">// timer cb ( pseudo-timer-code )</span></div><div class="line"> <span class="keywordtype">void</span> timer_ready_cb(<span class="keywordtype">void</span>) {</div><div class="line">   <a class="code" href="ns__cmdline_8h.html#a2dcddff7e47b2c7408e409ff15ff22d4">cmd_ready</a>(<a class="code" href="ns__cmdline_8h.html#aa49acf1e2c537116bdaf737a13831962">CMDLINE_RETCODE_SUCCESS</a>);</div><div class="line"> }</div><div class="line"> <span class="comment">// long command, which need e.g. some events to finalize command execution</span></div><div class="line"> <span class="keywordtype">int</span> cmd_long(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] ) {</div><div class="line">   timer_start( 5000, timer_ready_cb );</div><div class="line">   <span class="keywordflow">return</span> <a class="code" href="ns__cmdline_8h.html#aa4ec81569acb81bd40fbf2689ca97adc">CMDLINE_RETCODE_EXCUTING_CONTINUE</a>;</div><div class="line"> }</div><div class="line"> <span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div><div class="line">   <a class="code" href="ns__cmdline_8h.html#af4d5197c2b5a223024ae3bcf39f327fe">cmd_init</a>( &amp;myprint );              <span class="comment">// initialize cmdline with print function</span></div><div class="line">   <a class="code" href="ns__cmdline_8h.html#a18b10bb3c4931d2c33784dee841c2f58">cmd_set_ready_cb</a>( cmd_ready_cb );  <span class="comment">// configure ready cb</span></div><div class="line">   <a class="code" href="ns__cmdline_8h.html#a99697e0c3775372e1872a68a008acebc">cmd_add</a>(<span class="stringliteral">"dummy"</span>, cmd_dummy, 0, 0); <span class="comment">// add one dummy command</span></div><div class="line">   <a class="code" href="ns__cmdline_8h.html#a99697e0c3775372e1872a68a008acebc">cmd_add</a>(<span class="stringliteral">"long"</span>, cmd_long, 0, 0);   <span class="comment">// add one dummy command</span></div><div class="line">   <span class="comment">//execute dummy and long commands</span></div><div class="line">   <a class="code" href="ns__cmdline_8h.html#a76cd7fd832d7203b9e88f20c6954760a">cmd_exe</a>( <span class="stringliteral">"dymmy;long"</span> );</div><div class="line"> }</div></div><!-- fragment --> 
+<p>Definition in file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a13252b943191bde4a1001dd3757e11d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_COMMAND_BUSY   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command Busy. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00070">70</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87d11a4aa48be449b2ab3e9526a31a90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_COMMAND_CB_MISSING   -4</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command callback function missing. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00076">76</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a873242f30f7ac2723a62cda2a2b4c5bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_COMMAND_NOT_FOUND   -5</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command not found. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00077">77</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a105de69d1a3d1f8f30467f12186bb7c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_COMMAND_NOT_IMPLEMENTED   -3</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command not implemented. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00075">75</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4ec81569acb81bd40fbf2689ca97adc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_EXCUTING_CONTINUE   1</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Execution continue in background. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00071">71</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5439f9bb9821b37d6a1f5b098cbda732"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_FAIL   -1</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Execution Fail. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00073">73</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b15ee50890a5d33b9ef5d0e638fd392"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_INVALID_PARAMETERS   -2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters was incorrect. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00074">74</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa49acf1e2c537116bdaf737a13831962"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CMDLINE_RETCODE_SUCCESS   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Execution Success. </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00072">72</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a174276cf8e6916f081a2fcaacef2a2b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void( cmd_print_t) (const char *, va_list)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>typedef for print functions </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00082">82</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59b998c793872af57f93bf9341f4a5ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void( cmd_ready_cb_f) (int)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>typedef for ready cb function </p>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00102">102</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83f536b5da470edd1c915d9f7c83f0b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef int( cmd_run_cb) (int argc, char *argv[])</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Callback called when your command is run. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>argv is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="ns__cmdline_8h_source.html#l00231">231</a> of file <a class="el" href="ns__cmdline_8h_source.html">ns_cmdline.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a99697e0c3775372e1872a68a008acebc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_add </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ns__cmdline_8h.html#a83f536b5da470edd1c915d9f7c83f0b0">cmd_run_cb</a> * </td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>man</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Add command to intepreter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">name</td><td>command string </td></tr>
+    <tr><td class="paramname">callback</td><td>This function is called when command line start executing </td></tr>
+    <tr><td class="paramname">info</td><td>Command short description which is visible in help command, or null if not in use </td></tr>
+    <tr><td class="paramname">man</td><td>Help page for this command. This is shown when executing command with invalid parameters or command with –help parameter. Can be null if not in use. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae280bff73322422ae27cadf932e3ff28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_alias_add </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>alias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Add alias to interpreter. </p>
+<p>Aliases are replaced with values before executing a command. All aliases must be started from beginning of line. null or empty value deletes alias. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> cmd_alias_add("print", "echo");</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> cmd_exe("print \"hello world!\""); // this is now same as "echo \"hello world!\"" .</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">alias</td><td>alias name </td></tr>
+    <tr><td class="paramname">value</td><td>value for alias. Values can be any visible ASCII -characters. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="add139455afef07679c3da18a4631c984"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_char_input </td>
+          <td>(</td>
+          <td class="paramtype">int16_t </td>
+          <td class="paramname"><em>u_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enter character to console. </p>
+<p>insert key pressess to cmdline called from main loop of application </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">u_data</td><td>char to be added to console </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3c1655694d36e5dd4bb186e0ac2e1ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_ctrl_func </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(uint8_t c) </td>
+          <td class="paramname"><em>sohf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure function, which will be called when Ctrl+A is pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">sohf</td><td>control function which called every time when user input control keys </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b9a4d94823195a0edafa77b3a2ba290"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_delete </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>delete command from intepreter </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">name</td><td>command to be delete </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac5766054498ba9838b80ddaa0d9f0e94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_echo_off </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Echo off. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9d06e700ddf35a090c585d00fea4539c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_echo_on </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Echo on. </p>
+
+</div>
+</div>
+<a class="anchor" id="a40a0ce650f64f6ecc47cf25953f1d2eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_echo_state </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get echo state. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if echo is on otherwise false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a76cd7fd832d7203b9e88f20c6954760a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_exe </td>
+          <td>(</td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command executer. </p>
+<p>Command executer, which split&amp;push command(s) to the buffer and start executing commands in cmd tasklet. if not, execute command directly. If command implementation returns CMDLINE_RETCODE_EXCUTING_CONTINUE, executor will wait for <a class="el" href="ns__cmdline_8h.html#a2dcddff7e47b2c7408e409ff15ff22d4" title="Command ready function for special cases. ">cmd_ready()</a> before continue to next command. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">str</td><td>command string, e.g. "help" </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f6f6de2f7736cda363f37074f4c709c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_free </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Free cmd class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a575e2b015db558bbb547967f70af6a79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_has_option </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>check if command option is present. </p>
+<p>e.g. cmd: "mycmd -c" </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> bool on = cmd_has_option( argc, argv, "p" );</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>option key to be find </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if option found otherwise false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e27f24541af9f68c1b4d34ec840e7ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t cmd_history_size </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>max</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure command history size (default 32) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">max</td><td>maximum history size max &gt; 0 -&gt; configure new value max = 0 -&gt; just return current value </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>current history max-size </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af4d5197c2b5a223024ae3bcf39f327fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ns__cmdline_8h.html#a174276cf8e6916f081a2fcaacef2a2b2">cmd_print_t</a> * </td>
+          <td class="paramname"><em>outf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize cmdline class. </p>
+<p>This is command line editor without any commands. Application needs to add commands that should be enabled. usage e.g. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> cmd_init( &amp;default_cmd_response_out );</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">outf</td><td>console printing function (like vprintf) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af6e47d29750792566938dfbf656f9207"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_init_screen </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize screen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1330464b55064d8d4864f066a7f5c0e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_mutex_lock </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Retrieve output mutex lock This can be used to retrieve the output mutex when multiple cmd_printf/cmd_vprintf calls must be guaranteed to be grouped together in a thread safe manner. </p>
+<p>Must be released by a following call to <a class="el" href="ns__cmdline_8h.html#a2aa9d7247100e59e3d54a8da4bc41824" title="Release output mutex lock This can be used to release the output mutex once it has been retrieved wit...">cmd_mutex_unlock()</a> For example:</p><ul>
+<li><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> cmd_mutex_lock();</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> for (i = 0; i &lt; 10; i++) {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     cmd_printf("%02x ", i);</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> }</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> // without locking a print from another thread could happen here</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> cmd_printf("\r\n);</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> cmd_mutex_unlock();</div></div><!-- fragment --> Exact behaviour depends on the implementation of the configured mutex, but counting mutexes are required. </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a39658b6b5cc381574302110cc17365ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_mutex_release_func </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void) </td>
+          <td class="paramname"><em>mutex_release_f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure mutex wait function By default, cmd_printf calls may not be thread safe, depending on the implementation of the used output. </p>
+<p>This can be used to set a callback function that will be called after each cmd_printf call. The specific implementation is up to the application developer, but simple mutex locking is assumed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2aa9d7247100e59e3d54a8da4bc41824"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_mutex_unlock </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Release output mutex lock This can be used to release the output mutex once it has been retrieved with <a class="el" href="ns__cmdline_8h.html#a1330464b55064d8d4864f066a7f5c0e1" title="Retrieve output mutex lock This can be used to retrieve the output mutex when multiple cmd_printf/cmd...">cmd_mutex_lock()</a> Exact behaviour depends on the implementation of the configured mutex, but counting mutexes are required. </p>
+
+</div>
+</div>
+<a class="anchor" id="abdcd4466c0ea8183499e693c898aa912"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_mutex_wait_func </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void) </td>
+          <td class="paramname"><em>mutex_wait_f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure mutex wait function By default, cmd_printf calls may not be thread safe, depending on the implementation of the used output. </p>
+<p>This can be used to set a callback function that will be called before each cmd_printf call. The specific implementation is up to the application developer, but simple mutex locking is assumed. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac7404b1bbfe5b44c4e163fc4d0aa1a99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_next </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>retcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>execute next command if any </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">retcode</td><td>last command return value </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af60814926bb03978bb093342ce1dcd7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_out_func </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ns__cmdline_8h.html#a174276cf8e6916f081a2fcaacef2a2b2">cmd_print_t</a> * </td>
+          <td class="paramname"><em>outf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reconfigure default cmdline out function (cmd_printf) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">outf</td><td>select console print function </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f9bd3b2b153779fa3263ae2a1e455a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_output </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Refresh output. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa815259dae0926cade1a655cf9967e8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_parameter_bool </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool * </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>find command parameter by key. </p>
+<p>if exists, return true, otherwise false. e.g. cmd: "mycmd enable 1" </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> int mycmd_command(int argc, char *argv[]) {</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>       bool value;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>       bool found = cmd_parameter_bool( argc, argv, "mykey", &amp;value );</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>       if( found ) return CMDLINE_RETCODE_SUCCESS;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>       else return CMDLINE_RETCODE_FAIL;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>   }</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>parameter key to be find </td></tr>
+    <tr><td class="paramname">value</td><td>parameter value to be fetch, if key not found value are untouched. "1" and "on" and "true" and "enable" and "allow" are True -value, all others false. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parameter key and value found otherwise false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a920a2c5fb252c54a9a9c9f051226032d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_parameter_float </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float * </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>find command parameter by key and return value (next parameter) in float. </p>
+<p>Only whitespaces are allowed in addition to the float to be read. e.g. cmd: "mycmd mykey myvalue" </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> float value;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> cmd_parameter_float( argc, argv, "key", &amp;value );</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. values begin from 1 and this means that the item 0 in the list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>parameter key to be found </td></tr>
+    <tr><td class="paramname">value</td><td>A pointer to a variable where to write the converted number. If value cannot be converted, it is not touched. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parameter key and a float found, otherwise return false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa559f4d9b24f47ba16cdce7a4110a069"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int cmd_parameter_index </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>find command parameter index by key. </p>
+<p>e.g. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> int main(void){</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>       //..init cmd..</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>       //..</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>       cmd_exe("mycmd enable")</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> int mycmd_command(int argc, char *argv[]) {</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>   bool found = cmd_parameter_index( argc, argv, "enable" ) &gt; 0;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> }</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>option key, which index you want to find out. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index where parameter was or -1 when not found </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a97dd4077441bb3436d062e04e5ca76ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_parameter_int </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t * </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>find command parameter by key and return value (next parameter) in integer. </p>
+<p>Only whitespaces are allowed in addition to the float to be read. e.g. cmd: "mycmd mykey myvalue" </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> int32_t value;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> cmd_parameter_int( argc, argv, "key", &amp;value );</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the item 0 in the list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>parameter key to be found </td></tr>
+    <tr><td class="paramname">value</td><td>A pointer to a variable where to write the converted number. If value cannot be converted, it is not touched. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parameter key and an integer is found, otherwise return false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae0003edbd1e748a9d61f0516a3aac3a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">char* cmd_parameter_last </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[] </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get last command line parameter as string. </p>
+<p>e.g. cmd: "mycmd hello world" cmd_parameter_last -&gt; "world" cmd: "mycmd" <a class="el" href="ns__cmdline_8h.html#ae0003edbd1e748a9d61f0516a3aac3a3" title="Get last command line parameter as string. ">cmd_parameter_last()</a> -&gt; NULL </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> cmd_parameter_last(argc, argv)</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to last parameter or NULL when there is no any parameters. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad9d72a2b0c451920f10a1014964e61aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_parameter_timestamp </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t * </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>find command parameter by key and return value (next parameter) in int64. </p>
+<p>e.g. cmd: "mycmd mykey myvalue" </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> uint32_t i;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> cmd_parameter_timestamp( argc, argv, "mykey", &amp;i );</div></div><!-- fragment --><p>Supports following formats: number -&gt; direct conversion 11:22:33:44:55:66:77:88 -&gt; converts to number seconds,tics -&gt; converts thread type timestamp to int64</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>parameter key to be find </td></tr>
+    <tr><td class="paramname">value</td><td>parameter value to be fetch, if key not found value are untouched. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parameter key and value found otherwise false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae105ddd78ca0b89b74df33ec7c43f0a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool cmd_parameter_val </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char ** </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>find command parameter by key and return value (next parameter). </p>
+<p>if exists, return parameter pointer, otherwise null. e.g. cmd: "mycmd mykey myvalue" </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> int mycmd_command(int argc, char *argv[]) {</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>     char *value;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     bool found = cmd_parameter_val( argc, argv, "mykey", &amp;value );</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     if( found ) return CMDLINE_RETCODE_SUCCESS;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>     else return CMDLINE_RETCODE_FAIL;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> }</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">argc</td><td>argc is the count of arguments given in argv pointer list. value begins from 1 and this means that the 0 item in list argv is a string to name of command. </td></tr>
+    <tr><td class="paramname">argv</td><td>is list of arguments. List size is given in argc parameter. Value in argv[0] is string to name of command. </td></tr>
+    <tr><td class="paramname">key</td><td>parameter key to be find </td></tr>
+    <tr><td class="paramname">value</td><td>pointer to pointer, which will point to cli input data when key and value found. if key or value not found this parameter are untouched. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parameter key and value found otherwise false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a566cc4518d2109747c9f8426f58480d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_printf </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname"><em>...</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>command line print function This function should be used when user want to print something to the console </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fmt</td><td>console print function (like printf) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2dcddff7e47b2c7408e409ff15ff22d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_ready </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>retcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command ready function for <b>special</b> cases. </p>
+<p>This need to be call if command implementation return CMDLINE_RETCODE_EXECUTING_CONTINUE because there is some background stuff ongoing before command is finally completed. Normally there is some event, which call <a class="el" href="ns__cmdline_8h.html#a2dcddff7e47b2c7408e409ff15ff22d4" title="Command ready function for special cases. ">cmd_ready()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">retcode</td><td>return code for command </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aef0558f848fbc8376bf5ce0734a27b90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_request_screen_size </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Request screen size from host Response are stored to variables: COLUMNS and LINES - as integer values. </p>
+<p>Note: Require terminal that handle request codes, like screen. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad67c8bf0ef43c150d8c1dd4f0e04f4f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_reset </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reset cmdline to default values detach external commands, delete all variables and aliases. </p>
+
+</div>
+</div>
+<a class="anchor" id="a18b10bb3c4931d2c33784dee841c2f58"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_set_ready_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ns__cmdline_8h.html#a59b998c793872af57f93bf9341f4a5ed">cmd_ready_cb_f</a> * </td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure cb which will be called after commands are executed or cmd_ready is called. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">cb</td><td>callback function for command ready </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2b49e6dbe0fe89185080d62d808b700"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_variable_add </td>
+          <td>(</td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>variable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Add Variable to interpreter. </p>
+<p>Variables are replaced with values before executing a command. To use variables from cli, use dollar ($) -character so that interpreter knows user want to use variable in that place. null or empty value deletes variable. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> cmd_variable_add("world", "hello world!");</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> cmd_exe("echo $world"); // this is now same as echo "hello world!" .</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">variable</td><td>Variable name, which will be replaced in interpreter. </td></tr>
+    <tr><td class="paramname">value</td><td>Value for variable. Values can contains white spaces and '"' or '"' characters. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae6feb47e1b8515a49c639fa5c5c7ccef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_variable_add_int </td>
+          <td>(</td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>variable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>value</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Add integer variable to interpreter. </p>
+<p>Variables are replaced with values before executing a command. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> cmd_variable_add_int("world", 2);</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> cmd_exe("echo $world"); // this is now same as 'echo 2' .</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">variable</td><td>Variable name, which will be replaced in interpreter. </td></tr>
+    <tr><td class="paramname">value</td><td>Value for variable </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2d846c0d824ba45e268d9aad1b2c9141"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cmd_vprintf </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list </td>
+          <td class="paramname"><em>ap</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>command line print function This function should be used when user want to print something to the console with vprintf functionality </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fmt</td><td>The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives. </td></tr>
+    <tr><td class="paramname">ap</td><td>list of parameters needed by format string. This must correspond properly with the conversion specifier. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa14127c3a0928e91e5d8d27da2de8b9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void default_cmd_response_out </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list </td>
+          <td class="paramname"><em>ap</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>default cmd response function, use stdout </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fmt</td><td>The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives. </td></tr>
+    <tr><td class="paramname">ap</td><td>list of parameters needed by format string. This must correspond properly with the conversion specifier. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/ns__cmdline_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:08:17 GMT -->
+</html>

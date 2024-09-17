@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_s_p_i.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:12:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | SPI Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="classmbed_1_1_s_p_i.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_s_p_i.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_s_p_i.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><b>mbed</b></li><li class="navelem"><a class="el" href="classmbed_1_1_s_p_i.html">SPI</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">SPI Class Reference<div class="ingroups"><a class="el" href="group__mbed-os-public.html">Public API</a> » <a class="el" href="group__drivers-public-api.html">Drivers</a> » <a class="el" href="group__drivers-public-api-spi.html">SPI</a> » <a class="el" href="group__drivers___s_p_i.html">SPI class</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>A <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Master, used for communicating with <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> slave devices.  
+ <a href="classmbed_1_1_s_p_i.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_s_p_i_8h_source.html">SPI.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SPI:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="classmbed_1_1_s_p_i.png" usemap="#SPI_map"/>
+  <map id="SPI_map" name="SPI_map">
+<area alt="NonCopyable&lt; SPI &gt;" coords="0,0,132,24" href="classmbed_1_1_non_copyable.html" shape="rect"/>
+<area alt="EMW3080B_SPI" coords="0,112,132,136" href="class_e_m_w3080_b___s_p_i.html" shape="rect"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a21d684ae9ab826c863c3d198fb761bad"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a21d684ae9ab826c863c3d198fb761bad">SPI</a> (PinName mosi, PinName miso, PinName sclk, PinName ssel=NC)</td></tr>
+<tr class="memdesc:a21d684ae9ab826c863c3d198fb761bad"><td class="mdescLeft"> </td><td class="mdescRight">Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins.  <a href="#a21d684ae9ab826c863c3d198fb761bad">More...</a><br/></td></tr>
+<tr class="separator:a21d684ae9ab826c863c3d198fb761bad"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0616bc0845ecebb978b0913bbe118262"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a0616bc0845ecebb978b0913bbe118262">SPI</a> (PinName mosi, PinName miso, PinName sclk, PinName ssel, <a class="el" href="structmbed_1_1use__gpio__ssel__t.html">use_gpio_ssel_t</a>)</td></tr>
+<tr class="memdesc:a0616bc0845ecebb978b0913bbe118262"><td class="mdescLeft"> </td><td class="mdescRight">Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins.  <a href="#a0616bc0845ecebb978b0913bbe118262">More...</a><br/></td></tr>
+<tr class="separator:a0616bc0845ecebb978b0913bbe118262"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab110082bbac4fc7d1a5ceb6942f4b5c0"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#ab110082bbac4fc7d1a5ceb6942f4b5c0">SPI</a> (const <a class="el" href="structspi__pinmap__t.html">spi_pinmap_t</a> &amp;static_pinmap)</td></tr>
+<tr class="memdesc:ab110082bbac4fc7d1a5ceb6942f4b5c0"><td class="mdescLeft"> </td><td class="mdescRight">Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins.  <a href="#ab110082bbac4fc7d1a5ceb6942f4b5c0">More...</a><br/></td></tr>
+<tr class="separator:ab110082bbac4fc7d1a5ceb6942f4b5c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3b90429f64efdd3708234ddcc051a7c7"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a3b90429f64efdd3708234ddcc051a7c7">SPI</a> (const <a class="el" href="structspi__pinmap__t.html">spi_pinmap_t</a> &amp;static_pinmap, PinName ssel)</td></tr>
+<tr class="memdesc:a3b90429f64efdd3708234ddcc051a7c7"><td class="mdescLeft"> </td><td class="mdescRight">Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins.  <a href="#a3b90429f64efdd3708234ddcc051a7c7">More...</a><br/></td></tr>
+<tr class="separator:a3b90429f64efdd3708234ddcc051a7c7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7627faa611c3645626b6b627755fcae7"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a7627faa611c3645626b6b627755fcae7">format</a> (int bits, int mode=0)</td></tr>
+<tr class="memdesc:a7627faa611c3645626b6b627755fcae7"><td class="mdescLeft"> </td><td class="mdescRight">Configure the data transmission format.  <a href="#a7627faa611c3645626b6b627755fcae7">More...</a><br/></td></tr>
+<tr class="separator:a7627faa611c3645626b6b627755fcae7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4426901f2bcededa2ae9c5e6547b9a2a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a4426901f2bcededa2ae9c5e6547b9a2a">frequency</a> (int hz=1000000)</td></tr>
+<tr class="memdesc:a4426901f2bcededa2ae9c5e6547b9a2a"><td class="mdescLeft"> </td><td class="mdescRight">Set the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus clock frequency.  <a href="#a4426901f2bcededa2ae9c5e6547b9a2a">More...</a><br/></td></tr>
+<tr class="separator:a4426901f2bcededa2ae9c5e6547b9a2a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a594e0eb0068da0fdc3d57e2d018c1994"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a594e0eb0068da0fdc3d57e2d018c1994">write</a> (int value)</td></tr>
+<tr class="memdesc:a594e0eb0068da0fdc3d57e2d018c1994"><td class="mdescLeft"> </td><td class="mdescRight">Write to the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Slave and return the response.  <a href="#a594e0eb0068da0fdc3d57e2d018c1994">More...</a><br/></td></tr>
+<tr class="separator:a594e0eb0068da0fdc3d57e2d018c1994"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aed26de49dd850c5014af2a513a6a808a"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#aed26de49dd850c5014af2a513a6a808a">write</a> (const char *tx_buffer, int tx_length, char *rx_buffer, int rx_length)</td></tr>
+<tr class="memdesc:aed26de49dd850c5014af2a513a6a808a"><td class="mdescLeft"> </td><td class="mdescRight">Write to the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Slave and obtain the response.  <a href="#aed26de49dd850c5014af2a513a6a808a">More...</a><br/></td></tr>
+<tr class="separator:aed26de49dd850c5014af2a513a6a808a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad67df83ace240f53c1276e24a37ff84c"><td align="right" class="memItemLeft" valign="top">virtual void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#ad67df83ace240f53c1276e24a37ff84c">lock</a> (void)</td></tr>
+<tr class="memdesc:ad67df83ace240f53c1276e24a37ff84c"><td class="mdescLeft"> </td><td class="mdescRight">Acquire exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus.  <a href="#ad67df83ace240f53c1276e24a37ff84c">More...</a><br/></td></tr>
+<tr class="separator:ad67df83ace240f53c1276e24a37ff84c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5d882b4e464e4f4bd59eab6c75297bda"><td align="right" class="memItemLeft" valign="top">virtual void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a5d882b4e464e4f4bd59eab6c75297bda">unlock</a> (void)</td></tr>
+<tr class="memdesc:a5d882b4e464e4f4bd59eab6c75297bda"><td class="mdescLeft"> </td><td class="mdescRight">Release exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus.  <a href="#a5d882b4e464e4f4bd59eab6c75297bda">More...</a><br/></td></tr>
+<tr class="separator:a5d882b4e464e4f4bd59eab6c75297bda"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abc9e3e51760dbdc066b1d082e496719e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#abc9e3e51760dbdc066b1d082e496719e">select</a> (void)</td></tr>
+<tr class="memdesc:abc9e3e51760dbdc066b1d082e496719e"><td class="mdescLeft"> </td><td class="mdescRight">Assert the Slave Select line, acquiring exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus.  <a href="#abc9e3e51760dbdc066b1d082e496719e">More...</a><br/></td></tr>
+<tr class="separator:abc9e3e51760dbdc066b1d082e496719e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0ae77235b32f5522d5d881baf2c52210"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a0ae77235b32f5522d5d881baf2c52210">deselect</a> (void)</td></tr>
+<tr class="memdesc:a0ae77235b32f5522d5d881baf2c52210"><td class="mdescLeft"> </td><td class="mdescRight">Deassert the Slave Select line, releasing exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus.  <a href="#a0ae77235b32f5522d5d881baf2c52210">More...</a><br/></td></tr>
+<tr class="separator:a0ae77235b32f5522d5d881baf2c52210"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a162d7008eb2691cb49f9f82796a63536"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a162d7008eb2691cb49f9f82796a63536">set_default_write_value</a> (char data)</td></tr>
+<tr class="memdesc:a162d7008eb2691cb49f9f82796a63536"><td class="mdescLeft"> </td><td class="mdescRight">Set default write data.  <a href="#a162d7008eb2691cb49f9f82796a63536">More...</a><br/></td></tr>
+<tr class="separator:a162d7008eb2691cb49f9f82796a63536"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afb6befa3793171528f94a42359f80285"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
+<tr class="memitem:afb6befa3793171528f94a42359f80285"><td align="right" class="memTemplItemLeft" valign="top">int </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#afb6befa3793171528f94a42359f80285">transfer</a> (const Type *tx_buffer, int tx_length, Type *rx_buffer, int rx_length, const <a class="el" href="classmbed_1_1_callback.html">event_callback_t</a> &amp;callback, int event=SPI_EVENT_COMPLETE)</td></tr>
+<tr class="memdesc:afb6befa3793171528f94a42359f80285"><td class="mdescLeft"> </td><td class="mdescRight">Start non-blocking <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> transfer using 8bit buffers.  <a href="#afb6befa3793171528f94a42359f80285">More...</a><br/></td></tr>
+<tr class="separator:afb6befa3793171528f94a42359f80285"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a90253410d768f60403698f5f383d1931"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a90253410d768f60403698f5f383d1931">abort_transfer</a> ()</td></tr>
+<tr class="memdesc:a90253410d768f60403698f5f383d1931"><td class="mdescLeft"> </td><td class="mdescRight">Abort the on-going <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> transfer, and continue with transfers in the queue, if any.  <a href="#a90253410d768f60403698f5f383d1931">More...</a><br/></td></tr>
+<tr class="separator:a90253410d768f60403698f5f383d1931"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aad7b4dd10bf4f4bb5eab6bdd11cebd44"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#aad7b4dd10bf4f4bb5eab6bdd11cebd44">clear_transfer_buffer</a> ()</td></tr>
+<tr class="memdesc:aad7b4dd10bf4f4bb5eab6bdd11cebd44"><td class="mdescLeft"> </td><td class="mdescRight">Clear the queue of transfers.  <a href="#aad7b4dd10bf4f4bb5eab6bdd11cebd44">More...</a><br/></td></tr>
+<tr class="separator:aad7b4dd10bf4f4bb5eab6bdd11cebd44"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7787a47c785a57ddd0307add8be643e1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a7787a47c785a57ddd0307add8be643e1">abort_all_transfers</a> ()</td></tr>
+<tr class="memdesc:a7787a47c785a57ddd0307add8be643e1"><td class="mdescLeft"> </td><td class="mdescRight">Clear the queue of transfers and abort the on-going transfer.  <a href="#a7787a47c785a57ddd0307add8be643e1">More...</a><br/></td></tr>
+<tr class="separator:a7787a47c785a57ddd0307add8be643e1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4885d525858929a6654d0da30dd77955"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_s_p_i.html#a4885d525858929a6654d0da30dd77955">set_dma_usage</a> (DMAUsage usage)</td></tr>
+<tr class="memdesc:a4885d525858929a6654d0da30dd77955"><td class="mdescLeft"> </td><td class="mdescRight">Configure DMA usage suggestion for non-blocking transfers.  <a href="#a4885d525858929a6654d0da30dd77955">More...</a><br/></td></tr>
+<tr class="separator:a4885d525858929a6654d0da30dd77955"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Master, used for communicating with <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> slave devices. </p>
+<p>The default format is set to 8-bits, mode 0, and a clock frequency of 1MHz.</p>
+<p>Most <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> devices will also require Chip Select and Reset signals. These can be controlled using <a class="el" href="classmbed_1_1_digital_out.html" title="A digital output, used for setting the state of a pin. ">DigitalOut</a> pins.</p>
+<dl class="section note"><dt>Note</dt><dd>Synchronization level: Thread safe</dd></dl>
+<p>Example of how to send a byte to a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> slave and record the response: </p><div class="fragment"><div class="line"><span class="preprocessor">#include "mbed.h"</span></div><div class="line"></div><div class="line"><a class="code" href="classmbed_1_1_s_p_i.html#a21d684ae9ab826c863c3d198fb761bad">SPI</a> device(SPI_MOSI, SPI_MISO, SPI_SCLK)</div><div class="line"></div><div class="line">DigitalOut chip_select(SPI_CS);</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main() {</div><div class="line">    device.lock();</div><div class="line">    chip_select = 0;</div><div class="line"></div><div class="line">    <span class="keywordtype">int</span> response = device.write(0xFF);</div><div class="line"></div><div class="line">    chip_select = 1;</div><div class="line">    device.unlock();</div><div class="line">}</div></div><!-- fragment --><p>Example using hardware Chip Select line: </p><div class="fragment"><div class="line"><span class="preprocessor">#include "mbed.h"</span></div><div class="line"></div><div class="line"><a class="code" href="classmbed_1_1_s_p_i.html#a21d684ae9ab826c863c3d198fb761bad">SPI</a> device(SPI_MOSI, SPI_MISO, SPI_SCLK, SPI_CS)</div><div class="line"></div><div class="line">int main() {</div><div class="line">    device.lock();</div><div class="line">    <span class="keywordtype">int</span> response = device.write(0xFF);</div><div class="line">    device.unlock();</div><div class="line">}</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="_s_p_i_8h_source.html#l00098">98</a> of file <a class="el" href="_s_p_i_8h_source.html">SPI.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a21d684ae9ab826c863c3d198fb761bad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_s_p_i.html">SPI</a> </td>
+          <td>(</td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>mosi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>miso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>sclk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>ssel</em> = <code>NC</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins. </p>
+<dl class="section note"><dt>Note</dt><dd>This constructor passes the SSEL pin selection to the target HAL. Not all targets support SSEL, so this cannot be relied on in portable code. Portable code should use the alternative constructor that uses GPIO for SSEL.</dd>
+<dd>
+You can specify mosi or miso as NC if not used.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mosi</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Master Out, Slave In pin. </td></tr>
+    <tr><td class="paramname">miso</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Master In, Slave Out pin. </td></tr>
+    <tr><td class="paramname">sclk</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Clock pin. </td></tr>
+    <tr><td class="paramname">ssel</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Chip Select pin. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0616bc0845ecebb978b0913bbe118262"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_s_p_i.html">SPI</a> </td>
+          <td>(</td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>mosi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>miso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>sclk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>ssel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmbed_1_1use__gpio__ssel__t.html">use_gpio_ssel_t</a> </td>
+          <td class="paramname"> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins. </p>
+<dl class="section note"><dt>Note</dt><dd>This constructor manipulates the SSEL pin as a GPIO output using a <a class="el" href="classmbed_1_1_digital_out.html" title="A digital output, used for setting the state of a pin. ">DigitalOut</a> object. This should work on any target, and permits the use of <a class="el" href="classmbed_1_1_s_p_i.html#abc9e3e51760dbdc066b1d082e496719e" title="Assert the Slave Select line, acquiring exclusive access to this SPI bus. ">select()</a> and <a class="el" href="classmbed_1_1_s_p_i.html#a0ae77235b32f5522d5d881baf2c52210" title="Deassert the Slave Select line, releasing exclusive access to this SPI bus. ">deselect()</a> methods to keep the pin asserted between transfers.</dd>
+<dd>
+You can specify mosi or miso as NC if not used.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">mosi</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Master Out, Slave In pin. </td></tr>
+    <tr><td class="paramname">miso</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Master In, Slave Out pin. </td></tr>
+    <tr><td class="paramname">sclk</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Clock pin. </td></tr>
+    <tr><td class="paramname">ssel</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Chip Select pin. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab110082bbac4fc7d1a5ceb6942f4b5c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_s_p_i.html">SPI</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspi__pinmap__t.html">spi_pinmap_t</a> &amp; </td>
+          <td class="paramname"><em>static_pinmap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins. </p>
+<dl class="section note"><dt>Note</dt><dd>This constructor passes the SSEL pin selection to the target HAL. Not all targets support SSEL, so this cannot be relied on in portable code. Portable code should use the alternative constructor that uses GPIO for SSEL.</dd>
+<dd>
+You can specify mosi or miso as NC if not used.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">static_pinmap</td><td>reference to structure which holds static pinmap. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3b90429f64efdd3708234ddcc051a7c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_s_p_i.html">SPI</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspi__pinmap__t.html">spi_pinmap_t</a> &amp; </td>
+          <td class="paramname"><em>static_pinmap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>ssel</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins. </p>
+<dl class="section note"><dt>Note</dt><dd>This constructor manipulates the SSEL pin as a GPIO output using a <a class="el" href="classmbed_1_1_digital_out.html" title="A digital output, used for setting the state of a pin. ">DigitalOut</a> object. This should work on any target, and permits the use of <a class="el" href="classmbed_1_1_s_p_i.html#abc9e3e51760dbdc066b1d082e496719e" title="Assert the Slave Select line, acquiring exclusive access to this SPI bus. ">select()</a> and <a class="el" href="classmbed_1_1_s_p_i.html#a0ae77235b32f5522d5d881baf2c52210" title="Deassert the Slave Select line, releasing exclusive access to this SPI bus. ">deselect()</a> methods to keep the pin asserted between transfers.</dd>
+<dd>
+You can specify mosi or miso as NC if not used.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">static_pinmap</td><td>reference to structure which holds static pinmap. </td></tr>
+    <tr><td class="paramname">ssel</td><td><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Chip Select pin. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7787a47c785a57ddd0307add8be643e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void abort_all_transfers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear the queue of transfers and abort the on-going transfer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a90253410d768f60403698f5f383d1931"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void abort_transfer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Abort the on-going <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> transfer, and continue with transfers in the queue, if any. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad7b4dd10bf4f4bb5eab6bdd11cebd44"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void clear_transfer_buffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear the queue of transfers. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0ae77235b32f5522d5d881baf2c52210"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void deselect </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Deassert the Slave Select line, releasing exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7627faa611c3645626b6b627755fcae7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void format </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>bits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>mode</em> = <code>0</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure the data transmission format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">bits</td><td>Number of bits per <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> frame (4 - 32, target dependent). </td></tr>
+    <tr><td class="paramname">mode</td><td>Clock polarity and phase mode (0 - 3).</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">mode | POL PHA</div><div class="line">-----+--------</div><div class="line">  0  |  0   0</div><div class="line">  1  |  0   1</div><div class="line">  2  |  1   0</div><div class="line">  3  |  1   1</div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="a4426901f2bcededa2ae9c5e6547b9a2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void frequency </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>hz</em> = <code>1000000</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus clock frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">hz</td><td>Clock frequency in Hz (default = 1MHz). </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad67df83ace240f53c1276e24a37ff84c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual void lock </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Acquire exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus. </p>
+
+</div>
+</div>
+<a class="anchor" id="abc9e3e51760dbdc066b1d082e496719e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void select </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Assert the Slave Select line, acquiring exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus. </p>
+<p>If use_gpio_ssel was not passed to the constructor, this only acquires exclusive access; it cannot assert the Slave Select line. </p>
+
+</div>
+</div>
+<a class="anchor" id="a162d7008eb2691cb49f9f82796a63536"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_default_write_value </td>
+          <td>(</td>
+          <td class="paramtype">char </td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set default write data. </p>
+<p><a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> requires the master to send some data during a read operation. Different devices may require different default byte values. For example: A SD Card requires default bytes to be 0xFF.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">data</td><td>Default character to be transmitted during a read operation. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4885d525858929a6654d0da30dd77955"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int set_dma_usage </td>
+          <td>(</td>
+          <td class="paramtype">DMAUsage </td>
+          <td class="paramname"><em>usage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure DMA usage suggestion for non-blocking transfers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">usage</td><td>The usage DMA hint for peripheral.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result of the operation. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">0</td><td>The usage was set. </td></tr>
+    <tr><td class="paramname">-1</td><td>Usage cannot be set as there is an ongoing transaction. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afb6befa3793171528f94a42359f80285"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int transfer </td>
+          <td>(</td>
+          <td class="paramtype">const Type * </td>
+          <td class="paramname"><em>tx_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>tx_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type * </td>
+          <td class="paramname"><em>rx_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>rx_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmbed_1_1_callback.html">event_callback_t</a> &amp; </td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>event</em> = <code>SPI_EVENT_COMPLETE</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Start non-blocking <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> transfer using 8bit buffers. </p>
+<p>This function locks the deep sleep until any event has occurred.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">tx_buffer</td><td>The TX buffer with data to be transferred. If NULL is passed, the default <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> value is sent. </td></tr>
+    <tr><td class="paramname">tx_length</td><td>The length of TX buffer in bytes. </td></tr>
+    <tr><td class="paramname">rx_buffer</td><td>The RX buffer which is used for received data. If NULL is passed, received data are ignored. </td></tr>
+    <tr><td class="paramname">rx_length</td><td>The length of RX buffer in bytes. </td></tr>
+    <tr><td class="paramname">callback</td><td>The event callback function. </td></tr>
+    <tr><td class="paramname">event</td><td>The event mask of events to modify. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="spi__api_8h_source.html">spi_api.h</a> for <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> events.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Operation result. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">0</td><td>If the transfer has started. </td></tr>
+    <tr><td class="paramname">-1</td><td>If <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> peripheral is busy. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_s_p_i_8h_source.html#l00259">259</a> of file <a class="el" href="_s_p_i_8h_source.html">SPI.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d882b4e464e4f4bd59eab6c75297bda"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual void unlock </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Release exclusive access to this <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus. </p>
+
+</div>
+</div>
+<a class="anchor" id="a594e0eb0068da0fdc3d57e2d018c1994"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int write </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Write to the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Slave and return the response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">value</td><td>Data to be sent to the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> slave.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Response from the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> slave. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aed26de49dd850c5014af2a513a6a808a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int write </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>tx_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>tx_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>rx_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>rx_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Write to the <a class="el" href="classmbed_1_1_s_p_i.html" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Slave and obtain the response. </p>
+<p>The total number of bytes sent and received will be the maximum of tx_length and rx_length. The bytes written will be padded with the value 0xff.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">tx_buffer</td><td>Pointer to the byte-array of data to write to the device. </td></tr>
+    <tr><td class="paramname">tx_length</td><td>Number of bytes to write, may be zero. </td></tr>
+    <tr><td class="paramname">rx_buffer</td><td>Pointer to the byte-array of data to read from the device. </td></tr>
+    <tr><td class="paramname">rx_length</td><td>Number of bytes to read, may be zero. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes written and read from the device. This is maximum of tx_length and rx_length. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_s_p_i.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:12:49 GMT -->
+</html>

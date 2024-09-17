@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/debug-test/unit-testing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <title>Unit testing - Debugging and testing | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="unit-testing.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/debug-test/unit-testing.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/debug-test/unit-testing.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis" href="../apis/index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test active-doc" href="index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Debugging</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="index.html">Methods</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="index.html">Debugging methods for Arm Mbed OS applications</a>
+                        
+                        <a class="toc-item" href="setting-up-a-local-debug-toolchain.html">Setting up a local debug toolchain</a>
+                        
+                        <a class="toc-item" href="memap.html">Static memory map analysis</a>
+                        
+                        <a class="toc-item" href="daplink.html">DAPLink</a>
+                        
+                        <a class="toc-item" href="troubleshooting-common-issues.html">Troubleshooting common issues</a>
+                        
+                        <a class="toc-item" href="analyzing-mbed-os-crash-dump.html">Analyzing Mbed OS crash dump</a>
+                        
+                        <a class="toc-item" href="compile-time-errors.html">Compile time errors</a>
+                        
+                        <a class="toc-item" href="debugging-using-printf-statements.html">Debugging using printf() statements</a>
+                        
+                        <a class="toc-item" href="debug-microbit.html">Debugging the BBC micro:bit with pyOCD and GDB</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="third-party-tools.html">Third party tools</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="eclipse.html">Eclipse</a>
+                        
+                        <a class="toc-item" href="keil-uvision.html">Keil uVision</a>
+                        
+                        <a class="toc-item" href="visual-studio-code.html">Visual Studio Code</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="test-tools.html">Test tools</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="test-tools.html">Testing</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="unit-testing.html">Unit testing</a>
+                        
+                        <a class="toc-item" href="greentea-for-testing-applications.html">Greentea for testing applications</a>
+                        
+                        <a class="toc-item" href="utest-asynchronous-c-test-harness.html">utest: asynchronous C++ test harness</a>
+                        
+                        <a class="toc-item" href="fast-models.html">Fast Models</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">Debugging and testing</a>
+                                     › 
+                                    
+                                    <a href="test-tools.html">Test tools</a>
+                                     › 
+                                    
+                                    <a href="test-tools.html">Testing</a>
+                                     › 
+                                    
+                                    <a href="unit-testing.html">Unit testing</a>
+                                    
+                                    
+                                </div>
+                                <h1>Unit testing</h1><p>This document describes how to write and test unit tests for Mbed OS. To prevent and solve problems, please see the <a href="#troubleshooting">troubleshooting</a> section.</p><h2 id="introduction">Introduction</h2><p>Unit tests exercise code in small functional "units", such as a single function or a class. The unit tests are designed to be run on your host development machine and should not have any dependency on the underlying platform or external libraries. To achieve this, unit tests make extensive use of "stubs", "mocks" and "fakes" to isolate the code under test from any external dependencies. Unit tests are quick to run and provide targeted testing of your code during development. Mbed OS provides mock and stub implementations of the Mbed OS components to make unit testing easier.</p><h2 id="prerequisites">Prerequisites</h2><p>You will need to install the following dependencies to use Mbed OS unit testing:</p><ul>
+<li>GNU toolchains.
+<ul>
+<li>GCC 6 or later. We recommend you use MinGW-W64 on Windows, but any Windows port of the above GCC versions works.</li>
+</ul>
+</li>
+<li>CMake 3.19.0 or newer.</li>
+<li>Python 2.7.x, 3.5 or newer.</li>
+<li>Pip 10.0 or newer.</li>
+<li>Gcovr 4.1 or newer.</li>
+</ul><p>Detailed instructions for supported operating systems are below.</p><h3 id="installing-dependencies-on-debian-or-ubuntu">Installing dependencies on Debian or Ubuntu</h3><ol>
+<li>Install the compilation packages to the host:
+<pre><code>sudo apt-get -y install build-essential cmake
+</code></pre>
+</li>
+<li>Install Python and its package manager:
+<pre><code>sudo apt-get -y install python python-setuptools &amp;&amp; sudo apt-get install python-pip
+</code></pre>
+</li>
+<li>Install the additional Python package <code>gcovr</code> for code coverage report:
+<pre><code>pip install "gcovr&gt;=4.1"
+</code></pre>
+</li>
+</ol><h3 id="installing-dependencies-on-macos">Installing dependencies on macOS</h3><p>In a terminal window:</p><ol>
+<li>
+<p>Install <a href="https://brew.sh/">Homebrew</a>.</p>
+</li>
+<li>
+<p>Install Xcode command-line tools with <code>xcode-select --install</code>.</p>
+</li>
+<li>
+<p>Install CMake with: <code>brew install cmake</code>.</p>
+</li>
+<li>
+<p>Install Python and Pip:</p>
+<pre><code>brew install python
+</code></pre>
+</li>
+<li>
+<p>Install the additional Python package <code>gcovr</code> for code coverage report:</p>
+<pre><code>pip install "gcovr&gt;=4.1"
+</code></pre>
+</li>
+<li>
+<p>Install the GNU Compiler collection if required:</p>
+<pre><code>brew install gcc
+</code></pre>
+</li>
+</ol><h3 id="installing-dependencies-on-windows">Installing dependencies on Windows</h3><p>In a terminal window:</p><ol>
+<li>Download and install MinGW-W64 from <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains targetting Win64/Personal Builds/mingw-builds/">SourceForge</a>.</li>
+<li>Download CMake binaries from <a href="https://cmake.org/download/">https://cmake.org/download/</a>, and run the installer.</li>
+<li>Download Python 2.7 or Python 3 from <a href="https://www.python.org/getit/">https://www.python.org/getit/</a>, and run the installer.</li>
+<li>Add MinGW, CMake and Python into system PATH.</li>
+<li>Install the additional Python package <code>gcovr</code> for code coverage report:
+<pre><code>pip install "gcovr&gt;=4.1"
+</code></pre>
+</li>
+</ol><h2 id="test-code-structure">Test code structure</h2><p>Unit tests are located in the <code>tests/UNITTESTS</code> subdirectory of each library. We recommend that unit test files use an identical directory path as the file under test. This makes it easier to find unit tests for a particular class or a module. For example, if the file you are testing is <code>some/example/path/ClassName.cpp</code>, then all the test files are in the <code>UNITTESTS/some/example/path/ClassName</code> directory. Each test suite needs to have its own <code>CMakeLists.txt</code> file for test CMake configuration.</p><p>All the stub source files are built in a stub CMake library target (e.g., <code>mbed-stubs-rtos</code>) and linked to the <code>mbed-stubs</code> CMake target. The CMake target of the library unit under test is expected to link with the required stub libraries or <code>mbed-stubs</code> if it requires multiple stub libraries.</p><p>The new stub file should follow the naming convention <code>&lt;CLASS_NAME&gt;_stub.cpp</code> for the source file and <code>&lt;CLASS_NAME&gt;_stub.h</code> for the header file. They should be built as part of their respective stub CMake library. Alternatively, create a stub library if <code>&lt;CLASS_NAME&gt;_stub</code> is an implementation of an external source, not part of Mbed OS.</p><p>All the Mbed OS header files are built with CMake <code>INTERFACE</code> libraries (e.g., <code>mbed-headers-platform</code>). Stubbed header files reside in the <code>UNITTESTS/target_h</code> directory and are built with the <code>mbed-headers-base</code> CMake library. All CMake libraries containing header files are linked with <code>mbed-headers</code>. The CMake target of the library unit under test is expected to link with the required header file libraries or <code>mbed-headers</code> in case of requiring multiple header libraries.</p><p>All the stub libraries and header libraries are defined under <code>UNITTESTS/stubs/</code> directory.</p><p>Libraries for fakes are under the <code>UNITTESTS/fakes</code> directory. These provide mock implementations that are meant to replace the stub version that does nothing. Usually, these will replace the header files as well as the source files and cannot be used together with their stub equivalents.</p><p>The upcoming <a href="#Example">Example</a> section describes how to write a unit test for a dummy example class (Unit Under Test). The example walks you through creating a header library and a stub interface library using CMake.</p><h3 id="test-discovery">Test discovery</h3><p>Every unit test suite CMake calls <code>add_test()</code> which adds a test to the project at CMake configuration time and to run the unit tests happens automatically by invoking the <code>ctest</code> command. However, test suites do not automatically build.</p><p>For the build system to build a unit test, pass the <code>ON</code> value to <code>BUILD_TESTING</code> in the CMake or CTest command-line argument</p><h3 id="writing-unit-tests">Writing unit tests</h3><p>A unit test suite consists of one or more test cases, which should cover all the functions in a class under test. Any external dependencies should be stubbed, including the other classes in the same module. Avoid stubbing header files. Finally, analyze code coverage to ensure all code is tested, and no dead code is found.</p><p>Please see the <a href="https://github.com/google/googletest/blob/main/docs/primer.md">documentation for Google Test</a> to learn how to write unit tests using its framework. See the <a href="https://github.com/google/googletest/tree/main/googlemock">documentation for Google Mock</a> if you want to write and use C++ mock classes instead of stubs.</p><h4 id="test-suite-configuration">Test suite configuration</h4><p>Create two files in the test directory for each test suite:</p><ul>
+<li>Unit test source file (<code>test_ClassName.cpp</code>).</li>
+<li>Unit test CMake configuration file (<code>CMakeLists.txt</code>).</li>
+</ul><p>List all the required files and libraries for the build in the <code>CMakeLists.txt</code> file.</p><h4 id="example">Example</h4><p>With the following steps, you can write a unit test. This example creates dummy classes to be tested, creates and configures unit tests for a class and stubs all external dependencies.</p><ol>
+<li>
+<p>Create the following dummy classes header in <code>mbed-os/example/include/example</code>:</p>
+<p><strong>MyClass.h</strong></p>
+<pre><code>#ifndef MYCLASS_H_
+#define MYCLASS_H_
+
+namespace example {
+
+class MyClass {
+public:
+    int myFunction();
+};
+
+}
+
+#endif
+</code></pre>
+</li>
+<li>
+<p>Add a new <code>mbed-headers-example</code> interface library:</p>
+<p><strong>mbed-os/stubs/CMakeLists.txt</strong></p>
+<pre><code>add_library(mbed-headers-example INTERFACE)
+
+target_include_directories(mbed-headers-example
+ INTERFACE
+     ${mbed-os_SOURCE_DIR}/example
+     ${mbed-os_SOURCE_DIR}/example/include
+     ${mbed-os_SOURCE_DIR}/example/include/example
+ )
+</code></pre>
+</li>
+<li>
+<p>Add the newly created <code>mbed-headers-example</code> library into existing <code>target_link_libraries</code> of target <code>mbed-headers</code> in <code>mbed-os/UNITTESTS/stubs/CMakeLists.txt</code>:</p>
+<pre><code>target_link_libraries(mbed-headers
+    INTERFACE
+        mbed-headers-base
+        mbed-headers-platform
+        mbed-headers-example
+)
+</code></pre>
+</li>
+<li>
+<p>Create the following dummy classes source in <code>mbed-os/example/source</code>:</p>
+<p><strong>MyClass.cpp</strong></p>
+<pre><code>#include "MyClass.h"
+#include "example_interface_api.h"
+
+namespace example {
+
+int MyClass::myFunction()
+{
+    OtherClass o = OtherClass();
+    example_interface_status_t status = example_interface_api_init();        
+    example_interface_api_start();        
+    return o.otherFunction();
+}
+
+}
+</code></pre>
+</li>
+<li>
+<p>Create an example stub directory in <code>mbed-os/UNITTESTS/stubs/example</code>.</p>
+</li>
+<li>
+<p>Create the following example interface api stub source in <code>mbed-os/UNITTESTS/stubs/example</code></p>
+<p><strong>example_interface_api_stub.c</strong></p>
+<pre><code>#include "example_interface/example_interface_api.h"
+
+example_interface_status_t example_interface_api_init()
+{
+    return STATUS_OK;
+}
+
+void example_interface_api_start(void)
+{
+
+}
+
+</code></pre>
+<p><strong>CMakeLists.txt</strong></p>
+<pre><code>add_library(mbed-stubs-example-interface)
+
+target_sources(mbed-stubs-example-interface
+    PRIVATE
+        example_interface_api_stub.c
+)    
+
+target_link_libraries(mbed-stubs-example-interface
+    PRIVATE
+        mbed-headers
+        mbed-stubs-headers
+)
+
+</code></pre>
+</li>
+<li>
+<p>Add the newly created <code>mbed-stubs-example-interface</code> library into existing <code>target_link_libraries</code> of target <code>mbed-stubs</code> in <code>mbed-os/UNITTESTS/stubs/CMakeLists.txt</code>:</p>
+<pre><code>target_link_libraries(mbed-stubs
+    INTERFACE
+        mbed-stubs-connectivity
+        mbed-stubs-drivers
+        mbed-stubs-events
+        mbed-stubs-hal
+        mbed-stubs-platform
+        mbed-stubs-rtos
+        mbed-stubs-storage
+        mbed-stubs-example-interface
+)
+</code></pre>
+</li>
+<li>
+<p>Create a directory for MyClass unit tests in <code>mbed-os/example/tests/UNITTESTS/MyClass</code>.</p>
+</li>
+<li>
+<p>Create a source and CMake configuration file for MyClass unit tests in <code>mbed-os/example/tests/unittests/MyClass</code>:</p>
+<p><strong>test_MyClass.cpp</strong></p>
+<pre><code>#include "gtest/gtest.h"
+#include "example/MyClass.h"
+
+class TestMyClass : public testing::Test {
+protected:
+    example::MyClass *obj;
+
+    virtual void SetUp()
+    {
+        obj = new example::MyClass();
+    }
+
+    virtual void TearDown()
+    {
+        delete obj;
+    }
+};
+
+TEST_F(TestMyClass, constructor)
+{
+    EXPECT_TRUE(obj);
+}
+
+TEST_F(TestMyClass, myfunction)
+{
+    EXPECT_EQ(obj-&gt;myFunction(), 0);
+}
+</code></pre>
+<p><strong>CMakeLists.txt</strong></p>
+<pre><code>set(TEST_NAME myclass-unittest)
+
+add_executable(${TEST_NAME})
+
+target_sources(${TEST_NAME}
+    PRIVATE
+        ${mbed-os_SOURCE_DIR}/example/tests/unittests/MyClass/MyClass.cpp
+        test_MyClass.cpp
+)
+
+target_link_libraries(${TEST_NAME}
+    PRIVATE
+        mbed-headers
+        mbed-stubs            
+        gmock_main
+)
+
+add_test(NAME "${TEST_NAME}" COMMAND ${TEST_NAME})
+
+set_tests_properties(${TEST_NAME} PROPERTIES LABELS "example")
+</code></pre>
+</li>
+</ol><p>This example does not use any Mbed OS code. If your example depends on Mbed OS code, remember to use the existing stubs libraries. If there are any missing type or function declarations in the existing stubs, you must update the stubs in <code>UNITTESTS/target_h</code> and <code>UNITTESTS/stubs</code> accordingly.</p><h3 id="building-and-running-unit-tests">Building and running unit tests</h3><h4 id="mbed-cli-1">Mbed CLI 1</h4><ul>
+<li>
+<p>Install <a href="../build-tools/mbed-cli-1.html">Mbed CLI 1</a> version 1.8.0 or newer using the <code>pip install "mbed-cli&gt;=1.8.0"</code> command in Debian, Ubuntu, macOS or Windows.</p>
+</li>
+<li>
+<p>Mbed CLI 1 supports unit tests through the <code>mbed test --unittests</code> command. To learn how to use unit tests with Mbed CLI 1, please see the <a href="../build-tools/test-and-debug.html">unit testing documentation section</a>. For other information on using Mbed CLI 1, please see the <a href="../build-tools/mbed-cli-1.html">CLI documentation in handbook</a>.</p>
+</li>
+</ul><h4 id="mbed-cli-2">Mbed CLI 2</h4><ul>
+<li>Mbed CLI 2 does not currently support the <code>mbed test --unittests</code> command, please use CMake and a Make command or <code>ctest --build-and-test</code> command directly.</li>
+</ul><h4 id="build-tests-directly-with-cmake">Build tests directly with CMake</h4><ol>
+<li>Create a build directory from Mbed OS root: <code>mkdir cmake_build</code>.</li>
+<li>Run CMake configuration command from <code>mbed-os</code> root directory using <code>cmake -S . -B cmake_build -GNinja -DBUILD_TESTING=ON</code> and pass extra below arguments based on the build requirement.
+<ul>
+<li>Add <code>-DCMAKE_MAKE_PROGRAM=&lt;value&gt;</code>, <code>-DCMAKE_CXX_COMPILER=&lt;value&gt;</code> and <code>-DCMAKE_C_COMPILER=&lt;value&gt;</code> to use a specific Make program and compilers.</li>
+<li>Add <code>-DCMAKE_BUILD_TYPE=Debug</code> for a debug build.</li>
+<li>Add <code>-DCOVERAGE=ON</code> to add coverage compiler flags.</li>
+<li>Add <code>-Dgtest_disable_pthreads=ON</code> to run in a single thread.</li>
+<li>See the <a href="https://cmake.org/cmake/help/v3.19/manual/cmake.1.html">CMake manual</a> for more information.</li>
+</ul>
+</li>
+<li>Build the tests using <code>cmake --build cmake_build</code>.</li>
+<li>Run the tests using <code>cmake --build cmake_build --target test</code></li>
+</ol><h4 id="run-tests-directly-with-ctest">Run tests directly with CTest</h4><p>Run a test binary in the build directory to run a unit test suite. To run multiple test suites at once, use the CTest test runner. Run CTest with <code>ctest</code>. Add <code>-v</code> to get results for each test case. See the <a href="https://cmake.org/cmake/help/v3.19/manual/ctest.1.html">CTest manual</a> for more information.</p><h4 id="build-and-run-the-tests-directly-with-ctest">Build and run the tests directly with CTest</h4><ol>
+<li>
+<p>Create a build directory from Mbed OS root: <code>mkdir cmake_build</code>.</p>
+</li>
+<li>
+<p>Run CTest using a relative path to the Mbed OS root directory and created build directory <code>cmake_build</code> as an argument. From Mbed OS root use <code>ctest --build-and-test . cmake_build --build-generator Ninja --build-options -DBUILD_TESTING=ON --test-command ctest</code>.</p>
+<ul>
+<li>
+<p><code>--build-generator [generator]</code> specifies the <a href="https://cmake.org/cmake/help/v3.19/manual/cmake-generators.7.html#cmake-generators">build generator</a>, the example above uses <code>Ninja</code>.</p>
+</li>
+<li>
+<p><code>--build-options [options]</code> to specify for Mbed OS unit tests CMake configuration, not for the build tool (e.g --build-options -DBUILD_TESTING=ON)</p>
+</li>
+<li>
+<p><code>--test-command [command]</code> to specify the command to invoke after the CMake build.</p>
+</li>
+<li>
+<p>See the <a href="https://cmake.org/cmake/help/v3.19/manual/ctest.1.html">CTest manual</a> for more information.</p>
+</li>
+</ul>
+</li>
+</ol><h4 id="run-tests-with-gui-test-runner">Run tests with GUI test runner</h4><ol>
+<li>Install <code>gtest-runner</code> according to the <a href="https://github.com/nholthaus/gtest-runner">documentation</a>.</li>
+<li>Run <code>gtest-runner</code>.</li>
+<li>Add test executables into the list and run.</li>
+</ol><h3 id="debugging">Debugging</h3><ol>
+<li>Use Mbed CLI to build a debug build. For advanced use, run CMake directly with <code>-DCMAKE_BUILD_TYPE=Debug</code>, and then run a Make program.</li>
+<li>Run GDB with a test executable as an argument to debug unit tests.</li>
+<li>Run tests with Valgrind to analyze the test memory profile.</li>
+</ol><h3 id="get-code-coverage">Get code coverage</h3><p>Use Mbed CLI to generate code coverage reports. For advanced use, follow these steps:</p><ol>
+<li>Run CMake with both <code>-DCMAKE_BUILD_TYPE=Debug</code> and <code>-DCOVERAGE=ON</code>.</li>
+<li>Run a Make program to build the tests.</li>
+<li>Run the tests.</li>
+<li>Run Gcovr or any other code coverage tool directly in the build directory.</li>
+</ol><h3 id="troubleshooting">Troubleshooting</h3><p><strong>Problem:</strong> Generic problems with CMake or with the build process.</p><ul>
+<li><strong>Solution</strong>: Delete the build directory. Make sure that CMake, g++, GCC and a Make program can be found in the path and are correct versions.</li>
+</ul><p><strong>Problem:</strong> (Windows) Virus protection identifies files generated by CMake as malicious and quarantines the files.</p><ul>
+<li><strong>Solution</strong>: Restore false-positive files from the quarantine.</li>
+</ul><p><strong>Problem:</strong> (Windows) Git with shell installation adds sh.exe to the path and then CMake throws an error: sh.exe was found in your PATH. For MinGW make to work correctly, sh.exe must NOT be in your path.</p><ul>
+<li><strong>Solution</strong>:  Remove sh.exe from the system path.</li>
+</ul><p><strong>Problem:</strong> (Mac OS) CMake compiler check fails on Mac OS Mojave when using GCC-8.</p><ul>
+<li><strong>Solution</strong>: Make sure gnm (binutils) is not installed. Uninstall binutils with <code>brew uninstall binutils</code>.</li>
+</ul>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="test-tools.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="greentea-for-testing-applications.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/debug-test/unit-testing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:32 GMT -->
+</html>

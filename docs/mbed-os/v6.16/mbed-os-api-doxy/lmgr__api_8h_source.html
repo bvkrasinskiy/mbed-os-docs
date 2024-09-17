@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/lmgr__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:24:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | lmgr_api.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="lmgr__api_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/lmgr__api_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/lmgr__api_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_5708b411babcd47c79c1d9a3abf6014b.html">TARGET_CORDIO_LL</a></li><li class="navelem"><a class="el" href="dir_f48eb9e6f176e70dec8c36d1ad9c424e.html">stack</a></li><li class="navelem"><a class="el" href="dir_d6299034f44a5384470e6f82cb7381ae.html">controller</a></li><li class="navelem"><a class="el" href="dir_4a75e9b6d4326b101c591bac7ef3d2bd.html">sources</a></li><li class="navelem"><a class="el" href="dir_fcb7c4937c29b03c3a65ac7f35ce1cf9.html">ble</a></li><li class="navelem"><a class="el" href="dir_7bd9f8bbd30839cafead2a83dab117cd.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lmgr_api.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lmgr__api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/*!</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *  \file</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *  \brief      Link layer manager common interface file.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *  Copyright (c) 2013-2019 Arm Ltd. All Rights Reserved.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *  Copyright (c) 2019-2020 Packetcraft, Inc.</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *  </span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *  Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *  you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *  You may obtain a copy of the License at</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *  </span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *  </span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *  distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *  See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> *  limitations under the License.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#ifndef LMGR_API_H</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#define LMGR_API_H</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> </div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="preprocessor">#include "<a class="code" href="ll__api_8h.html">ll_api.h</a>"</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "<a class="code" href="ll__defs_8h.html">ll_defs.h</a>"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#include "<a class="code" href="hci__defs_8h.html">hci_defs.h</a>"</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> </div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span> {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment"></span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment">/*!</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="comment"> *  \addtogroup LL_LMGR_API</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment"> *  \{</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment"> */</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">  Constants</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment"></span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment">/*! \brief      Master scan modes. */</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="keyword">enum</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> {</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group___l_l___l_m_g_r___a_p_i.html#ggad63d52f2a7873cd40a13c4ce18552e27ab3b8299899e2c8e60a3719efefebe0ad">   48</a></span>   <a class="code" href="group___l_l___l_m_g_r___a_p_i.html#ggad63d52f2a7873cd40a13c4ce18552e27ab3b8299899e2c8e60a3719efefebe0ad">LMGR_SCAN_MODE_DISCOVER</a>,              <span class="comment">/*!&lt; Scan enabled state. */</span></div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group___l_l___l_m_g_r___a_p_i.html#ggad63d52f2a7873cd40a13c4ce18552e27a241deddb6e326741687b96d2b735db7a">   49</a></span>   <a class="code" href="group___l_l___l_m_g_r___a_p_i.html#ggad63d52f2a7873cd40a13c4ce18552e27a241deddb6e326741687b96d2b735db7a">LMGR_SCAN_MODE_INITIATE</a>               <span class="comment">/*!&lt; Initiate enabled state. */</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> };</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> </div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment">  Data Types</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment"></span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment">/*! \brief      Advertising broadcast user data. */</span></div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structlmgr_advb_user__t.html">   57</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> {</div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structlmgr_advb_user__t.html#ad15254b6401ecd25e0a649fc048ca1b7">   59</a></span>   uint8_t           buf[<a class="code" href="ll__defs_8h.html#a79aaed33c0248ac86eafe877d96f11f4">LL_ADVBU_MAX_LEN</a>];  <span class="comment">/*!&lt; ADVB-U buffer. */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structlmgr_advb_user__t.html#a5723e60ffd628510c699eddbce90be23">   60</a></span>   uint8_t           <a class="code" href="structlmgr_advb_user__t.html#a5723e60ffd628510c699eddbce90be23">len</a>;                    <span class="comment">/*!&lt; ADVB-U buffer length. */</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structlmgr_advb_user__t.html#a6a513e54fe90f72ce01e3852ebd12f0e">   61</a></span>   bool_t            <a class="code" href="structlmgr_advb_user__t.html#a6a513e54fe90f72ce01e3852ebd12f0e">modified</a>;               <span class="comment">/*!&lt; Content modified by host. */</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> } <a class="code" href="structlmgr_advb_user__t.html">lmgrAdvbUser_t</a>;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment"></span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">/*! \brief      Link layer manager persistent control block (persists with resets). */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html">   65</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> {</div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#ae3a9a6c14c055c6635c0cbdef77f29a2">   67</a></span>   <a class="code" href="group___l_l___a_p_i___e_v_e_n_t.html#gabb65f3f5eece7cd553ba3493c8604751">llEvtCback_t</a>      <a class="code" href="structlmgr_persist_ctrl_blk__t.html#ae3a9a6c14c055c6635c0cbdef77f29a2">evtCback</a>;           <span class="comment">/*!&lt; Event callback. */</span></div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a705d9aa1f3cbd1498a7b65f276a53222">   68</a></span>   <a class="code" href="group___l_l___a_p_i___e_v_e_n_t.html#ga14a2e03133335b9b49939e959d782275">llAclCback_t</a>      <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a705d9aa1f3cbd1498a7b65f276a53222">sendCompCback</a>;      <span class="comment">/*!&lt; ACL data send complete callback. */</span></div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#ad7bcfd6279ccce30012f60dd430c5e35">   69</a></span>   <a class="code" href="group___l_l___a_p_i___e_v_e_n_t.html#ga14a2e03133335b9b49939e959d782275">llAclCback_t</a>      <a class="code" href="structlmgr_persist_ctrl_blk__t.html#ad7bcfd6279ccce30012f60dd430c5e35">recvPendCback</a>;      <span class="comment">/*!&lt; ACL data receive pending callback. */</span></div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a2dc58fed95d52fc05e8f19cd4583b888">   70</a></span>   <a class="code" href="group___w_s_f___o_s___a_p_i.html#ga07e144c5eace6a08a0257dee1adc36db">wsfHandlerId_t</a>    <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a2dc58fed95d52fc05e8f19cd4583b888">handlerId</a>;          <span class="comment">/*!&lt; System event handler ID. */</span></div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#afec07a613c10cd6d2a1d0a2c9ae18cf9">   71</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#afec07a613c10cd6d2a1d0a2c9ae18cf9">connCtxSize</a>;        <span class="comment">/*!&lt; Size of the connection context. */</span></div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#aa6fbcfc8172acf4a96bdecb98e238d19">   72</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#aa6fbcfc8172acf4a96bdecb98e238d19">advSetCtxSize</a>;      <span class="comment">/*!&lt; Size of the advertising set context. */</span></div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a96c6593d52e526475054f3f7a36736dc">   73</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a96c6593d52e526475054f3f7a36736dc">extScanCtxSize</a>;     <span class="comment">/*!&lt; Size of the extended scanner context. */</span></div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a03d00c61953e877cfd219d5e4c74b678">   74</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a03d00c61953e877cfd219d5e4c74b678">extInitCtxSize</a>;     <span class="comment">/*!&lt; Size of the extended initiator context. */</span></div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#acba0bcb11cf5d73185de8b7ec956677f">   75</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#acba0bcb11cf5d73185de8b7ec956677f">perScanCtxSize</a>;     <span class="comment">/*!&lt; Size of the periodic scanning context. */</span></div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a0badee2a687bcfde39e90c13c9026b5c">   76</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a0badee2a687bcfde39e90c13c9026b5c">cisCtxSize</a>;         <span class="comment">/*!&lt; Size of the CIS context. */</span></div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a8f53e9d5619661d293f7fd7185b01524">   77</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a8f53e9d5619661d293f7fd7185b01524">cigCtxSize</a>;         <span class="comment">/*!&lt; Size of the CIG context. */</span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a620edbf1754c074dbccfe86b35ef4c2b">   78</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a620edbf1754c074dbccfe86b35ef4c2b">bisCtxSize</a>;         <span class="comment">/*!&lt; Size of the BIS context. */</span></div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#ae392d1f01de68727b7cbb8a628ddeb9d">   79</a></span>   uint16_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#ae392d1f01de68727b7cbb8a628ddeb9d">bigCtxSize</a>;         <span class="comment">/*!&lt; Size of the BIG context. */</span></div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a851de151ba174442b95d8b2fb0b023e8">   80</a></span>   uint64_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a851de151ba174442b95d8b2fb0b023e8">featuresDefault</a>;    <span class="comment">/*!&lt; Default supported features. */</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> </div><div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#acfc40cb6c790816d9f2158680e48d6e7">   82</a></span>   <a class="code" href="group___l_l___a_p_i___e_v_e_n_t.html#gaf5291a7e5a4a5d9e0c3b63101a26a93e">llIsoCback_t</a>      <a class="code" href="structlmgr_persist_ctrl_blk__t.html#acfc40cb6c790816d9f2158680e48d6e7">sendIsoCompCback</a>;   <span class="comment">/*!&lt; ISO data send complete callback. */</span></div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#aed06ef356405581e15f77a68ad7dd450">   83</a></span>   <a class="code" href="group___l_l___a_p_i___e_v_e_n_t.html#gaf5291a7e5a4a5d9e0c3b63101a26a93e">llIsoCback_t</a>      <a class="code" href="structlmgr_persist_ctrl_blk__t.html#aed06ef356405581e15f77a68ad7dd450">recvIsoPendCback</a>;   <span class="comment">/*!&lt; ISO data receive pending callback. */</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> </div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>   <span class="comment">/* Device parameters */</span></div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#a450f89d1227a06f2fe478623e9a06078">   86</a></span>   uint64_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#a450f89d1227a06f2fe478623e9a06078">bdAddr</a>;             <span class="comment">/*!&lt; Public device address. */</span></div><div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structlmgr_persist_ctrl_blk__t.html#adc9e0366918e8dcf619409da9aba8e47">   87</a></span>   uint64_t          <a class="code" href="structlmgr_persist_ctrl_blk__t.html#adc9e0366918e8dcf619409da9aba8e47">supStates</a>;          <span class="comment">/*!&lt; Supported states. */</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> } <a class="code" href="structlmgr_persist_ctrl_blk__t.html">lmgrPersistCtrlBlk_t</a>;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment"></span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">/*! \brief      Link layer manager control block (cleared with resets). */</span></div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html">   91</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>   <span class="comment">/* Status */</span></div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a7290a56ee17eaef21feae866f161df93">   94</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a7290a56ee17eaef21feae866f161df93">numConnEnabled</a>;     <span class="comment">/*!&lt; Number of active connection. */</span></div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a5251b44644dee4f9ea2bb495df4d2369">   95</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#a5251b44644dee4f9ea2bb495df4d2369">advEnabled</a>;         <span class="comment">/*!&lt; Legacy advertising is enabled. */</span></div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#ad23c7ec5503ca1c1ef448df9716a8ed9">   96</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#ad23c7ec5503ca1c1ef448df9716a8ed9">numExtAdvEnabled</a>;   <span class="comment">/*!&lt; Number of extended advertising is enabled. */</span></div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a1797c5e21e545da355d4f46cc08fa00e">   97</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a1797c5e21e545da355d4f46cc08fa00e">numScanEnabled</a>;     <span class="comment">/*!&lt; Number of scan is enabled. */</span></div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a0a515a94368fc3cee50c9558cb89ed83">   98</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a0a515a94368fc3cee50c9558cb89ed83">numInitEnabled</a>;     <span class="comment">/*!&lt; Number of initiate is enabled. */</span></div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a8ecc0628b43654a5ebc1244316c98d76">   99</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a8ecc0628b43654a5ebc1244316c98d76">scanMode</a>;           <span class="comment">/*!&lt; Discover or initiating scan mode. */</span></div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a9b39f3b3e3cce95d7498cde7807f0020">  100</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a9b39f3b3e3cce95d7498cde7807f0020">numWlFilterEnabled</a>; <span class="comment">/*!&lt; Number of enabled whitelist filters. */</span></div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#aed93da0bffa92f7664d955fe5decd0ae">  101</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#aed93da0bffa92f7664d955fe5decd0ae">numPlFilterEnabled</a>; <span class="comment">/*!&lt; Number of enabled periodic filters. */</span></div><div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#ae2a266e99cd68fa7c71a2adfddc9f0a2">  102</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#ae2a266e99cd68fa7c71a2adfddc9f0a2">testEnabled</a>;        <span class="comment">/*!&lt; Test is enabled. */</span></div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#ab4527c24daa085772c6c7af48f481ba7">  103</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#ab4527c24daa085772c6c7af48f481ba7">resetDelayRefCnt</a>;   <span class="comment">/*!&lt; Reset delay reference counter. */</span></div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a1250e9eff6d00a5dd6157114a1ab01e6">  104</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a1250e9eff6d00a5dd6157114a1ab01e6">extAdvEnaDelayCnt</a>;  <span class="comment">/*!&lt; Extended advertising enable event delay reference count. */</span></div><div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#af81c0ccfdd5e57a5fc1e868fff049107">  105</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#af81c0ccfdd5e57a5fc1e868fff049107">advSetEnaStatus</a>;    <span class="comment">/*!&lt; Last advertising set enable error status. */</span></div><div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a37e71b043ec9d8da23836656bab6adc2">  106</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a37e71b043ec9d8da23836656bab6adc2">numExtScanPhys</a>;     <span class="comment">/*!&lt; Number of extended scanning PHYs enabled. */</span></div><div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#affa820f775058d8993f3d35eaa4f4a4f">  107</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#affa820f775058d8993f3d35eaa4f4a4f">extScanEnaDelayCnt</a>; <span class="comment">/*!&lt; Extended scanning enable event delay reference count. */</span></div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a635b2cd1091550b3c183c2a124b92fb3">  108</a></span>   uint8_t           <a class="code" href="structlmgr_ctrl_blk__t.html#a635b2cd1091550b3c183c2a124b92fb3">extScanEnaStatus</a>;   <span class="comment">/*!&lt; Last extended scanning enable error status. */</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> </div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>   <span class="comment">/* Device parameters */</span></div><div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#af1e7e2f3a9615888327ef44c6a05a332">  111</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#af1e7e2f3a9615888327ef44c6a05a332">bdAddrRndModAdv</a>;    <span class="comment">/*!&lt; Modified random address (advertising). */</span></div><div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a782373f47d91c0afce6d1cffffa18491">  112</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#a782373f47d91c0afce6d1cffffa18491">bdAddrRndModScan</a>;   <span class="comment">/*!&lt; Modified random address (scan). */</span></div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#aae5e3e539f2b03929e5428715ac0a523">  113</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#aae5e3e539f2b03929e5428715ac0a523">bdAddrRndValid</a>;     <span class="comment">/*!&lt; Random device address valid. */</span></div><div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a3590315cef9b2287d187fce26eaac801">  114</a></span>   uint32_t          <a class="code" href="structlmgr_ctrl_blk__t.html#a3590315cef9b2287d187fce26eaac801">opModeFlags</a>;        <span class="comment">/*!&lt; Operational mode flags. */</span></div><div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a5f295153fbff303e6c4c75c6c2769ccf">  115</a></span>   uint64_t          <a class="code" href="structlmgr_ctrl_blk__t.html#a5f295153fbff303e6c4c75c6c2769ccf">bdAddrRnd</a>;          <span class="comment">/*!&lt; Random device address. */</span></div><div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a6f1dc338ad367a55250fe0fbec08d432">  116</a></span>   uint64_t          <a class="code" href="structlmgr_ctrl_blk__t.html#a6f1dc338ad367a55250fe0fbec08d432">features</a>;           <span class="comment">/*!&lt; Used local supported features. */</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> </div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>   <span class="comment">/* Operational parameters. */</span></div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#aa5189f1ec4eab5518cbb68ecf56284ea">  119</a></span>   int8_t            <a class="code" href="structlmgr_ctrl_blk__t.html#aa5189f1ec4eab5518cbb68ecf56284ea">advTxPwr</a>;           <span class="comment">/*!&lt; Advertising Tx power. */</span></div><div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a96950e80cc626e7ee526a433b778333a">  120</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#a96950e80cc626e7ee526a433b778333a">addrResEna</a>;         <span class="comment">/*!&lt; Address resolution enabled. */</span></div><div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a8b3824a141d4fcf24385a3c577992922">  121</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#a8b3824a141d4fcf24385a3c577992922">useLegacyCmds</a>;      <span class="comment">/*!&lt; Use only legacy advertising, scan or initiate commands. */</span></div><div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a9d74de3e3ad4515379eba7e5ea043f50">  122</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#a9d74de3e3ad4515379eba7e5ea043f50">useExtCmds</a>;         <span class="comment">/*!&lt; Use only extended advertising, scan or initiate commands. */</span></div><div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a7ba20cbe121018d34f4d8c710eb1d42d">  123</a></span>   uint64_t          <a class="code" href="structlmgr_ctrl_blk__t.html#a7ba20cbe121018d34f4d8c710eb1d42d">chanClass</a>;          <span class="comment">/*!&lt; Channel class. */</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> </div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>   <span class="comment">/* Sleep clock accuracy override value. */</span></div><div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#aba4052aa0834f0bd6ea0e67af7357af1">  126</a></span>   int8_t            <a class="code" href="structlmgr_ctrl_blk__t.html#aba4052aa0834f0bd6ea0e67af7357af1">scaMod</a>;             <span class="comment">/*!&lt; SCA override value. */</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> </div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>   <span class="comment">/* Power Class 1. */</span></div><div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#ae3fc071d5abd898dc5f741e868f20eb9">  129</a></span>   int8_t            powerThreshold[<a class="code" href="ll__defs_8h.html#a34c74aeb46b2a461598d81992c649dde">LL_MAX_PHYS</a>];    <span class="comment">/*!&lt; Power threshold for each PHY. */</span></div><div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#ad41c54e4c51cfe6f1c3248c31fdaff0c">  130</a></span>   uint8_t           localMinUsedChan[<a class="code" href="ll__defs_8h.html#a34c74aeb46b2a461598d81992c649dde">LL_MAX_PHYS</a>];  <span class="comment">/*!&lt; Local minimum number of used channels for each PHY. */</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> </div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>   <span class="comment">/* Isochronous channels. */</span></div><div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="structlmgr_ctrl_blk__t.html#a4dd533996c6180446b215ad1418129f5">  133</a></span>   bool_t            <a class="code" href="structlmgr_ctrl_blk__t.html#a4dd533996c6180446b215ad1418129f5">sendIsoCmplEvt</a>;                  <span class="comment">/*!&lt; ISO event completion notification generation enable. */</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> } <a class="code" href="structlmgr_ctrl_blk__t.html">lmgrCtrlBlk_t</a>;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment"></span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">/*! \brief      Channel parameters. */</span></div><div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html">  137</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> {</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>   <span class="comment">/* Channel parameters */</span></div><div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#a68c493d689454cc536e3ee3effe4c590">  140</a></span>   uint64_t      <a class="code" href="structlmgr_chan_param__t.html#a68c493d689454cc536e3ee3effe4c590">chanMask</a>;           <span class="comment">/*!&lt; Channel mask. */</span></div><div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#a49008debc8bca43d7cfe6acc38694339">  141</a></span>   uint8_t       chanRemapTbl[<a class="code" href="ll__defs_8h.html#a91af76bc6df62173216ee8f9207305ca">LL_CHAN_DATA_MAX_IDX</a> + 1]; <span class="comment">/*!&lt; Channel remapping table. */</span></div><div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#a2791b4aa6b51d17f536d6b5ec77b1728">  142</a></span>   uint8_t       <a class="code" href="structlmgr_chan_param__t.html#a2791b4aa6b51d17f536d6b5ec77b1728">numUsedChan</a>;        <span class="comment">/*!&lt; Number of used channels. */</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> </div><div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#aa3e0c7e984caa0b7c75120238854509e">  144</a></span>   uint8_t       <a class="code" href="structlmgr_chan_param__t.html#aa3e0c7e984caa0b7c75120238854509e">usedChSel</a>;          <span class="comment">/*!&lt; Used channel selection. */</span></div><div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#aa58d09b07ced354a48da9d34eb6e1708">  145</a></span>   uint16_t      <a class="code" href="structlmgr_chan_param__t.html#aa58d09b07ced354a48da9d34eb6e1708">chIdentifier</a>;       <span class="comment">/*!&lt; Channel identifier. */</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> </div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>   <span class="comment">/* Subevent parameters */</span></div><div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#a2c3226aba58cd765b530c6325570e45a">  148</a></span>   uint16_t      <a class="code" href="structlmgr_chan_param__t.html#a2c3226aba58cd765b530c6325570e45a">prnLast</a>;            <span class="comment">/*!&lt; Last used permutation. */</span></div><div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="structlmgr_chan_param__t.html#ab31345edcb3c8f06c56edab973295e28">  149</a></span>   uint8_t       <a class="code" href="structlmgr_chan_param__t.html#ab31345edcb3c8f06c56edab973295e28">subEvtIdx</a>;          <span class="comment">/*!&lt; Subevent index. */</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> } <a class="code" href="structlmgr_chan_param__t.html">lmgrChanParam_t</a>;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> </div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment">  Global Variables</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> </div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="keyword">extern</span> <a class="code" href="structlmgr_persist_ctrl_blk__t.html">lmgrPersistCtrlBlk_t</a> lmgrPersistCb;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="keyword">extern</span> <a class="code" href="structlmgr_ctrl_blk__t.html">lmgrCtrlBlk_t</a> lmgrCb;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> </div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">  Function Declarations</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> </div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">/* Reset */</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="keywordtype">void</span> LmgrSetDefaults(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="keywordtype">void</span> LmgrIncResetRefCount(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="keywordtype">void</span> LmgrDecResetRefCount(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> </div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">/* Whitelist */</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="keywordtype">void</span> LmgrIncWhitelistRefCount(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="keywordtype">void</span> LmgrDecWhitelistRefCount(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> </div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment">/* Periodic List */</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="keywordtype">void</span> LmgrIncPeriodiclistRefCount(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="keywordtype">void</span> LmgrDecPeriodiclistRefCount(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> </div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">/* Status */</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> bool_t LmgrIsAddressTypeAvailable(uint8_t ownAddrType);</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> bool_t LmgrIsLegacyCommandAllowed(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> bool_t LmgrIsExtCommandAllowed(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> </div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">/* Utility */</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="keywordtype">void</span> LmgrBuildRemapTable(<a class="code" href="structlmgr_chan_param__t.html">lmgrChanParam_t</a> *pChanParam);</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> uint8_t LmgrSelectNextChannel(<a class="code" href="structlmgr_chan_param__t.html">lmgrChanParam_t</a> *pChanParam, uint16_t eventCounter, uint16_t numSkip, bool_t calSubEvt);</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> uint8_t LmgrSelectNextSubEvtChannel(<a class="code" href="structlmgr_chan_param__t.html">lmgrChanParam_t</a> *pChanParam);</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> </div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment">/* Event Messages */</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="keywordtype">void</span> LmgrSendAdvEnableCnf(uint8_t status);</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="keywordtype">void</span> LmgrSendScanEnableCnf(uint8_t status);</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="keywordtype">void</span> LmgrSendAdvSetTermInd(uint8_t handle, uint8_t status, uint16_t connHandle, uint8_t numEvents);</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> bool_t LmgrSendEvent(<a class="code" href="union_ll_evt__t.html">LlEvt_t</a> *pEvt);</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> </div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">/*!</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment"> *  \brief      Get operational mode flag.</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment"> *</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment"> *  \param      flag  Flag to check.</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment"> *</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment"> *  \return     TRUE if flag is set.</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment"> *</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment"> *  Get mode flag governing LL operations.</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment"> */</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="group___l_l___l_m_g_r___a_p_i.html#ga252dbdff38b021b6232c106392cc7883">  203</a></span> <span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="group___l_l___l_m_g_r___a_p_i.html#ga252dbdff38b021b6232c106392cc7883">lmgrGetOpFlag</a>(uint32_t flag)</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> {</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>   <span class="keywordflow">return</span> (lmgrCb.<a class="code" href="structlmgr_ctrl_blk__t.html#a3590315cef9b2287d187fce26eaac801">opModeFlags</a> &amp; flag) ? TRUE : FALSE;</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> }</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="comment"></span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment">/*! \} */</span>    <span class="comment">/* LL_LMGR_API */</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> </div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> };</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> </div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="preprocessor">#endif </span><span class="comment">/* LMGR_API_H */</span><span class="preprocessor"></span></div><div class="ttc" id="structlmgr_chan_param__t_html_aa58d09b07ced354a48da9d34eb6e1708"><div class="ttname"><a href="structlmgr_chan_param__t.html#aa58d09b07ced354a48da9d34eb6e1708">lmgrChanParam_t::chIdentifier</a></div><div class="ttdeci">uint16_t chIdentifier</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00145">lmgr_api.h:145</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a1797c5e21e545da355d4f46cc08fa00e"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a1797c5e21e545da355d4f46cc08fa00e">lmgrCtrlBlk_t::numScanEnabled</a></div><div class="ttdeci">uint8_t numScanEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00097">lmgr_api.h:97</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a0a515a94368fc3cee50c9558cb89ed83"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a0a515a94368fc3cee50c9558cb89ed83">lmgrCtrlBlk_t::numInitEnabled</a></div><div class="ttdeci">uint8_t numInitEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00098">lmgr_api.h:98</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a620edbf1754c074dbccfe86b35ef4c2b"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a620edbf1754c074dbccfe86b35ef4c2b">lmgrPersistCtrlBlk_t::bisCtxSize</a></div><div class="ttdeci">uint16_t bisCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00078">lmgr_api.h:78</a></div></div>
+<div class="ttc" id="structlmgr_advb_user__t_html_a6a513e54fe90f72ce01e3852ebd12f0e"><div class="ttname"><a href="structlmgr_advb_user__t.html#a6a513e54fe90f72ce01e3852ebd12f0e">lmgrAdvbUser_t::modified</a></div><div class="ttdeci">bool_t modified</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00061">lmgr_api.h:61</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a5f295153fbff303e6c4c75c6c2769ccf"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a5f295153fbff303e6c4c75c6c2769ccf">lmgrCtrlBlk_t::bdAddrRnd</a></div><div class="ttdeci">uint64_t bdAddrRnd</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00115">lmgr_api.h:115</a></div></div>
+<div class="ttc" id="ll__api_8h_html"><div class="ttname"><a href="ll__api_8h.html">ll_api.h</a></div><div class="ttdoc">Link layer interface file. </div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a7290a56ee17eaef21feae866f161df93"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a7290a56ee17eaef21feae866f161df93">lmgrCtrlBlk_t::numConnEnabled</a></div><div class="ttdeci">uint8_t numConnEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00094">lmgr_api.h:94</a></div></div>
+<div class="ttc" id="group___l_l___a_p_i___e_v_e_n_t_html_ga14a2e03133335b9b49939e959d782275"><div class="ttname"><a href="group___l_l___a_p_i___e_v_e_n_t.html#ga14a2e03133335b9b49939e959d782275">llAclCback_t</a></div><div class="ttdeci">void(* llAclCback_t)(uint16_t handle, uint8_t numBufs)</div><div class="ttdoc">ACL callback. </div><div class="ttdef"><b>Definition:</b> <a href="ll__api_8h_source.html#l01519">ll_api.h:1519</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_aed93da0bffa92f7664d955fe5decd0ae"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#aed93da0bffa92f7664d955fe5decd0ae">lmgrCtrlBlk_t::numPlFilterEnabled</a></div><div class="ttdeci">uint8_t numPlFilterEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00101">lmgr_api.h:101</a></div></div>
+<div class="ttc" id="ll__defs_8h_html_a34c74aeb46b2a461598d81992c649dde"><div class="ttname"><a href="ll__defs_8h.html#a34c74aeb46b2a461598d81992c649dde">LL_MAX_PHYS</a></div><div class="ttdeci">#define LL_MAX_PHYS</div><div class="ttdef"><b>Definition:</b> <a href="ll__defs_8h_source.html#l00364">ll_defs.h:364</a></div></div>
+<div class="ttc" id="hci__defs_8h_html"><div class="ttname"><a href="hci__defs_8h.html">hci_defs.h</a></div><div class="ttdoc">HCI constants and definitions from the Bluetooth specification. </div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a8b3824a141d4fcf24385a3c577992922"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a8b3824a141d4fcf24385a3c577992922">lmgrCtrlBlk_t::useLegacyCmds</a></div><div class="ttdeci">bool_t useLegacyCmds</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00121">lmgr_api.h:121</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_acfc40cb6c790816d9f2158680e48d6e7"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#acfc40cb6c790816d9f2158680e48d6e7">lmgrPersistCtrlBlk_t::sendIsoCompCback</a></div><div class="ttdeci">llIsoCback_t sendIsoCompCback</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00082">lmgr_api.h:82</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_adc9e0366918e8dcf619409da9aba8e47"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#adc9e0366918e8dcf619409da9aba8e47">lmgrPersistCtrlBlk_t::supStates</a></div><div class="ttdeci">uint64_t supStates</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00087">lmgr_api.h:87</a></div></div>
+<div class="ttc" id="structlmgr_advb_user__t_html_a5723e60ffd628510c699eddbce90be23"><div class="ttname"><a href="structlmgr_advb_user__t.html#a5723e60ffd628510c699eddbce90be23">lmgrAdvbUser_t::len</a></div><div class="ttdeci">uint8_t len</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00060">lmgr_api.h:60</a></div></div>
+<div class="ttc" id="structlmgr_chan_param__t_html_ab31345edcb3c8f06c56edab973295e28"><div class="ttname"><a href="structlmgr_chan_param__t.html#ab31345edcb3c8f06c56edab973295e28">lmgrChanParam_t::subEvtIdx</a></div><div class="ttdeci">uint8_t subEvtIdx</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00149">lmgr_api.h:149</a></div></div>
+<div class="ttc" id="structlmgr_chan_param__t_html_aa3e0c7e984caa0b7c75120238854509e"><div class="ttname"><a href="structlmgr_chan_param__t.html#aa3e0c7e984caa0b7c75120238854509e">lmgrChanParam_t::usedChSel</a></div><div class="ttdeci">uint8_t usedChSel</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00144">lmgr_api.h:144</a></div></div>
+<div class="ttc" id="group___l_l___l_m_g_r___a_p_i_html_ggad63d52f2a7873cd40a13c4ce18552e27ab3b8299899e2c8e60a3719efefebe0ad"><div class="ttname"><a href="group___l_l___l_m_g_r___a_p_i.html#ggad63d52f2a7873cd40a13c4ce18552e27ab3b8299899e2c8e60a3719efefebe0ad">LMGR_SCAN_MODE_DISCOVER</a></div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00048">lmgr_api.h:48</a></div></div>
+<div class="ttc" id="group___l_l___l_m_g_r___a_p_i_html_ggad63d52f2a7873cd40a13c4ce18552e27a241deddb6e326741687b96d2b735db7a"><div class="ttname"><a href="group___l_l___l_m_g_r___a_p_i.html#ggad63d52f2a7873cd40a13c4ce18552e27a241deddb6e326741687b96d2b735db7a">LMGR_SCAN_MODE_INITIATE</a></div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00049">lmgr_api.h:49</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_af1e7e2f3a9615888327ef44c6a05a332"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#af1e7e2f3a9615888327ef44c6a05a332">lmgrCtrlBlk_t::bdAddrRndModAdv</a></div><div class="ttdeci">bool_t bdAddrRndModAdv</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00111">lmgr_api.h:111</a></div></div>
+<div class="ttc" id="structlmgr_advb_user__t_html"><div class="ttname"><a href="structlmgr_advb_user__t.html">lmgrAdvbUser_t</a></div><div class="ttdoc">Advertising broadcast user data. </div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00057">lmgr_api.h:57</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_ab4527c24daa085772c6c7af48f481ba7"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#ab4527c24daa085772c6c7af48f481ba7">lmgrCtrlBlk_t::resetDelayRefCnt</a></div><div class="ttdeci">uint8_t resetDelayRefCnt</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00103">lmgr_api.h:103</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_aed06ef356405581e15f77a68ad7dd450"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#aed06ef356405581e15f77a68ad7dd450">lmgrPersistCtrlBlk_t::recvIsoPendCback</a></div><div class="ttdeci">llIsoCback_t recvIsoPendCback</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00083">lmgr_api.h:83</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a8ecc0628b43654a5ebc1244316c98d76"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a8ecc0628b43654a5ebc1244316c98d76">lmgrCtrlBlk_t::scanMode</a></div><div class="ttdeci">uint8_t scanMode</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00099">lmgr_api.h:99</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a96c6593d52e526475054f3f7a36736dc"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a96c6593d52e526475054f3f7a36736dc">lmgrPersistCtrlBlk_t::extScanCtxSize</a></div><div class="ttdeci">uint16_t extScanCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00073">lmgr_api.h:73</a></div></div>
+<div class="ttc" id="ll__defs_8h_html_a79aaed33c0248ac86eafe877d96f11f4"><div class="ttname"><a href="ll__defs_8h.html#a79aaed33c0248ac86eafe877d96f11f4">LL_ADVBU_MAX_LEN</a></div><div class="ttdeci">#define LL_ADVBU_MAX_LEN</div><div class="ttdef"><b>Definition:</b> <a href="ll__defs_8h_source.html#l00102">ll_defs.h:102</a></div></div>
+<div class="ttc" id="structlmgr_chan_param__t_html"><div class="ttname"><a href="structlmgr_chan_param__t.html">lmgrChanParam_t</a></div><div class="ttdoc">Channel parameters. </div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00137">lmgr_api.h:137</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_ad23c7ec5503ca1c1ef448df9716a8ed9"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#ad23c7ec5503ca1c1ef448df9716a8ed9">lmgrCtrlBlk_t::numExtAdvEnabled</a></div><div class="ttdeci">uint8_t numExtAdvEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00096">lmgr_api.h:96</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_acba0bcb11cf5d73185de8b7ec956677f"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#acba0bcb11cf5d73185de8b7ec956677f">lmgrPersistCtrlBlk_t::perScanCtxSize</a></div><div class="ttdeci">uint16_t perScanCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00075">lmgr_api.h:75</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html">lmgrPersistCtrlBlk_t</a></div><div class="ttdoc">Link layer manager persistent control block (persists with resets). </div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00065">lmgr_api.h:65</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a3590315cef9b2287d187fce26eaac801"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a3590315cef9b2287d187fce26eaac801">lmgrCtrlBlk_t::opModeFlags</a></div><div class="ttdeci">uint32_t opModeFlags</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00114">lmgr_api.h:114</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a1250e9eff6d00a5dd6157114a1ab01e6"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a1250e9eff6d00a5dd6157114a1ab01e6">lmgrCtrlBlk_t::extAdvEnaDelayCnt</a></div><div class="ttdeci">uint8_t extAdvEnaDelayCnt</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00104">lmgr_api.h:104</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_aba4052aa0834f0bd6ea0e67af7357af1"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#aba4052aa0834f0bd6ea0e67af7357af1">lmgrCtrlBlk_t::scaMod</a></div><div class="ttdeci">int8_t scaMod</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00126">lmgr_api.h:126</a></div></div>
+<div class="ttc" id="structlmgr_chan_param__t_html_a2c3226aba58cd765b530c6325570e45a"><div class="ttname"><a href="structlmgr_chan_param__t.html#a2c3226aba58cd765b530c6325570e45a">lmgrChanParam_t::prnLast</a></div><div class="ttdeci">uint16_t prnLast</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00148">lmgr_api.h:148</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a96950e80cc626e7ee526a433b778333a"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a96950e80cc626e7ee526a433b778333a">lmgrCtrlBlk_t::addrResEna</a></div><div class="ttdeci">bool_t addrResEna</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00120">lmgr_api.h:120</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_af81c0ccfdd5e57a5fc1e868fff049107"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#af81c0ccfdd5e57a5fc1e868fff049107">lmgrCtrlBlk_t::advSetEnaStatus</a></div><div class="ttdeci">uint8_t advSetEnaStatus</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00105">lmgr_api.h:105</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a37e71b043ec9d8da23836656bab6adc2"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a37e71b043ec9d8da23836656bab6adc2">lmgrCtrlBlk_t::numExtScanPhys</a></div><div class="ttdeci">uint8_t numExtScanPhys</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00106">lmgr_api.h:106</a></div></div>
+<div class="ttc" id="group___w_s_f___o_s___a_p_i_html_ga07e144c5eace6a08a0257dee1adc36db"><div class="ttname"><a href="group___w_s_f___o_s___a_p_i.html#ga07e144c5eace6a08a0257dee1adc36db">wsfHandlerId_t</a></div><div class="ttdeci">uint8_t wsfHandlerId_t</div><div class="ttdoc">Event handler ID data type. </div><div class="ttdef"><b>Definition:</b> <a href="wsf__os_8h_source.html#l00080">wsf_os.h:80</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_ae392d1f01de68727b7cbb8a628ddeb9d"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#ae392d1f01de68727b7cbb8a628ddeb9d">lmgrPersistCtrlBlk_t::bigCtxSize</a></div><div class="ttdeci">uint16_t bigCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00079">lmgr_api.h:79</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a7ba20cbe121018d34f4d8c710eb1d42d"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a7ba20cbe121018d34f4d8c710eb1d42d">lmgrCtrlBlk_t::chanClass</a></div><div class="ttdeci">uint64_t chanClass</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00123">lmgr_api.h:123</a></div></div>
+<div class="ttc" id="union_ll_evt__t_html"><div class="ttname"><a href="union_ll_evt__t.html">LlEvt_t</a></div><div class="ttdoc">Union of all event types. </div><div class="ttdef"><b>Definition:</b> <a href="ll__api_8h_source.html#l01462">ll_api.h:1462</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_aa6fbcfc8172acf4a96bdecb98e238d19"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#aa6fbcfc8172acf4a96bdecb98e238d19">lmgrPersistCtrlBlk_t::advSetCtxSize</a></div><div class="ttdeci">uint16_t advSetCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00072">lmgr_api.h:72</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a9b39f3b3e3cce95d7498cde7807f0020"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a9b39f3b3e3cce95d7498cde7807f0020">lmgrCtrlBlk_t::numWlFilterEnabled</a></div><div class="ttdeci">uint8_t numWlFilterEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00100">lmgr_api.h:100</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a03d00c61953e877cfd219d5e4c74b678"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a03d00c61953e877cfd219d5e4c74b678">lmgrPersistCtrlBlk_t::extInitCtxSize</a></div><div class="ttdeci">uint16_t extInitCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00074">lmgr_api.h:74</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_aae5e3e539f2b03929e5428715ac0a523"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#aae5e3e539f2b03929e5428715ac0a523">lmgrCtrlBlk_t::bdAddrRndValid</a></div><div class="ttdeci">bool_t bdAddrRndValid</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00113">lmgr_api.h:113</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_afec07a613c10cd6d2a1d0a2c9ae18cf9"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#afec07a613c10cd6d2a1d0a2c9ae18cf9">lmgrPersistCtrlBlk_t::connCtxSize</a></div><div class="ttdeci">uint16_t connCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00071">lmgr_api.h:71</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a635b2cd1091550b3c183c2a124b92fb3"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a635b2cd1091550b3c183c2a124b92fb3">lmgrCtrlBlk_t::extScanEnaStatus</a></div><div class="ttdeci">uint8_t extScanEnaStatus</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00108">lmgr_api.h:108</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a782373f47d91c0afce6d1cffffa18491"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a782373f47d91c0afce6d1cffffa18491">lmgrCtrlBlk_t::bdAddrRndModScan</a></div><div class="ttdeci">bool_t bdAddrRndModScan</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00112">lmgr_api.h:112</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a9d74de3e3ad4515379eba7e5ea043f50"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a9d74de3e3ad4515379eba7e5ea043f50">lmgrCtrlBlk_t::useExtCmds</a></div><div class="ttdeci">bool_t useExtCmds</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00122">lmgr_api.h:122</a></div></div>
+<div class="ttc" id="structlmgr_chan_param__t_html_a2791b4aa6b51d17f536d6b5ec77b1728"><div class="ttname"><a href="structlmgr_chan_param__t.html#a2791b4aa6b51d17f536d6b5ec77b1728">lmgrChanParam_t::numUsedChan</a></div><div class="ttdeci">uint8_t numUsedChan</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00142">lmgr_api.h:142</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a4dd533996c6180446b215ad1418129f5"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a4dd533996c6180446b215ad1418129f5">lmgrCtrlBlk_t::sendIsoCmplEvt</a></div><div class="ttdeci">bool_t sendIsoCmplEvt</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00133">lmgr_api.h:133</a></div></div>
+<div class="ttc" id="ll__defs_8h_html"><div class="ttname"><a href="ll__defs_8h.html">ll_defs.h</a></div><div class="ttdoc">Link layer constant definitions. </div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_ad7bcfd6279ccce30012f60dd430c5e35"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#ad7bcfd6279ccce30012f60dd430c5e35">lmgrPersistCtrlBlk_t::recvPendCback</a></div><div class="ttdeci">llAclCback_t recvPendCback</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00069">lmgr_api.h:69</a></div></div>
+<div class="ttc" id="structlmgr_chan_param__t_html_a68c493d689454cc536e3ee3effe4c590"><div class="ttname"><a href="structlmgr_chan_param__t.html#a68c493d689454cc536e3ee3effe4c590">lmgrChanParam_t::chanMask</a></div><div class="ttdeci">uint64_t chanMask</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00140">lmgr_api.h:140</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a705d9aa1f3cbd1498a7b65f276a53222"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a705d9aa1f3cbd1498a7b65f276a53222">lmgrPersistCtrlBlk_t::sendCompCback</a></div><div class="ttdeci">llAclCback_t sendCompCback</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00068">lmgr_api.h:68</a></div></div>
+<div class="ttc" id="group___l_l___a_p_i___e_v_e_n_t_html_gaf5291a7e5a4a5d9e0c3b63101a26a93e"><div class="ttname"><a href="group___l_l___a_p_i___e_v_e_n_t.html#gaf5291a7e5a4a5d9e0c3b63101a26a93e">llIsoCback_t</a></div><div class="ttdeci">void(* llIsoCback_t)(uint8_t numHandles, uint16_t *pHandle, uint16_t *pNumPkts)</div><div class="ttdoc">ISO callback. </div><div class="ttdef"><b>Definition:</b> <a href="ll__api_8h_source.html#l01522">ll_api.h:1522</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_ae2a266e99cd68fa7c71a2adfddc9f0a2"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#ae2a266e99cd68fa7c71a2adfddc9f0a2">lmgrCtrlBlk_t::testEnabled</a></div><div class="ttdeci">bool_t testEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00102">lmgr_api.h:102</a></div></div>
+<div class="ttc" id="group___l_l___a_p_i___e_v_e_n_t_html_gabb65f3f5eece7cd553ba3493c8604751"><div class="ttname"><a href="group___l_l___a_p_i___e_v_e_n_t.html#gabb65f3f5eece7cd553ba3493c8604751">llEvtCback_t</a></div><div class="ttdeci">bool_t(* llEvtCback_t)(LlEvt_t *pEvent)</div><div class="ttdoc">Event callback. </div><div class="ttdef"><b>Definition:</b> <a href="ll__api_8h_source.html#l01516">ll_api.h:1516</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_affa820f775058d8993f3d35eaa4f4a4f"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#affa820f775058d8993f3d35eaa4f4a4f">lmgrCtrlBlk_t::extScanEnaDelayCnt</a></div><div class="ttdeci">uint8_t extScanEnaDelayCnt</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00107">lmgr_api.h:107</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html">lmgrCtrlBlk_t</a></div><div class="ttdoc">Link layer manager control block (cleared with resets). </div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00091">lmgr_api.h:91</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_ae3a9a6c14c055c6635c0cbdef77f29a2"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#ae3a9a6c14c055c6635c0cbdef77f29a2">lmgrPersistCtrlBlk_t::evtCback</a></div><div class="ttdeci">llEvtCback_t evtCback</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00067">lmgr_api.h:67</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a851de151ba174442b95d8b2fb0b023e8"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a851de151ba174442b95d8b2fb0b023e8">lmgrPersistCtrlBlk_t::featuresDefault</a></div><div class="ttdeci">uint64_t featuresDefault</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00080">lmgr_api.h:80</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a450f89d1227a06f2fe478623e9a06078"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a450f89d1227a06f2fe478623e9a06078">lmgrPersistCtrlBlk_t::bdAddr</a></div><div class="ttdeci">uint64_t bdAddr</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00086">lmgr_api.h:86</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a6f1dc338ad367a55250fe0fbec08d432"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a6f1dc338ad367a55250fe0fbec08d432">lmgrCtrlBlk_t::features</a></div><div class="ttdeci">uint64_t features</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00116">lmgr_api.h:116</a></div></div>
+<div class="ttc" id="group___l_l___l_m_g_r___a_p_i_html_ga252dbdff38b021b6232c106392cc7883"><div class="ttname"><a href="group___l_l___l_m_g_r___a_p_i.html#ga252dbdff38b021b6232c106392cc7883">lmgrGetOpFlag</a></div><div class="ttdeci">static bool_t lmgrGetOpFlag(uint32_t flag)</div><div class="ttdoc">Get operational mode flag. </div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00203">lmgr_api.h:203</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_aa5189f1ec4eab5518cbb68ecf56284ea"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#aa5189f1ec4eab5518cbb68ecf56284ea">lmgrCtrlBlk_t::advTxPwr</a></div><div class="ttdeci">int8_t advTxPwr</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00119">lmgr_api.h:119</a></div></div>
+<div class="ttc" id="ll__defs_8h_html_a91af76bc6df62173216ee8f9207305ca"><div class="ttname"><a href="ll__defs_8h.html#a91af76bc6df62173216ee8f9207305ca">LL_CHAN_DATA_MAX_IDX</a></div><div class="ttdeci">#define LL_CHAN_DATA_MAX_IDX</div><div class="ttdef"><b>Definition:</b> <a href="ll__defs_8h_source.html#l00469">ll_defs.h:469</a></div></div>
+<div class="ttc" id="structlmgr_ctrl_blk__t_html_a5251b44644dee4f9ea2bb495df4d2369"><div class="ttname"><a href="structlmgr_ctrl_blk__t.html#a5251b44644dee4f9ea2bb495df4d2369">lmgrCtrlBlk_t::advEnabled</a></div><div class="ttdeci">bool_t advEnabled</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00095">lmgr_api.h:95</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a2dc58fed95d52fc05e8f19cd4583b888"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a2dc58fed95d52fc05e8f19cd4583b888">lmgrPersistCtrlBlk_t::handlerId</a></div><div class="ttdeci">wsfHandlerId_t handlerId</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00070">lmgr_api.h:70</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a0badee2a687bcfde39e90c13c9026b5c"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a0badee2a687bcfde39e90c13c9026b5c">lmgrPersistCtrlBlk_t::cisCtxSize</a></div><div class="ttdeci">uint16_t cisCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00076">lmgr_api.h:76</a></div></div>
+<div class="ttc" id="structlmgr_persist_ctrl_blk__t_html_a8f53e9d5619661d293f7fd7185b01524"><div class="ttname"><a href="structlmgr_persist_ctrl_blk__t.html#a8f53e9d5619661d293f7fd7185b01524">lmgrPersistCtrlBlk_t::cigCtxSize</a></div><div class="ttdeci">uint16_t cigCtxSize</div><div class="ttdef"><b>Definition:</b> <a href="lmgr__api_8h_source.html#l00077">lmgr_api.h:77</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/lmgr__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:24:38 GMT -->
+</html>

@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__hal.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:13:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Hal</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__hal.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__hal.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__hal.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> |
+<a href="#nested-classes">Data Structures</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Hal</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__hal__analogin"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__analogin.html">Analogin hal functions</a></td></tr>
+<tr class="memdesc:group__hal__analogin"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behaviour</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__analogout"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__analogout.html">Analogout hal functions</a></td></tr>
+<tr class="memdesc:group__hal__analogout"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behaviour</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__crc"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__crc.html">Hardware CRC</a></td></tr>
+<tr class="memdesc:group__hal__crc"><td class="mdescLeft"> </td><td class="mdescRight">The Hardware CRC HAL API provides a low-level interface to the Hardware CRC module of a target platform. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__critical"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__critical.html">Critical Section HAL functions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__flash__hal"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__flash__hal.html">Flash HAL API</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__gpio"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__gpio.html">GPIO HAL functions</a></td></tr>
+<tr class="memdesc:group__hal__gpio"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behavior</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__gpioirq"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__gpioirq.html">GPIO IRQ HAL functions</a></td></tr>
+<tr class="memdesc:group__hal__gpioirq"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behavior</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal___i2_c_events"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___i2_c_events.html">I2C Events Macros</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal___general_i2_c"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_i2_c.html">I2C Configuration Functions</a></td></tr>
+<tr class="memdesc:group__hal___general_i2_c"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behavior</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group___synch_i2_c"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group___synch_i2_c.html">Synchronous I2C Hardware Abstraction Layer for slave</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal___asynch_i2_c"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___asynch_i2_c.html">Asynchronous I2C Hardware Abstraction Layer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__itm__hal"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__itm__hal.html">Instrumented Trace Macrocell HAL API</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__lp__ticker"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__lp__ticker.html">Low Power Ticker</a></td></tr>
+<tr class="memdesc:group__hal__lp__ticker"><td class="mdescLeft"> </td><td class="mdescRight">Low level interface to the low power ticker of a target. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__mpu"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__mpu.html">MPU hal</a></td></tr>
+<tr class="memdesc:group__hal__mpu"><td class="mdescLeft"> </td><td class="mdescRight">The MPU hal provides a simple MPU API to enhance device security by preventing execution from ram. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__port"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__port.html">Port HAL functions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__pwmout"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__pwmout.html">Pwmout hal functions</a></td></tr>
+<tr class="memdesc:group__hal__pwmout"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behavior</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__qspi"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__qspi.html">QSPI HAL</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__reset__reason"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__reset__reason.html">ResetReason HAL API</a></td></tr>
+<tr class="memdesc:group__hal__reset__reason"><td class="mdescLeft"> </td><td class="mdescRight">Low-level interface to the ResetReason of a target. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__rtc"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__rtc.html">RTC hal</a></td></tr>
+<tr class="memdesc:group__hal__rtc"><td class="mdescLeft"> </td><td class="mdescRight">The RTC hal provides a low level interface to the Real Time Counter (RTC) of a target. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group___serial_t_x_events"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group___serial_t_x_events.html">Serial TX Events Macros</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group___serial_r_x_events"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group___serial_r_x_events.html">Serial RX Events Macros</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal___general_serial"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html">Serial Configuration Functions</a></td></tr>
+<tr class="memdesc:group__hal___general_serial"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behavior</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal___asynch_serial"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___asynch_serial.html">Asynchronous Serial Hardware Abstraction Layer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__sleep"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__sleep.html">sleep hal requirements</a></td></tr>
+<tr class="memdesc:group__hal__sleep"><td class="mdescLeft"> </td><td class="mdescRight">Low level interface to the sleep mode of a target. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal___general_s_p_i"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_s_p_i.html">SPI Configuration Functions</a></td></tr>
+<tr class="memdesc:group__hal___general_s_p_i"><td class="mdescLeft"> </td><td class="mdescRight"><h1>Defined behavior</h1>
+<br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group___synch_s_p_i"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group___synch_s_p_i.html">Synchronous SPI Hardware Abstraction Layer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group___asynch_s_p_i"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group___asynch_s_p_i.html">Asynchronous SPI Hardware Abstraction Layer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__ticker"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__ticker.html">Ticker HAL functions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__trng"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__trng.html">TRNG hal functions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__us__ticker"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__us__ticker.html">Microsecond Ticker</a></td></tr>
+<tr class="memdesc:group__hal__us__ticker"><td class="mdescLeft"> </td><td class="mdescRight">Low level interface to the microsecond ticker of a target. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__hal__watchdog"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal__watchdog.html">Watchdog HAL API</a></td></tr>
+<tr class="memdesc:group__hal__watchdog"><td class="mdescLeft"> </td><td class="mdescRight">Low-level interface to the Independent Watchdog Timer of a target. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structbuffer__s.html">buffer_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Generic buffer structure.  <a href="structbuffer__s.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structcan__pinmap__t.html">can_pinmap_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_a_n___message.html">CAN_Message</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Holder for single CAN message.  <a href="struct_c_a_n___message.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structcrc__mbed__config.html">crc_mbed_config</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__t.html">i2c_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Asynch I2C HAL structure.  <a href="structi2c__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__pinmap__t.html">i2c_pinmap_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">class  </td><td class="memItemRight" valign="bottom"><a class="el" href="class_low_power_ticker_wrapper.html">LowPowerTickerWrapper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pin_map.html">PinMap</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pin_list.html">PinList</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_peripheral_list.html">PeripheralList</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structserial__t.html">serial_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Asynch serial HAL structure.  <a href="structserial__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structserial__pinmap__t.html">serial_pinmap_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structserial__fc__pinmap__t.html">serial_fc_pinmap_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__t.html">spi_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Asynch SPI HAL structure.  <a href="structspi__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__pinmap__t.html">spi_pinmap_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__capabilities__t.html">spi_capabilities_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Describes the capabilities of a SPI peripherals.  <a href="structspi__capabilities__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structticker__event__s.html">ticker_event_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Ticker's event structure.  <a href="structticker__event__s.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structticker__info__t.html">ticker_info_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Information about the ticker implementation.  <a href="structticker__info__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structticker__interface__t.html">ticker_interface_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Ticker's interface structure - required API for a ticker.  <a href="structticker__interface__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structticker__event__queue__t.html">ticker_event_queue_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Ticker's event queue structure.  <a href="structticker__event__queue__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structticker__data__t.html">ticker_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Ticker's data structure.  <a href="structticker__data__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gafa32cdedb214c3418acfc08948c7c795"><td align="right" class="memItemLeft" valign="top">typedef struct analogin_s </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gafa32cdedb214c3418acfc08948c7c795">analogin_t</a></td></tr>
+<tr class="memdesc:gafa32cdedb214c3418acfc08948c7c795"><td class="mdescLeft"> </td><td class="mdescRight">Analogin hal structure.  <a href="#gafa32cdedb214c3418acfc08948c7c795">More...</a><br/></td></tr>
+<tr class="separator:gafa32cdedb214c3418acfc08948c7c795"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga125c25ad6ab46870e3c0a3310cae2a2e"><td align="right" class="memItemLeft" valign="top">typedef struct dac_s </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga125c25ad6ab46870e3c0a3310cae2a2e">dac_t</a></td></tr>
+<tr class="memdesc:ga125c25ad6ab46870e3c0a3310cae2a2e"><td class="mdescLeft"> </td><td class="mdescRight">Analogout hal structure.  <a href="#ga125c25ad6ab46870e3c0a3310cae2a2e">More...</a><br/></td></tr>
+<tr class="separator:ga125c25ad6ab46870e3c0a3310cae2a2e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9aa12143b2c71bd60b9418ee7f4d3bb6"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structbuffer__s.html">buffer_s</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a></td></tr>
+<tr class="memdesc:ga9aa12143b2c71bd60b9418ee7f4d3bb6"><td class="mdescLeft"> </td><td class="mdescRight">Generic buffer structure.  <a href="#ga9aa12143b2c71bd60b9418ee7f4d3bb6">More...</a><br/></td></tr>
+<tr class="separator:ga9aa12143b2c71bd60b9418ee7f4d3bb6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga53e30b0bf60d71b94f23ad022e261de6"><td align="right" class="memItemLeft" valign="top">typedef enum <a class="el" href="group__hal.html#gaac29aaabcf8b2e9348a5a2a730fdf46a">crc_polynomial</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga53e30b0bf60d71b94f23ad022e261de6">crc_polynomial_t</a></td></tr>
+<tr class="memdesc:ga53e30b0bf60d71b94f23ad022e261de6"><td class="mdescLeft"> </td><td class="mdescRight">CRC Polynomial value.  <a href="#ga53e30b0bf60d71b94f23ad022e261de6">More...</a><br/></td></tr>
+<tr class="separator:ga53e30b0bf60d71b94f23ad022e261de6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa7bafeb9d84d6a832a86441a38b9c64c"><td align="right" class="memItemLeft" valign="top">typedef struct gpio_irq_s </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gaa7bafeb9d84d6a832a86441a38b9c64c">gpio_irq_t</a></td></tr>
+<tr class="memdesc:gaa7bafeb9d84d6a832a86441a38b9c64c"><td class="mdescLeft"> </td><td class="mdescRight">GPIO IRQ HAL structure.  <a href="#gaa7bafeb9d84d6a832a86441a38b9c64c">More...</a><br/></td></tr>
+<tr class="separator:gaa7bafeb9d84d6a832a86441a38b9c64c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaed62f3ea86da10b6ac0aa7fa2e599aff"><td align="right" class="memItemLeft" valign="top">typedef struct port_s </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gaed62f3ea86da10b6ac0aa7fa2e599aff">port_t</a></td></tr>
+<tr class="memdesc:gaed62f3ea86da10b6ac0aa7fa2e599aff"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_port.html">Port</a> HAL structure.  <a href="#gaed62f3ea86da10b6ac0aa7fa2e599aff">More...</a><br/></td></tr>
+<tr class="separator:gaed62f3ea86da10b6ac0aa7fa2e599aff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6609ec508d3754cc47e6b771cbdca74d"><td align="right" class="memItemLeft" valign="top">typedef struct pwmout_s </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga6609ec508d3754cc47e6b771cbdca74d">pwmout_t</a></td></tr>
+<tr class="memdesc:ga6609ec508d3754cc47e6b771cbdca74d"><td class="mdescLeft"> </td><td class="mdescRight">Pwmout hal structure.  <a href="#ga6609ec508d3754cc47e6b771cbdca74d">More...</a><br/></td></tr>
+<tr class="separator:ga6609ec508d3754cc47e6b771cbdca74d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf889abd7a487d58af4c374658afc1dd3"><td align="right" class="memItemLeft" valign="top">typedef uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gaf889abd7a487d58af4c374658afc1dd3">timestamp_t</a></td></tr>
+<tr class="memdesc:gaf889abd7a487d58af4c374658afc1dd3"><td class="mdescLeft"> </td><td class="mdescRight">Legacy format representing a timestamp in us.  <a href="#gaf889abd7a487d58af4c374658afc1dd3">More...</a><br/></td></tr>
+<tr class="separator:gaf889abd7a487d58af4c374658afc1dd3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafbbb0a24d16addef2bc749c63e2a7f0f"><td align="right" class="memItemLeft" valign="top">typedef uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gafbbb0a24d16addef2bc749c63e2a7f0f">us_timestamp_t</a></td></tr>
+<tr class="memdesc:gafbbb0a24d16addef2bc749c63e2a7f0f"><td class="mdescLeft"> </td><td class="mdescRight">A us timestamp stored in a 64 bit integer.  <a href="#gafbbb0a24d16addef2bc749c63e2a7f0f">More...</a><br/></td></tr>
+<tr class="separator:gafbbb0a24d16addef2bc749c63e2a7f0f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga09bb9e24187801076cb6bdd965e563fb"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structticker__event__s.html">ticker_event_s</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga09bb9e24187801076cb6bdd965e563fb">ticker_event_t</a></td></tr>
+<tr class="memdesc:ga09bb9e24187801076cb6bdd965e563fb"><td class="mdescLeft"> </td><td class="mdescRight">Ticker's event structure.  <a href="#ga09bb9e24187801076cb6bdd965e563fb">More...</a><br/></td></tr>
+<tr class="separator:ga09bb9e24187801076cb6bdd965e563fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae0cd96de14996dac6d3b5f2d83f93c07"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structtrng__s.html">trng_s</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gae0cd96de14996dac6d3b5f2d83f93c07">trng_t</a></td></tr>
+<tr class="memdesc:gae0cd96de14996dac6d3b5f2d83f93c07"><td class="mdescLeft"> </td><td class="mdescRight">TRNG HAL structure.  <a href="#gae0cd96de14996dac6d3b5f2d83f93c07">More...</a><br/></td></tr>
+<tr class="separator:gae0cd96de14996dac6d3b5f2d83f93c07"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga87bd897b1e42ab3ee703ed5e4cc9cee3"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_map.html">PinMap</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga87bd897b1e42ab3ee703ed5e4cc9cee3">can_rd_pinmap</a> (void)</td></tr>
+<tr class="memdesc:ga87bd897b1e42ab3ee703ed5e4cc9cee3"><td class="mdescLeft"> </td><td class="mdescRight">Get the pins that support CAN RD.  <a href="#ga87bd897b1e42ab3ee703ed5e4cc9cee3">More...</a><br/></td></tr>
+<tr class="separator:ga87bd897b1e42ab3ee703ed5e4cc9cee3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab0c3efe5e153ed3ef4fd716ce940e727"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_map.html">PinMap</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gab0c3efe5e153ed3ef4fd716ce940e727">can_td_pinmap</a> (void)</td></tr>
+<tr class="memdesc:gab0c3efe5e153ed3ef4fd716ce940e727"><td class="mdescLeft"> </td><td class="mdescRight">Get the pins that support CAN TD.  <a href="#gab0c3efe5e153ed3ef4fd716ce940e727">More...</a><br/></td></tr>
+<tr class="separator:gab0c3efe5e153ed3ef4fd716ce940e727"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga65850cdc87426b77db63ba9c47cb6f45"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga65850cdc87426b77db63ba9c47cb6f45">lp_ticker_wrapper_irq_handler</a> (ticker_irq_handler_type handler)</td></tr>
+<tr class="memdesc:ga65850cdc87426b77db63ba9c47cb6f45"><td class="mdescLeft"> </td><td class="mdescRight">Interrupt handler for the wrapped lp ticker.  <a href="#ga65850cdc87426b77db63ba9c47cb6f45">More...</a><br/></td></tr>
+<tr class="separator:ga65850cdc87426b77db63ba9c47cb6f45"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga293535b4d267258edb7fc6a1d2eb24e6"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="structticker__data__t.html">ticker_data_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga293535b4d267258edb7fc6a1d2eb24e6">get_lp_ticker_wrapper_data</a> (const <a class="el" href="structticker__data__t.html">ticker_data_t</a> *data)</td></tr>
+<tr class="memdesc:ga293535b4d267258edb7fc6a1d2eb24e6"><td class="mdescLeft"> </td><td class="mdescRight">Get wrapped lp ticker data.  <a href="#ga293535b4d267258edb7fc6a1d2eb24e6">More...</a><br/></td></tr>
+<tr class="separator:ga293535b4d267258edb7fc6a1d2eb24e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga310d29666242ef625fb9da87efeb3fb4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga310d29666242ef625fb9da87efeb3fb4">lp_ticker_wrapper_suspend</a> (void)</td></tr>
+<tr class="memdesc:ga310d29666242ef625fb9da87efeb3fb4"><td class="mdescLeft"> </td><td class="mdescRight">Suspend the wrapper layer code.  <a href="#ga310d29666242ef625fb9da87efeb3fb4">More...</a><br/></td></tr>
+<tr class="separator:ga310d29666242ef625fb9da87efeb3fb4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga87f8f594864eb5a2eb0f603b1f2bf9cc"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga87f8f594864eb5a2eb0f603b1f2bf9cc">lp_ticker_wrapper_resume</a> (void)</td></tr>
+<tr class="memdesc:ga87f8f594864eb5a2eb0f603b1f2bf9cc"><td class="mdescLeft"> </td><td class="mdescRight">Resume the wrapper layer code.  <a href="#ga87f8f594864eb5a2eb0f603b1f2bf9cc">More...</a><br/></td></tr>
+<tr class="separator:ga87f8f594864eb5a2eb0f603b1f2bf9cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga52634f7ff3d1d9d0ed8b09a693ff6c09"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga52634f7ff3d1d9d0ed8b09a693ff6c09">pinmap_find_peripheral_pins</a> (const <a class="el" href="struct_pin_list.html">PinList</a> *whitelist, const <a class="el" href="struct_pin_list.html">PinList</a> *blacklist, int per, const <a class="el" href="struct_pin_map.html">PinMap</a> *const *maps, PinName **pins, uint32_t count)</td></tr>
+<tr class="memdesc:ga52634f7ff3d1d9d0ed8b09a693ff6c09"><td class="mdescLeft"> </td><td class="mdescRight">Find a combination of pins suitable for use given the constraints.  <a href="#ga52634f7ff3d1d9d0ed8b09a693ff6c09">More...</a><br/></td></tr>
+<tr class="separator:ga52634f7ff3d1d9d0ed8b09a693ff6c09"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7ffc53b3b5ab1e198b1ab8a4179cce4d"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga7ffc53b3b5ab1e198b1ab8a4179cce4d">pinmap_list_has_pin</a> (const <a class="el" href="struct_pin_list.html">PinList</a> *<a class="el" href="structlist.html">list</a>, PinName pin)</td></tr>
+<tr class="memdesc:ga7ffc53b3b5ab1e198b1ab8a4179cce4d"><td class="mdescLeft"> </td><td class="mdescRight">Check if the pin is in the list.  <a href="#ga7ffc53b3b5ab1e198b1ab8a4179cce4d">More...</a><br/></td></tr>
+<tr class="separator:ga7ffc53b3b5ab1e198b1ab8a4179cce4d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga09b821a6247d8868d82f5c41f9f7d96e"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga09b821a6247d8868d82f5c41f9f7d96e">pinmap_list_has_peripheral</a> (const <a class="el" href="struct_peripheral_list.html">PeripheralList</a> *<a class="el" href="structlist.html">list</a>, int peripheral)</td></tr>
+<tr class="memdesc:ga09b821a6247d8868d82f5c41f9f7d96e"><td class="mdescLeft"> </td><td class="mdescRight">Check if the peripheral is in the list.  <a href="#ga09b821a6247d8868d82f5c41f9f7d96e">More...</a><br/></td></tr>
+<tr class="separator:ga09b821a6247d8868d82f5c41f9f7d96e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga02faa300754d59a333fd009d5365eaa6"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_list.html">PinList</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga02faa300754d59a333fd009d5365eaa6">pinmap_restricted_pins</a> (void)</td></tr>
+<tr class="memdesc:ga02faa300754d59a333fd009d5365eaa6"><td class="mdescLeft"> </td><td class="mdescRight">Get the pin list of pins to avoid during testing.  <a href="#ga02faa300754d59a333fd009d5365eaa6">More...</a><br/></td></tr>
+<tr class="separator:ga02faa300754d59a333fd009d5365eaa6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa57177c434ef94df3df3e09390a3de00"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_peripheral_list.html">PeripheralList</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#gaa57177c434ef94df3df3e09390a3de00">pinmap_uart_restricted_peripherals</a> (void)</td></tr>
+<tr class="memdesc:gaa57177c434ef94df3df3e09390a3de00"><td class="mdescLeft"> </td><td class="mdescRight">Get the pin list of peripherals per interface to avoid during testing.  <a href="#gaa57177c434ef94df3df3e09390a3de00">More...</a><br/></td></tr>
+<tr class="separator:gaa57177c434ef94df3df3e09390a3de00"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1e964e00ea538d6b95437bca365c8761"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_list.html">PinList</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga1e964e00ea538d6b95437bca365c8761">pinmap_gpio_restricted_pins</a> (void)</td></tr>
+<tr class="memdesc:ga1e964e00ea538d6b95437bca365c8761"><td class="mdescLeft"> </td><td class="mdescRight">Get the pin list of pins to avoid during GPIO/GPIO_IRQ testing.  <a href="#ga1e964e00ea538d6b95437bca365c8761">More...</a><br/></td></tr>
+<tr class="separator:ga1e964e00ea538d6b95437bca365c8761"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga13d090ffea333c1703b312dd0fcc2d15"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_u_s_b_phy.html">USBPhy</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal.html#ga13d090ffea333c1703b312dd0fcc2d15">get_usb_phy</a> ()</td></tr>
+<tr class="memdesc:ga13d090ffea333c1703b312dd0fcc2d15"><td class="mdescLeft"> </td><td class="mdescRight">Return a the <a class="el" href="class_u_s_b_phy.html" title="Abstract interface to physical USB hardware. ">USBPhy</a> instance for this hardware.  <a href="#ga13d090ffea333c1703b312dd0fcc2d15">More...</a><br/></td></tr>
+<tr class="separator:ga13d090ffea333c1703b312dd0fcc2d15"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="gafa32cdedb214c3418acfc08948c7c795"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct analogin_s <a class="el" href="group__hal.html#gafa32cdedb214c3418acfc08948c7c795">analogin_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Analogin hal structure. </p>
+<p>analogin_s is declared in the target's hal </p>
+
+<p>Definition at line <a class="el" href="analogin__api_8h_source.html#l00034">34</a> of file <a class="el" href="analogin__api_8h_source.html">analogin_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9aa12143b2c71bd60b9418ee7f4d3bb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structbuffer__s.html">buffer_s</a>  <a class="el" href="group__hal.html#ga9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Generic buffer structure. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga53e30b0bf60d71b94f23ad022e261de6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef enum <a class="el" href="group__hal.html#gaac29aaabcf8b2e9348a5a2a730fdf46a">crc_polynomial</a>  <a class="el" href="group__hal.html#ga53e30b0bf60d71b94f23ad022e261de6">crc_polynomial_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>CRC Polynomial value. </p>
+<p>Different polynomial values supported </p>
+
+</div>
+</div>
+<a class="anchor" id="ga125c25ad6ab46870e3c0a3310cae2a2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct dac_s <a class="el" href="group__hal.html#ga125c25ad6ab46870e3c0a3310cae2a2e">dac_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Analogout hal structure. </p>
+<p>dac_s is declared in the target's hal </p>
+
+<p>Definition at line <a class="el" href="analogout__api_8h_source.html#l00034">34</a> of file <a class="el" href="analogout__api_8h_source.html">analogout_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa7bafeb9d84d6a832a86441a38b9c64c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct gpio_irq_s <a class="el" href="group__hal.html#gaa7bafeb9d84d6a832a86441a38b9c64c">gpio_irq_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>GPIO IRQ HAL structure. </p>
+<p>gpio_irq_s is declared in the target's HAL </p>
+
+<p>Definition at line <a class="el" href="gpio__irq__api_8h_source.html#l00042">42</a> of file <a class="el" href="gpio__irq__api_8h_source.html">gpio_irq_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaed62f3ea86da10b6ac0aa7fa2e599aff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct port_s <a class="el" href="group__hal.html#gaed62f3ea86da10b6ac0aa7fa2e599aff">port_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_port.html">Port</a> HAL structure. </p>
+<p>port_s is declared in the target's HAL </p>
+
+<p>Definition at line <a class="el" href="port__api_8h_source.html#l00033">33</a> of file <a class="el" href="port__api_8h_source.html">port_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6609ec508d3754cc47e6b771cbdca74d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct pwmout_s <a class="el" href="group__hal.html#ga6609ec508d3754cc47e6b771cbdca74d">pwmout_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Pwmout hal structure. </p>
+<p>pwmout_s is declared in the target's hal </p>
+
+<p>Definition at line <a class="el" href="pwmout__api_8h_source.html#l00034">34</a> of file <a class="el" href="pwmout__api_8h_source.html">pwmout_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga09bb9e24187801076cb6bdd965e563fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structticker__event__s.html">ticker_event_s</a>  <a class="el" href="group__hal.html#ga09bb9e24187801076cb6bdd965e563fb">ticker_event_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Ticker's event structure. </p>
+
+</div>
+</div>
+<a class="anchor" id="gaf889abd7a487d58af4c374658afc1dd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef uint32_t <a class="el" href="group__hal.html#gaf889abd7a487d58af4c374658afc1dd3">timestamp_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Legacy format representing a timestamp in us. </p>
+<p>Given it is modeled as a 32 bit integer, this type can represent timestamp up to 4294 seconds (71 minutes). Prefer using us_timestamp_t which store timestamp as 64 bits integer. </p>
+
+<p>Definition at line <a class="el" href="ticker__api_8h_source.html#l00033">33</a> of file <a class="el" href="ticker__api_8h_source.html">ticker_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae0cd96de14996dac6d3b5f2d83f93c07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structtrng__s.html">trng_s</a> <a class="el" href="group__hal.html#gae0cd96de14996dac6d3b5f2d83f93c07">trng_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>TRNG HAL structure. </p>
+<p><a class="el" href="structtrng__s.html">trng_s</a> is declared in the target's HAL </p>
+
+<p>Definition at line <a class="el" href="trng__api_8h_source.html#l00030">30</a> of file <a class="el" href="trng__api_8h_source.html">trng_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafbbb0a24d16addef2bc749c63e2a7f0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef uint64_t <a class="el" href="group__hal.html#gafbbb0a24d16addef2bc749c63e2a7f0f">us_timestamp_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>A us timestamp stored in a 64 bit integer. </p>
+<p>Can store timestamp up to 584810 years. </p>
+
+<p>Definition at line <a class="el" href="ticker__api_8h_source.html#l00039">39</a> of file <a class="el" href="ticker__api_8h_source.html">ticker_api.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ga3728669b02b962d5e84c37d4587189b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__hal.html#ga3728669b02b962d5e84c37d4587189b2">CANFormat</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Values that represent CAN Format. </p>
+
+<p>Definition at line <a class="el" href="can__helper_8h_source.html#l00035">35</a> of file <a class="el" href="can__helper_8h_source.html">can_helper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2fb469bfd68de3955e9552b34cb86bcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__hal.html#ga2fb469bfd68de3955e9552b34cb86bcd">CANType</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Values that represent CAN Type. </p>
+
+<p>Definition at line <a class="el" href="can__helper_8h_source.html#l00048">48</a> of file <a class="el" href="can__helper_8h_source.html">can_helper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaac29aaabcf8b2e9348a5a2a730fdf46a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__hal.html#gaac29aaabcf8b2e9348a5a2a730fdf46a">crc_polynomial</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>CRC Polynomial value. </p>
+<p>Different polynomial values supported </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggaac29aaabcf8b2e9348a5a2a730fdf46aa7fb8f90dfd5ee3cd5b2767bac79ae99d"></a>POLY_7BIT_SD </td><td class="fielddoc">
+<p>x7+x3+1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaac29aaabcf8b2e9348a5a2a730fdf46aa11f0187e6192505aec2bf4269c26d5ea"></a>POLY_8BIT_CCITT </td><td class="fielddoc">
+<p>x8+x2+x+1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaac29aaabcf8b2e9348a5a2a730fdf46aae788c7d08ed51c9e1fba9bc3295a13c6"></a>POLY_16BIT_CCITT </td><td class="fielddoc">
+<p>x16+x12+x5+1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaac29aaabcf8b2e9348a5a2a730fdf46aa892af83ad6b24294e7d82e1a5ac87509"></a>POLY_16BIT_IBM </td><td class="fielddoc">
+<p>x16+x15+x2+1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaac29aaabcf8b2e9348a5a2a730fdf46aaf75299fa9ab0db23269d0f43bb7a0f45"></a>POLY_32BIT_ANSI </td><td class="fielddoc">
+<p>x32+x26+x23+x22+x16+x12+x11+x10+x8+x7+x5+x4+x2+x+1 </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="crc__api_8h_source.html#l00030">30</a> of file <a class="el" href="crc__api_8h_source.html">crc_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa0af91058c138031cbcc5b93121644af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__hal.html#gaa0af91058c138031cbcc5b93121644af">gpio_irq_event</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>GPIO IRQ events. </p>
+
+<p>Definition at line <a class="el" href="gpio__irq__api_8h_source.html#l00034">34</a> of file <a class="el" href="gpio__irq__api_8h_source.html">gpio_irq_api.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8dbaa98202e6883fc0398bcc14f582b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__hal.html#ga8dbaa98202e6883fc0398bcc14f582b7">SerialIrq</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Serial interrupt sources. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga8dbaa98202e6883fc0398bcc14f582b7ada2693bfed74737c8d61d4818bc6171f"></a>RxIrq </td><td class="fielddoc">
+<p>Receive Data Register Full. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga8dbaa98202e6883fc0398bcc14f582b7aa4066880713ec11ad8d574f89336aed0"></a>TxIrq </td><td class="fielddoc">
+<p>Transmit Data Register Empty. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="serial__api_8h_source.html#l00075">75</a> of file <a class="el" href="serial__api_8h_source.html">serial_api.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga87bd897b1e42ab3ee703ed5e4cc9cee3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_map.html">PinMap</a>* can_rd_pinmap </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pins that support CAN RD. </p>
+<p>Return a <a class="el" href="struct_pin_map.html">PinMap</a> array of pins that support CAN RD. The array is terminated with {NC, NC, 0}.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_pin_map.html">PinMap</a> array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab0c3efe5e153ed3ef4fd716ce940e727"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_map.html">PinMap</a>* can_td_pinmap </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pins that support CAN TD. </p>
+<p>Return a <a class="el" href="struct_pin_map.html">PinMap</a> array of pins that support CAN TD. The array is terminated with {NC, NC, 0}.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_pin_map.html">PinMap</a> array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga293535b4d267258edb7fc6a1d2eb24e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="structticker__data__t.html">ticker_data_t</a>* get_lp_ticker_wrapper_data </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structticker__data__t.html">ticker_data_t</a> * </td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get wrapped lp ticker data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">data</td><td>hardware low power ticker object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>wrapped low power ticker object </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga13d090ffea333c1703b312dd0fcc2d15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="class_u_s_b_phy.html">USBPhy</a>* get_usb_phy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Return a the <a class="el" href="class_u_s_b_phy.html" title="Abstract interface to physical USB hardware. ">USBPhy</a> instance for this hardware. </p>
+<p>For details on adding support for a <a class="el" href="class_u_s_b_phy.html" title="Abstract interface to physical USB hardware. ">USBPhy</a> see the specification in <a class="el" href="_u_s_b_phy_8h_source.html">USBPhy.h</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_u_s_b_phy.html" title="Abstract interface to physical USB hardware. ">USBPhy</a> instance </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Calling this function on platforms without a <a class="el" href="class_u_s_b_phy.html" title="Abstract interface to physical USB hardware. ">USBPhy</a> will result in an error </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga65850cdc87426b77db63ba9c47cb6f45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void lp_ticker_wrapper_irq_handler </td>
+          <td>(</td>
+          <td class="paramtype">ticker_irq_handler_type </td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Interrupt handler for the wrapped lp ticker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">handler</td><td>the function which would normally be called by the lp ticker handler when it is not wrapped </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga87f8f594864eb5a2eb0f603b1f2bf9cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void lp_ticker_wrapper_resume </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Resume the wrapper layer code. </p>
+<p>Resume operation of the wrapper layer. Interrupts will be filtered as normal and the microsecond timer will be used for interrupts scheduled too quickly back-to-back. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga310d29666242ef625fb9da87efeb3fb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void lp_ticker_wrapper_suspend </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Suspend the wrapper layer code. </p>
+<p>Pass through all interrupts to the low power ticker and stop using the microsecond ticker.</p>
+<dl class="section warning"><dt>Warning</dt><dd>: Make sure to suspend the LP ticker first (call <a class="el" href="group__hal__ticker.html#gaf938e6d46d620fcb6fb6c89f0f3090db" title="Suspend this ticker. ">ticker_suspend()</a>), otherwise the behavior is undefined. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga52634f7ff3d1d9d0ed8b09a693ff6c09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool pinmap_find_peripheral_pins </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_pin_list.html">PinList</a> * </td>
+          <td class="paramname"><em>whitelist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_pin_list.html">PinList</a> * </td>
+          <td class="paramname"><em>blacklist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>per</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_pin_map.html">PinMap</a> *const * </td>
+          <td class="paramname"><em>maps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName ** </td>
+          <td class="paramname"><em>pins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>count</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Find a combination of pins suitable for use given the constraints. </p>
+<p>This function finds pins which meet these specific properties:</p><ul>
+<li>The pin is part of the form factor</li>
+<li>The pin is not in the restricted list</li>
+<li>The pin is contained within the respective pinmap</li>
+<li>The pin belongs to the given peripheral</li>
+<li>Each pin found is distinct; in the example below mosi and miso will never be assigned the same pin</li>
+</ul>
+<p>Example: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> #include "pinmap.h"</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> </div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> int main()</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> {</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>     int per = spi_master_cs_pinmap()-&gt;peripheral;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>     const PinList *pins_ff = pinmap_ff_default_pins();</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>     const PinList *pins_avoid = pinmap_restricted_pins();</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>     PinName mosi = NC;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>     PinName miso = NC;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>     PinName sclk = NC;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>     PinName ssel = NC;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>     const PinMap *maps[] = {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>         spi_master_mosi_pinmap(),</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>         spi_master_miso_pinmap(),</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>         spi_master_clk_pinmap(),</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>         spi_master_cs_pinmap()</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>     };</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>     PinName *pins[] = {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>         &amp;mosi,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>         &amp;miso,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>         &amp;sclk,</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>         &amp;ssel</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>     };</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>     if (pinmap_find_peripheral_pins(pins_ff, pins_avoid, per, maps, pins, sizeof(maps) / sizeof(maps[0]))) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>         printf("Found SPI pins to test instance %i with:\n"</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>                "  mosi=%s\n"</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>                "  miso=%s\n"</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>                "  sclk=%s\n"</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>                "  ssel=%s\n", per,</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>                pinmap_ff_default_pin_to_string(mosi),</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>                pinmap_ff_default_pin_to_string(miso),</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>                pinmap_ff_default_pin_to_string(sclk),</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>                pinmap_ff_default_pin_to_string(ssel));</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>     } else {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>         printf("Could not find SPI combination to test %i\n", per);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>     }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>     return 0;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> }</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">whitelist</td><td>List of pins to choose from </td></tr>
+    <tr><td class="paramname">blacklist</td><td>List of pins which cannot be used </td></tr>
+    <tr><td class="paramname">per</td><td>Peripheral to which the pins belong </td></tr>
+    <tr><td class="paramname">maps</td><td>An array of pin maps to select from </td></tr>
+    <tr><td class="paramname">pins</td><td>An array of pins to find. Pins already set to a value will be left unchanged. Only pins initialized to NC will be updated by this function </td></tr>
+    <tr><td class="paramname">count</td><td>The size of maps and pins </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if a suitable combination of pins was found and written to the pins array, otherwise false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1e964e00ea538d6b95437bca365c8761"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_list.html">PinList</a>* pinmap_gpio_restricted_pins </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pin list of pins to avoid during GPIO/GPIO_IRQ testing. </p>
+<p>The GPIO restricted pin list is used to indicate to testing that a pin should be skipped due to some caveat about it.</p>
+<p>Targets should override the weak implementation of this function if they have peripherals which should be skipped during testing.</p>
+<dl class="section note"><dt>Note</dt><dd>This is special case only for GPIO/GPIO_IRQ tests because targets do not provide pin-maps for GPIO.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a peripheral list of peripheral to avoid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga09b821a6247d8868d82f5c41f9f7d96e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool pinmap_list_has_peripheral </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_peripheral_list.html">PeripheralList</a> * </td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>peripheral</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check if the peripheral is in the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">list</td><td>peripheral list to check </td></tr>
+    <tr><td class="paramname">peripheral</td><td>peripheral to check for in the list </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the peripheral is in the list, false otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7ffc53b3b5ab1e198b1ab8a4179cce4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool pinmap_list_has_pin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_pin_list.html">PinList</a> * </td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>pin</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check if the pin is in the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">list</td><td>pin list to check </td></tr>
+    <tr><td class="paramname">pin</td><td>pin to check for in the list </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the pin is in the list, false otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga02faa300754d59a333fd009d5365eaa6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_list.html">PinList</a>* pinmap_restricted_pins </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pin list of pins to avoid during testing. </p>
+<p>The restricted pin list is used to indicate to testing that a pin should be skipped due to some caveat about it. For example, using CONSOLE_RX and CONSOLE_TX during tests will interfere with the test runner and should be avoided.</p>
+<p>Targets should override the weak implementation of this function if they have additional pins which should be skipped during testing.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a pin list of pins to avoid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa57177c434ef94df3df3e09390a3de00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_peripheral_list.html">PeripheralList</a>* pinmap_uart_restricted_peripherals </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pin list of peripherals per interface to avoid during testing. </p>
+<p>The restricted peripheral list is used to indicate to testing that a peripheral should be skipped due to some caveat about it. For example, using the USB serial port during tests will interfere with the test runner and should be avoided.</p>
+<p>Targets should override the weak implementation of this function if they have peripherals which should be skipped during testing.</p>
+<dl class="section note"><dt>Note</dt><dd>Restricting peripheral is at the moment available for UART interface only as only STDIO UART must be skipped because it is used by Mbed. Restricting peripherals for other interfaces should be added in the future if required.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a peripheral list of peripheral to avoid </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__hal.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:13:05 GMT -->
+</html>

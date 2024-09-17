@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__ble.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:13:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Ble</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__ble.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__ble.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__ble.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> |
+<a href="#nested-classes">Data Structures</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> |
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Ble</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__common"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html">Common</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__gap"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__gap.html">Gap</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:group__gatt"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__gatt.html">Gatt</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structble_1_1_b_l_e_1_1_on_events_to_process_callback_context.html">BLE::OnEventsToProcessCallbackContext</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Events to process event.  <a href="structble_1_1_b_l_e_1_1_on_events_to_process_callback_context.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structble_1_1_b_l_e_1_1_initialization_complete_callback_context.html">BLE::InitializationCompleteCallbackContext</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Initialization complete event.  <a href="structble_1_1_b_l_e_1_1_initialization_complete_callback_context.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">class  </td><td class="memItemRight" valign="bottom"><a class="el" href="classble_1_1_b_l_e.html">BLE</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Abstract away BLE-capable radio transceivers or SOCs.  <a href="classble_1_1_b_l_e.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaaaeb0e869ebb166eb101a2d6a5026179"><td align="right" class="memItemLeft" valign="top">typedef unsigned </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gaaaeb0e869ebb166eb101a2d6a5026179">InstanceID_t</a></td></tr>
+<tr class="memdesc:gaaaeb0e869ebb166eb101a2d6a5026179"><td class="mdescLeft"> </td><td class="mdescRight">Opaque type used to store the ID of a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance.  <a href="#gaaaeb0e869ebb166eb101a2d6a5026179">More...</a><br/></td></tr>
+<tr class="separator:gaaaeb0e869ebb166eb101a2d6a5026179"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3a081a11a9c1db4f32ce349f0d3d74f6"><td align="right" class="memItemLeft" valign="top">typedef <a class="el" href="class_function_pointer_with_context.html">FunctionPointerWithContext</a>&lt; OnEventsToProcessCallbackContext * &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga3a081a11a9c1db4f32ce349f0d3d74f6">OnEventsToProcessCallback_t</a></td></tr>
+<tr class="memdesc:ga3a081a11a9c1db4f32ce349f0d3d74f6"><td class="mdescLeft"> </td><td class="mdescRight">Events to process event handler.  <a href="#ga3a081a11a9c1db4f32ce349f0d3d74f6">More...</a><br/></td></tr>
+<tr class="separator:ga3a081a11a9c1db4f32ce349f0d3d74f6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf7308414c8f04ba282a6a75e9131240f"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gaf7308414c8f04ba282a6a75e9131240f">InitializationCompleteCallback_t</a>) (InitializationCompleteCallbackContext *context)</td></tr>
+<tr class="memdesc:gaf7308414c8f04ba282a6a75e9131240f"><td class="mdescLeft"> </td><td class="mdescRight">Initialization complete event handler.  <a href="#gaf7308414c8f04ba282a6a75e9131240f">More...</a><br/></td></tr>
+<tr class="separator:gaf7308414c8f04ba282a6a75e9131240f"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gab06700838d276e77d5816a8afa907847"><td align="right" class="memItemLeft" valign="top">static <a class="el" href="classble_1_1_b_l_e.html">BLE</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gab06700838d276e77d5816a8afa907847">Instance</a> ()</td></tr>
+<tr class="memdesc:gab06700838d276e77d5816a8afa907847"><td class="mdescLeft"> </td><td class="mdescRight">Get a reference to the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton.  <a href="#gab06700838d276e77d5816a8afa907847">More...</a><br/></td></tr>
+<tr class="separator:gab06700838d276e77d5816a8afa907847"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4c8fbaba21160ad9eab66ef1ebdd13c7"><td align="right" class="memItemLeft" valign="top">static <a class="el" href="classble_1_1_b_l_e.html">BLE</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga4c8fbaba21160ad9eab66ef1ebdd13c7">Instance</a> (InstanceID_t id)</td></tr>
+<tr class="memdesc:ga4c8fbaba21160ad9eab66ef1ebdd13c7"><td class="mdescLeft"> </td><td class="mdescRight">Get a reference to the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton corresponding to a given interface.  <a href="#ga4c8fbaba21160ad9eab66ef1ebdd13c7">More...</a><br/></td></tr>
+<tr class="separator:ga4c8fbaba21160ad9eab66ef1ebdd13c7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga762691436db8264d921a6417e7119fe1"><td align="right" class="memItemLeft" valign="top">InstanceID_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga762691436db8264d921a6417e7119fe1">getInstanceID</a> () const </td></tr>
+<tr class="memdesc:ga762691436db8264d921a6417e7119fe1"><td class="mdescLeft"> </td><td class="mdescRight">Fetch the ID of a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance.  <a href="#ga762691436db8264d921a6417e7119fe1">More...</a><br/></td></tr>
+<tr class="separator:ga762691436db8264d921a6417e7119fe1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga357ea6cbc66dba44bce4db3354d734b1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga357ea6cbc66dba44bce4db3354d734b1">onEventsToProcess</a> (const OnEventsToProcessCallback_t &amp;on_event_cb)</td></tr>
+<tr class="memdesc:ga357ea6cbc66dba44bce4db3354d734b1"><td class="mdescLeft"> </td><td class="mdescRight">Register a callback called when the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack has pending work.  <a href="#ga357ea6cbc66dba44bce4db3354d734b1">More...</a><br/></td></tr>
+<tr class="separator:ga357ea6cbc66dba44bce4db3354d734b1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad5473b44af17c41807bd98b6d1da298b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gad5473b44af17c41807bd98b6d1da298b">processEvents</a> ()</td></tr>
+<tr class="memdesc:gad5473b44af17c41807bd98b6d1da298b"><td class="mdescLeft"> </td><td class="mdescRight">Process ALL pending events living in the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack and return once all events have been consumed.  <a href="#gad5473b44af17c41807bd98b6d1da298b">More...</a><br/></td></tr>
+<tr class="separator:gad5473b44af17c41807bd98b6d1da298b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6c55b8347456a9f5f3d228581484119f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f">init</a> (InitializationCompleteCallback_t completion_cb=nullptr)</td></tr>
+<tr class="memdesc:ga6c55b8347456a9f5f3d228581484119f"><td class="mdescLeft"> </td><td class="mdescRight">Initialize the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> controller/stack.  <a href="#ga6c55b8347456a9f5f3d228581484119f">More...</a><br/></td></tr>
+<tr class="separator:ga6c55b8347456a9f5f3d228581484119f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gabfbd8d56fd172b7ce03c35710638fd1d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gabfbd8d56fd172b7ce03c35710638fd1d"><td align="right" class="memTemplItemLeft" valign="top"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ble.html#gabfbd8d56fd172b7ce03c35710638fd1d">init</a> (T *object, void(T::*completion_cb)(InitializationCompleteCallbackContext *context))</td></tr>
+<tr class="memdesc:gabfbd8d56fd172b7ce03c35710638fd1d"><td class="mdescLeft"> </td><td class="mdescRight">Initialize the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> controller/stack.  <a href="#gabfbd8d56fd172b7ce03c35710638fd1d">More...</a><br/></td></tr>
+<tr class="separator:gabfbd8d56fd172b7ce03c35710638fd1d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gacdeb2fdd527062f7f4dcd4112515666b"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gacdeb2fdd527062f7f4dcd4112515666b">hasInitialized</a> () const </td></tr>
+<tr class="memdesc:gacdeb2fdd527062f7f4dcd4112515666b"><td class="mdescLeft"> </td><td class="mdescRight">Indicate if the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance has been initialized.  <a href="#gacdeb2fdd527062f7f4dcd4112515666b">More...</a><br/></td></tr>
+<tr class="separator:gacdeb2fdd527062f7f4dcd4112515666b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9eb0d0b1a80f1e08490a05199d3cb9c1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga9eb0d0b1a80f1e08490a05199d3cb9c1">shutdown</a> ()</td></tr>
+<tr class="memdesc:ga9eb0d0b1a80f1e08490a05199d3cb9c1"><td class="mdescLeft"> </td><td class="mdescRight">Shut down the underlying stack, and reset state of this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance.  <a href="#ga9eb0d0b1a80f1e08490a05199d3cb9c1">More...</a><br/></td></tr>
+<tr class="separator:ga9eb0d0b1a80f1e08490a05199d3cb9c1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga492edd5621b1b6f219c1138beb303fe1"><td align="right" class="memItemLeft" valign="top">const char * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga492edd5621b1b6f219c1138beb303fe1">getVersion</a> ()</td></tr>
+<tr class="memdesc:ga492edd5621b1b6f219c1138beb303fe1"><td class="mdescLeft"> </td><td class="mdescRight">This call allows the application to get the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack version information.  <a href="#ga492edd5621b1b6f219c1138beb303fe1">More...</a><br/></td></tr>
+<tr class="separator:ga492edd5621b1b6f219c1138beb303fe1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa415ef3788238fd20deb739ad8a45d90"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classble_1_1_gap.html">ble::Gap</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gaa415ef3788238fd20deb739ad8a45d90">gap</a> ()</td></tr>
+<tr class="memdesc:gaa415ef3788238fd20deb739ad8a45d90"><td class="mdescLeft"> </td><td class="mdescRight">Accessor to <a class="el" href="classble_1_1_gap.html" title="Define device discovery, connection and link management procedures. ">Gap</a>.  <a href="#gaa415ef3788238fd20deb739ad8a45d90">More...</a><br/></td></tr>
+<tr class="separator:gaa415ef3788238fd20deb739ad8a45d90"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2f47665564aa8d7f57604b750aaa9eb5"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="classble_1_1_gap.html">ble::Gap</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga2f47665564aa8d7f57604b750aaa9eb5">gap</a> () const </td></tr>
+<tr class="memdesc:ga2f47665564aa8d7f57604b750aaa9eb5"><td class="mdescLeft"> </td><td class="mdescRight">A const alternative to <a class="el" href="group__ble.html#gaa415ef3788238fd20deb739ad8a45d90" title="Accessor to Gap. ">gap()</a>.  <a href="#ga2f47665564aa8d7f57604b750aaa9eb5">More...</a><br/></td></tr>
+<tr class="separator:ga2f47665564aa8d7f57604b750aaa9eb5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadc619114e7684aa26ba9a70fe5db05a8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classble_1_1_gatt_server.html">ble::GattServer</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gadc619114e7684aa26ba9a70fe5db05a8">gattServer</a> ()</td></tr>
+<tr class="memdesc:gadc619114e7684aa26ba9a70fe5db05a8"><td class="mdescLeft"> </td><td class="mdescRight">Accessor to <a class="el" href="classble_1_1_gatt_server.html" title="Construct and operates a GATT server. ">GattServer</a>.  <a href="#gadc619114e7684aa26ba9a70fe5db05a8">More...</a><br/></td></tr>
+<tr class="separator:gadc619114e7684aa26ba9a70fe5db05a8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8b8e5e9da15d40a42c4afefdb3b33d80"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="classble_1_1_gatt_server.html">ble::GattServer</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga8b8e5e9da15d40a42c4afefdb3b33d80">gattServer</a> () const </td></tr>
+<tr class="memdesc:ga8b8e5e9da15d40a42c4afefdb3b33d80"><td class="mdescLeft"> </td><td class="mdescRight">A const alternative to <a class="el" href="group__ble.html#gadc619114e7684aa26ba9a70fe5db05a8" title="Accessor to GattServer. ">gattServer()</a>.  <a href="#ga8b8e5e9da15d40a42c4afefdb3b33d80">More...</a><br/></td></tr>
+<tr class="separator:ga8b8e5e9da15d40a42c4afefdb3b33d80"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaacb5e1c6e9fbc6f164c7d2c6edde46ba"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classble_1_1_gatt_client.html">ble::GattClient</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gaacb5e1c6e9fbc6f164c7d2c6edde46ba">gattClient</a> ()</td></tr>
+<tr class="memdesc:gaacb5e1c6e9fbc6f164c7d2c6edde46ba"><td class="mdescLeft"> </td><td class="mdescRight">Accessors to <a class="el" href="classble_1_1_gatt_client.html" title="Define procedures required for interacting with a distant GATT server. ">GattClient</a>.  <a href="#gaacb5e1c6e9fbc6f164c7d2c6edde46ba">More...</a><br/></td></tr>
+<tr class="separator:gaacb5e1c6e9fbc6f164c7d2c6edde46ba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafc4aef3eac6e347802c35a3ff2abf421"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="classble_1_1_gatt_client.html">ble::GattClient</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gafc4aef3eac6e347802c35a3ff2abf421">gattClient</a> () const </td></tr>
+<tr class="memdesc:gafc4aef3eac6e347802c35a3ff2abf421"><td class="mdescLeft"> </td><td class="mdescRight">A const alternative to <a class="el" href="group__ble.html#gaacb5e1c6e9fbc6f164c7d2c6edde46ba" title="Accessors to GattClient. ">gattClient()</a>.  <a href="#gafc4aef3eac6e347802c35a3ff2abf421">More...</a><br/></td></tr>
+<tr class="separator:gafc4aef3eac6e347802c35a3ff2abf421"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac9f9f28f399c7818d44fe8584e143e18"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classble_1_1_security_manager.html">ble::SecurityManager</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gac9f9f28f399c7818d44fe8584e143e18">securityManager</a> ()</td></tr>
+<tr class="memdesc:gac9f9f28f399c7818d44fe8584e143e18"><td class="mdescLeft"> </td><td class="mdescRight">Accessors to <a class="el" href="classble_1_1_security_manager.html" title="Overview. ">SecurityManager</a>.  <a href="#gac9f9f28f399c7818d44fe8584e143e18">More...</a><br/></td></tr>
+<tr class="separator:gac9f9f28f399c7818d44fe8584e143e18"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga27303539c0e2191eb47c3c4653230165"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="classble_1_1_security_manager.html">ble::SecurityManager</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga27303539c0e2191eb47c3c4653230165">securityManager</a> () const </td></tr>
+<tr class="memdesc:ga27303539c0e2191eb47c3c4653230165"><td class="mdescLeft"> </td><td class="mdescRight">A const alternative to <a class="el" href="group__ble.html#gac9f9f28f399c7818d44fe8584e143e18" title="Accessors to SecurityManager. ">securityManager()</a>.  <a href="#ga27303539c0e2191eb47c3c4653230165">More...</a><br/></td></tr>
+<tr class="separator:ga27303539c0e2191eb47c3c4653230165"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf8ed79abc0715afb70054389192a2e62"><td align="right" class="memItemLeft" valign="top">static const char * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gaf8ed79abc0715afb70054389192a2e62">errorToString</a> (<a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> <a class="el" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42">error</a>)</td></tr>
+<tr class="memdesc:gaf8ed79abc0715afb70054389192a2e62"><td class="mdescLeft"> </td><td class="mdescRight">Translate error code into a printable string.  <a href="#gaf8ed79abc0715afb70054389192a2e62">More...</a><br/></td></tr>
+<tr class="separator:gaf8ed79abc0715afb70054389192a2e62"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga74800fac6aae5d1765eb8ac7d61a7a27"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga74800fac6aae5d1765eb8ac7d61a7a27">signalEventsToProcess</a> ()</td></tr>
+<tr class="memdesc:ga74800fac6aae5d1765eb8ac7d61a7a27"><td class="mdescLeft"> </td><td class="mdescRight">This function allows the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack to signal that there is work to do and event processing should be done (BLE::processEvent()).  <a href="#ga74800fac6aae5d1765eb8ac7d61a7a27">More...</a><br/></td></tr>
+<tr class="separator:ga74800fac6aae5d1765eb8ac7d61a7a27"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gae48c59456135c59cad0f707837dc2bb3"><td align="right" class="memItemLeft" valign="top">static const InstanceID_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#gae48c59456135c59cad0f707837dc2bb3">DEFAULT_INSTANCE</a> = 0</td></tr>
+<tr class="memdesc:gae48c59456135c59cad0f707837dc2bb3"><td class="mdescLeft"> </td><td class="mdescRight">The value of the <a class="el" href="group__ble.html#gaaaeb0e869ebb166eb101a2d6a5026179" title="Opaque type used to store the ID of a BLE instance. ">BLE::InstanceID_t</a> for the default <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance.  <a href="#gae48c59456135c59cad0f707837dc2bb3">More...</a><br/></td></tr>
+<tr class="separator:gae48c59456135c59cad0f707837dc2bb3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga75e346b7a16de99661b10c3606e7a400"><td align="right" class="memItemLeft" valign="top">static const InstanceID_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga75e346b7a16de99661b10c3606e7a400">NUM_INSTANCES</a> = 1</td></tr>
+<tr class="memdesc:ga75e346b7a16de99661b10c3606e7a400"><td class="mdescLeft"> </td><td class="mdescRight">The number of permitted <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instances for the application.  <a href="#ga75e346b7a16de99661b10c3606e7a400">More...</a><br/></td></tr>
+<tr class="separator:ga75e346b7a16de99661b10c3606e7a400"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4d72f5e1d413cd999e8bc14db4cfa4f3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classble_1_1_b_l_e.html">BLE</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga4d72f5e1d413cd999e8bc14db4cfa4f3">ble</a></td></tr>
+<tr class="memdesc:ga4d72f5e1d413cd999e8bc14db4cfa4f3"><td class="mdescLeft"> </td><td class="mdescRight">The ble instance which have events to process.  <a href="#ga4d72f5e1d413cd999e8bc14db4cfa4f3">More...</a><br/></td></tr>
+<tr class="separator:ga4d72f5e1d413cd999e8bc14db4cfa4f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4d72f5e1d413cd999e8bc14db4cfa4f3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classble_1_1_b_l_e.html">BLE</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga4d72f5e1d413cd999e8bc14db4cfa4f3">ble</a></td></tr>
+<tr class="memdesc:ga4d72f5e1d413cd999e8bc14db4cfa4f3"><td class="mdescLeft"> </td><td class="mdescRight">Reference to the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> object that has been initialized.  <a href="#ga4d72f5e1d413cd999e8bc14db4cfa4f3">More...</a><br/></td></tr>
+<tr class="separator:ga4d72f5e1d413cd999e8bc14db4cfa4f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga59e8d8c9780767842664d297edab03fa"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__ble.html#ga59e8d8c9780767842664d297edab03fa">error</a></td></tr>
+<tr class="memdesc:ga59e8d8c9780767842664d297edab03fa"><td class="mdescLeft"> </td><td class="mdescRight">Error status of the initialization.  <a href="#ga59e8d8c9780767842664d297edab03fa">More...</a><br/></td></tr>
+<tr class="separator:ga59e8d8c9780767842664d297edab03fa"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="gaf7308414c8f04ba282a6a75e9131240f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef void(* InitializationCompleteCallback_t) (InitializationCompleteCallbackContext *context)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialization complete event handler. </p>
+<dl class="section note"><dt>Note</dt><dd>There are two versions of <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a>. In addition to the function-pointer, <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a> can also take an &lt;Object, member&gt; tuple as its callback target. In case of the latter, the following declaration doesn't apply. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00271">271</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaaaeb0e869ebb166eb101a2d6a5026179"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef unsigned InstanceID_t</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Opaque type used to store the ID of a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd><a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton supports one instance. You may create multiple instances by using the constructor. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00143">143</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3a081a11a9c1db4f32ce349f0d3d74f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef <a class="el" href="class_function_pointer_with_context.html">FunctionPointerWithContext</a>&lt;OnEventsToProcessCallbackContext *&gt; OnEventsToProcessCallback_t</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Events to process event handler. </p>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00222">222</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gaf8ed79abc0715afb70054389192a2e62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">static const char* errorToString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> </td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Translate error code into a printable string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">error</td><td>Error code returned by <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> functions.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a const string describing the error. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa415ef3788238fd20deb739ad8a45d90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classble_1_1_gap.html">ble::Gap</a>&amp; gap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Accessor to <a class="el" href="classble_1_1_gap.html" title="Define device discovery, connection and link management procedures. ">Gap</a>. </p>
+<p>All Gap-related functionality requires going through this accessor.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a <a class="el" href="classble_1_1_gap.html" title="Define device discovery, connection and link management procedures. ">Gap</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2f47665564aa8d7f57604b750aaa9eb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="classble_1_1_gap.html">ble::Gap</a>&amp; gap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>A const alternative to <a class="el" href="group__ble.html#gaa415ef3788238fd20deb739ad8a45d90" title="Accessor to Gap. ">gap()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to a <a class="el" href="classble_1_1_gap.html" title="Define device discovery, connection and link management procedures. ">Gap</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaacb5e1c6e9fbc6f164c7d2c6edde46ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classble_1_1_gatt_client.html">ble::GattClient</a>&amp; gattClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Accessors to <a class="el" href="classble_1_1_gatt_client.html" title="Define procedures required for interacting with a distant GATT server. ">GattClient</a>. </p>
+<p>All <a class="el" href="classble_1_1_gatt_client.html" title="Define procedures required for interacting with a distant GATT server. ">GattClient</a> related functionality requires going through this accessor.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a <a class="el" href="classble_1_1_gatt_client.html" title="Define procedures required for interacting with a distant GATT server. ">GattClient</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafc4aef3eac6e347802c35a3ff2abf421"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="classble_1_1_gatt_client.html">ble::GattClient</a>&amp; gattClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>A const alternative to <a class="el" href="group__ble.html#gaacb5e1c6e9fbc6f164c7d2c6edde46ba" title="Accessors to GattClient. ">gattClient()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to a <a class="el" href="classble_1_1_gatt_client.html" title="Define procedures required for interacting with a distant GATT server. ">GattClient</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gadc619114e7684aa26ba9a70fe5db05a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classble_1_1_gatt_server.html">ble::GattServer</a>&amp; gattServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Accessor to <a class="el" href="classble_1_1_gatt_server.html" title="Construct and operates a GATT server. ">GattServer</a>. </p>
+<p>All <a class="el" href="classble_1_1_gatt_server.html" title="Construct and operates a GATT server. ">GattServer</a> related functionality requires going through this accessor.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a <a class="el" href="classble_1_1_gatt_server.html" title="Construct and operates a GATT server. ">GattServer</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8b8e5e9da15d40a42c4afefdb3b33d80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="classble_1_1_gatt_server.html">ble::GattServer</a>&amp; gattServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>A const alternative to <a class="el" href="group__ble.html#gadc619114e7684aa26ba9a70fe5db05a8" title="Accessor to GattServer. ">gattServer()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to a <a class="el" href="classble_1_1_gatt_server.html" title="Construct and operates a GATT server. ">GattServer</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga762691436db8264d921a6417e7119fe1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">InstanceID_t getInstanceID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Fetch the ID of a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>Instance id of this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00200">200</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga492edd5621b1b6f219c1138beb303fe1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const char* getVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This call allows the application to get the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack version information. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a const string representing the version.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> API owns the string returned. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacdeb2fdd527062f7f4dcd4112515666b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool hasInitialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicate if the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance has been initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if initialization has completed for the underlying <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> transport.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The application should set up a callback to signal completion of initialization when using <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6c55b8347456a9f5f3d228581484119f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ble.html#gaf7308414c8f04ba282a6a75e9131240f">InitializationCompleteCallback_t</a> </td>
+          <td class="paramname"><em>completion_cb</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> controller/stack. </p>
+<p><a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a> hands control to the underlying <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> module to accomplish initialization. This initialization may tacitly depend on other hardware setup (such as clocks or power-modes) that happens early on during system startup. It may not be safe to call <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a> from a global static context where ordering is compiler-specific and can't be guaranteed - it is safe to call <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">BLE::init()</a> from within main().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">completion_cb</td><td>A callback for when initialization completes for a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. This is an optional parameter; if no callback is set up, the application can still determine the status of initialization using <a class="el" href="group__ble.html#gacdeb2fdd527062f7f4dcd4112515666b" title="Indicate if the BLE instance has been initialized. ">BLE::hasInitialized()</a> (see below).</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>BLE_ERROR_NONE if the initialization procedure started successfully.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a> returns BLE_ERROR_NONE, the underlying stack must invoke the initialization completion callback at some point.</dd>
+<dd>
+Nearly all <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> APIs would return BLE_ERROR_INITIALIZATION_INCOMPLETE if used on an instance before the corresponding transport is initialized.</dd>
+<dd>
+There are two versions of <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a>. In addition to the function-pointer, <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a> can also take an &lt;Object, member&gt; pair as its callback target.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>This should be called before using anything else in the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> API. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00306">306</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabfbd8d56fd172b7ce03c35710638fd1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> init </td>
+          <td>(</td>
+          <td class="paramtype">T * </td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(T::*)(<a class="el" href="structble_1_1_b_l_e_1_1_initialization_complete_callback_context.html">InitializationCompleteCallbackContext</a> *context) </td>
+          <td class="paramname"><em>completion_cb</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> controller/stack. </p>
+<p>This is an alternate declaration for <a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a>. This one takes an &lt;Object, member&gt; pair as its callback target.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">object</td><td>Object, which will be used to invoke the completion callback. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">completion_cb</td><td>Member function pointer, which will be invoked when initialization is complete. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00323">323</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab06700838d276e77d5816a8afa907847"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">static <a class="el" href="classble_1_1_b_l_e.html">BLE</a>&amp; Instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get a reference to the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton. </p>
+<dl class="section note"><dt>Note</dt><dd>Calling <a class="el" href="group__ble.html#gab06700838d276e77d5816a8afa907847" title="Get a reference to the BLE singleton. ">Instance()</a> is preferred over constructing a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> object directly because it returns a reference to singleton.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a single object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4c8fbaba21160ad9eab66ef1ebdd13c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">static <a class="el" href="classble_1_1_b_l_e.html">BLE</a>&amp; Instance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ble.html#gaaaeb0e869ebb166eb101a2d6a5026179">InstanceID_t</a> </td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get a reference to the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton corresponding to a given interface. </p>
+<p>There is a static array of <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singletons.</p>
+<dl class="section note"><dt>Note</dt><dd>Calling <a class="el" href="group__ble.html#gab06700838d276e77d5816a8afa907847" title="Get a reference to the BLE singleton. ">Instance()</a> is preferred over constructing a <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> object directly because it returns references to singletons.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">id</td><td><a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> Instance ID to get.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a single object.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>id shall be less than NUM_INSTANCES. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00188">188</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga357ea6cbc66dba44bce4db3354d734b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void onEventsToProcess </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__ble.html#ga3a081a11a9c1db4f32ce349f0d3d74f6">OnEventsToProcessCallback_t</a> &amp; </td>
+          <td class="paramname"><em>on_event_cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Register a callback called when the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack has pending work. </p>
+<p>By registering a callback, application code can know when event processing has to be scheduled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">on_event_cb</td><td>Callback invoked when there are new events to process. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gad5473b44af17c41807bd98b6d1da298b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void processEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Process ALL pending events living in the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack and return once all events have been consumed. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__ble.html#ga357ea6cbc66dba44bce4db3354d734b1" title="Register a callback called when the BLE stack has pending work. ">onEventsToProcess()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac9f9f28f399c7818d44fe8584e143e18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classble_1_1_security_manager.html">ble::SecurityManager</a>&amp; securityManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Accessors to <a class="el" href="classble_1_1_security_manager.html" title="Overview. ">SecurityManager</a>. </p>
+<p>All SecurityManager-related functionality requires going through this accessor.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a <a class="el" href="classble_1_1_security_manager.html" title="Overview. ">SecurityManager</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga27303539c0e2191eb47c3c4653230165"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="classble_1_1_security_manager.html">ble::SecurityManager</a>&amp; securityManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>A const alternative to <a class="el" href="group__ble.html#gac9f9f28f399c7818d44fe8584e143e18" title="Accessors to SecurityManager. ">securityManager()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to a <a class="el" href="classble_1_1_security_manager.html" title="Overview. ">SecurityManager</a> object associated to this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9eb0d0b1a80f1e08490a05199d3cb9c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Shut down the underlying stack, and reset state of this <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>BLE_ERROR_NONE if the instance was shut down without error or the appropriate error code.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd><a class="el" href="group__ble.html#ga6c55b8347456a9f5f3d228581484119f" title="Initialize the BLE controller/stack. ">init()</a> must be called afterward to reinstate services and GAP state. This API offers a way to repopulate the GATT database with new services and characteristics. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga74800fac6aae5d1765eb8ac7d61a7a27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void signalEventsToProcess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This function allows the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack to signal that there is work to do and event processing should be done (BLE::processEvent()). </p>
+<dl class="section note"><dt>Note</dt><dd>This function should be called by the port of BLE_API. It is not meant to be used by end users. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ga4d72f5e1d413cd999e8bc14db4cfa4f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classble_1_1_b_l_e.html">BLE</a>&amp; ble</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The ble instance which have events to process. </p>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00215">215</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4d72f5e1d413cd999e8bc14db4cfa4f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classble_1_1_b_l_e.html">BLE</a>&amp; ble</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Reference to the <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> object that has been initialized. </p>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00252">252</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae48c59456135c59cad0f707837dc2bb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const InstanceID_t DEFAULT_INSTANCE = 0</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>The value of the <a class="el" href="group__ble.html#gaaaeb0e869ebb166eb101a2d6a5026179" title="Opaque type used to store the ID of a BLE instance. ">BLE::InstanceID_t</a> for the default <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instance. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd><a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton supports one instance. You may create multiple instances by using the constructor. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00149">149</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga59e8d8c9780767842664d297edab03fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4">ble_error_t</a> error</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Error status of the initialization. </p>
+<p>That value is set to BLE_ERROR_NONE if initialization completed successfully or the appropriate error code otherwise. </p>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00260">260</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga75e346b7a16de99661b10c3606e7a400"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const InstanceID_t NUM_INSTANCES = 1</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>The number of permitted <a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> instances for the application. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd><a class="el" href="classble_1_1_b_l_e.html" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> singleton supports one instance. You may create multiple instances by using the constructor. </dd></dl>
+
+<p>Definition at line <a class="el" href="_b_l_e_8h_source.html#l00155">155</a> of file <a class="el" href="_b_l_e_8h_source.html">BLE.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__ble.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:13:49 GMT -->
+</html>

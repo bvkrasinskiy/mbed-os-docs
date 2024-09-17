@@ -1,0 +1,3507 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/shci_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | shci.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="shci_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/shci_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/shci_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_59977a0c207738c890dea4a1d368376e.html">drivers</a></li><li class="navelem"><a class="el" href="dir_01973298b99ae3451d28320b74eaff96.html">ble</a></li><li class="navelem"><a class="el" href="dir_bace2f63c4602e00ca8e2f83c127e6e1.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_e6abf1140a5a55a7b220d2675023aca7.html">TARGET_STM32WB</a></li><li class="navelem"><a class="el" href="dir_bcaf69165acc90fda558b4cb88d29d3d.html">STM32Cube_FW</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">shci.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>HCI command for the system channel.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="mbox__def_8h_source.html">mbox_def.h</a>"</code><br/>
+</div>
+<p><a href="shci_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_wireless_fw_info__t.html">WirelessFwInfo_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aaf730bfe408d4da8b791eae777f8fdc6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aaf730bfe408d4da8b791eae777f8fdc6">SHCI_OPCODE_C2_FUS_FW_UPGRADE</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_FW_UPGRADE)</td></tr>
+<tr class="memdesc:aaf730bfe408d4da8b791eae777f8fdc6"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#aaf730bfe408d4da8b791eae777f8fdc6">More...</a><br/></td></tr>
+<tr class="separator:aaf730bfe408d4da8b791eae777f8fdc6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a20122987340163cb3277f8da804c3b2d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a20122987340163cb3277f8da804c3b2d">SHCI_OPCODE_C2_FUS_FW_DELETE</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_FW_DELETE)</td></tr>
+<tr class="memdesc:a20122987340163cb3277f8da804c3b2d"><td class="mdescLeft"> </td><td class="mdescRight">No structure for command parameters.  <a href="#a20122987340163cb3277f8da804c3b2d">More...</a><br/></td></tr>
+<tr class="separator:a20122987340163cb3277f8da804c3b2d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab796f6fe6d6492efc21502d3463eae7b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ab796f6fe6d6492efc21502d3463eae7b">SHCI_OPCODE_C2_FUS_UPDATE_AUTH_KEY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_UPDATE_AUTH_KEY)</td></tr>
+<tr class="memdesc:ab796f6fe6d6492efc21502d3463eae7b"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#ab796f6fe6d6492efc21502d3463eae7b">More...</a><br/></td></tr>
+<tr class="separator:ab796f6fe6d6492efc21502d3463eae7b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a934c596da503a2af8a725b4da49c2ae3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a934c596da503a2af8a725b4da49c2ae3">SHCI_OPCODE_C2_FUS_LOCK_AUTH_KEY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_LOCK_AUTH_KEY)</td></tr>
+<tr class="memdesc:a934c596da503a2af8a725b4da49c2ae3"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#a934c596da503a2af8a725b4da49c2ae3">More...</a><br/></td></tr>
+<tr class="separator:a934c596da503a2af8a725b4da49c2ae3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a285cecbe2d3d80c359f317bf37a58a20"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a285cecbe2d3d80c359f317bf37a58a20">SHCI_OPCODE_C2_FUS_STORE_USR_KEY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_STORE_USR_KEY)</td></tr>
+<tr class="memdesc:a285cecbe2d3d80c359f317bf37a58a20"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a285cecbe2d3d80c359f317bf37a58a20">More...</a><br/></td></tr>
+<tr class="separator:a285cecbe2d3d80c359f317bf37a58a20"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8ff6ab011a2e038e6668d67ea6b9240f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a8ff6ab011a2e038e6668d67ea6b9240f">SHCI_OPCODE_C2_FUS_LOAD_USR_KEY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_LOAD_USR_KEY)</td></tr>
+<tr class="memdesc:a8ff6ab011a2e038e6668d67ea6b9240f"><td class="mdescLeft"> </td><td class="mdescRight">Response parameters.  <a href="#a8ff6ab011a2e038e6668d67ea6b9240f">More...</a><br/></td></tr>
+<tr class="separator:a8ff6ab011a2e038e6668d67ea6b9240f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1bca097ad1531481bd6c62c60340e703"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a1bca097ad1531481bd6c62c60340e703">SHCI_OPCODE_C2_FUS_START_WS</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_START_WS)</td></tr>
+<tr class="memdesc:a1bca097ad1531481bd6c62c60340e703"><td class="mdescLeft"> </td><td class="mdescRight">Command parameters.  <a href="#a1bca097ad1531481bd6c62c60340e703">More...</a><br/></td></tr>
+<tr class="separator:a1bca097ad1531481bd6c62c60340e703"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae0f50e5951d0ed2d6f7a7ae95cfe5149"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ae0f50e5951d0ed2d6f7a7ae95cfe5149">SHCI_OPCODE_C2_FUS_RESERVED2</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED2)</td></tr>
+<tr class="memdesc:ae0f50e5951d0ed2d6f7a7ae95cfe5149"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#ae0f50e5951d0ed2d6f7a7ae95cfe5149">More...</a><br/></td></tr>
+<tr class="separator:ae0f50e5951d0ed2d6f7a7ae95cfe5149"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2e66dba9e62057e42577c4eb643a1907"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a2e66dba9e62057e42577c4eb643a1907">SHCI_OPCODE_C2_FUS_RESERVED3</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED3)</td></tr>
+<tr class="memdesc:a2e66dba9e62057e42577c4eb643a1907"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a2e66dba9e62057e42577c4eb643a1907">More...</a><br/></td></tr>
+<tr class="separator:a2e66dba9e62057e42577c4eb643a1907"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab83cf2fc0dd87b17085cd64614edadb6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ab83cf2fc0dd87b17085cd64614edadb6">SHCI_OPCODE_C2_FUS_LOCK_USR_KEY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_LOCK_USR_KEY)</td></tr>
+<tr class="memdesc:ab83cf2fc0dd87b17085cd64614edadb6"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#ab83cf2fc0dd87b17085cd64614edadb6">More...</a><br/></td></tr>
+<tr class="separator:ab83cf2fc0dd87b17085cd64614edadb6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aef2861b3aeb755f02327a759188c7f74"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aef2861b3aeb755f02327a759188c7f74">SHCI_OPCODE_C2_FUS_UNLOAD_USR_KEY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_UNLOAD_USR_KEY)</td></tr>
+<tr class="memdesc:aef2861b3aeb755f02327a759188c7f74"><td class="mdescLeft"> </td><td class="mdescRight">Command parameters.  <a href="#aef2861b3aeb755f02327a759188c7f74">More...</a><br/></td></tr>
+<tr class="separator:aef2861b3aeb755f02327a759188c7f74"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adbf1e0647aa1e9e14f5eb3d445b68a87"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#adbf1e0647aa1e9e14f5eb3d445b68a87">SHCI_OPCODE_C2_FUS_ACTIVATE_ANTIROLLBACK</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_ACTIVATE_ANTIROLLBACK)</td></tr>
+<tr class="memdesc:adbf1e0647aa1e9e14f5eb3d445b68a87"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#adbf1e0647aa1e9e14f5eb3d445b68a87">More...</a><br/></td></tr>
+<tr class="separator:adbf1e0647aa1e9e14f5eb3d445b68a87"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a36911b54608527a2a53d70bf690efb61"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a36911b54608527a2a53d70bf690efb61">SHCI_OPCODE_C2_FUS_RESERVED7</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED7)</td></tr>
+<tr class="memdesc:a36911b54608527a2a53d70bf690efb61"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a36911b54608527a2a53d70bf690efb61">More...</a><br/></td></tr>
+<tr class="separator:a36911b54608527a2a53d70bf690efb61"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acef2f38190a80cf030fe69a59fb38a7d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#acef2f38190a80cf030fe69a59fb38a7d">SHCI_OPCODE_C2_FUS_RESERVED8</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED8)</td></tr>
+<tr class="memdesc:acef2f38190a80cf030fe69a59fb38a7d"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#acef2f38190a80cf030fe69a59fb38a7d">More...</a><br/></td></tr>
+<tr class="separator:acef2f38190a80cf030fe69a59fb38a7d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad07a41a507ba38c5f2ab4f5228f34ba6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ad07a41a507ba38c5f2ab4f5228f34ba6">SHCI_OPCODE_C2_FUS_RESERVED9</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED9)</td></tr>
+<tr class="memdesc:ad07a41a507ba38c5f2ab4f5228f34ba6"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#ad07a41a507ba38c5f2ab4f5228f34ba6">More...</a><br/></td></tr>
+<tr class="separator:ad07a41a507ba38c5f2ab4f5228f34ba6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5c7f83010ec1744f598486398a82ab9e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a5c7f83010ec1744f598486398a82ab9e">SHCI_OPCODE_C2_FUS_RESERVED10</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED10)</td></tr>
+<tr class="memdesc:a5c7f83010ec1744f598486398a82ab9e"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a5c7f83010ec1744f598486398a82ab9e">More...</a><br/></td></tr>
+<tr class="separator:a5c7f83010ec1744f598486398a82ab9e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a220dff560515aa90e8aa3f48fc5fba78"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a220dff560515aa90e8aa3f48fc5fba78">SHCI_OPCODE_C2_FUS_RESERVED11</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED11)</td></tr>
+<tr class="memdesc:a220dff560515aa90e8aa3f48fc5fba78"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a220dff560515aa90e8aa3f48fc5fba78">More...</a><br/></td></tr>
+<tr class="separator:a220dff560515aa90e8aa3f48fc5fba78"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0a40cca623b0fec1d9e6adcc16a65bb2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a0a40cca623b0fec1d9e6adcc16a65bb2">SHCI_OPCODE_C2_FUS_RESERVED12</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED12)</td></tr>
+<tr class="memdesc:a0a40cca623b0fec1d9e6adcc16a65bb2"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a0a40cca623b0fec1d9e6adcc16a65bb2">More...</a><br/></td></tr>
+<tr class="separator:a0a40cca623b0fec1d9e6adcc16a65bb2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae216cc245ec59b8d229011a8bcf608aa"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ae216cc245ec59b8d229011a8bcf608aa">SHCI_OPCODE_C2_BLE_INIT</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_BLE_INIT)</td></tr>
+<tr class="memdesc:ae216cc245ec59b8d229011a8bcf608aa"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#ae216cc245ec59b8d229011a8bcf608aa">More...</a><br/></td></tr>
+<tr class="separator:ae216cc245ec59b8d229011a8bcf608aa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af869c858a29bd00368bdb6bfa05e7ec9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#af869c858a29bd00368bdb6bfa05e7ec9">SHCI_C2_BLE_INIT_OPTIONS_LL_ONLY</a>   (1&lt;&lt;0)</td></tr>
+<tr class="memdesc:af869c858a29bd00368bdb6bfa05e7ec9"><td class="mdescLeft"> </td><td class="mdescRight">Options Each definition below may be added together to build the Options value WARNING : Only one definition per bit shall be added to build the Options value.  <a href="#af869c858a29bd00368bdb6bfa05e7ec9">More...</a><br/></td></tr>
+<tr class="separator:af869c858a29bd00368bdb6bfa05e7ec9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a14da2981c37a114f6b93a96d56d000bc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a14da2981c37a114f6b93a96d56d000bc">SHCI_OPCODE_C2_DEBUG_INIT</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_DEBUG_INIT)</td></tr>
+<tr class="memdesc:a14da2981c37a114f6b93a96d56d000bc"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a14da2981c37a114f6b93a96d56d000bc">More...</a><br/></td></tr>
+<tr class="separator:a14da2981c37a114f6b93a96d56d000bc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aabdd58ffa27100caf9b63a8433afa1de"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aabdd58ffa27100caf9b63a8433afa1de">SHCI_OPCODE_C2_FLASH_ERASE_ACTIVITY</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FLASH_ERASE_ACTIVITY)</td></tr>
+<tr class="memdesc:aabdd58ffa27100caf9b63a8433afa1de"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#aabdd58ffa27100caf9b63a8433afa1de">More...</a><br/></td></tr>
+<tr class="separator:aabdd58ffa27100caf9b63a8433afa1de"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adaf9e55203adafb72a5117879fe4455d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#adaf9e55203adafb72a5117879fe4455d">SHCI_OPCODE_C2_CONCURRENT_SET_MODE</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONCURRENT_SET_MODE)</td></tr>
+<tr class="memdesc:adaf9e55203adafb72a5117879fe4455d"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#adaf9e55203adafb72a5117879fe4455d">More...</a><br/></td></tr>
+<tr class="separator:adaf9e55203adafb72a5117879fe4455d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf38d940228d629f72248746b8d13ec6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aaf38d940228d629f72248746b8d13ec6">SHCI_OPCODE_C2_CONCURRENT_GET_NEXT_BLE_EVT_TIME</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONCURRENT_GET_NEXT_BLE_EVT_TIME)</td></tr>
+<tr class="memdesc:aaf38d940228d629f72248746b8d13ec6"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#aaf38d940228d629f72248746b8d13ec6">More...</a><br/></td></tr>
+<tr class="separator:aaf38d940228d629f72248746b8d13ec6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9caf44e84b897e441437e80495ee2385"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a9caf44e84b897e441437e80495ee2385">SHCI_OPCODE_C2_CONCURRENT_ENABLE_NEXT_802154_EVT_NOTIFICATION</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONCURRENT_ENABLE_NEXT_802154_EVT_NOTIFICATION)</td></tr>
+<tr class="memdesc:a9caf44e84b897e441437e80495ee2385"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#a9caf44e84b897e441437e80495ee2385">More...</a><br/></td></tr>
+<tr class="separator:a9caf44e84b897e441437e80495ee2385"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a310ef3b9a0c477bafe2453a3d86fb6a9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a310ef3b9a0c477bafe2453a3d86fb6a9">SHCI_OPCODE_C2_FLASH_STORE_DATA</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FLASH_STORE_DATA)</td></tr>
+<tr class="memdesc:a310ef3b9a0c477bafe2453a3d86fb6a9"><td class="mdescLeft"> </td><td class="mdescRight">No command parameters.  <a href="#a310ef3b9a0c477bafe2453a3d86fb6a9">More...</a><br/></td></tr>
+<tr class="separator:a310ef3b9a0c477bafe2453a3d86fb6a9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a695aa78a9d86b341cb107e44677997c2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a695aa78a9d86b341cb107e44677997c2">SHCI_OPCODE_C2_RADIO_ALLOW_LOW_POWER</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_RADIO_ALLOW_LOW_POWER)</td></tr>
+<tr class="memdesc:a695aa78a9d86b341cb107e44677997c2"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#a695aa78a9d86b341cb107e44677997c2">More...</a><br/></td></tr>
+<tr class="separator:a695aa78a9d86b341cb107e44677997c2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8aec66692461c2579c82f6be1de8956c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a8aec66692461c2579c82f6be1de8956c">SHCI_OPCODE_C2_SET_FLASH_ACTIVITY_CONTROL</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_SET_FLASH_ACTIVITY_CONTROL)</td></tr>
+<tr class="memdesc:a8aec66692461c2579c82f6be1de8956c"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#a8aec66692461c2579c82f6be1de8956c">More...</a><br/></td></tr>
+<tr class="separator:a8aec66692461c2579c82f6be1de8956c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8ae45f0854e92d294890eaa62a469ec1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a8ae45f0854e92d294890eaa62a469ec1">SHCI_OPCODE_C2_CONFIG</a>   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONFIG)</td></tr>
+<tr class="memdesc:a8ae45f0854e92d294890eaa62a469ec1"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#a8ae45f0854e92d294890eaa62a469ec1">More...</a><br/></td></tr>
+<tr class="separator:a8ae45f0854e92d294890eaa62a469ec1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad88f7dab7293821255e946d7c0a28a9a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ad88f7dab7293821255e946d7c0a28a9a">SHCI_C2_CONFIG_PAYLOAD_CMD_SIZE</a>   (sizeof(<a class="el" href="shci_8h.html#aa87927f19fc149e6f7c4861b5b575321">SHCI_C2_CONFIG_Cmd_Param_t</a>) - 1)</td></tr>
+<tr class="memdesc:ad88f7dab7293821255e946d7c0a28a9a"><td class="mdescLeft"> </td><td class="mdescRight">PayloadCmdSize Value that shall be used.  <a href="#ad88f7dab7293821255e946d7c0a28a9a">More...</a><br/></td></tr>
+<tr class="separator:ad88f7dab7293821255e946d7c0a28a9a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3714ad2e352dd1940732b0c24df49a9b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a3714ad2e352dd1940732b0c24df49a9b">SHCI_C2_CONFIG_CONFIG1_BIT0_BLE_NVM_DATA_TO_INTERNAL_FLASH</a>   (0&lt;&lt;0)</td></tr>
+<tr class="memdesc:a3714ad2e352dd1940732b0c24df49a9b"><td class="mdescLeft"> </td><td class="mdescRight">Config1 Each definition below may be added together to build the Config1 value WARNING : Only one definition per bit shall be added to build the Config1 value.  <a href="#a3714ad2e352dd1940732b0c24df49a9b">More...</a><br/></td></tr>
+<tr class="separator:a3714ad2e352dd1940732b0c24df49a9b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae12658f83832446b4827a91384b11efa"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ae12658f83832446b4827a91384b11efa">SHCI_C2_CONFIG_EVTMASK1_BIT0_ERROR_NOTIF_ENABLE</a>   (1&lt;&lt;0)</td></tr>
+<tr class="memdesc:ae12658f83832446b4827a91384b11efa"><td class="mdescLeft"> </td><td class="mdescRight">EvtMask1 Each definition below may be added together to build the EvtMask1 value.  <a href="#ae12658f83832446b4827a91384b11efa">More...</a><br/></td></tr>
+<tr class="separator:ae12658f83832446b4827a91384b11efa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a506f5518091b05abd05e7db598470078"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a506f5518091b05abd05e7db598470078">BLE_NVM_SRAM_SIZE</a>   (507)</td></tr>
+<tr class="memdesc:a506f5518091b05abd05e7db598470078"><td class="mdescLeft"> </td><td class="mdescRight">BleNvmRamAddress The buffer shall have a size of BLE_NVM_SRAM_SIZE number of 32bits The buffer shall be allocated in SRAM2.  <a href="#a506f5518091b05abd05e7db598470078">More...</a><br/></td></tr>
+<tr class="separator:a506f5518091b05abd05e7db598470078"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a56bfcff1ed29c2df1c0848952f877163"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a56bfcff1ed29c2df1c0848952f877163">THREAD_NVM_SRAM_SIZE</a>   (1016)</td></tr>
+<tr class="memdesc:a56bfcff1ed29c2df1c0848952f877163"><td class="mdescLeft"> </td><td class="mdescRight">ThreadNvmRamAddress The buffer shall have a size of THREAD_NVM_SRAM_SIZE number of 32bits The buffer shall be allocated in SRAM2.  <a href="#a56bfcff1ed29c2df1c0848952f877163">More...</a><br/></td></tr>
+<tr class="separator:a56bfcff1ed29c2df1c0848952f877163"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aff864efb79cc2bceb7eb276a2afa1a27"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aff864efb79cc2bceb7eb276a2afa1a27">FUS_DEVICE_INFO_TABLE_VALIDITY_KEYWORD</a>   (0xA94656B9)</td></tr>
+<tr class="memdesc:aff864efb79cc2bceb7eb276a2afa1a27"><td class="mdescLeft"> </td><td class="mdescRight">No response parameters.  <a href="#aff864efb79cc2bceb7eb276a2afa1a27">More...</a><br/></td></tr>
+<tr class="separator:aff864efb79cc2bceb7eb276a2afa1a27"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8a1704c1d6ba0109952bd2ea879ae709"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:a8a1704c1d6ba0109952bd2ea879ae709"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a8a1704c1d6ba0109952bd2ea879ae709">SHCI_C2_Ready_Evt_t</a></td></tr>
+<tr class="memdesc:a8a1704c1d6ba0109952bd2ea879ae709"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_CODE_READY This notifies the CPU1 that the CPU2 is now ready to receive commands It reports as well which firmware is running on CPU2 : The wireless stack of the FUS (previously named RSS)  <a href="#a8a1704c1d6ba0109952bd2ea879ae709">More...</a><br/></td></tr>
+<tr class="separator:a8a1704c1d6ba0109952bd2ea879ae709"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abdb48511714cc08ab89df448b5550a34"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:abdb48511714cc08ab89df448b5550a34"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#abdb48511714cc08ab89df448b5550a34">SHCI_C2_ErrorNotif_Evt_t</a></td></tr>
+<tr class="memdesc:abdb48511714cc08ab89df448b5550a34"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_ERROR_NOTIF This reports to the CPU1 some error form the CPU2.  <a href="#abdb48511714cc08ab89df448b5550a34">More...</a><br/></td></tr>
+<tr class="separator:abdb48511714cc08ab89df448b5550a34"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad94f140600962ffead1f926c19d9bbbd"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:ad94f140600962ffead1f926c19d9bbbd"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ad94f140600962ffead1f926c19d9bbbd">SHCI_C2_BleNvmRamUpdate_Evt_t</a></td></tr>
+<tr class="memdesc:ad94f140600962ffead1f926c19d9bbbd"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_BLE_NVM_RAM_UPDATE This notifies the CPU1 which part of the BLE NVM RAM has been updated so that only the modified section could be written in Flash/NVM StartAddress : Start address of the section that has been modified Size : Size (in bytes) of the section that has been modified.  <a href="#ad94f140600962ffead1f926c19d9bbbd">More...</a><br/></td></tr>
+<tr class="separator:ad94f140600962ffead1f926c19d9bbbd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a89c7090b28913d551cb54d1708c22cff"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:a89c7090b28913d551cb54d1708c22cff"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a89c7090b28913d551cb54d1708c22cff">SHCI_C2_ThreadNvmRamUpdate_Evt_t</a></td></tr>
+<tr class="memdesc:a89c7090b28913d551cb54d1708c22cff"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_THREAD_NVM_RAM_UPDATE This notifies the CPU1 which part of the OT NVM RAM has been updated so that only the modified section could be written in Flash/NVM StartAddress : Start address of the section that has been modified Size : Size (in bytes) of the section that has been modified.  <a href="#a89c7090b28913d551cb54d1708c22cff">More...</a><br/></td></tr>
+<tr class="separator:a89c7090b28913d551cb54d1708c22cff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a421d8c6403f07fe6d8c267ee791163e6"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:a421d8c6403f07fe6d8c267ee791163e6"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a421d8c6403f07fe6d8c267ee791163e6">SHCI_C2_NvmStartWrite_Evt_t</a></td></tr>
+<tr class="memdesc:a421d8c6403f07fe6d8c267ee791163e6"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_NVM_START_WRITE This notifies the CPU1 that the CPU2 has started a write procedure in Flash NumberOfWords : The number of 64bits data the CPU2 needs to write in Flash.  <a href="#a421d8c6403f07fe6d8c267ee791163e6">More...</a><br/></td></tr>
+<tr class="separator:a421d8c6403f07fe6d8c267ee791163e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0d0ed7cd53c3db3db81f863331285e48"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:a0d0ed7cd53c3db3db81f863331285e48"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a0d0ed7cd53c3db3db81f863331285e48">SHCI_C2_NvmStartErase_Evt_t</a></td></tr>
+<tr class="memdesc:a0d0ed7cd53c3db3db81f863331285e48"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_NVM_END_WRITE This notifies the CPU1 that the CPU2 has written all expected data in Flash.  <a href="#a0d0ed7cd53c3db3db81f863331285e48">More...</a><br/></td></tr>
+<tr class="separator:a0d0ed7cd53c3db3db81f863331285e48"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab45e0f4ac7a76bf65ae2be0bf0eaa6fe"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:a0571e690001e2c4ca3a96c103acb47fb"><td class="memItemLeft">   uint32_t   <a class="el" href="shci_8h.html#a0571e690001e2c4ca3a96c103acb47fb">MetaData</a> [3]</td></tr>
+<tr class="memdesc:a0571e690001e2c4ca3a96c103acb47fb"><td class="mdescLeft"> </td><td class="mdescRight">MetaData holds : 2*32bits for chaining list 1*32bits with BLE header (type + Opcode + Length)  <a href="#a0571e690001e2c4ca3a96c103acb47fb">More...</a><br/></td></tr>
+<tr class="separator:a0571e690001e2c4ca3a96c103acb47fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab45e0f4ac7a76bf65ae2be0bf0eaa6fe"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ab45e0f4ac7a76bf65ae2be0bf0eaa6fe">SHCI_Header_t</a></td></tr>
+<tr class="memdesc:ab45e0f4ac7a76bf65ae2be0bf0eaa6fe"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_SUB_EVT_NVM_END_ERASE This notifies the CPU1 that the CPU2 has erased all expected flash sectors.  <a href="#ab45e0f4ac7a76bf65ae2be0bf0eaa6fe">More...</a><br/></td></tr>
+<tr class="separator:ab45e0f4ac7a76bf65ae2be0bf0eaa6fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5b6ec432e49faff90dd1898624471f06"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:abf8aa762b17bc463c35fb7ecfa06d529"><td class="memItemLeft">   uint8_t *   <a class="el" href="shci_8h.html#abf8aa762b17bc463c35fb7ecfa06d529">pBleBufferAddress</a></td></tr>
+<tr class="memdesc:abf8aa762b17bc463c35fb7ecfa06d529"><td class="mdescLeft"> </td><td class="mdescRight">NOT USED - shall be set to 0.  <a href="#abf8aa762b17bc463c35fb7ecfa06d529">More...</a><br/></td></tr>
+<tr class="separator:abf8aa762b17bc463c35fb7ecfa06d529"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeafc842374e2affc3b9e2db074f1b700"><td class="memItemLeft">   uint32_t   <a class="el" href="shci_8h.html#aeafc842374e2affc3b9e2db074f1b700">BleBufferSize</a></td></tr>
+<tr class="memdesc:aeafc842374e2affc3b9e2db074f1b700"><td class="mdescLeft"> </td><td class="mdescRight">NOT USED - shall be set to 0.  <a href="#aeafc842374e2affc3b9e2db074f1b700">More...</a><br/></td></tr>
+<tr class="separator:aeafc842374e2affc3b9e2db074f1b700"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adaac5b2431d07b24820605d193c89f00"><td class="memItemLeft">   uint16_t   <a class="el" href="shci_8h.html#adaac5b2431d07b24820605d193c89f00">NumAttrRecord</a></td></tr>
+<tr class="memdesc:adaac5b2431d07b24820605d193c89f00"><td class="mdescLeft"> </td><td class="mdescRight">NumAttrRecord Maximum number of attribute records related to all the required characteristics (excluding the services) that can be stored in the GATT database, for the specific BLE user application.  <a href="#adaac5b2431d07b24820605d193c89f00">More...</a><br/></td></tr>
+<tr class="separator:adaac5b2431d07b24820605d193c89f00"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a47a00341e591736f517b1cdff3f3ab35"><td class="memItemLeft">   uint16_t   <a class="el" href="shci_8h.html#a47a00341e591736f517b1cdff3f3ab35">NumAttrServ</a></td></tr>
+<tr class="memdesc:a47a00341e591736f517b1cdff3f3ab35"><td class="mdescLeft"> </td><td class="mdescRight">NumAttrServ Defines the maximum number of services that can be stored in the GATT database.  <a href="#a47a00341e591736f517b1cdff3f3ab35">More...</a><br/></td></tr>
+<tr class="separator:a47a00341e591736f517b1cdff3f3ab35"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abc925a7d78c2daa24b14e4f681d2097f"><td class="memItemLeft">   uint16_t   <a class="el" href="shci_8h.html#abc925a7d78c2daa24b14e4f681d2097f">AttrValueArrSize</a></td></tr>
+<tr class="memdesc:abc925a7d78c2daa24b14e4f681d2097f"><td class="mdescLeft"> </td><td class="mdescRight">AttrValueArrSize NOTE: This parameter is ignored by the CPU2 when the parameter "Options" is set to "LL_only" ( see Options description in that structure )  <a href="#abc925a7d78c2daa24b14e4f681d2097f">More...</a><br/></td></tr>
+<tr class="separator:abc925a7d78c2daa24b14e4f681d2097f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0852db211c79351d8276d64db5749966"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#a0852db211c79351d8276d64db5749966">NumOfLinks</a></td></tr>
+<tr class="memdesc:a0852db211c79351d8276d64db5749966"><td class="mdescLeft"> </td><td class="mdescRight">NumOfLinks Maximum number of BLE links supported.  <a href="#a0852db211c79351d8276d64db5749966">More...</a><br/></td></tr>
+<tr class="separator:a0852db211c79351d8276d64db5749966"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6aaa2ade4ec60c42685aa5972302105d"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#a6aaa2ade4ec60c42685aa5972302105d">ExtendedPacketLengthEnable</a></td></tr>
+<tr class="memdesc:a6aaa2ade4ec60c42685aa5972302105d"><td class="mdescLeft"> </td><td class="mdescRight">ExtendedPacketLengthEnable Disable/enable the extended packet length BLE 5.0 feature.  <a href="#a6aaa2ade4ec60c42685aa5972302105d">More...</a><br/></td></tr>
+<tr class="separator:a6aaa2ade4ec60c42685aa5972302105d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a704d4c3e81d01c42992f1e7ef64dbc33"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#a704d4c3e81d01c42992f1e7ef64dbc33">PrWriteListSize</a></td></tr>
+<tr class="memdesc:a704d4c3e81d01c42992f1e7ef64dbc33"><td class="mdescLeft"> </td><td class="mdescRight">PrWriteListSize NOTE: This parameter is ignored by the CPU2 when the parameter "Options" is set to "LL_only" ( see Options description in that structure )  <a href="#a704d4c3e81d01c42992f1e7ef64dbc33">More...</a><br/></td></tr>
+<tr class="separator:a704d4c3e81d01c42992f1e7ef64dbc33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4aa50836c833c5eaf049b75ba19b8b86"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#a4aa50836c833c5eaf049b75ba19b8b86">MblockCount</a></td></tr>
+<tr class="memdesc:a4aa50836c833c5eaf049b75ba19b8b86"><td class="mdescLeft"> </td><td class="mdescRight">MblockCount NOTE: This parameter is overwritten by the CPU2 with an hardcoded optimal value when the parameter "Options" is set to "LL_only" ( see Options description in that structure )  <a href="#a4aa50836c833c5eaf049b75ba19b8b86">More...</a><br/></td></tr>
+<tr class="separator:a4aa50836c833c5eaf049b75ba19b8b86"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1964591f09c1a90de1576682c00c2c8e"><td class="memItemLeft">   uint16_t   <a class="el" href="shci_8h.html#a1964591f09c1a90de1576682c00c2c8e">AttMtu</a></td></tr>
+<tr class="memdesc:a1964591f09c1a90de1576682c00c2c8e"><td class="mdescLeft"> </td><td class="mdescRight">AttMtu NOTE: This parameter is ignored by the CPU2 when the parameter "Options" is set to "LL_only" ( see Options description in that structure )  <a href="#a1964591f09c1a90de1576682c00c2c8e">More...</a><br/></td></tr>
+<tr class="separator:a1964591f09c1a90de1576682c00c2c8e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8351e90a96162466223b98601132bb59"><td class="memItemLeft">   uint16_t   <a class="el" href="shci_8h.html#a8351e90a96162466223b98601132bb59">SlaveSca</a></td></tr>
+<tr class="memdesc:a8351e90a96162466223b98601132bb59"><td class="mdescLeft"> </td><td class="mdescRight">SlaveSca The sleep clock accuracy (ppm value) that used in BLE connected slave mode to calculate the window widening (in combination with the sleep clock accuracy sent by master in CONNECT_REQ PDU), refer to BLE 5.0 specifications - Vol 6 - Part B - chap 4.5.7 and 4.2.2.  <a href="#a8351e90a96162466223b98601132bb59">More...</a><br/></td></tr>
+<tr class="separator:a8351e90a96162466223b98601132bb59"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa57267c11fdd999ce4fc164f93c04b35"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#aa57267c11fdd999ce4fc164f93c04b35">MasterSca</a></td></tr>
+<tr class="memdesc:aa57267c11fdd999ce4fc164f93c04b35"><td class="mdescLeft"> </td><td class="mdescRight">MasterSca The sleep clock accuracy handled in master mode.  <a href="#aa57267c11fdd999ce4fc164f93c04b35">More...</a><br/></td></tr>
+<tr class="separator:aa57267c11fdd999ce4fc164f93c04b35"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a885bf3280151e57b7cbe773899845c32"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#a885bf3280151e57b7cbe773899845c32">LsSource</a></td></tr>
+<tr class="memdesc:a885bf3280151e57b7cbe773899845c32"><td class="mdescLeft"> </td><td class="mdescRight">LsSource Source for the 32 kHz slow speed clock.  <a href="#a885bf3280151e57b7cbe773899845c32">More...</a><br/></td></tr>
+<tr class="separator:a885bf3280151e57b7cbe773899845c32"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6da493bc239ac7b20bd82daf7edca324"><td class="memItemLeft">   uint32_t   <a class="el" href="shci_8h.html#a6da493bc239ac7b20bd82daf7edca324">MaxConnEventLength</a></td></tr>
+<tr class="memdesc:a6da493bc239ac7b20bd82daf7edca324"><td class="mdescLeft"> </td><td class="mdescRight">MaxConnEventLength This parameter determines the maximum duration of a slave connection event.  <a href="#a6da493bc239ac7b20bd82daf7edca324">More...</a><br/></td></tr>
+<tr class="separator:a6da493bc239ac7b20bd82daf7edca324"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a99ec71a12b8e0c470196f84941f0c76a"><td class="memItemLeft">   uint16_t   <a class="el" href="shci_8h.html#a99ec71a12b8e0c470196f84941f0c76a">HsStartupTime</a></td></tr>
+<tr class="memdesc:a99ec71a12b8e0c470196f84941f0c76a"><td class="mdescLeft"> </td><td class="mdescRight">HsStartupTime Startup time of the high speed (16 or 32 MHz) crystal oscillator in units of 625/256 µs (~2.44 µs).  <a href="#a99ec71a12b8e0c470196f84941f0c76a">More...</a><br/></td></tr>
+<tr class="separator:a99ec71a12b8e0c470196f84941f0c76a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae0fed440c317ab9c78e6441c68c848cf"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#ae0fed440c317ab9c78e6441c68c848cf">ViterbiEnable</a></td></tr>
+<tr class="memdesc:ae0fed440c317ab9c78e6441c68c848cf"><td class="mdescLeft"> </td><td class="mdescRight">ViterbiEnable Viterbi implementation in BLE LL reception.  <a href="#ae0fed440c317ab9c78e6441c68c848cf">More...</a><br/></td></tr>
+<tr class="separator:ae0fed440c317ab9c78e6441c68c848cf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad97e8c2798c033923d70d8ecc9062605"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#ad97e8c2798c033923d70d8ecc9062605">Options</a></td></tr>
+<tr class="memdesc:ad97e8c2798c033923d70d8ecc9062605"><td class="mdescLeft"> </td><td class="mdescRight">Options flags.  <a href="#ad97e8c2798c033923d70d8ecc9062605">More...</a><br/></td></tr>
+<tr class="separator:ad97e8c2798c033923d70d8ecc9062605"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afd02860a98837c2e0f76f8dd6a1aec0a"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#afd02860a98837c2e0f76f8dd6a1aec0a">HwVersion</a></td></tr>
+<tr class="memdesc:afd02860a98837c2e0f76f8dd6a1aec0a"><td class="mdescLeft"> </td><td class="mdescRight">HwVersion Reserved for future use - shall be set to 0.  <a href="#afd02860a98837c2e0f76f8dd6a1aec0a">More...</a><br/></td></tr>
+<tr class="separator:afd02860a98837c2e0f76f8dd6a1aec0a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3e02717a6e51c5239f1b13309c3677fb"><td class="memItemLeft">   uint8_t   <a class="el" href="shci_8h.html#a3e02717a6e51c5239f1b13309c3677fb">max_coc_initiator_nbr</a></td></tr>
+<tr class="memdesc:a3e02717a6e51c5239f1b13309c3677fb"><td class="mdescLeft"> </td><td class="mdescRight">Maximum number of connection-oriented channels in initiator mode.  <a href="#a3e02717a6e51c5239f1b13309c3677fb">More...</a><br/></td></tr>
+<tr class="separator:a3e02717a6e51c5239f1b13309c3677fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae2f0e2355a6714149a7264b360faad42"><td class="memItemLeft">   int8_t   <a class="el" href="shci_8h.html#ae2f0e2355a6714149a7264b360faad42">min_tx_power</a></td></tr>
+<tr class="memdesc:ae2f0e2355a6714149a7264b360faad42"><td class="mdescLeft"> </td><td class="mdescRight">Minimum transmit power in dBm supported by the Controller.  <a href="#ae2f0e2355a6714149a7264b360faad42">More...</a><br/></td></tr>
+<tr class="separator:ae2f0e2355a6714149a7264b360faad42"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab6bea18b409e084921193c66d71f3c3b"><td class="memItemLeft">   int8_t   <a class="el" href="shci_8h.html#ab6bea18b409e084921193c66d71f3c3b">max_tx_power</a></td></tr>
+<tr class="memdesc:ab6bea18b409e084921193c66d71f3c3b"><td class="mdescLeft"> </td><td class="mdescRight">Maximum transmit power in dBm supported by the Controller.  <a href="#ab6bea18b409e084921193c66d71f3c3b">More...</a><br/></td></tr>
+<tr class="separator:ab6bea18b409e084921193c66d71f3c3b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5b6ec432e49faff90dd1898624471f06"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a5b6ec432e49faff90dd1898624471f06">SHCI_C2_Ble_Init_Cmd_Param_t</a></td></tr>
+<tr class="memdesc:a5b6ec432e49faff90dd1898624471f06"><td class="mdescLeft"> </td><td class="mdescRight">THE ORDER SHALL NOT BE CHANGED.  <a href="#a5b6ec432e49faff90dd1898624471f06">More...</a><br/></td></tr>
+<tr class="separator:a5b6ec432e49faff90dd1898624471f06"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad68701573eb3241eb3292cf4e9b1e02f"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:ad68701573eb3241eb3292cf4e9b1e02f"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ad68701573eb3241eb3292cf4e9b1e02f">SHCI_C2_DEBUG_TracesConfig_t</a></td></tr>
+<tr class="memdesc:ad68701573eb3241eb3292cf4e9b1e02f"><td class="mdescLeft"> </td><td class="mdescRight">Command parameters.  <a href="#ad68701573eb3241eb3292cf4e9b1e02f">More...</a><br/></td></tr>
+<tr class="separator:ad68701573eb3241eb3292cf4e9b1e02f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa303467f3237ddbbe0407d1a9db4995e"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:aa303467f3237ddbbe0407d1a9db4995e"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aa303467f3237ddbbe0407d1a9db4995e">SHCI_C2_CONCURRENT_GetNextBleEvtTime_Param_t</a></td></tr>
+<tr class="memdesc:aa303467f3237ddbbe0407d1a9db4995e"><td class="mdescLeft"> </td><td class="mdescRight">command parameters  <a href="#aa303467f3237ddbbe0407d1a9db4995e">More...</a><br/></td></tr>
+<tr class="separator:aa303467f3237ddbbe0407d1a9db4995e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa87927f19fc149e6f7c4861b5b575321"><td class="memItemLeft">struct {</td></tr>
+<tr class="memitem:aa87927f19fc149e6f7c4861b5b575321"><td class="memItemLeft" valign="top">} </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aa87927f19fc149e6f7c4861b5b575321">SHCI_C2_CONFIG_Cmd_Param_t</a></td></tr>
+<tr class="memdesc:aa87927f19fc149e6f7c4861b5b575321"><td class="mdescLeft"> </td><td class="mdescRight">Command parameters.  <a href="#aa87927f19fc149e6f7c4861b5b575321">More...</a><br/></td></tr>
+<tr class="separator:aa87927f19fc149e6f7c4861b5b575321"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a59517dc98c0b704ed04aa87c63a12ce8"><td align="right" class="memItemLeft" valign="top">uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a59517dc98c0b704ed04aa87c63a12ce8">SHCI_C2_FUS_GetState</a> (<a class="el" href="shci_8h.html#a33a25acf4d5392b1c8b4efa323363e04">SHCI_FUS_GetState_ErrorCode_t</a> *p_rsp)</td></tr>
+<tr class="memdesc:a59517dc98c0b704ed04aa87c63a12ce8"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_GetState.  <a href="#a59517dc98c0b704ed04aa87c63a12ce8">More...</a><br/></td></tr>
+<tr class="separator:a59517dc98c0b704ed04aa87c63a12ce8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aecccfd224e43570406c71bea09b33693"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aecccfd224e43570406c71bea09b33693">SHCI_C2_FUS_FwUpgrade</a> (uint32_t fw_src_add, uint32_t fw_dest_add)</td></tr>
+<tr class="memdesc:aecccfd224e43570406c71bea09b33693"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_FwUpgrade.  <a href="#aecccfd224e43570406c71bea09b33693">More...</a><br/></td></tr>
+<tr class="separator:aecccfd224e43570406c71bea09b33693"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4f6eb80dbf3ef2546f013a658d4ead8c"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a4f6eb80dbf3ef2546f013a658d4ead8c">SHCI_C2_FUS_FwDelete</a> (void)</td></tr>
+<tr class="memdesc:a4f6eb80dbf3ef2546f013a658d4ead8c"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_FwDelete.  <a href="#a4f6eb80dbf3ef2546f013a658d4ead8c">More...</a><br/></td></tr>
+<tr class="separator:a4f6eb80dbf3ef2546f013a658d4ead8c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af85696b015878e6c7e3117e9ce802f40"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#af85696b015878e6c7e3117e9ce802f40">SHCI_C2_FUS_UpdateAuthKey</a> (SHCI_C2_FUS_UpdateAuthKey_Cmd_Param_t *pParam)</td></tr>
+<tr class="memdesc:af85696b015878e6c7e3117e9ce802f40"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_UpdateAuthKey.  <a href="#af85696b015878e6c7e3117e9ce802f40">More...</a><br/></td></tr>
+<tr class="separator:af85696b015878e6c7e3117e9ce802f40"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac5d90089972bfe7bb9e8183c7bc8a030"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ac5d90089972bfe7bb9e8183c7bc8a030">SHCI_C2_FUS_LockAuthKey</a> (void)</td></tr>
+<tr class="memdesc:ac5d90089972bfe7bb9e8183c7bc8a030"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_LockAuthKey.  <a href="#ac5d90089972bfe7bb9e8183c7bc8a030">More...</a><br/></td></tr>
+<tr class="separator:ac5d90089972bfe7bb9e8183c7bc8a030"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ade79071b3e0891a6b195dbf7a3441ee3"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ade79071b3e0891a6b195dbf7a3441ee3">SHCI_C2_FUS_StoreUsrKey</a> (SHCI_C2_FUS_StoreUsrKey_Cmd_Param_t *pParam, uint8_t *p_key_index)</td></tr>
+<tr class="memdesc:ade79071b3e0891a6b195dbf7a3441ee3"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_StoreUsrKey.  <a href="#ade79071b3e0891a6b195dbf7a3441ee3">More...</a><br/></td></tr>
+<tr class="separator:ade79071b3e0891a6b195dbf7a3441ee3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a16d86f260658e617a790bb47afc499c5"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a16d86f260658e617a790bb47afc499c5">SHCI_C2_FUS_LoadUsrKey</a> (uint8_t key_index)</td></tr>
+<tr class="memdesc:a16d86f260658e617a790bb47afc499c5"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_LoadUsrKey.  <a href="#a16d86f260658e617a790bb47afc499c5">More...</a><br/></td></tr>
+<tr class="separator:a16d86f260658e617a790bb47afc499c5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7153ff8a9203ad9fb97ffc6ec99ea4ba"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a7153ff8a9203ad9fb97ffc6ec99ea4ba">SHCI_C2_FUS_StartWs</a> (void)</td></tr>
+<tr class="memdesc:a7153ff8a9203ad9fb97ffc6ec99ea4ba"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_StartWs.  <a href="#a7153ff8a9203ad9fb97ffc6ec99ea4ba">More...</a><br/></td></tr>
+<tr class="separator:a7153ff8a9203ad9fb97ffc6ec99ea4ba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7494eac5ca336ffe136a84c86060afcb"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a7494eac5ca336ffe136a84c86060afcb">SHCI_C2_FUS_LockUsrKey</a> (uint8_t key_index)</td></tr>
+<tr class="memdesc:a7494eac5ca336ffe136a84c86060afcb"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_LockUsrKey.  <a href="#a7494eac5ca336ffe136a84c86060afcb">More...</a><br/></td></tr>
+<tr class="separator:a7494eac5ca336ffe136a84c86060afcb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2bdeba284c06147b38979569b28ed534"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a2bdeba284c06147b38979569b28ed534">SHCI_C2_FUS_UnloadUsrKey</a> (uint8_t key_index)</td></tr>
+<tr class="memdesc:a2bdeba284c06147b38979569b28ed534"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_UnloadUsrKey.  <a href="#a2bdeba284c06147b38979569b28ed534">More...</a><br/></td></tr>
+<tr class="separator:a2bdeba284c06147b38979569b28ed534"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8cae67c1faf0e4257949d44b6ce90dc3"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a8cae67c1faf0e4257949d44b6ce90dc3">SHCI_C2_FUS_ActivateAntiRollback</a> (void)</td></tr>
+<tr class="memdesc:a8cae67c1faf0e4257949d44b6ce90dc3"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FUS_ActivateAntiRollback.  <a href="#a8cae67c1faf0e4257949d44b6ce90dc3">More...</a><br/></td></tr>
+<tr class="separator:a8cae67c1faf0e4257949d44b6ce90dc3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acb597b31ad83fc4e70f74115cf60e6ca"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#acb597b31ad83fc4e70f74115cf60e6ca">SHCI_C2_BLE_Init</a> (SHCI_C2_Ble_Init_Cmd_Packet_t *pCmdPacket)</td></tr>
+<tr class="memdesc:acb597b31ad83fc4e70f74115cf60e6ca"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_BLE_Init.  <a href="#acb597b31ad83fc4e70f74115cf60e6ca">More...</a><br/></td></tr>
+<tr class="separator:acb597b31ad83fc4e70f74115cf60e6ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9dfaec996cc58c3aa3b3819482bc13fb"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a9dfaec996cc58c3aa3b3819482bc13fb">SHCI_C2_THREAD_Init</a> (void)</td></tr>
+<tr class="memdesc:a9dfaec996cc58c3aa3b3819482bc13fb"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_THREAD_Init.  <a href="#a9dfaec996cc58c3aa3b3819482bc13fb">More...</a><br/></td></tr>
+<tr class="separator:a9dfaec996cc58c3aa3b3819482bc13fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a09786f51a5d188d87698fd4d4f164108"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a09786f51a5d188d87698fd4d4f164108">SHCI_C2_LLDTESTS_Init</a> (uint8_t param_size, uint8_t *p_param)</td></tr>
+<tr class="memdesc:a09786f51a5d188d87698fd4d4f164108"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_LLDTESTS_Init.  <a href="#a09786f51a5d188d87698fd4d4f164108">More...</a><br/></td></tr>
+<tr class="separator:a09786f51a5d188d87698fd4d4f164108"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a03bdff0ea974321fa62b211dd2de731c"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a03bdff0ea974321fa62b211dd2de731c">SHCI_C2_BLE_LLD_Init</a> (uint8_t param_size, uint8_t *p_param)</td></tr>
+<tr class="memdesc:a03bdff0ea974321fa62b211dd2de731c"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_BLE_LLD_Init.  <a href="#a03bdff0ea974321fa62b211dd2de731c">More...</a><br/></td></tr>
+<tr class="separator:a03bdff0ea974321fa62b211dd2de731c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af32e81f07224995695596a4a45598db6"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#af32e81f07224995695596a4a45598db6">SHCI_C2_ZIGBEE_Init</a> (void)</td></tr>
+<tr class="memdesc:af32e81f07224995695596a4a45598db6"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_ZIGBEE_Init.  <a href="#af32e81f07224995695596a4a45598db6">More...</a><br/></td></tr>
+<tr class="separator:af32e81f07224995695596a4a45598db6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1bb6f0bc34e02f548130e46bf4add190"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a1bb6f0bc34e02f548130e46bf4add190">SHCI_C2_DEBUG_Init</a> (SHCI_C2_DEBUG_Init_Cmd_Packet_t *pCmdPacket)</td></tr>
+<tr class="memdesc:a1bb6f0bc34e02f548130e46bf4add190"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_DEBUG_Init.  <a href="#a1bb6f0bc34e02f548130e46bf4add190">More...</a><br/></td></tr>
+<tr class="separator:a1bb6f0bc34e02f548130e46bf4add190"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7104b8cd6a6e337a810fda9f7519a47f"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a7104b8cd6a6e337a810fda9f7519a47f">SHCI_C2_FLASH_EraseActivity</a> (<a class="el" href="shci_8h.html#a782558a9050bc0768a729f7ae6abfe6d">SHCI_EraseActivity_t</a> erase_activity)</td></tr>
+<tr class="memdesc:a7104b8cd6a6e337a810fda9f7519a47f"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FLASH_EraseActivity.  <a href="#a7104b8cd6a6e337a810fda9f7519a47f">More...</a><br/></td></tr>
+<tr class="separator:a7104b8cd6a6e337a810fda9f7519a47f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a748fc705ad3a0290008edd67fd884fb1"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a748fc705ad3a0290008edd67fd884fb1">SHCI_C2_CONCURRENT_SetMode</a> (<a class="el" href="shci_8h.html#a601762f3357cf9bed65f091912a0ebaa">SHCI_C2_CONCURRENT_Mode_Param_t</a> Mode)</td></tr>
+<tr class="memdesc:a748fc705ad3a0290008edd67fd884fb1"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_CONCURRENT_SetMode.  <a href="#a748fc705ad3a0290008edd67fd884fb1">More...</a><br/></td></tr>
+<tr class="separator:a748fc705ad3a0290008edd67fd884fb1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa1f8bc1d894f16e182669b0bf633a087"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#aa1f8bc1d894f16e182669b0bf633a087">SHCI_C2_CONCURRENT_GetNextBleEvtTime</a> (<a class="el" href="shci_8h.html#aa303467f3237ddbbe0407d1a9db4995e">SHCI_C2_CONCURRENT_GetNextBleEvtTime_Param_t</a> *pParam)</td></tr>
+<tr class="memdesc:aa1f8bc1d894f16e182669b0bf633a087"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_CONCURRENT_GetNextBleEvtTime.  <a href="#aa1f8bc1d894f16e182669b0bf633a087">More...</a><br/></td></tr>
+<tr class="separator:aa1f8bc1d894f16e182669b0bf633a087"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1d9fbb04e5c45b81518435f069dc17b9"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a1d9fbb04e5c45b81518435f069dc17b9">SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification</a> (void)</td></tr>
+<tr class="memdesc:a1d9fbb04e5c45b81518435f069dc17b9"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification.  <a href="#a1d9fbb04e5c45b81518435f069dc17b9">More...</a><br/></td></tr>
+<tr class="separator:a1d9fbb04e5c45b81518435f069dc17b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5425d53014984daaa9f0c049d802c4d8"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a5425d53014984daaa9f0c049d802c4d8">SHCI_C2_FLASH_StoreData</a> (<a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a> Ip)</td></tr>
+<tr class="memdesc:a5425d53014984daaa9f0c049d802c4d8"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FLASH_StoreData.  <a href="#a5425d53014984daaa9f0c049d802c4d8">More...</a><br/></td></tr>
+<tr class="separator:a5425d53014984daaa9f0c049d802c4d8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7b8b02cfb413dacee6ea3a33f9b587ac"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a7b8b02cfb413dacee6ea3a33f9b587ac">SHCI_C2_FLASH_EraseData</a> (<a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a> Ip)</td></tr>
+<tr class="memdesc:a7b8b02cfb413dacee6ea3a33f9b587ac"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_FLASH_EraseData.  <a href="#a7b8b02cfb413dacee6ea3a33f9b587ac">More...</a><br/></td></tr>
+<tr class="separator:a7b8b02cfb413dacee6ea3a33f9b587ac"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a92e90b30b43eac13b5765ec18e6098d4"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a92e90b30b43eac13b5765ec18e6098d4">SHCI_C2_RADIO_AllowLowPower</a> (<a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a> Ip, uint8_t FlagRadioLowPowerOn)</td></tr>
+<tr class="memdesc:a92e90b30b43eac13b5765ec18e6098d4"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_RADIO_AllowLowPower.  <a href="#a92e90b30b43eac13b5765ec18e6098d4">More...</a><br/></td></tr>
+<tr class="separator:a92e90b30b43eac13b5765ec18e6098d4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a829d439a59719f3aa4220f742d5f892f"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a829d439a59719f3aa4220f742d5f892f">SHCI_C2_MAC_802_15_4_Init</a> (void)</td></tr>
+<tr class="memdesc:a829d439a59719f3aa4220f742d5f892f"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_MAC_802_15_4_Init.  <a href="#a829d439a59719f3aa4220f742d5f892f">More...</a><br/></td></tr>
+<tr class="separator:a829d439a59719f3aa4220f742d5f892f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae91036261a5248e481c607603baea6ab"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ae91036261a5248e481c607603baea6ab">SHCI_GetWirelessFwInfo</a> (<a class="el" href="struct_wireless_fw_info__t.html">WirelessFwInfo_t</a> *pWirelessInfo)</td></tr>
+<tr class="memdesc:ae91036261a5248e481c607603baea6ab"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_GetWirelessFwInfo.  <a href="#ae91036261a5248e481c607603baea6ab">More...</a><br/></td></tr>
+<tr class="separator:ae91036261a5248e481c607603baea6ab"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8f729b642b6ec3335dd7cae39df41f6c"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a8f729b642b6ec3335dd7cae39df41f6c">SHCI_C2_Reinit</a> (void)</td></tr>
+<tr class="memdesc:a8f729b642b6ec3335dd7cae39df41f6c"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_Reinit.  <a href="#a8f729b642b6ec3335dd7cae39df41f6c">More...</a><br/></td></tr>
+<tr class="separator:a8f729b642b6ec3335dd7cae39df41f6c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad96fb010a0b20bc257c14ec6a1add7fd"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ad96fb010a0b20bc257c14ec6a1add7fd">SHCI_C2_ExtpaConfig</a> (uint32_t gpio_port, uint16_t gpio_pin_number, uint8_t gpio_polarity, uint8_t gpio_status)</td></tr>
+<tr class="memdesc:ad96fb010a0b20bc257c14ec6a1add7fd"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_ExtpaConfig.  <a href="#ad96fb010a0b20bc257c14ec6a1add7fd">More...</a><br/></td></tr>
+<tr class="separator:ad96fb010a0b20bc257c14ec6a1add7fd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad391b8142388b1d37cb20ff43cbdadd6"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#ad391b8142388b1d37cb20ff43cbdadd6">SHCI_C2_SetFlashActivityControl</a> (<a class="el" href="shci_8h.html#a4ef22a811a8bd0d9bb49bbd16ffc894d">SHCI_C2_SET_FLASH_ACTIVITY_CONTROL_Source_t</a> Source)</td></tr>
+<tr class="memdesc:ad391b8142388b1d37cb20ff43cbdadd6"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_SetFlashActivityControl.  <a href="#ad391b8142388b1d37cb20ff43cbdadd6">More...</a><br/></td></tr>
+<tr class="separator:ad391b8142388b1d37cb20ff43cbdadd6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a52adba9cfd7ab6c0dd0113243d48788b"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a52adba9cfd7ab6c0dd0113243d48788b">SHCI_C2_Config</a> (<a class="el" href="shci_8h.html#aa87927f19fc149e6f7c4861b5b575321">SHCI_C2_CONFIG_Cmd_Param_t</a> *pCmdPacket)</td></tr>
+<tr class="memdesc:a52adba9cfd7ab6c0dd0113243d48788b"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_Config.  <a href="#a52adba9cfd7ab6c0dd0113243d48788b">More...</a><br/></td></tr>
+<tr class="separator:a52adba9cfd7ab6c0dd0113243d48788b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4f01c661ac75a117e4e209b7ca74eaa0"><td align="right" class="memItemLeft" valign="top">SHCI_CmdStatus_t </td><td class="memItemRight" valign="bottom"><a class="el" href="shci_8h.html#a4f01c661ac75a117e4e209b7ca74eaa0">SHCI_C2_802_15_4_DeInit</a> (void)</td></tr>
+<tr class="memdesc:a4f01c661ac75a117e4e209b7ca74eaa0"><td class="mdescLeft"> </td><td class="mdescRight">SHCI_C2_802_15_4_DeInit.  <a href="#a4f01c661ac75a117e4e209b7ca74eaa0">More...</a><br/></td></tr>
+<tr class="separator:a4f01c661ac75a117e4e209b7ca74eaa0"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>HCI command for the system channel. </p>
+<dl class="section author"><dt>Author</dt><dd>MCD Application Team </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd></dd></dl>
+<h2><center>© Copyright (c) 2019 STMicroelectronics. All rights reserved.</center></h2>
+<p>This software component is licensed by ST under BSD 3-Clause license, the "License"; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </p>
+
+<p>Definition in file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a506f5518091b05abd05e7db598470078"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define BLE_NVM_SRAM_SIZE   (507)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>BleNvmRamAddress The buffer shall have a size of BLE_NVM_SRAM_SIZE number of 32bits The buffer shall be allocated in SRAM2. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00756">756</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aff864efb79cc2bceb7eb276a2afa1a27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define FUS_DEVICE_INFO_TABLE_VALIDITY_KEYWORD   (0xA94656B9)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00769">769</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af869c858a29bd00368bdb6bfa05e7ec9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_C2_BLE_INIT_OPTIONS_LL_ONLY   (1&lt;&lt;0)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Options Each definition below may be added together to build the Options value WARNING : Only one definition per bit shall be added to build the Options value. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00573">573</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3714ad2e352dd1940732b0c24df49a9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_C2_CONFIG_CONFIG1_BIT0_BLE_NVM_DATA_TO_INTERNAL_FLASH   (0&lt;&lt;0)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Config1 Each definition below may be added together to build the Config1 value WARNING : Only one definition per bit shall be added to build the Config1 value. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00734">734</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae12658f83832446b4827a91384b11efa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_C2_CONFIG_EVTMASK1_BIT0_ERROR_NOTIF_ENABLE   (1&lt;&lt;0)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>EvtMask1 Each definition below may be added together to build the EvtMask1 value. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00743">743</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad88f7dab7293821255e946d7c0a28a9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_C2_CONFIG_PAYLOAD_CMD_SIZE   (sizeof(<a class="el" href="shci_8h.html#aa87927f19fc149e6f7c4861b5b575321">SHCI_C2_CONFIG_Cmd_Param_t</a>) - 1)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>PayloadCmdSize Value that shall be used. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00727">727</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae216cc245ec59b8d229011a8bcf608aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_BLE_INIT   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_BLE_INIT)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00372">372</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9caf44e84b897e441437e80495ee2385"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_CONCURRENT_ENABLE_NEXT_802154_EVT_NOTIFICATION   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONCURRENT_ENABLE_NEXT_802154_EVT_NOTIFICATION)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00650">650</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf38d940228d629f72248746b8d13ec6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_CONCURRENT_GET_NEXT_BLE_EVT_TIME   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONCURRENT_GET_NEXT_BLE_EVT_TIME)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00642">642</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adaf9e55203adafb72a5117879fe4455d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_CONCURRENT_SET_MODE   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONCURRENT_SET_MODE)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00631">631</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ae45f0854e92d294890eaa62a469ec1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_CONFIG   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_CONFIG)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00710">710</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14da2981c37a114f6b93a96d56d000bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_DEBUG_INIT   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_DEBUG_INIT)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00590">590</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aabdd58ffa27100caf9b63a8433afa1de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FLASH_ERASE_ACTIVITY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FLASH_ERASE_ACTIVITY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00621">621</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a310ef3b9a0c477bafe2453a3d86fb6a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FLASH_STORE_DATA   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FLASH_STORE_DATA)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00654">654</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbf1e0647aa1e9e14f5eb3d445b68a87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_ACTIVATE_ANTIROLLBACK   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_ACTIVATE_ANTIROLLBACK)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>1 byte holding the key index value </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00344">344</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a20122987340163cb3277f8da804c3b2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_FW_DELETE   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_FW_DELETE)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No structure for command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00273">273</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf730bfe408d4da8b791eae777f8fdc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_FW_UPGRADE   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_FW_UPGRADE)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00269">269</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ff6ab011a2e038e6668d67ea6b9240f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_LOAD_USR_KEY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_LOAD_USR_KEY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Response parameters. </p>
+<p>It responds a 1 byte value holding the index given for the stored key </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00316">316</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a934c596da503a2af8a725b4da49c2ae3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_LOCK_AUTH_KEY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_LOCK_AUTH_KEY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00285">285</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab83cf2fc0dd87b17085cd64614edadb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_LOCK_USR_KEY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_LOCK_USR_KEY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00334">334</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c7f83010ec1744f598486398a82ab9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED10   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED10)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00360">360</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a220dff560515aa90e8aa3f48fc5fba78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED11   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED11)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00364">364</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a40cca623b0fec1d9e6adcc16a65bb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED12   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED12)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00368">368</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0f50e5951d0ed2d6f7a7ae95cfe5149"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED2   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED2)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00326">326</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e66dba9e62057e42577c4eb643a1907"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED3   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED3)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00330">330</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36911b54608527a2a53d70bf690efb61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED7   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED7)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00348">348</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acef2f38190a80cf030fe69a59fb38a7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED8   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED8)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00352">352</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad07a41a507ba38c5f2ab4f5228f34ba6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_RESERVED9   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_RESERVED9)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00356">356</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bca097ad1531481bd6c62c60340e703"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_START_WS   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_START_WS)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+<p>1 byte holding the key index value No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00322">322</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a285cecbe2d3d80c359f317bf37a58a20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_STORE_USR_KEY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_STORE_USR_KEY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00289">289</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef2861b3aeb755f02327a759188c7f74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_UNLOAD_USR_KEY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_UNLOAD_USR_KEY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+<p>1 byte holding the key index value No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00340">340</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab796f6fe6d6492efc21502d3463eae7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_FUS_UPDATE_AUTH_KEY   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_FUS_UPDATE_AUTH_KEY)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>No response parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00277">277</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a695aa78a9d86b341cb107e44677997c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_RADIO_ALLOW_LOW_POWER   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_RADIO_ALLOW_LOW_POWER)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00665">665</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8aec66692461c2579c82f6be1de8956c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define SHCI_OPCODE_C2_SET_FLASH_ACTIVITY_CONTROL   (( SHCI_OGF &lt;&lt; 10) + SHCI_OCF_C2_SET_FLASH_ACTIVITY_CONTROL)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No response parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00700">700</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56bfcff1ed29c2df1c0848952f877163"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define THREAD_NVM_SRAM_SIZE   (1016)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>ThreadNvmRamAddress The buffer shall have a size of THREAD_NVM_SRAM_SIZE number of 32bits The buffer shall be allocated in SRAM2. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00763">763</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a5b6ec432e49faff90dd1898624471f06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#a5b6ec432e49faff90dd1898624471f06">SHCI_C2_Ble_Init_Cmd_Param_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>THE ORDER SHALL NOT BE CHANGED. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad94f140600962ffead1f926c19d9bbbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#ad94f140600962ffead1f926c19d9bbbd">SHCI_C2_BleNvmRamUpdate_Evt_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_BLE_NVM_RAM_UPDATE This notifies the CPU1 which part of the BLE NVM RAM has been updated so that only the modified section could be written in Flash/NVM StartAddress : Start address of the section that has been modified Size : Size (in bytes) of the section that has been modified. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa303467f3237ddbbe0407d1a9db4995e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#aa303467f3237ddbbe0407d1a9db4995e">SHCI_C2_CONCURRENT_GetNextBleEvtTime_Param_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>command parameters </p>
+
+</div>
+</div>
+<a class="anchor" id="aa87927f19fc149e6f7c4861b5b575321"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#aa87927f19fc149e6f7c4861b5b575321">SHCI_C2_CONFIG_Cmd_Param_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad68701573eb3241eb3292cf4e9b1e02f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#ad68701573eb3241eb3292cf4e9b1e02f">SHCI_C2_DEBUG_TracesConfig_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+
+</div>
+</div>
+<a class="anchor" id="abdb48511714cc08ab89df448b5550a34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#abdb48511714cc08ab89df448b5550a34">SHCI_C2_ErrorNotif_Evt_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_ERROR_NOTIF This reports to the CPU1 some error form the CPU2. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d0ed7cd53c3db3db81f863331285e48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#a0d0ed7cd53c3db3db81f863331285e48">SHCI_C2_NvmStartErase_Evt_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_NVM_END_WRITE This notifies the CPU1 that the CPU2 has written all expected data in Flash. </p>
+<p>SHCI_SUB_EVT_NVM_START_ERASE This notifies the CPU1 that the CPU2 has started a erase procedure in Flash NumberOfSectors : The number of sectors the CPU2 needs to erase in Flash. For each sector, the algorithm as described in AN5289 is executed. When this number is reported to 0, it means the Number of sectors to be erased was unknown when the procedure has started. When all sectors are erased, the SHCI_SUB_EVT_NVM_END_ERASE event is reported </p>
+
+</div>
+</div>
+<a class="anchor" id="a421d8c6403f07fe6d8c267ee791163e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#a421d8c6403f07fe6d8c267ee791163e6">SHCI_C2_NvmStartWrite_Evt_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_NVM_START_WRITE This notifies the CPU1 that the CPU2 has started a write procedure in Flash NumberOfWords : The number of 64bits data the CPU2 needs to write in Flash. </p>
+<p>For each 64bits data, the algorithm as described in AN5289 is executed. When this number is reported to 0, it means the Number of 64bits to be written was unknown when the procedure has started. When all data are written, the SHCI_SUB_EVT_NVM_END_WRITE event is reported </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a1704c1d6ba0109952bd2ea879ae709"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#a8a1704c1d6ba0109952bd2ea879ae709">SHCI_C2_Ready_Evt_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_CODE_READY This notifies the CPU1 that the CPU2 is now ready to receive commands It reports as well which firmware is running on CPU2 : The wireless stack of the FUS (previously named RSS) </p>
+
+</div>
+</div>
+<a class="anchor" id="a89c7090b28913d551cb54d1708c22cff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#a89c7090b28913d551cb54d1708c22cff">SHCI_C2_ThreadNvmRamUpdate_Evt_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_THREAD_NVM_RAM_UPDATE This notifies the CPU1 which part of the OT NVM RAM has been updated so that only the modified section could be written in Flash/NVM StartAddress : Start address of the section that has been modified Size : Size (in bytes) of the section that has been modified. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab45e0f4ac7a76bf65ae2be0bf0eaa6fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef { ... }   <a class="el" href="shci_8h.html#ab45e0f4ac7a76bf65ae2be0bf0eaa6fe">SHCI_Header_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_SUB_EVT_NVM_END_ERASE This notifies the CPU1 that the CPU2 has erased all expected flash sectors. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ac36f475ca5b446f4fde4c9b90bec77c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00292">292</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a39fca1837c5ce7715cbf571669660c13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00679">679</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a601762f3357cf9bed65f091912a0ebaa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#a601762f3357cf9bed65f091912a0ebaa">SHCI_C2_CONCURRENT_Mode_Param_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>command parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00633">633</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab57425221a3bdbc4ac7c976351cd84a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>command parameters </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00657">657</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ef22a811a8bd0d9bb49bbd16ffc894d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#a4ef22a811a8bd0d9bb49bbd16ffc894d">SHCI_C2_SET_FLASH_ACTIVITY_CONTROL_Source_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00702">702</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a782558a9050bc0768a729f7ae6abfe6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#a782558a9050bc0768a729f7ae6abfe6d">SHCI_EraseActivity_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Command parameters. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00623">623</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33a25acf4d5392b1c8b4efa323363e04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#a33a25acf4d5392b1c8b4efa323363e04">SHCI_FUS_GetState_ErrorCode_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>No command parameters. </p>
+<p>Response parameters It responds a 1 byte value holding FUS State error code when the FUS State value is 0xFF (FUS_STATE_VALUE_ERROR) </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00235">235</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25c14636eac3af221a815f8e75c36ab4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#a25c14636eac3af221a815f8e75c36ab4">SHCI_OCF_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>THE ORDER SHALL NOT BE CHANGED TO GUARANTEE COMPATIBILITY WITH THE CPU2 DEFINITION. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00186">186</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a920fe2397f907d4482a6dfb24165b29e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="shci_8h.html#a920fe2397f907d4482a6dfb24165b29e">SHCI_SUB_EVT_CODE_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>THE ORDER SHALL NOT BE CHANGED TO GUARANTEE COMPATIBILITY WITH THE CPU1 DEFINITION. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00062">62</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a4f01c661ac75a117e4e209b7ca74eaa0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_802_15_4_DeInit </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_802_15_4_DeInit. </p>
+<p>Deinit 802.15.4 layer (to be used before entering StandBy mode)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acb597b31ad83fc4e70f74115cf60e6ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_BLE_Init </td>
+          <td>(</td>
+          <td class="paramtype">SHCI_C2_Ble_Init_Cmd_Packet_t * </td>
+          <td class="paramname"><em>pCmdPacket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_BLE_Init. </p>
+<p>Provides parameters and starts the BLE Stack</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pCmdPacket</td><td>: Parameters are described SHCI_C2_Ble_Init_Cmd_Packet_t declaration </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a03bdff0ea974321fa62b211dd2de731c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_BLE_LLD_Init </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>param_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>p_param</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_BLE_LLD_Init. </p>
+<p>Starts the LLD tests BLE</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">param_size</td><td>: Nb of bytes </td></tr>
+    <tr><td class="paramname">p_param</td><td>: pointeur with data to give from M4 to M0 </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d9fbb04e5c45b81518435f069dc17b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification. </p>
+<p>Activate the next 802.15.4 event notification (one shot)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa1f8bc1d894f16e182669b0bf633a087"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_CONCURRENT_GetNextBleEvtTime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#aa303467f3237ddbbe0407d1a9db4995e">SHCI_C2_CONCURRENT_GetNextBleEvtTime_Param_t</a> * </td>
+          <td class="paramname"><em>pParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_CONCURRENT_GetNextBleEvtTime. </p>
+<p>Get the next BLE event date (relative time)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Command</td><td>Packet </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a748fc705ad3a0290008edd67fd884fb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_CONCURRENT_SetMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#a601762f3357cf9bed65f091912a0ebaa">SHCI_C2_CONCURRENT_Mode_Param_t</a> </td>
+          <td class="paramname"><em>Mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_CONCURRENT_SetMode. </p>
+<p>Enable/Disable Thread on CPU2 (M0+)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Mode</td><td>BLE or Thread enable flag </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a52adba9cfd7ab6c0dd0113243d48788b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_Config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#aa87927f19fc149e6f7c4861b5b575321">SHCI_C2_CONFIG_Cmd_Param_t</a> * </td>
+          <td class="paramname"><em>pCmdPacket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_Config. </p>
+<p>Send the system configuration to the CPU2</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pCmdPacket</td><td>address of the buffer holding following parameters uint8_t PayloadCmdSize : Size of the payload - shall be SHCI_C2_CONFIG_PAYLOAD_CMD_SIZE uint8_t Config1 :<ul>
+<li>bit0 : 0 - BLE NVM Data data are flushed in internal secure flash 1 - BLE NVM Data are written in SRAM cache pointed by BleNvmRamAddress</li>
+<li>bit1 : 0 - THREAD NVM Data data are flushed in internal secure flash 1 - THREAD NVM Data are written in SRAM cache pointed by ThreadNvmRamAddress</li>
+<li>bit2 to bit7 : Unused, shall be set to 0 uint8_t EvtMask1 : When a bit is set to 0, the event is not reported bit0 : Asynchronous Event with Sub Evt Code 0x9201 (= SHCI_SUB_EVT_ERROR_NOTIF) ... bit31 : Asynchronous Event with Sub Evt Code 0x9220 uint8_t Spare1 : Unused, shall be set to 0 uint32_t BleNvmRamAddress : Only considered when Config1.bit0 = 1 When set to 0, data are kept in internal SRAM on CPU2 Otherwise, data are copied in the cache pointed by BleNvmRamAddress The size of the buffer shall be BLE_NVM_SRAM_SIZE (number of 32bits) The buffer shall be allocated in SRAM2 uint32_t ThreadNvmRamAddress : Only considered when Config1.bit1 = 1 When set to 0, data are kept in internal SRAM on CPU2 Otherwise, data are copied in the cache pointed by ThreadNvmRamAddress The size of the buffer shall be THREAD_NVM_SRAM_SIZE (number of 32bits) The buffer shall be allocated in SRAM2</li>
+</ul>
+</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Please check macro definition to be used for this function They are defined in this file next to the definition of SHCI_OPCODE_C2_CONFIG</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bb6f0bc34e02f548130e46bf4add190"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_DEBUG_Init </td>
+          <td>(</td>
+          <td class="paramtype">SHCI_C2_DEBUG_Init_Cmd_Packet_t * </td>
+          <td class="paramname"><em>pCmdPacket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_DEBUG_Init. </p>
+<p>Starts the Traces</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad96fb010a0b20bc257c14ec6a1add7fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_ExtpaConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>gpio_port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t </td>
+          <td class="paramname"><em>gpio_pin_number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>gpio_polarity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>gpio_status</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_ExtpaConfig. </p>
+<p>Send the Ext PA configuration When the CPU2 receives the command, it controls the Ext PA as requested by the configuration This configures only which IO is used to enable/disable the ExtPA and the associated polarity This command has no effect on the other IO that is used to control the mode of the Ext PA (Rx/Tx)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">gpio_port</td><td>GPIOx where x can be (A..F) to select the GPIO peripheral for STM32WBxx family </td></tr>
+    <tr><td class="paramname">gpio_pin_number</td><td>This parameter can be one of GPIO_PIN_x (= LL_GPIO_PIN_x) where x can be (0..15). </td></tr>
+    <tr><td class="paramname">gpio_polarity</td><td>This parameter can be either<ul>
+<li>EXT_PA_ENABLED_LOW: ExtPA is enabled when GPIO is low</li>
+<li>EXT_PA_ENABLED_HIGH: ExtPA is enabled when GPIO is high </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">gpio_status</td><td>This parameter can be either<ul>
+<li>EXT_PA_DISABLED: Stop driving the ExtPA</li>
+<li>EXT_PA_ENABLED: Drive the ExtPA according to radio activity (ON before the Event and OFF at the end of the event) </li>
+</ul>
+</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7104b8cd6a6e337a810fda9f7519a47f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FLASH_EraseActivity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#a782558a9050bc0768a729f7ae6abfe6d">SHCI_EraseActivity_t</a> </td>
+          <td class="paramname"><em>erase_activity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FLASH_EraseActivity. </p>
+<p>Provides the information of the start and the end of a flash erase window on the CPU1</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">erase_activity</td><td>Start/End of erase activity </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b8b02cfb413dacee6ea3a33f9b587ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FLASH_EraseData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a> </td>
+          <td class="paramname"><em>Ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FLASH_EraseData. </p>
+<p>Erase Data in Flash</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Ip</td><td>BLE or THREAD </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5425d53014984daaa9f0c049d802c4d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FLASH_StoreData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a> </td>
+          <td class="paramname"><em>Ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FLASH_StoreData. </p>
+<p>Store Data in Flash</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Ip</td><td>BLE or THREAD </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cae67c1faf0e4257949d44b6ce90dc3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_ActivateAntiRollback </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_ActivateAntiRollback. </p>
+<p>Request the FUS to enable the AntiRollback feature so that it is not possible to update the wireless firmware with an older version than the current one. Note:</p><ul>
+<li>This command is only supported by the FUS.</li>
+<li>Once this feature is enabled, it is not possible anymore to disable it.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f6eb80dbf3ef2546f013a658d4ead8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_FwDelete </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_FwDelete. </p>
+<p>Delete the wireless stack on CPU2 Note: This command is only supported by the FUS.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aecccfd224e43570406c71bea09b33693"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_FwUpgrade </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>fw_src_add</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>fw_dest_add</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_FwUpgrade. </p>
+<p>Request the FUS to install the CPU2 firmware update Note: This command is only supported by the FUS.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fw_src_add</td><td>Address of the firmware image location </td></tr>
+    <tr><td class="paramname">fw_dest_add</td><td>Address of the firmware destination </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a59517dc98c0b704ed04aa87c63a12ce8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t SHCI_C2_FUS_GetState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#a33a25acf4d5392b1c8b4efa323363e04">SHCI_FUS_GetState_ErrorCode_t</a> * </td>
+          <td class="paramname"><em>p_rsp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_GetState. </p>
+<p>Read the FUS State If the user is not interested by the Error code response, a null value may be passed as parameter</p>
+<p>Note: This command is fully supported only by the FUS. When the wireless firmware receives that command, it responds SHCI_FUS_CMD_NOT_SUPPORTED the first time. When the wireless firmware receives that command a second time, it reboots the full device with the FUS running on CPU2</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">p_rsp</td><td>: return the error code when the FUS State Value = 0xFF </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">FUS</td><td>State Values </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a16d86f260658e617a790bb47afc499c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_LoadUsrKey </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>key_index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_LoadUsrKey. </p>
+<p>Request the FUS to load the user key into the AES Note: This command is supported by both the FUS and the wireless stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">key_index</td><td>: index of the user key to load in AES1 </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac5d90089972bfe7bb9e8183c7bc8a030"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_LockAuthKey </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_LockAuthKey. </p>
+<p>Request the FUS to prevent any future update of the authentication key Note: This command is only supported by the FUS.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7494eac5ca336ffe136a84c86060afcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_LockUsrKey </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>key_index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_LockUsrKey. </p>
+<p>Request the FUS to lock the user key so that it cannot be updated later on Note: This command is supported by both the FUS and the wireless stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">key_index</td><td>: index of the user key to lock </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7153ff8a9203ad9fb97ffc6ec99ea4ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_StartWs </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_StartWs. </p>
+<p>Request the FUS to reboot on the wireless stack Note: This command is only supported by the FUS.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ade79071b3e0891a6b195dbf7a3441ee3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_StoreUsrKey </td>
+          <td>(</td>
+          <td class="paramtype">SHCI_C2_FUS_StoreUsrKey_Cmd_Param_t * </td>
+          <td class="paramname"><em>pParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>p_key_index</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_StoreUsrKey. </p>
+<p>Request the FUS to store the user key Note: This command is supported by both the FUS and the wireless stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pParam</td><td>: command parameter </td></tr>
+    <tr><td class="paramname">p_key_index</td><td>: Index allocated by the FUS to the stored key</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2bdeba284c06147b38979569b28ed534"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_UnloadUsrKey </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>key_index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_UnloadUsrKey. </p>
+<p>Request the FUS to Unload the user key so that the CPU1 may use the AES with another Key Note: This command is supported by both the FUS and the wireless stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">key_index</td><td>: index of the user key to unload </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af85696b015878e6c7e3117e9ce802f40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_FUS_UpdateAuthKey </td>
+          <td>(</td>
+          <td class="paramtype">SHCI_C2_FUS_UpdateAuthKey_Cmd_Param_t * </td>
+          <td class="paramname"><em>pParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_FUS_UpdateAuthKey. </p>
+<p>Request the FUS to update the authentication key Note: This command is only supported by the FUS.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pCmdPacket</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a09786f51a5d188d87698fd4d4f164108"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_LLDTESTS_Init </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>param_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>p_param</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_LLDTESTS_Init. </p>
+<p>Starts the LLD tests CLI</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">param_size</td><td>: Nb of bytes </td></tr>
+    <tr><td class="paramname">p_param</td><td>: pointeur with data to give from M4 to M0 </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a829d439a59719f3aa4220f742d5f892f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_MAC_802_15_4_Init </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_MAC_802_15_4_Init. </p>
+<p>Starts the MAC 802.15.4 on M0</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a92e90b30b43eac13b5765ec18e6098d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_RADIO_AllowLowPower </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#ab57425221a3bdbc4ac7c976351cd84a6">SHCI_C2_FLASH_Ip_t</a> </td>
+          <td class="paramname"><em>Ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t </td>
+          <td class="paramname"><em>FlagRadioLowPowerOn</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_RADIO_AllowLowPower. </p>
+<p>Allow or forbid IP_radio (802_15_4 or BLE) to enter in low power mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Ip</td><td>BLE or 802_15_5 </td></tr>
+    <tr><td class="paramname">FlagRadioLowPowerOn</td><td>True or false </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8f729b642b6ec3335dd7cae39df41f6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_Reinit </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_Reinit. </p>
+<p>This is required to allow the CPU1 to fake a set C2BOOT when it has already been set. In order to fake a C2BOOT, the CPU1 shall :</p><ul>
+<li>Send <a class="el" href="shci_8h.html#a8f729b642b6ec3335dd7cae39df41f6c" title="SHCI_C2_Reinit. ">SHCI_C2_Reinit()</a></li>
+<li>call SEV instruction WARNING: This function is intended to be used by the SBSFU</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad391b8142388b1d37cb20ff43cbdadd6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_SetFlashActivityControl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shci_8h.html#a4ef22a811a8bd0d9bb49bbd16ffc894d">SHCI_C2_SET_FLASH_ACTIVITY_CONTROL_Source_t</a> </td>
+          <td class="paramname"><em>Source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_SetFlashActivityControl. </p>
+<p>Set the mechanism to be used on CPU2 to prevent the CPU1 to either write or erase in flash</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Source</td><td>It can be one of the following list<ul>
+<li>FLASH_ACTIVITY_CONTROL_PES : The CPU2 set the PES bit to prevent the CPU1 to either read or write in flash</li>
+<li>FLASH_ACTIVITY_CONTROL_SEM7 : The CPU2 gets the semaphore 7 to prevent the CPU1 to either read or write in flash. This requires the CPU1 to first get semaphore 7 before erasing or writing the flash.</li>
+</ul>
+</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9dfaec996cc58c3aa3b3819482bc13fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_THREAD_Init </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_THREAD_Init. </p>
+<p>Starts the THREAD Stack</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af32e81f07224995695596a4a45598db6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_C2_ZIGBEE_Init </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_C2_ZIGBEE_Init. </p>
+<p>Starts the Zigbee Stack</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">None</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Status</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae91036261a5248e481c607603baea6ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_CmdStatus_t SHCI_GetWirelessFwInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_wireless_fw_info__t.html">WirelessFwInfo_t</a> * </td>
+          <td class="paramname"><em>pWirelessInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SHCI_GetWirelessFwInfo. </p>
+<p>This function read back the informations relative to the wireless binary loaded. Refer yourself to MB_WirelessFwInfoTable_t structure to get the significance of the different parameters returned. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pWirelessInfo</td><td>: Pointer to <a class="el" href="struct_wireless_fw_info__t.html">WirelessFwInfo_t</a>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">SHCI_Success</td><td></td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a1964591f09c1a90de1576682c00c2c8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint16_t AttMtu</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>AttMtu NOTE: This parameter is ignored by the CPU2 when the parameter "Options" is set to "LL_only" ( see Options description in that structure ) </p>
+<p>Maximum ATT MTU size supported</p><ul>
+<li>Min value: 23</li>
+<li>Max value: 512 </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00463">463</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc925a7d78c2daa24b14e4f681d2097f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint16_t AttrValueArrSize</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>AttrValueArrSize NOTE: This parameter is ignored by the CPU2 when the parameter "Options" is set to "LL_only" ( see Options description in that structure ) </p>
+<p>Size of the storage area for the attribute values. Each characteristic contributes to the attrValueArrSize value as follows:</p><ul>
+<li>Characteristic value length plus:<ul>
+<li>5 bytes if characteristic <a class="el" href="class_u_u_i_d.html" title="Representation of a Universally Unique Identifier (UUID). ">UUID</a> is 16 bits</li>
+<li>19 bytes if characteristic <a class="el" href="class_u_u_i_d.html" title="Representation of a Universally Unique Identifier (UUID). ">UUID</a> is 128 bits</li>
+<li>2 bytes if characteristic has a server configuration descriptor</li>
+<li>2 bytes * NumOfLinks if the characteristic has a client configuration descriptor</li>
+<li>2 bytes if the characteristic has extended properties Each descriptor contributes to the attrValueArrSize value as follows:</li>
+</ul>
+</li>
+<li>Descriptor length </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00416">416</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeafc842374e2affc3b9e2db074f1b700"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint32_t BleBufferSize</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>NOT USED - shall be set to 0. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00376">376</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6aaa2ade4ec60c42685aa5972302105d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t ExtendedPacketLengthEnable</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>ExtendedPacketLengthEnable Disable/enable the extended packet length BLE 5.0 feature. </p>
+<ul>
+<li>Disable: 0</li>
+<li>Enable: 1 </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00432">432</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99ec71a12b8e0c470196f84941f0c76a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint16_t HsStartupTime</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>HsStartupTime Startup time of the high speed (16 or 32 MHz) crystal oscillator in units of 625/256 µs (~2.44 µs). </p>
+<ul>
+<li>Min value: 0</li>
+<li>Max value: 820 (~2 ms). A higher value can be specified, but the value that implemented in stack is forced to ~2 ms </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00518">518</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd02860a98837c2e0f76f8dd6a1aec0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t HwVersion</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>HwVersion Reserved for future use - shall be set to 0. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00542">542</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a885bf3280151e57b7cbe773899845c32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t LsSource</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>LsSource Source for the 32 kHz slow speed clock. </p>
+<ul>
+<li>External crystal LSE: 0 - No calibration</li>
+<li>Others:1 - As the accuracy of this oscillator can vary depending upon external conditions (temperature), it is calibrated every second to ensure correct behavior of timing sensitive BLE operations </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00499">499</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa57267c11fdd999ce4fc164f93c04b35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t MasterSca</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MasterSca The sleep clock accuracy handled in master mode. </p>
+<p>It is used to determine the connection and advertising events timing. It is transmitted to the slave in CONNEC_REQ PDU used by the slave to calculate the window widening, see SlaveSca and Bluetooth Core Specification v5.0 Vol 6 - Part B - chap 4.5.7 and 4.2.2 Possible values:</p><ul>
+<li>251 ppm to 500 ppm: 0</li>
+<li>151 ppm to 250 ppm: 1</li>
+<li>101 ppm to 150 ppm: 2</li>
+<li>76 ppm to 100 ppm: 3</li>
+<li>51 ppm to 75 ppm: 4</li>
+<li>31 ppm to 50 ppm: 5</li>
+<li>21 ppm to 30 ppm: 6</li>
+<li>0 ppm to 20 ppm: 7 </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00490">490</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e02717a6e51c5239f1b13309c3677fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t max_coc_initiator_nbr</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Maximum number of connection-oriented channels in initiator mode. </p>
+<p>Range: 0 .. 64 </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00548">548</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6bea18b409e084921193c66d71f3c3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int8_t max_tx_power</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Maximum transmit power in dBm supported by the Controller. </p>
+<p>Range: -127 .. 20 </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00560">560</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6da493bc239ac7b20bd82daf7edca324"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint32_t MaxConnEventLength</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MaxConnEventLength This parameter determines the maximum duration of a slave connection event. </p>
+<p>When this duration is reached the slave closes the current connections event (whatever is the CE_length parameter specified by the master in HCI_CREATE_CONNECTION HCI command), expressed in units of 625/256 µs (~2.44 µs)</p><ul>
+<li>Min value: 0 (if 0 is specified, the master and slave perform only a single TX-RX exchange per connection event)</li>
+<li>Max value: 1638400 (4000 ms). A higher value can be specified (max 0xFFFFFFFF) but results in a maximum connection time of 4000 ms as specified. In this case the parameter is not applied, and the predicted CE length calculated on slave is not shortened </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00510">510</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4aa50836c833c5eaf049b75ba19b8b86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t MblockCount</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MblockCount NOTE: This parameter is overwritten by the CPU2 with an hardcoded optimal value when the parameter "Options" is set to "LL_only" ( see Options description in that structure ) </p>
+<p>Number of allocated memory blocks for the BLE stack</p><ul>
+<li>Min value: given by the macro MBLOCKS_CALC</li>
+<li>Max value: a higher value can improve data throughput performance, but uses more memory </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00453">453</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0571e690001e2c4ca3a96c103acb47fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint32_t MetaData[3]</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MetaData holds : 2*32bits for chaining list 1*32bits with BLE header (type + Opcode + Length) </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00160">160</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2f0e2355a6714149a7264b360faad42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int8_t min_tx_power</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Minimum transmit power in dBm supported by the Controller. </p>
+<p>Range: -127 .. 20 </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00554">554</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adaac5b2431d07b24820605d193c89f00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint16_t NumAttrRecord</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>NumAttrRecord Maximum number of attribute records related to all the required characteristics (excluding the services) that can be stored in the GATT database, for the specific BLE user application. </p>
+<p>For each characteristic, the number of attribute records goes from two to five depending on the characteristic properties:</p><ul>
+<li>minimum of two (one for declaration and one for the value)</li>
+<li>add one more record for each additional property: notify or indicate, broadcast, extended property. The total calculated value must be increased by 9, due to the records related to the standard attribute profile and GAP service characteristics, and automatically added when initializing GATT and GAP layers</li>
+</ul>
+<p>Min value: &lt;number of="" user="" attributes&gt;=""&gt; + 9</p><ul>
+<li>Max value: depending on the GATT database defined by user application </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00390">390</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a47a00341e591736f517b1cdff3f3ab35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint16_t NumAttrServ</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>NumAttrServ Defines the maximum number of services that can be stored in the GATT database. </p>
+<p>Note that the GAP and GATT services are automatically added at initialization so this parameter must be the number of user services increased by two.</p><ul>
+<li>Min value: &lt;number of="" user="" service&gt;=""&gt; + 2</li>
+<li>Max value: depending GATT database defined by user application </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00399">399</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0852db211c79351d8276d64db5749966"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t NumOfLinks</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>NumOfLinks Maximum number of BLE links supported. </p>
+<ul>
+<li>Min value: 1</li>
+<li>Max value: 8 </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00424">424</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad97e8c2798c033923d70d8ecc9062605"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t Options</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Options flags. </p>
+<ul>
+<li>bit 0: 1: LL only 0: LL + host</li>
+<li>bit 1: 1: no service change desc. 0: with service change desc.</li>
+<li>bit 2: 1: device name Read-Only 0: device name R/W</li>
+<li>bit 7: 1: LE Power Class 1 0: LE Power Classe 2-3</li>
+<li>other bits: reserved ( shall be set to 0) </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00536">536</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f25d6bb94da91b99253b40e179c0ef7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SHCI_C2_DEBUG_init_Cmd_Param_t Param</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Does not need to be initialized by the user. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00565">565</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf8aa762b17bc463c35fb7ecfa06d529"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t* pBleBufferAddress</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>NOT USED - shall be set to 0. </p>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00375">375</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a704d4c3e81d01c42992f1e7ef64dbc33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t PrWriteListSize</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>PrWriteListSize NOTE: This parameter is ignored by the CPU2 when the parameter "Options" is set to "LL_only" ( see Options description in that structure ) </p>
+<p>Maximum number of supported prepare write request</p><ul>
+<li>Min value: given by the macro DEFAULT_PREP_WRITE_LIST_SIZE</li>
+<li>Max value: a value higher than the minimum required can be specified, but it is not recommended </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00442">442</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8351e90a96162466223b98601132bb59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint16_t SlaveSca</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>SlaveSca The sleep clock accuracy (ppm value) that used in BLE connected slave mode to calculate the window widening (in combination with the sleep clock accuracy sent by master in CONNECT_REQ PDU), refer to BLE 5.0 specifications - Vol 6 - Part B - chap 4.5.7 and 4.2.2. </p>
+<ul>
+<li>Min value: 0</li>
+<li>Max value: 500 (worst possible admitted by specification) </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00473">473</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0fed440c317ab9c78e6441c68c848cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">uint8_t ViterbiEnable</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>ViterbiEnable Viterbi implementation in BLE LL reception. </p>
+<ul>
+<li>0: Enable</li>
+<li>1: Disable </li>
+</ul>
+
+<p>Definition at line <a class="el" href="shci_8h_source.html#l00526">526</a> of file <a class="el" href="shci_8h_source.html">shci.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/shci_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:11 GMT -->
+</html>

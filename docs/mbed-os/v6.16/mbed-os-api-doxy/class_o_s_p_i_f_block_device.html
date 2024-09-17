@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/class_o_s_p_i_f_block_device.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:19:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | OSPIFBlockDevice Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="class_o_s_p_i_f_block_device.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/class_o_s_p_i_f_block_device.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/class_o_s_p_i_f_block_device.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> |
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">OSPIFBlockDevice Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>BlockDevice for SFDP based flash devices over OSPI bus.  
+ <a href="class_o_s_p_i_f_block_device.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_o_s_p_i_f_block_device_8h_source.html">OSPIFBlockDevice.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for OSPIFBlockDevice:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="class_o_s_p_i_f_block_device.png" usemap="#OSPIFBlockDevice_map"/>
+  <map id="OSPIFBlockDevice_map" name="OSPIFBlockDevice_map">
+<area alt="BlockDevice" coords="0,0,120,24" href="classmbed_1_1_block_device.html" shape="rect" title="A hardware device capable of writing and reading blocks. "/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae32c664419c5abe99bd2237a013450a0"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#ae32c664419c5abe99bd2237a013450a0">OSPIFBlockDevice</a> (PinName io0=NC, PinName io1=NC, PinName io2=NC, PinName io3=NC, PinName io4=NC, PinName io5=NC, PinName io6=NC, PinName io7=NC, PinName sclk=NC, PinName csel=NC, PinName dqs=NC, int clock_mode=0, int freq=40000000)</td></tr>
+<tr class="memdesc:ae32c664419c5abe99bd2237a013450a0"><td class="mdescLeft"> </td><td class="mdescRight">Create <a class="el" href="class_o_s_p_i_f_block_device.html" title="BlockDevice for SFDP based flash devices over OSPI bus. ">OSPIFBlockDevice</a> - An SFDP based Flash Block Device over OSPI bus.  <a href="#ae32c664419c5abe99bd2237a013450a0">More...</a><br/></td></tr>
+<tr class="separator:ae32c664419c5abe99bd2237a013450a0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae3e772fe7bcf262931cb3620b2af59f7"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#ae3e772fe7bcf262931cb3620b2af59f7">init</a> ()</td></tr>
+<tr class="memdesc:ae3e772fe7bcf262931cb3620b2af59f7"><td class="mdescLeft"> </td><td class="mdescRight">Initialize a block device.  <a href="#ae3e772fe7bcf262931cb3620b2af59f7">More...</a><br/></td></tr>
+<tr class="separator:ae3e772fe7bcf262931cb3620b2af59f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9d82ba22bb381150961a175d10072ad4"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a9d82ba22bb381150961a175d10072ad4">deinit</a> ()</td></tr>
+<tr class="memdesc:a9d82ba22bb381150961a175d10072ad4"><td class="mdescLeft"> </td><td class="mdescRight">Deinitialize a block device.  <a href="#a9d82ba22bb381150961a175d10072ad4">More...</a><br/></td></tr>
+<tr class="separator:a9d82ba22bb381150961a175d10072ad4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a98bd81cd99ce6c18c4f197637f4a6144"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a98bd81cd99ce6c18c4f197637f4a6144">~OSPIFBlockDevice</a> ()</td></tr>
+<tr class="memdesc:a98bd81cd99ce6c18c4f197637f4a6144"><td class="mdescLeft"> </td><td class="mdescRight">Desctruct OSPIFBlockDevie.  <a href="#a98bd81cd99ce6c18c4f197637f4a6144">More...</a><br/></td></tr>
+<tr class="separator:a98bd81cd99ce6c18c4f197637f4a6144"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1537d13013fe5ced2d9d71ca3e47eddf"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a1537d13013fe5ced2d9d71ca3e47eddf">read</a> (void *buffer, mbed::bd_addr_t addr, mbed::bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>)</td></tr>
+<tr class="memdesc:a1537d13013fe5ced2d9d71ca3e47eddf"><td class="mdescLeft"> </td><td class="mdescRight">Read blocks from a block device.  <a href="#a1537d13013fe5ced2d9d71ca3e47eddf">More...</a><br/></td></tr>
+<tr class="separator:a1537d13013fe5ced2d9d71ca3e47eddf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1745a6adadbdc69074d4e7cdfc28330c"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a1745a6adadbdc69074d4e7cdfc28330c">program</a> (const void *buffer, mbed::bd_addr_t addr, mbed::bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>)</td></tr>
+<tr class="memdesc:a1745a6adadbdc69074d4e7cdfc28330c"><td class="mdescLeft"> </td><td class="mdescRight">Program blocks to a block device.  <a href="#a1745a6adadbdc69074d4e7cdfc28330c">More...</a><br/></td></tr>
+<tr class="separator:a1745a6adadbdc69074d4e7cdfc28330c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aae94fe4b3a562c9aa7da177ef84961ed"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#aae94fe4b3a562c9aa7da177ef84961ed">erase</a> (mbed::bd_addr_t addr, mbed::bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>)</td></tr>
+<tr class="memdesc:aae94fe4b3a562c9aa7da177ef84961ed"><td class="mdescLeft"> </td><td class="mdescRight">Erase blocks on a block device.  <a href="#aae94fe4b3a562c9aa7da177ef84961ed">More...</a><br/></td></tr>
+<tr class="separator:aae94fe4b3a562c9aa7da177ef84961ed"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad513596aa184c3b4fb886a4f5bd44fd6"><td align="right" class="memItemLeft" valign="top">virtual mbed::bd_size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#ad513596aa184c3b4fb886a4f5bd44fd6">get_read_size</a> () const </td></tr>
+<tr class="memdesc:ad513596aa184c3b4fb886a4f5bd44fd6"><td class="mdescLeft"> </td><td class="mdescRight">Get the size of a readable block.  <a href="#ad513596aa184c3b4fb886a4f5bd44fd6">More...</a><br/></td></tr>
+<tr class="separator:ad513596aa184c3b4fb886a4f5bd44fd6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeb82ec5097444b289e3d2f52bff8fe04"><td align="right" class="memItemLeft" valign="top">virtual mbed::bd_size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#aeb82ec5097444b289e3d2f52bff8fe04">get_program_size</a> () const </td></tr>
+<tr class="memdesc:aeb82ec5097444b289e3d2f52bff8fe04"><td class="mdescLeft"> </td><td class="mdescRight">Get the size of a programable block.  <a href="#aeb82ec5097444b289e3d2f52bff8fe04">More...</a><br/></td></tr>
+<tr class="separator:aeb82ec5097444b289e3d2f52bff8fe04"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa9b5bec4fb28eabb47099cd15b850ba4"><td align="right" class="memItemLeft" valign="top">virtual mbed::bd_size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#aa9b5bec4fb28eabb47099cd15b850ba4">get_erase_size</a> () const </td></tr>
+<tr class="memdesc:aa9b5bec4fb28eabb47099cd15b850ba4"><td class="mdescLeft"> </td><td class="mdescRight">Get the size of a eraseable block.  <a href="#aa9b5bec4fb28eabb47099cd15b850ba4">More...</a><br/></td></tr>
+<tr class="separator:aa9b5bec4fb28eabb47099cd15b850ba4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:affe2011dd9299edb02046052247e924e"><td align="right" class="memItemLeft" valign="top">virtual mbed::bd_size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#affe2011dd9299edb02046052247e924e">get_erase_size</a> (mbed::bd_addr_t addr)</td></tr>
+<tr class="memdesc:affe2011dd9299edb02046052247e924e"><td class="mdescLeft"> </td><td class="mdescRight">Get the size of minimal eraseable sector size of given address.  <a href="#affe2011dd9299edb02046052247e924e">More...</a><br/></td></tr>
+<tr class="separator:affe2011dd9299edb02046052247e924e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a32ae1f80fad2ca5ba41f21da35cda481"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a32ae1f80fad2ca5ba41f21da35cda481">get_erase_value</a> () const </td></tr>
+<tr class="memdesc:a32ae1f80fad2ca5ba41f21da35cda481"><td class="mdescLeft"> </td><td class="mdescRight">Get the value of storage byte after it was erased.  <a href="#a32ae1f80fad2ca5ba41f21da35cda481">More...</a><br/></td></tr>
+<tr class="separator:a32ae1f80fad2ca5ba41f21da35cda481"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7f7eef3782da038a1c7207def5b044a4"><td align="right" class="memItemLeft" valign="top">virtual mbed::bd_size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a> () const </td></tr>
+<tr class="memdesc:a7f7eef3782da038a1c7207def5b044a4"><td class="mdescLeft"> </td><td class="mdescRight">Get the total size of the underlying device.  <a href="#a7f7eef3782da038a1c7207def5b044a4">More...</a><br/></td></tr>
+<tr class="separator:a7f7eef3782da038a1c7207def5b044a4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2f2713d78cf5e2a8fc7b62304508d362"><td align="right" class="memItemLeft" valign="top">virtual const char * </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a2f2713d78cf5e2a8fc7b62304508d362">get_type</a> () const </td></tr>
+<tr class="memdesc:a2f2713d78cf5e2a8fc7b62304508d362"><td class="mdescLeft"> </td><td class="mdescRight">Get the BlockDevice class type.  <a href="#a2f2713d78cf5e2a8fc7b62304508d362">More...</a><br/></td></tr>
+<tr class="separator:a2f2713d78cf5e2a8fc7b62304508d362"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a052c95bca3daff4a32060f458683ff67"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_i_f_block_device.html#a052c95bca3daff4a32060f458683ff67">change_mode</a> (int mode)</td></tr>
+<tr class="memdesc:a052c95bca3daff4a32060f458683ff67"><td class="mdescLeft"> </td><td class="mdescRight">Change the operation mode(SPI, SOPI or DOPI) of flash.  <a href="#a052c95bca3daff4a32060f458683ff67">More...</a><br/></td></tr>
+<tr class="separator:a052c95bca3daff4a32060f458683ff67"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a810a727ce5554d3178e17b6bc55025dd"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#a810a727ce5554d3178e17b6bc55025dd">sync</a> ()</td></tr>
+<tr class="memdesc:a810a727ce5554d3178e17b6bc55025dd"><td class="mdescLeft"> </td><td class="mdescRight">Ensure data on storage is in sync with the driver.  <a href="#a810a727ce5554d3178e17b6bc55025dd">More...</a><br/></td></tr>
+<tr class="separator:a810a727ce5554d3178e17b6bc55025dd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abd545a63c0055b9e54003e4157b99477"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#abd545a63c0055b9e54003e4157b99477">trim</a> (bd_addr_t addr, bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>)</td></tr>
+<tr class="memdesc:abd545a63c0055b9e54003e4157b99477"><td class="mdescLeft"> </td><td class="mdescRight">Mark blocks as no longer in use.  <a href="#abd545a63c0055b9e54003e4157b99477">More...</a><br/></td></tr>
+<tr class="separator:abd545a63c0055b9e54003e4157b99477"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab674c9998dab0a134ed69369ef314fc9"><td align="right" class="memItemLeft" valign="top">virtual bd_size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#ab674c9998dab0a134ed69369ef314fc9">get_erase_size</a> (bd_addr_t addr) const </td></tr>
+<tr class="memdesc:ab674c9998dab0a134ed69369ef314fc9"><td class="mdescLeft"> </td><td class="mdescRight">Get the size of an erasable block given address.  <a href="#ab674c9998dab0a134ed69369ef314fc9">More...</a><br/></td></tr>
+<tr class="separator:ab674c9998dab0a134ed69369ef314fc9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a255523f9f59cdbafbe275211fbd8a31e"><td align="right" class="memItemLeft" valign="top">virtual bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#a255523f9f59cdbafbe275211fbd8a31e">is_valid_read</a> (bd_addr_t addr, bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>) const </td></tr>
+<tr class="memdesc:a255523f9f59cdbafbe275211fbd8a31e"><td class="mdescLeft"> </td><td class="mdescRight">Convenience function for checking block read validity.  <a href="#a255523f9f59cdbafbe275211fbd8a31e">More...</a><br/></td></tr>
+<tr class="separator:a255523f9f59cdbafbe275211fbd8a31e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a050c684571c052a8a3cea56293d0c06a"><td align="right" class="memItemLeft" valign="top">virtual bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#a050c684571c052a8a3cea56293d0c06a">is_valid_program</a> (bd_addr_t addr, bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>) const </td></tr>
+<tr class="memdesc:a050c684571c052a8a3cea56293d0c06a"><td class="mdescLeft"> </td><td class="mdescRight">Convenience function for checking block program validity.  <a href="#a050c684571c052a8a3cea56293d0c06a">More...</a><br/></td></tr>
+<tr class="separator:a050c684571c052a8a3cea56293d0c06a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a57cba93b622cea0634433767323ab8b8"><td align="right" class="memItemLeft" valign="top">virtual bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#a57cba93b622cea0634433767323ab8b8">is_valid_erase</a> (bd_addr_t addr, bd_size_t <a class="el" href="class_o_s_p_i_f_block_device.html#a7f7eef3782da038a1c7207def5b044a4">size</a>) const </td></tr>
+<tr class="memdesc:a57cba93b622cea0634433767323ab8b8"><td class="mdescLeft"> </td><td class="mdescRight">Convenience function for checking block erase validity.  <a href="#a57cba93b622cea0634433767323ab8b8">More...</a><br/></td></tr>
+<tr class="separator:a57cba93b622cea0634433767323ab8b8"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a273b2bb1fbb436880f0a8b064d585c40"><td align="right" class="memItemLeft" valign="top">static <a class="el" href="classmbed_1_1_block_device.html">BlockDevice</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_block_device.html#a273b2bb1fbb436880f0a8b064d585c40">get_default_instance</a> ()</td></tr>
+<tr class="memdesc:a273b2bb1fbb436880f0a8b064d585c40"><td class="mdescLeft"> </td><td class="mdescRight">Return the default block device.  <a href="#a273b2bb1fbb436880f0a8b064d585c40">More...</a><br/></td></tr>
+<tr class="separator:a273b2bb1fbb436880f0a8b064d585c40"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>BlockDevice for SFDP based flash devices over OSPI bus. </p>
+<div class="fragment"><div class="line"><span class="comment">// Here's an example using OSPI flash device on NUCLEO_L4R9I target</span></div><div class="line"><span class="preprocessor">#include "mbed.h"</span></div><div class="line"><span class="preprocessor">#include "OSPIFBlockDevice.h"</span></div><div class="line"></div><div class="line"><a class="code" href="class_o_s_p_i_f_block_device.html">OSPIFBlockDevice</a> block_device(OSPI_FLASH1_IO0, OSPI_FLASH1_IO1, OSPI_FLASH1_IO2, OSPI_FLASH1_IO3, OSPI_FLASH1_IO4, OSPI_FLASH1_IO5, OSPI_FLASH1_IO6, OSPI_FLASH1_IO7</div><div class="line">                              OSPI_FLASH1_SCK, OSPI_FLASH1_CSN, OSPI_FLASH1_DQS, OSPIF_POLARITY_MODE_0, MBED_CONF_OSPIF_OSPI_FREQ);</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    printf(<span class="stringliteral">"OSPI SFDP Flash Block Device example\n"</span>);</div><div class="line"></div><div class="line">    <span class="comment">// Initialize the OSPI flash device and print the memory layout</span></div><div class="line">    block_device.init();</div><div class="line">    bd_size_t sector_size_at_address_0 = block_device.get_erase_size(0);</div><div class="line"></div><div class="line">    printf(<span class="stringliteral">"OSPIF BD size: %llu\n"</span>,         block_device.size());</div><div class="line">    printf(<span class="stringliteral">"OSPIF BD read size: %llu\n"</span>,    block_device.get_read_size());</div><div class="line">    printf(<span class="stringliteral">"OSPIF BD program size: %llu\n"</span>, block_device.get_program_size());</div><div class="line">    printf(<span class="stringliteral">"OSPIF BD erase size (at address 0): %llu\n"</span>, sector_size_at_address_0);</div><div class="line"></div><div class="line">    <span class="comment">// Write "Hello World!" to the first block</span></div><div class="line">    <span class="keywordtype">char</span> *buffer = (<span class="keywordtype">char</span> *) malloc(sector_size_at_address_0);</div><div class="line">    sprintf(buffer, <span class="stringliteral">"Hello World!\n"</span>);</div><div class="line">    block_device.erase(0, sector_size_at_address_0);</div><div class="line">    block_device.program(buffer, 0, sector_size_at_address_0);</div><div class="line"></div><div class="line">    <span class="comment">// Read back what was stored</span></div><div class="line">    block_device.read(buffer, 0, sector_size_at_address_0);</div><div class="line">    printf(<span class="stringliteral">"%s"</span>, buffer);</div><div class="line"></div><div class="line">    <span class="comment">// Deinitialize the device</span></div><div class="line">    block_device.deinit();</div><div class="line">}</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="_o_s_p_i_f_block_device_8h_source.html#l00143">143</a> of file <a class="el" href="_o_s_p_i_f_block_device_8h_source.html">OSPIFBlockDevice.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae32c664419c5abe99bd2237a013450a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="class_o_s_p_i_f_block_device.html">OSPIFBlockDevice</a> </td>
+          <td>(</td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io0</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io1</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io2</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io3</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io4</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io5</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io6</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>io7</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>sclk</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>csel</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>dqs</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>clock_mode</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>freq</em> = <code>40000000</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="class_o_s_p_i_f_block_device.html" title="BlockDevice for SFDP based flash devices over OSPI bus. ">OSPIFBlockDevice</a> - An SFDP based Flash Block Device over OSPI bus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">io0</td><td>1st IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io1</td><td>2nd IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io2</td><td>3rd IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io3</td><td>4th IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io4</td><td>5th IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io5</td><td>6th IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io6</td><td>7th IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">io7</td><td>8th IO pin used for sending/receiving data during data phase of a transaction </td></tr>
+    <tr><td class="paramname">sclk</td><td>OSPI Clock pin </td></tr>
+    <tr><td class="paramname">csel</td><td>OSPI chip select pin </td></tr>
+    <tr><td class="paramname">dqs</td><td>OSPI dqs pin </td></tr>
+    <tr><td class="paramname">clock_mode</td><td>specifies the OSPI Clock Polarity mode (OSPIF_POLARITY_MODE_0/OSPIF_POLARITY_MODE_1) default value = 0 </td></tr>
+    <tr><td class="paramname">freq</td><td>Clock frequency of the OSPI bus (defaults to 40MHz) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a98bd81cd99ce6c18c4f197637f4a6144"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">~<a class="el" href="class_o_s_p_i_f_block_device.html">OSPIFBlockDevice</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Desctruct OSPIFBlockDevie. </p>
+
+<p>Definition at line <a class="el" href="_o_s_p_i_f_block_device_8h_source.html#l00194">194</a> of file <a class="el" href="_o_s_p_i_f_block_device_8h_source.html">OSPIFBlockDevice.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a052c95bca3daff4a32060f458683ff67"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int change_mode </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Change the operation mode(SPI, SOPI or DOPI) of flash. </p>
+<dl class="section return"><dt>Returns</dt><dd>OSPIF_BD_ERROR_OK(0) - success OSPIF_BD_ERROR_DEVICE_ERROR - device driver transaction failed OSPIF_BD_ERROR_READY_FAILED - Waiting for Memory ready failed or timed out OSPIF_BD_ERROR_WREN_FAILED - Write Enable failed OSPIF_BD_ERROR_PARSING_FAILED - unexpected format or values in one of the SFDP tables OSPIF_BD_ERROR_INVALID_ERASE_PARAMS - Trying to erase unaligned address or size </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d82ba22bb381150961a175d10072ad4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int deinit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Deinitialize a block device. </p>
+<dl class="section return"><dt>Returns</dt><dd>OSPIF_BD_ERROR_OK(0) - success OSPIF_BD_ERROR_DEVICE_ERROR - device driver transaction failed </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#a430dfece12fa718e068d614544888296">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae94fe4b3a562c9aa7da177ef84961ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int erase </td>
+          <td>(</td>
+          <td class="paramtype">mbed::bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mbed::bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Erase blocks on a block device. </p>
+<p>The state of an erased block is undefined until it has been programmed</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Address of block to begin erasing </td></tr>
+    <tr><td class="paramname">size</td><td>Size to erase in bytes, must be a multiple of erase block size </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OSPIF_BD_ERROR_OK(0) - success OSPIF_BD_ERROR_DEVICE_ERROR - device driver transaction failed OSPIF_BD_ERROR_READY_FAILED - Waiting for Memory ready failed or timed out OSPIF_BD_ERROR_WREN_FAILED - Write Enable failed OSPIF_BD_ERROR_PARSING_FAILED - unexpected format or values in one of the SFDP tables OSPIF_BD_ERROR_INVALID_ERASE_PARAMS - Trying to erase unaligned address or size </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_block_device.html#a4512b8f5fe68f9dff00d9db27679164b">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a273b2bb1fbb436880f0a8b064d585c40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">static <a class="el" href="classmbed_1_1_block_device.html">BlockDevice</a>* get_default_instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Return the default block device. </p>
+<p>Returns the default block device based on the configuration JSON. Use the components in target.json or application config to change the default block device.</p>
+<p>An application can override all target settings by implementing <a class="el" href="classmbed_1_1_block_device.html#a273b2bb1fbb436880f0a8b064d585c40" title="Return the default block device. ">BlockDevice::get_default_instance()</a> - the default definition is weak, and calls get_target_default_instance(). </p>
+
+</div>
+</div>
+<a class="anchor" id="ab674c9998dab0a134ed69369ef314fc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual bd_size_t get_erase_size </td>
+          <td>(</td>
+          <td class="paramtype">bd_addr_t </td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size of an erasable block given address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Address within the erasable block </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Size of an erasable block in bytes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must be a multiple of the program size </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_q_s_p_i_f_block_device.html#aff90e32c3ac965657938afebd71cd82e">QSPIFBlockDevice</a>, <a class="el" href="class_s_p_i_f_block_device.html#aff90e32c3ac965657938afebd71cd82e">SPIFBlockDevice</a>, <a class="el" href="class_data_flash_block_device.html#aff90e32c3ac965657938afebd71cd82e">DataFlashBlockDevice</a>, <a class="el" href="classmbed_1_1_m_b_r_block_device.html#ab674c9998dab0a134ed69369ef314fc9">MBRBlockDevice</a>, <a class="el" href="classmbed_1_1_chaining_block_device.html#ab674c9998dab0a134ed69369ef314fc9">ChainingBlockDevice</a>, <a class="el" href="classmbed_1_1_heap_block_device.html#ab674c9998dab0a134ed69369ef314fc9">HeapBlockDevice</a>, <a class="el" href="classmbed_1_1_exhaustible_block_device.html#ab674c9998dab0a134ed69369ef314fc9">ExhaustibleBlockDevice</a>, <a class="el" href="classmbed_1_1_buffered_block_device.html#ab674c9998dab0a134ed69369ef314fc9">BufferedBlockDevice</a>, <a class="el" href="classmbed_1_1_slicing_block_device.html#ab674c9998dab0a134ed69369ef314fc9">SlicingBlockDevice</a>, <a class="el" href="classmbed_1_1_flash_sim_block_device.html#ab674c9998dab0a134ed69369ef314fc9">FlashSimBlockDevice</a>, <a class="el" href="classmbed_1_1_profiling_block_device.html#ab674c9998dab0a134ed69369ef314fc9">ProfilingBlockDevice</a>, <a class="el" href="classmbed_1_1_observing_block_device.html#ab674c9998dab0a134ed69369ef314fc9">ObservingBlockDevice</a>, <a class="el" href="classmbed_1_1_read_only_block_device.html#ab674c9998dab0a134ed69369ef314fc9">ReadOnlyBlockDevice</a>, and <a class="el" href="class_flash_i_a_p_block_device.html#aff90e32c3ac965657938afebd71cd82e">FlashIAPBlockDevice</a>.</p>
+
+<p>Definition at line <a class="el" href="_block_device_8h_source.html#l00171">171</a> of file <a class="el" href="_block_device_8h_source.html">BlockDevice.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9b5bec4fb28eabb47099cd15b850ba4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual mbed::bd_size_t get_erase_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size of a eraseable block. </p>
+<dl class="section return"><dt>Returns</dt><dd>Size of a minimal erase block, common to all regions, in bytes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must be a multiple of the program size </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_block_device.html#a57ddf9887510f2ca185c592b33a9750b">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affe2011dd9299edb02046052247e924e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual mbed::bd_size_t get_erase_size </td>
+          <td>(</td>
+          <td class="paramtype">mbed::bd_addr_t </td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size of minimal eraseable sector size of given address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Any address within block queried for erase sector size (can be any address within flash size offset) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Size of minimal erase sector size, in given address region, in bytes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must be a multiple of the program size </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a32ae1f80fad2ca5ba41f21da35cda481"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int get_erase_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the value of storage byte after it was erased. </p>
+<p>If get_erase_value returns a non-negative byte value, the underlying storage is set to that value when erased, and storage containing that value can be programmed without another erase.</p>
+<dl class="section return"><dt>Returns</dt><dd>The value of storage when erased, or -1 if you can't rely on the value of erased storage </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_block_device.html#a32ae1f80fad2ca5ba41f21da35cda481">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb82ec5097444b289e3d2f52bff8fe04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual mbed::bd_size_t get_program_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size of a programable block. </p>
+<dl class="section return"><dt>Returns</dt><dd>Size of a program block size in bytes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must be a multiple of the read size </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#a710f963fa2fa5129ee7f87645db26fea">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad513596aa184c3b4fb886a4f5bd44fd6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual mbed::bd_size_t get_read_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size of a readable block. </p>
+<dl class="section return"><dt>Returns</dt><dd>Size of a readable block in bytes </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#ab652f34b96b91adc0646892d91bb66e5">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f2713d78cf5e2a8fc7b62304508d362"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual const char* get_type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the BlockDevice class type. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string represent the BlockDevice class type. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#afa36cf5e621418f00f6b69baa8dd5b3e">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3e772fe7bcf262931cb3620b2af59f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize a block device. </p>
+<dl class="section return"><dt>Returns</dt><dd>OSPIF_BD_ERROR_OK(0) - success OSPIF_BD_ERROR_DEVICE_ERROR - device driver transaction failed OSPIF_BD_ERROR_READY_FAILED - Waiting for Memory ready failed or timedout OSPIF_BD_ERROR_PARSING_FAILED - unexpected format or values in one of the SFDP tables </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#ad0b5cb347048dfd17f3d2c9107fbe259">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57cba93b622cea0634433767323ab8b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual bool is_valid_erase </td>
+          <td>(</td>
+          <td class="paramtype">bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Convenience function for checking block erase validity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Address of block to begin erasing </td></tr>
+    <tr><td class="paramname">size</td><td>Size to erase in bytes </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if erase is valid for underlying block device </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_slicing_block_device.html#a57cba93b622cea0634433767323ab8b8">SlicingBlockDevice</a>, and <a class="el" href="class_flash_i_a_p_block_device.html#ad9ca2b59bde43f6820aaf2422b087ae6">FlashIAPBlockDevice</a>.</p>
+
+<p>Definition at line <a class="el" href="_block_device_8h_source.html#l00230">230</a> of file <a class="el" href="_block_device_8h_source.html">BlockDevice.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a050c684571c052a8a3cea56293d0c06a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual bool is_valid_program </td>
+          <td>(</td>
+          <td class="paramtype">bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Convenience function for checking block program validity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Address of block to begin writing to </td></tr>
+    <tr><td class="paramname">size</td><td>Size to write in bytes </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if program is valid for underlying block device </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_slicing_block_device.html#a050c684571c052a8a3cea56293d0c06a">SlicingBlockDevice</a>.</p>
+
+<p>Definition at line <a class="el" href="_block_device_8h_source.html#l00216">216</a> of file <a class="el" href="_block_device_8h_source.html">BlockDevice.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a255523f9f59cdbafbe275211fbd8a31e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual bool is_valid_read </td>
+          <td>(</td>
+          <td class="paramtype">bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Convenience function for checking block read validity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Address of block to begin reading from </td></tr>
+    <tr><td class="paramname">size</td><td>Size to read in bytes </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if read is valid for underlying block device </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_slicing_block_device.html#a255523f9f59cdbafbe275211fbd8a31e">SlicingBlockDevice</a>.</p>
+
+<p>Definition at line <a class="el" href="_block_device_8h_source.html#l00202">202</a> of file <a class="el" href="_block_device_8h_source.html">BlockDevice.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1745a6adadbdc69074d4e7cdfc28330c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int program </td>
+          <td>(</td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mbed::bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mbed::bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Program blocks to a block device. </p>
+<p>The blocks must have been erased prior to being programmed</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">buffer</td><td>Buffer of data to write to blocks </td></tr>
+    <tr><td class="paramname">addr</td><td>Address of block to begin writing to </td></tr>
+    <tr><td class="paramname">size</td><td>Size to write in bytes, must be a multiple of program block size </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OSPIF_BD_ERROR_OK(0) - success OSPIF_BD_ERROR_DEVICE_ERROR - device driver transaction failed OSPIF_BD_ERROR_READY_FAILED - Waiting for Memory ready failed or timed out OSPIF_BD_ERROR_WREN_FAILED - Write Enable failed OSPIF_BD_ERROR_PARSING_FAILED - unexpected format or values in one of the SFDP tables </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#a66245315d757995910f4c00ce071a43e">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1537d13013fe5ced2d9d71ca3e47eddf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int read </td>
+          <td>(</td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mbed::bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mbed::bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Read blocks from a block device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">buffer</td><td>Buffer to write blocks to </td></tr>
+    <tr><td class="paramname">addr</td><td>Address of block to begin reading from </td></tr>
+    <tr><td class="paramname">size</td><td>Size to read in bytes, must be a multiple of read block size </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OSPIF_BD_ERROR_OK(0) - success OSPIF_BD_ERROR_DEVICE_ERROR - device driver transaction failed </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#a71c7368590ed2502fc4887a2a293d0b0">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f7eef3782da038a1c7207def5b044a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual mbed::bd_size_t size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the total size of the underlying device. </p>
+<dl class="section return"><dt>Returns</dt><dd>Size of the underlying device in bytes </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_block_device.html#a128b68f17bb5bf161cd4d7e720052ce2">BlockDevice</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a810a727ce5554d3178e17b6bc55025dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int sync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Ensure data on storage is in sync with the driver. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success or a negative error code on failure </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_m_b_r_block_device.html#a810a727ce5554d3178e17b6bc55025dd">MBRBlockDevice</a>, <a class="el" href="classmbed_1_1_chaining_block_device.html#a810a727ce5554d3178e17b6bc55025dd">ChainingBlockDevice</a>, <a class="el" href="classmbed_1_1_exhaustible_block_device.html#a810a727ce5554d3178e17b6bc55025dd">ExhaustibleBlockDevice</a>, <a class="el" href="classmbed_1_1_slicing_block_device.html#a810a727ce5554d3178e17b6bc55025dd">SlicingBlockDevice</a>, <a class="el" href="classmbed_1_1_flash_sim_block_device.html#a810a727ce5554d3178e17b6bc55025dd">FlashSimBlockDevice</a>, <a class="el" href="classmbed_1_1_observing_block_device.html#a810a727ce5554d3178e17b6bc55025dd">ObservingBlockDevice</a>, <a class="el" href="classmbed_1_1_profiling_block_device.html#a810a727ce5554d3178e17b6bc55025dd">ProfilingBlockDevice</a>, <a class="el" href="classmbed_1_1_buffered_block_device.html#a810a727ce5554d3178e17b6bc55025dd">BufferedBlockDevice</a>, and <a class="el" href="classmbed_1_1_read_only_block_device.html#a810a727ce5554d3178e17b6bc55025dd">ReadOnlyBlockDevice</a>.</p>
+
+<p>Definition at line <a class="el" href="_block_device_8h_source.html#l00083">83</a> of file <a class="el" href="_block_device_8h_source.html">BlockDevice.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd545a63c0055b9e54003e4157b99477"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int trim </td>
+          <td>(</td>
+          <td class="paramtype">bd_addr_t </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bd_size_t </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Mark blocks as no longer in use. </p>
+<p>This function provides a hint to the underlying block device that a region of blocks is no longer in use and may be erased without side effects. Erase must still be called before programming, but trimming allows flash-translation-layers to schedule erases when the device is not busy.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">addr</td><td>Address of block to mark as unused </td></tr>
+    <tr><td class="paramname">size</td><td>Size to mark as unused in bytes, must be a multiple of the erase block size </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success or a negative error code on failure </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_s_d_block_device.html#acdc2e11964bcd5ee241ff3879c74868a">SDBlockDevice</a>, and <a class="el" href="classmbed_1_1_buffered_block_device.html#abd545a63c0055b9e54003e4157b99477">BufferedBlockDevice</a>.</p>
+
+<p>Definition at line <a class="el" href="_block_device_8h_source.html#l00137">137</a> of file <a class="el" href="_block_device_8h_source.html">BlockDevice.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/class_o_s_p_i_f_block_device.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:19:08 GMT -->
+</html>

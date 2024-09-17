@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group___w_i_f_i___s_o_c_k_e_t.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Socket</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group___w_i_f_i___s_o_c_k_e_t.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group___w_i_f_i___s_o_c_k_e_t.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group___w_i_f_i___s_o_c_k_e_t.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Socket<div class="ingroups"><a class="el" href="group___m_x___w_i_f_i.html">Wi-Fi_API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>**  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsockaddr.html">sockaddr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">socket address struct  <a href="structsockaddr.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structin__addr.html">in_addr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">socket address(net format)  <a href="structin__addr.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsockaddr__in.html">sockaddr_in</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">socket address_in struct  <a href="structsockaddr__in.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structin6__addr.html">in6_addr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">socket address(IPV6 net format)  <a href="structin6__addr.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsockaddr__in6.html">sockaddr_in6</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">socket address_in6 struct  <a href="structsockaddr__in6.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structsockaddr__storage.html">sockaddr_storage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structaddrinfo.html">addrinfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">socket address_in6 info  <a href="structaddrinfo.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct__fd__set.html">_fd_set</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga86c5dbf5a99358e288f573d6a1e0873f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga86c5dbf5a99358e288f573d6a1e0873f">FD_SETSIZE</a>   64</td></tr>
+<tr class="memdesc:ga86c5dbf5a99358e288f573d6a1e0873f"><td class="mdescLeft"> </td><td class="mdescRight">MAX fd number is 64 in MXOS.  <a href="#ga86c5dbf5a99358e288f573d6a1e0873f">More...</a><br/></td></tr>
+<tr class="separator:ga86c5dbf5a99358e288f573d6a1e0873f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac3e045b1eb12fc6a000555fda916a023"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gac3e045b1eb12fc6a000555fda916a023">NBBY</a>   8</td></tr>
+<tr class="memdesc:gac3e045b1eb12fc6a000555fda916a023"><td class="mdescLeft"> </td><td class="mdescRight">number of bits in a byte.  <a href="#gac3e045b1eb12fc6a000555fda916a023">More...</a><br/></td></tr>
+<tr class="separator:gac3e045b1eb12fc6a000555fda916a023"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae469a6eb5d202973832adcb96074c20f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>   (sizeof(unsigned long) * <a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gac3e045b1eb12fc6a000555fda916a023">NBBY</a>)</td></tr>
+<tr class="memdesc:gae469a6eb5d202973832adcb96074c20f"><td class="mdescLeft"> </td><td class="mdescRight">bits per mask  <a href="#gae469a6eb5d202973832adcb96074c20f">More...</a><br/></td></tr>
+<tr class="separator:gae469a6eb5d202973832adcb96074c20f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6cb3c721d6b16c20ed776af46459c6ab"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga6cb3c721d6b16c20ed776af46459c6ab">FD_SET</a>(n,  p)           ((p)-&gt;fds_bits[(n)/<a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>] |= MC_FDSET_MASK(n))</td></tr>
+<tr class="memdesc:ga6cb3c721d6b16c20ed776af46459c6ab"><td class="mdescLeft"> </td><td class="mdescRight">Add a fd to FD set.  <a href="#ga6cb3c721d6b16c20ed776af46459c6ab">More...</a><br/></td></tr>
+<tr class="separator:ga6cb3c721d6b16c20ed776af46459c6ab"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8281f97fa67859b6a08cf9797ca626d3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga8281f97fa67859b6a08cf9797ca626d3">FD_CLR</a>(n,  p)           ((p)-&gt;fds_bits[(n)/<a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>] &amp;= ~MC_FDSET_MASK(n))</td></tr>
+<tr class="memdesc:ga8281f97fa67859b6a08cf9797ca626d3"><td class="mdescLeft"> </td><td class="mdescRight">Remove fd from FD set.  <a href="#ga8281f97fa67859b6a08cf9797ca626d3">More...</a><br/></td></tr>
+<tr class="separator:ga8281f97fa67859b6a08cf9797ca626d3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae3c12599695a122e565da04d3e1dd371"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae3c12599695a122e565da04d3e1dd371">FD_ISSET</a>(n,  p)       ((p)-&gt;fds_bits[(n)/<a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>] &amp; MC_FDSET_MASK(n))</td></tr>
+<tr class="memdesc:gae3c12599695a122e565da04d3e1dd371"><td class="mdescLeft"> </td><td class="mdescRight">Check if the fd is set in FD set.  <a href="#gae3c12599695a122e565da04d3e1dd371">More...</a><br/></td></tr>
+<tr class="separator:gae3c12599695a122e565da04d3e1dd371"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7b0e4166ed0523ad39b3304924aac779"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga7b0e4166ed0523ad39b3304924aac779">FD_ZERO</a>(p)               memset((p), 0, sizeof(*(p)))</td></tr>
+<tr class="memdesc:ga7b0e4166ed0523ad39b3304924aac779"><td class="mdescLeft"> </td><td class="mdescRight">Clear FD set.  <a href="#ga7b0e4166ed0523ad39b3304924aac779">More...</a><br/></td></tr>
+<tr class="separator:ga7b0e4166ed0523ad39b3304924aac779"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga84979807c710e2fc24571a264fe56b8f"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga84979807c710e2fc24571a264fe56b8f">MX_WIFI_Socket_create</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t domain, int32_t type, int32_t protocol)</td></tr>
+<tr class="memdesc:ga84979807c710e2fc24571a264fe56b8f"><td class="mdescLeft"> </td><td class="mdescRight">Create a socket.  <a href="#ga84979807c710e2fc24571a264fe56b8f">More...</a><br/></td></tr>
+<tr class="separator:ga84979807c710e2fc24571a264fe56b8f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad7cf50d8913a076885a143f7578c4a14"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gad7cf50d8913a076885a143f7578c4a14">MX_WIFI_Socket_setsockopt</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, int32_t level, int32_t optname, const void *optvalue, int32_t optlen)</td></tr>
+<tr class="memdesc:gad7cf50d8913a076885a143f7578c4a14"><td class="mdescLeft"> </td><td class="mdescRight">Set option for a socket.  <a href="#gad7cf50d8913a076885a143f7578c4a14">More...</a><br/></td></tr>
+<tr class="separator:gad7cf50d8913a076885a143f7578c4a14"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga72841b81092301c399414d15970f873c"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga72841b81092301c399414d15970f873c">MX_WIFI_Socket_getsockopt</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, int32_t level, int32_t optname, void *optvalue, uint32_t *optlen)</td></tr>
+<tr class="memdesc:ga72841b81092301c399414d15970f873c"><td class="mdescLeft"> </td><td class="mdescRight">Get option of a socket.  <a href="#ga72841b81092301c399414d15970f873c">More...</a><br/></td></tr>
+<tr class="separator:ga72841b81092301c399414d15970f873c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6bbce10a3bf4087bc9f22eed43bbdf96"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga6bbce10a3bf4087bc9f22eed43bbdf96">MX_WIFI_Socket_bind</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, const struct <a class="el" href="structsockaddr.html">sockaddr</a> *addr, int32_t addrlen)</td></tr>
+<tr class="memdesc:ga6bbce10a3bf4087bc9f22eed43bbdf96"><td class="mdescLeft"> </td><td class="mdescRight">Bind a socket.  <a href="#ga6bbce10a3bf4087bc9f22eed43bbdf96">More...</a><br/></td></tr>
+<tr class="separator:ga6bbce10a3bf4087bc9f22eed43bbdf96"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga49b27cc4ad13d32ea6a8209d4a547958"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga49b27cc4ad13d32ea6a8209d4a547958">MX_WIFI_Socket_listen</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, int32_t backlog)</td></tr>
+<tr class="memdesc:ga49b27cc4ad13d32ea6a8209d4a547958"><td class="mdescLeft"> </td><td class="mdescRight">Listen a socket.  <a href="#ga49b27cc4ad13d32ea6a8209d4a547958">More...</a><br/></td></tr>
+<tr class="separator:ga49b27cc4ad13d32ea6a8209d4a547958"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga22e2f485962878cdd08b2389691a9f17"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga22e2f485962878cdd08b2389691a9f17">MX_WIFI_Socket_accept</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, struct <a class="el" href="structsockaddr.html">sockaddr</a> *addr, uint32_t *addrlen)</td></tr>
+<tr class="memdesc:ga22e2f485962878cdd08b2389691a9f17"><td class="mdescLeft"> </td><td class="mdescRight">Accept a socket.  <a href="#ga22e2f485962878cdd08b2389691a9f17">More...</a><br/></td></tr>
+<tr class="separator:ga22e2f485962878cdd08b2389691a9f17"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6524be895e52ddea79f282e75b5c305e"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga6524be895e52ddea79f282e75b5c305e">MX_WIFI_Socket_connect</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, const struct <a class="el" href="structsockaddr.html">sockaddr</a> *addr, int32_t addrlen)</td></tr>
+<tr class="memdesc:ga6524be895e52ddea79f282e75b5c305e"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> connect.  <a href="#ga6524be895e52ddea79f282e75b5c305e">More...</a><br/></td></tr>
+<tr class="separator:ga6524be895e52ddea79f282e75b5c305e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaeb5b512aab2aeab5f84fd51e85e16c22"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gaeb5b512aab2aeab5f84fd51e85e16c22">MX_WIFI_Socket_shutdown</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, int32_t mode)</td></tr>
+<tr class="memdesc:gaeb5b512aab2aeab5f84fd51e85e16c22"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> shutdown.  <a href="#gaeb5b512aab2aeab5f84fd51e85e16c22">More...</a><br/></td></tr>
+<tr class="separator:gaeb5b512aab2aeab5f84fd51e85e16c22"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2067722c94f1c8b72959675411a3fd7f"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga2067722c94f1c8b72959675411a3fd7f">MX_WIFI_Socket_close</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd)</td></tr>
+<tr class="memdesc:ga2067722c94f1c8b72959675411a3fd7f"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> close.  <a href="#ga2067722c94f1c8b72959675411a3fd7f">More...</a><br/></td></tr>
+<tr class="separator:ga2067722c94f1c8b72959675411a3fd7f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7e5ff61bc10b9d364867dd9994bdd643"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga7e5ff61bc10b9d364867dd9994bdd643">MX_WIFI_Socket_send</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, uint8_t *buf, int32_t len, int32_t flags)</td></tr>
+<tr class="memdesc:ga7e5ff61bc10b9d364867dd9994bdd643"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> send.  <a href="#ga7e5ff61bc10b9d364867dd9994bdd643">More...</a><br/></td></tr>
+<tr class="separator:ga7e5ff61bc10b9d364867dd9994bdd643"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga85515ae1454119be1286bc7a7ca9fa67"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga85515ae1454119be1286bc7a7ca9fa67">MX_WIFI_Socket_recv</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, uint8_t *buf, int32_t len, int32_t flags)</td></tr>
+<tr class="memdesc:ga85515ae1454119be1286bc7a7ca9fa67"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> recv.  <a href="#ga85515ae1454119be1286bc7a7ca9fa67">More...</a><br/></td></tr>
+<tr class="separator:ga85515ae1454119be1286bc7a7ca9fa67"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafe05c6bc834525de12672f63f9dee42e"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gafe05c6bc834525de12672f63f9dee42e">MX_WIFI_Socket_sendto</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, uint8_t *buf, int32_t len, int32_t flags, struct <a class="el" href="structsockaddr.html">sockaddr</a> *toaddr, int32_t toaddrlen)</td></tr>
+<tr class="memdesc:gafe05c6bc834525de12672f63f9dee42e"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> sendto.  <a href="#gafe05c6bc834525de12672f63f9dee42e">More...</a><br/></td></tr>
+<tr class="separator:gafe05c6bc834525de12672f63f9dee42e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2dd2338760688336576f0fd0fb117910"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga2dd2338760688336576f0fd0fb117910">MX_WIFI_Socket_recvfrom</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, uint8_t *buf, int32_t len, int32_t flags, struct <a class="el" href="structsockaddr.html">sockaddr</a> *fromaddr, uint32_t *fromaddrlen)</td></tr>
+<tr class="memdesc:ga2dd2338760688336576f0fd0fb117910"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> recvfrom.  <a href="#ga2dd2338760688336576f0fd0fb117910">More...</a><br/></td></tr>
+<tr class="separator:ga2dd2338760688336576f0fd0fb117910"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab2ad426df41a7fcfdf2ac77cd7ed6fd1"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gab2ad426df41a7fcfdf2ac77cd7ed6fd1">MX_WIFI_Socket_gethostbyname</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, struct <a class="el" href="structsockaddr.html">sockaddr</a> *addr, char *name)</td></tr>
+<tr class="memdesc:gab2ad426df41a7fcfdf2ac77cd7ed6fd1"><td class="mdescLeft"> </td><td class="mdescRight">Gethostbyname, only for IPv4 address.  <a href="#gab2ad426df41a7fcfdf2ac77cd7ed6fd1">More...</a><br/></td></tr>
+<tr class="separator:gab2ad426df41a7fcfdf2ac77cd7ed6fd1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa6952b5742959582b4abd43a5d08b276"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gaa6952b5742959582b4abd43a5d08b276">MX_WIFI_Socket_ping</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, const char *hostname, int32_t count, int32_t delay, int32_t response[])</td></tr>
+<tr class="memdesc:gaa6952b5742959582b4abd43a5d08b276"><td class="mdescLeft"> </td><td class="mdescRight">Ping a host, only for IPv4 address.  <a href="#gaa6952b5742959582b4abd43a5d08b276">More...</a><br/></td></tr>
+<tr class="separator:gaa6952b5742959582b4abd43a5d08b276"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab4a7dd85ed93b12b9c4050c47ec57794"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gab4a7dd85ed93b12b9c4050c47ec57794">MX_WIFI_Socket_getpeername</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, struct <a class="el" href="structsockaddr.html">sockaddr</a> *addr, uint32_t *addrlen)</td></tr>
+<tr class="memdesc:gab4a7dd85ed93b12b9c4050c47ec57794"><td class="mdescLeft"> </td><td class="mdescRight">socket getpeername.  <a href="#gab4a7dd85ed93b12b9c4050c47ec57794">More...</a><br/></td></tr>
+<tr class="separator:gab4a7dd85ed93b12b9c4050c47ec57794"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3f0af59f9acadc290a9e482a8ba517b9"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga3f0af59f9acadc290a9e482a8ba517b9">MX_WIFI_Socket_getsockname</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, int32_t sockfd, struct <a class="el" href="structsockaddr.html">sockaddr</a> *addr, uint32_t *addrlen)</td></tr>
+<tr class="memdesc:ga3f0af59f9acadc290a9e482a8ba517b9"><td class="mdescLeft"> </td><td class="mdescRight">socket getsockname.  <a href="#ga3f0af59f9acadc290a9e482a8ba517b9">More...</a><br/></td></tr>
+<tr class="separator:ga3f0af59f9acadc290a9e482a8ba517b9"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>** </p>
+<p>socket related API ** </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ga8281f97fa67859b6a08cf9797ca626d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define FD_CLR</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">p </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   ((p)-&gt;fds_bits[(n)/<a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>] &amp;= ~MC_FDSET_MASK(n))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Remove fd from FD set. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00876">876</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae3c12599695a122e565da04d3e1dd371"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define FD_ISSET</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">p </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   ((p)-&gt;fds_bits[(n)/<a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>] &amp; MC_FDSET_MASK(n))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check if the fd is set in FD set. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00877">877</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6cb3c721d6b16c20ed776af46459c6ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define FD_SET</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">p </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   ((p)-&gt;fds_bits[(n)/<a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gae469a6eb5d202973832adcb96074c20f">NFDBITS</a>] |= MC_FDSET_MASK(n))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Add a fd to FD set. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00875">875</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga86c5dbf5a99358e288f573d6a1e0873f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define FD_SETSIZE   64</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MAX fd number is 64 in MXOS. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00862">862</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7b0e4166ed0523ad39b3304924aac779"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define FD_ZERO</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">p</td><td>)</td>
+          <td>   memset((p), 0, sizeof(*(p)))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear FD set. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00878">878</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac3e045b1eb12fc6a000555fda916a023"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define NBBY   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>number of bits in a byte. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00865">865</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae469a6eb5d202973832adcb96074c20f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define NFDBITS   (sizeof(unsigned long) * <a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#gac3e045b1eb12fc6a000555fda916a023">NBBY</a>)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>bits per mask </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00866">866</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ga43415b7d29ce7f799c0c2a74b3ea6fe4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga43415b7d29ce7f799c0c2a74b3ea6fe4">IP_OPT_VAL</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>IP option types, level: IPPROTO_IP. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga43415b7d29ce7f799c0c2a74b3ea6fe4aca99f4e845aa1795a85d704f5472a511"></a>IP_ADD_MEMBERSHIP </td><td class="fielddoc">
+<p>Join multicast group. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga43415b7d29ce7f799c0c2a74b3ea6fe4a489c5cfbb00b3cee4fe9288fa40f4a01"></a>IP_DROP_MEMBERSHIP </td><td class="fielddoc">
+<p>Leave multicast group. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00884">884</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4962e8f52d0e73e062963db9d09b7c39"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group___w_i_f_i___s_o_c_k_e_t.html#ga4962e8f52d0e73e062963db9d09b7c39">SOCK_OPT_VAL</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>socket option value </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39ae66573a5ee2c4868c14ca9d499ef6b5d"></a>SO_DEBUG </td><td class="fielddoc">
+<p>Unimplemented: turn on debugging info recording. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39aa985052d483e1e379df8fe24e5ae9323"></a>SO_ACCEPTCONN </td><td class="fielddoc">
+<p>socket has had listen() </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a9a69076a9b2bdef693708d5005f4cf46"></a>SO_REUSEADDR </td><td class="fielddoc">
+<p>Allow local address reuse. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a4540c38a6d26cae663b162aa08b2cd1b"></a>SO_KEEPALIVE </td><td class="fielddoc">
+<p>keep connections alive </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a934ec9d2fb58639026a17bb71d907c88"></a>SO_DONTROUTE </td><td class="fielddoc">
+<p>Just use interface addresses. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a717302eb594c7eba70dd5ebec1ba89d2"></a>SO_BROADCAST </td><td class="fielddoc">
+<p>Permit to send and to receive broadcast messages. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39ae2c9d57e971ed3510dbd74ac5cf0c0cf"></a>SO_USELOOPBACK </td><td class="fielddoc">
+<p>Bypass hardware when possible. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a6856768825eabef55d9d4175020da464"></a>SO_LINGER </td><td class="fielddoc">
+<p>linger on close if data present </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a68027692aae2685592434c77096d14c3"></a>SO_OOBINLINE </td><td class="fielddoc">
+<p>Leave received OOB data in line. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39aa615e876035aad09a5fcfbfaac7ac4c6"></a>SO_REUSEPORT </td><td class="fielddoc">
+<p>Allow local address &amp; port reuse. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a9561c52564f93e58f12bf9a7f86f0d5a"></a>SO_BLOCKMODE </td><td class="fielddoc">
+<p>set socket as block(optval=0)/non-block(optval=1) mode. </p>
+<p>Default is block mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a06ca2351a5e739ece940781372796f4b"></a>SO_SNDTIMEO </td><td class="fielddoc">
+<p>Send timeout in block mode. </p>
+<p>block for ever in default mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a6c96d07febacc120844c83a5a1745210"></a>SO_RCVTIMEO </td><td class="fielddoc">
+<p>Recv timeout in block mode. </p>
+<p>block 1 second in default mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39ac9c377737c401ee3826e199d5ec2c6c7"></a>SO_ERROR </td><td class="fielddoc">
+<p>Get socket error number. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a518fcdee784798ddf4db7a593e794340"></a>SO_TYPE </td><td class="fielddoc">
+<p>Get socket type. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga4962e8f52d0e73e062963db9d09b7c39a800789808293115834c3635827d1820c"></a>SO_NO_CHECK </td><td class="fielddoc">
+<p>Don't create UDP checksum. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l00838">838</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga22e2f485962878cdd08b2389691a9f17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_accept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t * </td>
+          <td class="paramname"><em>addrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Accept a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">addr</td><td>client address </td></tr>
+    <tr><td class="paramname">addrlen</td><td>length of client address </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Accepted</td><td>client socket fd, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6bbce10a3bf4087bc9f22eed43bbdf96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_bind </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>addrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Bind a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">addr</td><td>socket address </td></tr>
+    <tr><td class="paramname">addrlen</td><td>address length </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2067722c94f1c8b72959675411a3fd7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> close. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6524be895e52ddea79f282e75b5c305e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>addrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> connect. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">addr</td><td>client address </td></tr>
+    <tr><td class="paramname">addrlen</td><td>length of client address </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga84979807c710e2fc24571a264fe56b8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>protocol</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">domain</td><td>socket domain </td></tr>
+    <tr><td class="paramname">type</td><td>socket type </td></tr>
+    <tr><td class="paramname">protocol</td><td>socket protocol </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a></td><td>file descriptor, return &lt; 1 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gab2ad426df41a7fcfdf2ac77cd7ed6fd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_gethostbyname </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>name</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gethostbyname, only for IPv4 address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">addr</td><td>address of the host </td></tr>
+    <tr><td class="paramname">name</td><td>hostname </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gab4a7dd85ed93b12b9c4050c47ec57794"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_getpeername </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t * </td>
+          <td class="paramname"><em>addrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>socket getpeername. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">addr</td><td>address buffer </td></tr>
+    <tr><td class="paramname">addrlen</td><td>size of address buffer </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">get</td><td>address of peer socket, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3f0af59f9acadc290a9e482a8ba517b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_getsockname </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t * </td>
+          <td class="paramname"><em>addrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>socket getsockname. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">addr</td><td>address buffer </td></tr>
+    <tr><td class="paramname">addrlen</td><td>size of address buffer </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">get</td><td>address of local socket, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga72841b81092301c399414d15970f873c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_getsockopt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>optname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>optvalue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t * </td>
+          <td class="paramname"><em>optlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get option of a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">level</td><td>option level </td></tr>
+    <tr><td class="paramname">optname</td><td>option to set </td></tr>
+    <tr><td class="paramname">optvalue</td><td>buffer pointer of value of the option </td></tr>
+    <tr><td class="paramname">optlen</td><td>buffer pointer of length of the option value </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga49b27cc4ad13d32ea6a8209d4a547958"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_listen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>backlog</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Listen a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">backlog</td><td>max number to queued. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa6952b5742959582b4abd43a5d08b276"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_ping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>hostname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>delay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>response</em>[] </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Ping a host, only for IPv4 address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">addr</td><td>hostname </td></tr>
+    <tr><td class="paramname">count</td><td>ping max count </td></tr>
+    <tr><td class="paramname">delay</td><td>ping delay in millisecond </td></tr>
+    <tr><td class="paramname">response</td><td>response time array of ping result </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga85515ae1454119be1286bc7a7ca9fa67"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_recv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>flags</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> recv. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">buf</td><td>recv buffer </td></tr>
+    <tr><td class="paramname">len</td><td>length of recv buffer </td></tr>
+    <tr><td class="paramname">flags</td><td>zero for MXOS </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Number</td><td>of bytes received, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2dd2338760688336576f0fd0fb117910"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_recvfrom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>fromaddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t * </td>
+          <td class="paramname"><em>fromaddrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> recvfrom. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">buf</td><td>recv buffer </td></tr>
+    <tr><td class="paramname">len</td><td>length of recv buffer </td></tr>
+    <tr><td class="paramname">fromaddr</td><td>address of the data source </td></tr>
+    <tr><td class="paramname">fromaddrlen</td><td>length of address of the data source </td></tr>
+    <tr><td class="paramname">flags</td><td>zero for MXOS </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Number</td><td>of bytes received, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7e5ff61bc10b9d364867dd9994bdd643"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>flags</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> send. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">buf</td><td>send data buffer </td></tr>
+    <tr><td class="paramname">len</td><td>length of send data </td></tr>
+    <tr><td class="paramname">flags</td><td>zero for MXOS </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Number</td><td>of bytes sent, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gafe05c6bc834525de12672f63f9dee42e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_sendto </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structsockaddr.html">sockaddr</a> * </td>
+          <td class="paramname"><em>toaddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>toaddrlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> sendto. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">buf</td><td>send data buffer </td></tr>
+    <tr><td class="paramname">len</td><td>length of send data </td></tr>
+    <tr><td class="paramname">flags</td><td>zero for MXOS </td></tr>
+    <tr><td class="paramname">toaddr</td><td>address to send </td></tr>
+    <tr><td class="paramname">toaddrlen</td><td>length of address to send </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Number</td><td>of bytes sent, return &lt; 0 if failed. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gad7cf50d8913a076885a143f7578c4a14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_setsockopt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>optname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>optvalue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>optlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set option for a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">level</td><td>option level </td></tr>
+    <tr><td class="paramname">optname</td><td>option to set </td></tr>
+    <tr><td class="paramname">optvalue</td><td>value buffer for the option </td></tr>
+    <tr><td class="paramname">optlen</td><td>length of the option value </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaeb5b512aab2aeab5f84fd51e85e16c22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_Socket_shutdown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>mode</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> shutdown. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">sockfd</td><td>socket fd </td></tr>
+    <tr><td class="paramname">mode</td><td>shutdown mode: 0 Stop receiving data for this socket; 1 Stop trying to transmit data from this socket 2 Stop all transmit from this socket </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group___w_i_f_i___s_o_c_k_e_t.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:49 GMT -->
+</html>

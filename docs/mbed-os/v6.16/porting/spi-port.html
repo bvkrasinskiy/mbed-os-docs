@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/porting/spi-port.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <meta content="Porting guidelines for adding a new MCU target to Mbed OS and the Pelion IoT Platform and using HAL APIs" name="description"/>
+        
+        <title>Serial Peripheral Interface (SPI) - Porting | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="spi-port.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/porting/spi-port.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/porting/spi-port.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis" href="../apis/index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test" href="../debug-test/index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting active-doc" href="index.html">Porting</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Port process overview</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="setting-up.html">Setting up</a>
+                    
+                    
+                    <a class="toc-item" href="porting.html">Porting</a>
+                    
+                    
+                    <a class="toc-item" href="testing.html">Testing</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="testing.html">Testing your port</a>
+                        
+                        <a class="toc-item" href="testing-with-the-demo-applications.html">Testing with the demo applications</a>
+                        
+                        <a class="toc-item" href="integration-tests.html">Integration tests</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-the-hal-apis.html">Porting the HAL APIs</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="static-pinmap-port.html">Static pin map extension</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#implementing-static-pin-map-extension">Implementing static pin map extension</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="serial-port.html">Serial</a>
+                    
+                    
+                    <a class="toc-item" href="low-power-ticker.html">Low Power Ticker</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#implementing-the-low-power-ticker-api">Implementing the low power ticker API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="microsecond-ticker.html">Microsecond ticker</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#implementing-the-microsecond-ticker-api">Implementing the microsecond ticker API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="gpio.html">GPIO</a>
+                    
+                    
+                    <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#generic-pin-names">Generic Pin Names</a>
+                        
+                        <a class="toc-item" href="#arduino-uno-pin-names">Arduino Uno Pin Names</a>
+                        
+                        <a class="toc-item" href="#target-markers">Target markers</a>
+                        
+                        <a class="toc-item" href="#compliance-testing">Compliance Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="rtc-port.html">RTC</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#implementing-the-rtc-api">Implementing the RTC API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="spi-port.html">Serial Peripheral Interface (SPI)</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#implementing-the-spi-api">Implementing the SPI API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="quadspi-port.html">QuadSPI (QSPI) </a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#implementing-qspi">Implementing QSPI</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="i2c-port.html">Inter-integrated circuit (I2C) </a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#defined-behaviors">Defined behaviors</a>
+                        
+                        <a class="toc-item" href="#undefined-behaviors">Undefined behaviors</a>
+                        
+                        <a class="toc-item" href="#notes">Notes</a>
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#implementing-the-i2c-api">Implementing the I2C API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="flash.html">Flash</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#linker-script-updates">Linker script updates</a>
+                        
+                        <a class="toc-item" href="#targets-json-metadata">targets.json metadata</a>
+                        
+                        <a class="toc-item" href="#start-application">Start application</a>
+                        
+                        <a class="toc-item" href="#flash-hal">Flash HAL</a>
+                        
+                        <a class="toc-item" href="#tests">Tests</a>
+                        
+                        <a class="toc-item" href="#troubleshooting">Troubleshooting</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="bootloader.html">Bootloader</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#porting-the-bootloader">Porting the bootloader</a>
+                        
+                        <a class="toc-item" href="#creating-and-using-a-new-bootloader">Creating and using a new bootloader</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="thread-safety-and-porting.html">Thread safety and porting</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#considerations-when-porting">Considerations when porting</a>
+                        
+                        <a class="toc-item" href="#hal-c-api">HAL C API</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="tickless-mode.html">Tickless mode</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#scheduling-and-sleep-modes-in-mbed-os">Scheduling and sleep modes in Mbed OS</a>
+                        
+                        <a class="toc-item" href="#tickless-mode">Tickless mode</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                        <a class="toc-item" href="#references">References</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="sleep.html">Sleep</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#implementing-the-sleep-api">Implementing the Sleep API</a>
+                        
+                        <a class="toc-item" href="#targets-that-disable-systick-in-sleep-mode">Targets that disable systick in sleep mode</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="resetreason-port.html">ResetReason</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependency">Dependency</a>
+                        
+                        <a class="toc-item" href="#implementing-resetreason">Implementing ResetReason</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="watchdog-port.html">Watchdog</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependency">Dependency</a>
+                        
+                        <a class="toc-item" href="#implementing-watchdog">Implementing Watchdog</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="itm-port.html">Instrumentation Trace Macrocell</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependencies">Dependencies</a>
+                        
+                        <a class="toc-item" href="#implementing-the-itm-api">Implementing the ITM API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="mpu-port.html">MPU</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependency">Dependency</a>
+                        
+                        <a class="toc-item" href="#implementing-the-mpu-api">Implementing the MPU API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="usb-device.html">USB device</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#implementing-usb">Implementing USB</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="hardware-crc.html">Hardware CRC</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#dependency">Dependency</a>
+                        
+                        <a class="toc-item" href="#implementing-the-crc-api">Implementing the CRC API</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-security.html">Porting security</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="porting-security.html">Porting PSA targets</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#glossary">Glossary</a>
+                        
+                        <a class="toc-item" href="#adding-new-psa-targets">Adding new PSA targets</a>
+                        
+                        <a class="toc-item" href="#build-and-validation">Build and validation</a>
+                        
+                        <a class="toc-item" href="#further-reading">Further reading</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="crypto-port.html">Mbed Crypto</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                        <a class="toc-item" href="#compile-and-run">Compile and run</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="entropy-sources.html">Entropy sources</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#why-entropy-is-necessary">Why entropy is necessary</a>
+                        
+                        <a class="toc-item" href="#which-entropy-source-to-choose">Which entropy source to choose</a>
+                        
+                        <a class="toc-item" href="#how-to-provide-entropy-from-a-hardware-entropy-source">How to provide entropy from a hardware entropy source</a>
+                        
+                        <a class="toc-item" href="#how-to-implement-the-trng-api">How to implement the TRNG API</a>
+                        
+                        <a class="toc-item" href="#how-to-implement-the-non-volatile-seed-entropy-source">How to implement the non-volatile seed entropy source</a>
+                        
+                        <a class="toc-item" href="#how-to-test-without-entropy-sources">How to test without entropy sources</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="hardware-accelerated-crypto.html">Hardware Accelerated Crypto</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#introduction">Introduction</a>
+                        
+                        <a class="toc-item" href="#adding-acceleration-by-replacing-functions">Adding acceleration by replacing functions</a>
+                        
+                        <a class="toc-item" href="#adding-acceleration-by-replacing-modules">Adding acceleration by replacing modules</a>
+                        
+                        <a class="toc-item" href="#mbed-tls-platform-context">Mbed TLS platform context</a>
+                        
+                        <a class="toc-item" href="#considerations-for-alternative-implementations">Considerations for alternative implementations</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="using-psa-enabled-mbed-tls.html">Using PSA-enabled Mbed TLS</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#building-psa-enabled-mbed-tls-from-git">Building PSA-enabled Mbed TLS from Git</a>
+                        
+                        <a class="toc-item" href="#using-psa-enabled-mbed-tls">Using PSA-enabled Mbed TLS</a>
+                        
+                        <a class="toc-item" href="#psa-based-apis-in-mbed-tls">PSA-based APIs in Mbed TLS</a>
+                        
+                        <a class="toc-item" href="#using-opaque-ecdsa-keys-for-tls-client-authentication">Using opaque ECDSA keys for TLS client authentication</a>
+                        
+                        <a class="toc-item" href="#using-opaque-ecdsa-keys-to-generate-certificate-signing-requests-csrs">Using opaque ECDSA keys to generate certificate signing requests (CSRs)</a>
+                        
+                        <a class="toc-item" href="#using-opaque-pre-shared-keys-with-tls-psk-ciphersuites">Using opaque pre-shared keys with TLS PSK ciphersuites</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-storage.html">Porting storage</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="blockdevice-port.html">Block Devices</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#implementing-blockdevice">Implementing BlockDevice</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-connectivity.html">Porting connectivity</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="porting-connectivity.html">Connectivity</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#the-network-socket-api-new-device">The network socket API - new device</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="l3-porting.html">IP Layer3 (L3IP) drivers</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#abstractions">Abstractions</a>
+                        
+                        <a class="toc-item" href="#l3ip-driver-core">L3IP driver core</a>
+                        
+                        <a class="toc-item" href="#the-ip-layer3-memory-manager">The IP Layer3 memory manager</a>
+                        
+                        <a class="toc-item" href="#ip-layer3-interface">IP Layer3 interface</a>
+                        
+                        <a class="toc-item" href="#being-the-default-interface">Being the default interface</a>
+                        
+                        <a class="toc-item" href="#cellular-interfaces">Cellular interfaces</a>
+                        
+                        <a class="toc-item" href="#onboardnetworkstack">OnboardNetworkStack</a>
+                        
+                        <a class="toc-item" href="#tuning-memory-allocations">Tuning memory allocations</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="ethernet-port.html">Ethernet MAC (EMAC) drivers</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#abstractions">Abstractions</a>
+                        
+                        <a class="toc-item" href="#the-emac-driver-core">The EMAC driver core</a>
+                        
+                        <a class="toc-item" href="#the-emac-memory-manager">The EMAC memory manager</a>
+                        
+                        <a class="toc-item" href="#ethernetinterface">EthernetInterface</a>
+                        
+                        <a class="toc-item" href="#being-the-default-emac-or-ethernetinterface">Being the default EMAC or EthernetInterface</a>
+                        
+                        <a class="toc-item" href="#wi-fi-interfaces">Wi-Fi interfaces</a>
+                        
+                        <a class="toc-item" href="#onboardnetworkstack">OnboardNetworkStack</a>
+                        
+                        <a class="toc-item" href="#device-emac">DEVICE_EMAC</a>
+                        
+                        <a class="toc-item" href="#tuning-memory-allocations">Tuning memory allocations</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="wifi-port.html">Wi-Fi</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#wifiinterface">WifiInterface</a>
+                        
+                        <a class="toc-item" href="#emac-driver">EMAC driver</a>
+                        
+                        <a class="toc-item" href="#external-ip-stack">External IP stack</a>
+                        
+                        <a class="toc-item" href="#assumptions">Assumptions</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="networkstack.html">NetworkStack</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#class-hierarchy">Class hierarchy</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                        <a class="toc-item" href="#case-study-esp8266-wi-fi-component">Case study: ESP8266 Wi-Fi component</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="cellular-device-porting.html">Cellular device porting</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#adding-cellular-on-an-mbed-os-target">Adding cellular on an Mbed OS target</a>
+                        
+                        <a class="toc-item" href="#adding-a-new-cellular-device-driver">Adding a new cellular device driver</a>
+                        
+                        <a class="toc-item" href="#socket-adaptation">Socket adaptation</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="6lowpan-port.html">IEEE 802.15.4 RF driver</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#porting-a-new-rf-driver">Porting a new RF driver</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                        <a class="toc-item" href="#implementing-the-phy-api">Implementing the PHY API</a>
+                        
+                        <a class="toc-item" href="#worker-thread-for-mbed-os">Worker thread for Mbed OS</a>
+                        
+                        <a class="toc-item" href="#example-rf-driver">Example RF driver</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="mac-port.html">Porting IEEE 802.15.4 MAC driver</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#sw-mac">SW MAC</a>
+                        
+                        <a class="toc-item" href="#initializing-sw-mac">Initializing SW MAC</a>
+                        
+                        <a class="toc-item" href="#example">Example</a>
+                        
+                        <a class="toc-item" href="#enabling-fhss">Enabling FHSS</a>
+                        
+                        <a class="toc-item" href="#ieee-802-15-4-mac-sublayer-apis">IEEE 802.15.4 MAC sublayer APIs</a>
+                        
+                        <a class="toc-item" href="#mcps-sap-interface">MCPS-SAP interface</a>
+                        
+                        <a class="toc-item" href="#mlme-sap-interface">MLME-SAP interface</a>
+                        
+                        <a class="toc-item" href="#mac-api-class-introduction">MAC API class introduction</a>
+                        
+                        <a class="toc-item" href="#ieee-802-15-4-mac-sublayer-extended-apis">IEEE 802.15.4 MAC sublayer extended APIs</a>
+                        
+                        <a class="toc-item" href="#mac-api-standard-extensions">MAC API standard extensions</a>
+                        
+                        <a class="toc-item" href="#hw-mac">HW MAC</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="lora-port.html">Porting LoRaWAN stack and LoRa RF drivers</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#porting-a-lora-rf-driver">Porting a LoRa RF driver</a>
+                        
+                        <a class="toc-item" href="#device-design-guide-for-lorawan-stack">Device design guide for LoRaWAN stack</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="NFC-port.html">NFC EEPROM driver porting guide</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#class-hierarchy">Class hierarchy</a>
+                        
+                        <a class="toc-item" href="#required-methods">Required methods</a>
+                        
+                        <a class="toc-item" href="#asynchronous-operation">Asynchronous operation</a>
+                        
+                        <a class="toc-item" href="#testing">Testing</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-bootstrap.html">Porting bootstrap</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-exporter-targets.html">Porting exporter targets</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-tools.html">Porting tools</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="build-tools.html">Build tools</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#postbuild-scripts">Postbuild scripts</a>
+                        
+                        <a class="toc-item" href="#implementation">Implementation</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="mbed-ls.html">Mbed-ls</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#defined-behavior">Defined behavior</a>
+                        
+                        <a class="toc-item" href="#implementation">Implementation</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="adding-exporters.html">Adding exporters</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#what-is-an-exporter">What is an exporter</a>
+                        
+                        <a class="toc-item" href="#export-subsystem-structure">Export subsystem structure</a>
+                        
+                        <a class="toc-item" href="#implementing-an-example-plugin">Implementing an example plugin</a>
+                        
+                        <a class="toc-item" href="#suggested-implementation">Suggested implementation</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="arm-mbed-hdk.html">Arm Mbed HDK</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#hdk-content-per-project">HDK content per project</a>
+                        
+                        <a class="toc-item" href="#repository-content-and-projects">Repository content and projects</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="porting-custom-boards.html">Porting custom boards</a>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">Porting</a>
+                                     › 
+                                    
+                                    <a href="porting-the-hal-apis.html">Porting the HAL APIs</a>
+                                     › 
+                                    
+                                    <a href="spi-port.html">Serial Peripheral Interface (SPI)</a>
+                                    
+                                    
+                                </div>
+                                <h1 id="spi-port">Serial Peripheral Interface (SPI)</h1><p>The <strong>Serial Peripheral Interface</strong> allows you to send or receive a data stream over a synchronous serial interface made of 3 to 4 lines.</p><ul>
+<li>MISO: Master in, slave out.</li>
+<li>MOSI: Master out, slave in.</li>
+<li>MCLK: Clock.</li>
+<li>SS: Slave select.</li>
+</ul><p>A typical use case of this interface is with SDCard, memory blocks and DACs or ADCs.</p><p>This highly configurable interface has elements you can adjust:</p><ul>
+<li>Frame length.</li>
+<li>Clocks polarity and phase.</li>
+</ul><p><span class="warnings"><strong>Warning:</strong> We are introducing the SPI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the <a href="#implementing-the-spi-api">implementing the SPI API</a> section.</span></p><h2 id="assumptions">Assumptions</h2><h3 id="defined-behaviors">Defined behaviors</h3><ul>
+<li><code>spi_get_module()</code> returns the <code>SPIName</code> unique identifier to the peripheral associated to this SPI channel.</li>
+<li><code>spi_get_capabilities()</code> fills the given <code>spi_capabilities_t</code> instance.</li>
+<li><code>spi_get_capabilities()</code> should consider the <code>ssel</code> pin when evaluating the <code>support_slave_mode</code> capability.</li>
+<li>If the given <code>ssel</code> pin cannot be managed by hardware in slave mode, <code>support_slave_mode</code> should be false.</li>
+<li>At least a symbol width of 8 bit must be supported.</li>
+<li>The supported frequency range must include the range 0.2-2 MHz.</li>
+<li>The shortest part of the duty cycle must not be shorter than 50% of the expected period.</li>
+<li><code>spi_init()</code> initializes the pins leaving the configuration registers unchanged.</li>
+<li><code>spi_init()</code> if <code>is_slave</code> is false:
+<ul>
+<li>If <code>ssel</code> is <code>NC</code>, the HAL implementation ignores this pin.</li>
+<li>If <code>ssel</code> is not <code>NC</code>, then the HAL implementation owns the pin and its management.</li>
+</ul>
+</li>
+<li>When managed by the HAL implementation, <code>ssel</code> is always considered active low.</li>
+<li>When the hardware supports the half-duplex (3-wire) mode, if <code>miso</code> (exclusive) or <code>mosi</code> is missing in any function that expects pins, the bus is assumed to be half-duplex.</li>
+<li><code>spi_free()</code> resets the pins to their default state.</li>
+<li><code>spi_free()</code> disables the peripheral clock.</li>
+<li><code>spi_format()</code> sets:
+<ul>
+<li>The number of bits per symbol.</li>
+<li>The mode:
+.0 Clock idle state is <em>low</em>, data are sampled when the clock becomes <em>active</em> (polarity = 0, phase = 0).
+.1 Clock idle state is <em>low</em>, data are sampled when the clock becomes <em>inactive</em> (polarity = 0, phase = 1).
+.2 Clock idle state is <em>high</em>, data are sampled when the clock becomes <em>active</em> (polarity = 1, phase = 0).
+.3 Clock idle state is <em>high</em>, data are sampled when the clock becomes <em>inactive</em> (polarity = 1, phase = 1).</li>
+<li>The bit ordering (lsb/msb first).</li>
+</ul>
+</li>
+<li><code>spi_format()</code> updates the configuration of the peripheral except the baud rate generator.</li>
+<li><code>spi_frequency()</code> sets the frequency to use during the transfer.</li>
+<li><code>spi_frequency()</code> returns the actual frequency that is used.</li>
+<li><code>spi_frequency()</code> updates the baud rate generator leaving other configurations unchanged.</li>
+<li><code>spi_init()</code>, <code>spi_frequency()</code> and <code>spi_format()</code> must be called at least once each before initiating any transfer.</li>
+<li><code>spi_transfer()</code>:
+<ul>
+<li>Writes <code>tx_len</code> symbols to the bus.</li>
+<li>Reads <code>rx_len</code> symbols from the bus.</li>
+<li>If <code>rx</code> is NULL, then inputs are discarded.</li>
+<li>If <code>tx</code> is NULL, then <code>fill_symbol</code> is used instead.</li>
+<li>Returns the number of symbol clocked on the bus during this transfer.</li>
+<li>Expects symbols types to be the closest stdint type bigger or equal to its size following the platform's endianness. For example:
+<ul>
+<li>7bits =&gt; uint8_t.</li>
+<li>15bits =&gt; uint16_t.</li>
+<li>16bits =&gt; uint16_t.</li>
+<li>17bits =&gt; uint32_t.</li>
+</ul>
+</li>
+<li>In full-duplex mode:
+<ul>
+<li>If <code>rx_len</code> &gt; <code>tx_len</code> then it sends <code>(rx_len-tx_len)</code> additional <code>fill_symbol</code> to the bus.</li>
+</ul>
+</li>
+<li>In half-duplex mode:
+<ul>
+<li>As master, <code>spi_transfer()</code> sends <code>tx_len</code> symbols and then reads <code>rx_len</code> symbols.</li>
+<li>As slave, <code>spi_transfer()</code> receives <code>rx_len</code> symbols and then sends <code>tx_len</code> symbols.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>spi_transter_async()</code> schedules a transfer to be process the same way <code>spi_transfer()</code> would have but asynchronously.</li>
+<li><code>spi_transter_async()</code> returns immediately with a boolean indicating whether the transfer was successfully scheduled or not.</li>
+<li>The callback given to <code>spi_transfer_async()</code> is invoked when the transfer completes (with a success or an error).</li>
+<li><code>spi_transfer_async()</code> saves the handler and the <code>ctx</code> pointer.</li>
+<li>The <code>ctx</code> is passed to the callback on transfer completion.</li>
+<li>Unless the transfer is aborted, the callback is invoked on completion. The completion may be when all symbols have been transmitted
+or when, in slave mode, the master deasserts the chip select.</li>
+<li>The <code>spi_transfer_async()</code> function may use the <code>DMAUsage</code> hint to select the appropriate asynchronous algorithm.</li>
+<li>The <code>spi_async_event_t</code> must be filled with the number of symbols clocked on the bus during this transfer and a boolean value indicated if an error has occurred.</li>
+<li><code>spi_transfer_async_abort()</code> aborts an ongoing asynchronous transfer.</li>
+</ul><h3 id="undefined-behaviors">Undefined behaviors</h3><ul>
+<li>Calling <code>spi_init()</code> multiple times on the same <code>spi_t</code> without <code>spi_free()</code>'ing it first.</li>
+<li>Calling any method other than <code>spi_init()</code> on an uninitialized or freed <code>spi_t</code>.</li>
+<li>Passing both <code>miso</code> and <code>mosi</code> as <code>NC</code> to <code>spi_get_module</code> or <code>spi_init</code>.</li>
+<li>Passing <code>miso</code> or <code>mosi</code> as <code>NC</code> on target that does not support half-duplex mode.</li>
+<li>Passing <code>mclk</code> as <code>NC</code>  to <code>spi_get_module</code> or <code>spi_init</code>.</li>
+<li>Passing an invalid pointer as <code>cap</code> to <code>spi_get_capabilities</code>.</li>
+<li>Passing pins that cannot be on the same peripheral.</li>
+<li>Passing an invalid pointer as <code>obj</code> to any method.</li>
+<li>Giving an <code>ssel</code> pin to <code>spi_init()</code> when using in master mode.</li>
+<li>SS must be managed by hardware in slave mode and must <strong>NOT</strong> be managed by hardware in master mode.</li>
+<li>Setting a frequency outside of the range given by <code>spi_get_capabilities()</code>.</li>
+<li>Setting a frequency in slave mode.</li>
+<li>Setting <code>bits</code> in <code>spi_format</code> to a value out of the range given by <code>spi_get_capabilities()</code>.</li>
+<li>Passing an invalid pointer as <code>fill_symbol</code> to <code>spi_transfer</code> and <code>spi_transfer_async</code> while they would be required by the transfer (<code>rx_len != tx_len</code> or <code>tx==NULL</code>).</li>
+<li>Passing an invalid pointer as <code>handler</code> to <code>spi_transfer_async</code>.</li>
+<li>Calling <code>spi_transfer_async_abort()</code> while no asynchronous transfer is being processed (no transfer or a synchronous transfer).</li>
+<li>In half-duplex mode, any mechanism (if any is present) to detect or prevent collision is implementation defined.</li>
+</ul><h3 id="other-requirements">Other requirements</h3><p>A target must also define these elements:</p><ul>
+<li><code>#define SPI_COUNT (xxxxxU)</code>.</li>
+<li>The number of SPI peripherals available on the device. A good place for that macro is <code>PeripheralNames.h</code> next to the <code>SPIName</code> enumeration.</li>
+</ul><p><span class="notes"><strong>Note:</strong> You can find more details about the design choices in the <a href="https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-spi/docs/design-documents/hal/0000-spi-overhaul.md">SPI design document</a>.</span></p><h2 id="dependencies">Dependencies</h2><p>Hardware SPI capabilities.</p><h2 id="implementing-the-spi-api">Implementing the SPI API</h2><p>You can find the API and specification for the SPI API in the following class reference:</p><div class="api-include-block">
+<div class="api-header">
+<a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank">
+<i class="fa fa-folder-o"></i>
+<b class="filename">SPI Class Reference</b>
+</a>
+</div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</span></td></tr>
+<tr class="memitem:a21d684ae9ab826c863c3d198fb761bad"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a21d684ae9ab826c863c3d198fb761bad" target="_blank">SPI</a> (PinName mosi, PinName miso, PinName sclk, PinName ssel=NC)</td></tr>
+<tr class="memdesc:a21d684ae9ab826c863c3d198fb761bad"><td class="mdescLeft"> </td><td class="mdescRight">Create a <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> master connected to the specified pins.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a21d684ae9ab826c863c3d198fb761bad" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7627faa611c3645626b6b627755fcae7"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a7627faa611c3645626b6b627755fcae7" target="_blank">format</a> (int bits, int mode=0)</td></tr>
+<tr class="memdesc:a7627faa611c3645626b6b627755fcae7"><td class="mdescLeft"> </td><td class="mdescRight">Configure the data transmission format.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a7627faa611c3645626b6b627755fcae7" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a2f011a420b5334822adc8b75ee8226a8"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a2f011a420b5334822adc8b75ee8226a8" target="_blank">frequency</a> (uint32_t hz=1000000)</td></tr>
+<tr class="memdesc:a2f011a420b5334822adc8b75ee8226a8"><td class="mdescLeft"> </td><td class="mdescRight">Set the <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus clock frequency.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a2f011a420b5334822adc8b75ee8226a8" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a594e0eb0068da0fdc3d57e2d018c1994"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a594e0eb0068da0fdc3d57e2d018c1994" target="_blank">write</a> (int value)</td></tr>
+<tr class="memdesc:a594e0eb0068da0fdc3d57e2d018c1994"><td class="mdescLeft"> </td><td class="mdescRight">Write to the <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Slave and return the response.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a594e0eb0068da0fdc3d57e2d018c1994" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aed26de49dd850c5014af2a513a6a808a"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#aed26de49dd850c5014af2a513a6a808a" target="_blank">write</a> (const char *tx_buffer, int tx_length, char *rx_buffer, int rx_length)</td></tr>
+<tr class="memdesc:aed26de49dd850c5014af2a513a6a808a"><td class="mdescLeft"> </td><td class="mdescRight">Write to the <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> Slave and obtain the response.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#aed26de49dd850c5014af2a513a6a808a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a675b17104b65093c04d9fd23755bb30b"><td align="right" class="memItemLeft" valign="top">virtual bool </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a675b17104b65093c04d9fd23755bb30b" target="_blank">lock</a> (void)</td></tr>
+<tr class="memdesc:a675b17104b65093c04d9fd23755bb30b"><td class="mdescLeft"> </td><td class="mdescRight">Acquire exclusive access to this <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a675b17104b65093c04d9fd23755bb30b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a5d882b4e464e4f4bd59eab6c75297bda"><td align="right" class="memItemLeft" valign="top">virtual void </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a5d882b4e464e4f4bd59eab6c75297bda" target="_blank">unlock</a> (void)</td></tr>
+<tr class="memdesc:a5d882b4e464e4f4bd59eab6c75297bda"><td class="mdescLeft"> </td><td class="mdescRight">Release exclusive access to this <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> bus.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a5d882b4e464e4f4bd59eab6c75297bda" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a162d7008eb2691cb49f9f82796a63536"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a162d7008eb2691cb49f9f82796a63536" target="_blank">set_default_write_value</a> (char data)</td></tr>
+<tr class="memdesc:a162d7008eb2691cb49f9f82796a63536"><td class="mdescLeft"> </td><td class="mdescRight">Set default write data.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a162d7008eb2691cb49f9f82796a63536" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a843cee41f6ba10eb84cda29baddc1dcd"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
+<tr class="memitem:a843cee41f6ba10eb84cda29baddc1dcd"><td align="right" class="memTemplItemLeft" valign="top">int </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a843cee41f6ba10eb84cda29baddc1dcd" target="_blank">transfer</a> (const Type *tx_buffer, int tx_length, Type *rx_buffer, int rx_length, const <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_callback.html" target="_blank">event_callback_t</a> &amp;callback, int event=0)</td></tr>
+<tr class="memdesc:a843cee41f6ba10eb84cda29baddc1dcd"><td class="mdescLeft"> </td><td class="mdescRight">Start non-blocking <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> transfer using 8bit buffers.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a843cee41f6ba10eb84cda29baddc1dcd" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a90253410d768f60403698f5f383d1931"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a90253410d768f60403698f5f383d1931" target="_blank">abort_transfer</a> ()</td></tr>
+<tr class="memdesc:a90253410d768f60403698f5f383d1931"><td class="mdescLeft"> </td><td class="mdescRight">Abort the on-going <a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html" target="_blank" title="A SPI Master, used for communicating with SPI slave devices. ">SPI</a> transfer, and continue with transfers in the queue, if any.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a90253410d768f60403698f5f383d1931" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aad7b4dd10bf4f4bb5eab6bdd11cebd44"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#aad7b4dd10bf4f4bb5eab6bdd11cebd44" target="_blank">clear_transfer_buffer</a> ()</td></tr>
+<tr class="memdesc:aad7b4dd10bf4f4bb5eab6bdd11cebd44"><td class="mdescLeft"> </td><td class="mdescRight">Clear the queue of transfers.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#aad7b4dd10bf4f4bb5eab6bdd11cebd44" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7787a47c785a57ddd0307add8be643e1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a7787a47c785a57ddd0307add8be643e1" target="_blank">abort_all_transfers</a> ()</td></tr>
+<tr class="memdesc:a7787a47c785a57ddd0307add8be643e1"><td class="mdescLeft"> </td><td class="mdescRight">Clear the queue of transfers and abort the on-going transfer.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a7787a47c785a57ddd0307add8be643e1" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a4885d525858929a6654d0da30dd77955"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a4885d525858929a6654d0da30dd77955" target="_blank">set_dma_usage</a> (DMAUsage usage)</td></tr>
+<tr class="memdesc:a4885d525858929a6654d0da30dd77955"><td class="mdescLeft"> </td><td class="mdescRight">Configure DMA usage suggestion for non-blocking transfers.  <a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html#a4885d525858929a6654d0da30dd77955" target="_blank">More...</a><br/></td></tr>
+</tbody></table>
+</div><p>To enable SPI support in Mbed OS, add the <code>SPI</code> label in the <code>device_has</code> option of the target's section in the <code>targets.json</code> file.
+You can also add the <code>SPI_ASYNCH</code> label in the <code>device_has</code> option to enable the asynchronous API.</p><h2 id="testing">Testing</h2><p>The Mbed OS HAL provides a set of conformance tests for SPI. You can use these tests to validate the correctness of your implementation. To run the SPI HAL tests, use the following command:</p><pre><code>mbed test -t &lt;toolchain&gt; -m &lt;target&gt; -n "tests-mbed_hal-spi*"
+</code></pre><p>You can read more about the test cases:</p><div class="api-include-block">
+<div class="api-header">
+<a href="http://os.mbed.com/docs/v6.16/feature-hal-spec-spi-doxy/group__hal__spi__tests.html" target="_blank">
+<i class="fa fa-folder-o"></i>
+<b class="filename">spi hal tests</b>
+</a>
+</div>
+</div><p>To test SPI using the FPGA test shield:</p><ol>
+<li>
+<p>Check out <code>feature-hal-spec-spi</code> mbed-os branch.</p>
+</li>
+<li>
+<p>Run the tests:</p>
+<ul>
+<li>SPI master: <code>mbed test -t GCC_ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield-spi_master -v</code></li>
+<li>SPI slave: <code>mbed test -t GCC_ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield-spi_slave -v</code></li>
+</ul>
+</li>
+</ol>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="rtc-port.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="quadspi-port.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/porting/spi-port.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:38 GMT -->
+</html>

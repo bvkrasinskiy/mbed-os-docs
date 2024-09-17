@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/build-tools/migration-guide.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <title>Migration guide - Build tools | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="migration-guide.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/build-tools/migration-guide.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/build-tools/migration-guide.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis" href="../apis/index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools active-doc" href="index.html">Build tools</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Overview</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="keil-studio-cloud.html">Keil Studio Cloud</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="keil-studio-cloud.html">Arm Keil Studio Cloud</a>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="mbed-studio.html">Mbed Studio</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="mbed-studio.html">Arm Mbed Studio</a>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="mbed-cli-2.html">Mbed CLI 2</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="install-or-upgrade.html">Install or upgrade</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#prerequisite">Prerequisite</a>
+                        
+                        <a class="toc-item" href="#install">Install</a>
+                        
+                        <a class="toc-item" href="#upgrade">Upgrade</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="use.html">Use</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#create-a-project">Create a project</a>
+                        
+                        <a class="toc-item" href="#configure-the-project">Configure the project</a>
+                        
+                        <a class="toc-item" href="#configure-and-build-in-a-single-step">Configure and build in a single step</a>
+                        
+                        <a class="toc-item" href="#build-the-project-with-cmake-advanced">Build the project with CMake (advanced)</a>
+                        
+                        <a class="toc-item" href="#iterative-builds-on-configured-projects">Iterative builds on configured projects</a>
+                        
+                        <a class="toc-item" href="#flashing-the-built-program">Flashing the built program</a>
+                        
+                        <a class="toc-item" href="#opening-a-serial-terminal">Opening a serial terminal</a>
+                        
+                        <a class="toc-item" href="#logging">Logging</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="migration-guide.html">Migration guide</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#installers">Installers</a>
+                        
+                        <a class="toc-item" href="#commands">Commands</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="mbed-cli-1.html">Mbed CLI 1</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="install-and-set-up.html">Install and set up</a>
+                    
+                    
+                    <a class="toc-item" href="create.html">Create</a>
+                    
+                    
+                    <a class="toc-item" href="compile.html">Compile</a>
+                    
+                    
+                    <a class="toc-item" href="test-and-debug.html">Test and debug</a>
+                    
+                    
+                    <a class="toc-item" href="build-profiles.html">Build profiles</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="build-profiles.html">Build rules and profiles</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="update-devices.html">Update devices</a>
+                    
+                    
+                    <a class="toc-item" href="collaborate.html">Collaborate</a>
+                    
+                    
+                    <a class="toc-item" href="troubleshoot.html">Troubleshoot</a>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="docker.html">Docker</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="docker.html">Docker use in Mbed OS</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#using-the-image">Using the image</a>
+                        
+                        <a class="toc-item" href="#limitations">Limitations</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="third-party-build-tools.html">Third-party build tools</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="third-party-build-tools.html">Exporting</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#exporting-from-mbed-studio">Exporting from Mbed Studio</a>
+                        
+                        <a class="toc-item" href="#exporting-from-mbed-cli">Exporting from Mbed CLI</a>
+                        
+                        <a class="toc-item" href="#before-you-export">Before you export</a>
+                        
+                        <a class="toc-item" href="#third-party-tool-notes">Third party tool notes</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="about-the-exporters.html">About the exporters</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="#arm-mbed-cli-command">Arm Mbed CLI command</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test" href="../debug-test/index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">Build tools</a>
+                                     › 
+                                    
+                                    <a href="mbed-cli-2.html">Mbed CLI 2</a>
+                                     › 
+                                    
+                                    <a href="migration-guide.html">Migration guide</a>
+                                    
+                                    
+                                </div>
+                                <h1>Migration guide</h1><p>If you haven't already read the <a href="mbed-cli-2.html">Mbed CLI 2 introduction</a>, then start there.</p><p>The background color indicates:</p><ul>
+<li><span style="background-color:#ccffcc;">Green: New Functionality
+introduced in Mbed CLI 2 (mbed-tools)</span></li>
+<li><span style="background-color:#ffe6cc;">Orange: Functionality
+modified in Mbed CLI 2 (mbed-tools) compared to Mbed CLI 1 (mbed-cli)</span></li>
+<li><span style="background-color:#ffcccc;">Red: Functionality deprecated
+in Mbed CLI 2 (mbed-tools)</span></li>
+</ul><h2 id="installers">Installers</h2><p><span style="display:block;background-color:#ffe6cc;">Windows, macOS and Linux
+installers may be made available at later point of time.</span></p><h2 id="commands">Commands</h2><h3 id="device-management">Device management</h3><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli device-management</code> (device management) is deprecated. Refer to your cloud
+provider's documentation on how to cloud-manage your devices.</span></p><h3 id="repository-management">Repository management</h3><p><span style="display:block;background-color:#ffcccc;">Support for Mercurial and the
+subcommand <code>mbed-cli publish</code> (publish program or library) is deprecated.
+Hosted repositories on "mbed.org" are not supported from Mbed CLI 2. Version
+control with git can be used as an alternative. Hosting for git repositories is
+available on <a href="https://github.com/">GitHub</a>.</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli cache</code>
+(repository cache management) is deprecated. No replacement is
+supported.</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli releases</code>
+(show release tags) is deprecated. We recommend using standard <code>git</code> commands
+instead, for example <code>git tag -l</code> to list all tagged releases.</span></p><p><span style="display:block;background-color:#ffe6cc;">The subcommand <code>mbed-cli update</code> (update to branch, tag, revision or latest) is not implemented. Use
+standard <code>git</code> commands instead. From your application directory: to check out
+a branch of Mbed OS, <code>git -C mbed-os checkout branchname</code>; to checkout the Mbed
+OS 6.8.0 release, <code>git -C mbed-os checkout mbed-os-6.8.0</code>; to check out Mbed OS
+revision <code>3e24a7ea9602</code>, <code>git -C mbed-os checkout 3e24a7ea9602</code>; to checkout
+the latest released version of Mbed OS <code>git -C mbed-os checkout latest</code>.</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli export</code>
+(generate an IDE project) is deprecated. Use <a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">CMake
+generators</a>
+instead. While CMake supports many generators, including many not supported by
+Mbed CLI 1, not all of Mbed CLI 1's exporters have replacements available yet.
+The available project generators are listed below.</span></p><ul>
+<li><a href="https://cmake.org/cmake/help/latest/generator/CodeBlocks.html">CodeBlocks</a></li>
+<li><a href="https://cmake.org/cmake/help/latest/generator/Eclipse CDT4.html">Eclipse</a></li>
+<li><a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#id10">Make</a></li>
+<li><a href="https://doc.qt.io/qtcreator/creator-project-cmake.html">Qt Creator</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">Visual Studio Code</a></li>
+</ul><p>If you'd like to help us prioritize
+which CMake project generators to work on first, please give your thumbs up to
+the following issues you care most about, or <a href="https://gitlab.kitware.com/cmake/cmake/-/merge_requests">raise a merge request to
+CMake</a>:</p><ul>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/249">CrossCore® Embedded Studio</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/250">e<sup>2</sup> studio</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/251">Embitz</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/252">IAR Embedded Workbench for Arm</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/253">MCUXpresso</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/254">NetBeans</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/257">STM32CubeIDE</a></li>
+<li><a href="https://github.com/ARMmbed/mbed-tools/issues/256">Keil uVision</a></li>
+</ul><h3 id="library-management">Library management</h3><p><span style="display:block;background-color:#ffcccc;">The subcommands <code>mbed-cli add</code> (add
+library from URL) and <code>mbed-cli remove</code> (remove library) are deprecated.
+Instead, use <code>git clone</code> or <code>mbed-tools import</code> to clone a library. Then,
+manually create a <code>reponame.lib</code> file that contains a single line in the form
+<code>https://github.com/ARMmbed/reponame#branch-or-tag</code> to fetch a specific branch
+or tag. If you want to fetch the default branch, you don't need to add
+<code>#branch-or-tag-name</code>.</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli new --library</code>
+(force creation of an Mbed library) is deprecated. Create a new Mbed library by
+creating a new folder and adding it to git version control. Then, create a
+<code>reponame.lib</code> in the application you wish to use the new library from, as
+described above (in the <code>mbed-cli add</code> paragraph).</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli ls</code> (view
+dependency tree) is deprecated. The subcommand <code>mbed-tools deploy</code> will now
+display all dependencies.</span></p><h3 id="tool-configuration">Tool configuration</h3><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli config</code> (tool
+configuration) is deprecated. There is no need to configure an Mbed-specific
+compiler path in Mbed CLI 2; the compiler path is determined in a standard way
+by CMake instead. Other configuration options, like <code>target</code>, <code>toolchain</code>,
+<code>protocol</code>, <code>depth</code> and <code>cache</code>, are not supported in Mbed CLI 2.</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli toolchain</code>
+(set or get default toolchain) is deprecated. Pass the desired toolchain on the
+command line when compiling with <code>mbed-tools compile --toolchain GCC_ARM</code>, to,
+for example, select <code>GCC_ARM</code> as the toolchain.</span></p><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-cli target</code> (set
+or get default target) is deprecated. Pass the desired target on the command
+line when compiling with <code>mbed-tools compile --mbed-target DISCO_L475VG_IOT01A</code>, to, for example, select <code>DISCO_L475VG_IOT01A</code> as the
+Mbed target.</span></p><h3 id="creating-an-mbed-program">Creating an Mbed program</h3><p><span style="display:block;background-color:#ffe6cc;">The subcommand <code>mbed-tools new</code> creates
+a new Mbed program by default and supports only one command-line-option
+<code>--create-only</code> (create a program without fetching mbed-os). The following
+command-line options, previously supported in Mbed CLI 1, are deprecated:</span></p><ul>
+<li><code>--scm</code>: We now always use git.</li>
+<li><code>--program</code>: There is no need to specify this. <code>mbed-tools new</code> always
+creates a program by creating a top-level application CMakeLists.txt that
+invokes <code>add_executable()</code>.</li>
+<li><code>--library</code>: There is no need to specify this. <code>mbed-tools new</code> always
+creates a program. If you wish to create a library, you can edit the
+autogenerated top-level application CMakeLists.txt to replace
+<code>add_executable()</code> with <code>add_library()</code> and removing the call to
+<code>mbed_set_post_build()</code> for the CMake library target.</li>
+<li><code>--mbedlib</code>: Importing Mbed 2 is no longer supported.</li>
+<li><code>--depth</code>: This is no longer needed, as Mbed CLI 2 automatically uses the
+shallowest clone or fetch possible.</li>
+<li><code>--protocol</code>: This is now determined from the URL instead.</li>
+<li><code>--offline</code>: This is not needed, as there is no longer any Mbed-specific git
+cache.</li>
+<li><code>--no-requirements</code>: Mbed CLI 2 never automatically installs requirements.</li>
+</ul><h3 id="importing-an-mbed-program">Importing an Mbed program</h3><div>
+<span style="display:block;background-color:#ffe6cc;">The subcommand `mbed-tools
+import` clones an Mbed project and library dependencies. The following
+command-line-options supported in Mbed CLI 1 are deprecated:</span>
+<ul>
+<li><code>--depth</code>: The new CLI opportunistically imports the most shallow repository
+possible. Running <code>git clone --depth &lt;depth&gt; &lt;repo_url&gt; | cd &lt;repo_name&gt; &amp;&amp; mbed-tools deploy</code> will create an Mbed project with the required depth.</li>
+<li><code>--protocol</code>: To select the protocol, use a URL with the
+desired protocol. For instance, you may import projects or libraries over SSH
+(Secure Shell) as follows <code>mbed-tools import git@github.com:ARMmbed/&lt;some_driver&gt;</code>, or with https <code>mbed-tools import https://github.com/ARMmbed/&lt;some_driver&gt;</code>. Alternatively, if you would prefer
+to always use SSH, even when your library or its dependencies specify https
+in their <code>.lib</code> files, you can add the following into your .gitconfig to
+force git to use SSH instead of https when fetching from GitHub.</li>
+</ul>
+<pre lang="sh"><code>[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+</code></pre>
+<ul>
+<li><code>--offline</code>: The new tool doesn't maintain a git cache so we don't have the
+option to use locally cached repositories.</li>
+<li><code>--no-requirements</code></li>
+<li><code>--insecure</code></li>
+</ul>
+</div><h3 id="configuring-an-mbed-program">Configuring an Mbed program</h3><p><span style="display:block;background-color:#ccffcc;">The subcommand <code>mbed-tools configure</code>
+generates an Mbed OS config CMake file named <code>mbed_config.cmake</code> in the path
+<code>cmake_build/&lt;TARGET_NAME&gt;/&lt;PROFILE&gt;/&lt;TOOLCHAIN&gt;/</code>.</span></p><h3 id="compiling-an-mbed-program">Compiling an Mbed program</h3><p><span style="display:block;background-color:#ffcccc;">The subcommand <code>mbed-tools compile</code> can be used to compile the program. The command-line-option <code>mbed compile --source</code> is deprecated. To control which libraries and directories you
+want to build either modify your application's <code>CMakeLists.txt</code> to add/exclude
+or use <code>cmake --build cmake_build --target &lt;library_name&gt; --target &lt;other_library_name&gt;</code> to add any number of targets to your build.</span></p><p><span style="display:block;background-color:#ffcccc;">The command-line-option <code>mbed compile --library</code> is deprecated. Use standard CMake <code>add_library()</code>
+instead.</span></p><p><span style="display:block;background-color:#ffcccc;">The command-line-option <code>mbed compile -DMACRO_NAME</code> is deprecated. Use <code>mbed-tools configure -m &lt;TARGET_NAME&gt; -t &lt;TOOLCHAIN&gt;</code> followed by <code>cmake -S . -B cmake_build/&lt;TARGET_NAME&gt;/&lt;PROFILE&gt;/&lt;TOOLCHAIN&gt; -GNinja -DMACRO_NAME</code> and
+<code>cmake --build cmake_build</code> or use
+<a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html"><code>target_compile_definitions()</code></a>
+in your application's <code>CMakeLists.txt</code> the add the define.</span></p><p><span style="display:block;background-color:#ffcccc;">The command-line-option <code>mbed compile -m detect</code> to automatically build for the single target connected to your
+computer is deprecated. Run <code>mbed-tools detect</code> to see which targets are
+connected to your computer and then run <code>mbed-tools compile -m &lt;TARGET_NAME&gt; -t &lt;TOOLCHAIN&gt;</code> to build for the target you which to build for.</span></p><p><span style="display:block;background-color:#ffe6cc;">The command-line-option <code>mbed compile --build</code> will be supported at later point of time. Although we don't
+currently have the option to explicitly state the application's build path, we
+have a ticket open to track the issue
+<a href="https://github.com/ARMmbed/mbed-tools/issues/184">#184</a>.</span></p><h3 id="testing-an-mbed-program">Testing an Mbed program</h3><p><span style="display:block;background-color:#ffe6cc;">The subcommand <code>mbed test</code> will be
+supported at later point of time. Keep apprised of progress by following <a href="https://github.com/ARMmbed/mbed-tools/issues/151">the
+issue to support mbed test on
+GitHub</a></span></p>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="use.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="mbed-cli-1.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/build-tools/migration-guide.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:16:12 GMT -->
+</html>

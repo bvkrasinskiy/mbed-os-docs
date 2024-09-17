@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/classmbed_1_1_u_a_r_t_serial.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:03:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | UARTSerial Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="classmbed_1_1_u_a_r_t_serial.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/classmbed_1_1_u_a_r_t_serial.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/classmbed_1_1_u_a_r_t_serial.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><b>mbed</b></li><li class="navelem"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html">UARTSerial</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> |
+<a href="#pri-methods">Private Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">UARTSerial Class Reference<div class="ingroups"><a class="el" href="group__mbed-os-public.html">Public API</a> » <a class="el" href="group__drivers-public-api.html">Drivers</a> » <a class="el" href="group__drivers-public-api-uart.html">UART</a> » <a class="el" href="group__drivers___u_a_r_t_serial.html">UARTSerial class</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Class providing buffered UART communication functionality using separate circular buffer for send and receive channels.  
+ <a href="classmbed_1_1_u_a_r_t_serial.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_u_a_r_t_serial_8h_source.html">UARTSerial.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for UARTSerial:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="classmbed_1_1_u_a_r_t_serial.png" usemap="#UARTSerial_map"/>
+  <map id="UARTSerial_map" name="UARTSerial_map">
+<area alt="SerialBase" coords="0,56,178,80" href="classmbed_1_1_serial_base.html" shape="rect" title="A base class for serial port implementations Can't be instantiated directly (use Serial or RawSerial)..."/>
+<area alt="FileHandle" coords="188,56,366,80" href="classmbed_1_1_file_handle.html" shape="rect" title="Class FileHandle. "/>
+<area alt="NonCopyable&lt; UARTSerial &gt;" coords="376,56,554,80" href="classmbed_1_1_non_copyable.html" shape="rect"/>
+<area alt="NonCopyable&lt; FileHandle &gt;" coords="188,0,366,24" href="classmbed_1_1_non_copyable.html" shape="rect"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9f5aec0d67a9878803a3d16a5689ff53"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a9f5aec0d67a9878803a3d16a5689ff53">UARTSerial</a> (PinName tx, PinName rx, int <a class="el" href="classmbed_1_1_serial_base.html#a9afb7aa9321cd71a8a26a673157583d2">baud</a>=MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE)</td></tr>
+<tr class="memdesc:a9f5aec0d67a9878803a3d16a5689ff53"><td class="mdescLeft"> </td><td class="mdescRight">Create a <a class="el" href="classmbed_1_1_u_a_r_t_serial.html" title="Class providing buffered UART communication functionality using separate circular buffer for send and...">UARTSerial</a> port, connected to the specified transmit and receive pins, with a particular baud rate.  <a href="#a9f5aec0d67a9878803a3d16a5689ff53">More...</a><br/></td></tr>
+<tr class="separator:a9f5aec0d67a9878803a3d16a5689ff53"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a56eafae2aa0765b4c30d0916b7705459"><td align="right" class="memItemLeft" valign="top">virtual short </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a56eafae2aa0765b4c30d0916b7705459">poll</a> (short events) const </td></tr>
+<tr class="memdesc:a56eafae2aa0765b4c30d0916b7705459"><td class="mdescLeft"> </td><td class="mdescRight">Equivalent to POSIX <a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a56eafae2aa0765b4c30d0916b7705459" title="Equivalent to POSIX poll(). ">poll()</a>.  <a href="#a56eafae2aa0765b4c30d0916b7705459">More...</a><br/></td></tr>
+<tr class="separator:a56eafae2aa0765b4c30d0916b7705459"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2b295c28246c7c03393a40050313d4c2"><td align="right" class="memItemLeft" valign="top">virtual ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a2b295c28246c7c03393a40050313d4c2">write</a> (const void *buffer, size_t length)</td></tr>
+<tr class="memdesc:a2b295c28246c7c03393a40050313d4c2"><td class="mdescLeft"> </td><td class="mdescRight">Write the contents of a buffer to a file.  <a href="#a2b295c28246c7c03393a40050313d4c2">More...</a><br/></td></tr>
+<tr class="separator:a2b295c28246c7c03393a40050313d4c2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a48b616ed2c59a14b39c6d0afe91cf195"><td align="right" class="memItemLeft" valign="top">virtual ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a48b616ed2c59a14b39c6d0afe91cf195">read</a> (void *buffer, size_t length)</td></tr>
+<tr class="memdesc:a48b616ed2c59a14b39c6d0afe91cf195"><td class="mdescLeft"> </td><td class="mdescRight">Read the contents of a file into a buffer.  <a href="#a48b616ed2c59a14b39c6d0afe91cf195">More...</a><br/></td></tr>
+<tr class="separator:a48b616ed2c59a14b39c6d0afe91cf195"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2bc5dcba0e89b4a820b62a4cb183d702"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a2bc5dcba0e89b4a820b62a4cb183d702">close</a> ()</td></tr>
+<tr class="memdesc:a2bc5dcba0e89b4a820b62a4cb183d702"><td class="mdescLeft"> </td><td class="mdescRight">Close a file.  <a href="#a2bc5dcba0e89b4a820b62a4cb183d702">More...</a><br/></td></tr>
+<tr class="separator:a2bc5dcba0e89b4a820b62a4cb183d702"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a67cbbfec09edb77cf2d60ab3e2b79a66"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a67cbbfec09edb77cf2d60ab3e2b79a66">isatty</a> ()</td></tr>
+<tr class="memdesc:a67cbbfec09edb77cf2d60ab3e2b79a66"><td class="mdescLeft"> </td><td class="mdescRight">Check if the file in an interactive terminal device.  <a href="#a67cbbfec09edb77cf2d60ab3e2b79a66">More...</a><br/></td></tr>
+<tr class="separator:a67cbbfec09edb77cf2d60ab3e2b79a66"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2471a8d8b233c901d394a55a69c39fd3"><td align="right" class="memItemLeft" valign="top">virtual off_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a2471a8d8b233c901d394a55a69c39fd3">seek</a> (off_t offset, int whence)</td></tr>
+<tr class="memdesc:a2471a8d8b233c901d394a55a69c39fd3"><td class="mdescLeft"> </td><td class="mdescRight">Move the file position to a given offset from from a given location.  <a href="#a2471a8d8b233c901d394a55a69c39fd3">More...</a><br/></td></tr>
+<tr class="separator:a2471a8d8b233c901d394a55a69c39fd3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a810a727ce5554d3178e17b6bc55025dd"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a810a727ce5554d3178e17b6bc55025dd">sync</a> ()</td></tr>
+<tr class="memdesc:a810a727ce5554d3178e17b6bc55025dd"><td class="mdescLeft"> </td><td class="mdescRight">Flush any buffers associated with the file.  <a href="#a810a727ce5554d3178e17b6bc55025dd">More...</a><br/></td></tr>
+<tr class="separator:a810a727ce5554d3178e17b6bc55025dd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aadb624fc379dbf725a2cb132cc37929f"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#aadb624fc379dbf725a2cb132cc37929f">set_blocking</a> (bool blocking)</td></tr>
+<tr class="memdesc:aadb624fc379dbf725a2cb132cc37929f"><td class="mdescLeft"> </td><td class="mdescRight">Set blocking or non-blocking mode The default is blocking.  <a href="#aadb624fc379dbf725a2cb132cc37929f">More...</a><br/></td></tr>
+<tr class="separator:aadb624fc379dbf725a2cb132cc37929f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab6bb7a7b0b505aba73a5fd5bc7f6cd39"><td align="right" class="memItemLeft" valign="top">virtual bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#ab6bb7a7b0b505aba73a5fd5bc7f6cd39">is_blocking</a> () const </td></tr>
+<tr class="memdesc:ab6bb7a7b0b505aba73a5fd5bc7f6cd39"><td class="mdescLeft"> </td><td class="mdescRight">Check current blocking or non-blocking mode for file operations.  <a href="#ab6bb7a7b0b505aba73a5fd5bc7f6cd39">More...</a><br/></td></tr>
+<tr class="separator:ab6bb7a7b0b505aba73a5fd5bc7f6cd39"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0f14710e0ba4d6d53a6d8f1e4e5f85f8"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a0f14710e0ba4d6d53a6d8f1e4e5f85f8">enable_input</a> (bool enabled)</td></tr>
+<tr class="memdesc:a0f14710e0ba4d6d53a6d8f1e4e5f85f8"><td class="mdescLeft"> </td><td class="mdescRight">Enable or disable input.  <a href="#a0f14710e0ba4d6d53a6d8f1e4e5f85f8">More...</a><br/></td></tr>
+<tr class="separator:a0f14710e0ba4d6d53a6d8f1e4e5f85f8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a82eef6ede878d8f58fb67095fb915bdd"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a82eef6ede878d8f58fb67095fb915bdd">enable_output</a> (bool enabled)</td></tr>
+<tr class="memdesc:a82eef6ede878d8f58fb67095fb915bdd"><td class="mdescLeft"> </td><td class="mdescRight">Enable or disable output.  <a href="#a82eef6ede878d8f58fb67095fb915bdd">More...</a><br/></td></tr>
+<tr class="separator:a82eef6ede878d8f58fb67095fb915bdd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a43ae00eedd2822aa3e5d7aa65caaaf5a"><td align="right" class="memItemLeft" valign="top">virtual void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a43ae00eedd2822aa3e5d7aa65caaaf5a">sigio</a> (<a class="el" href="classmbed_1_1_callback.html">Callback</a>&lt; void()&gt; func)</td></tr>
+<tr class="memdesc:a43ae00eedd2822aa3e5d7aa65caaaf5a"><td class="mdescLeft"> </td><td class="mdescRight">Register a callback on state change of the file.  <a href="#a43ae00eedd2822aa3e5d7aa65caaaf5a">More...</a><br/></td></tr>
+<tr class="separator:a43ae00eedd2822aa3e5d7aa65caaaf5a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9f8aee51c25c5cacb10e11706fd5ed5b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a9f8aee51c25c5cacb10e11706fd5ed5b">set_data_carrier_detect</a> (PinName dcd_pin, bool active_high=false)</td></tr>
+<tr class="memdesc:a9f8aee51c25c5cacb10e11706fd5ed5b"><td class="mdescLeft"> </td><td class="mdescRight">Setup interrupt handler for DCD line.  <a href="#a9f8aee51c25c5cacb10e11706fd5ed5b">More...</a><br/></td></tr>
+<tr class="separator:a9f8aee51c25c5cacb10e11706fd5ed5b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad9cb877c7ae2f9bebc45577d4abac3c2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#ad9cb877c7ae2f9bebc45577d4abac3c2">set_baud</a> (int <a class="el" href="classmbed_1_1_serial_base.html#a9afb7aa9321cd71a8a26a673157583d2">baud</a>)</td></tr>
+<tr class="memdesc:ad9cb877c7ae2f9bebc45577d4abac3c2"><td class="mdescLeft"> </td><td class="mdescRight">Set the baud rate.  <a href="#ad9cb877c7ae2f9bebc45577d4abac3c2">More...</a><br/></td></tr>
+<tr class="separator:ad9cb877c7ae2f9bebc45577d4abac3c2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abb7562fbd59e2b88ca60775324b0d850"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#abb7562fbd59e2b88ca60775324b0d850">set_format</a> (int bits=8, Parity parity=UARTSerial::None, int stop_bits=1)</td></tr>
+<tr class="memdesc:abb7562fbd59e2b88ca60775324b0d850"><td class="mdescLeft"> </td><td class="mdescRight">Set the transmission format used by the serial port.  <a href="#abb7562fbd59e2b88ca60775324b0d850">More...</a><br/></td></tr>
+<tr class="separator:abb7562fbd59e2b88ca60775324b0d850"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a68a82a55bc262aa9ed7d2e1a16419389"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a68a82a55bc262aa9ed7d2e1a16419389">set_flow_control</a> (Flow type, PinName flow1=NC, PinName flow2=NC)</td></tr>
+<tr class="memdesc:a68a82a55bc262aa9ed7d2e1a16419389"><td class="mdescLeft"> </td><td class="mdescRight">Set the flow control type on the serial port.  <a href="#a68a82a55bc262aa9ed7d2e1a16419389">More...</a><br/></td></tr>
+<tr class="separator:a68a82a55bc262aa9ed7d2e1a16419389"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a503572513aee31a786d348f826505e8d"><td align="right" class="memItemLeft" valign="top">virtual off_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#a503572513aee31a786d348f826505e8d">tell</a> ()</td></tr>
+<tr class="memdesc:a503572513aee31a786d348f826505e8d"><td class="mdescLeft"> </td><td class="mdescRight">Get the file position of the file.  <a href="#a503572513aee31a786d348f826505e8d">More...</a><br/></td></tr>
+<tr class="separator:a503572513aee31a786d348f826505e8d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae99d5e90c832f843bd32007d258dd886"><td align="right" class="memItemLeft" valign="top">virtual void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#ae99d5e90c832f843bd32007d258dd886">rewind</a> ()</td></tr>
+<tr class="memdesc:ae99d5e90c832f843bd32007d258dd886"><td class="mdescLeft"> </td><td class="mdescRight">Rewind the file position to the beginning of the file.  <a href="#ae99d5e90c832f843bd32007d258dd886">More...</a><br/></td></tr>
+<tr class="separator:ae99d5e90c832f843bd32007d258dd886"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab7ffdc08db9e04997f055bdbb71580c0"><td align="right" class="memItemLeft" valign="top">virtual off_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#ab7ffdc08db9e04997f055bdbb71580c0">size</a> ()</td></tr>
+<tr class="memdesc:ab7ffdc08db9e04997f055bdbb71580c0"><td class="mdescLeft"> </td><td class="mdescRight">Get the size of the file.  <a href="#ab7ffdc08db9e04997f055bdbb71580c0">More...</a><br/></td></tr>
+<tr class="separator:ab7ffdc08db9e04997f055bdbb71580c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a583f0d0f54decb0c9034677f85db5c9b"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#a583f0d0f54decb0c9034677f85db5c9b">truncate</a> (off_t length)</td></tr>
+<tr class="memdesc:a583f0d0f54decb0c9034677f85db5c9b"><td class="mdescLeft"> </td><td class="mdescRight">Truncate or extend a file.  <a href="#a583f0d0f54decb0c9034677f85db5c9b">More...</a><br/></td></tr>
+<tr class="separator:a583f0d0f54decb0c9034677f85db5c9b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aebc39cb3a78f1f8ec2aaa46ca6d8ae4c"><td align="right" class="memItemLeft" valign="top">virtual off_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#aebc39cb3a78f1f8ec2aaa46ca6d8ae4c">lseek</a> (off_t offset, int whence)</td></tr>
+<tr class="memdesc:aebc39cb3a78f1f8ec2aaa46ca6d8ae4c"><td class="mdescLeft"> </td><td class="mdescRight">Move the file position to a given offset from a given location.  <a href="#aebc39cb3a78f1f8ec2aaa46ca6d8ae4c">More...</a><br/></td></tr>
+<tr class="separator:aebc39cb3a78f1f8ec2aaa46ca6d8ae4c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afbe9d4b6859e1410f88f6546f1f6d41e"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#afbe9d4b6859e1410f88f6546f1f6d41e">fsync</a> ()</td></tr>
+<tr class="memdesc:afbe9d4b6859e1410f88f6546f1f6d41e"><td class="mdescLeft"> </td><td class="mdescRight">Flush any buffers associated with the <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>, ensuring it is up to date on disk.  <a href="#afbe9d4b6859e1410f88f6546f1f6d41e">More...</a><br/></td></tr>
+<tr class="separator:afbe9d4b6859e1410f88f6546f1f6d41e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3c8b116df2f335a817f94dab6dc55221"><td align="right" class="memItemLeft" valign="top">virtual off_t </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#a3c8b116df2f335a817f94dab6dc55221">flen</a> ()</td></tr>
+<tr class="memdesc:a3c8b116df2f335a817f94dab6dc55221"><td class="mdescLeft"> </td><td class="mdescRight">Find the length of the file.  <a href="#a3c8b116df2f335a817f94dab6dc55221">More...</a><br/></td></tr>
+<tr class="separator:a3c8b116df2f335a817f94dab6dc55221"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3917cec378f7697f74d6600fb0f08878"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#a3917cec378f7697f74d6600fb0f08878">writable</a> () const </td></tr>
+<tr class="memdesc:a3917cec378f7697f74d6600fb0f08878"><td class="mdescLeft"> </td><td class="mdescRight">Definition depends on the subclass implementing <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>.  <a href="#a3917cec378f7697f74d6600fb0f08878">More...</a><br/></td></tr>
+<tr class="separator:a3917cec378f7697f74d6600fb0f08878"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8dfed1cf0ae7df313a4d461237afb939"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_handle.html#a8dfed1cf0ae7df313a4d461237afb939">readable</a> () const </td></tr>
+<tr class="memdesc:a8dfed1cf0ae7df313a4d461237afb939"><td class="mdescLeft"> </td><td class="mdescRight">Definition depends on the subclass implementing <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>.  <a href="#a8dfed1cf0ae7df313a4d461237afb939">More...</a><br/></td></tr>
+<tr class="separator:a8dfed1cf0ae7df313a4d461237afb939"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9afb7aa9321cd71a8a26a673157583d2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a9afb7aa9321cd71a8a26a673157583d2">baud</a> (int baudrate)</td></tr>
+<tr class="memdesc:a9afb7aa9321cd71a8a26a673157583d2"><td class="mdescLeft"> </td><td class="mdescRight">Set the baud rate of the serial port.  <a href="#a9afb7aa9321cd71a8a26a673157583d2">More...</a><br/></td></tr>
+<tr class="separator:a9afb7aa9321cd71a8a26a673157583d2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8274461aa9a0611c28c4c6aeae665277"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a8274461aa9a0611c28c4c6aeae665277">format</a> (int bits=8, Parity parity=SerialBase::None, int stop_bits=1)</td></tr>
+<tr class="memdesc:a8274461aa9a0611c28c4c6aeae665277"><td class="mdescLeft"> </td><td class="mdescRight">Set the transmission format used by the serial port.  <a href="#a8274461aa9a0611c28c4c6aeae665277">More...</a><br/></td></tr>
+<tr class="separator:a8274461aa9a0611c28c4c6aeae665277"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a54635d8d9d55acd3e8426767271e9d7b"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a54635d8d9d55acd3e8426767271e9d7b">readable</a> ()</td></tr>
+<tr class="memdesc:a54635d8d9d55acd3e8426767271e9d7b"><td class="mdescLeft"> </td><td class="mdescRight">Determine if there is a character available to read.  <a href="#a54635d8d9d55acd3e8426767271e9d7b">More...</a><br/></td></tr>
+<tr class="separator:a54635d8d9d55acd3e8426767271e9d7b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9bb16b1f54af7224f26f865ab9b7dd86"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a9bb16b1f54af7224f26f865ab9b7dd86">writeable</a> ()</td></tr>
+<tr class="memdesc:a9bb16b1f54af7224f26f865ab9b7dd86"><td class="mdescLeft"> </td><td class="mdescRight">Determine if there is space available to write a character.  <a href="#a9bb16b1f54af7224f26f865ab9b7dd86">More...</a><br/></td></tr>
+<tr class="separator:a9bb16b1f54af7224f26f865ab9b7dd86"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a554dccfc95f8e864de7be65a4a793e98"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a554dccfc95f8e864de7be65a4a793e98">attach</a> (<a class="el" href="classmbed_1_1_callback.html">Callback</a>&lt; void()&gt; func, IrqType type=RxIrq)</td></tr>
+<tr class="memdesc:a554dccfc95f8e864de7be65a4a793e98"><td class="mdescLeft"> </td><td class="mdescRight">Attach a function to call whenever a serial interrupt is generated.  <a href="#a554dccfc95f8e864de7be65a4a793e98">More...</a><br/></td></tr>
+<tr class="separator:a554dccfc95f8e864de7be65a4a793e98"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2cd4395ae9759182643c44f167b1201a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2cd4395ae9759182643c44f167b1201a"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a2cd4395ae9759182643c44f167b1201a">attach</a> (T *obj, void(T::*method)(), IrqType type=RxIrq)</td></tr>
+<tr class="memdesc:a2cd4395ae9759182643c44f167b1201a"><td class="mdescLeft"> </td><td class="mdescRight">Attach a member function to call whenever a serial interrupt is generated.  <a href="#a2cd4395ae9759182643c44f167b1201a">More...</a><br/></td></tr>
+<tr class="separator:a2cd4395ae9759182643c44f167b1201a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afb725d7361b1c6c652caf75aabb9056b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afb725d7361b1c6c652caf75aabb9056b"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#afb725d7361b1c6c652caf75aabb9056b">attach</a> (T *obj, void(*method)(T *), IrqType type=RxIrq)</td></tr>
+<tr class="memdesc:afb725d7361b1c6c652caf75aabb9056b"><td class="mdescLeft"> </td><td class="mdescRight">Attach a member function to call whenever a serial interrupt is generated.  <a href="#afb725d7361b1c6c652caf75aabb9056b">More...</a><br/></td></tr>
+<tr class="separator:afb725d7361b1c6c652caf75aabb9056b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2b8509410439be6477d7532b0ccec15c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a2b8509410439be6477d7532b0ccec15c">set_break</a> ()</td></tr>
+<tr class="memdesc:a2b8509410439be6477d7532b0ccec15c"><td class="mdescLeft"> </td><td class="mdescRight">Generate a break condition on the serial line NOTE: Clear break needs to run at least one frame after set_break is called.  <a href="#a2b8509410439be6477d7532b0ccec15c">More...</a><br/></td></tr>
+<tr class="separator:a2b8509410439be6477d7532b0ccec15c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab0dd03a9e8b635c5fb87247a08758f62"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#ab0dd03a9e8b635c5fb87247a08758f62">clear_break</a> ()</td></tr>
+<tr class="memdesc:ab0dd03a9e8b635c5fb87247a08758f62"><td class="mdescLeft"> </td><td class="mdescRight">Clear a break condition on the serial line NOTE: Should be run at least one frame after set_break is called.  <a href="#ab0dd03a9e8b635c5fb87247a08758f62">More...</a><br/></td></tr>
+<tr class="separator:ab0dd03a9e8b635c5fb87247a08758f62"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7fca2a71c423b8e004c4abf6dc367fc2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a7fca2a71c423b8e004c4abf6dc367fc2">send_break</a> ()</td></tr>
+<tr class="memdesc:a7fca2a71c423b8e004c4abf6dc367fc2"><td class="mdescLeft"> </td><td class="mdescRight">Generate a break condition on the serial line.  <a href="#a7fca2a71c423b8e004c4abf6dc367fc2">More...</a><br/></td></tr>
+<tr class="separator:a7fca2a71c423b8e004c4abf6dc367fc2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7b3f9366101e9d01349d7bccb830d9ee"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a7b3f9366101e9d01349d7bccb830d9ee">write</a> (const uint8_t *buffer, int length, const <a class="el" href="classmbed_1_1_callback.html">event_callback_t</a> &amp;callback, int event=SERIAL_EVENT_TX_COMPLETE)</td></tr>
+<tr class="memdesc:a7b3f9366101e9d01349d7bccb830d9ee"><td class="mdescLeft"> </td><td class="mdescRight">Begin asynchronous write using 8bit buffer.  <a href="#a7b3f9366101e9d01349d7bccb830d9ee">More...</a><br/></td></tr>
+<tr class="separator:a7b3f9366101e9d01349d7bccb830d9ee"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a93fdcc8764bf2e44109793ea9d7b47dd"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a93fdcc8764bf2e44109793ea9d7b47dd">write</a> (const uint16_t *buffer, int length, const <a class="el" href="classmbed_1_1_callback.html">event_callback_t</a> &amp;callback, int event=SERIAL_EVENT_TX_COMPLETE)</td></tr>
+<tr class="memdesc:a93fdcc8764bf2e44109793ea9d7b47dd"><td class="mdescLeft"> </td><td class="mdescRight">Begin asynchronous write using 16bit buffer.  <a href="#a93fdcc8764bf2e44109793ea9d7b47dd">More...</a><br/></td></tr>
+<tr class="separator:a93fdcc8764bf2e44109793ea9d7b47dd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a859436a72de08d7e4eb127e11ca4b609"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a859436a72de08d7e4eb127e11ca4b609">abort_write</a> ()</td></tr>
+<tr class="memdesc:a859436a72de08d7e4eb127e11ca4b609"><td class="mdescLeft"> </td><td class="mdescRight">Abort the on-going write transfer.  <a href="#a859436a72de08d7e4eb127e11ca4b609">More...</a><br/></td></tr>
+<tr class="separator:a859436a72de08d7e4eb127e11ca4b609"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a335c17fdb4ad3c94595b5cfe5496a7c7"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a335c17fdb4ad3c94595b5cfe5496a7c7">read</a> (uint8_t *buffer, int length, const <a class="el" href="classmbed_1_1_callback.html">event_callback_t</a> &amp;callback, int event=SERIAL_EVENT_RX_COMPLETE, unsigned char char_match=SERIAL_RESERVED_CHAR_MATCH)</td></tr>
+<tr class="memdesc:a335c17fdb4ad3c94595b5cfe5496a7c7"><td class="mdescLeft"> </td><td class="mdescRight">Begin asynchronous reading using 8bit buffer.  <a href="#a335c17fdb4ad3c94595b5cfe5496a7c7">More...</a><br/></td></tr>
+<tr class="separator:a335c17fdb4ad3c94595b5cfe5496a7c7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1ebd1e506e3a8abd2e193dbe159fa87f"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a1ebd1e506e3a8abd2e193dbe159fa87f">read</a> (uint16_t *buffer, int length, const <a class="el" href="classmbed_1_1_callback.html">event_callback_t</a> &amp;callback, int event=SERIAL_EVENT_RX_COMPLETE, unsigned char char_match=SERIAL_RESERVED_CHAR_MATCH)</td></tr>
+<tr class="memdesc:a1ebd1e506e3a8abd2e193dbe159fa87f"><td class="mdescLeft"> </td><td class="mdescRight">Begin asynchronous reading using 16bit buffer.  <a href="#a1ebd1e506e3a8abd2e193dbe159fa87f">More...</a><br/></td></tr>
+<tr class="separator:a1ebd1e506e3a8abd2e193dbe159fa87f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a444087f07f1d2dac9f688e3891054893"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a444087f07f1d2dac9f688e3891054893">abort_read</a> ()</td></tr>
+<tr class="memdesc:a444087f07f1d2dac9f688e3891054893"><td class="mdescLeft"> </td><td class="mdescRight">Abort the on-going read transfer.  <a href="#a444087f07f1d2dac9f688e3891054893">More...</a><br/></td></tr>
+<tr class="separator:a444087f07f1d2dac9f688e3891054893"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aac6c7090d9340149fb1979310baf9ef9"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#aac6c7090d9340149fb1979310baf9ef9">set_dma_usage_tx</a> (DMAUsage usage)</td></tr>
+<tr class="memdesc:aac6c7090d9340149fb1979310baf9ef9"><td class="mdescLeft"> </td><td class="mdescRight">Configure DMA usage suggestion for non-blocking TX transfers.  <a href="#aac6c7090d9340149fb1979310baf9ef9">More...</a><br/></td></tr>
+<tr class="separator:aac6c7090d9340149fb1979310baf9ef9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8b50918e727c578a5df2e48c649433a2"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_serial_base.html#a8b50918e727c578a5df2e48c649433a2">set_dma_usage_rx</a> (DMAUsage usage)</td></tr>
+<tr class="memdesc:a8b50918e727c578a5df2e48c649433a2"><td class="mdescLeft"> </td><td class="mdescRight">Configure DMA usage suggestion for non-blocking RX transfers.  <a href="#a8b50918e727c578a5df2e48c649433a2">More...</a><br/></td></tr>
+<tr class="separator:a8b50918e727c578a5df2e48c649433a2"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class providing buffered UART communication functionality using separate circular buffer for send and receive channels. </p>
+
+<p>Definition at line <a class="el" href="_u_a_r_t_serial_8h_source.html#l00051">51</a> of file <a class="el" href="_u_a_r_t_serial_8h_source.html">UARTSerial.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9f5aec0d67a9878803a3d16a5689ff53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_u_a_r_t_serial.html">UARTSerial</a> </td>
+          <td>(</td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>tx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>rx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>baud</em> = <code>MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classmbed_1_1_u_a_r_t_serial.html" title="Class providing buffered UART communication functionality using separate circular buffer for send and...">UARTSerial</a> port, connected to the specified transmit and receive pins, with a particular baud rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">tx</td><td>Transmit pin </td></tr>
+    <tr><td class="paramname">rx</td><td>Receive pin </td></tr>
+    <tr><td class="paramname">baud</td><td>The baud rate of the serial port (optional, defaults to MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2bc5dcba0e89b4a820b62a4cb183d702"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Close a file. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, negative error code on failure </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_file_handle.html#ac81e2718528549c8b1eed01c4d303546">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f14710e0ba4d6d53a6d8f1e4e5f85f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int enable_input </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Enable or disable input. </p>
+<p>Control enabling of device for input. This is primarily intended for temporary power-saving; the overall ability of the device to operate for input and/or output may be fixed at creation time, but this call can allow input to be temporarily disabled to permit power saving without losing device state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">enabled</td><td>true to enable input, false to disable.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success </dd>
+<dd>
+Negative error code on failure </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#a0f14710e0ba4d6d53a6d8f1e4e5f85f8">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82eef6ede878d8f58fb67095fb915bdd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int enable_output </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Enable or disable output. </p>
+<p>Control enabling of device for output. This is primarily intended for temporary power-saving; the overall ability of the device to operate for input and/or output may be fixed at creation time, but this call can allow output to be temporarily disabled to permit power saving without losing device state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">enabled</td><td>true to enable output, false to disable.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success </dd>
+<dd>
+Negative error code on failure </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#a82eef6ede878d8f58fb67095fb915bdd">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c8b116df2f335a817f94dab6dc55221"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual off_t flen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Find the length of the file. </p>
+<dl class="section return"><dt>Returns</dt><dd>Length of the file </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000262">Deprecated:</a></b></dt><dd>Replaced by `off_t <a class="el" href="classmbed_1_1_file_handle.html#ab7ffdc08db9e04997f055bdbb71580c0" title="Get the size of the file. ">FileHandle::size()</a>' </dd></dl>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00195">195</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afbe9d4b6859e1410f88f6546f1f6d41e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int fsync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Flush any buffers associated with the <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>, ensuring it is up to date on disk. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success or un-needed, -1 on error </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000261">Deprecated:</a></b></dt><dd>Replaced by `int <a class="el" href="classmbed_1_1_file_handle.html#a810a727ce5554d3178e17b6bc55025dd" title="Flush any buffers associated with the file. ">FileHandle::sync()</a>' </dd></dl>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00183">183</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6bb7a7b0b505aba73a5fd5bc7f6cd39"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual bool is_blocking </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Check current blocking or non-blocking mode for file operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>true for blocking mode, false for non-blocking mode. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#ab6bb7a7b0b505aba73a5fd5bc7f6cd39">FileHandle</a>.</p>
+
+<p>Definition at line <a class="el" href="_u_a_r_t_serial_8h_source.html#l00151">151</a> of file <a class="el" href="_u_a_r_t_serial_8h_source.html">UARTSerial.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67cbbfec09edb77cf2d60ab3e2b79a66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int isatty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Check if the file in an interactive terminal device. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the file is a terminal </dd>
+<dd>
+False if the file is not a terminal </dd>
+<dd>
+Negative error code on failure </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#a67cbbfec09edb77cf2d60ab3e2b79a66">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aebc39cb3a78f1f8ec2aaa46ca6d8ae4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual off_t lseek </td>
+          <td>(</td>
+          <td class="paramtype">off_t </td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>whence</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Move the file position to a given offset from a given location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">offset</td><td>The offset from whence to move to </td></tr>
+    <tr><td class="paramname">whence</td><td>SEEK_SET for the start of the file, SEEK_CUR for the current file position, or SEEK_END for the end of the file.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>new file position on success, -1 on failure or unsupported </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000260">Deprecated:</a></b></dt><dd>Replaced by `off_t <a class="el" href="classmbed_1_1_file_handle.html#a26f7daa55e3b1d3c1d32e0f5706d80d9" title="Move the file position to a given offset from from a given location. ">FileHandle::seek</a>(off_t offset, int whence = SEEK_SET)'</dd></dl>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00169">169</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56eafae2aa0765b4c30d0916b7705459"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual short poll </td>
+          <td>(</td>
+          <td class="paramtype">short </td>
+          <td class="paramname"><em>events</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Equivalent to POSIX <a class="el" href="classmbed_1_1_u_a_r_t_serial.html#a56eafae2aa0765b4c30d0916b7705459" title="Equivalent to POSIX poll(). ">poll()</a>. </p>
+<p>Derived from <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>. Provides a mechanism to multiplex input/output over a set of file handles. </p>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#a56eafae2aa0765b4c30d0916b7705459">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48b616ed2c59a14b39c6d0afe91cf195"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual ssize_t read </td>
+          <td>(</td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Read the contents of a file into a buffer. </p>
+<p>Follows POSIX semantics:</p>
+<ul>
+<li>if no data is available, and non-blocking set return -EAGAIN</li>
+<li>if no data is available, and blocking set, wait until data is available</li>
+<li>If any data is available, call returns immediately</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">buffer</td><td>The buffer to read in to </td></tr>
+    <tr><td class="paramname">length</td><td>The number of bytes to read </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes read, 0 at end of file, negative error on failure </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_file_handle.html#a33b0a9b2e4f378134f6c603f28abc926">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8dfed1cf0ae7df313a4d461237afb939"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool readable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Definition depends on the subclass implementing <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>. </p>
+<p>For example, if the <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a> is of type <a class="el" href="classmbed_1_1_stream.html" title="File stream. ">Stream</a>, <a class="el" href="classmbed_1_1_file_handle.html#a8dfed1cf0ae7df313a4d461237afb939" title="Definition depends on the subclass implementing FileHandle. ">readable()</a> could return true when there is something available to read.</p>
+<dl class="section return"><dt>Returns</dt><dd>true when there is something available to read. </dd></dl>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00292">292</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae99d5e90c832f843bd32007d258dd886"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual void rewind </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Rewind the file position to the beginning of the file. </p>
+<dl class="section note"><dt>Note</dt><dd>This is equivalent to seek(0, SEEK_SET) </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_file.html#ae99d5e90c832f843bd32007d258dd886">File</a>, and <a class="el" href="classmbed_1_1_stream.html#ae99d5e90c832f843bd32007d258dd886">Stream</a>.</p>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00130">130</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2471a8d8b233c901d394a55a69c39fd3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual off_t seek </td>
+          <td>(</td>
+          <td class="paramtype">off_t </td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>whence</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Move the file position to a given offset from from a given location. </p>
+<p>Not valid for a device type <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a> like <a class="el" href="classmbed_1_1_u_a_r_t_serial.html" title="Class providing buffered UART communication functionality using separate circular buffer for send and...">UARTSerial</a>. In case of <a class="el" href="classmbed_1_1_u_a_r_t_serial.html" title="Class providing buffered UART communication functionality using separate circular buffer for send and...">UARTSerial</a>, returns ESPIPE</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">offset</td><td>The offset from whence to move to </td></tr>
+    <tr><td class="paramname">whence</td><td>The start of where to seek SEEK_SET to start from beginning of file, SEEK_CUR to start from current position in file, SEEK_END to start from end of file </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new offset of the file, negative error code on failure </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_file_handle.html#a26f7daa55e3b1d3c1d32e0f5706d80d9">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9cb877c7ae2f9bebc45577d4abac3c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_baud </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>baud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set the baud rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">baud</td><td>The baud rate </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aadb624fc379dbf725a2cb132cc37929f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int set_blocking </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>blocking</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Set blocking or non-blocking mode The default is blocking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">blocking</td><td>true for blocking mode, false for non-blocking mode. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#aadb624fc379dbf725a2cb132cc37929f">FileHandle</a>.</p>
+
+<p>Definition at line <a class="el" href="_u_a_r_t_serial_8h_source.html#l00141">141</a> of file <a class="el" href="_u_a_r_t_serial_8h_source.html">UARTSerial.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f8aee51c25c5cacb10e11706fd5ed5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_data_carrier_detect </td>
+          <td>(</td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>dcd_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>active_high</em> = <code>false</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Setup interrupt handler for DCD line. </p>
+<p>If DCD line is connected, an IRQ handler will be setup. Does nothing if DCD is NC, i.e., not connected.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">dcd_pin</td><td>Pin-name for DCD </td></tr>
+    <tr><td class="paramname">active_high</td><td>a boolean set to true if DCD polarity is active low </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a68a82a55bc262aa9ed7d2e1a16419389"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_flow_control </td>
+          <td>(</td>
+          <td class="paramtype">Flow </td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>flow1</em> = <code>NC</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>flow2</em> = <code>NC</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set the flow control type on the serial port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">type</td><td>the flow control type (Disabled, RTS, CTS, RTSCTS) </td></tr>
+    <tr><td class="paramname">flow1</td><td>the first flow control pin (RTS for RTS or RTSCTS, CTS for CTS) </td></tr>
+    <tr><td class="paramname">flow2</td><td>the second flow control pin (CTS for RTSCTS) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abb7562fbd59e2b88ca60775324b0d850"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_format </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>bits</em> = <code>8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Parity </td>
+          <td class="paramname"><em>parity</em> = <code>UARTSerial::None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>stop_bits</em> = <code>1</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set the transmission format used by the serial port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">bits</td><td>The number of bits in a word (5-8; default = 8) </td></tr>
+    <tr><td class="paramname">parity</td><td>The parity used (None, Odd, Even, Forced1, Forced0; default = None) </td></tr>
+    <tr><td class="paramname">stop_bits</td><td>The number of stop bits (1 or 2; default = 1) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a43ae00eedd2822aa3e5d7aa65caaaf5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual void sigio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_callback.html">Callback</a>&lt; void()&gt; </td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Register a callback on state change of the file. </p>
+<p>The specified callback will be called on state changes such as when the file can be written to or read from.</p>
+<p>The callback may be called in an interrupt context and should not perform expensive operations.</p>
+<p>Note! This is not intended as an attach-like asynchronous api, but rather as a building block for constructing such functionality.</p>
+<p>The exact timing of when the registered function is called is not guaranteed and susceptible to change. It should be used as a cue to make read/write/poll calls to find the current state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">func</td><td>Function to call on state change </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#a43ae00eedd2822aa3e5d7aa65caaaf5a">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7ffdc08db9e04997f055bdbb71580c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual off_t size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size of the file. </p>
+<dl class="section return"><dt>Returns</dt><dd>Size of the file in bytes </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_file.html#ab7ffdc08db9e04997f055bdbb71580c0">File</a>, <a class="el" href="class_test_file.html#ab7ffdc08db9e04997f055bdbb71580c0">TestFile&lt; FILE_SIZE &gt;</a>, <a class="el" href="classmbed_1_1_stream.html#ab7ffdc08db9e04997f055bdbb71580c0">Stream</a>, and <a class="el" href="classmbed_1_1_serial_wire_output.html#ab7ffdc08db9e04997f055bdbb71580c0">SerialWireOutput</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a810a727ce5554d3178e17b6bc55025dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int sync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Flush any buffers associated with the file. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, negative error code on failure </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmbed_1_1_file_handle.html#a810a727ce5554d3178e17b6bc55025dd">FileHandle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a503572513aee31a786d348f826505e8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual off_t tell </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the file position of the file. </p>
+<dl class="section note"><dt>Note</dt><dd>This is equivalent to seek(0, SEEK_CUR)</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The current offset in the file, negative error code on failure </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_file.html#a503572513aee31a786d348f826505e8d">File</a>, and <a class="el" href="classmbed_1_1_stream.html#a503572513aee31a786d348f826505e8d">Stream</a>.</p>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00121">121</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a583f0d0f54decb0c9034677f85db5c9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int truncate </td>
+          <td>(</td>
+          <td class="paramtype">off_t </td>
+          <td class="paramname"><em>length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Truncate or extend a file. </p>
+<p>The file's length is set to the specified value. The seek pointer is not changed. If the file is extended, the extended area appears as if it were zero-filled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">length</td><td>The requested new length for the file</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success, negative error code on failure </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classmbed_1_1_file.html#a583f0d0f54decb0c9034677f85db5c9b">File</a>, and <a class="el" href="class_test_file.html#a583f0d0f54decb0c9034677f85db5c9b">TestFile&lt; FILE_SIZE &gt;</a>.</p>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00151">151</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3917cec378f7697f74d6600fb0f08878"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool writable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Definition depends on the subclass implementing <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a>. </p>
+<p>For example, if the <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a> is of type <a class="el" href="classmbed_1_1_stream.html" title="File stream. ">Stream</a>, <a class="el" href="classmbed_1_1_file_handle.html#a3917cec378f7697f74d6600fb0f08878" title="Definition depends on the subclass implementing FileHandle. ">writable()</a> could return true when there is ample buffer space available for <a class="el" href="classmbed_1_1_file_handle.html#afb08b2ff145e977fa5ac4eb22c147a40" title="Write the contents of a buffer to a file. ">write()</a> calls.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classmbed_1_1_file_handle.html" title="Class FileHandle. ">FileHandle</a> is writable. </dd></dl>
+
+<p>Definition at line <a class="el" href="_file_handle_8h_source.html#l00281">281</a> of file <a class="el" href="_file_handle_8h_source.html">FileHandle.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b295c28246c7c03393a40050313d4c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual ssize_t write </td>
+          <td>(</td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Write the contents of a buffer to a file. </p>
+<p>Follows POSIX semantics:</p>
+<ul>
+<li>if blocking, block until all data is written</li>
+<li>if no data can be written, and non-blocking set, return -EAGAIN</li>
+<li><p class="startli">if some data can be written, and non-blocking set, write partial</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">buffer</td><td>The buffer to write from </td></tr>
+    <tr><td class="paramname">length</td><td>The number of bytes to write </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes written, negative error on failure </dd></dl>
+</li>
+</ul>
+
+<p>Implements <a class="el" href="classmbed_1_1_file_handle.html#afb08b2ff145e977fa5ac4eb22c147a40">FileHandle</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/classmbed_1_1_u_a_r_t_serial.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:03:10 GMT -->
+</html>

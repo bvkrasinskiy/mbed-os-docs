@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/whd__events_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:30:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | whd_events.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="whd__events_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/whd__events_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/whd__events_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_59977a0c207738c890dea4a1d368376e.html">drivers</a></li><li class="navelem"><a class="el" href="dir_465fc08ef7a88ed42de4e140d6385b82.html">wifi</a></li><li class="navelem"><a class="el" href="dir_1b9423912bf40438f61955ac9bacd04e.html">COMPONENT_WHD</a></li><li class="navelem"><a class="el" href="dir_feeac0630cc177413ad420a1ab1d854d.html">wifi-host-driver</a></li><li class="navelem"><a class="el" href="dir_274a91dc1022601e5af4df714dc34d8f.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">whd_events.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Header for Event detection.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="whd_8h_source.html">whd.h</a>"</code><br/>
+</div>
+<p><a href="whd__events_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structwhd__event__eth__hdr.html">whd_event_eth_hdr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Structure to store ethernet header fields in event packets.  <a href="structwhd__event__eth__hdr.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structwhd__event__ether__header.html">whd_event_ether_header</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Structure to store ethernet destination, source and ethertype in event packets.  <a href="structwhd__event__ether__header.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structwhd__event__msg.html">whd_event_msg</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Structure to store fields after ethernet header in event message.  <a href="structwhd__event__msg.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structwhd__event.html">whd_event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">Event structure used by driver msgs.  <a href="structwhd__event.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5608426af7320ce9e54a8a500fc044e9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a5608426af7320ce9e54a8a500fc044e9">WLC_E_NONE</a>   (0x7FFFFFFE)</td></tr>
+<tr class="memdesc:a5608426af7320ce9e54a8a500fc044e9"><td class="mdescLeft"> </td><td class="mdescRight">Indicates the end of the event array list.  <a href="#a5608426af7320ce9e54a8a500fc044e9">More...</a><br/></td></tr>
+<tr class="separator:a5608426af7320ce9e54a8a500fc044e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae370e84bd9ed3b3cde25919287673298"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ae370e84bd9ed3b3cde25919287673298">WLC_E_SET_SSID</a>   0</td></tr>
+<tr class="memdesc:ae370e84bd9ed3b3cde25919287673298"><td class="mdescLeft"> </td><td class="mdescRight">Indicates status of set SSID.  <a href="#ae370e84bd9ed3b3cde25919287673298">More...</a><br/></td></tr>
+<tr class="separator:ae370e84bd9ed3b3cde25919287673298"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2e0540e8fe3f44be75575247648e1c7f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a2e0540e8fe3f44be75575247648e1c7f">WLC_E_AUTH</a>   3</td></tr>
+<tr class="memdesc:a2e0540e8fe3f44be75575247648e1c7f"><td class="mdescLeft"> </td><td class="mdescRight">802.11 AUTH request event occurs when STA tries to get authenticated with the AP  <a href="#a2e0540e8fe3f44be75575247648e1c7f">More...</a><br/></td></tr>
+<tr class="separator:a2e0540e8fe3f44be75575247648e1c7f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a04b3c3a873e93afd4a51643707a20120"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a04b3c3a873e93afd4a51643707a20120">WLC_E_DEAUTH</a>   5</td></tr>
+<tr class="memdesc:a04b3c3a873e93afd4a51643707a20120"><td class="mdescLeft"> </td><td class="mdescRight">802.11 DEAUTH request event occurs when the the SOFTAP is stopped to deuthenticate the connected stations  <a href="#a04b3c3a873e93afd4a51643707a20120">More...</a><br/></td></tr>
+<tr class="separator:a04b3c3a873e93afd4a51643707a20120"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6fbce5e7ab3f5f4cde0ef8c11ff90e05"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a6fbce5e7ab3f5f4cde0ef8c11ff90e05">WLC_E_DEAUTH_IND</a>   6</td></tr>
+<tr class="memdesc:a6fbce5e7ab3f5f4cde0ef8c11ff90e05"><td class="mdescLeft"> </td><td class="mdescRight">802.11 DEAUTH indication event occurs when the STA gets deauthenticated by the AP  <a href="#a6fbce5e7ab3f5f4cde0ef8c11ff90e05">More...</a><br/></td></tr>
+<tr class="separator:a6fbce5e7ab3f5f4cde0ef8c11ff90e05"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8c9fd116781000929a8b09de58f6288e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a8c9fd116781000929a8b09de58f6288e">WLC_E_ASSOC</a>   7</td></tr>
+<tr class="memdesc:a8c9fd116781000929a8b09de58f6288e"><td class="mdescLeft"> </td><td class="mdescRight">802.11 ASSOC request event occurs when STA joins the AP  <a href="#a8c9fd116781000929a8b09de58f6288e">More...</a><br/></td></tr>
+<tr class="separator:a8c9fd116781000929a8b09de58f6288e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adfb692b8b02e3082657cefc92f6f216d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#adfb692b8b02e3082657cefc92f6f216d">WLC_E_ASSOC_IND</a>   8</td></tr>
+<tr class="memdesc:adfb692b8b02e3082657cefc92f6f216d"><td class="mdescLeft"> </td><td class="mdescRight">802.11 ASSOC indication occurs when a station joins the SOFTAP that is started  <a href="#adfb692b8b02e3082657cefc92f6f216d">More...</a><br/></td></tr>
+<tr class="separator:adfb692b8b02e3082657cefc92f6f216d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a87f949345de32ebd84030a1cc9c9159f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a87f949345de32ebd84030a1cc9c9159f">WLC_E_REASSOC</a>   9</td></tr>
+<tr class="memdesc:a87f949345de32ebd84030a1cc9c9159f"><td class="mdescLeft"> </td><td class="mdescRight">802.11 REASSOC request event when the STA again gets associated with the AP  <a href="#a87f949345de32ebd84030a1cc9c9159f">More...</a><br/></td></tr>
+<tr class="separator:a87f949345de32ebd84030a1cc9c9159f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8ddd3a253d9fd56a5704d9f3b1dd9b8a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a8ddd3a253d9fd56a5704d9f3b1dd9b8a">WLC_E_REASSOC_IND</a>   10</td></tr>
+<tr class="memdesc:a8ddd3a253d9fd56a5704d9f3b1dd9b8a"><td class="mdescLeft"> </td><td class="mdescRight">802.11 REASSOC indication occurs when a station again reassociates with the SOFTAP  <a href="#a8ddd3a253d9fd56a5704d9f3b1dd9b8a">More...</a><br/></td></tr>
+<tr class="separator:a8ddd3a253d9fd56a5704d9f3b1dd9b8a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9b9413ac981ea6e20b8f0f80523235c0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a9b9413ac981ea6e20b8f0f80523235c0">WLC_E_DISASSOC</a>   11</td></tr>
+<tr class="memdesc:a9b9413ac981ea6e20b8f0f80523235c0"><td class="mdescLeft"> </td><td class="mdescRight">802.11 DISASSOC request occurs when the STA the tries to leave the AP  <a href="#a9b9413ac981ea6e20b8f0f80523235c0">More...</a><br/></td></tr>
+<tr class="separator:a9b9413ac981ea6e20b8f0f80523235c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9c1ad1200aaa8eec7c96e4fc3438593"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ae9c1ad1200aaa8eec7c96e4fc3438593">WLC_E_DISASSOC_IND</a>   12</td></tr>
+<tr class="memdesc:ae9c1ad1200aaa8eec7c96e4fc3438593"><td class="mdescLeft"> </td><td class="mdescRight">802.11 DISASSOC indication occurs when the connected station gets disassociates from SOFTAP, also when STA gets diassociated by the AP  <a href="#ae9c1ad1200aaa8eec7c96e4fc3438593">More...</a><br/></td></tr>
+<tr class="separator:ae9c1ad1200aaa8eec7c96e4fc3438593"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adf984d77e19b6e3a023dd27216599456"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#adf984d77e19b6e3a023dd27216599456">WLC_E_LINK</a>   16</td></tr>
+<tr class="memdesc:adf984d77e19b6e3a023dd27216599456"><td class="mdescLeft"> </td><td class="mdescRight">generic link indication  <a href="#adf984d77e19b6e3a023dd27216599456">More...</a><br/></td></tr>
+<tr class="separator:adf984d77e19b6e3a023dd27216599456"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a26d330cb0796c551edda9c848f1d826c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a26d330cb0796c551edda9c848f1d826c">WLC_E_PROBREQ_MSG</a>   44</td></tr>
+<tr class="memdesc:a26d330cb0796c551edda9c848f1d826c"><td class="mdescLeft"> </td><td class="mdescRight">Indicates probe request received for the SOFTAP started.  <a href="#a26d330cb0796c551edda9c848f1d826c">More...</a><br/></td></tr>
+<tr class="separator:a26d330cb0796c551edda9c848f1d826c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a73ab299b66cc3915b300b6f9360ae4be"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a73ab299b66cc3915b300b6f9360ae4be">WLC_E_PSK_SUP</a>   46</td></tr>
+<tr class="memdesc:a73ab299b66cc3915b300b6f9360ae4be"><td class="mdescLeft"> </td><td class="mdescRight">WPA Handshake fail during association.  <a href="#a73ab299b66cc3915b300b6f9360ae4be">More...</a><br/></td></tr>
+<tr class="separator:a73ab299b66cc3915b300b6f9360ae4be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3c6a8365f82bedb7412bebde8311bee4"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a3c6a8365f82bedb7412bebde8311bee4">WLC_E_ACTION_FRAME</a>   59</td></tr>
+<tr class="memdesc:a3c6a8365f82bedb7412bebde8311bee4"><td class="mdescLeft"> </td><td class="mdescRight">Indicates Action frame Rx.  <a href="#a3c6a8365f82bedb7412bebde8311bee4">More...</a><br/></td></tr>
+<tr class="separator:a3c6a8365f82bedb7412bebde8311bee4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5741fe8a095d2c7721fd5126b8acea56"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a5741fe8a095d2c7721fd5126b8acea56">WLC_E_ACTION_FRAME_COMPLETE</a>   60</td></tr>
+<tr class="memdesc:a5741fe8a095d2c7721fd5126b8acea56"><td class="mdescLeft"> </td><td class="mdescRight">Indicates Action frame Tx complete.  <a href="#a5741fe8a095d2c7721fd5126b8acea56">More...</a><br/></td></tr>
+<tr class="separator:a5741fe8a095d2c7721fd5126b8acea56"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1b04aa17aa56325d7ac03dbf6495d53b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a1b04aa17aa56325d7ac03dbf6495d53b">WLC_E_ESCAN_RESULT</a>   69</td></tr>
+<tr class="memdesc:a1b04aa17aa56325d7ac03dbf6495d53b"><td class="mdescLeft"> </td><td class="mdescRight">escan result event occurs when we scan for the networks  <a href="#a1b04aa17aa56325d7ac03dbf6495d53b">More...</a><br/></td></tr>
+<tr class="separator:a1b04aa17aa56325d7ac03dbf6495d53b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a36a1db14fab1a7d56c5d9c2a57cf030f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a36a1db14fab1a7d56c5d9c2a57cf030f">WLC_E_STATUS_SUCCESS</a>   0</td></tr>
+<tr class="memdesc:a36a1db14fab1a7d56c5d9c2a57cf030f"><td class="mdescLeft"> </td><td class="mdescRight">operation was successful  <a href="#a36a1db14fab1a7d56c5d9c2a57cf030f">More...</a><br/></td></tr>
+<tr class="separator:a36a1db14fab1a7d56c5d9c2a57cf030f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7bbe432d919eb9e29cca5bbeff6f2d22"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a7bbe432d919eb9e29cca5bbeff6f2d22">WLC_E_STATUS_FAIL</a>   1</td></tr>
+<tr class="memdesc:a7bbe432d919eb9e29cca5bbeff6f2d22"><td class="mdescLeft"> </td><td class="mdescRight">operation failed  <a href="#a7bbe432d919eb9e29cca5bbeff6f2d22">More...</a><br/></td></tr>
+<tr class="separator:a7bbe432d919eb9e29cca5bbeff6f2d22"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a59959134916adbb98a9875a8c7462474"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a59959134916adbb98a9875a8c7462474">WLC_E_STATUS_TIMEOUT</a>   2</td></tr>
+<tr class="memdesc:a59959134916adbb98a9875a8c7462474"><td class="mdescLeft"> </td><td class="mdescRight">operation timed out  <a href="#a59959134916adbb98a9875a8c7462474">More...</a><br/></td></tr>
+<tr class="separator:a59959134916adbb98a9875a8c7462474"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3ba3ab746af65eea3d54945c491e75b5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a3ba3ab746af65eea3d54945c491e75b5">WLC_E_STATUS_NO_NETWORKS</a>   3</td></tr>
+<tr class="memdesc:a3ba3ab746af65eea3d54945c491e75b5"><td class="mdescLeft"> </td><td class="mdescRight">failed due to no matching network found  <a href="#a3ba3ab746af65eea3d54945c491e75b5">More...</a><br/></td></tr>
+<tr class="separator:a3ba3ab746af65eea3d54945c491e75b5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7efd6bc08b75e44e74cfad92084020c3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a7efd6bc08b75e44e74cfad92084020c3">WLC_E_STATUS_ABORT</a>   4</td></tr>
+<tr class="memdesc:a7efd6bc08b75e44e74cfad92084020c3"><td class="mdescLeft"> </td><td class="mdescRight">operation was aborted  <a href="#a7efd6bc08b75e44e74cfad92084020c3">More...</a><br/></td></tr>
+<tr class="separator:a7efd6bc08b75e44e74cfad92084020c3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a88664d38d341c3cc57dfd901f6bb6010"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a88664d38d341c3cc57dfd901f6bb6010">WLC_E_STATUS_NO_ACK</a>   5</td></tr>
+<tr class="memdesc:a88664d38d341c3cc57dfd901f6bb6010"><td class="mdescLeft"> </td><td class="mdescRight">protocol failure: packet not ack'd  <a href="#a88664d38d341c3cc57dfd901f6bb6010">More...</a><br/></td></tr>
+<tr class="separator:a88664d38d341c3cc57dfd901f6bb6010"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5a7e4c4f047fff0443e0e7037e35babe"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a5a7e4c4f047fff0443e0e7037e35babe">WLC_E_STATUS_UNSOLICITED</a>   6</td></tr>
+<tr class="memdesc:a5a7e4c4f047fff0443e0e7037e35babe"><td class="mdescLeft"> </td><td class="mdescRight">AUTH or ASSOC packet was unsolicited.  <a href="#a5a7e4c4f047fff0443e0e7037e35babe">More...</a><br/></td></tr>
+<tr class="separator:a5a7e4c4f047fff0443e0e7037e35babe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae66d4ccc84bc98c3018b049d865a4e56"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ae66d4ccc84bc98c3018b049d865a4e56">WLC_E_STATUS_ATTEMPT</a>   7</td></tr>
+<tr class="memdesc:ae66d4ccc84bc98c3018b049d865a4e56"><td class="mdescLeft"> </td><td class="mdescRight">attempt to assoc to an auto auth configuration  <a href="#ae66d4ccc84bc98c3018b049d865a4e56">More...</a><br/></td></tr>
+<tr class="separator:ae66d4ccc84bc98c3018b049d865a4e56"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aec78b245d5a001d341e370f9a246542a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#aec78b245d5a001d341e370f9a246542a">WLC_E_STATUS_PARTIAL</a>   8</td></tr>
+<tr class="memdesc:aec78b245d5a001d341e370f9a246542a"><td class="mdescLeft"> </td><td class="mdescRight">scan results are incomplete  <a href="#aec78b245d5a001d341e370f9a246542a">More...</a><br/></td></tr>
+<tr class="separator:aec78b245d5a001d341e370f9a246542a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ace9d1ee71e3e6a1fd0e5c816347cef85"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ace9d1ee71e3e6a1fd0e5c816347cef85">WLC_E_STATUS_NEWSCAN</a>   9</td></tr>
+<tr class="memdesc:ace9d1ee71e3e6a1fd0e5c816347cef85"><td class="mdescLeft"> </td><td class="mdescRight">scan aborted by another scan  <a href="#ace9d1ee71e3e6a1fd0e5c816347cef85">More...</a><br/></td></tr>
+<tr class="separator:ace9d1ee71e3e6a1fd0e5c816347cef85"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac60199a213be6784ece10816f189e6df"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ac60199a213be6784ece10816f189e6df">WLC_E_STATUS_NEWASSOC</a>   10</td></tr>
+<tr class="memdesc:ac60199a213be6784ece10816f189e6df"><td class="mdescLeft"> </td><td class="mdescRight">scan aborted due to assoc in progress  <a href="#ac60199a213be6784ece10816f189e6df">More...</a><br/></td></tr>
+<tr class="separator:ac60199a213be6784ece10816f189e6df"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0ff5a599549f180cca6ae50f4c404bb9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a0ff5a599549f180cca6ae50f4c404bb9">WLC_E_STATUS_11HQUIET</a>   11</td></tr>
+<tr class="memdesc:a0ff5a599549f180cca6ae50f4c404bb9"><td class="mdescLeft"> </td><td class="mdescRight">802.11h quiet period started  <a href="#a0ff5a599549f180cca6ae50f4c404bb9">More...</a><br/></td></tr>
+<tr class="separator:a0ff5a599549f180cca6ae50f4c404bb9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a95517d8b374126d53040e871e0430299"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a95517d8b374126d53040e871e0430299">WLC_E_STATUS_SUPPRESS</a>   12</td></tr>
+<tr class="memdesc:a95517d8b374126d53040e871e0430299"><td class="mdescLeft"> </td><td class="mdescRight">user disabled scanning (WLC_SET_SCANSUPPRESS)  <a href="#a95517d8b374126d53040e871e0430299">More...</a><br/></td></tr>
+<tr class="separator:a95517d8b374126d53040e871e0430299"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8f01683977e56ff6cf81c9dbef1cb1b5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a8f01683977e56ff6cf81c9dbef1cb1b5">WLC_E_STATUS_NOCHANS</a>   13</td></tr>
+<tr class="memdesc:a8f01683977e56ff6cf81c9dbef1cb1b5"><td class="mdescLeft"> </td><td class="mdescRight">no allowable channels to scan  <a href="#a8f01683977e56ff6cf81c9dbef1cb1b5">More...</a><br/></td></tr>
+<tr class="separator:a8f01683977e56ff6cf81c9dbef1cb1b5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac2937cd5a00b77988fdeb91aa06e0542"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ac2937cd5a00b77988fdeb91aa06e0542">WLC_E_STATUS_CCXFASTRM</a>   14</td></tr>
+<tr class="memdesc:ac2937cd5a00b77988fdeb91aa06e0542"><td class="mdescLeft"> </td><td class="mdescRight">scan aborted due to CCX fast roam  <a href="#ac2937cd5a00b77988fdeb91aa06e0542">More...</a><br/></td></tr>
+<tr class="separator:ac2937cd5a00b77988fdeb91aa06e0542"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad7ce31ac63e0e91bca76c2f0bbc0e92c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ad7ce31ac63e0e91bca76c2f0bbc0e92c">WLC_E_STATUS_CS_ABORT</a>   15</td></tr>
+<tr class="memdesc:ad7ce31ac63e0e91bca76c2f0bbc0e92c"><td class="mdescLeft"> </td><td class="mdescRight">abort channel select  <a href="#ad7ce31ac63e0e91bca76c2f0bbc0e92c">More...</a><br/></td></tr>
+<tr class="separator:ad7ce31ac63e0e91bca76c2f0bbc0e92c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab5a63329b542569285c035ec864322b8"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ab5a63329b542569285c035ec864322b8">WLC_E_STATUS_ERROR</a>   16</td></tr>
+<tr class="memdesc:ab5a63329b542569285c035ec864322b8"><td class="mdescLeft"> </td><td class="mdescRight">request failed due to error  <a href="#ab5a63329b542569285c035ec864322b8">More...</a><br/></td></tr>
+<tr class="separator:ab5a63329b542569285c035ec864322b8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac597fcbff37082363669370113a7628b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ac597fcbff37082363669370113a7628b">WLC_E_STATUS_INVALID</a>   0xff</td></tr>
+<tr class="memdesc:ac597fcbff37082363669370113a7628b"><td class="mdescLeft"> </td><td class="mdescRight">Invalid status code to init variables.  <a href="#ac597fcbff37082363669370113a7628b">More...</a><br/></td></tr>
+<tr class="separator:ac597fcbff37082363669370113a7628b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac97c29fe35bab5af9cc08a9eb1fedffc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ac97c29fe35bab5af9cc08a9eb1fedffc">WLC_SUP_STATUS_OFFSET</a>   (256)</td></tr>
+<tr class="memdesc:ac97c29fe35bab5af9cc08a9eb1fedffc"><td class="mdescLeft"> </td><td class="mdescRight">Status offset added to the status codes to match the values from firmware.  <a href="#ac97c29fe35bab5af9cc08a9eb1fedffc">More...</a><br/></td></tr>
+<tr class="separator:ac97c29fe35bab5af9cc08a9eb1fedffc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac94cc32da29a68641af2b000d883cd6a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#ac94cc32da29a68641af2b000d883cd6a">WHD_MSG_IFNAME_MAX</a>   16</td></tr>
+<tr class="memdesc:ac94cc32da29a68641af2b000d883cd6a"><td class="mdescLeft"> </td><td class="mdescRight">Max length of Interface name.  <a href="#ac94cc32da29a68641af2b000d883cd6a">More...</a><br/></td></tr>
+<tr class="separator:ac94cc32da29a68641af2b000d883cd6a"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a4c17ec19ca52ebe4bbad3ea977108d0b"><td align="right" class="memItemLeft" valign="top">typedef enum <a class="el" href="whd__events_8h.html#aba9543ff6a1542d81c7adc66bb339c4c">sup_auth_status</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a4c17ec19ca52ebe4bbad3ea977108d0b">sup_auth_status_t</a></td></tr>
+<tr class="memdesc:a4c17ec19ca52ebe4bbad3ea977108d0b"><td class="mdescLeft"> </td><td class="mdescRight">Status code for event WLC_E_PSK_SUP.  <a href="#a4c17ec19ca52ebe4bbad3ea977108d0b">More...</a><br/></td></tr>
+<tr class="separator:a4c17ec19ca52ebe4bbad3ea977108d0b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8e7e9d5ab8841a160aa9e2420c636864"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structwhd__event__eth__hdr.html">whd_event_eth_hdr</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a8e7e9d5ab8841a160aa9e2420c636864">whd_event_eth_hdr_t</a></td></tr>
+<tr class="memdesc:a8e7e9d5ab8841a160aa9e2420c636864"><td class="mdescLeft"> </td><td class="mdescRight">Structure to store ethernet header fields in event packets.  <a href="#a8e7e9d5ab8841a160aa9e2420c636864">More...</a><br/></td></tr>
+<tr class="separator:a8e7e9d5ab8841a160aa9e2420c636864"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a31915a18541e6182e926247a3b8ed3dc"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structwhd__event__ether__header.html">whd_event_ether_header</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a31915a18541e6182e926247a3b8ed3dc">whd_event_ether_header_t</a></td></tr>
+<tr class="memdesc:a31915a18541e6182e926247a3b8ed3dc"><td class="mdescLeft"> </td><td class="mdescRight">Structure to store ethernet destination, source and ethertype in event packets.  <a href="#a31915a18541e6182e926247a3b8ed3dc">More...</a><br/></td></tr>
+<tr class="separator:a31915a18541e6182e926247a3b8ed3dc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9d6929e68c05572695ee040da171d508"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structwhd__event.html">whd_event</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="whd__events_8h.html#a9d6929e68c05572695ee040da171d508">whd_event_t</a></td></tr>
+<tr class="memdesc:a9d6929e68c05572695ee040da171d508"><td class="mdescLeft"> </td><td class="mdescRight">Event structure used by driver msgs.  <a href="#a9d6929e68c05572695ee040da171d508">More...</a><br/></td></tr>
+<tr class="separator:a9d6929e68c05572695ee040da171d508"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9c74af353c83a8f77097acbc65362b07"><td align="right" class="memItemLeft" valign="top">typedef void *(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#ga9c74af353c83a8f77097acbc65362b07">whd_event_handler_t</a>) (<a class="el" href="whd_8h.html#a2e544c482ddbb690bbb95ce7174e79a0">whd_interface_t</a> ifp, const whd_event_header_t *event_header, const uint8_t *event_data, void *handler_user_data)</td></tr>
+<tr class="memdesc:ga9c74af353c83a8f77097acbc65362b07"><td class="mdescLeft"> </td><td class="mdescRight">Event handler prototype definition.  <a href="group__event.html#ga9c74af353c83a8f77097acbc65362b07">More...</a><br/></td></tr>
+<tr class="separator:ga9c74af353c83a8f77097acbc65362b07"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad693f00ea3008fa9645582df236ad7e2"><td align="right" class="memItemLeft" valign="top">typedef void *(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#gad693f00ea3008fa9645582df236ad7e2">whd_error_handler_t</a>) (<a class="el" href="whd_8h.html#ac45015d82e65db891b463066873eca4f">whd_driver_t</a> <a class="el" href="structwhd__driver.html">whd_driver</a>, const uint8_t *error_type, const uint8_t *event_data, void *handler_user_data)</td></tr>
+<tr class="memdesc:gad693f00ea3008fa9645582df236ad7e2"><td class="mdescLeft"> </td><td class="mdescRight">Error handler prototype definition.  <a href="group__event.html#gad693f00ea3008fa9645582df236ad7e2">More...</a><br/></td></tr>
+<tr class="separator:gad693f00ea3008fa9645582df236ad7e2"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4175c3ef9bb16601fabc605fadeaf8d8"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#ga4175c3ef9bb16601fabc605fadeaf8d8">whd_wifi_set_event_handler</a> (<a class="el" href="whd_8h.html#a2e544c482ddbb690bbb95ce7174e79a0">whd_interface_t</a> ifp, const uint32_t *event_type, <a class="el" href="group__event.html#ga9c74af353c83a8f77097acbc65362b07">whd_event_handler_t</a> handler_func, void *handler_user_data, uint16_t *event_index)</td></tr>
+<tr class="memdesc:ga4175c3ef9bb16601fabc605fadeaf8d8"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to receive event callbacks.  <a href="group__event.html#ga4175c3ef9bb16601fabc605fadeaf8d8">More...</a><br/></td></tr>
+<tr class="separator:ga4175c3ef9bb16601fabc605fadeaf8d8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2072e91b840217584cfd60ad540b3146"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#ga2072e91b840217584cfd60ad540b3146">whd_wifi_set_error_handler</a> (<a class="el" href="whd_8h.html#a2e544c482ddbb690bbb95ce7174e79a0">whd_interface_t</a> ifp, const uint8_t *error_nums, <a class="el" href="whd__events__int_8h.html#ad693f00ea3008fa9645582df236ad7e2">whd_error_handler_t</a> handler_func, void *handler_user_data, uint16_t *error_index)</td></tr>
+<tr class="memdesc:ga2072e91b840217584cfd60ad540b3146"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to receive error callbacks.  <a href="group__event.html#ga2072e91b840217584cfd60ad540b3146">More...</a><br/></td></tr>
+<tr class="separator:ga2072e91b840217584cfd60ad540b3146"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae415f1f3fcbbfe506aa0e656bf8debb3"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#gae415f1f3fcbbfe506aa0e656bf8debb3">whd_wifi_deregister_event_handler</a> (<a class="el" href="whd_8h.html#a2e544c482ddbb690bbb95ce7174e79a0">whd_interface_t</a> ifp, uint16_t event_index)</td></tr>
+<tr class="memdesc:gae415f1f3fcbbfe506aa0e656bf8debb3"><td class="mdescLeft"> </td><td class="mdescRight">Delete/Deregister the event entry where callback is registered.  <a href="group__event.html#gae415f1f3fcbbfe506aa0e656bf8debb3">More...</a><br/></td></tr>
+<tr class="separator:gae415f1f3fcbbfe506aa0e656bf8debb3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa7f28d32a8c06c7df471636de6f4dec6"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#gaa7f28d32a8c06c7df471636de6f4dec6">whd_wifi_deregister_error_handler</a> (<a class="el" href="whd_8h.html#a2e544c482ddbb690bbb95ce7174e79a0">whd_interface_t</a> ifp, uint16_t error_index)</td></tr>
+<tr class="memdesc:gaa7f28d32a8c06c7df471636de6f4dec6"><td class="mdescLeft"> </td><td class="mdescRight">Delete/Deregister the error entry where callback is registered.  <a href="group__event.html#gaa7f28d32a8c06c7df471636de6f4dec6">More...</a><br/></td></tr>
+<tr class="separator:gaa7f28d32a8c06c7df471636de6f4dec6"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header for Event detection. </p>
+<p>Provides constants and prototypes for functions that allow user applications to receive event callbacks and set event handlers </p>
+
+<p>Definition in file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ac94cc32da29a68641af2b000d883cd6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WHD_MSG_IFNAME_MAX   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Max length of Interface name. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00119">119</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c6a8365f82bedb7412bebde8311bee4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_ACTION_FRAME   59</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates Action frame Rx. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00052">52</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5741fe8a095d2c7721fd5126b8acea56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_ACTION_FRAME_COMPLETE   60</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates Action frame Tx complete. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00053">53</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c9fd116781000929a8b09de58f6288e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_ASSOC   7</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 ASSOC request event occurs when STA joins the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00041">41</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adfb692b8b02e3082657cefc92f6f216d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_ASSOC_IND   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 ASSOC indication occurs when a station joins the SOFTAP that is started </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00042">42</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e0540e8fe3f44be75575247648e1c7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_AUTH   3</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 AUTH request event occurs when STA tries to get authenticated with the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00038">38</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04b3c3a873e93afd4a51643707a20120"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_DEAUTH   5</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 DEAUTH request event occurs when the the SOFTAP is stopped to deuthenticate the connected stations </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00039">39</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fbce5e7ab3f5f4cde0ef8c11ff90e05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_DEAUTH_IND   6</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 DEAUTH indication event occurs when the STA gets deauthenticated by the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00040">40</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b9413ac981ea6e20b8f0f80523235c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_DISASSOC   11</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 DISASSOC request occurs when the STA the tries to leave the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00045">45</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9c1ad1200aaa8eec7c96e4fc3438593"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_DISASSOC_IND   12</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 DISASSOC indication occurs when the connected station gets disassociates from SOFTAP, also when STA gets diassociated by the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00046">46</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b04aa17aa56325d7ac03dbf6495d53b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_ESCAN_RESULT   69</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>escan result event occurs when we scan for the networks </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00054">54</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf984d77e19b6e3a023dd27216599456"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_LINK   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>generic link indication </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00049">49</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5608426af7320ce9e54a8a500fc044e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_NONE   (0x7FFFFFFE)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates the end of the event array list. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00035">35</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d330cb0796c551edda9c848f1d826c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_PROBREQ_MSG   44</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates probe request received for the SOFTAP started. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00050">50</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a73ab299b66cc3915b300b6f9360ae4be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_PSK_SUP   46</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>WPA Handshake fail during association. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00051">51</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87f949345de32ebd84030a1cc9c9159f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_REASSOC   9</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 REASSOC request event when the STA again gets associated with the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00043">43</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ddd3a253d9fd56a5704d9f3b1dd9b8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_REASSOC_IND   10</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11 REASSOC indication occurs when a station again reassociates with the SOFTAP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00044">44</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae370e84bd9ed3b3cde25919287673298"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_SET_SSID   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Indicates status of set SSID. </p>
+<p>This event occurs when STA tries to join the AP </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00037">37</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ff5a599549f180cca6ae50f4c404bb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_11HQUIET   11</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>802.11h quiet period started </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00068">68</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7efd6bc08b75e44e74cfad92084020c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_ABORT   4</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>operation was aborted </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00061">61</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae66d4ccc84bc98c3018b049d865a4e56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_ATTEMPT   7</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>attempt to assoc to an auto auth configuration </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00064">64</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2937cd5a00b77988fdeb91aa06e0542"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_CCXFASTRM   14</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>scan aborted due to CCX fast roam </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00071">71</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7ce31ac63e0e91bca76c2f0bbc0e92c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_CS_ABORT   15</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>abort channel select </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00072">72</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5a63329b542569285c035ec864322b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_ERROR   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>request failed due to error </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00073">73</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bbe432d919eb9e29cca5bbeff6f2d22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_FAIL   1</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>operation failed </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00058">58</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac597fcbff37082363669370113a7628b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_INVALID   0xff</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Invalid status code to init variables. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00074">74</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac60199a213be6784ece10816f189e6df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_NEWASSOC   10</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>scan aborted due to assoc in progress </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00067">67</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace9d1ee71e3e6a1fd0e5c816347cef85"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_NEWSCAN   9</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>scan aborted by another scan </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00066">66</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88664d38d341c3cc57dfd901f6bb6010"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_NO_ACK   5</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>protocol failure: packet not ack'd </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00062">62</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ba3ab746af65eea3d54945c491e75b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_NO_NETWORKS   3</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed due to no matching network found </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00060">60</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f01683977e56ff6cf81c9dbef1cb1b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_NOCHANS   13</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>no allowable channels to scan </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00070">70</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec78b245d5a001d341e370f9a246542a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_PARTIAL   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>scan results are incomplete </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00065">65</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36a1db14fab1a7d56c5d9c2a57cf030f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_SUCCESS   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>operation was successful </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00057">57</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95517d8b374126d53040e871e0430299"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_SUPPRESS   12</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>user disabled scanning (WLC_SET_SCANSUPPRESS) </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00069">69</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59959134916adbb98a9875a8c7462474"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_TIMEOUT   2</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>operation timed out </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00059">59</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a7e4c4f047fff0443e0e7037e35babe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_E_STATUS_UNSOLICITED   6</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>AUTH or ASSOC packet was unsolicited. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00063">63</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac97c29fe35bab5af9cc08a9eb1fedffc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define WLC_SUP_STATUS_OFFSET   (256)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Status offset added to the status codes to match the values from firmware. </p>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00076">76</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a4c17ec19ca52ebe4bbad3ea977108d0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef enum <a class="el" href="whd__events_8h.html#aba9543ff6a1542d81c7adc66bb339c4c">sup_auth_status</a>  <a class="el" href="whd__events_8h.html#a4c17ec19ca52ebe4bbad3ea977108d0b">sup_auth_status_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Status code for event WLC_E_PSK_SUP. </p>
+<p>-Basic supplicant authentication states</p>
+<ul>
+<li>WLC_SUP_DISCONNECTED<ul>
+<li>WLC_SUP_CONNECTING</li>
+<li>WLC_SUP_IDREQUIRED</li>
+<li>WLC_SUP_AUTHENTICATING</li>
+<li>WLC_SUP_AUTHENTICATED</li>
+<li>WLC_SUP_KEYXCHANGE</li>
+<li>WLC_SUP_KEYED</li>
+<li>WLC_SUP_TIMEOUT</li>
+<li>WLC_SUP_LAST_BASIC_STATE -Extended supplicant authentication states</li>
+<li>WLC_SUP_KEYXCHANGE_WAIT_M1</li>
+<li>WLC_SUP_KEYXCHANGE_PREP_M2</li>
+<li>WLC_SUP_KEYXCHANGE_WAIT_M3</li>
+<li>WLC_SUP_KEYXCHANGE_PREP_M4</li>
+<li>WLC_SUP_KEYXCHANGE_WAIT_G1</li>
+<li>WLC_SUP_KEYXCHANGE_PREP_G2 </li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a8e7e9d5ab8841a160aa9e2420c636864"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structwhd__event__eth__hdr.html">whd_event_eth_hdr</a>  <a class="el" href="whd__events_8h.html#a8e7e9d5ab8841a160aa9e2420c636864">whd_event_eth_hdr_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Structure to store ethernet header fields in event packets. </p>
+
+</div>
+</div>
+<a class="anchor" id="a31915a18541e6182e926247a3b8ed3dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structwhd__event__ether__header.html">whd_event_ether_header</a>  <a class="el" href="whd__events_8h.html#a31915a18541e6182e926247a3b8ed3dc">whd_event_ether_header_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Structure to store ethernet destination, source and ethertype in event packets. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9d6929e68c05572695ee040da171d508"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structwhd__event.html">whd_event</a>  <a class="el" href="whd__events_8h.html#a9d6929e68c05572695ee040da171d508">whd_event_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Event structure used by driver msgs. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="aba9543ff6a1542d81c7adc66bb339c4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="whd__events_8h.html#aba9543ff6a1542d81c7adc66bb339c4c">sup_auth_status</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Status code for event WLC_E_PSK_SUP. </p>
+<p>-Basic supplicant authentication states</p>
+<ul>
+<li>WLC_SUP_DISCONNECTED<ul>
+<li>WLC_SUP_CONNECTING</li>
+<li>WLC_SUP_IDREQUIRED</li>
+<li>WLC_SUP_AUTHENTICATING</li>
+<li>WLC_SUP_AUTHENTICATED</li>
+<li>WLC_SUP_KEYXCHANGE</li>
+<li>WLC_SUP_KEYED</li>
+<li>WLC_SUP_TIMEOUT</li>
+<li>WLC_SUP_LAST_BASIC_STATE -Extended supplicant authentication states</li>
+<li>WLC_SUP_KEYXCHANGE_WAIT_M1</li>
+<li>WLC_SUP_KEYXCHANGE_PREP_M2</li>
+<li>WLC_SUP_KEYXCHANGE_WAIT_M3</li>
+<li>WLC_SUP_KEYXCHANGE_PREP_M4</li>
+<li>WLC_SUP_KEYXCHANGE_WAIT_G1</li>
+<li>WLC_SUP_KEYXCHANGE_PREP_G2 </li>
+</ul>
+</li>
+</ul>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4cac9bc0eb3bd21bc5189a4a46793ea7680"></a>WLC_SUP_DISCONNECTED </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Disconnected </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca8ac4d7e7fb55b33bb65316c9ba42f147"></a>WLC_SUP_CONNECTING </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Connecting </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca6d0a906929483eb4d9633c875cffd6ce"></a>WLC_SUP_IDREQUIRED </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>ID Required </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4cab0fea5debce5e8abf993c6a4e6aa2cce"></a>WLC_SUP_AUTHENTICATING </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Authenticating </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4caa4fb668202b9e57bbfaedf0b20304a6e"></a>WLC_SUP_AUTHENTICATED </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Authenticated </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca47709bf89f9482d964fb8f80110b9938"></a>WLC_SUP_KEYXCHANGE </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Key Exchange </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4cab04882e234f679807f486fcd34ee9a1a"></a>WLC_SUP_KEYED </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Key Exchanged </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca9e0cfe079f25369646bb199aba3f1240"></a>WLC_SUP_TIMEOUT </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Timeout </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca949fb8270a4429fe0bdd53eb654d10df"></a>WLC_SUP_LAST_BASIC_STATE </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Last Basic State </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca05d3731c95722d8e0499673a12697abe"></a>WLC_SUP_KEYXCHANGE_WAIT_M1 </td><td class="fielddoc">
+<p>Waiting to receive handshake msg M1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca82ffd4e7e1eda9cde4a2e4f93a625623"></a>WLC_SUP_KEYXCHANGE_PREP_M2 </td><td class="fielddoc">
+<p>Preparing to send handshake msg M2. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4caefe14a3fa955320276622a8c2a3df3f6"></a>WLC_SUP_KEYXCHANGE_WAIT_M3 </td><td class="fielddoc">
+<p>Waiting to receive handshake msg M3. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4caf6103c24206afe80f6f3918a5f139772"></a>WLC_SUP_KEYXCHANGE_PREP_M4 </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Preparing to send handshake msg M4 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4ca8f648a422bf489e97c275b0e81b4e69a"></a>WLC_SUP_KEYXCHANGE_WAIT_G1 </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Waiting to receive handshake msg G1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gaba9543ff6a1542d81c7adc66bb339c4caa1a479ce249334165efc2abb7a417303"></a>WLC_SUP_KEYXCHANGE_PREP_G2 </td><td class="fielddoc">
+<p>Status offset added to the status codes to match the values from firmware. </p>
+<p>Preparing to send handshake msg G2 </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="whd__events_8h_source.html#l00100">100</a> of file <a class="el" href="whd__events_8h_source.html">whd_events.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/whd__events_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:30:03 GMT -->
+</html>

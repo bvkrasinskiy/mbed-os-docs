@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classrtos_1_1_condition_variable.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:12:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | ConditionVariable Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="classrtos_1_1_condition_variable.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classrtos_1_1_condition_variable.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classrtos_1_1_condition_variable.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><b>rtos</b></li><li class="navelem"><a class="el" href="classrtos_1_1_condition_variable.html">ConditionVariable</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ConditionVariable Class Reference<div class="ingroups"><a class="el" href="group__mbed-os-public.html">Public API</a> » <a class="el" href="group__rtos-public-api.html">RTOS</a> » <a class="el" href="group__rtos___condition_variable.html">ConditionVariable class</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> class is a synchronization primitive that allows threads to wait until a particular condition occurs.  
+ <a href="classrtos_1_1_condition_variable.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_condition_variable_8h_source.html">ConditionVariable.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ConditionVariable:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="classrtos_1_1_condition_variable.png" usemap="#ConditionVariable_map"/>
+  <map id="ConditionVariable_map" name="ConditionVariable_map">
+<area alt="NonCopyable&lt; ConditionVariable &gt;" coords="0,0,214,24" href="classmbed_1_1_non_copyable.html" shape="rect"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7ee4f4dcb1cef7f40d618efa3f5324fb"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a7ee4f4dcb1cef7f40d618efa3f5324fb">ConditionVariable</a> (<a class="el" href="classrtos_1_1_mutex.html">Mutex</a> &amp;mutex)</td></tr>
+<tr class="memdesc:a7ee4f4dcb1cef7f40d618efa3f5324fb"><td class="mdescLeft"> </td><td class="mdescRight">Create and initialize a <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> object.  <a href="#a7ee4f4dcb1cef7f40d618efa3f5324fb">More...</a><br/></td></tr>
+<tr class="separator:a7ee4f4dcb1cef7f40d618efa3f5324fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa3b21853f890838c88d047d6c2786917"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#aa3b21853f890838c88d047d6c2786917">wait</a> ()</td></tr>
+<tr class="memdesc:aa3b21853f890838c88d047d6c2786917"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a notification.  <a href="#aa3b21853f890838c88d047d6c2786917">More...</a><br/></td></tr>
+<tr class="separator:aa3b21853f890838c88d047d6c2786917"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5cf7dd6065a1139a3846645e09d2a1de"><td class="memTemplParams" colspan="2">template&lt;typename Predicate &gt; </td></tr>
+<tr class="memitem:a5cf7dd6065a1139a3846645e09d2a1de"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a5cf7dd6065a1139a3846645e09d2a1de">wait</a> (Predicate pred)</td></tr>
+<tr class="memdesc:a5cf7dd6065a1139a3846645e09d2a1de"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a predicate.  <a href="#a5cf7dd6065a1139a3846645e09d2a1de">More...</a><br/></td></tr>
+<tr class="separator:a5cf7dd6065a1139a3846645e09d2a1de"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae084b54ba5230e339c944faef3441930"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#ae084b54ba5230e339c944faef3441930">wait_until</a> (uint64_t millisec)</td></tr>
+<tr class="memdesc:ae084b54ba5230e339c944faef3441930"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a notification until the specified time.  <a href="#ae084b54ba5230e339c944faef3441930">More...</a><br/></td></tr>
+<tr class="separator:ae084b54ba5230e339c944faef3441930"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad6a2507757e7b46d4230ed53fe51578f"><td align="right" class="memItemLeft" valign="top">cv_status </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#ad6a2507757e7b46d4230ed53fe51578f">wait_until</a> (Kernel::Clock::time_point abs_time)</td></tr>
+<tr class="memdesc:ad6a2507757e7b46d4230ed53fe51578f"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a notification until the specified time.  <a href="#ad6a2507757e7b46d4230ed53fe51578f">More...</a><br/></td></tr>
+<tr class="separator:ad6a2507757e7b46d4230ed53fe51578f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae3ffe9c3f4356f7d6a7369bb268b96b1"><td class="memTemplParams" colspan="2">template&lt;class Predicate &gt; </td></tr>
+<tr class="memitem:ae3ffe9c3f4356f7d6a7369bb268b96b1"><td align="right" class="memTemplItemLeft" valign="top">bool </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#ae3ffe9c3f4356f7d6a7369bb268b96b1">wait_until</a> (Kernel::Clock::time_point abs_time, Predicate pred)</td></tr>
+<tr class="memdesc:ae3ffe9c3f4356f7d6a7369bb268b96b1"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a predicate until the specified time.  <a href="#ae3ffe9c3f4356f7d6a7369bb268b96b1">More...</a><br/></td></tr>
+<tr class="separator:ae3ffe9c3f4356f7d6a7369bb268b96b1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2de4c6d8577bfcd6900e545d9b305c85"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a2de4c6d8577bfcd6900e545d9b305c85">wait_for</a> (uint32_t millisec)</td></tr>
+<tr class="memdesc:a2de4c6d8577bfcd6900e545d9b305c85"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a notification or timeout.  <a href="#a2de4c6d8577bfcd6900e545d9b305c85">More...</a><br/></td></tr>
+<tr class="separator:a2de4c6d8577bfcd6900e545d9b305c85"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a05eede6489f4ecd963013b76ca8b3737"><td align="right" class="memItemLeft" valign="top">cv_status </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a05eede6489f4ecd963013b76ca8b3737">wait_for</a> (Kernel::Clock::duration_u32 rel_time)</td></tr>
+<tr class="memdesc:a05eede6489f4ecd963013b76ca8b3737"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a notification or timeout.  <a href="#a05eede6489f4ecd963013b76ca8b3737">More...</a><br/></td></tr>
+<tr class="separator:a05eede6489f4ecd963013b76ca8b3737"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6f041b42b9a59ab3bac3ca808138ca61"><td class="memTemplParams" colspan="2">template&lt;class Predicate &gt; </td></tr>
+<tr class="memitem:a6f041b42b9a59ab3bac3ca808138ca61"><td align="right" class="memTemplItemLeft" valign="top">bool </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a6f041b42b9a59ab3bac3ca808138ca61">wait_for</a> (Kernel::Clock::duration rel_time, Predicate pred)</td></tr>
+<tr class="memdesc:a6f041b42b9a59ab3bac3ca808138ca61"><td class="mdescLeft"> </td><td class="mdescRight">Wait for a predicate or timeout.  <a href="#a6f041b42b9a59ab3bac3ca808138ca61">More...</a><br/></td></tr>
+<tr class="separator:a6f041b42b9a59ab3bac3ca808138ca61"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a84c2ec0dd971c593883198a323eeb394"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a84c2ec0dd971c593883198a323eeb394">notify_one</a> ()</td></tr>
+<tr class="memdesc:a84c2ec0dd971c593883198a323eeb394"><td class="mdescLeft"> </td><td class="mdescRight">Notify one waiter on this condition variable that a condition changed.  <a href="#a84c2ec0dd971c593883198a323eeb394">More...</a><br/></td></tr>
+<tr class="separator:a84c2ec0dd971c593883198a323eeb394"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad35a04e61229c15c5211ebff00089326"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#ad35a04e61229c15c5211ebff00089326">notify_all</a> ()</td></tr>
+<tr class="memdesc:ad35a04e61229c15c5211ebff00089326"><td class="mdescLeft"> </td><td class="mdescRight">Notify all waiters on this condition variable that a condition changed.  <a href="#ad35a04e61229c15c5211ebff00089326">More...</a><br/></td></tr>
+<tr class="separator:ad35a04e61229c15c5211ebff00089326"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a06c2fc08612a8d85989d3538f6d5ac8f"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classrtos_1_1_condition_variable.html#a06c2fc08612a8d85989d3538f6d5ac8f">~ConditionVariable</a> ()</td></tr>
+<tr class="memdesc:a06c2fc08612a8d85989d3538f6d5ac8f"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> destructor.  <a href="#a06c2fc08612a8d85989d3538f6d5ac8f">More...</a><br/></td></tr>
+<tr class="separator:a06c2fc08612a8d85989d3538f6d5ac8f"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> class is a synchronization primitive that allows threads to wait until a particular condition occurs. </p>
+<p>Use the condition variable in conjunction with a mutex to safely wait for or notify waiters of condition changes to a resource accessible by multiple threads.</p>
+<p>The thread that intends to wait on a <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> must:</p><ul>
+<li>Acquire a lock on a mutex.</li>
+<li>Execute <code>wait</code>, <code>wait_for</code> or <code>wait_until</code>. While the thread is waiting, the mutex is unlocked.</li>
+<li>When the condition variable has been notified, or in the case of <code>wait_for</code> and <code>wait_until</code> the timeout expires, the thread is awakened.</li>
+</ul>
+<p>The thread that intends to notify a <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> must:</p><ul>
+<li>Acquire a lock on the mutex used to construct the condition variable.</li>
+<li>Execute <code>notify_one</code> or <code>notify_all</code> on the condition variable.</li>
+</ul>
+<p>All threads waiting on the condition variable wake when <code><a class="el" href="classrtos_1_1_condition_variable.html#ad35a04e61229c15c5211ebff00089326" title="Notify all waiters on this condition variable that a condition changed. ">ConditionVariable::notify_all</a></code> is called. At least one thread waiting on the condition variable wakes when <code><a class="el" href="classrtos_1_1_condition_variable.html#a84c2ec0dd971c593883198a323eeb394" title="Notify one waiter on this condition variable that a condition changed. ">ConditionVariable::notify_one</a></code> is called.</p>
+<p>While a thread is waiting for notification of a <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>, it releases the lock held on the mutex. The <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> reacquires the mutex lock before exiting the wait function.</p>
+<h4>Unspecified behavior</h4>
+<ul>
+<li>The thread that is unblocked on <code><a class="el" href="classrtos_1_1_condition_variable.html#a84c2ec0dd971c593883198a323eeb394" title="Notify one waiter on this condition variable that a condition changed. ">ConditionVariable::notify_one</a></code> is unspecified if there are multiple waiters.</li>
+<li>When <code><a class="el" href="classrtos_1_1_condition_variable.html#a84c2ec0dd971c593883198a323eeb394" title="Notify one waiter on this condition variable that a condition changed. ">ConditionVariable::notify_one</a></code> or <code><a class="el" href="classrtos_1_1_condition_variable.html#ad35a04e61229c15c5211ebff00089326" title="Notify all waiters on this condition variable that a condition changed. ">ConditionVariable::notify_all</a></code> is called and there are one or more waiters, and one or more threads attempting to acquire the condition variable's mutex, the order in which the mutex is acquired is unspecified.</li>
+<li>Spurious notifications (not triggered by the application) can occur.</li>
+</ul>
+<h4>Undefined behavior</h4>
+<ul>
+<li>Calling wait if the mutex is not locked by the current thread is undefined behavior.</li>
+<li>The order in which waiting threads acquire the condition variable's mutex after <code><a class="el" href="classrtos_1_1_condition_variable.html#ad35a04e61229c15c5211ebff00089326" title="Notify all waiters on this condition variable that a condition changed. ">ConditionVariable::notify_all</a></code> is called is undefined.</li>
+<li>The behavior of <code><a class="el" href="classrtos_1_1_condition_variable.html#aa3b21853f890838c88d047d6c2786917" title="Wait for a notification. ">ConditionVariable::wait</a></code> and <code><a class="el" href="classrtos_1_1_condition_variable.html#a2de4c6d8577bfcd6900e545d9b305c85" title="Wait for a notification or timeout. ">ConditionVariable::wait_for</a></code> is undefined if the condition variable's mutex is locked more than once by the calling thread.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Synchronization level: <a class="el" href="classrtos_1_1_thread.html" title="The Thread class allow defining, creating, and controlling thread functions in the system...">Thread</a> safe</dd>
+<dd>
+Bare metal profile: This class is not supported.</dd></dl>
+<p>Example:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include "mbed.h"</span></div><div class="line"></div><div class="line">Mutex mutex;</div><div class="line"><a class="code" href="classrtos_1_1_condition_variable.html#a7ee4f4dcb1cef7f40d618efa3f5324fb">ConditionVariable</a> cv(mutex);</div><div class="line"></div><div class="line"><span class="comment">// These variables are protected by locking the mutex.</span></div><div class="line">uint32_t work_count = 0;</div><div class="line"><span class="keywordtype">bool</span> done = <span class="keyword">false</span>;</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> worker_thread()</div><div class="line">{</div><div class="line">  <span class="comment">// Acquire lock on mutex before accessing protected variables and waiting.</span></div><div class="line">  mutex.lock();</div><div class="line"></div><div class="line">  <span class="keywordflow">while</span> (done == <span class="keyword">false</span>) {</div><div class="line">    printf(<span class="stringliteral">"Worker thread: Count: %lu\r\n"</span>, work_count);</div><div class="line"></div><div class="line">    <span class="comment">// Wait for main thread to notify the condition variable.</span></div><div class="line">    printf(<span class="stringliteral">"Worker thread: Waiting\r\n"</span>);</div><div class="line">    cv.wait();</div><div class="line">  }</div><div class="line"></div><div class="line">  printf(<span class="stringliteral">"Worker: Exiting\r\n"</span>);</div><div class="line"></div><div class="line">  <span class="comment">// The condition variable acquires the lock when exiting the `wait` function.</span></div><div class="line">  <span class="comment">// Unlock mutex when exiting the thread.</span></div><div class="line">  mutex.unlock();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">  Thread thread;</div><div class="line">  thread.start(worker_thread);</div><div class="line"></div><div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div><div class="line">    <span class="comment">// Acquire lock on mutex before modifying variables and notifying.</span></div><div class="line">    mutex.lock();</div><div class="line"></div><div class="line">    <span class="comment">// Change count and notify waiters.</span></div><div class="line">    work_count++;</div><div class="line">    printf(<span class="stringliteral">"Main thread: Set count to: %lu\r\n"</span>, work_count);</div><div class="line">    printf(<span class="stringliteral">"Main thread: Notifying worker thread\r\n"</span>);</div><div class="line">    cv.notify_all();</div><div class="line"></div><div class="line">    <span class="comment">// Mutex must be unlocked before the worker thread can acquire it.</span></div><div class="line">    mutex.unlock();</div><div class="line"></div><div class="line">    <a class="code" href="namespacertos_1_1_this_thread.html#a770153ce44f174497a5c526e81b8fbb5">ThisThread::sleep_for</a>(1000);</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="comment">// Change done and notify waiters of this.</span></div><div class="line">  mutex.lock();</div><div class="line">  done = <span class="keyword">true</span>;</div><div class="line">  cv.notify_all();</div><div class="line">  mutex.unlock();</div><div class="line"></div><div class="line">  thread.join();</div><div class="line"></div><div class="line">  printf(<span class="stringliteral">"Main: Exiting\r\n"</span>);</div><div class="line">}</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="_condition_variable_8h_source.html#l00168">168</a> of file <a class="el" href="_condition_variable_8h_source.html">ConditionVariable.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7ee4f4dcb1cef7f40d618efa3f5324fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classrtos_1_1_condition_variable.html">ConditionVariable</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrtos_1_1_mutex.html">Mutex</a> &amp; </td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create and initialize a <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> object. </p>
+<dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06c2fc08612a8d85989d3538f6d5ac8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">~<a class="el" href="classrtos_1_1_condition_variable.html">ConditionVariable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a> destructor. </p>
+<dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad35a04e61229c15c5211ebff00089326"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void notify_all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Notify all waiters on this condition variable that a condition changed. </p>
+<p>This function unblocks all of the threads waiting for the condition variable.</p>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex.</dd>
+<dd>
+- If there are one or more waiters and one or more threads attempting to acquire the condition variable's mutex the order in which the mutex is acquired is undefined.</dd>
+<dd>
+You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a84c2ec0dd971c593883198a323eeb394"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void notify_one </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Notify one waiter on this condition variable that a condition changed. </p>
+<p>This function unblocks one of the threads waiting for the condition variable.</p>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex.</dd>
+<dd>
+- The thread that is unblocked on <a class="el" href="classrtos_1_1_condition_variable.html#a84c2ec0dd971c593883198a323eeb394" title="Notify one waiter on this condition variable that a condition changed. ">ConditionVariable::notify_one</a> is undefined if there are multiple waiters.</dd>
+<dd>
+You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa3b21853f890838c88d047d6c2786917"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void wait </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a notification. </p>
+<p>Wait causes the current thread to block until the condition variable receives a notification from another thread.</p>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- Spurious notifications can occur, so the caller of this API should check to make sure the condition the caller is waiting on has been met.</dd>
+<dd>
+- The current thread releases the mutex while inside the wait function and reacquires it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line">mutex.lock();</div><div class="line"></div><div class="line"><span class="keywordflow">while</span> (!condition_met) {</div><div class="line">    cond.wait();</div><div class="line">}</div><div class="line"></div><div class="line">function_to_handle_condition();</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5cf7dd6065a1139a3846645e09d2a1de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void wait </td>
+          <td>(</td>
+          <td class="paramtype">Predicate </td>
+          <td class="paramname"><em>pred</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a predicate. </p>
+<p>Wait causes the current thread to block until the predicate is true.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">pred</td><td>A function-like object such that <code>pred()</code> is convertible to bool</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- The current thread releases the mutex while inside the wait function and reacquires it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keyword">extern</span> <span class="keywordtype">bool</span> data_available();</div><div class="line"></div><div class="line">mutex.lock();</div><div class="line"></div><div class="line">cond.wait(data_available);</div><div class="line"></div><div class="line">function_to_handle_data();</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+<p>Definition at line <a class="el" href="_condition_variable_8h_source.html#l00237">237</a> of file <a class="el" href="_condition_variable_8h_source.html">ConditionVariable.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2de4c6d8577bfcd6900e545d9b305c85"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool wait_for </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>millisec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a notification or timeout. </p>
+<p><code>Wait for</code> causes the current thread to block until the condition variable receives a notification from another thread, or the timeout specified by the millisec parameter is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">millisec</td><td>Timeout value or osWaitForever in case of no timeout. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a timeout occurred, <code>false</code> otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- Spurious notifications can occur, so the caller of this API should check to make sure the condition the caller is waiting on has been met.</dd>
+<dd>
+- The current thread releases the lock while inside the wait function and reacquire it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line">mutex.lock();</div><div class="line"></div><div class="line"><span class="keywordflow">while</span> (!condition_met) {</div><div class="line">    cond.wait_for(MAX_SLEEP_TIME);</div><div class="line">    <span class="keywordflow">if</span> (!condition_met) {</div><div class="line">        do_other_work_while_condition_false();</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition_met) {</div><div class="line">    function_to_handle_condition();</div><div class="line">}</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated:</a></b></dt><dd>Pass a chrono duration, not an integer millisecond count. For example use <code>5s</code> rather than <code>5000</code>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a05eede6489f4ecd963013b76ca8b3737"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">cv_status wait_for </td>
+          <td>(</td>
+          <td class="paramtype">Kernel::Clock::duration_u32 </td>
+          <td class="paramname"><em>rel_time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a notification or timeout. </p>
+<p><code>Wait for</code> causes the current thread to block until the condition variable receives a notification from another thread, or the timeout specified by the millisec parameter is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">rel_time</td><td>Timeout value. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>cv_status::timeout</code> if a timeout occurred, <code>cv_status::no_timeout</code> otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- Spurious notifications can occur, so the caller of this API should check to make sure the condition the caller is waiting on has been met.</dd>
+<dd>
+- The current thread releases the lock while inside the wait function and reacquire it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line">mutex.lock();</div><div class="line"></div><div class="line"><span class="keywordflow">while</span> (!condition_met) {</div><div class="line">    cond.wait_for(MAX_SLEEP_TIME);</div><div class="line">    <span class="keywordflow">if</span> (!condition_met) {</div><div class="line">        do_other_work_while_condition_false();</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition_met) {</div><div class="line">    function_to_handle_condition();</div><div class="line">}</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f041b42b9a59ab3bac3ca808138ca61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool wait_for </td>
+          <td>(</td>
+          <td class="paramtype">Kernel::Clock::duration </td>
+          <td class="paramname"><em>rel_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Predicate </td>
+          <td class="paramname"><em>pred</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a predicate or timeout. </p>
+<p><code>Wait for</code> causes the current thread to block until the predicate is true, or the timeout specified by the rel_time parameter is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">rel_time</td><td>Timeout value. </td></tr>
+    <tr><td class="paramname">pred</td><td>a function-like object such that <code>pred()</code> is convertible to bool </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state of the predicate</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- The current thread releases the mutex while inside the wait function and reacquire it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keyword">extern</span> <span class="keywordtype">bool</span> data_available();</div><div class="line"></div><div class="line">mutex.lock();</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (cond.wait_for(2s, data_available)) {</div><div class="line">    function_to_handle_data();</div><div class="line">}</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+<p>Definition at line <a class="el" href="_condition_variable_8h_source.html#l00486">486</a> of file <a class="el" href="_condition_variable_8h_source.html">ConditionVariable.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae084b54ba5230e339c944faef3441930"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool wait_until </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t </td>
+          <td class="paramname"><em>millisec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a notification until the specified time. </p>
+<p>Wait until causes the current thread to block until the condition variable is notified, or a specific time given by millisec parameter is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">millisec</td><td>Absolute end time referenced to <code><a class="el" href="namespacertos_1_1_kernel.html#a19d37a6ee49d4e132e82c3c4f3d0ca90" title="Read the current RTOS kernel millisecond tick count. ">Kernel::get_ms_count()</a></code> </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a timeout occurred, <code>false</code> otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- Spurious notifications can occur, so the caller of this API should check to make sure the condition the caller is waiting on has been met.</dd>
+<dd>
+- The current thread releases the lock while inside the wait function and reacquires it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line">mutex.lock();</div><div class="line">uint64_t end_time = <a class="code" href="namespacertos_1_1_kernel.html#a19d37a6ee49d4e132e82c3c4f3d0ca90">Kernel::get_ms_count</a>() + COND_WAIT_TIMEOUT;</div><div class="line"></div><div class="line"><span class="keywordflow">while</span> (!condition_met) {</div><div class="line">    <span class="keywordflow">if</span> (cond.wait_until(end_time)) {</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition_met) {</div><div class="line">    function_to_handle_condition();</div><div class="line">}</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated:</a></b></dt><dd>Pass a chrono time_point, not an integer millisecond count. For example use <code>Kernel::Clock::now() + 5s</code> rather than <code><a class="el" href="namespacertos_1_1_kernel.html#a19d37a6ee49d4e132e82c3c4f3d0ca90" title="Read the current RTOS kernel millisecond tick count. ">Kernel::get_ms_count()</a> + 5000</code>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad6a2507757e7b46d4230ed53fe51578f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">cv_status wait_until </td>
+          <td>(</td>
+          <td class="paramtype">Kernel::Clock::time_point </td>
+          <td class="paramname"><em>abs_time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a notification until the specified time. </p>
+<p>Wait until causes the current thread to block until the condition variable is notified, or a specific time given by millisec parameter is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">abs_time</td><td>Absolute end time referenced to <code><a class="el" href="structrtos_1_1_kernel_1_1_clock.html" title="A C++11 chrono TrivialClock for the kernel millisecond tick count. ">Kernel::Clock</a></code> </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>cv_status::timeout</code> if a timeout occurred, <code>cv_status::no_timeout</code> otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- Spurious notifications can occur, so the caller of this API should check to make sure the condition the caller is waiting on has been met.</dd>
+<dd>
+- The current thread releases the lock while inside the wait function and reacquires it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line">mutex.lock();</div><div class="line">Kernel::Clock::time_point end_time = Kernel::Clock::now() + 2s;</div><div class="line"></div><div class="line"><span class="keywordflow">while</span> (!condition_met) {</div><div class="line">    <span class="keywordflow">if</span> (cond.wait_until(end_time) == cv_status::timeout) {</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition_met) {</div><div class="line">    function_to_handle_condition();</div><div class="line">}</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae3ffe9c3f4356f7d6a7369bb268b96b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool wait_until </td>
+          <td>(</td>
+          <td class="paramtype">Kernel::Clock::time_point </td>
+          <td class="paramname"><em>abs_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Predicate </td>
+          <td class="paramname"><em>pred</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Wait for a predicate until the specified time. </p>
+<p>Wait until causes the current thread to block until the predicate is true, or a specific time given by abs_time parameter is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">abs_time</td><td>Absolute end time referenced to <code><a class="el" href="structrtos_1_1_kernel_1_1_clock.html" title="A C++11 chrono TrivialClock for the kernel millisecond tick count. ">Kernel::Clock</a></code> </td></tr>
+    <tr><td class="paramname">pred</td><td>A function-like object such that <code>pred()</code> is convertible to bool </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state of the predicate</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- The thread calling this function must be the owner of the <a class="el" href="classrtos_1_1_condition_variable.html" title="The ConditionVariable class is a synchronization primitive that allows threads to wait until a partic...">ConditionVariable</a>'s mutex, and it must be locked exactly once.</dd>
+<dd>
+- The current thread releases the mutex while inside the wait function and reacquires it upon exiting the function.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keyword">extern</span> <span class="keywordtype">bool</span> data_available();</div><div class="line"></div><div class="line">mutex.lock();</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (cond.wait_until(Kernel::Clock::now() + 2s, data_available)) {</div><div class="line">    function_to_handle_data();</div><div class="line">}</div><div class="line"></div><div class="line">mutex.unlock();</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You cannot call this function from ISR context. </dd></dl>
+
+<p>Definition at line <a class="el" href="_condition_variable_8h_source.html#l00361">361</a> of file <a class="el" href="_condition_variable_8h_source.html">ConditionVariable.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classrtos_1_1_condition_variable.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:12:35 GMT -->
+</html>

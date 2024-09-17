@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__crys__chacha.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | CryptoCell CHACHA APIs</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__crys__chacha.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__crys__chacha.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__crys__chacha.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> |
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">CryptoCell CHACHA APIs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__crys__chacha__error"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha__error.html">CryptoCell CHACHA specific errors</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5e4b210baf9aaea3df16f02aa0ca84a0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga5e4b210baf9aaea3df16f02aa0ca84a0">CRYS_CHACHA_USER_CTX_SIZE_IN_WORDS</a>   17</td></tr>
+<tr class="separator:ga5e4b210baf9aaea3df16f02aa0ca84a0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae366f4b2652059cbebe22a5c7aaf8c23"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#gae366f4b2652059cbebe22a5c7aaf8c23">CRYS_CHACHA_BLOCK_SIZE_IN_WORDS</a>   16</td></tr>
+<tr class="separator:gae366f4b2652059cbebe22a5c7aaf8c23"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0ba1ecdffb77afc5f38aaac09f1b09cc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga0ba1ecdffb77afc5f38aaac09f1b09cc">CRYS_CHACHA_BLOCK_SIZE_IN_BYTES</a>   (<a class="el" href="group__crys__chacha.html#gae366f4b2652059cbebe22a5c7aaf8c23">CRYS_CHACHA_BLOCK_SIZE_IN_WORDS</a> * sizeof(uint32_t))</td></tr>
+<tr class="separator:ga0ba1ecdffb77afc5f38aaac09f1b09cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8df8521f4d89b7f61bb2a628721d6c84"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga8df8521f4d89b7f61bb2a628721d6c84">CRYS_CHACHA_NONCE_MAX_SIZE_IN_WORDS</a>   3</td></tr>
+<tr class="separator:ga8df8521f4d89b7f61bb2a628721d6c84"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf57a3ebc26468ed924f32c992adc3fd3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#gaf57a3ebc26468ed924f32c992adc3fd3">CRYS_CHACHA_NONCE_MAX_SIZE_IN_BYTES</a>   (<a class="el" href="group__crys__chacha.html#ga8df8521f4d89b7f61bb2a628721d6c84">CRYS_CHACHA_NONCE_MAX_SIZE_IN_WORDS</a> * sizeof(uint32_t))</td></tr>
+<tr class="separator:gaf57a3ebc26468ed924f32c992adc3fd3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9ff4e45f377cb7f193a110f444f1c223"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga9ff4e45f377cb7f193a110f444f1c223">CRYS_CHACHA_KEY_MAX_SIZE_IN_WORDS</a>   8</td></tr>
+<tr class="separator:ga9ff4e45f377cb7f193a110f444f1c223"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9855abfb6f22a7c9881281f9f76cd43f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga9855abfb6f22a7c9881281f9f76cd43f">CRYS_CHACHA_KEY_MAX_SIZE_IN_BYTES</a>   (<a class="el" href="group__crys__chacha.html#ga9ff4e45f377cb7f193a110f444f1c223">CRYS_CHACHA_KEY_MAX_SIZE_IN_WORDS</a> * sizeof(uint32_t))</td></tr>
+<tr class="separator:ga9855abfb6f22a7c9881281f9f76cd43f"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gac9dc80d452f45742510beec3ebbb5659"><td align="right" class="memItemLeft" valign="top">typedef uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#gac9dc80d452f45742510beec3ebbb5659">CRYS_CHACHA_Nonce_t</a>[(3 *sizeof(uint32_t))]</td></tr>
+<tr class="separator:gac9dc80d452f45742510beec3ebbb5659"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4a6c06a357ef859439cf489c07de6a4e"><td align="right" class="memItemLeft" valign="top">typedef uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga4a6c06a357ef859439cf489c07de6a4e">CRYS_CHACHA_Key_t</a>[(8 *sizeof(uint32_t))]</td></tr>
+<tr class="separator:ga4a6c06a357ef859439cf489c07de6a4e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7adf7ddfd4209b612aaff4fea02fe2eb"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga7adf7ddfd4209b612aaff4fea02fe2eb">CRYS_CHACHAUserContext_t</a></td></tr>
+<tr class="separator:ga7adf7ddfd4209b612aaff4fea02fe2eb"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga86e2bac7a3d8dc8823e8a19c980e24b3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga86e2bac7a3d8dc8823e8a19c980e24b3">CRYS_CHACHA_Init</a> (<a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> *pContextID, <a class="el" href="group__crys__chacha.html#gac9dc80d452f45742510beec3ebbb5659">CRYS_CHACHA_Nonce_t</a> pNonce, <a class="el" href="group__crys__chacha.html#ga386b3296d21b2b321818422ef2ef2189">CRYS_CHACHA_NonceSize_t</a> nonceSize, <a class="el" href="group__crys__chacha.html#ga4a6c06a357ef859439cf489c07de6a4e">CRYS_CHACHA_Key_t</a> pKey, uint32_t initialCounter, <a class="el" href="group__crys__chacha.html#gab6da4d29898649702f06b5633ba374eb">CRYS_CHACHA_EncryptMode_t</a> EncryptDecryptFlag)</td></tr>
+<tr class="memdesc:ga86e2bac7a3d8dc8823e8a19c980e24b3"><td class="mdescLeft"> </td><td class="mdescRight">This function is used to initialize the context for CHACHA operations.  <a href="#ga86e2bac7a3d8dc8823e8a19c980e24b3">More...</a><br/></td></tr>
+<tr class="separator:ga86e2bac7a3d8dc8823e8a19c980e24b3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadd5903f3284fd67b4a0f9a3ea35066b2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#gadd5903f3284fd67b4a0f9a3ea35066b2">CRYS_CHACHA_Block</a> (<a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> *pContextID, uint8_t *pDataIn, uint32_t dataInSize, uint8_t *pDataOut)</td></tr>
+<tr class="memdesc:gadd5903f3284fd67b4a0f9a3ea35066b2"><td class="mdescLeft"> </td><td class="mdescRight">This function is used to process aligned blocks of CHACHA. The data in size should be a multiple of chacha block size.  <a href="#gadd5903f3284fd67b4a0f9a3ea35066b2">More...</a><br/></td></tr>
+<tr class="separator:gadd5903f3284fd67b4a0f9a3ea35066b2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2ad86508b5f3f8de0286f2da1a0f1890"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga2ad86508b5f3f8de0286f2da1a0f1890">CRYS_CHACHA_Finish</a> (<a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> *pContextID, uint8_t *pDataIn, uint32_t dataInSize, uint8_t *pDataOut)</td></tr>
+<tr class="memdesc:ga2ad86508b5f3f8de0286f2da1a0f1890"><td class="mdescLeft"> </td><td class="mdescRight">This function is used to process the remaining data of CHACHA. The data in size should be smaller than chacha block size.  <a href="#ga2ad86508b5f3f8de0286f2da1a0f1890">More...</a><br/></td></tr>
+<tr class="separator:ga2ad86508b5f3f8de0286f2da1a0f1890"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga55b1ae61c0bbcaf40c98c2996ce4b1bb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga55b1ae61c0bbcaf40c98c2996ce4b1bb">CRYS_CHACHA_Free</a> (<a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> *pContextID)</td></tr>
+<tr class="memdesc:ga55b1ae61c0bbcaf40c98c2996ce4b1bb"><td class="mdescLeft"> </td><td class="mdescRight">This function is used to free the context of CHACHA operations.  <a href="#ga55b1ae61c0bbcaf40c98c2996ce4b1bb">More...</a><br/></td></tr>
+<tr class="separator:ga55b1ae61c0bbcaf40c98c2996ce4b1bb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga14223ebc53c1ade5bb84c3f42317ef54"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__crys__chacha.html#ga14223ebc53c1ade5bb84c3f42317ef54">CRYS_CHACHA</a> (<a class="el" href="group__crys__chacha.html#gac9dc80d452f45742510beec3ebbb5659">CRYS_CHACHA_Nonce_t</a> pNonce, <a class="el" href="group__crys__chacha.html#ga386b3296d21b2b321818422ef2ef2189">CRYS_CHACHA_NonceSize_t</a> nonceSize, <a class="el" href="group__crys__chacha.html#ga4a6c06a357ef859439cf489c07de6a4e">CRYS_CHACHA_Key_t</a> pKey, uint32_t initialCounter, <a class="el" href="group__crys__chacha.html#gab6da4d29898649702f06b5633ba374eb">CRYS_CHACHA_EncryptMode_t</a> encryptDecryptFlag, uint8_t *pDataIn, uint32_t dataInSize, uint8_t *pDataOut)</td></tr>
+<tr class="memdesc:ga14223ebc53c1ade5bb84c3f42317ef54"><td class="mdescLeft"> </td><td class="mdescRight">This function is used to perform the CHACHA operation in one integrated process.  <a href="#ga14223ebc53c1ade5bb84c3f42317ef54">More...</a><br/></td></tr>
+<tr class="separator:ga14223ebc53c1ade5bb84c3f42317ef54"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ga0ba1ecdffb77afc5f38aaac09f1b09cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_BLOCK_SIZE_IN_BYTES   (<a class="el" href="group__crys__chacha.html#gae366f4b2652059cbebe22a5c7aaf8c23">CRYS_CHACHA_BLOCK_SIZE_IN_WORDS</a> * sizeof(uint32_t))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>CHACHA block size in bytes. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00064">64</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae366f4b2652059cbebe22a5c7aaf8c23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_BLOCK_SIZE_IN_WORDS   16</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>CHACHA block size in words. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00062">62</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9855abfb6f22a7c9881281f9f76cd43f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_KEY_MAX_SIZE_IN_BYTES   (<a class="el" href="group__crys__chacha.html#ga9ff4e45f377cb7f193a110f444f1c223">CRYS_CHACHA_KEY_MAX_SIZE_IN_WORDS</a> * sizeof(uint32_t))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>CHACHA KEY maximal size in bytes. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00074">74</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9ff4e45f377cb7f193a110f444f1c223"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_KEY_MAX_SIZE_IN_WORDS   8</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>CHACHA KEY maximal size in words. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00072">72</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf57a3ebc26468ed924f32c992adc3fd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_NONCE_MAX_SIZE_IN_BYTES   (<a class="el" href="group__crys__chacha.html#ga8df8521f4d89b7f61bb2a628721d6c84">CRYS_CHACHA_NONCE_MAX_SIZE_IN_WORDS</a> * sizeof(uint32_t))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Nonce buffer max size in bytes. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00069">69</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8df8521f4d89b7f61bb2a628721d6c84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_NONCE_MAX_SIZE_IN_WORDS   3</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Nonce buffer max size in words. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00067">67</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5e4b210baf9aaea3df16f02aa0ca84a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define CRYS_CHACHA_USER_CTX_SIZE_IN_WORDS   17</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>CHACHA user's context size in words. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00059">59</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ga4a6c06a357ef859439cf489c07de6a4e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef uint8_t CRYS_CHACHA_Key_t[(8 *sizeof(uint32_t))]</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Defines the CHACHA key buffer. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00111">111</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac9dc80d452f45742510beec3ebbb5659"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef uint8_t CRYS_CHACHA_Nonce_t[(3 *sizeof(uint32_t))]</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Defines the Nonce buffer 12 bytes array. </p>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00108">108</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7adf7ddfd4209b612aaff4fea02fe2eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> <a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>The user's context prototype - the argument type that is passed by the user to the CHACHA API. The context saves the state of the operation and must be saved by the user till the end of the APIs flow (for example till <a class="el" href="group__crys__chacha.html#ga55b1ae61c0bbcaf40c98c2996ce4b1bb" title="This function is used to free the context of CHACHA operations. ">CRYS_CHACHA_Free</a> is called). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="gab6da4d29898649702f06b5633ba374eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__crys__chacha.html#gab6da4d29898649702f06b5633ba374eb">CRYS_CHACHA_EncryptMode_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Enum defining the CHACHA Encrypt or Decrypt operation mode. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggab6da4d29898649702f06b5633ba374eba061d709504b1167c9ff7ffc762b642b8"></a>CRYS_CHACHA_Encrypt </td><td class="fielddoc">
+<p>CHACHA encrypt mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggab6da4d29898649702f06b5633ba374eba019ff8c7cbda30eb1258bdaadc742292"></a>CRYS_CHACHA_Decrypt </td><td class="fielddoc">
+<p>CHACHA decrypt mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggab6da4d29898649702f06b5633ba374eba5517fd87ebe9468392b9aeabcf6b3693"></a>CRYS_CHACHA_EncryptNumOfOptions </td><td class="fielddoc">
+<p>CHACHA maximal number of operations (encrypt/decrypt). </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggab6da4d29898649702f06b5633ba374ebae05b3d4040dc6c11d500abd8f1e4f269"></a>CRYS_CHACHA_EncryptModeLast </td><td class="fielddoc">
+<p>Reserved. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00079">79</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga386b3296d21b2b321818422ef2ef2189"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group__crys__chacha.html#ga386b3296d21b2b321818422ef2ef2189">CRYS_CHACHA_NonceSize_t</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Enum defining the CHACHA Nonce size in bits. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga386b3296d21b2b321818422ef2ef2189a21f67c25fe8727498c713a3b18198de6"></a>CRYS_CHACHA_Nonce64BitSize </td><td class="fielddoc">
+<p>64 bit Nonce size. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga386b3296d21b2b321818422ef2ef2189a1629a859d41aa3ed3ede10a2f31818db"></a>CRYS_CHACHA_Nonce96BitSize </td><td class="fielddoc">
+<p>96 bit Nonce size. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga386b3296d21b2b321818422ef2ef2189a83f8ea5b28b44272a6999187115f970c"></a>CRYS_CHACHA_NonceSizeNumOfOptions </td><td class="fielddoc">
+<p>CHACHA maximal number of nonce sizes. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga386b3296d21b2b321818422ef2ef2189a9113f17e6bbcb214c0bc9e35a90e6eae"></a>CRYS_CHACHA_NonceSizeLast </td><td class="fielddoc">
+<p>Reserved. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="crys__chacha_8h_source.html#l00093">93</a> of file <a class="el" href="crys__chacha_8h_source.html">crys_chacha.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga14223ebc53c1ade5bb84c3f42317ef54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> CRYS_CHACHA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#gac9dc80d452f45742510beec3ebbb5659">CRYS_CHACHA_Nonce_t</a> </td>
+          <td class="paramname"><em>pNonce</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#ga386b3296d21b2b321818422ef2ef2189">CRYS_CHACHA_NonceSize_t</a> </td>
+          <td class="paramname"><em>nonceSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#ga4a6c06a357ef859439cf489c07de6a4e">CRYS_CHACHA_Key_t</a> </td>
+          <td class="paramname"><em>pKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>initialCounter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#gab6da4d29898649702f06b5633ba374eb">CRYS_CHACHA_EncryptMode_t</a> </td>
+          <td class="paramname"><em>encryptDecryptFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pDataIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>dataInSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pDataOut</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This function is used to perform the CHACHA operation in one integrated process. </p>
+<dl class="section return"><dt>Returns</dt><dd>CRYS_OK on success. </dd>
+<dd>
+A non-zero value on failure as defined <a class="el" href="crys__chacha__error_8h.html" title="This module contains the definitions of the CRYS CHACHA errors. ">crys_chacha_error.h</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">pNonce</td><td>A buffer containing an nonce. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nonceSize</td><td>Enumerator defining the nonce size (only 64 and 96 bit are valid). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pKey</td><td>A pointer to the user's key buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initialCounter</td><td>An initial counter. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">encryptDecryptFlag</td><td>A flag specifying whether the CHACHA should perform an Encrypt operation or a Decrypt operation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pDataIn</td><td>A pointer to the buffer of the input data to the CHACHA. The pointer does not need to be aligned. must not be null. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataInSize</td><td>The size of the input data. must not be 0. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pDataOut</td><td>A pointer to the buffer of the output data from the CHACHA. The pointer does not need to be aligned. must not be null. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gadd5903f3284fd67b4a0f9a3ea35066b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> CRYS_CHACHA_Block </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> * </td>
+          <td class="paramname"><em>pContextID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pDataIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>dataInSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pDataOut</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This function is used to process aligned blocks of CHACHA. The data in size should be a multiple of chacha block size. </p>
+<dl class="section return"><dt>Returns</dt><dd>CRYS_OK on success. </dd>
+<dd>
+A non-zero value on failure as defined <a class="el" href="crys__chacha__error_8h.html" title="This module contains the definitions of the CRYS CHACHA errors. ">crys_chacha_error.h</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">pContextID</td><td>Pointer to the context buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pDataIn</td><td>A pointer to the buffer of the input data to the CHACHA. The pointer does not need to be aligned. must not be null. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataInSize</td><td>The size of the input data. Must be a multiple of <a class="el" href="group__crys__chacha.html#ga0ba1ecdffb77afc5f38aaac09f1b09cc">CRYS_CHACHA_BLOCK_SIZE_IN_BYTES</a> bytes and must not be 0. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pDataOut</td><td>A pointer to the buffer of the output data from the CHACHA. The pointer does not need to be aligned. must not be null. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2ad86508b5f3f8de0286f2da1a0f1890"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> CRYS_CHACHA_Finish </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> * </td>
+          <td class="paramname"><em>pContextID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pDataIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>dataInSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>pDataOut</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This function is used to process the remaining data of CHACHA. The data in size should be smaller than chacha block size. </p>
+<dl class="section return"><dt>Returns</dt><dd>CRYS_OK on success. </dd>
+<dd>
+A non-zero value on failure as defined <a class="el" href="crys__chacha__error_8h.html" title="This module contains the definitions of the CRYS CHACHA errors. ">crys_chacha_error.h</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">pContextID</td><td>Pointer to the context buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pDataIn</td><td>A pointer to the buffer of the input data to the CHACHA. The pointer does not need to be aligned. If dataInSize = 0, input buffer is not required. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataInSize</td><td>The size of the input data. zero and non multiple of <a class="el" href="group__crys__chacha.html#ga0ba1ecdffb77afc5f38aaac09f1b09cc">CRYS_CHACHA_BLOCK_SIZE_IN_BYTES</a> are valid. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pDataOut</td><td>A pointer to the buffer of the output data from the CHACHA. The pointer does not need to be aligned. If dataInSize = 0, output buffer is not required. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga55b1ae61c0bbcaf40c98c2996ce4b1bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> CRYS_CHACHA_Free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> * </td>
+          <td class="paramname"><em>pContextID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This function is used to free the context of CHACHA operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>CRYS_OK on success. </dd>
+<dd>
+A non-zero value on failure as defined <a class="el" href="crys__chacha__error_8h.html" title="This module contains the definitions of the CRYS CHACHA errors. ">crys_chacha_error.h</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">pContextID</td><td>Pointer to the context buffer. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga86e2bac7a3d8dc8823e8a19c980e24b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> CRYS_CHACHA_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_r_y_s___c_h_a_c_h_a_user_context__t.html">CRYS_CHACHAUserContext_t</a> * </td>
+          <td class="paramname"><em>pContextID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#gac9dc80d452f45742510beec3ebbb5659">CRYS_CHACHA_Nonce_t</a> </td>
+          <td class="paramname"><em>pNonce</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#ga386b3296d21b2b321818422ef2ef2189">CRYS_CHACHA_NonceSize_t</a> </td>
+          <td class="paramname"><em>nonceSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#ga4a6c06a357ef859439cf489c07de6a4e">CRYS_CHACHA_Key_t</a> </td>
+          <td class="paramname"><em>pKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>initialCounter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crys__chacha.html#gab6da4d29898649702f06b5633ba374eb">CRYS_CHACHA_EncryptMode_t</a> </td>
+          <td class="paramname"><em>EncryptDecryptFlag</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>This function is used to initialize the context for CHACHA operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>CRYS_OK on success. </dd>
+<dd>
+A non-zero value on failure as defined <a class="el" href="crys__chacha__error_8h.html" title="This module contains the definitions of the CRYS CHACHA errors. ">crys_chacha_error.h</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">pContextID</td><td>Pointer to the CHACHA context buffer that is allocated by the user and is used for the CHACHA operation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pNonce</td><td>A buffer containing an nonce. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nonceSize</td><td>Enumerator defining the nonce size (only 64 and 96 bit are valid). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pKey</td><td>A pointer to the user's key buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initialCounter</td><td>An initial counter. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">EncryptDecryptFlag</td><td>A flag specifying whether the CHACHA should perform an Encrypt operation or a Decrypt operation. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__crys__chacha.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:43 GMT -->
+</html>

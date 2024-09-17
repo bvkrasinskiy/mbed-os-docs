@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__asymmetric.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:15:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Asymmetric cryptography</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__asymmetric.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__asymmetric.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group__asymmetric.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Asymmetric cryptography</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga785e746a31a7b2a35ae5175c5ace3c5c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__asymmetric.html#ga785e746a31a7b2a35ae5175c5ace3c5c">psa_sign_hash</a> (mbedtls_svc_key_id_t key, <a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> alg, const uint8_t *hash, size_t hash_length, uint8_t *signature, size_t signature_size, size_t *signature_length)</td></tr>
+<tr class="memdesc:ga785e746a31a7b2a35ae5175c5ace3c5c"><td class="mdescLeft"> </td><td class="mdescRight">Sign a hash or short message with a private key.  <a href="#ga785e746a31a7b2a35ae5175c5ace3c5c">More...</a><br/></td></tr>
+<tr class="separator:ga785e746a31a7b2a35ae5175c5ace3c5c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae2ffbf01e5266391aff22b101a49f5f5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__asymmetric.html#gae2ffbf01e5266391aff22b101a49f5f5">psa_verify_hash</a> (mbedtls_svc_key_id_t key, <a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> alg, const uint8_t *hash, size_t hash_length, const uint8_t *signature, size_t signature_length)</td></tr>
+<tr class="memdesc:gae2ffbf01e5266391aff22b101a49f5f5"><td class="mdescLeft"> </td><td class="mdescRight">Verify the signature a hash or short message using a public key.  <a href="#gae2ffbf01e5266391aff22b101a49f5f5">More...</a><br/></td></tr>
+<tr class="separator:gae2ffbf01e5266391aff22b101a49f5f5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa17f61e4ddafd1823d2c834b3706c290"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__asymmetric.html#gaa17f61e4ddafd1823d2c834b3706c290">psa_asymmetric_encrypt</a> (mbedtls_svc_key_id_t key, <a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> alg, const uint8_t *input, size_t input_length, const uint8_t *salt, size_t salt_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:gaa17f61e4ddafd1823d2c834b3706c290"><td class="mdescLeft"> </td><td class="mdescRight">Encrypt a short message with a public key.  <a href="#gaa17f61e4ddafd1823d2c834b3706c290">More...</a><br/></td></tr>
+<tr class="separator:gaa17f61e4ddafd1823d2c834b3706c290"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4f968756f6b22aab362b598b202d83d7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__asymmetric.html#ga4f968756f6b22aab362b598b202d83d7">psa_asymmetric_decrypt</a> (mbedtls_svc_key_id_t key, <a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> alg, const uint8_t *input, size_t input_length, const uint8_t *salt, size_t salt_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:ga4f968756f6b22aab362b598b202d83d7"><td class="mdescLeft"> </td><td class="mdescRight">Decrypt a short message with a private key.  <a href="#ga4f968756f6b22aab362b598b202d83d7">More...</a><br/></td></tr>
+<tr class="separator:ga4f968756f6b22aab362b598b202d83d7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga295407a9d6fd0d7ddc6aebf6ead4955c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__asymmetric.html#ga295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message</a> (<a class="el" href="group__key__lifetimes.html#ga11e986351c65bd3dc3c0fe2cd9926e4b">psa_key_id_t</a> key, <a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> alg, const uint8_t *input, size_t input_length, uint8_t *signature, size_t signature_size, size_t *signature_length)</td></tr>
+<tr class="memdesc:ga295407a9d6fd0d7ddc6aebf6ead4955c"><td class="mdescLeft"> </td><td class="mdescRight">Sign a message with a private key.  <a href="#ga295407a9d6fd0d7ddc6aebf6ead4955c">More...</a><br/></td></tr>
+<tr class="separator:ga295407a9d6fd0d7ddc6aebf6ead4955c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8112e02cd89cc652acb2f45074a7464e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__asymmetric.html#ga8112e02cd89cc652acb2f45074a7464e">psa_verify_message</a> (<a class="el" href="group__key__lifetimes.html#ga11e986351c65bd3dc3c0fe2cd9926e4b">psa_key_id_t</a> key, <a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> alg, const uint8_t *input, size_t input_length, const uint8_t *signature, size_t signature_length)</td></tr>
+<tr class="memdesc:ga8112e02cd89cc652acb2f45074a7464e"><td class="mdescLeft"> </td><td class="mdescRight">Verify the signature of a message with a public key, using a hash-and-sign verification algorithm.  <a href="#ga8112e02cd89cc652acb2f45074a7464e">More...</a><br/></td></tr>
+<tr class="separator:ga8112e02cd89cc652acb2f45074a7464e"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga4f968756f6b22aab362b598b202d83d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> psa_asymmetric_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">mbedtls_svc_key_id_t </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> </td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>salt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>salt_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t * </td>
+          <td class="paramname"><em>output_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Decrypt a short message with a private key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be an asymmetric key pair. It must allow the usage <a class="el" href="group__policy.html#gac3f2d2e5983db1edde9f142ca9bf8e6a" title="Whether the key may be used to decrypt a message. ">PSA_KEY_USAGE_DECRYPT</a>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>An asymmetric encryption algorithm that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The message to decrypt. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">input_length</td><td>Size of the <code>input</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">salt</td><td>A salt or label, if supported by the encryption algorithm. If the algorithm does not support a salt, pass <code>NULL</code>. If the algorithm supports an optional salt and you do not want to pass a salt, pass <code>NULL</code>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<ul>
+<li>For <a class="el" href="group__crypto__types.html#ga4c540d3abe43fb9abcb94f2bc51acef9" title="RSA PKCS#1 v1.5 encryption. ">PSA_ALG_RSA_PKCS1V15_CRYPT</a>, no salt is supported. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">salt_length</td><td>Size of the <code>salt</code> buffer in bytes. If <code>salt</code> is <code>NULL</code>, pass 0. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>Buffer where the decrypted message is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">output_size</td><td>Size of the <code>output</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output_length</td><td>On success, the number of bytes that make up the returned output.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>output</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_ASYMMETRIC_DECRYPT_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>key</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gabe29594edbfb152cf153975b0597ac48" title="The decrypted padding is incorrect. ">PSA_ERROR_INVALID_PADDING</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">handle</td><td>Handle to the key to use for the operation. It must be an asymmetric key pair. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>An asymmetric encryption algorithm that is compatible with the type of <code>handle</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The message to decrypt. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">input_length</td><td>Size of the <code>input</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">salt</td><td>A salt or label, if supported by the encryption algorithm. If the algorithm does not support a salt, pass <code>NULL</code>. If the algorithm supports an optional salt and you do not want to pass a salt, pass <code>NULL</code>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+</li>
+<li>For <a class="el" href="group__crypto__types.html#ga4c540d3abe43fb9abcb94f2bc51acef9" title="RSA PKCS#1 v1.5 encryption. ">PSA_ALG_RSA_PKCS1V15_CRYPT</a>, no salt is supported. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">salt_length</td><td>Size of the <code>salt</code> buffer in bytes. If <code>salt</code> is <code>NULL</code>, pass 0. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>Buffer where the decrypted message is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">output_size</td><td>Size of the <code>output</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output_length</td><td>On success, the number of bytes that make up the returned output.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>output</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_ASYMMETRIC_DECRYPT_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>handle</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gabe29594edbfb152cf153975b0597ac48" title="The decrypted padding is incorrect. ">PSA_ERROR_INVALID_PADDING</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="gaa17f61e4ddafd1823d2c834b3706c290"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> psa_asymmetric_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">mbedtls_svc_key_id_t </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> </td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>salt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>salt_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t * </td>
+          <td class="paramname"><em>output_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Encrypt a short message with a public key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">key</td><td>Identifer of the key to use for the operation. It must be a public key or an asymmetric key pair. It must allow the usage <a class="el" href="group__policy.html#ga75153b296d045d529d97203a6a995dad" title="Whether the key may be used to encrypt a message. ">PSA_KEY_USAGE_ENCRYPT</a>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>An asymmetric encryption algorithm that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The message to encrypt. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">input_length</td><td>Size of the <code>input</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">salt</td><td>A salt or label, if supported by the encryption algorithm. If the algorithm does not support a salt, pass <code>NULL</code>. If the algorithm supports an optional salt and you do not want to pass a salt, pass <code>NULL</code>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<ul>
+<li>For <a class="el" href="group__crypto__types.html#ga4c540d3abe43fb9abcb94f2bc51acef9" title="RSA PKCS#1 v1.5 encryption. ">PSA_ALG_RSA_PKCS1V15_CRYPT</a>, no salt is supported. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">salt_length</td><td>Size of the <code>salt</code> buffer in bytes. If <code>salt</code> is <code>NULL</code>, pass 0. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>Buffer where the encrypted message is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">output_size</td><td>Size of the <code>output</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output_length</td><td>On success, the number of bytes that make up the returned output.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>output</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_ASYMMETRIC_ENCRYPT_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>key</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">handle</td><td>Handle to the key to use for the operation. It must be a public key or an asymmetric key pair. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>An asymmetric encryption algorithm that is compatible with the type of <code>handle</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The message to encrypt. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">input_length</td><td>Size of the <code>input</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">salt</td><td>A salt or label, if supported by the encryption algorithm. If the algorithm does not support a salt, pass <code>NULL</code>. If the algorithm supports an optional salt and you do not want to pass a salt, pass <code>NULL</code>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+</li>
+<li>For <a class="el" href="group__crypto__types.html#ga4c540d3abe43fb9abcb94f2bc51acef9" title="RSA PKCS#1 v1.5 encryption. ">PSA_ALG_RSA_PKCS1V15_CRYPT</a>, no salt is supported. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">salt_length</td><td>Size of the <code>salt</code> buffer in bytes. If <code>salt</code> is <code>NULL</code>, pass 0. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>Buffer where the encrypted message is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">output_size</td><td>Size of the <code>output</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output_length</td><td>On success, the number of bytes that make up the returned output.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>output</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_ASYMMETRIC_ENCRYPT_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>handle</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="ga785e746a31a7b2a35ae5175c5ace3c5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> psa_sign_hash </td>
+          <td>(</td>
+          <td class="paramtype">mbedtls_svc_key_id_t </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> </td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>hash_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>signature_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t * </td>
+          <td class="paramname"><em>signature_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sign a hash or short message with a private key. </p>
+<p>Note that to perform a hash-and-sign signature algorithm, you must first calculate the hash by calling <a class="el" href="group__hash.html#ga8d72896cf70fc4d514c5c6b978912515" title="Set up a multipart hash operation. ">psa_hash_setup()</a>, <a class="el" href="group__hash.html#ga65b16ef97d7f650899b7db4b7d1112ff" title="Add a message fragment to a multipart hash operation. ">psa_hash_update()</a> and <a class="el" href="group__hash.html#ga4795fd06a0067b0adcd92e9627b8c97e" title="Finish the calculation of the hash of a message. ">psa_hash_finish()</a>. Then pass the resulting hash as the <code>hash</code> parameter to this function. You can use <a class="el" href="group__crypto__types.html#ga3df99e8fa822930923a4fced933e38d5" title="Get the hash used by a hash-and-sign signature algorithm. ">PSA_ALG_SIGN_GET_HASH</a>(<code>alg</code>) to determine the hash algorithm to use.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be an asymmetric key pair. The key must allow the usage <a class="el" href="group__policy.html#ga181c73e00d9e95aa3a8366f26c4380b6" title="Whether the key may be used to sign a message. ">PSA_KEY_USAGE_SIGN_HASH</a>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>A signature algorithm that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>The hash or message to sign. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hash_length</td><td>Size of the <code>hash</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature</td><td>Buffer where the signature is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">signature_size</td><td>Size of the <code>signature</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature_length</td><td>On success, the number of bytes that make up the returned signature value.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>signature</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_SIGN_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>key</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Note that to perform a hash-and-sign signature algorithm, you must first calculate the hash by calling <a class="el" href="group__hash.html#ga8d72896cf70fc4d514c5c6b978912515" title="Set up a multipart hash operation. ">psa_hash_setup()</a>, <a class="el" href="group__hash.html#ga65b16ef97d7f650899b7db4b7d1112ff" title="Add a message fragment to a multipart hash operation. ">psa_hash_update()</a> and <a class="el" href="group__hash.html#ga4795fd06a0067b0adcd92e9627b8c97e" title="Finish the calculation of the hash of a message. ">psa_hash_finish()</a>, or alternatively by calling <a class="el" href="group__hash.html#gac69f7f19d96a56c28cf3799d11b12156" title="Calculate the hash (digest) of a message. ">psa_hash_compute()</a>. Then pass the resulting hash as the <code>hash</code> parameter to this function. You can use <a class="el" href="group__crypto__types.html#ga3df99e8fa822930923a4fced933e38d5" title="Get the hash used by a hash-and-sign signature algorithm. ">PSA_ALG_SIGN_GET_HASH</a>(<code>alg</code>) to determine the hash algorithm to use.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be an asymmetric key pair. The key must allow the usage <a class="el" href="group__policy.html#ga181c73e00d9e95aa3a8366f26c4380b6" title="Whether the key may be used to sign a message. ">PSA_KEY_USAGE_SIGN_HASH</a>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>A signature algorithm that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>The hash or message to sign. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hash_length</td><td>Size of the <code>hash</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature</td><td>Buffer where the signature is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">signature_size</td><td>Size of the <code>signature</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature_length</td><td>On success, the number of bytes that make up the returned signature value.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>signature</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_SIGN_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>key</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Note that to perform a hash-and-sign signature algorithm, you must first calculate the hash by calling <a class="el" href="group__hash.html#ga8d72896cf70fc4d514c5c6b978912515" title="Set up a multipart hash operation. ">psa_hash_setup()</a>, <a class="el" href="group__hash.html#ga65b16ef97d7f650899b7db4b7d1112ff" title="Add a message fragment to a multipart hash operation. ">psa_hash_update()</a> and <a class="el" href="group__hash.html#ga4795fd06a0067b0adcd92e9627b8c97e" title="Finish the calculation of the hash of a message. ">psa_hash_finish()</a>. Then pass the resulting hash as the <code>hash</code> parameter to this function. You can use <a class="el" href="group__crypto__types.html#ga3df99e8fa822930923a4fced933e38d5" title="Get the hash used by a hash-and-sign signature algorithm. ">PSA_ALG_SIGN_GET_HASH</a>(<code>alg</code>) to determine the hash algorithm to use.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">handle</td><td>Handle to the key to use for the operation. It must be an asymmetric key pair. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>A signature algorithm that is compatible with the type of <code>handle</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>The hash or message to sign. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hash_length</td><td>Size of the <code>hash</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature</td><td>Buffer where the signature is to be written. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">signature_size</td><td>Size of the <code>signature</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature_length</td><td>On success, the number of bytes that make up the returned signature value.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>signature</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_SIGN_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>handle</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga295407a9d6fd0d7ddc6aebf6ead4955c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> psa_sign_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__key__lifetimes.html#ga11e986351c65bd3dc3c0fe2cd9926e4b">psa_key_id_t</a> </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> </td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t * </td>
+          <td class="paramname"><em>signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>signature_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t * </td>
+          <td class="paramname"><em>signature_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sign a message with a private key. </p>
+<p>For hash-and-sign algorithms, this includes the hashing step.</p>
+<dl class="section note"><dt>Note</dt><dd>To perform a multi-part hash-and-sign signature algorithm, first use a multi-part hash operation and then pass the resulting hash to <a class="el" href="group__asymmetric.html#ga785e746a31a7b2a35ae5175c5ace3c5c" title="Sign a hash or short message with a private key. ">psa_sign_hash()</a>. PSA_ALG_GET_HASH(<code>alg</code>) can be used to determine the hash algorithm to use.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be an asymmetric key pair. The key must allow the usage <a class="el" href="group__policy.html#ga552117ac92b79500cae87d4e65a85c54" title="Whether the key may be used to sign a message. ">PSA_KEY_USAGE_SIGN_MESSAGE</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alg</td><td>An asymmetric signature algorithm (PSA_ALG_XXX value such that <a class="el" href="group__crypto__types.html#ga35b4301f4d604ef10ee9179fe92a9fcc" title="Whether the specified algorithm is a signature algorithm that can be used with psa_sign_message() and...">PSA_ALG_IS_SIGN_MESSAGE</a>(<code>alg</code>) is true), that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The input message to sign. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_length</td><td>Size of the <code>input</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature</td><td>Buffer where the signature is to be written. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature_size</td><td>Size of the <code>signature</code> buffer in bytes. This must be appropriate for the selected algorithm and key:<ul>
+<li>The required signature size is #PSA_SIGN_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of key.</li>
+<li>#PSA_SIGNATURE_MAX_SIZE evaluates to the maximum signature size of any supported signature algorithm. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature_length</td><td>On success, the number of bytes that make up the returned signature value.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td>The key does not have the <a class="el" href="group__policy.html#ga552117ac92b79500cae87d4e65a85c54" title="Whether the key may be used to sign a message. ">PSA_KEY_USAGE_SIGN_MESSAGE</a> flag, or it does not permit the requested algorithm. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga695025f4ec11249aee7ea3d0f65e01c8" title="An output buffer is too small. ">PSA_ERROR_BUFFER_TOO_SMALL</a></td><td>The size of the <code>signature</code> buffer is too small. You can determine a sufficient buffer size by calling #PSA_SIGN_OUTPUT_SIZE(<code>key_type</code>, <code>key_bits</code>, <code>alg</code>) where <code>key_type</code> and <code>key_bits</code> are the type and bit-size respectively of <code>key</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga9febb81a44bdeb4c6c42bf4f697b13bf" title="Stored data has been corrupted. ">PSA_ERROR_DATA_CORRUPT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gacebfbd25a7c2a727694fb57182a66533" title="Data read from storage is not valid for the implementation. ">PSA_ERROR_DATA_INVALID</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4deb59fec02297ec5d8b42178323f675" title="There is not enough entropy to generate random data needed for the requested action. ">PSA_ERROR_INSUFFICIENT_ENTROPY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gae2ffbf01e5266391aff22b101a49f5f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> psa_verify_hash </td>
+          <td>(</td>
+          <td class="paramtype">mbedtls_svc_key_id_t </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> </td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>hash_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>signature_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Verify the signature a hash or short message using a public key. </p>
+<p>Verify the signature of a hash or short message using a public key.</p>
+<p>Note that to perform a hash-and-sign signature algorithm, you must first calculate the hash by calling <a class="el" href="group__hash.html#ga8d72896cf70fc4d514c5c6b978912515" title="Set up a multipart hash operation. ">psa_hash_setup()</a>, <a class="el" href="group__hash.html#ga65b16ef97d7f650899b7db4b7d1112ff" title="Add a message fragment to a multipart hash operation. ">psa_hash_update()</a> and <a class="el" href="group__hash.html#ga4795fd06a0067b0adcd92e9627b8c97e" title="Finish the calculation of the hash of a message. ">psa_hash_finish()</a>. Then pass the resulting hash as the <code>hash</code> parameter to this function. You can use <a class="el" href="group__crypto__types.html#ga3df99e8fa822930923a4fced933e38d5" title="Get the hash used by a hash-and-sign signature algorithm. ">PSA_ALG_SIGN_GET_HASH</a>(<code>alg</code>) to determine the hash algorithm to use.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be a public key or an asymmetric key pair. The key must allow the usage <a class="el" href="group__policy.html#gafadf131ef2182045e3483d03aadaa1bd" title="Whether the key may be used to verify a message signature. ">PSA_KEY_USAGE_VERIFY_HASH</a>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>A signature algorithm that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>The hash or message whose signature is to be verified. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hash_length</td><td>Size of the <code>hash</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature</td><td>Buffer containing the signature to verify. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">signature_length</td><td>Size of the <code>signature</code> buffer in bytes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td>The signature is valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga35927f755d232c4766de600f2c49e9f2" title="The signature, MAC or hash is incorrect. ">PSA_ERROR_INVALID_SIGNATURE</a></td><td>The calculation was perfomed successfully, but the passed signature is not a valid signature. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Note that to perform a hash-and-sign signature algorithm, you must first calculate the hash by calling <a class="el" href="group__hash.html#ga8d72896cf70fc4d514c5c6b978912515" title="Set up a multipart hash operation. ">psa_hash_setup()</a>, <a class="el" href="group__hash.html#ga65b16ef97d7f650899b7db4b7d1112ff" title="Add a message fragment to a multipart hash operation. ">psa_hash_update()</a> and <a class="el" href="group__hash.html#ga4795fd06a0067b0adcd92e9627b8c97e" title="Finish the calculation of the hash of a message. ">psa_hash_finish()</a>, or alternatively by calling <a class="el" href="group__hash.html#gac69f7f19d96a56c28cf3799d11b12156" title="Calculate the hash (digest) of a message. ">psa_hash_compute()</a>. Then pass the resulting hash as the <code>hash</code> parameter to this function. You can use <a class="el" href="group__crypto__types.html#ga3df99e8fa822930923a4fced933e38d5" title="Get the hash used by a hash-and-sign signature algorithm. ">PSA_ALG_SIGN_GET_HASH</a>(<code>alg</code>) to determine the hash algorithm to use.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be a public key or an asymmetric key pair. The key must allow the usage <a class="el" href="group__policy.html#gafadf131ef2182045e3483d03aadaa1bd" title="Whether the key may be used to verify a message signature. ">PSA_KEY_USAGE_VERIFY_HASH</a>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>A signature algorithm that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>The hash or message whose signature is to be verified. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hash_length</td><td>Size of the <code>hash</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature</td><td>Buffer containing the signature to verify. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">signature_length</td><td>Size of the <code>signature</code> buffer in bytes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td>The signature is valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga35927f755d232c4766de600f2c49e9f2" title="The signature, MAC or hash is incorrect. ">PSA_ERROR_INVALID_SIGNATURE</a></td><td>The calculation was perfomed successfully, but the passed signature is not a valid signature. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Note that to perform a hash-and-sign signature algorithm, you must first calculate the hash by calling <a class="el" href="group__hash.html#ga8d72896cf70fc4d514c5c6b978912515" title="Set up a multipart hash operation. ">psa_hash_setup()</a>, <a class="el" href="group__hash.html#ga65b16ef97d7f650899b7db4b7d1112ff" title="Add a message fragment to a multipart hash operation. ">psa_hash_update()</a> and <a class="el" href="group__hash.html#ga4795fd06a0067b0adcd92e9627b8c97e" title="Finish the calculation of the hash of a message. ">psa_hash_finish()</a>. Then pass the resulting hash as the <code>hash</code> parameter to this function. You can use <a class="el" href="group__crypto__types.html#ga3df99e8fa822930923a4fced933e38d5" title="Get the hash used by a hash-and-sign signature algorithm. ">PSA_ALG_SIGN_GET_HASH</a>(<code>alg</code>) to determine the hash algorithm to use.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir"></td><td class="paramname">handle</td><td>Handle to the key to use for the operation. It must be a public key or an asymmetric key pair. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alg</td><td>A signature algorithm that is compatible with the type of <code>handle</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>The hash or message whose signature is to be verified. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hash_length</td><td>Size of the <code>hash</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature</td><td>Buffer containing the signature to verify. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">signature_length</td><td>Size of the <code>signature</code> buffer in bytes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td>The signature is valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga35927f755d232c4766de600f2c49e9f2" title="The signature, MAC or hash is incorrect. ">PSA_ERROR_INVALID_SIGNATURE</a></td><td>The calculation was perfomed successfully, but the passed signature is not a valid signature. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8112e02cd89cc652acb2f45074a7464e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__error.html#ga05676e70ba5c6a7565aff3c36677c1f9">psa_status_t</a> psa_verify_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__key__lifetimes.html#ga11e986351c65bd3dc3c0fe2cd9926e4b">psa_key_id_t</a> </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__crypto__types.html#gac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a> </td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t * </td>
+          <td class="paramname"><em>signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>signature_length</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Verify the signature of a message with a public key, using a hash-and-sign verification algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>To perform a multi-part hash-and-sign signature verification algorithm, first use a multi-part hash operation to hash the message and then pass the resulting hash to <a class="el" href="group__asymmetric.html#gae2ffbf01e5266391aff22b101a49f5f5" title="Verify the signature a hash or short message using a public key. ">psa_verify_hash()</a>. PSA_ALG_GET_HASH(<code>alg</code>) can be used to determine the hash algorithm to use.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Identifier of the key to use for the operation. It must be a public key or an asymmetric key pair. The key must allow the usage <a class="el" href="group__policy.html#gabea7ec4173f4f943110329ac2953b2b1" title="Whether the key may be used to verify a message. ">PSA_KEY_USAGE_VERIFY_MESSAGE</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alg</td><td>An asymmetric signature algorithm (PSA_ALG_XXX value such that <a class="el" href="group__crypto__types.html#ga35b4301f4d604ef10ee9179fe92a9fcc" title="Whether the specified algorithm is a signature algorithm that can be used with psa_sign_message() and...">PSA_ALG_IS_SIGN_MESSAGE</a>(<code>alg</code>) is true), that is compatible with the type of <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The message whose signature is to be verified. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_length</td><td>Size of the <code>input</code> buffer in bytes. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature</td><td>Buffer containing the signature to verify. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature_length</td><td>Size of the <code>signature</code> buffer in bytes.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname"><a class="el" href="group__error.html#ga4cc859e2c66ca381c7418db3527a65e1" title="The action was completed successfully. ">PSA_SUCCESS</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadf22718935657c2c3168c228204085f9" title="The key handle is not valid. ">PSA_ERROR_INVALID_HANDLE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga4d1b8dd8526177a15a210b7afc1accb1" title="The requested action is denied by a policy. ">PSA_ERROR_NOT_PERMITTED</a></td><td>The key does not have the <a class="el" href="group__policy.html#ga552117ac92b79500cae87d4e65a85c54" title="Whether the key may be used to sign a message. ">PSA_KEY_USAGE_SIGN_MESSAGE</a> flag, or it does not permit the requested algorithm. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga35927f755d232c4766de600f2c49e9f2" title="The signature, MAC or hash is incorrect. ">PSA_ERROR_INVALID_SIGNATURE</a></td><td>The calculation was performed successfully, but the passed signature is not a valid signature. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga1dcc6d130633ed5db8942257581b55dd" title="The requested operation or a parameter is not supported by this implementation. ">PSA_ERROR_NOT_SUPPORTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga798df25a505ebf931f7bec1f80f1f85f" title="The parameters passed to the function are invalid. ">PSA_ERROR_INVALID_ARGUMENT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga91b2ad8a867517a2651f1b076c5216e5" title="There is not enough runtime memory. ">PSA_ERROR_INSUFFICIENT_MEMORY</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga5cdb6948371d49e916106249020ea3f7" title="There was a communication failure inside the implementation. ">PSA_ERROR_COMMUNICATION_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga08b10e70fa5ff0b05c631d9f8f6b2c6b" title="A hardware failure was detected. ">PSA_ERROR_HARDWARE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga116f4d4c6a9d9db3397991a8472d8950" title="A tampering attempt was detected. ">PSA_ERROR_CORRUPTION_DETECTED</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gadd169a1af2707862b95fb9df91dfc37d" title="There was a storage failure that may have led to data loss. ">PSA_ERROR_STORAGE_FAILURE</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga9febb81a44bdeb4c6c42bf4f697b13bf" title="Stored data has been corrupted. ">PSA_ERROR_DATA_CORRUPT</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#gacebfbd25a7c2a727694fb57182a66533" title="Data read from storage is not valid for the implementation. ">PSA_ERROR_DATA_INVALID</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="group__error.html#ga933d40fa2a591004f2e93aa91e11db84" title="The requested action cannot be performed in the current state. ">PSA_ERROR_BAD_STATE</a></td><td>The library has not been previously initialized by <a class="el" href="group__initialization.html#ga2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization. ">psa_crypto_init()</a>. It is implementation-dependent whether a failure to initialize results in this error code. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group__asymmetric.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:15:00 GMT -->
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/ffconf_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:07:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | ffconf.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="ffconf_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/ffconf_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/ffconf_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_c6fb7cfc6dd92a7f08bce53368056667.html">features</a></li><li class="navelem"><a class="el" href="dir_889d0ea28fbea8885de34934b4dc58dc.html">storage</a></li><li class="navelem"><a class="el" href="dir_7642fda09fb36a51cb2f8129dfa89c59.html">filesystem</a></li><li class="navelem"><a class="el" href="dir_c9dd0aa04782493878bea818e184e7e9.html">fat</a></li><li class="navelem"><a class="el" href="dir_1dc559f0226cd3d9f70acf045300a24c.html">ChaN</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ffconf.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*---------------------------------------------------------------------------/</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/  FatFs - Configuration file</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment">/---------------------------------------------------------------------------*/</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> </div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="preprocessor">#define FFCONF_DEF 89352    </span><span class="comment">/* Revision ID */</span><span class="preprocessor"></span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> </div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="preprocessor">#define FFS_DBG         0</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> </div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment">/*---------------------------------------------------------------------------/</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment">/ Function Configurations</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment">/---------------------------------------------------------------------------*/</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="preprocessor">#define FF_FS_READONLY  0</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment">/* This option switches read-only configuration. (0:Read/Write or 1:Read-only)</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment">/  Read-only configuration removes writing API functions, f_write(), f_sync(),</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment">/  f_unlink(), f_mkdir(), f_chmod(), f_rename(), f_truncate(), f_getfree()</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment">/  and optional writing functions as well. */</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> </div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="preprocessor">#define FF_FS_MINIMIZE  0</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment">/* This option defines minimization level to remove some basic API functions.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment">/</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">/   0: Basic functions are fully enabled.</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment">/   1: f_stat(), f_getfree(), f_unlink(), f_mkdir(), f_truncate() and f_rename()</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="comment">/      are removed.</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="comment">/   2: f_opendir(), f_readdir() and f_closedir() are removed in addition to 1.</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="comment">/   3: f_lseek() function is removed in addition to 2. */</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> </div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#define FF_USE_STRFUNC  0</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment">/* This option switches string functions, f_gets(), f_putc(), f_puts() and f_printf().</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment">/</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment">/  0: Disable string functions.</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment">/  1: Enable without LF-CRLF conversion.</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment">/  2: Enable with LF-CRLF conversion. */</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="preprocessor">#define FF_USE_FIND     0</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment">/* This option switches filtered directory read functions, f_findfirst() and</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="comment">/  f_findnext(). (0:Disable, 1:Enable 2:Enable with matching altname[] too) */</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> </div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#define FF_USE_MKFS     1</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment">/* This option switches f_mkfs() function. (0:Disable or 1:Enable) */</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="preprocessor">#define FF_USE_FASTSEEK 0</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="comment">/* This option switches fast seek function. (0:Disable or 1:Enable) */</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> </div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="preprocessor">#define FF_USE_EXPAND   0</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">/* This option switches f_expand function. (0:Disable or 1:Enable) */</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> </div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="preprocessor">#define FF_USE_CHMOD    0</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment">/* This option switches attribute manipulation functions, f_chmod() and f_utime().</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">/  (0:Disable or 1:Enable) Also FF_FS_READONLY needs to be 0 to enable this option. */</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> </div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="preprocessor">#define FF_USE_LABEL    0</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment">/* This option switches volume label functions, f_getlabel() and f_setlabel().</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="comment">/  (0:Disable or 1:Enable) */</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> </div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> </div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="preprocessor">#define FF_USE_FORWARD  0</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment">/* This option switches f_forward() function. (0:Disable or 1:Enable) */</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> </div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">/*---------------------------------------------------------------------------/</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">/ Locale and Namespace Configurations</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">/---------------------------------------------------------------------------*/</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> </div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="preprocessor">#define FF_CODE_PAGE    437</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">/* This option specifies the OEM code page to be used on the target system.</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment">/  Incorrect code page setting can cause a file open failure.</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">/</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">/   437 - U.S.</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment">/   720 - Arabic</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">/   737 - Greek</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">/   771 - KBL</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="comment">/   775 - Baltic</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">/   850 - Latin 1</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">/   852 - Latin 2</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment">/   855 - Cyrillic</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment">/   857 - Turkish</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="comment">/   860 - Portuguese</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment">/   861 - Icelandic</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment">/   862 - Hebrew</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment">/   863 - Canadian French</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">/   864 - Arabic</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> <span class="comment">/   865 - Nordic</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment">/   866 - Russian</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">/   869 - Greek 2</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">/   932 - Japanese (DBCS)</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">/   936 - Simplified Chinese (DBCS)</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">/   949 - Korean (DBCS)</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">/   950 - Traditional Chinese (DBCS)</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="comment">/     0 - Include all code pages above and configured by f_setcp()</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment">*/</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> </div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> </div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="preprocessor">#define FF_USE_LFN      3</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="preprocessor">#define FF_MAX_LFN      255</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">/* The FF_USE_LFN switches the support for LFN (long file name).</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">/</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">/   0: Disable LFN. FF_MAX_LFN has no effect.</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment">/   1: Enable LFN with static working buffer on the BSS. Always NOT thread-safe.</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">/   2: Enable LFN with dynamic working buffer on the STACK.</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">/   3: Enable LFN with dynamic working buffer on the HEAP.</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">/</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">/  To enable the LFN, ffunicode.c needs to be added to the project. The LFN function</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">/  requiers certain internal working buffer occupies (FF_MAX_LFN + 1) * 2 bytes and</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">/  additional (FF_MAX_LFN + 44) / 15 * 32 bytes when exFAT is enabled.</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="comment">/  The FF_MAX_LFN defines size of the working buffer in UTF-16 code unit and it can</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment">/  be in range of 12 to 255. It is recommended to be set 255 to fully support LFN</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">/  specification.</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment">/  When use stack for the working buffer, take care on stack overflow. When use heap</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment">/  memory for the working buffer, memory management functions, ff_memalloc() and</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment">/  ff_memfree() in ffsystem.c, need to be added to the project. */</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> </div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> </div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="preprocessor">#define FF_LFN_UNICODE  0</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">/* This option switches the character encoding on the API when LFN is enabled.</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="comment">/</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment">/   0: ANSI/OEM in current CP (TCHAR = char)</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">/   1: Unicode in UTF-16 (TCHAR = WCHAR)</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">/   2: Unicode in UTF-8 (TCHAR = char)</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">/</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment">/  Also behavior of string I/O functions will be affected by this option.</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">/  When LFN is not enabled, this option has no effect. */</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> </div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> </div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="preprocessor">#define FF_LFN_BUF      255</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="preprocessor">#define FF_SFN_BUF      12</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">/* This set of options defines size of file name members in the FILINFO structure</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">/  which is used to read out directory items. These values should be suffcient for</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="comment">/  the file names to read. The maximum possible length of the read file name depends</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> <span class="comment">/  on character encoding. When LFN is not enabled, these options have no effect. */</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> </div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> </div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="preprocessor">#define FF_STRF_ENCODE  3</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">/* When FF_LFN_UNICODE &gt;= 1 with LFN enabled, string I/O functions, f_gets(),</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">/  f_putc(), f_puts and f_printf() convert the character encoding in it.</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment">/  This option selects assumption of character encoding ON THE FILE to be</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">/  read/written via those functions.</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">/</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">/   0: ANSI/OEM in current CP</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">/   1: Unicode in UTF-16LE</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">/   2: Unicode in UTF-16BE</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">/   3: Unicode in UTF-8</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment">*/</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> </div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> </div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="preprocessor">#define FF_FS_RPATH     1</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment">/* This option configures support for relative path.</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment">/</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">/   0: Disable relative path and remove related functions.</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">/   1: Enable relative path. f_chdir() and f_chdrive() are available.</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">/   2: f_getcwd() function is available in addition to 1.</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">*/</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> </div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> </div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">/*---------------------------------------------------------------------------/</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">/ Drive/Volume Configurations</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">/---------------------------------------------------------------------------*/</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> </div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="preprocessor">#define FF_VOLUMES      4</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">/* Number of volumes (logical drives) to be used. (1-10) */</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> </div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> </div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="preprocessor">#define FF_STR_VOLUME_ID    0</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="preprocessor">#define FF_VOLUME_STRS      "RAM","NAND","CF","SD","SD2","USB","USB2","USB3"</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">/* FF_STR_VOLUME_ID switches string support for volume ID.</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment">/  When FF_STR_VOLUME_ID is set to 1, also pre-defined strings can be used as drive</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">/  number in the path name. FF_VOLUME_STRS defines the drive ID strings for each</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">/  logical drives. Number of items must be equal to FF_VOLUMES. Valid characters for</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">/  the drive ID strings are: A-Z and 0-9. */</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> </div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> </div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="preprocessor">#define FF_MULTI_PARTITION  0</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">/* This option switches support for multiple volumes on the physical drive.</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">/  By default (0), each logical drive number is bound to the same physical drive</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">/  number and only an FAT volume found on the physical drive will be mounted.</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">/  When this function is enabled (1), each logical drive number can be bound to</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">/  arbitrary physical drive and partition listed in the VolToPart[]. Also f_fdisk()</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment">/  funciton will be available. */</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> </div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> </div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="preprocessor">#define FF_MIN_SS       512</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="preprocessor">#define FF_MAX_SS       4096</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="comment">/* This set of options configures the range of sector size to be supported. (512,</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment">/  1024, 2048 or 4096) Always set both 512 for most systems, generic memory card and</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">/  harddisk. But a larger value may be required for on-board flash memory and some</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment">/  type of optical media. When FF_MAX_SS is larger than FF_MIN_SS, FatFs is configured</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment">/  for variable sector size mode and disk_ioctl() function needs to implement</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment">/  GET_SECTOR_SIZE command. */</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> </div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> </div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="preprocessor">#define FF_USE_TRIM     1</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment">/* This option switches support for ATA-TRIM. (0:Disable or 1:Enable)</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">/  To enable Trim function, also CTRL_TRIM command should be implemented to the</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">/  disk_ioctl() function. */</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> </div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> </div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="preprocessor">#define FF_FS_NOFSINFO  0</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="comment">/* If you need to know correct free space on the FAT32 volume, set bit 0 of this</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="comment">/  option, and f_getfree() function at first time after volume mount will force</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment">/  a full FAT scan. Bit 1 controls the use of last allocated cluster number.</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">/</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment">/  bit0=0: Use free cluster count in the FSINFO if available.</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="comment">/  bit0=1: Do not trust free cluster count in the FSINFO.</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment">/  bit1=0: Use last allocated cluster number in the FSINFO if available.</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">/  bit1=1: Do not trust last allocated cluster number in the FSINFO.</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment">*/</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> </div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> </div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> </div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="comment">/*---------------------------------------------------------------------------/</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment">/ System Configurations</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment">/---------------------------------------------------------------------------*/</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> </div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="preprocessor">#define FF_FS_TINY      1</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment">/* This option switches tiny buffer configuration. (0:Normal or 1:Tiny)</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="comment">/  At the tiny configuration, size of file object (FIL) is shrinked FF_MAX_SS bytes.</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment">/  Instead of private sector buffer eliminated from the file object, common sector</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment">/  buffer in the filesystem object (FATFS) is used for the file data transfer. */</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> </div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> </div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="preprocessor">#define FF_FS_EXFAT     0</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">/* This option switches support for exFAT filesystem. (0:Disable or 1:Enable)</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="comment">/  When enable exFAT, also LFN needs to be enabled.</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment">/  Note that enabling exFAT discards ANSI C (C89) compatibility. */</span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> </div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> </div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="preprocessor">#define FF_FS_HEAPBUF   1</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">/* This option enables the use of the heap for allocating buffers. Otherwise</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment">/  _MAX_SS sized buffers are allocated statically in relevant structures (in</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment">/  FATFS if _FS_TINY, otherwise in FATFS and FIL)</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">/  This option allows the filesystem to dynamically allocate the buffers based</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">/  on underlying sector size. */</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> </div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> </div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="preprocessor">#define FF_FS_NORTC     0</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="preprocessor">#define FF_NORTC_MON    1</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="preprocessor">#define FF_NORTC_MDAY   1</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="preprocessor">#define FF_NORTC_YEAR   2017</span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">/* The option FF_FS_NORTC switches timestamp functiton. If the system does not have</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">/  any RTC function or valid timestamp is not needed, set FF_FS_NORTC = 1 to disable</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment">/  the timestamp function. All objects modified by FatFs will have a fixed timestamp</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment">/  defined by FF_NORTC_MON, FF_NORTC_MDAY and FF_NORTC_YEAR in local time.</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="comment">/  To enable timestamp function (FF_FS_NORTC = 0), get_fattime() function need to be</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment">/  added to the project to read current time form real-time clock. FF_NORTC_MON,</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment">/  FF_NORTC_MDAY and FF_NORTC_YEAR have no effect.</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment">/  These options have no effect at read-only configuration (FF_FS_READONLY = 1). */</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> </div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> </div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="preprocessor">#define FF_FS_LOCK      0</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">/* The option FF_FS_LOCK switches file lock function to control duplicated file open</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">/  and illegal operation to open objects. This option must be 0 when FF_FS_READONLY</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">/  is 1.</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment">/</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment">/  0:  Disable file lock function. To avoid volume corruption, application program</span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment">/      should avoid illegal open, remove and rename to the open objects.</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment">/  &gt;0: Enable file lock function. The value defines how many files/sub-directories</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment">/      can be opened simultaneously under file lock control. Note that the file</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment">/      lock control is independent of re-entrancy. */</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> </div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> </div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="preprocessor">#define FF_FS_REENTRANT 0</span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="preprocessor">#define FF_FS_TIMEOUT   1000</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="preprocessor">#define FF_SYNC_t       HANDLE</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment">/* The option FF_FS_REENTRANT switches the re-entrancy (thread safe) of the FatFs</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="comment">/  module itself. Note that regardless of this option, file access to different</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="comment">/  volume is always re-entrant and volume control functions, f_mount(), f_mkfs()</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="comment">/  and f_fdisk() function, are always not re-entrant. Only file/directory access</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">/  to the same volume is under control of this function.</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment">/</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment">/   0: Disable re-entrancy. FF_FS_TIMEOUT and FF_SYNC_t have no effect.</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment">/   1: Enable re-entrancy. Also user provided synchronization handlers,</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment">/      ff_req_grant(), ff_rel_grant(), ff_del_syncobj() and ff_cre_syncobj()</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">/      function, must be added to the project. Samples are available in</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment">/      option/syscall.c.</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment">/</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment">/  The FF_FS_TIMEOUT defines timeout period in unit of time tick.</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">/  The FF_SYNC_t defines O/S dependent sync object type. e.g. HANDLE, ID, OS_EVENT*,</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment">/  SemaphoreHandle_t and etc. A header file for O/S definitions needs to be</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment">/  included somewhere in the scope of ff.h. */</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> </div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment">/* #include &lt;windows.h&gt; // O/S definitions  */</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> </div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="preprocessor">#define FLUSH_ON_NEW_CLUSTER    0   </span><span class="comment">/* Sync the file on every new cluster */</span><span class="preprocessor"></span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="preprocessor">#define FLUSH_ON_NEW_SECTOR     1   </span><span class="comment">/* Sync the file on every new sector */</span><span class="preprocessor"></span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="comment">/* Only one of these two defines needs to be set to 1. If both are set to 0</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">   the file is only sync when closed.</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">   Clusters are group of sectors (eg: 8 sectors). Flushing on new cluster means</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment">   it would be less often than flushing on new sector. Sectors are generally</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment">   512 Bytes long. */</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> </div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> </div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">/*--- End of configuration options ---*/</span></div></div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/ffconf_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:07:05 GMT -->
+</html>

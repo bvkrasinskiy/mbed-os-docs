@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/group__platform__toolchain.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:01:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Toolchain functions</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__platform__toolchain.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/group__platform__toolchain.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/group__platform__toolchain.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Toolchain functions<div class="ingroups"><a class="el" href="group__mbed-os-public.html">Public API</a> » <a class="el" href="group__platform-public-api.html">Platform</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga9f95037893bd45bde2587185095f4e3b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga9f95037893bd45bde2587185095f4e3b">MBED_PACKED</a>(struct)   struct __attribute__((packed))</td></tr>
+<tr class="memdesc:ga9f95037893bd45bde2587185095f4e3b"><td class="mdescLeft"> </td><td class="mdescRight">MBED_PACKED Pack a structure, preventing any padding from being added between fields.  <a href="#ga9f95037893bd45bde2587185095f4e3b">More...</a><br/></td></tr>
+<tr class="separator:ga9f95037893bd45bde2587185095f4e3b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2d03065d5f5d1d2096f06f31218509fb"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga2d03065d5f5d1d2096f06f31218509fb">MBED_ALIGN</a>(N)   __attribute__((aligned(N)))</td></tr>
+<tr class="memdesc:ga2d03065d5f5d1d2096f06f31218509fb"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="group__platform__toolchain.html#ga2d03065d5f5d1d2096f06f31218509fb" title="MBED_ALIGN(N) Declare a variable to be aligned on an N-byte boundary. ">MBED_ALIGN(N)</a> Declare a variable to be aligned on an N-byte boundary.  <a href="#ga2d03065d5f5d1d2096f06f31218509fb">More...</a><br/></td></tr>
+<tr class="separator:ga2d03065d5f5d1d2096f06f31218509fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3e0b3dc191a8e64de80be44bbc8d5193"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga3e0b3dc191a8e64de80be44bbc8d5193">MBED_UNUSED</a></td></tr>
+<tr class="memdesc:ga3e0b3dc191a8e64de80be44bbc8d5193"><td class="mdescLeft"> </td><td class="mdescRight">MBED_UNUSED Declare a function argument to be unused, suppressing compiler warnings.  <a href="#ga3e0b3dc191a8e64de80be44bbc8d5193">More...</a><br/></td></tr>
+<tr class="separator:ga3e0b3dc191a8e64de80be44bbc8d5193"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga88e46b170c6647571d38e75b987fccce"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga88e46b170c6647571d38e75b987fccce">MBED_USED</a></td></tr>
+<tr class="memdesc:ga88e46b170c6647571d38e75b987fccce"><td class="mdescLeft"> </td><td class="mdescRight">MBED_USED Inform the compiler that a static variable is to be retained in the object file, even if it is unreferenced.  <a href="#ga88e46b170c6647571d38e75b987fccce">More...</a><br/></td></tr>
+<tr class="separator:ga88e46b170c6647571d38e75b987fccce"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa7bb5d6a31c6888e54eea75c60f06400"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#gaa7bb5d6a31c6888e54eea75c60f06400">MBED_WEAK</a>   __attribute__((weak))</td></tr>
+<tr class="memdesc:gaa7bb5d6a31c6888e54eea75c60f06400"><td class="mdescLeft"> </td><td class="mdescRight">MBED_WEAK Mark a function as being weak.  <a href="#gaa7bb5d6a31c6888e54eea75c60f06400">More...</a><br/></td></tr>
+<tr class="separator:gaa7bb5d6a31c6888e54eea75c60f06400"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga28e5edc9118df93fb8d8aa85af2baa7a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga28e5edc9118df93fb8d8aa85af2baa7a">MBED_PURE</a></td></tr>
+<tr class="memdesc:ga28e5edc9118df93fb8d8aa85af2baa7a"><td class="mdescLeft"> </td><td class="mdescRight">MBED_COMPILER_BARRIER Stop the compiler moving memory accesses.  <a href="#ga28e5edc9118df93fb8d8aa85af2baa7a">More...</a><br/></td></tr>
+<tr class="separator:ga28e5edc9118df93fb8d8aa85af2baa7a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaedb0cb7d8f70bd6be28364172ca931ca"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#gaedb0cb7d8f70bd6be28364172ca931ca">MBED_NOINLINE</a></td></tr>
+<tr class="memdesc:gaedb0cb7d8f70bd6be28364172ca931ca"><td class="mdescLeft"> </td><td class="mdescRight">MBED_NOINLINE Declare a function that must not be inlined.  <a href="#gaedb0cb7d8f70bd6be28364172ca931ca">More...</a><br/></td></tr>
+<tr class="separator:gaedb0cb7d8f70bd6be28364172ca931ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4f9a9e7b05304896ba993457907b3f28"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga4f9a9e7b05304896ba993457907b3f28">MBED_FORCEINLINE</a>   inline</td></tr>
+<tr class="memdesc:ga4f9a9e7b05304896ba993457907b3f28"><td class="mdescLeft"> </td><td class="mdescRight">MBED_FORCEINLINE Declare a function that must always be inlined.  <a href="#ga4f9a9e7b05304896ba993457907b3f28">More...</a><br/></td></tr>
+<tr class="separator:ga4f9a9e7b05304896ba993457907b3f28"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab7676a6962d493ab9e0c692e942d618a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#gab7676a6962d493ab9e0c692e942d618a">MBED_NORETURN</a></td></tr>
+<tr class="memdesc:gab7676a6962d493ab9e0c692e942d618a"><td class="mdescLeft"> </td><td class="mdescRight">MBED_NORETURN Declare a function that will never return.  <a href="#gab7676a6962d493ab9e0c692e942d618a">More...</a><br/></td></tr>
+<tr class="separator:gab7676a6962d493ab9e0c692e942d618a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga612b8ce3a819349edecfc605056297fc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga612b8ce3a819349edecfc605056297fc">MBED_UNREACHABLE</a>   while (1)</td></tr>
+<tr class="memdesc:ga612b8ce3a819349edecfc605056297fc"><td class="mdescLeft"> </td><td class="mdescRight">MBED_UNREACHABLE An unreachable statement.  <a href="#ga612b8ce3a819349edecfc605056297fc">More...</a><br/></td></tr>
+<tr class="separator:ga612b8ce3a819349edecfc605056297fc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2822a5c443e30d9fff9c591743ac616d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(D,  M)   MBED_DEPRECATED(M " [since " D "]")</td></tr>
+<tr class="memdesc:ga2822a5c443e30d9fff9c591743ac616d"><td class="mdescLeft"> </td><td class="mdescRight">MBED_DEPRECATED("message string") Mark a function declaration as deprecated, if it used then a warning will be issued by the compiler possibly including the provided message.  <a href="#ga2822a5c443e30d9fff9c591743ac616d">More...</a><br/></td></tr>
+<tr class="separator:ga2822a5c443e30d9fff9c591743ac616d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0dee71e8eee185cce404cecdd7e51656"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga0dee71e8eee185cce404cecdd7e51656">MBED_CALLER_ADDR</a>()   (NULL)</td></tr>
+<tr class="memdesc:ga0dee71e8eee185cce404cecdd7e51656"><td class="mdescLeft"> </td><td class="mdescRight"><a class="el" href="group__platform__toolchain.html#ga0dee71e8eee185cce404cecdd7e51656" title="MBED_CALLER_ADDR() Returns the caller of the current function. ">MBED_CALLER_ADDR()</a> Returns the caller of the current function.  <a href="#ga0dee71e8eee185cce404cecdd7e51656">More...</a><br/></td></tr>
+<tr class="separator:ga0dee71e8eee185cce404cecdd7e51656"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa5792381a31171fad598c20f5caada09"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#gaa5792381a31171fad598c20f5caada09">MBED_PRETTY_FUNCTION</a>   __PRETTY_FUNCTION__</td></tr>
+<tr class="memdesc:gaa5792381a31171fad598c20f5caada09"><td class="mdescLeft"> </td><td class="mdescRight">Macro expanding to a string literal of the enclosing function name.  <a href="#gaa5792381a31171fad598c20f5caada09">More...</a><br/></td></tr>
+<tr class="separator:gaa5792381a31171fad598c20f5caada09"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1cd0ba289cd20f676049dac0fe89defd"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__platform__toolchain.html#ga1cd0ba289cd20f676049dac0fe89defd">MBED_NONSECURE_ENTRY</a></td></tr>
+<tr class="memdesc:ga1cd0ba289cd20f676049dac0fe89defd"><td class="mdescLeft"> </td><td class="mdescRight">MBED_NONSECURE_ENTRY Declare a function that can be called from non-secure world or secure world.  <a href="#ga1cd0ba289cd20f676049dac0fe89defd">More...</a><br/></td></tr>
+<tr class="separator:ga1cd0ba289cd20f676049dac0fe89defd"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ga2d03065d5f5d1d2096f06f31218509fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_ALIGN</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">N</td><td>)</td>
+          <td>   __attribute__((aligned(N)))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="group__platform__toolchain.html#ga2d03065d5f5d1d2096f06f31218509fb" title="MBED_ALIGN(N) Declare a variable to be aligned on an N-byte boundary. ">MBED_ALIGN(N)</a> Declare a variable to be aligned on an N-byte boundary. </p>
+<dl class="section note"><dt>Note</dt><dd>IAR does not support alignment greater than word size on the stack</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_ALIGN(16) char a;</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00081">81</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0dee71e8eee185cce404cecdd7e51656"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_CALLER_ADDR</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>   (NULL)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p><a class="el" href="group__platform__toolchain.html#ga0dee71e8eee185cce404cecdd7e51656" title="MBED_CALLER_ADDR() Returns the caller of the current function. ">MBED_CALLER_ADDR()</a> Returns the caller of the current function. </p>
+<dl class="section note"><dt>Note</dt><dd>This macro is only implemented for GCC and ARMCC.</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> printf("This function was called from %p", MBED_CALLER_ADDR());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Address of the calling function </dd></dl>
+
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00400">400</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2822a5c443e30d9fff9c591743ac616d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_DEPRECATED_SINCE</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">D, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> </td>
+          <td class="paramname">M </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>   MBED_DEPRECATED(M " [since " D "]")</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_DEPRECATED("message string") Mark a function declaration as deprecated, if it used then a warning will be issued by the compiler possibly including the provided message. </p>
+<p>Note that not all compilers are able to display the message.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_DEPRECATED("don't foo any more, bar instead")</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> void foo(int arg);</div></div><!-- fragment --><p>MBED_DEPRECATED_SINCE("version", "message string") Mark a function declaration as deprecated, noting that the declaration was deprecated on the specified version. If the function is used then a warning will be issued by the compiler possibly including the provided message. Note that not all compilers are able to display this message.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_DEPRECATED_SINCE("mbed-os-5.1", "don't foo any more, bar instead")</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> void foo(int arg);</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00378">378</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4f9a9e7b05304896ba993457907b3f28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_FORCEINLINE   inline</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_FORCEINLINE Declare a function that must always be inlined. </p>
+<p>Failure to inline such a function will result in an error.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_FORCEINLINE void foo() {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> </div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00287">287</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaedb0cb7d8f70bd6be28364172ca931ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_NOINLINE</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_NOINLINE Declare a function that must not be inlined. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_NOINLINE void foo() {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> </div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00265">265</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1cd0ba289cd20f676049dac0fe89defd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_NONSECURE_ENTRY</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_NONSECURE_ENTRY Declare a function that can be called from non-secure world or secure world. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_NONSECURE_ENTRY void foo() {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> </div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00514">514</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab7676a6962d493ab9e0c692e942d618a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_NORETURN</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_NORETURN Declare a function that will never return. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_NORETURN void foo() {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     // must never return</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>     while (1) {}</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00313">313</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9f95037893bd45bde2587185095f4e3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_PACKED</td>
+          <td>(</td>
+          <td class="paramtype"> </td>
+          <td class="paramname">struct</td><td>)</td>
+          <td>   struct __attribute__((packed))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_PACKED Pack a structure, preventing any padding from being added between fields. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_PACKED(struct) foo {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     char x;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>     int y;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> };</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00057">57</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa5792381a31171fad598c20f5caada09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_PRETTY_FUNCTION   __PRETTY_FUNCTION__</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Macro expanding to a string literal of the enclosing function name. </p>
+<p>The string returned takes into account language specificity and yield human readable content.</p>
+<p>As an example, if the macro is used within a C++ function then the string literal containing the function name will contain the complete signature of the function - including template parameters - and namespace qualifications. </p>
+
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00425">425</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga28e5edc9118df93fb8d8aa85af2baa7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_PURE</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_COMPILER_BARRIER Stop the compiler moving memory accesses. </p>
+<p>The barrier stops memory accesses from being moved from one side of the barrier to the other for safety against other threads and interrupts.</p>
+<p>This macro should only be used if we know only one CPU is accessing the data, or we are otherwise synchronising CPUs via acquire/release instructions. Otherwise, use MBED_BARRIER, which will act as a compiler barrier and also a CPU barrier if necessary. </p>
+
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00244">244</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga612b8ce3a819349edecfc605056297fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_UNREACHABLE   while (1)</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_UNREACHABLE An unreachable statement. </p>
+<p>If the statement is reached, behavior is undefined. Useful in situations where the compiler cannot deduce if the code is unreachable.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> void foo(int arg) {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     switch (arg) {</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>         case 1: return 1;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>         case 2: return 2;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>         ...</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>     }</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>     MBED_UNREACHABLE;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00339">339</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3e0b3dc191a8e64de80be44bbc8d5193"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_UNUSED</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_UNUSED Declare a function argument to be unused, suppressing compiler warnings. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> void foo(MBED_UNUSED int arg) {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> </div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00100">100</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga88e46b170c6647571d38e75b987fccce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_USED</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_USED Inform the compiler that a static variable is to be retained in the object file, even if it is unreferenced. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_USED int foo;</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00120">120</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa7bb5d6a31c6888e54eea75c60f06400"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MBED_WEAK   __attribute__((weak))</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>MBED_WEAK Mark a function as being weak. </p>
+<dl class="section note"><dt>Note</dt><dd>Functions should only be marked as weak in the source file. The header file should contain a regular function declaration to insure the function is emitted. A function marked weak will not be emitted if an alternative non-weak implementation is defined.</dd>
+<dd>
+Weak functions are not friendly to making code re-usable, as they can only be overridden once (and if they are multiply overridden the linker will emit no warning). You should not normally use weak symbols as part of the API to re-usable modules.</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> #include "mbed_toolchain.h"</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> MBED_WEAK void foo() {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     // a weak implementation of foo that can be overriden by a definition</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>     // without  __weak</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> }</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="mbed__toolchain_8h_source.html#l00154">154</a> of file <a class="el" href="mbed__toolchain_8h_source.html">mbed_toolchain.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/group__platform__toolchain.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:01:06 GMT -->
+</html>

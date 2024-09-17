@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_mail_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:25:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Mail.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_mail_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_mail_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_mail_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_6083bc4a5224c7a1cb00f2f18c2f6ca7.html">rtos</a></li><li class="navelem"><a class="el" href="dir_8923ec7eacc7841181b6efc0ed10c345.html">include</a></li><li class="navelem"><a class="el" href="dir_d6db1452e6c62760d11705fa0418faa2.html">rtos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Mail.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/* mbed Microcontroller Library</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * Copyright (c) 2006-2019 ARM Limited</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> * SPDX-License-Identifier: MIT</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * of this software and associated documentation files (the "Software"), to deal</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * in the Software without restriction, including without limitation the rights</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> * copies of the Software, and to permit persons to whom the Software is</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> * furnished to do so, subject to the following conditions:</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> * The above copyright notice and this permission notice shall be included in</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * all copies or substantial portions of the Software.</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> * SOFTWARE.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="preprocessor">#ifndef MAIL_H</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="preprocessor">#define MAIL_H</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "rtos/Queue.h"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#include "rtos/MemoryPool.h"</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#include "rtos/mbed_rtos_types.h"</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#include "rtos/internal/mbed_rtos_storage.h"</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="preprocessor">#include "rtos/internal/mbed_rtos1_types.h"</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="preprocessor">#include "platform/mbed_toolchain.h"</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="preprocessor">#include "platform/mbed_assert.h"</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="preprocessor">#include "platform/NonCopyable.h"</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="preprocessor">#ifndef MBED_NO_GLOBAL_USING_DIRECTIVE</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="keyword">using namespace </span><a class="code" href="namespacertos.html">rtos</a>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#if MBED_CONF_RTOS_PRESENT || defined(DOXYGEN_ONLY)</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> </div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="keyword">namespace </span><a class="code" href="namespacertos.html">rtos</a> {<span class="comment"></span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="comment">/** \addtogroup rtos-public-api */</span><span class="comment"></span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="comment">/** @{*/</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="comment"></span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="comment">/**</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment"> * \defgroup rtos_Mail Mail class</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment"> * @{</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment"> */</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment"></span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">/** The Mail class allows you to control, send, receive or wait for mail.</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment"> * A mail is a memory block that is sent to a thread or interrupt service routine (ISR).</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment"> * @tparam  T         Data type of a single mail message element.</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment"> * @tparam  queue_sz  Maximum number of mail messages in queue.</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment"> *</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment"> * @note</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="comment"> * Memory considerations: The mail data store and control structures are part of this class - they do not (themselves)</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment"> * allocate memory on the heap, both for the Mbed OS and underlying RTOS objects (static or dynamic RTOS memory</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="comment"> * pools are not being used).</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment"> *</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment"> * @note</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="comment"> * Bare metal profile: This class is not supported.</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment"> */</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t queue_sz&gt;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html">   68</a></span> <span class="keyword">class </span><a class="code" href="classrtos_1_1_mail.html">Mail</a> : <span class="keyword">private</span> <a class="code" href="classmbed_1_1_non_copyable.html">mbed::NonCopyable</a>&lt;Mail&lt;T, queue_sz&gt; &gt; {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="keyword">public</span>:<span class="comment"></span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">    /** Create and initialize Mail queue.</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">     *</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">     */</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>     <a class="code" href="classrtos_1_1_mail.html#a99b520292627a8c4a0964c181c97054f">Mail</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment"></span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">    /** Check if the mail queue is empty.</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">     *</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment">     * @return State of queue.</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">     * @retval true  Mail queue is empty.</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">     * @retval false Mail queue contains mail.</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="comment">     *</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">     */</span></div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ac6e61de369e994009e36f344f99c15ad">   84</a></span>     <span class="keywordtype">bool</span> <a class="code" href="classrtos_1_1_mail.html#ac6e61de369e994009e36f344f99c15ad">empty</a>()<span class="keyword"> const</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="keyword">    </span>{</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>         <span class="keywordflow">return</span> _queue.empty();</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>     }</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment"></span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment">    /** Check if the mail queue is full.</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">     *</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> <span class="comment">     * @return State of queue.</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment">     * @retval true  Mail queue is full.</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">     * @retval false Mail queue is not full.</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">     *</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">     */</span></div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#aa0b75676033302511679a2f5e9638c4d">   97</a></span>     <span class="keywordtype">bool</span> <a class="code" href="classrtos_1_1_mail.html#aa0b75676033302511679a2f5e9638c4d">full</a>()<span class="keyword"> const</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="keyword">    </span>{</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>         <span class="keywordflow">return</span> _queue.full();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>     }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment"></span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment">    /** Allocate a memory block of type T, without blocking.</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment">     *</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">     * @param   millisec  Not used (see note).</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">     *</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment">     *</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">     * @note If blocking is required, use Mail::try_alloc_for or Mail::try_alloc_until</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">     * @deprecated Replaced with try_alloc. In future alloc() will be an untimed blocking call.</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">     */</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Replaced with try_alloc. In future alloc() will be an untimed blocking call."</span>)</div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a1284a8c22981220eb94fd73582f950fd">  113</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#a1284a8c22981220eb94fd73582f950fd">alloc</a>(<a class="code" href="group__platform__toolchain.html#ga3e0b3dc191a8e64de80be44bbc8d5193">MBED_UNUSED</a> uint32_t millisec = 0)</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>     {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_mail.html#ae141757f3e7501002ac137c83e4e686a">try_alloc</a>();</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>     }</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment"></span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment">    /** Allocate a memory block of type T, without blocking.</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment">     *</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment">     *</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">     * @note If blocking is required, use Mail::try_alloc_for or Mail::try_alloc_until</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="comment">     */</span></div><div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ae141757f3e7501002ac137c83e4e686a">  125</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ae141757f3e7501002ac137c83e4e686a">try_alloc</a>()</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>     {</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#ae141757f3e7501002ac137c83e4e686a">try_alloc</a>();</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>     }</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment"></span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">    /** Allocate a memory block of type T, optionally blocking.</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment">     *</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">     * @param   rel_time  Timeout value, or Kernel::wait_for_u32_forever.</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment">     *</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">     *</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">     * @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="comment">     */</span></div><div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ac01d110ce7cb71b9c1f5a0ff59216c15">  138</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ac01d110ce7cb71b9c1f5a0ff59216c15">try_alloc_for</a>(Kernel::Clock::duration_u32 rel_time)</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>     {</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#ac01d110ce7cb71b9c1f5a0ff59216c15">try_alloc_for</a>(rel_time);</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>     }</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment"></span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">    /** Allocate a memory block of type T, optionally blocking.</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment">     *</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">     * @param   millisec  Timeout value, or osWaitForever.</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">     *</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">     *</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">     * @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">     * @deprecated Pass a chrono duration, not an integer millisecond count. For example use `5s` rather than `5000`.</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment">     */</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Pass a chrono duration, not an integer millisecond count. For example use `5s` rather than `5000`."</span>)</div><div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ae7f986b1e99fc96f0ff59f41ea52c087">  153</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ae7f986b1e99fc96f0ff59f41ea52c087">alloc_for</a>(uint32_t millisec)</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>     {</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_mail.html#ac01d110ce7cb71b9c1f5a0ff59216c15">try_alloc_for</a>(std::chrono::duration&lt;uint32_t, std::milli&gt;(millisec));</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>     }</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment"></span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">    /** Allocate a memory block of type T, blocking.</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">     *</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">     * @param   abs_time  Absolute timeout time, referenced to Kernel::Clock.</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">     *</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">     *</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">     * @note the underlying RTOS may have a limit to the maximum wait time</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">     *   due to internal 32-bit computations, but this is guaranteed to work if the</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment">     *   wait is &lt;= 0x7fffffff milliseconds (~24 days). If the limit is exceeded,</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">     *   the wait will time out earlier than specified.</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment">     */</span></div><div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0">  170</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0">try_alloc_until</a>(Kernel::Clock::time_point abs_time)</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>     {</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0">try_alloc_until</a>(abs_time);</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>     }</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment"></span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">    /** Allocate a memory block of type T, blocking.</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">     *</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">     * @param   millisec  Absolute timeout time, referenced to Kernel::get_ms_count().</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">     *</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">     *</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">     * @note the underlying RTOS may have a limit to the maximum wait time</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">     *   due to internal 32-bit computations, but this is guaranteed to work if the</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">     *   wait is &lt;= 0x7fffffff milliseconds (~24 days). If the limit is exceeded,</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">     *   the wait will time out earlier than specified.</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment">     * @deprecated Pass a chrono time_point, not an integer millisecond count. For example use `Kernel::Clock::now() + 5s`</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment">     *             rather than `Kernel::get_ms_count() + 5000`.</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment">     */</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Pass a chrono time_point, not an integer millisecond count. For example use `Kernel::Clock::now() + 5s` rather than `Kernel::get_ms_count() + 5000`."</span>)</div><div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ab8d61f499dede9201b13d420124c0fed">  190</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ab8d61f499dede9201b13d420124c0fed">alloc_until</a>(uint64_t millisec)</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>     {</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_mail.html#a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0">try_alloc_until</a>(Kernel::Clock::time_point(std::chrono::duration&lt;uint64_t, std::milli&gt;(millisec)));</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>     }</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment"></span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment">    /** Allocate a memory block of type T, and set memory block to zero.</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment">     *</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment">     * @param   millisec  Not used (see note).</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment">     *</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment">     *</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">     * @note If blocking is required, use Mail::try_calloc_for or Mail::try_calloc_until</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="comment">     * @deprecated Replaced with try_calloc. In future calloc() will be an untimed blocking call.</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="comment">     */</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Replaced with try_calloc. In future calloc() will be an untimed blocking call."</span>)</div><div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a15d56f5da99d0e8241a582aaa4b54497">  206</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#a15d56f5da99d0e8241a582aaa4b54497">calloc</a>(<a class="code" href="group__platform__toolchain.html#ga3e0b3dc191a8e64de80be44bbc8d5193">MBED_UNUSED</a> uint32_t millisec = 0)</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>     {</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_mail.html#ae612d1e8dc82899bf4ab3e4e2e3bef3c">try_calloc</a>();</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>     }</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment"></span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="comment">    /** Allocate a memory block of type T, and set memory block to zero.</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment">     *</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment">     *</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">     * @note If blocking is required, use Mail::try_calloc_for or Mail::try_calloc_until</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">     */</span></div><div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ae612d1e8dc82899bf4ab3e4e2e3bef3c">  218</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ae612d1e8dc82899bf4ab3e4e2e3bef3c">try_calloc</a>()</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>     {</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#ae612d1e8dc82899bf4ab3e4e2e3bef3c">try_calloc</a>();</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>     }</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="comment"></span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment">    /** Allocate a memory block of type T, optionally blocking, and set memory block to zero.</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="comment">     *</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment">     * @param   rel_time  Timeout value, or Kernel::wait_for_u32_forever.</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment">     *</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment">     *</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">     * @note You may call this function from ISR context if the rel_time parameter is set to 0.</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">     */</span></div><div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a1946a36908db381f92061c0fbaf83fe2">  231</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#a1946a36908db381f92061c0fbaf83fe2">try_calloc_for</a>(Kernel::Clock::duration_u32 rel_time)</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>     {</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#a1946a36908db381f92061c0fbaf83fe2">try_calloc_for</a>(rel_time);</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>     }</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment"></span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">    /** Allocate a memory block of type T, optionally blocking, and set memory block to zero.</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment">     *</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment">     * @param   millisec  Timeout value, or osWaitForever.</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">     *</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="comment">     *</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment">     * @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment">     * @deprecated Pass a chrono duration, not an integer millisecond count. For example use `5s` rather than `5000`.</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment">     */</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Pass a chrono duration, not an integer millisecond count. For example use `5s` rather than `5000`."</span>)</div><div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ac3facb777299ea49d9be79884fdbada3">  246</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ac3facb777299ea49d9be79884fdbada3">calloc_for</a>(uint32_t millisec)</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>     {</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_mail.html#a1946a36908db381f92061c0fbaf83fe2">try_calloc_for</a>(std::chrono::duration&lt;uint32_t, std::milli&gt;(millisec));</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>     }</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment"></span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="comment">    /** Allocate a memory block of type T, blocking, and set memory block to zero.</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment">     *</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment">     * @param   abs_time  Absolute timeout time, referenced to Kernel::Clock.</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment">     *</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment">     *</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">     * @note the underlying RTOS may have a limit to the maximum wait time</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">     *   due to internal 32-bit computations, but this is guaranteed to work if the</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">     *   wait is &lt;= 0x7fffffff milliseconds (~24 days). If the limit is exceeded,</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment">     *   the wait will time out earlier than specified.</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment">     */</span></div><div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a3431dbf6375d4b9c920bf76de5daec9b">  263</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#a3431dbf6375d4b9c920bf76de5daec9b">try_calloc_until</a>(Kernel::Clock::time_point abs_time)</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>     {</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#a3431dbf6375d4b9c920bf76de5daec9b">try_calloc_until</a>(abs_time);</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>     }</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <span class="comment"></span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="comment">    /** Allocate a memory block of type T, blocking, and set memory block to zero.</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="comment">     *</span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment">     * @param   millisec  Absolute timeout time, referenced to Kernel::get_ms_count().</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment">     *</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment">     * @return  Pointer to memory block that you can fill with mail or nullptr in case error.</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="comment">     *</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="comment">     * @note You cannot call this function from ISR context.</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="comment">     * @note the underlying RTOS may have a limit to the maximum wait time</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">     *   due to internal 32-bit computations, but this is guaranteed to work if the</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment">     *   wait is &lt;= 0x7fffffff milliseconds (~24 days). If the limit is exceeded,</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment">     *   the wait will time out earlier than specified.</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment">     * @deprecated Pass a chrono time_point, not an integer millisecond count. For example use `Kernel::Clock::now() + 5s`</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment">     *             rather than `Kernel::get_ms_count() + 5000`.</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">     */</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Pass a chrono time_point, not an integer millisecond count. For example use `Kernel::Clock::now() + 5s` rather than `Kernel::get_ms_count() + 5000`."</span>)</div><div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#adbfae7a1794bea0634a70eab32325c6c">  283</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#adbfae7a1794bea0634a70eab32325c6c">calloc_until</a>(uint64_t millisec)</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>     {</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>         <span class="keywordflow">return</span> <a class="code" href="classrtos_1_1_mail.html#a3431dbf6375d4b9c920bf76de5daec9b">try_calloc_until</a>(Kernel::Clock::time_point(std::chrono::duration&lt;uint64_t, std::milli&gt;(millisec)));</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>     }</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment"></span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment">    /** Put a mail in the queue.</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment">     *</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment">     * @param   mptr  Memory block previously allocated with Mail::alloc or Mail::calloc.</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="comment">     *</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="comment">     * @return  Status code that indicates the execution status of the function (osOK on success).</span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="comment">     *          See note.</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">     *</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment">     * @note As the mail should have already been allocated, and the memory pool is the same size</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment">     *       as the queue, the put operation should always succeed, despite being implemented with</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment">     *       Queue::try_put - there is room in the queue for every mail from the pool. Therefore</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment">     *       use of the return value is deprecated, and the function will return void in future.</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">     */</span></div><div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a79dd6baa62e2f752dc9fca28c27a2bdb">  301</a></span>     osStatus <a class="code" href="classrtos_1_1_mail.html#a79dd6baa62e2f752dc9fca28c27a2bdb">put</a>(T *mptr)</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>     {</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>         <span class="keywordtype">bool</span> ok = _queue.try_put(mptr);</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>         <a class="code" href="group__platform___assert.html#ga07d05086e9e83ba1129461868cf49f27">MBED_ASSERT</a>(ok);</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>         <span class="keywordflow">return</span> ok ? osOK : osErrorResource;</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>     }</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> <span class="comment"></span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span> <span class="comment">    /** Get a mail from the queue.</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="comment">     *</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment">     * @param rel_time Timeout value (default: Kernel::wait_for_u32_forever).</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">     *</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="comment">     * @return Event that contains mail information and status code. The status code</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment">     *         is stored in the status member:</span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment">     *         @a osEventMail      Mail successfully received.</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> <span class="comment">     *         @a osOK             No mail is available (and no timeout was specified).</span></div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="comment">     *         @a osEventTimeout   No mail has arrived during the given timeout period.</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> <span class="comment">     *         @a osErrorParameter A parameter is invalid or outside of a permitted range.</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="comment">     *</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> <span class="comment">     * @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="comment">     * @deprecated Replaced with try_get and try_get_for. In future get will be an untimed blocking call.</span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> <span class="comment">     */</span></div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>     <a class="code" href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a>(<span class="stringliteral">"mbed-os-6.0.0"</span>, <span class="stringliteral">"Replaced with try_get and try_get_for. In future get will be an untimed blocking call."</span>)</div><div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ad033ffca23a9800b6607f08cec807417">  323</a></span>     osEvent <a class="code" href="classrtos_1_1_mail.html#ad033ffca23a9800b6607f08cec807417">get</a>(uint32_t millisec = osWaitForever)</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>     {</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>         osEvent evt = _queue.get(millisec);</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>         <span class="keywordflow">if</span> (evt.status == osEventMessage) {</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>             evt.status = osEventMail;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>         }</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>         <span class="keywordflow">return</span> evt;</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>     }</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span> <span class="comment"></span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="comment">    /** Get a mail from the queue.</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> <span class="comment">     *</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="comment">     * @return Pointer to received mail, or nullptr if none was received.</span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span> <span class="comment">     *</span></div><div class="line"><a name="l00336"></a><span class="lineno">  336</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span> <span class="comment">     */</span></div><div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#ad64de97923981d00bcfbd117e75b1f19">  338</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#ad64de97923981d00bcfbd117e75b1f19">try_get</a>()</div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>     {</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>         T *mptr = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>         _queue.try_get(&amp;mptr);</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>         <span class="keywordflow">return</span> mptr;</div><div class="line"><a name="l00343"></a><span class="lineno">  343</span>     }</div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> <span class="comment"></span></div><div class="line"><a name="l00345"></a><span class="lineno">  345</span> <span class="comment">    /** Get a mail from the queue.</span></div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> <span class="comment">     *</span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="comment">     * @param rel_time Timeout value or Kernel::wait_for_u32_forever.</span></div><div class="line"><a name="l00348"></a><span class="lineno">  348</span> <span class="comment">     *</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span> <span class="comment">     * @return Pointer to received mail, or nullptr if none was received.</span></div><div class="line"><a name="l00350"></a><span class="lineno">  350</span> <span class="comment">     *</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span> <span class="comment">     * @note You may call this function from ISR context if the millisec parameter is set to 0.</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span> <span class="comment">     */</span></div><div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a9c88c9407daae32e9332335b95ccf691">  353</a></span>     T *<a class="code" href="classrtos_1_1_mail.html#a9c88c9407daae32e9332335b95ccf691">try_get_for</a>(Kernel::Clock::duration_u32 rel_time)</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>     {</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>         T *mptr = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>         _queue.try_get_for(rel_time, &amp;mptr);</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>         <span class="keywordflow">return</span> mptr;</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>     }</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span> <span class="comment"></span></div><div class="line"><a name="l00360"></a><span class="lineno">  360</span> <span class="comment">    /** Free a memory block from a mail.</span></div><div class="line"><a name="l00361"></a><span class="lineno">  361</span> <span class="comment">     *</span></div><div class="line"><a name="l00362"></a><span class="lineno">  362</span> <span class="comment">     * @param mptr Pointer to the memory block that was obtained with Mail::get.</span></div><div class="line"><a name="l00363"></a><span class="lineno">  363</span> <span class="comment">     *</span></div><div class="line"><a name="l00364"></a><span class="lineno">  364</span> <span class="comment">     * @return Status code that indicates the execution status of the function (osOK on success).</span></div><div class="line"><a name="l00365"></a><span class="lineno">  365</span> <span class="comment">     *</span></div><div class="line"><a name="l00366"></a><span class="lineno">  366</span> <span class="comment">     * @note You may call this function from ISR context.</span></div><div class="line"><a name="l00367"></a><span class="lineno">  367</span> <span class="comment">     */</span></div><div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="classrtos_1_1_mail.html#a4f1bd716da81e7d0374ee4f182f74195">  368</a></span>     osStatus <a class="code" href="classrtos_1_1_mail.html#a4f1bd716da81e7d0374ee4f182f74195">free</a>(T *mptr)</div><div class="line"><a name="l00369"></a><span class="lineno">  369</span>     {</div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>         <span class="keywordflow">return</span> _pool.<a class="code" href="classrtos_1_1_memory_pool.html#a7d6a78f2054f1e24ea86f7f4c4df76c8">free</a>(mptr);</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>     }</div><div class="line"><a name="l00372"></a><span class="lineno">  372</span> </div><div class="line"><a name="l00373"></a><span class="lineno">  373</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span>     <a class="code" href="classrtos_1_1_queue.html">Queue&lt;T, queue_sz&gt;</a> _queue;</div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>     <a class="code" href="classrtos_1_1_memory_pool.html">MemoryPool&lt;T, queue_sz&gt;</a> _pool;</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span> };</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span> <span class="comment"></span></div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> <span class="comment">/** @}*/</span><span class="comment"></span></div><div class="line"><a name="l00379"></a><span class="lineno">  379</span> <span class="comment">/** @}*/</span></div><div class="line"><a name="l00380"></a><span class="lineno">  380</span> </div><div class="line"><a name="l00381"></a><span class="lineno">  381</span> }</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span> </div><div class="line"><a name="l00383"></a><span class="lineno">  383</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span> </div><div class="line"><a name="l00385"></a><span class="lineno">  385</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00386"></a><span class="lineno">  386</span> </div><div class="ttc" id="classrtos_1_1_mail_html_a79dd6baa62e2f752dc9fca28c27a2bdb"><div class="ttname"><a href="classrtos_1_1_mail.html#a79dd6baa62e2f752dc9fca28c27a2bdb">rtos::Mail::put</a></div><div class="ttdeci">osStatus put(T *mptr)</div><div class="ttdoc">Put a mail in the queue. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00301">Mail.h:301</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ad033ffca23a9800b6607f08cec807417"><div class="ttname"><a href="classrtos_1_1_mail.html#ad033ffca23a9800b6607f08cec807417">rtos::Mail::get</a></div><div class="ttdeci">osEvent get(uint32_t millisec=osWaitForever)</div><div class="ttdoc">Get a mail from the queue. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00323">Mail.h:323</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a99b520292627a8c4a0964c181c97054f"><div class="ttname"><a href="classrtos_1_1_mail.html#a99b520292627a8c4a0964c181c97054f">rtos::Mail::Mail</a></div><div class="ttdeci">Mail()=default</div><div class="ttdoc">Create and initialize Mail queue. </div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html"><div class="ttname"><a href="classrtos_1_1_memory_pool.html">rtos::MemoryPool&lt; T, queue_sz &gt;</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ac6e61de369e994009e36f344f99c15ad"><div class="ttname"><a href="classrtos_1_1_mail.html#ac6e61de369e994009e36f344f99c15ad">rtos::Mail::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdoc">Check if the mail queue is empty. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00084">Mail.h:84</a></div></div>
+<div class="ttc" id="classrtos_1_1_queue_html"><div class="ttname"><a href="classrtos_1_1_queue.html">rtos::Queue</a></div><div class="ttdoc">The Queue class represents a collection of objects that are stored first by order of priority...</div><div class="ttdef"><b>Definition:</b> <a href="_queue_8h_source.html#l00066">Queue.h:66</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ac3facb777299ea49d9be79884fdbada3"><div class="ttname"><a href="classrtos_1_1_mail.html#ac3facb777299ea49d9be79884fdbada3">rtos::Mail::calloc_for</a></div><div class="ttdeci">T * calloc_for(uint32_t millisec)</div><div class="ttdoc">Allocate a memory block of type T, optionally blocking, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00246">Mail.h:246</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a1946a36908db381f92061c0fbaf83fe2"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a1946a36908db381f92061c0fbaf83fe2">rtos::MemoryPool::try_calloc_for</a></div><div class="ttdeci">T * try_calloc_for(Kernel::Clock::duration_u32 rel_time)</div><div class="ttdoc">Allocate a memory block from a memory pool, optionally blocking, and set memory block to zero...</div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00235">MemoryPool.h:235</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ac01d110ce7cb71b9c1f5a0ff59216c15"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ac01d110ce7cb71b9c1f5a0ff59216c15">rtos::MemoryPool::try_alloc_for</a></div><div class="ttdeci">T * try_alloc_for(Kernel::Clock::duration_u32 rel_time)</div><div class="ttdoc">Allocate a memory block from a memory pool, optionally blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00142">MemoryPool.h:142</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a3431dbf6375d4b9c920bf76de5daec9b"><div class="ttname"><a href="classrtos_1_1_mail.html#a3431dbf6375d4b9c920bf76de5daec9b">rtos::Mail::try_calloc_until</a></div><div class="ttdeci">T * try_calloc_until(Kernel::Clock::time_point abs_time)</div><div class="ttdoc">Allocate a memory block of type T, blocking, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00263">Mail.h:263</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_adbfae7a1794bea0634a70eab32325c6c"><div class="ttname"><a href="classrtos_1_1_mail.html#adbfae7a1794bea0634a70eab32325c6c">rtos::Mail::calloc_until</a></div><div class="ttdeci">T * calloc_until(uint64_t millisec)</div><div class="ttdoc">Allocate a memory block of type T, blocking, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00283">Mail.h:283</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a1284a8c22981220eb94fd73582f950fd"><div class="ttname"><a href="classrtos_1_1_mail.html#a1284a8c22981220eb94fd73582f950fd">rtos::Mail::alloc</a></div><div class="ttdeci">T * alloc(MBED_UNUSED uint32_t millisec=0)</div><div class="ttdoc">Allocate a memory block of type T, without blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00113">Mail.h:113</a></div></div>
+<div class="ttc" id="classmbed_1_1_non_copyable_html"><div class="ttname"><a href="classmbed_1_1_non_copyable.html">mbed::NonCopyable</a></div><div class="ttdoc">Prevents generation of copy constructor and copy assignment operator in derived classes. </div><div class="ttdef"><b>Definition:</b> <a href="_non_copyable_8h_source.html#l00162">NonCopyable.h:162</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ae612d1e8dc82899bf4ab3e4e2e3bef3c"><div class="ttname"><a href="classrtos_1_1_mail.html#ae612d1e8dc82899bf4ab3e4e2e3bef3c">rtos::Mail::try_calloc</a></div><div class="ttdeci">T * try_calloc()</div><div class="ttdoc">Allocate a memory block of type T, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00218">Mail.h:218</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ad64de97923981d00bcfbd117e75b1f19"><div class="ttname"><a href="classrtos_1_1_mail.html#ad64de97923981d00bcfbd117e75b1f19">rtos::Mail::try_get</a></div><div class="ttdeci">T * try_get()</div><div class="ttdoc">Get a mail from the queue. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00338">Mail.h:338</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ae141757f3e7501002ac137c83e4e686a"><div class="ttname"><a href="classrtos_1_1_mail.html#ae141757f3e7501002ac137c83e4e686a">rtos::Mail::try_alloc</a></div><div class="ttdeci">T * try_alloc()</div><div class="ttdoc">Allocate a memory block of type T, without blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00125">Mail.h:125</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ab8d61f499dede9201b13d420124c0fed"><div class="ttname"><a href="classrtos_1_1_mail.html#ab8d61f499dede9201b13d420124c0fed">rtos::Mail::alloc_until</a></div><div class="ttdeci">T * alloc_until(uint64_t millisec)</div><div class="ttdoc">Allocate a memory block of type T, blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00190">Mail.h:190</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0"><div class="ttname"><a href="classrtos_1_1_mail.html#a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0">rtos::Mail::try_alloc_until</a></div><div class="ttdeci">T * try_alloc_until(Kernel::Clock::time_point abs_time)</div><div class="ttdoc">Allocate a memory block of type T, blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00170">Mail.h:170</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html"><div class="ttname"><a href="classrtos_1_1_mail.html">rtos::Mail</a></div><div class="ttdoc">The Mail class allows you to control, send, receive or wait for mail. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00068">Mail.h:68</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a7d6a78f2054f1e24ea86f7f4c4df76c8"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a7d6a78f2054f1e24ea86f7f4c4df76c8">rtos::MemoryPool::free</a></div><div class="ttdeci">osStatus free(T *block)</div><div class="ttdoc">Free a memory block. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00300">MemoryPool.h:300</a></div></div>
+<div class="ttc" id="group__platform___assert_html_ga07d05086e9e83ba1129461868cf49f27"><div class="ttname"><a href="group__platform___assert.html#ga07d05086e9e83ba1129461868cf49f27">MBED_ASSERT</a></div><div class="ttdeci">#define MBED_ASSERT(expr)                                                            </div><div class="ttdoc">MBED_ASSERT Declare runtime assertions: results in runtime error if condition is false. </div><div class="ttdef"><b>Definition:</b> <a href="mbed__assert_8h_source.html#l00066">mbed_assert.h:66</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a9ad0ebd7cad9e9b5c1cfa7a4d100c6c0">rtos::MemoryPool::try_alloc_until</a></div><div class="ttdeci">T * try_alloc_until(Kernel::Clock::time_point abs_time)</div><div class="ttdoc">Allocate a memory block from a memory pool, blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00176">MemoryPool.h:176</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a4f1bd716da81e7d0374ee4f182f74195"><div class="ttname"><a href="classrtos_1_1_mail.html#a4f1bd716da81e7d0374ee4f182f74195">rtos::Mail::free</a></div><div class="ttdeci">osStatus free(T *mptr)</div><div class="ttdoc">Free a memory block from a mail. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00368">Mail.h:368</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a9c88c9407daae32e9332335b95ccf691"><div class="ttname"><a href="classrtos_1_1_mail.html#a9c88c9407daae32e9332335b95ccf691">rtos::Mail::try_get_for</a></div><div class="ttdeci">T * try_get_for(Kernel::Clock::duration_u32 rel_time)</div><div class="ttdoc">Get a mail from the queue. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00353">Mail.h:353</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ae141757f3e7501002ac137c83e4e686a"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ae141757f3e7501002ac137c83e4e686a">rtos::MemoryPool::try_alloc</a></div><div class="ttdeci">T * try_alloc()</div><div class="ttdoc">Allocate a memory block from a memory pool, without blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00117">MemoryPool.h:117</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a15d56f5da99d0e8241a582aaa4b54497"><div class="ttname"><a href="classrtos_1_1_mail.html#a15d56f5da99d0e8241a582aaa4b54497">rtos::Mail::calloc</a></div><div class="ttdeci">T * calloc(MBED_UNUSED uint32_t millisec=0)</div><div class="ttdoc">Allocate a memory block of type T, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00206">Mail.h:206</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ae7f986b1e99fc96f0ff59f41ea52c087"><div class="ttname"><a href="classrtos_1_1_mail.html#ae7f986b1e99fc96f0ff59f41ea52c087">rtos::Mail::alloc_for</a></div><div class="ttdeci">T * alloc_for(uint32_t millisec)</div><div class="ttdoc">Allocate a memory block of type T, optionally blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00153">Mail.h:153</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_a1946a36908db381f92061c0fbaf83fe2"><div class="ttname"><a href="classrtos_1_1_mail.html#a1946a36908db381f92061c0fbaf83fe2">rtos::Mail::try_calloc_for</a></div><div class="ttdeci">T * try_calloc_for(Kernel::Clock::duration_u32 rel_time)</div><div class="ttdoc">Allocate a memory block of type T, optionally blocking, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00231">Mail.h:231</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_aa0b75676033302511679a2f5e9638c4d"><div class="ttname"><a href="classrtos_1_1_mail.html#aa0b75676033302511679a2f5e9638c4d">rtos::Mail::full</a></div><div class="ttdeci">bool full() const </div><div class="ttdoc">Check if the mail queue is full. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00097">Mail.h:97</a></div></div>
+<div class="ttc" id="classrtos_1_1_mail_html_ac01d110ce7cb71b9c1f5a0ff59216c15"><div class="ttname"><a href="classrtos_1_1_mail.html#ac01d110ce7cb71b9c1f5a0ff59216c15">rtos::Mail::try_alloc_for</a></div><div class="ttdeci">T * try_alloc_for(Kernel::Clock::duration_u32 rel_time)</div><div class="ttdoc">Allocate a memory block of type T, optionally blocking. </div><div class="ttdef"><b>Definition:</b> <a href="_mail_8h_source.html#l00138">Mail.h:138</a></div></div>
+<div class="ttc" id="namespacertos_html"><div class="ttname"><a href="namespacertos.html">rtos</a></div><div class="ttdef"><b>Definition:</b> <a href="_task_base_8h_source.html#l00025">TaskBase.h:25</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_ae612d1e8dc82899bf4ab3e4e2e3bef3c"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#ae612d1e8dc82899bf4ab3e4e2e3bef3c">rtos::MemoryPool::try_calloc</a></div><div class="ttdeci">T * try_calloc()</div><div class="ttdoc">Allocate a memory block from a memory pool, without blocking, and set memory block to zero...</div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00207">MemoryPool.h:207</a></div></div>
+<div class="ttc" id="group__platform__toolchain_html_ga3e0b3dc191a8e64de80be44bbc8d5193"><div class="ttname"><a href="group__platform__toolchain.html#ga3e0b3dc191a8e64de80be44bbc8d5193">MBED_UNUSED</a></div><div class="ttdeci">#define MBED_UNUSED</div><div class="ttdoc">MBED_UNUSED Declare a function argument to be unused, suppressing compiler warnings. </div><div class="ttdef"><b>Definition:</b> <a href="mbed__toolchain_8h_source.html#l00117">mbed_toolchain.h:117</a></div></div>
+<div class="ttc" id="classrtos_1_1_memory_pool_html_a3431dbf6375d4b9c920bf76de5daec9b"><div class="ttname"><a href="classrtos_1_1_memory_pool.html#a3431dbf6375d4b9c920bf76de5daec9b">rtos::MemoryPool::try_calloc_until</a></div><div class="ttdeci">T * try_calloc_until(Kernel::Clock::time_point abs_time)</div><div class="ttdoc">Allocate a memory block from a memory pool, blocking, and set memory block to zero. </div><div class="ttdef"><b>Definition:</b> <a href="_memory_pool_8h_source.html#l00272">MemoryPool.h:272</a></div></div>
+<div class="ttc" id="group__platform__toolchain_html_ga2822a5c443e30d9fff9c591743ac616d"><div class="ttname"><a href="group__platform__toolchain.html#ga2822a5c443e30d9fff9c591743ac616d">MBED_DEPRECATED_SINCE</a></div><div class="ttdeci">#define MBED_DEPRECATED_SINCE(D, M)</div><div class="ttdoc">MBED_DEPRECATED("message string") Mark a function declaration as deprecated, if it used then a warnin...</div><div class="ttdef"><b>Definition:</b> <a href="mbed__toolchain_8h_source.html#l00429">mbed_toolchain.h:429</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_mail_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:25:02 GMT -->
+</html>

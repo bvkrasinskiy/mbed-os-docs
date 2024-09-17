@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group___m_x___w_i_f_i___m_d_n_s.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | mDNS</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group___m_x___w_i_f_i___m_d_n_s.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group___m_x___w_i_f_i___m_d_n_s.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/group___m_x___w_i_f_i___m_d_n_s.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">mDNS<div class="ingroups"><a class="el" href="group___m_x___w_i_f_i.html">Wi-Fi_API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>**  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structmc__mdns__service.html">mc_mdns_service</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">mDNS service info  <a href="structmc__mdns__service.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga6a3f36e9b2422be9bce0cec6462f8949"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga6a3f36e9b2422be9bce0cec6462f8949">MDNS_MAX_LABEL_LEN</a>   63  /* defined by the standard */</td></tr>
+<tr class="memdesc:ga6a3f36e9b2422be9bce0cec6462f8949"><td class="mdescLeft"> </td><td class="mdescRight">Maximum length of labels.  <a href="#ga6a3f36e9b2422be9bce0cec6462f8949">More...</a><br/></td></tr>
+<tr class="separator:ga6a3f36e9b2422be9bce0cec6462f8949"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad338c9d075ca9bda56120129f9fe8cd3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gad338c9d075ca9bda56120129f9fe8cd3">MDNS_MAX_NAME_LEN</a>   255 /* defined by the standard : 255*/</td></tr>
+<tr class="memdesc:gad338c9d075ca9bda56120129f9fe8cd3"><td class="mdescLeft"> </td><td class="mdescRight">Maximum length of names.  <a href="#gad338c9d075ca9bda56120129f9fe8cd3">More...</a><br/></td></tr>
+<tr class="separator:gad338c9d075ca9bda56120129f9fe8cd3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gace1553c3ba8bfde637a5bb3c18e64503"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gace1553c3ba8bfde637a5bb3c18e64503">MDNS_MAX_KEYVAL_LEN</a>   255 /* defined by the standard : 255*/</td></tr>
+<tr class="memdesc:gace1553c3ba8bfde637a5bb3c18e64503"><td class="mdescLeft"> </td><td class="mdescRight">Maximum length of key/value pair.  <a href="#gace1553c3ba8bfde637a5bb3c18e64503">More...</a><br/></td></tr>
+<tr class="separator:gace1553c3ba8bfde637a5bb3c18e64503"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0c15bb25614b733be64c65897ef157d6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga0c15bb25614b733be64c65897ef157d6">MDNS_PROTO_TCP</a>   0</td></tr>
+<tr class="memdesc:ga0c15bb25614b733be64c65897ef157d6"><td class="mdescLeft"> </td><td class="mdescRight">protocol values for the proto member of the mdns_service descriptor  <a href="#ga0c15bb25614b733be64c65897ef157d6">More...</a><br/></td></tr>
+<tr class="separator:ga0c15bb25614b733be64c65897ef157d6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga189a7b45372f94a4249f76e1ec692f7a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga189a7b45372f94a4249f76e1ec692f7a">MDNS_PROTO_UDP</a>   1</td></tr>
+<tr class="memdesc:ga189a7b45372f94a4249f76e1ec692f7a"><td class="mdescLeft"> </td><td class="mdescRight">UDP Protocol.  <a href="#ga189a7b45372f94a4249f76e1ec692f7a">More...</a><br/></td></tr>
+<tr class="separator:ga189a7b45372f94a4249f76e1ec692f7a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac8ba510a81e059765c90b10d766b70f5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gac8ba510a81e059765c90b10d766b70f5">MAX_MDNS_LST</a>   5 /* Maximum no. of services */</td></tr>
+<tr class="memdesc:gac8ba510a81e059765c90b10d766b70f5"><td class="mdescLeft"> </td><td class="mdescRight">Maximum no.  <a href="#gac8ba510a81e059765c90b10d766b70f5">More...</a><br/></td></tr>
+<tr class="separator:gac8ba510a81e059765c90b10d766b70f5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf8aff81bb82eddca1ea1c6a80da8eb56"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gaf8aff81bb82eddca1ea1c6a80da8eb56">ERR_MDNS_BASE</a>   -36650</td></tr>
+<tr class="memdesc:gaf8aff81bb82eddca1ea1c6a80da8eb56"><td class="mdescLeft"> </td><td class="mdescRight">Starting error code for all mdns errors.  <a href="#gaf8aff81bb82eddca1ea1c6a80da8eb56">More...</a><br/></td></tr>
+<tr class="separator:gaf8aff81bb82eddca1ea1c6a80da8eb56"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaeaa1ed5bba9ff0d56d1d18fe1e8bbc70"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gaeaa1ed5bba9ff0d56d1d18fe1e8bbc70">ERR_MDNS_INVAL</a>   -36651</td></tr>
+<tr class="memdesc:gaeaa1ed5bba9ff0d56d1d18fe1e8bbc70"><td class="mdescLeft"> </td><td class="mdescRight">invalid argument  <a href="#gaeaa1ed5bba9ff0d56d1d18fe1e8bbc70">More...</a><br/></td></tr>
+<tr class="separator:gaeaa1ed5bba9ff0d56d1d18fe1e8bbc70"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9a81ae7bd5fab49f3a4a2c87b1f58526"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga9a81ae7bd5fab49f3a4a2c87b1f58526">ERR_MDNS_BADSRC</a>   -36652</td></tr>
+<tr class="memdesc:ga9a81ae7bd5fab49f3a4a2c87b1f58526"><td class="mdescLeft"> </td><td class="mdescRight">bad service descriptor  <a href="#ga9a81ae7bd5fab49f3a4a2c87b1f58526">More...</a><br/></td></tr>
+<tr class="separator:ga9a81ae7bd5fab49f3a4a2c87b1f58526"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9a92145a315bb1d230acbab7c2f46a37"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga9a92145a315bb1d230acbab7c2f46a37">ERR_MDNS_TOOBIG</a>   -36653</td></tr>
+<tr class="memdesc:ga9a92145a315bb1d230acbab7c2f46a37"><td class="mdescLeft"> </td><td class="mdescRight">not enough room for everything  <a href="#ga9a92145a315bb1d230acbab7c2f46a37">More...</a><br/></td></tr>
+<tr class="separator:ga9a92145a315bb1d230acbab7c2f46a37"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafc108124334e7cb7ca0e00076ced50e1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gafc108124334e7cb7ca0e00076ced50e1">ERR_MDNS_NOIMPL</a>   -36654</td></tr>
+<tr class="memdesc:gafc108124334e7cb7ca0e00076ced50e1"><td class="mdescLeft"> </td><td class="mdescRight">unimplemented feature  <a href="#gafc108124334e7cb7ca0e00076ced50e1">More...</a><br/></td></tr>
+<tr class="separator:gafc108124334e7cb7ca0e00076ced50e1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5298bb1165268daf5a40545018ec1cc1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga5298bb1165268daf5a40545018ec1cc1">ERR_MDNS_NOMEM</a>   -36655</td></tr>
+<tr class="memdesc:ga5298bb1165268daf5a40545018ec1cc1"><td class="mdescLeft"> </td><td class="mdescRight">insufficient memory  <a href="#ga5298bb1165268daf5a40545018ec1cc1">More...</a><br/></td></tr>
+<tr class="separator:ga5298bb1165268daf5a40545018ec1cc1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga509dbca00133db065c9ac8a66261f65c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga509dbca00133db065c9ac8a66261f65c">ERR_MDNS_INUSE</a>   -36656</td></tr>
+<tr class="memdesc:ga509dbca00133db065c9ac8a66261f65c"><td class="mdescLeft"> </td><td class="mdescRight">requested resource is in use  <a href="#ga509dbca00133db065c9ac8a66261f65c">More...</a><br/></td></tr>
+<tr class="separator:ga509dbca00133db065c9ac8a66261f65c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga45f2455a5a5e0c477abab75d47e0cdf0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga45f2455a5a5e0c477abab75d47e0cdf0">ERR_MDNS_NORESP</a>   -36657</td></tr>
+<tr class="memdesc:ga45f2455a5a5e0c477abab75d47e0cdf0"><td class="mdescLeft"> </td><td class="mdescRight">requested resource is in use  <a href="#ga45f2455a5a5e0c477abab75d47e0cdf0">More...</a><br/></td></tr>
+<tr class="separator:ga45f2455a5a5e0c477abab75d47e0cdf0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf36829574fc2c8ccc34775d9d289d7da"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gaf36829574fc2c8ccc34775d9d289d7da">ERR_MDNS_FSOC</a>   -36658</td></tr>
+<tr class="memdesc:gaf36829574fc2c8ccc34775d9d289d7da"><td class="mdescLeft"> </td><td class="mdescRight">failed to create socket for mdns  <a href="#gaf36829574fc2c8ccc34775d9d289d7da">More...</a><br/></td></tr>
+<tr class="separator:gaf36829574fc2c8ccc34775d9d289d7da"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac5401a12e306d35e00be3d161caf3e27"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gac5401a12e306d35e00be3d161caf3e27">ERR_MDNS_FREUSE</a>   -36659</td></tr>
+<tr class="memdesc:gac5401a12e306d35e00be3d161caf3e27"><td class="mdescLeft"> </td><td class="mdescRight">failed to reuse multicast socket  <a href="#gac5401a12e306d35e00be3d161caf3e27">More...</a><br/></td></tr>
+<tr class="separator:gac5401a12e306d35e00be3d161caf3e27"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga72603b0516a04120a4b36dfceb7f0d42"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga72603b0516a04120a4b36dfceb7f0d42">ERR_MDNS_FBINDTODEVICE</a>   -36660</td></tr>
+<tr class="memdesc:ga72603b0516a04120a4b36dfceb7f0d42"><td class="mdescLeft"> </td><td class="mdescRight">failed to bind mdns socket to device  <a href="#ga72603b0516a04120a4b36dfceb7f0d42">More...</a><br/></td></tr>
+<tr class="separator:ga72603b0516a04120a4b36dfceb7f0d42"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0cffe914d9b11f3aa7ddaa35aa140b8e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga0cffe914d9b11f3aa7ddaa35aa140b8e">ERR_MDNS_FBIND</a>   -36661</td></tr>
+<tr class="memdesc:ga0cffe914d9b11f3aa7ddaa35aa140b8e"><td class="mdescLeft"> </td><td class="mdescRight">failed to bind mdns socket  <a href="#ga0cffe914d9b11f3aa7ddaa35aa140b8e">More...</a><br/></td></tr>
+<tr class="separator:ga0cffe914d9b11f3aa7ddaa35aa140b8e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4374a7ec9402ac1fbb03ceb20729ec10"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga4374a7ec9402ac1fbb03ceb20729ec10">ERR_MDNS_FMCAST_JOIN</a>   -36662</td></tr>
+<tr class="memdesc:ga4374a7ec9402ac1fbb03ceb20729ec10"><td class="mdescLeft"> </td><td class="mdescRight">failed to join multicast socket  <a href="#ga4374a7ec9402ac1fbb03ceb20729ec10">More...</a><br/></td></tr>
+<tr class="separator:ga4374a7ec9402ac1fbb03ceb20729ec10"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4feda47e153a70358f9855411404ae01"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga4feda47e153a70358f9855411404ae01">ERR_MDNS_FMCAST_SET</a>   -36663</td></tr>
+<tr class="memdesc:ga4feda47e153a70358f9855411404ae01"><td class="mdescLeft"> </td><td class="mdescRight">failed to set multicast socket  <a href="#ga4feda47e153a70358f9855411404ae01">More...</a><br/></td></tr>
+<tr class="separator:ga4feda47e153a70358f9855411404ae01"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad3a870348eb34bd5f277bc2b8ca8a3b9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gad3a870348eb34bd5f277bc2b8ca8a3b9">ERR_MDNS_FQUERY_SOC</a>   -36664</td></tr>
+<tr class="memdesc:gad3a870348eb34bd5f277bc2b8ca8a3b9"><td class="mdescLeft"> </td><td class="mdescRight">failed to create query socket  <a href="#gad3a870348eb34bd5f277bc2b8ca8a3b9">More...</a><br/></td></tr>
+<tr class="separator:gad3a870348eb34bd5f277bc2b8ca8a3b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4db6bb6b404902aa7f81312d1b692d8c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga4db6bb6b404902aa7f81312d1b692d8c">ERR_MDNS_FQUERY_THREAD</a>   -36665</td></tr>
+<tr class="memdesc:ga4db6bb6b404902aa7f81312d1b692d8c"><td class="mdescLeft"> </td><td class="mdescRight">failed to create mdns thread  <a href="#ga4db6bb6b404902aa7f81312d1b692d8c">More...</a><br/></td></tr>
+<tr class="separator:ga4db6bb6b404902aa7f81312d1b692d8c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6dfef3b1812a2bdf432d725c162ea94a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga6dfef3b1812a2bdf432d725c162ea94a">ERR_MDNS_END</a>   -36670</td></tr>
+<tr class="memdesc:ga6dfef3b1812a2bdf432d725c162ea94a"><td class="mdescLeft"> </td><td class="mdescRight">Last generic error code (inclusive)  <a href="#ga6dfef3b1812a2bdf432d725c162ea94a">More...</a><br/></td></tr>
+<tr class="separator:ga6dfef3b1812a2bdf432d725c162ea94a"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga080b4eb7bd980066a5e9e11f23d3e4b8"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga080b4eb7bd980066a5e9e11f23d3e4b8">MX_WIFI_MDNS_start</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, const char *domain, char *hostname)</td></tr>
+<tr class="memdesc:ga080b4eb7bd980066a5e9e11f23d3e4b8"><td class="mdescLeft"> </td><td class="mdescRight">start mDNS service.  <a href="#ga080b4eb7bd980066a5e9e11f23d3e4b8">More...</a><br/></td></tr>
+<tr class="separator:ga080b4eb7bd980066a5e9e11f23d3e4b8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4840992de20f2adbe194961634d81f97"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga4840992de20f2adbe194961634d81f97">MX_WIFI_MDNS_stop</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj)</td></tr>
+<tr class="memdesc:ga4840992de20f2adbe194961634d81f97"><td class="mdescLeft"> </td><td class="mdescRight">stop mDNS service.  <a href="#ga4840992de20f2adbe194961634d81f97">More...</a><br/></td></tr>
+<tr class="separator:ga4840992de20f2adbe194961634d81f97"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga730120034d347165d5f73cb2245fe1f5"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga730120034d347165d5f73cb2245fe1f5">MX_WIFI_MDNS_announce_service</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, struct <a class="el" href="structmc__mdns__service.html">mc_mdns_service</a> *service, <a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> interface)</td></tr>
+<tr class="memdesc:ga730120034d347165d5f73cb2245fe1f5"><td class="mdescLeft"> </td><td class="mdescRight">announce a service.  <a href="#ga730120034d347165d5f73cb2245fe1f5">More...</a><br/></td></tr>
+<tr class="separator:ga730120034d347165d5f73cb2245fe1f5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab3b4e84ed631316a0b53f74f536852ac"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gab3b4e84ed631316a0b53f74f536852ac">MX_WIFI_MDNS_deannounce_service</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, struct <a class="el" href="structmc__mdns__service.html">mc_mdns_service</a> *service, <a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> interface)</td></tr>
+<tr class="memdesc:gab3b4e84ed631316a0b53f74f536852ac"><td class="mdescLeft"> </td><td class="mdescRight">deannounce a service.  <a href="#gab3b4e84ed631316a0b53f74f536852ac">More...</a><br/></td></tr>
+<tr class="separator:gab3b4e84ed631316a0b53f74f536852ac"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf82a589fb3e712bae308e42e74c1a0a7"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gaf82a589fb3e712bae308e42e74c1a0a7">MX_WIFI_MDNS_deannounce_service_all</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, <a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> interface)</td></tr>
+<tr class="memdesc:gaf82a589fb3e712bae308e42e74c1a0a7"><td class="mdescLeft"> </td><td class="mdescRight">deannounce all services.  <a href="#gaf82a589fb3e712bae308e42e74c1a0a7">More...</a><br/></td></tr>
+<tr class="separator:gaf82a589fb3e712bae308e42e74c1a0a7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga20fcc42fe30b5a07c9b0f8c471285cc7"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga20fcc42fe30b5a07c9b0f8c471285cc7">MX_WIFI_MDNS_iface_state_change</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, <a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> interface, enum <a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gae20717a1f3263d472654c02df56f8329">iface_state</a> state)</td></tr>
+<tr class="memdesc:ga20fcc42fe30b5a07c9b0f8c471285cc7"><td class="mdescLeft"> </td><td class="mdescRight">Send interface state change event to mdns.  <a href="#ga20fcc42fe30b5a07c9b0f8c471285cc7">More...</a><br/></td></tr>
+<tr class="separator:ga20fcc42fe30b5a07c9b0f8c471285cc7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac095fca1ae10e0469d3d10647115a346"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gac095fca1ae10e0469d3d10647115a346">MX_WIFI_MDNS_set_hostname</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, char *hostname)</td></tr>
+<tr class="memdesc:gac095fca1ae10e0469d3d10647115a346"><td class="mdescLeft"> </td><td class="mdescRight">Set new host name, use mdns_iface_state_change(interface, REANNOUNCE) to anounce the new host name.  <a href="#gac095fca1ae10e0469d3d10647115a346">More...</a><br/></td></tr>
+<tr class="separator:gac095fca1ae10e0469d3d10647115a346"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga43c335fdd0d9d23b71166cccf81ed40b"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#ga43c335fdd0d9d23b71166cccf81ed40b">MX_WIFI_MDNS_set_txt_rec</a> (<a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> *Obj, struct <a class="el" href="structmc__mdns__service.html">mc_mdns_service</a> *service, char *keyvals, char separator)</td></tr>
+<tr class="memdesc:ga43c335fdd0d9d23b71166cccf81ed40b"><td class="mdescLeft"> </td><td class="mdescRight">sets the TXT record field for a given mDNS service.  <a href="#ga43c335fdd0d9d23b71166cccf81ed40b">More...</a><br/></td></tr>
+<tr class="separator:ga43c335fdd0d9d23b71166cccf81ed40b"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>** </p>
+<p>mDNS related API ** </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ga9a81ae7bd5fab49f3a4a2c87b1f58526"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_BADSRC   -36652</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>bad service descriptor </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01161">1161</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf8aff81bb82eddca1ea1c6a80da8eb56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_BASE   -36650</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Starting error code for all mdns errors. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01159">1159</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6dfef3b1812a2bdf432d725c162ea94a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_END   -36670</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Last generic error code (inclusive) </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01175">1175</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0cffe914d9b11f3aa7ddaa35aa140b8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FBIND   -36661</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to bind mdns socket </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01170">1170</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga72603b0516a04120a4b36dfceb7f0d42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FBINDTODEVICE   -36660</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to bind mdns socket to device </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01169">1169</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4374a7ec9402ac1fbb03ceb20729ec10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FMCAST_JOIN   -36662</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to join multicast socket </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01171">1171</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4feda47e153a70358f9855411404ae01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FMCAST_SET   -36663</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to set multicast socket </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01172">1172</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad3a870348eb34bd5f277bc2b8ca8a3b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FQUERY_SOC   -36664</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to create query socket </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01173">1173</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4db6bb6b404902aa7f81312d1b692d8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FQUERY_THREAD   -36665</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to create mdns thread </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01174">1174</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac5401a12e306d35e00be3d161caf3e27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FREUSE   -36659</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to reuse multicast socket </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01168">1168</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf36829574fc2c8ccc34775d9d289d7da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_FSOC   -36658</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>failed to create socket for mdns </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01167">1167</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga509dbca00133db065c9ac8a66261f65c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_INUSE   -36656</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>requested resource is in use </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01165">1165</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaeaa1ed5bba9ff0d56d1d18fe1e8bbc70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_INVAL   -36651</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>invalid argument </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01160">1160</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafc108124334e7cb7ca0e00076ced50e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_NOIMPL   -36654</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>unimplemented feature </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01163">1163</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5298bb1165268daf5a40545018ec1cc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_NOMEM   -36655</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>insufficient memory </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01164">1164</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga45f2455a5a5e0c477abab75d47e0cdf0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_NORESP   -36657</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>requested resource is in use </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01166">1166</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9a92145a315bb1d230acbab7c2f46a37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define ERR_MDNS_TOOBIG   -36653</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>not enough room for everything </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01162">1162</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac8ba510a81e059765c90b10d766b70f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MAX_MDNS_LST   5 /* Maximum no. of services */</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Maximum no. </p>
+<p>of services allowed to be announced on a single interface. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01156">1156</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gace1553c3ba8bfde637a5bb3c18e64503"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MDNS_MAX_KEYVAL_LEN   255 /* defined by the standard : 255*/</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Maximum length of key/value pair. </p>
+<p>TXT records associated with a service are populated with key/value pairs. These key/value pairs must not exceed this length. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01147">1147</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6a3f36e9b2422be9bce0cec6462f8949"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MDNS_MAX_LABEL_LEN   63  /* defined by the standard */</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Maximum length of labels. </p>
+<p>A label is one segment of a <a class="el" href="class_d_n_s.html" title="Base class for DNS provider. ">DNS</a> name. For example, "foo" is a label in the name "foo.local.". RFC 1035 requires that labels do not exceed 63 bytes. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01133">1133</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad338c9d075ca9bda56120129f9fe8cd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MDNS_MAX_NAME_LEN   255 /* defined by the standard : 255*/</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Maximum length of names. </p>
+<p>A name is a list of labels such as "My Webserver.foo.local" or mydevice.local. RFC 1035 requires that names do not exceed 255 bytes. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01140">1140</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0c15bb25614b733be64c65897ef157d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MDNS_PROTO_TCP   0</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>protocol values for the proto member of the mdns_service descriptor </p>
+<p>TCP Protocol </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01151">1151</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga189a7b45372f94a4249f76e1ec692f7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define MDNS_PROTO_UDP   1</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>UDP Protocol. </p>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01153">1153</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="gae20717a1f3263d472654c02df56f8329"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gae20717a1f3263d472654c02df56f8329">iface_state</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>mDNS Interface State mDNS interface state can be changed by using mdns_iface_state_change() function. </p>
+<p>For details about when to use the enum please refer to documentation for mdns_iface_state_change(). </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggae20717a1f3263d472654c02df56f8329aba595d8bca8bc5e67c37c0a9d89becfa"></a>UP </td><td class="fielddoc">
+<p>UP the interface and announce services mDNS will probe and announce all services announced via mdns_announce_service() and/or mdns_announce_service_arr(). </p>
+<p>mDNS will go through entire probing sequence explained in above functions. Interface state can be changed to UP, if its DOWN. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggae20717a1f3263d472654c02df56f8329a9b0b4a95b99523966e0e34ffdadac9da"></a>DOWN </td><td class="fielddoc">
+<p>DOWN the interface and de-announce services mDNS sends good bye packet with ttl=0 so that mDNS clients can remove the services from their mDNS cache table. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggae20717a1f3263d472654c02df56f8329ad5a1eadd770e068a3e6e53a5e248acb8"></a>REANNOUNCE </td><td class="fielddoc">
+<p>Forcefully re-announce services This state should be used after services are already announced and force announcement is needed due to some reason. </p>
+<p>mDNS will not perform probing sequence, as it does in case of UP, and will directly re-announce services. </p>
+</td></tr>
+</tbody></table>
+
+<p>Definition at line <a class="el" href="mx__wifi_8h_source.html#l01181">1181</a> of file <a class="el" href="mx__wifi_8h_source.html">mx_wifi.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga730120034d347165d5f73cb2245fe1f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_announce_service </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmc__mdns__service.html">mc_mdns_service</a> * </td>
+          <td class="paramname"><em>service</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> </td>
+          <td class="paramname"><em>interface</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>announce a service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">service</td><td>service to announce </td></tr>
+    <tr><td class="paramname">interface</td><td>wifi interface </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gab3b4e84ed631316a0b53f74f536852ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_deannounce_service </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmc__mdns__service.html">mc_mdns_service</a> * </td>
+          <td class="paramname"><em>service</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> </td>
+          <td class="paramname"><em>interface</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>deannounce a service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">service</td><td>service to deannounce </td></tr>
+    <tr><td class="paramname">interface</td><td>wifi interface </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf82a589fb3e712bae308e42e74c1a0a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_deannounce_service_all </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> </td>
+          <td class="paramname"><em>interface</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>deannounce all services. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">interface</td><td>wifi interface </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga20fcc42fe30b5a07c9b0f8c471285cc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_iface_state_change </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___m_x___w_i_f_i.html#ga094fe48667a442c70b7810956bc21d07">mwifi_if_t</a> </td>
+          <td class="paramname"><em>interface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gae20717a1f3263d472654c02df56f8329">iface_state</a> </td>
+          <td class="paramname"><em>state</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Send interface state change event to mdns. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">interface</td><td>wifi interface </td></tr>
+    <tr><td class="paramname">state</td><td>state event, valid interface state from <a class="el" href="group___m_x___w_i_f_i___m_d_n_s.html#gae20717a1f3263d472654c02df56f8329">iface_state</a> </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gac095fca1ae10e0469d3d10647115a346"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_set_hostname </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>hostname</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set new host name, use mdns_iface_state_change(interface, REANNOUNCE) to anounce the new host name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">hostname</td><td>new hostname </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga43c335fdd0d9d23b71166cccf81ed40b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_set_txt_rec </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmc__mdns__service.html">mc_mdns_service</a> * </td>
+          <td class="paramname"><em>service</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>keyvals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char </td>
+          <td class="paramname"><em>separator</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>sets the TXT record field for a given mDNS service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">service</td><td>mDNS service </td></tr>
+    <tr><td class="paramname">keyvals</td><td>new txt record string </td></tr>
+    <tr><td class="paramname">separator</td><td>the separator used to separate individual key value pairs </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga080b4eb7bd980066a5e9e11f23d3e4b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_start </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>hostname</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>start mDNS service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+    <tr><td class="paramname">domain</td><td>domain of service </td></tr>
+    <tr><td class="paramname">name</td><td>hostname </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4840992de20f2adbe194961634d81f97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t MX_WIFI_MDNS_stop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_x___w_i_f_i_object__t.html">MX_WIFIObject_t</a> * </td>
+          <td class="paramname"><em>Obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>stop mDNS service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">Obj</td><td>pointer to module handle </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">Operation</td><td>Status. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/group___m_x___w_i_f_i___m_d_n_s.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:49 GMT -->
+</html>

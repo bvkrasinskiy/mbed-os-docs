@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/t__cose__crypto_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:09:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | t_cose_crypto.h File Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="t__cose__crypto_8h.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/t__cose__crypto_8h.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/t__cose__crypto_8h.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_c9a2b464213f77f097ecd11677727583.html">components</a></li><li class="navelem"><a class="el" href="dir_2fcf95e3a2df6d5254f01aa83e3ccf35.html">TARGET_PSA</a></li><li class="navelem"><a class="el" href="dir_d09885089e91a21dc0784cdb4b82e5b8.html">services</a></li><li class="navelem"><a class="el" href="dir_d9f19dcd3686d8649f5045ac1df27495.html">attestation</a></li><li class="navelem"><a class="el" href="dir_866b893d1c696059cd574f13b3c9c52c.html">COMPONENT_PSA_SRV_IMPL</a></li><li class="navelem"><a class="el" href="dir_d2d51934b6eb33c024ae7445a33e8b69.html">tfm_impl</a></li><li class="navelem"><a class="el" href="dir_67d32c6d11c064b07513326be75200b7.html">t_cose</a></li><li class="navelem"><a class="el" href="dir_795e25a8d2f9fb537cca8dfaafbe9071.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">t_cose_crypto.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is the adaptation layer for cryptographic functions used by t_cose.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include "<a class="el" href="t__cose__common_8h_source.html">t_cose_common.h</a>"</code><br/>
+<code>#include "<a class="el" href="useful__buf_8h_source.html">useful_buf.h</a>"</code><br/>
+<code>#include &lt;stdint.h&gt;</code><br/>
+<code>#include "<a class="el" href="t__cose__defines_8h_source.html">t_cose_defines.h</a>"</code><br/>
+</div>
+<p><a href="t__cose__crypto_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">The context for use with the hash adaptation layer here.  <a href="structt__cose__crypto__hash.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af3b10e1de18907f2367c15d4acc6c5b5"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#af3b10e1de18907f2367c15d4acc6c5b5">T_COSE_EC_P256_SIG_SIZE</a>   64</td></tr>
+<tr class="memdesc:af3b10e1de18907f2367c15d4acc6c5b5"><td class="mdescLeft"> </td><td class="mdescRight">Size of the signature output for the NIST P-256 Curve.  <a href="#af3b10e1de18907f2367c15d4acc6c5b5">More...</a><br/></td></tr>
+<tr class="separator:af3b10e1de18907f2367c15d4acc6c5b5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4782c1eaebe0998c2362cd061aaa969d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#a4782c1eaebe0998c2362cd061aaa969d">T_COSE_MAX_EC_SIG_SIZE</a>   <a class="el" href="t__cose__crypto_8h.html#af3b10e1de18907f2367c15d4acc6c5b5">T_COSE_EC_P256_SIG_SIZE</a></td></tr>
+<tr class="memdesc:a4782c1eaebe0998c2362cd061aaa969d"><td class="mdescLeft"> </td><td class="mdescRight">Size of the largest signature of any of the algorithm types supported.  <a href="#a4782c1eaebe0998c2362cd061aaa969d">More...</a><br/></td></tr>
+<tr class="separator:a4782c1eaebe0998c2362cd061aaa969d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6150872ec64deffbf6841b523209a93"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#ae6150872ec64deffbf6841b523209a93">T_COSE_CRYPTO_EC_P256_COORD_SIZE</a>   32</td></tr>
+<tr class="memdesc:ae6150872ec64deffbf6841b523209a93"><td class="mdescLeft"> </td><td class="mdescRight">The size of X and Y coordinate in 2 parameter style EC public key.  <a href="#ae6150872ec64deffbf6841b523209a93">More...</a><br/></td></tr>
+<tr class="separator:ae6150872ec64deffbf6841b523209a93"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0ac3a4bfc83ba354a09add9b71e8a68f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#a0ac3a4bfc83ba354a09add9b71e8a68f">T_COSE_CRYPTO_SHA256_SIZE</a>   32</td></tr>
+<tr class="memdesc:a0ac3a4bfc83ba354a09add9b71e8a68f"><td class="mdescLeft"> </td><td class="mdescRight">The size of the output of SHA-256 in bytes.  <a href="#a0ac3a4bfc83ba354a09add9b71e8a68f">More...</a><br/></td></tr>
+<tr class="separator:a0ac3a4bfc83ba354a09add9b71e8a68f"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a16afa23abd54db5e3fe396b51fd49131"><td align="right" class="memItemLeft" valign="top">static size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#a16afa23abd54db5e3fe396b51fd49131">t_cose_signature_size</a> (int32_t cose_sig_alg_id)</td></tr>
+<tr class="memdesc:a16afa23abd54db5e3fe396b51fd49131"><td class="mdescLeft"> </td><td class="mdescRight">Get the size in bytes of a particular signature type.  <a href="#a16afa23abd54db5e3fe396b51fd49131">More...</a><br/></td></tr>
+<tr class="separator:a16afa23abd54db5e3fe396b51fd49131"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4ab8519436340643fed475dbf7f38c91"><td align="right" class="memItemLeft" valign="top">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#a4ab8519436340643fed475dbf7f38c91">t_cose_crypto_pub_key_sign</a> (int32_t cose_alg_id, int32_t key_select, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> hash_to_sign, struct <a class="el" href="structuseful__buf.html">useful_buf</a> signature_buffer, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> *signature)</td></tr>
+<tr class="memdesc:a4ab8519436340643fed475dbf7f38c91"><td class="mdescLeft"> </td><td class="mdescRight">Perform public key signing.  <a href="#a4ab8519436340643fed475dbf7f38c91">More...</a><br/></td></tr>
+<tr class="separator:a4ab8519436340643fed475dbf7f38c91"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6e0826243f262003d07b74e689aeefc8"><td align="right" class="memItemLeft" valign="top">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#a6e0826243f262003d07b74e689aeefc8">t_cose_crypto_pub_key_verify</a> (int32_t cose_alg_id, int32_t key_select, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> key_id, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> hash_to_verify, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> signature)</td></tr>
+<tr class="memdesc:a6e0826243f262003d07b74e689aeefc8"><td class="mdescLeft"> </td><td class="mdescRight">perform public key signature verification.  <a href="#a6e0826243f262003d07b74e689aeefc8">More...</a><br/></td></tr>
+<tr class="separator:a6e0826243f262003d07b74e689aeefc8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaff1c02d3bc0a2f98f97a95500afa7fc"><td align="right" class="memItemLeft" valign="top">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#aaff1c02d3bc0a2f98f97a95500afa7fc">t_cose_crypto_get_ec_pub_key</a> (int32_t key_select, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> kid, int32_t *cose_curve_id, struct <a class="el" href="structuseful__buf.html">useful_buf</a> buf_to_hold_x_coord, struct <a class="el" href="structuseful__buf.html">useful_buf</a> buf_to_hold_y_coord, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> *x_coord, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> *y_coord)</td></tr>
+<tr class="memdesc:aaff1c02d3bc0a2f98f97a95500afa7fc"><td class="mdescLeft"> </td><td class="mdescRight">Get an elliptic curve public key.  <a href="#aaff1c02d3bc0a2f98f97a95500afa7fc">More...</a><br/></td></tr>
+<tr class="separator:aaff1c02d3bc0a2f98f97a95500afa7fc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae5f88ad8d0afcd13b47eee3834d65329"><td align="right" class="memItemLeft" valign="top">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#ae5f88ad8d0afcd13b47eee3834d65329">t_cose_crypto_hash_start</a> (struct <a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a> *hash_ctx, int32_t cose_hash_alg_id)</td></tr>
+<tr class="memdesc:ae5f88ad8d0afcd13b47eee3834d65329"><td class="mdescLeft"> </td><td class="mdescRight">Start cryptographic hash.  <a href="#ae5f88ad8d0afcd13b47eee3834d65329">More...</a><br/></td></tr>
+<tr class="separator:ae5f88ad8d0afcd13b47eee3834d65329"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7630a1ca6c5eb1722ff5356b91acdf92"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#a7630a1ca6c5eb1722ff5356b91acdf92">t_cose_crypto_hash_update</a> (struct <a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a> *hash_ctx, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> data_to_hash)</td></tr>
+<tr class="memdesc:a7630a1ca6c5eb1722ff5356b91acdf92"><td class="mdescLeft"> </td><td class="mdescRight">Feed data into a cryptographic hash.  <a href="#a7630a1ca6c5eb1722ff5356b91acdf92">More...</a><br/></td></tr>
+<tr class="separator:a7630a1ca6c5eb1722ff5356b91acdf92"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad61c4d5459a7ec7c9a9b1b9beaed91db"><td align="right" class="memItemLeft" valign="top">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="t__cose__crypto_8h.html#ad61c4d5459a7ec7c9a9b1b9beaed91db">t_cose_crypto_hash_finish</a> (struct <a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a> *hash_ctx, struct <a class="el" href="structuseful__buf.html">useful_buf</a> buffer_to_hold_result, struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> *hash_result)</td></tr>
+<tr class="memdesc:ad61c4d5459a7ec7c9a9b1b9beaed91db"><td class="mdescLeft"> </td><td class="mdescRight">Finish a cryptographic hash.  <a href="#ad61c4d5459a7ec7c9a9b1b9beaed91db">More...</a><br/></td></tr>
+<tr class="separator:ad61c4d5459a7ec7c9a9b1b9beaed91db"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the adaptation layer for cryptographic functions used by t_cose. </p>
+<p>This is small wrapper around the cryptographic functions to:</p><ul>
+<li>Map COSE algorithm IDs to TF-M algorithm IDs</li>
+<li>Map crypto errors to <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> errors</li>
+<li>Have inputs and outputs be <code>struct</code> <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> and <code>struct</code> <code><a class="el" href="structuseful__buf.html" title="The non-const UsefulBuf typically used for some allocated memory that is to be filled in...">useful_buf</a></code> </li>
+<li>Handle key selection</li>
+</ul>
+<p>The idea is that implementations can be made of these functions that adapt to various cryptographic libraries that are used on various platforms and OSs.</p>
+<p>This runs entirely off of COSE-style algorithm identifiers. They are simple integers and thus work nice as function parameters. An initial set is defined by <a href="https://tools.ietf.org/html/rfc8152">COSE (RFC 8152)</a>. New ones can be registered in the <a href="https://www.iana.org/assignments/cose/cose.xhtml">IANA COSE Registry</a>. Local use new ones can also be defined (<code>#define</code>) if what is needed is not in the IANA registry.</p>
+<p>Binary data is returned to the caller using a <code>struct</code> <code><a class="el" href="structuseful__buf.html" title="The non-const UsefulBuf typically used for some allocated memory that is to be filled in...">useful_buf</a></code> to pass the buffer to receive the data and its length in and a <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> to return the pointer and length of the returned data. The point of this is coding hygiene. The buffer passed in is not const as it is to be modified. The <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> returned is const.</p>
+<p>The pointer in the <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> will always point to the buffer passed in via the <code><a class="el" href="structuseful__buf.html" title="The non-const UsefulBuf typically used for some allocated memory that is to be filled in...">useful_buf</a></code> so the lifetime of the data is under control of the caller.</p>
+<p>This is not intended as any sort of general cryptographic API. It is just the functions needed by t_cose in the form that is most useful for t_cose. </p>
+
+<p>Definition in file <a class="el" href="t__cose__crypto_8h_source.html">t_cose_crypto.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ae6150872ec64deffbf6841b523209a93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define T_COSE_CRYPTO_EC_P256_COORD_SIZE   32</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The size of X and Y coordinate in 2 parameter style EC public key. </p>
+<p>Format is as defined in <a href="https://tools.ietf.org/html/rfc8152">COSE (RFC 8152)</a> and <a href="http://www.secg.org/sec1-v2.pdf">SEC 1: Elliptic Curve Cryptography</a>.</p>
+<p>This size is well-known and documented in public standards. </p>
+
+<p>Definition at line <a class="el" href="t__cose__crypto_8h_source.html#l00222">222</a> of file <a class="el" href="t__cose__crypto_8h_source.html">t_cose_crypto.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ac3a4bfc83ba354a09add9b71e8a68f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define T_COSE_CRYPTO_SHA256_SIZE   32</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The size of the output of SHA-256 in bytes. </p>
+<p>(It is safe to define this independently here as its size is well-known and fixed. There is no need to reference platform-specific headers and incur messy dependence.) </p>
+
+<p>Definition at line <a class="el" href="t__cose__crypto_8h_source.html#l00309">309</a> of file <a class="el" href="t__cose__crypto_8h_source.html">t_cose_crypto.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3b10e1de18907f2367c15d4acc6c5b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define T_COSE_EC_P256_SIG_SIZE   64</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Size of the signature output for the NIST P-256 Curve. </p>
+
+<p>Definition at line <a class="el" href="t__cose__crypto_8h_source.html#l00067">67</a> of file <a class="el" href="t__cose__crypto_8h_source.html">t_cose_crypto.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4782c1eaebe0998c2362cd061aaa969d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define T_COSE_MAX_EC_SIG_SIZE   <a class="el" href="t__cose__crypto_8h.html#af3b10e1de18907f2367c15d4acc6c5b5">T_COSE_EC_P256_SIG_SIZE</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Size of the largest signature of any of the algorithm types supported. </p>
+<p>This will have to be adjusted if support for other algorithms larger is added.</p>
+<p>This is a compile time constant so it can be used to define stack variable sizes. </p>
+
+<p>Definition at line <a class="el" href="t__cose__crypto_8h_source.html#l00079">79</a> of file <a class="el" href="t__cose__crypto_8h_source.html">t_cose_crypto.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aaff1c02d3bc0a2f98f97a95500afa7fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> t_cose_crypto_get_ec_pub_key </td>
+          <td>(</td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>key_select</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> </td>
+          <td class="paramname"><em>kid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t * </td>
+          <td class="paramname"><em>cose_curve_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf.html">useful_buf</a> </td>
+          <td class="paramname"><em>buf_to_hold_x_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf.html">useful_buf</a> </td>
+          <td class="paramname"><em>buf_to_hold_y_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> * </td>
+          <td class="paramname"><em>x_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> * </td>
+          <td class="paramname"><em>y_coord</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get an elliptic curve public key. </p>
+<p>Part of the t_cose crypto adaptation layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key_select</td><td>Used to look up the public key to return when <code>kid</code> is <code>NULL_USEFUL_BUF_C</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kid</td><td>A key ID to look up against. May be <code>NULL_USEFUL_BUF_C</code>. This is typically the kid from the COSE unprotected header. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cose_curve_id</td><td>The curve ID of the key returned as defined by <a href="https://tools.ietf.org/html/rfc8152">COSE (RFC 8152)</a> or the IANA COSE registry. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf_to_hold_x_coord</td><td>Pointer and length into which the X coordinate is put. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf_to_hold_y_coord</td><td>Pointer and length into which the Y coordinate is put. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x_coord</td><td>Pointer and length of the returned X coordinate. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y_coord</td><td>Pointer and length of the returned Y coordinate.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">T_COSE_SUCCESS</td><td>The key was found and is returned. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_UNKNOWN_KEY</td><td>The key identified by <code>key_select</code> or a <code>kid</code> was not found. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_WRONG_TYPE_OF_KEY</td><td>The key was found, but it was the wrong type for the operation. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_FAIL</td><td>General unspecific failure. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_KEY_BUFFER_SIZE</td><td>Buffer to hold the output was too small.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>This finds and returns a public key. Where it looks for the key is dependent on the OS / platform.</p>
+<p><a class="el" href="t__cose__crypto_8h.html#ae6150872ec64deffbf6841b523209a93">T_COSE_CRYPTO_EC_P256_COORD_SIZE</a> is the size of the X or Y coordinate for the NIST P-256 curve.</p>
+<p>See the note in the Detailed Description (the \file comment block) for details on how <code><a class="el" href="structuseful__buf.html" title="The non-const UsefulBuf typically used for some allocated memory that is to be filled in...">useful_buf</a></code> and <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> are used to return the X and Y coordinates. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad61c4d5459a7ec7c9a9b1b9beaed91db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> t_cose_crypto_hash_finish </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a> * </td>
+          <td class="paramname"><em>hash_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf.html">useful_buf</a> </td>
+          <td class="paramname"><em>buffer_to_hold_result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> * </td>
+          <td class="paramname"><em>hash_result</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Finish a cryptographic hash. </p>
+<p>Part of the t_cose crypto adaptation layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in,out]</td><td class="paramname">hash_ctx</td><td>Pointer to the hash context. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_to_hold_result</td><td>Pointer and length into which the resulting hash is put. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">hash_result</td><td>Pointer and length of the resulting hash.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">T_COSE_ERR_HASH_GENERAL_FAIL</td><td>Some general failure of the hash function. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_HASH_BUFFER_SIZE</td><td>The size of the buffer to hold the hash result was too small.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>Call this to complete the hashing operation. If the everything completed correctly, the resulting hash is returned. Note that any errors that occurred during <a class="el" href="t__cose__crypto_8h.html#a7630a1ca6c5eb1722ff5356b91acdf92" title="Feed data into a cryptographic hash. ">t_cose_crypto_hash_update()</a> are returned here.</p>
+<p>See the note in the Detailed Description (the \file comment block) for details on how <code><a class="el" href="structuseful__buf.html" title="The non-const UsefulBuf typically used for some allocated memory that is to be filled in...">useful_buf</a></code> and <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> are used to return the hash. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5f88ad8d0afcd13b47eee3834d65329"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> t_cose_crypto_hash_start </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a> * </td>
+          <td class="paramname"><em>hash_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>cose_hash_alg_id</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Start cryptographic hash. </p>
+<p>Part of the t_cose crypto adaptation layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in,out]</td><td class="paramname">hash_ctx</td><td>Pointer to the hash context that will be initialized. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cose_hash_alg_id</td><td>Algorithm ID that identifies the hash to use. This is from the <a href="https://www.iana.org/assignments/cose/cose.xhtml">IANA COSE Registry</a>. As of the creation of this interface no identifiers of only a hash functions have been registered. Signature algorithms that include specification of the hash have been registered, but they are not to be used here. Until hash functions only have been officially registered, some IDs are defined in the proprietary space in <a class="el" href="t__cose__common_8h.html" title="Defines common to all public t_cose interfaces. ">t_cose_common.h</a>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">T_COSE_ERR_UNSUPPORTED_HASH</td><td>The requested algorithm is unknown or unsupported.</td></tr>
+    <tr><td class="paramname">T_COSE_ERR_HASH_GENERAL_FAIL</td><td>Some general failure of the hash function</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>This initializes the hash context for the particular algorithm. It must be called first. A <code>hash_ctx</code> can be reused if it is reinitialized. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7630a1ca6c5eb1722ff5356b91acdf92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void t_cose_crypto_hash_update </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__cose__crypto__hash.html">t_cose_crypto_hash</a> * </td>
+          <td class="paramname"><em>hash_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> </td>
+          <td class="paramname"><em>data_to_hash</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Feed data into a cryptographic hash. </p>
+<p>Part of the t_cose crypto adaptation layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in,out]</td><td class="paramname">hash_ctx</td><td>Pointer to the hash context in which accumulate the hash. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_to_hash</td><td>Pointer and length of data to feed into hash. The pointer may by <code>NULL</code> in which case no hashing is performed.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>There is no return value. If an error occurs it is remembered in <code>hash_ctx</code> and returned when <a class="el" href="t__cose__crypto_8h.html#ad61c4d5459a7ec7c9a9b1b9beaed91db" title="Finish a cryptographic hash. ">t_cose_crypto_hash_finish()</a> is called. Once in the error state, this function may be called, but it will not do anything. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4ab8519436340643fed475dbf7f38c91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> t_cose_crypto_pub_key_sign </td>
+          <td>(</td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>cose_alg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>key_select</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> </td>
+          <td class="paramname"><em>hash_to_sign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf.html">useful_buf</a> </td>
+          <td class="paramname"><em>signature_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> * </td>
+          <td class="paramname"><em>signature</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Perform public key signing. </p>
+<p>Part of the t_cose crypto adaptation layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">cose_alg_id</td><td>The algorithm to sign with. The IDs are defined in <a href="https://tools.ietf.org/html/rfc8152">COSE (RFC 8152)</a> or in the <a href="https://www.iana.org/assignments/cose/cose.xhtml">IANA COSE Registry</a>. A proprietary ID can also be defined locally (<code>#define</code>) if the needed one hasn't been registered. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_select</td><td>Indicates which key to use to sign. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash_to_sign</td><td>The bytes to sign. Typically, a hash of a payload. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature_buffer</td><td>Pointer and length of buffer into which the resulting signature is put. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature</td><td>Pointer and length of the signature returned.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">T_COSE_SUCCESS</td><td>Successfully created the signature. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_SIG_BUFFER_SIZE</td><td>The <code>signature_buffer</code> too small. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_UNSUPPORTED_SIGNING_ALG</td><td>The requested signing algorithm, <code>cose_alg_id</code>, is not supported. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_UNKNOWN_KEY</td><td>The key identified by <code>key_select</code> was not found. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_WRONG_TYPE_OF_KEY</td><td>The key was found, but it was the wrong type. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_INVALID_ARGUMENT</td><td>Some (unspecified) argument was not valid. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_INSUFFICIENT_MEMORY</td><td>Insufficient heap memory. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_FAIL</td><td>General unspecific failure. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_TAMPERING_DETECTED</td><td>Equivalent to <code>PSA_ERROR_TAMPERING_DETECTED</code>.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>This is called to do public key signing. The implementation will vary from one platform / OS to another but should conform to the description here.</p>
+<p>The key selection depends on the platform / OS.</p>
+<p>See the note in the Detailed Description (the \file comment block) for details on how <code><a class="el" href="structuseful__buf.html" title="The non-const UsefulBuf typically used for some allocated memory that is to be filled in...">useful_buf</a></code> and <code><a class="el" href="structuseful__buf__c.html" title="UsefulBufC and UsefulBuf are simple data structures to hold a pointer and length for a binary data...">useful_buf_c</a></code> are used to return the signature.</p>
+<p>To find out the size of the signature buffer needed, call this with <code>signature_buffer-&gt;ptr</code> <code>NULL</code> and <code>signature_buffer-&gt;len</code> a very large number like <code>UINT32_MAX</code>. The size will be returned in <code>signature-&gt;len</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6e0826243f262003d07b74e689aeefc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="t__cose__common_8h.html#a469580b586841b779bbdc430d3a0dd97">t_cose_err_t</a> t_cose_crypto_pub_key_verify </td>
+          <td>(</td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>cose_alg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>key_select</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> </td>
+          <td class="paramname"><em>key_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> </td>
+          <td class="paramname"><em>hash_to_verify</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structuseful__buf__c.html">useful_buf_c</a> </td>
+          <td class="paramname"><em>signature</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>perform public key signature verification. </p>
+<p>Part of the t_cose crypto adaptation layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">cose_alg_id</td><td>The algorithm to use for verification. The IDs are defined in <a href="https://tools.ietf.org/html/rfc8152">COSE (RFC 8152)</a> or in the <a href="https://www.iana.org/assignments/cose/cose.xhtml">IANA COSE Registry</a>. A proprietary ID can also be defined locally (<code>#define</code>) if the needed one hasn't been registered. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_select</td><td>Verification key selection. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_id</td><td>A key id or <code>NULL_USEFUL_BUF_C</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash_to_verify</td><td>The data or hash that is to be verified. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signature</td><td>The signature.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<p>This verifies that the <code>signature</code> passed in was over the <code>hash_to_verify</code> passed in.</p>
+<p>The public key used to verify the signature is selected by the <code>key_id</code> if it is not <code>NULL_USEFUL_BUF_C</code> or the <code>key_select</code> if it is.</p>
+<p>The key selected must be, or include, a public key of the correct type for <code>cose_alg_id</code>.</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">T_COSE_SUCCESS</td><td>The signature is valid </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_SIG_VERIFY</td><td>Signature verification failed. For example, the cryptographic operations completed successfully but hash wasn't as expected. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_UNKNOWN_KEY</td><td>The key identified by <code>key_select</code> or a <code>kid</code> was not found. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_WRONG_TYPE_OF_KEY</td><td>The key was found, but it was the wrong type for the operation. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_UNSUPPORTED_SIGNING_ALG</td><td>The requested signing algorithm is not supported. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_INVALID_ARGUMENT</td><td>Some (unspecified) argument was not valid. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_INSUFFICIENT_MEMORY</td><td>Out of heap memory. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_FAIL</td><td>General unspecific failure. </td></tr>
+    <tr><td class="paramname">T_COSE_ERR_TAMPERING_DETECTED</td><td>Equivalent to <code>PSA_ERROR_TAMPERING_DETECTED</code>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a16afa23abd54db5e3fe396b51fd49131"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">static size_t t_cose_signature_size </td>
+          <td>(</td>
+          <td class="paramtype">int32_t </td>
+          <td class="paramname"><em>cose_sig_alg_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the size in bytes of a particular signature type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">cose_sig_alg_id</td><td>The COSE algorithm ID.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The size in bytes of the signature for a public-key signing algorithm. </dd></dl>
+
+<p>Definition at line <a class="el" href="t__cose__crypto_8h_source.html#l00402">402</a> of file <a class="el" href="t__cose__crypto_8h_source.html">t_cose_crypto.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/t__cose__crypto_8h.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:09:59 GMT -->
+</html>

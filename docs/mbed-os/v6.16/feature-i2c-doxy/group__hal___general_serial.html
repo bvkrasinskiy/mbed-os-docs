@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/group__hal___general_serial.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:01:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | Serial Configuration Functions</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="group__hal___general_serial.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/group__hal___general_serial.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/feature-i2c-doxy/group__hal___general_serial.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> |
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Serial Configuration Functions<div class="ingroups"><a class="el" href="group__hal.html">Hal</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p></p><h1>Defined behavior</h1>
+ 
+<a href="#details">More...</a><p></p>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__hal___general_serial__tests"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial__tests.html">Serial hal tests</a></td></tr>
+<tr class="memdesc:group__hal___general_serial__tests"><td class="mdescLeft"> </td><td class="mdescRight">The Serial HAL tests ensure driver conformance to defined behavior. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga3096f72c7bb6c02936a2b5753ffe7157"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157">serial_init</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, PinName tx, PinName rx)</td></tr>
+<tr class="memdesc:ga3096f72c7bb6c02936a2b5753ffe7157"><td class="mdescLeft"> </td><td class="mdescRight">Initialize the serial peripheral.  <a href="#ga3096f72c7bb6c02936a2b5753ffe7157">More...</a><br/></td></tr>
+<tr class="separator:ga3096f72c7bb6c02936a2b5753ffe7157"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga29829ef7c866e140b2fb738195be3020"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga29829ef7c866e140b2fb738195be3020">serial_free</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:ga29829ef7c866e140b2fb738195be3020"><td class="mdescLeft"> </td><td class="mdescRight">Release the serial peripheral, not currently invoked.  <a href="#ga29829ef7c866e140b2fb738195be3020">More...</a><br/></td></tr>
+<tr class="separator:ga29829ef7c866e140b2fb738195be3020"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga33a5f814c050396d17bde80505c93188"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga33a5f814c050396d17bde80505c93188">serial_baud</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, int baudrate)</td></tr>
+<tr class="memdesc:ga33a5f814c050396d17bde80505c93188"><td class="mdescLeft"> </td><td class="mdescRight">Configure the baud rate.  <a href="#ga33a5f814c050396d17bde80505c93188">More...</a><br/></td></tr>
+<tr class="separator:ga33a5f814c050396d17bde80505c93188"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadd3983278709908656d97258002466e7"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#gadd3983278709908656d97258002466e7">serial_format</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, int data_bits, SerialParity parity, int stop_bits)</td></tr>
+<tr class="memdesc:gadd3983278709908656d97258002466e7"><td class="mdescLeft"> </td><td class="mdescRight">Configure the format.  <a href="#gadd3983278709908656d97258002466e7">More...</a><br/></td></tr>
+<tr class="separator:gadd3983278709908656d97258002466e7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7f22516de1ec2fca735606495ab1f869"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga7f22516de1ec2fca735606495ab1f869">serial_irq_handler</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, uart_irq_handler handler, uint32_t id)</td></tr>
+<tr class="memdesc:ga7f22516de1ec2fca735606495ab1f869"><td class="mdescLeft"> </td><td class="mdescRight">The serial interrupt handler registration.  <a href="#ga7f22516de1ec2fca735606495ab1f869">More...</a><br/></td></tr>
+<tr class="separator:ga7f22516de1ec2fca735606495ab1f869"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafefbd52507666563e36924676db7652e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#gafefbd52507666563e36924676db7652e">serial_irq_set</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, <a class="el" href="group__hal.html#ga8dbaa98202e6883fc0398bcc14f582b7">SerialIrq</a> irq, uint32_t enable)</td></tr>
+<tr class="memdesc:gafefbd52507666563e36924676db7652e"><td class="mdescLeft"> </td><td class="mdescRight">Configure serial interrupt.  <a href="#gafefbd52507666563e36924676db7652e">More...</a><br/></td></tr>
+<tr class="separator:gafefbd52507666563e36924676db7652e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6d3f8740a64b01ffc0ce607a638ece92"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga6d3f8740a64b01ffc0ce607a638ece92">serial_getc</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:ga6d3f8740a64b01ffc0ce607a638ece92"><td class="mdescLeft"> </td><td class="mdescRight">Get character.  <a href="#ga6d3f8740a64b01ffc0ce607a638ece92">More...</a><br/></td></tr>
+<tr class="separator:ga6d3f8740a64b01ffc0ce607a638ece92"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga25f76e4c233aa5298856d99ea3f4058e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga25f76e4c233aa5298856d99ea3f4058e">serial_putc</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, int c)</td></tr>
+<tr class="memdesc:ga25f76e4c233aa5298856d99ea3f4058e"><td class="mdescLeft"> </td><td class="mdescRight">Send a character.  <a href="#ga25f76e4c233aa5298856d99ea3f4058e">More...</a><br/></td></tr>
+<tr class="separator:ga25f76e4c233aa5298856d99ea3f4058e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0c9040624bb759fd5cd2bc10a60831bd"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga0c9040624bb759fd5cd2bc10a60831bd">serial_readable</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:ga0c9040624bb759fd5cd2bc10a60831bd"><td class="mdescLeft"> </td><td class="mdescRight">Check if the serial peripheral is readable.  <a href="#ga0c9040624bb759fd5cd2bc10a60831bd">More...</a><br/></td></tr>
+<tr class="separator:ga0c9040624bb759fd5cd2bc10a60831bd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadbfe8af954c543d045e9ca7b553578c8"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#gadbfe8af954c543d045e9ca7b553578c8">serial_writable</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:gadbfe8af954c543d045e9ca7b553578c8"><td class="mdescLeft"> </td><td class="mdescRight">Check if the serial peripheral is writable.  <a href="#gadbfe8af954c543d045e9ca7b553578c8">More...</a><br/></td></tr>
+<tr class="separator:gadbfe8af954c543d045e9ca7b553578c8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga390a75da4b756c213661502dc71a0234"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga390a75da4b756c213661502dc71a0234">serial_clear</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:ga390a75da4b756c213661502dc71a0234"><td class="mdescLeft"> </td><td class="mdescRight">Clear the serial peripheral.  <a href="#ga390a75da4b756c213661502dc71a0234">More...</a><br/></td></tr>
+<tr class="separator:ga390a75da4b756c213661502dc71a0234"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf4e24d07fc05f2ce0cf59c61da149e01"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#gaf4e24d07fc05f2ce0cf59c61da149e01">serial_break_set</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:gaf4e24d07fc05f2ce0cf59c61da149e01"><td class="mdescLeft"> </td><td class="mdescRight">Set the break.  <a href="#gaf4e24d07fc05f2ce0cf59c61da149e01">More...</a><br/></td></tr>
+<tr class="separator:gaf4e24d07fc05f2ce0cf59c61da149e01"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5348986db46756483d94b5040ab9a0a9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga5348986db46756483d94b5040ab9a0a9">serial_break_clear</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj)</td></tr>
+<tr class="memdesc:ga5348986db46756483d94b5040ab9a0a9"><td class="mdescLeft"> </td><td class="mdescRight">Clear the break.  <a href="#ga5348986db46756483d94b5040ab9a0a9">More...</a><br/></td></tr>
+<tr class="separator:ga5348986db46756483d94b5040ab9a0a9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf8be980153743b25bcbcff4c5855dbf3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#gaf8be980153743b25bcbcff4c5855dbf3">serial_pinout_tx</a> (PinName tx)</td></tr>
+<tr class="memdesc:gaf8be980153743b25bcbcff4c5855dbf3"><td class="mdescLeft"> </td><td class="mdescRight">Configure the TX pin for UART function.  <a href="#gaf8be980153743b25bcbcff4c5855dbf3">More...</a><br/></td></tr>
+<tr class="separator:gaf8be980153743b25bcbcff4c5855dbf3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga17cb0ba1a2c4bdae299120e4d7557f4b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga17cb0ba1a2c4bdae299120e4d7557f4b">serial_set_flow_control</a> (<a class="el" href="structserial__t.html">serial_t</a> *obj, FlowControl type, PinName rxflow, PinName txflow)</td></tr>
+<tr class="memdesc:ga17cb0ba1a2c4bdae299120e4d7557f4b"><td class="mdescLeft"> </td><td class="mdescRight">Configure the serial for the flow control.  <a href="#ga17cb0ba1a2c4bdae299120e4d7557f4b">More...</a><br/></td></tr>
+<tr class="separator:ga17cb0ba1a2c4bdae299120e4d7557f4b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gabdfbc1952f39d0adf859ed165665358e"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_map.html">PinMap</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#gabdfbc1952f39d0adf859ed165665358e">serial_tx_pinmap</a> (void)</td></tr>
+<tr class="memdesc:gabdfbc1952f39d0adf859ed165665358e"><td class="mdescLeft"> </td><td class="mdescRight">Get the pins that support Serial TX.  <a href="#gabdfbc1952f39d0adf859ed165665358e">More...</a><br/></td></tr>
+<tr class="separator:gabdfbc1952f39d0adf859ed165665358e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6298edbb364357cbc2889e40037130aa"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_map.html">PinMap</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga6298edbb364357cbc2889e40037130aa">serial_rx_pinmap</a> (void)</td></tr>
+<tr class="memdesc:ga6298edbb364357cbc2889e40037130aa"><td class="mdescLeft"> </td><td class="mdescRight">Get the pins that support Serial RX.  <a href="#ga6298edbb364357cbc2889e40037130aa">More...</a><br/></td></tr>
+<tr class="separator:ga6298edbb364357cbc2889e40037130aa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3484c93c465f94aed6cdf4f17ad4ecfa"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_map.html">PinMap</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga3484c93c465f94aed6cdf4f17ad4ecfa">serial_cts_pinmap</a> (void)</td></tr>
+<tr class="memdesc:ga3484c93c465f94aed6cdf4f17ad4ecfa"><td class="mdescLeft"> </td><td class="mdescRight">Get the pins that support Serial CTS.  <a href="#ga3484c93c465f94aed6cdf4f17ad4ecfa">More...</a><br/></td></tr>
+<tr class="separator:ga3484c93c465f94aed6cdf4f17ad4ecfa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0294c5fca165d37aadcf4321b6a0e33e"><td align="right" class="memItemLeft" valign="top">const <a class="el" href="struct_pin_map.html">PinMap</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__hal___general_serial.html#ga0294c5fca165d37aadcf4321b6a0e33e">serial_rts_pinmap</a> (void)</td></tr>
+<tr class="memdesc:ga0294c5fca165d37aadcf4321b6a0e33e"><td class="mdescLeft"> </td><td class="mdescRight">Get the pins that support Serial RTS.  <a href="#ga0294c5fca165d37aadcf4321b6a0e33e">More...</a><br/></td></tr>
+<tr class="separator:ga0294c5fca165d37aadcf4321b6a0e33e"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h1>Defined behavior</h1>
+<ul>
+<li><a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157" title="Initialize the serial peripheral. ">serial_init</a> initializes the <a class="el" href="structserial__t.html" title="Asynch serial HAL structure. ">serial_t</a></li>
+<li><a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157" title="Initialize the serial peripheral. ">serial_init</a> sets the default parameters for serial peripheral (9600 bps, 8N1 format)</li>
+<li><a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157" title="Initialize the serial peripheral. ">serial_init</a> configures the specified pins</li>
+<li><a class="el" href="group__hal___general_serial.html#ga29829ef7c866e140b2fb738195be3020" title="Release the serial peripheral, not currently invoked. ">serial_free</a> releases the serial peripheral</li>
+<li><a class="el" href="group__hal___general_serial.html#ga33a5f814c050396d17bde80505c93188" title="Configure the baud rate. ">serial_baud</a> configures the baud rate</li>
+<li>at least 9600 bps the baud rate must be supported</li>
+<li><a class="el" href="group__hal___general_serial.html#gadd3983278709908656d97258002466e7" title="Configure the format. ">serial_format</a> configures the transmission format (number of bits, parity and the number of stop bits)</li>
+<li>at least 8N1 format must be supported</li>
+<li><a class="el" href="group__hal___general_serial.html#ga7f22516de1ec2fca735606495ab1f869" title="The serial interrupt handler registration. ">serial_irq_handler</a> registers the interrupt handler which will be invoked when the interrupt fires.</li>
+<li><a class="el" href="group__hal___general_serial.html#gafefbd52507666563e36924676db7652e" title="Configure serial interrupt. ">serial_irq_set</a> enables or disables the serial RX or TX IRQ.</li>
+<li>If <code>RxIrq</code> is enabled by <a class="el" href="group__hal___general_serial.html#gafefbd52507666563e36924676db7652e" title="Configure serial interrupt. ">serial_irq_set</a>, <a class="el" href="group__hal___general_serial.html#ga7f22516de1ec2fca735606495ab1f869" title="The serial interrupt handler registration. ">serial_irq_handler</a> will be invoked whenever Receive Data Register Full IRQ is generated.</li>
+<li>If <code>TxIrq</code> is enabled by <a class="el" href="group__hal___general_serial.html#gafefbd52507666563e36924676db7652e" title="Configure serial interrupt. ">serial_irq_set</a>, <a class="el" href="group__hal___general_serial.html#ga7f22516de1ec2fca735606495ab1f869" title="The serial interrupt handler registration. ">serial_irq_handler</a> will be invoked whenever Transmit Data Register Empty IRQ is generated.</li>
+<li>If the interrupt condition holds true, when the interrupt is enabled with <a class="el" href="group__hal___general_serial.html#gafefbd52507666563e36924676db7652e" title="Configure serial interrupt. ">serial_irq_set</a>, the <a class="el" href="group__hal___general_serial.html#ga7f22516de1ec2fca735606495ab1f869" title="The serial interrupt handler registration. ">serial_irq_handler</a> is called instantly.</li>
+<li><a class="el" href="group__hal___general_serial.html#ga6d3f8740a64b01ffc0ce607a638ece92" title="Get character. ">serial_getc</a> returns the character from serial buffer.</li>
+<li><a class="el" href="group__hal___general_serial.html#ga6d3f8740a64b01ffc0ce607a638ece92" title="Get character. ">serial_getc</a> is a blocking call (waits for the character).</li>
+<li><a class="el" href="group__hal___general_serial.html#ga25f76e4c233aa5298856d99ea3f4058e" title="Send a character. ">serial_putc</a> sends a character.</li>
+<li><a class="el" href="group__hal___general_serial.html#ga25f76e4c233aa5298856d99ea3f4058e" title="Send a character. ">serial_putc</a> is a blocking call (waits for a peripheral to be available).</li>
+<li><a class="el" href="group__hal___general_serial.html#ga0c9040624bb759fd5cd2bc10a60831bd" title="Check if the serial peripheral is readable. ">serial_readable</a> returns non-zero value if a character can be read, 0 otherwise.</li>
+<li><a class="el" href="group__hal___general_serial.html#gadbfe8af954c543d045e9ca7b553578c8" title="Check if the serial peripheral is writable. ">serial_writable</a> returns non-zero value if a character can be written, 0 otherwise.</li>
+<li><a class="el" href="group__hal___general_serial.html#ga390a75da4b756c213661502dc71a0234" title="Clear the serial peripheral. ">serial_clear</a> clears the <a class="el" href="structserial__t.html" title="Asynch serial HAL structure. ">serial_t</a> RX/TX buffers</li>
+<li><a class="el" href="group__hal___general_serial.html#gaf4e24d07fc05f2ce0cf59c61da149e01" title="Set the break. ">serial_break_set</a> sets the break signal.</li>
+<li><a class="el" href="group__hal___general_serial.html#ga5348986db46756483d94b5040ab9a0a9" title="Clear the break. ">serial_break_clear</a> clears the break signal.</li>
+<li><a class="el" href="group__hal___general_serial.html#gaf8be980153743b25bcbcff4c5855dbf3" title="Configure the TX pin for UART function. ">serial_pinout_tx</a> configures the TX pin as an output (to be used in half-duplex mode).</li>
+<li><a class="el" href="group__hal___general_serial.html#ga17cb0ba1a2c4bdae299120e4d7557f4b" title="Configure the serial for the flow control. ">serial_set_flow_control</a> configures serial flow control.</li>
+<li><a class="el" href="group__hal___general_serial.html#ga17cb0ba1a2c4bdae299120e4d7557f4b" title="Configure the serial for the flow control. ">serial_set_flow_control</a> sets flow control in the hardware if a serial peripheral supports it, otherwise software emulation is used.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a> starts the serial asynchronous transfer.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a> writes <code>tx_length</code> bytes from the <code>tx</code> to the bus.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a> must support 8 data bits</li>
+<li>The callback given to <a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a> is invoked when the transfer completes.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a> specifies the logical OR of events to be registered.</li>
+<li>The <a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a> function may use the <code>DMAUsage</code> hint to select the appropriate async algorithm.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> starts the serial asynchronous transfer.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> reads <code>rx_length</code> bytes to the <code>rx</code> buffer.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> must support 8 data bits</li>
+<li>The callback given to <a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> is invoked when the transfer completes.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> specifies the logical OR of events to be registered.</li>
+<li>The <a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> function may use the <code>DMAUsage</code> hint to select the appropriate async algorithm.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a> specifies a character in range 0-254 to be matched, 255 is a reserved value.</li>
+<li>If SERIAL_EVENT_RX_CHARACTER_MATCH event is not registered, the <code>char_match</code> is ignored.</li>
+<li>The SERIAL_EVENT_RX_CHARACTER_MATCH event is set in the callback when SERIAL_EVENT_RX_CHARACTER_MATCH event is registered AND <code>char_match</code> is present in the received data.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#gafc2a12a598763beb4014985158204ca2" title="Attempts to determine if the serial peripheral is already in use for TX. ">serial_tx_active</a> returns non-zero if the TX transaction is ongoing, 0 otherwise.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#gafce7267eb359318fc295b77755c65034" title="Attempts to determine if the serial peripheral is already in use for RX. ">serial_rx_active</a> returns non-zero if the RX transaction is ongoing, 0 otherwise.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#gad7dca7649dc8e744aff114ca2f426cab" title="The asynchronous TX and RX handler. ">serial_irq_handler_asynch</a> returns event flags if a transfer termination condition was met, otherwise returns 0.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#gad7dca7649dc8e744aff114ca2f426cab" title="The asynchronous TX and RX handler. ">serial_irq_handler_asynch</a> takes no longer than one packet transfer time (packet_bits / baudrate) to execute.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga4ad80a371ee4f3ba7b4479b73b6f8de9" title="Abort the ongoing TX transaction. ">serial_tx_abort_asynch</a> aborts the ongoing TX transaction.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga4ad80a371ee4f3ba7b4479b73b6f8de9" title="Abort the ongoing TX transaction. ">serial_tx_abort_asynch</a> disables the enabled interupt for TX.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga4ad80a371ee4f3ba7b4479b73b6f8de9" title="Abort the ongoing TX transaction. ">serial_tx_abort_asynch</a> flushes the TX hardware buffer if TX FIFO is used.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga324d2a7883e0c3be45ff2235b4f15e54" title="Abort the ongoing RX transaction. ">serial_rx_abort_asynch</a> aborts the ongoing RX transaction.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga324d2a7883e0c3be45ff2235b4f15e54" title="Abort the ongoing RX transaction. ">serial_rx_abort_asynch</a> disables the enabled interupt for RX.</li>
+<li><a class="el" href="group__hal___asynch_serial.html#ga324d2a7883e0c3be45ff2235b4f15e54" title="Abort the ongoing RX transaction. ">serial_rx_abort_asynch</a> flushes the TX hardware buffer if RX FIFO is used.</li>
+<li>Correct operation guaranteed when interrupt latency is shorter than one packet transfer time (packet_bits / baudrate) if the flow control is not used.</li>
+<li>Correct operation guaranteed regardless of interrupt latency if the flow control is used.</li>
+</ul>
+<h1>Undefined behavior</h1>
+<ul>
+<li>Calling <a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157" title="Initialize the serial peripheral. ">serial_init</a> multiple times on the same <code><a class="el" href="structserial__t.html" title="Asynch serial HAL structure. ">serial_t</a></code> without <a class="el" href="group__hal___general_serial.html#ga29829ef7c866e140b2fb738195be3020" title="Release the serial peripheral, not currently invoked. ">serial_free</a>.</li>
+<li>Passing invalid pin to <a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157" title="Initialize the serial peripheral. ">serial_init</a>, <a class="el" href="group__hal___general_serial.html#gaf8be980153743b25bcbcff4c5855dbf3" title="Configure the TX pin for UART function. ">serial_pinout_tx</a>.</li>
+<li>Calling any function other than <a class="el" href="group__hal___general_serial.html#ga3096f72c7bb6c02936a2b5753ffe7157" title="Initialize the serial peripheral. ">serial_init</a> on am uninitialized or freed <code><a class="el" href="structserial__t.html" title="Asynch serial HAL structure. ">serial_t</a></code>.</li>
+<li>Passing an invalid pointer as <code>obj</code> to any function.</li>
+<li>Passing an invalid pointer as <code>handler</code> to <a class="el" href="group__hal___general_serial.html#ga7f22516de1ec2fca735606495ab1f869" title="The serial interrupt handler registration. ">serial_irq_handler</a>, <a class="el" href="group__hal___asynch_serial.html#ga734f6d9ac01f0268867dce5df7e6e5b8" title="Begin asynchronous TX transfer. ">serial_tx_asynch</a>, <a class="el" href="group__hal___asynch_serial.html#ga2a1baa9b4e88cf9cc91a0f8a1e5001b1" title="Begin asynchronous RX transfer (enable interrupt for data collecting) The used buffer is specified in...">serial_rx_asynch</a>.</li>
+<li>Calling ::serial_tx_abort while no async TX transfer is being processed.</li>
+<li>Calling ::serial_rx_abort while no async RX transfer is being processed.</li>
+<li>Devices behavior is undefined when the interrupt latency is longer than one packet transfer time (packet_bits / baudrate) if the flow control is not used. </li>
+</ul>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga33a5f814c050396d17bde80505c93188"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_baud </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>baudrate</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure the baud rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">baudrate</td><td>The baud rate to be configured </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5348986db46756483d94b5040ab9a0a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_break_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear the break. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf4e24d07fc05f2ce0cf59c61da149e01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_break_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Set the break. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga390a75da4b756c213661502dc71a0234"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Clear the serial peripheral. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3484c93c465f94aed6cdf4f17ad4ecfa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_map.html">PinMap</a>* serial_cts_pinmap </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pins that support Serial CTS. </p>
+<p>Return a <a class="el" href="struct_pin_map.html">PinMap</a> array of pins that support Serial CTS. The array is terminated with {NC, NC, 0}.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_pin_map.html">PinMap</a> array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gadd3983278709908656d97258002466e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>data_bits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SerialParity </td>
+          <td class="paramname"><em>parity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>stop_bits</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure the format. </p>
+<p>Set the number of bits, parity and the number of stop bits</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">data_bits</td><td>The number of data bits </td></tr>
+    <tr><td class="paramname">parity</td><td>The parity </td></tr>
+    <tr><td class="paramname">stop_bits</td><td>The number of stop bits </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga29829ef7c866e140b2fb738195be3020"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Release the serial peripheral, not currently invoked. </p>
+<p>It requires further resource management.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6d3f8740a64b01ffc0ce607a638ece92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int serial_getc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get character. </p>
+<p>This is a blocking call, waiting for a character</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3096f72c7bb6c02936a2b5753ffe7157"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>tx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>rx</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize the serial peripheral. </p>
+<p>It sets the default parameters for serial peripheral, and configures its specifieds pins.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">tx</td><td>The TX pin name </td></tr>
+    <tr><td class="paramname">rx</td><td>The RX pin name </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7f22516de1ec2fca735606495ab1f869"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_irq_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uart_irq_handler </td>
+          <td class="paramname"><em>handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>id</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>The serial interrupt handler registration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">handler</td><td>The interrupt handler which will be invoked when the interrupt fires </td></tr>
+    <tr><td class="paramname">id</td><td>The SerialBase object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gafefbd52507666563e36924676db7652e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_irq_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__hal.html#ga8dbaa98202e6883fc0398bcc14f582b7">SerialIrq</a> </td>
+          <td class="paramname"><em>irq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>enable</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure serial interrupt. </p>
+<p>This function is used for word-approach</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">irq</td><td>The serial IRQ type (RX or TX) </td></tr>
+    <tr><td class="paramname">enable</td><td>Set to non-zero to enable events, or zero to disable them </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf8be980153743b25bcbcff4c5855dbf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_pinout_tx </td>
+          <td>(</td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>tx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure the TX pin for UART function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">tx</td><td>The pin name used for TX </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga25f76e4c233aa5298856d99ea3f4058e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_putc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>c</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Send a character. </p>
+<p>This is a blocking call, waiting for a peripheral to be available for writing</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">c</td><td>The character to be sent </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0c9040624bb759fd5cd2bc10a60831bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int serial_readable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check if the serial peripheral is readable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero value if a character can be read, 0 if nothing to read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0294c5fca165d37aadcf4321b6a0e33e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_map.html">PinMap</a>* serial_rts_pinmap </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pins that support Serial RTS. </p>
+<p>Return a <a class="el" href="struct_pin_map.html">PinMap</a> array of pins that support Serial RTS. The array is terminated with {NC, NC, 0}.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_pin_map.html">PinMap</a> array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6298edbb364357cbc2889e40037130aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_map.html">PinMap</a>* serial_rx_pinmap </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pins that support Serial RX. </p>
+<p>Return a <a class="el" href="struct_pin_map.html">PinMap</a> array of pins that support Serial RX. The array is terminated with {NC, NC, 0}.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_pin_map.html">PinMap</a> array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga17cb0ba1a2c4bdae299120e4d7557f4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void serial_set_flow_control </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FlowControl </td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>rxflow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PinName </td>
+          <td class="paramname"><em>txflow</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Configure the serial for the flow control. </p>
+<p>It sets flow control in the hardware if a serial peripheral supports it, otherwise software emulation is used.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+    <tr><td class="paramname">type</td><td>The type of the flow control. Look at the available FlowControl types. </td></tr>
+    <tr><td class="paramname">rxflow</td><td>The TX pin name </td></tr>
+    <tr><td class="paramname">txflow</td><td>The RX pin name </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gabdfbc1952f39d0adf859ed165665358e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const <a class="el" href="struct_pin_map.html">PinMap</a>* serial_tx_pinmap </td>
+          <td>(</td>
+          <td class="paramtype">void </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the pins that support Serial TX. </p>
+<p>Return a <a class="el" href="struct_pin_map.html">PinMap</a> array of pins that support Serial TX. The array is terminated with {NC, NC, 0}.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_pin_map.html">PinMap</a> array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gadbfe8af954c543d045e9ca7b553578c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int serial_writable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structserial__t.html">serial_t</a> * </td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check if the serial peripheral is writable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">obj</td><td>The serial object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero value if a character can be written, 0 otherwise. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/group__hal___general_serial.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 16:01:15 GMT -->
+</html>

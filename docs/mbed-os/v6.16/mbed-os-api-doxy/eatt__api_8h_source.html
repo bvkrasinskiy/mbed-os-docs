@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/eatt__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:23:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | eatt_api.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="eatt__api_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/eatt__api_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/eatt__api_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_33de8441f7b8b108cc48249435a2d2bd.html">cordio_stack</a></li><li class="navelem"><a class="el" href="dir_3940a4f0546291bcd68aa891290cb6c5.html">ble-host</a></li><li class="navelem"><a class="el" href="dir_099b3dd08bcbe558212de83e1db8f329.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">eatt_api.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="eatt__api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/*!</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *  \file</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *  \brief  Enhanced attribute protocol client and server API.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *  Copyright (c) 2019-2020 Arm Ltd. All Rights Reserved.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *  Copyright (c) 2019-2020 Packetcraft, Inc.</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *  </span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *  Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *  you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *  You may obtain a copy of the License at</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *  </span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *  </span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *  distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *  See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> *  limitations under the License.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="preprocessor">#ifndef EATT_API_H</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#define EATT_API_H</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="preprocessor">#include "<a class="code" href="wsf__timer_8h.html">wsf_timer.h</a>"</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="preprocessor">#include "<a class="code" href="att__defs_8h.html">att_defs.h</a>"</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "<a class="code" href="att__uuid_8h.html">att_uuid.h</a>"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#include "<a class="code" href="dm__api_8h.html">dm_api.h</a>"</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#include "<a class="code" href="l2c__api_8h.html">l2c_api.h</a>"</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#include "<a class="code" href="cfg__stack_8h.html">cfg_stack.h</a>"</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> </div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span> {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment">  Macros</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment"></span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">/*! \addtogroup STACK_ATT_API</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment"> *  \{ */</span><span class="comment"></span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment">/** \name EATT Role</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment"> * EATT role can be initiator or acceptor.</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="comment">/**@{*/</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="preprocessor">#define EATT_ROLE_INITIATOR       L2C_COC_ROLE_INITIATOR</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="preprocessor">#define EATT_ROLE_ACCEPTOR        L2C_COC_ROLE_ACCEPTOR</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment">/**@}*/</span><span class="comment"></span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_ATT_API */</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">  Data Types</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment"></span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">/*! \addtogroup STACK_ATT_API</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment"> *  \{ */</span><span class="comment"></span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment">/**</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="comment"> * \name EATT Data Types</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment"> *</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment">/**@{*/</span><span class="comment"></span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">/*! \brief EATT multiple notify tuple structure */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structeatt_tuple__t.html">   65</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> {</div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structeatt_tuple__t.html#af242d6e3b6108ea75e1eb236e94c8240">   67</a></span>   uint16_t <a class="code" href="structeatt_tuple__t.html#af242d6e3b6108ea75e1eb236e94c8240">handle</a>;                <span class="comment">/*!&lt; Attribute handle */</span></div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structeatt_tuple__t.html#a8aed22e2c7b283705ec82e0120515618">   68</a></span>   uint16_t <a class="code" href="structeatt_tuple__t.html#a8aed22e2c7b283705ec82e0120515618">len</a>;                   <span class="comment">/*!&lt; Length of pValue in bytes. */</span></div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structeatt_tuple__t.html#a9ddff936ddacfc2b6285295cb2ef2c9e">   69</a></span>   uint8_t *<a class="code" href="structeatt_tuple__t.html#a9ddff936ddacfc2b6285295cb2ef2c9e">pValue</a>;                <span class="comment">/*!&lt; Attribute value */</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> } <a class="code" href="structeatt_tuple__t.html">eattTuple_t</a>;<span class="comment"></span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">/**@}*/</span><span class="comment"></span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_ATT_API */</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment"></span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">/*! \addtogroup STACK_ATTS_API</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment"> *  \{ */</span><span class="comment"></span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">/** \name EATT Server Functions</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment"> *</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">/**@{*/</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="comment">/*!</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment"> *  \brief  Send multiple attribute protocol Handle Value Notification.</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment"> *</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment"> *</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment"> */</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga3c24deec539a55940a30fd2b1e77a5c8">EattsMultiValueNtf</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t numTuples, <a class="code" href="structeatt_tuple__t.html">eattTuple_t</a> *pTupleList);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> </div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">/*!</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment"> *  \brief  Send an attribute protocol Handle Value Indication.</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment"> *</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment"> *</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment"> */</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga63886c14fae99a9416fd6f647fb90057">EattsHandleValueInd</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle, uint16_t valueLen,</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>                          uint8_t *pValue);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> </div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">/*!</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment"> *  \brief  Send an attribute protocol Handle Value Notification.</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment"> *</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment"> *</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment"> */</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga004b0167a224e63093094829e6785cb9">EattsHandleValueNtf</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle, uint16_t valueLen,</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>                          uint8_t *pValue);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> </div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">/*!</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment"> *  \brief  Send an attribute protocol Handle Value Indication without copying the attribute</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment"> *          value data.</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment"> *</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment"> *          Note: attribute value buffer 'pValue' must be allocated with AttMsgAlloc().</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment"> *</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> <span class="comment"> *</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment"> */</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#gae6c816f181325c58394ed0fdbe040865">EattsHandleValueIndZeroCpy</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle,</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>                                 uint16_t valueLen, uint8_t *pValue);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> </div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">/*!</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment"> *  \brief  Send an attribute protocol Handle Value Notification without copying the attribute</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment"> *          value data.</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment"> *</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment"> *          Note: attribute value buffer 'pValue' must be allocated with AttMsgAlloc().</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment"> *</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment"> *</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment"> */</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga0349f9cb7dff0a07bed00cfdba87d014">EattsHandleValueNtfZeroCpy</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle,</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>                                 uint16_t valueLen, uint8_t *pValue);</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> </div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">/*!</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment"> *  \brief  Initialize the Enhanced ATT Server.</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment"> *</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment"> *  \return None</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment"> */</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>  <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#gabeceacc1aec1bbc61be97f71eded31b3">EattsInit</a>();<span class="comment"></span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment">/**@}*/</span><span class="comment"></span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_ATTS_API */</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment"></span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">/*! \addtogroup STACK_ATTC_API</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment"> *  \{ */</span><span class="comment"></span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">/** \name EATT Client Functions</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment"> *</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">/**@{*/</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">/*!</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment"> *  \brief  Initiate an attribute protocol Find Information Request.</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment"> *</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment"> *  \param  startHandle Attribute start handle.</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment"> *  \param  endHandle   Attribute end handle.</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="comment"> *  \param  continuing  TRUE if ATTC continues sending requests until complete.</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment"> *</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment"> */</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga687c3e0a569d24418649089081502e9a">EattcFindInfoReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle,</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>                       bool_t continuing);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> </div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment">/*!</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment"> *  \brief  Initiate an attribute protocol Find By Type Value Request.</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment"> *</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="comment"> *  \param  startHandle Attribute start handle.</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="comment"> *  \param  endHandle   Attribute end handle.</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="comment"> *  \param  uuid16      16-bit UUID to find.</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment"> *  \param  continuing  TRUE if ATTC continues sending requests until complete.</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment"> *</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="comment"> */</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gab27f68aee5ffaf4db4649f2f94878bb2">EattcFindByTypeValueReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle,</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>                              uint16_t uuid16, uint16_t valueLen, uint8_t *pValue, bool_t continuing);</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> </div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">/*!</span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="comment"> *  \brief  Initiate an attribute protocol Read By Type Request.</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment"> *</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="comment"> *  \param  startHandle Attribute start handle.</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment"> *  \param  endHandle   Attribute end handle.</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="comment"> *  \param  uuidLen     Length of UUID (2 or 16).</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment"> *  \param  pUuid       Pointer to UUID data.</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment"> *  \param  continuing  TRUE if ATTC continues sending requests until complete.</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment"> *</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment"> */</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga519e1984572801a3d79e12114ba4db1b">EattcReadByTypeReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle,</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>                         uint8_t uuidLen, uint8_t *pUuid, bool_t continuing);</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> </div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment">/*!</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment"> *  \brief  Initiate an attribute protocol Read Request.</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment"> *</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment"> *  \param  connId    DM connection ID.</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment"> *  \param  priority  Operation priority.</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment"> *  \param  handle    Attribute handle.</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="comment"> *</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment"> */</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gaec964469ce6db6096a9fd84b83840587">EattcReadReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle);</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> </div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">/*!</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment"> *  \brief  Initiate an attribute protocol Read Request.</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment"> *</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment"> *  \param  offset      Read attribute data starting at this offset.</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment"> *  \param  continuing  TRUE if ATTC continues sending requests until complete.</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment"> *</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment"> */</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gae5ab4babc6cb8088dded5cfb15247e99">EattcReadLongReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle, uint16_t offset, bool_t continuing);</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> </div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment">/*!</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment"> *  \brief  Initiate an attribute protocol Read Multiple Request.</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment"> *</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="comment"> *  \param  numHandles  Number of handles in attribute handle list.</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="comment"> *  \param  pHandles    List of attribute handles.</span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment"> *</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment"> */</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga4556eab6ead426ed2f930a8f7fe353c7">EattcReadMultipleReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint8_t numHandles, uint16_t *pHandles);</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> </div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment">/*!</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment"> *  \brief  Initiate an attribute protocol Read By Group Type Request.</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment"> *</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment"> *  \param  startHandle Attribute start handle.</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment"> *  \param  endHandle   Attribute end handle.</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment"> *  \param  uuidLen     Length of UUID (2 or 16).</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment"> *  \param  pUuid       Pointer to UUID data.</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment"> *  \param  continuing  TRUE if ATTC continues sending requests until complete.</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment"> *</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment"> */</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga6eb003361bdccdee4b759f17a4418b67">EattcReadByGroupTypeReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle,</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>                             uint8_t uuidLen, uint8_t *pUuid, bool_t continuing);</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> </div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">/*!</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment"> *  \brief  Initiate an attribute protocol Write Request.</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment"> *</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="comment"> *</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment"> */</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga726657875c7f37e0918b38c99f77f979">EattcWriteReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle, uint16_t valueLen,</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>                    uint8_t *pValue);</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> </div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">/*!</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="comment"> *  \brief  Cancel an attribute protocol request in progress.</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment"> *</span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment"> *  \param  connId    DM connection ID.</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> <span class="comment"> *  \param  priority  Operation priority.</span></div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="comment"> *</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="comment"> */</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gaa53e9bf94bf94c391a844a55a9ff8e41">EattcCancelReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority);</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> </div><div class="line"><a name="l00322"></a><span class="lineno">  322</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> <span class="comment">/*!</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span> <span class="comment"> *  \brief  Send an attribute protocol indication confirmation.</span></div><div class="line"><a name="l00325"></a><span class="lineno">  325</span> <span class="comment"> *</span></div><div class="line"><a name="l00326"></a><span class="lineno">  326</span> <span class="comment"> *  \param  connId    DM connection ID.</span></div><div class="line"><a name="l00327"></a><span class="lineno">  327</span> <span class="comment"> *  \param  cid       L2Cap channel ID.</span></div><div class="line"><a name="l00328"></a><span class="lineno">  328</span> <span class="comment"> *</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span> <span class="comment"> */</span></div><div class="line"><a name="l00331"></a><span class="lineno">  331</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga07ec8c9da536b62f0eab739628ea5959">EattcIndConfirm</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint16_t cid);</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> </div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span> <span class="comment">/*!</span></div><div class="line"><a name="l00336"></a><span class="lineno">  336</span> <span class="comment"> *  \brief  Initiate an attribute protocol Write Command.</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span> <span class="comment"> *</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00341"></a><span class="lineno">  341</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00342"></a><span class="lineno">  342</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> <span class="comment"> *</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00345"></a><span class="lineno">  345</span> <span class="comment"> */</span></div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga5fd2c0ab12e49fdceb5d83bfbcb877aa">EattcWriteCmd</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle, uint16_t valueLen,</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>                    uint8_t *pValue);</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span> </div><div class="line"><a name="l00350"></a><span class="lineno">  350</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span> <span class="comment">/*!</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span> <span class="comment"> *  \brief  Initiate an attribute protocol Prepare Write Request.</span></div><div class="line"><a name="l00353"></a><span class="lineno">  353</span> <span class="comment"> *</span></div><div class="line"><a name="l00354"></a><span class="lineno">  354</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00355"></a><span class="lineno">  355</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00356"></a><span class="lineno">  356</span> <span class="comment"> *  \param  handle      Attribute handle.</span></div><div class="line"><a name="l00357"></a><span class="lineno">  357</span> <span class="comment"> *  \param  offset      Write attribute data starting at this offset.</span></div><div class="line"><a name="l00358"></a><span class="lineno">  358</span> <span class="comment"> *  \param  valueLen    Length of value data.</span></div><div class="line"><a name="l00359"></a><span class="lineno">  359</span> <span class="comment"> *  \param  pValue      Pointer to value data.</span></div><div class="line"><a name="l00360"></a><span class="lineno">  360</span> <span class="comment"> *  \param  valueByRef  TRUE if pValue data is accessed by reference rather than copied.</span></div><div class="line"><a name="l00361"></a><span class="lineno">  361</span> <span class="comment"> *  \param  continuing  TRUE if ATTC continues sending requests until complete.</span></div><div class="line"><a name="l00362"></a><span class="lineno">  362</span> <span class="comment"> *</span></div><div class="line"><a name="l00363"></a><span class="lineno">  363</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00364"></a><span class="lineno">  364</span> <span class="comment"> */</span></div><div class="line"><a name="l00365"></a><span class="lineno">  365</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00366"></a><span class="lineno">  366</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gac64ca6c252cec07af87b00e9b5bbd786">EattcPrepareWriteReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint16_t handle, uint16_t offset,</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>                           uint16_t valueLen, uint8_t *pValue, bool_t valueByRef, bool_t continuing);</div><div class="line"><a name="l00368"></a><span class="lineno">  368</span> </div><div class="line"><a name="l00369"></a><span class="lineno">  369</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00370"></a><span class="lineno">  370</span> <span class="comment">/*!</span></div><div class="line"><a name="l00371"></a><span class="lineno">  371</span> <span class="comment"> *  \brief  Initiate an attribute protocol Execute Write Request.</span></div><div class="line"><a name="l00372"></a><span class="lineno">  372</span> <span class="comment"> *</span></div><div class="line"><a name="l00373"></a><span class="lineno">  373</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00374"></a><span class="lineno">  374</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00375"></a><span class="lineno">  375</span> <span class="comment"> *  \param  writeAll    TRUE to write all queued writes, FALSE to cancel all queued writes.</span></div><div class="line"><a name="l00376"></a><span class="lineno">  376</span> <span class="comment"> *</span></div><div class="line"><a name="l00377"></a><span class="lineno">  377</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> <span class="comment"> */</span></div><div class="line"><a name="l00379"></a><span class="lineno">  379</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00380"></a><span class="lineno">  380</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga24f3833b7c953307adc923b6ad954720">EattcExecuteWriteReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, bool_t writeAll);</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span> </div><div class="line"><a name="l00382"></a><span class="lineno">  382</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00383"></a><span class="lineno">  383</span> <span class="comment">/*!</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span> <span class="comment"> *  \brief  Initiate an attribute protocol Read Multiple Variable Length Request.</span></div><div class="line"><a name="l00385"></a><span class="lineno">  385</span> <span class="comment"> *</span></div><div class="line"><a name="l00386"></a><span class="lineno">  386</span> <span class="comment"> *  \param  connId      DM connection ID.</span></div><div class="line"><a name="l00387"></a><span class="lineno">  387</span> <span class="comment"> *  \param  priority    Operation priority.</span></div><div class="line"><a name="l00388"></a><span class="lineno">  388</span> <span class="comment"> *  \param  numHandles  The number of handles in pHandles.</span></div><div class="line"><a name="l00389"></a><span class="lineno">  389</span> <span class="comment"> *  \param  pHandles    List of attribute handles to read.</span></div><div class="line"><a name="l00390"></a><span class="lineno">  390</span> <span class="comment"> *</span></div><div class="line"><a name="l00391"></a><span class="lineno">  391</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00392"></a><span class="lineno">  392</span> <span class="comment"> */</span></div><div class="line"><a name="l00393"></a><span class="lineno">  393</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00394"></a><span class="lineno">  394</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gaa94d8f1da6300f87749503187496ee80">EattcReadMultVarLenReq</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId, uint8_t priority, uint8_t numHandles, uint16_t *pHandles);</div><div class="line"><a name="l00395"></a><span class="lineno">  395</span> </div><div class="line"><a name="l00396"></a><span class="lineno">  396</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00397"></a><span class="lineno">  397</span> <span class="comment">/*!</span></div><div class="line"><a name="l00398"></a><span class="lineno">  398</span> <span class="comment"> *  \brief  Initialize the Enhanced ATT Client.</span></div><div class="line"><a name="l00399"></a><span class="lineno">  399</span> <span class="comment"> *</span></div><div class="line"><a name="l00400"></a><span class="lineno">  400</span> <span class="comment"> *  \return None</span></div><div class="line"><a name="l00401"></a><span class="lineno">  401</span> <span class="comment"> */</span></div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>  <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00403"></a><span class="lineno">  403</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga12c186e6513f8cfd2dc1e8d58da81cb4">EattcInit</a>();<span class="comment"></span></div><div class="line"><a name="l00404"></a><span class="lineno">  404</span> <span class="comment">/**@}*/</span><span class="comment"></span></div><div class="line"><a name="l00405"></a><span class="lineno">  405</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_ATTC_API */</span></div><div class="line"><a name="l00406"></a><span class="lineno">  406</span> <span class="comment"></span></div><div class="line"><a name="l00407"></a><span class="lineno">  407</span> <span class="comment">/*! \addtogroup STACK_ATT_API</span></div><div class="line"><a name="l00408"></a><span class="lineno">  408</span> <span class="comment"> *  \{ */</span><span class="comment"></span></div><div class="line"><a name="l00409"></a><span class="lineno">  409</span> <span class="comment">/** \name EATT Functions</span></div><div class="line"><a name="l00410"></a><span class="lineno">  410</span> <span class="comment"> *</span></div><div class="line"><a name="l00411"></a><span class="lineno">  411</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00412"></a><span class="lineno">  412</span> <span class="comment">/**@{*/</span></div><div class="line"><a name="l00413"></a><span class="lineno">  413</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00414"></a><span class="lineno">  414</span> <span class="comment">/*!</span></div><div class="line"><a name="l00415"></a><span class="lineno">  415</span> <span class="comment"> *  \brief  Begin requesting EATT L2CAP coc channels.</span></div><div class="line"><a name="l00416"></a><span class="lineno">  416</span> <span class="comment"> *</span></div><div class="line"><a name="l00417"></a><span class="lineno">  417</span> <span class="comment"> *  \note   When pEattCfg-&gt;initiateEatt is TRUE, EattEstablishChannels is called automatically</span></div><div class="line"><a name="l00418"></a><span class="lineno">  418</span> <span class="comment"> *          on DM_CONN_OPEN_IND. If pEattCfg-&gt;initiateEatt is FALSE, EattEstablishChannels can be</span></div><div class="line"><a name="l00419"></a><span class="lineno">  419</span> <span class="comment"> *          called by the application after DM_CONN_OPEN_IND to begin creating EATT channels.</span></div><div class="line"><a name="l00420"></a><span class="lineno">  420</span> <span class="comment"> *</span></div><div class="line"><a name="l00421"></a><span class="lineno">  421</span> <span class="comment"> *  \param  connId  DM connection identifier.</span></div><div class="line"><a name="l00422"></a><span class="lineno">  422</span> <span class="comment"> *</span></div><div class="line"><a name="l00423"></a><span class="lineno">  423</span> <span class="comment"> *  \return None.</span></div><div class="line"><a name="l00424"></a><span class="lineno">  424</span> <span class="comment"> */</span></div><div class="line"><a name="l00425"></a><span class="lineno">  425</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00426"></a><span class="lineno">  426</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t___a_p_i.html#gad381c03c21b0d647e51d5db3cf776f35">EattEstablishChannels</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId);</div><div class="line"><a name="l00427"></a><span class="lineno">  427</span> </div><div class="line"><a name="l00428"></a><span class="lineno">  428</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00429"></a><span class="lineno">  429</span> <span class="comment">/*!</span></div><div class="line"><a name="l00430"></a><span class="lineno">  430</span> <span class="comment"> *  \brief  Returns the number of open EATT channels on a given connection.</span></div><div class="line"><a name="l00431"></a><span class="lineno">  431</span> <span class="comment"> *</span></div><div class="line"><a name="l00432"></a><span class="lineno">  432</span> <span class="comment"> *  \param  connId  DM connection identifier.</span></div><div class="line"><a name="l00433"></a><span class="lineno">  433</span> <span class="comment"> *</span></div><div class="line"><a name="l00434"></a><span class="lineno">  434</span> <span class="comment"> *  \return Number of open EATT channels.</span></div><div class="line"><a name="l00435"></a><span class="lineno">  435</span> <span class="comment"> */</span></div><div class="line"><a name="l00436"></a><span class="lineno">  436</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00437"></a><span class="lineno">  437</span> uint8_t <a class="code" href="group___s_t_a_c_k___a_t_t___a_p_i.html#gab1087a4adf4cc2f1f1b3b5434207c070">EattGetNumChannelsInUse</a>(<a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a> connId);</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span> </div><div class="line"><a name="l00439"></a><span class="lineno">  439</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00440"></a><span class="lineno">  440</span> <span class="comment">/*!</span></div><div class="line"><a name="l00441"></a><span class="lineno">  441</span> <span class="comment"> *  \brief  Initialize the Enhanced ATT subsystem.</span></div><div class="line"><a name="l00442"></a><span class="lineno">  442</span> <span class="comment"> *</span></div><div class="line"><a name="l00443"></a><span class="lineno">  443</span> <span class="comment"> *  \return None</span></div><div class="line"><a name="l00444"></a><span class="lineno">  444</span> <span class="comment"> */</span></div><div class="line"><a name="l00445"></a><span class="lineno">  445</span>  <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00446"></a><span class="lineno">  446</span> <span class="keywordtype">void</span> <a class="code" href="group___s_t_a_c_k___a_t_t___a_p_i.html#gaada4fbd7992d3566395581144328fc33">EattInit</a>(uint8_t roleBits);<span class="comment"></span></div><div class="line"><a name="l00447"></a><span class="lineno">  447</span> <span class="comment">/**@}*/</span><span class="comment"></span></div><div class="line"><a name="l00448"></a><span class="lineno">  448</span> <span class="comment">/*! \} */</span>    <span class="comment">/* STACK_ATT_API */</span></div><div class="line"><a name="l00449"></a><span class="lineno">  449</span> </div><div class="line"><a name="l00450"></a><span class="lineno">  450</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00451"></a><span class="lineno">  451</span> };</div><div class="line"><a name="l00452"></a><span class="lineno">  452</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00453"></a><span class="lineno">  453</span> </div><div class="line"><a name="l00454"></a><span class="lineno">  454</span> <span class="preprocessor">#endif </span><span class="comment">/* EATT_API_H */</span><span class="preprocessor"></span></div><div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_gaa94d8f1da6300f87749503187496ee80"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gaa94d8f1da6300f87749503187496ee80">EattcReadMultVarLenReq</a></div><div class="ttdeci">void EattcReadMultVarLenReq(dmConnId_t connId, uint8_t priority, uint8_t numHandles, uint16_t *pHandles)</div><div class="ttdoc">Initiate an attribute protocol Read Multiple Variable Length Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___d_m___a_p_i_html_ga794e39c17c1fca021019a1a71017c29f"><div class="ttname"><a href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a></div><div class="ttdeci">uint8_t dmConnId_t</div><div class="ttdoc">Connection identifier. </div><div class="ttdef"><b>Definition:</b> <a href="dm__api_8h_source.html#l00588">dm_api.h:588</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga6eb003361bdccdee4b759f17a4418b67"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga6eb003361bdccdee4b759f17a4418b67">EattcReadByGroupTypeReq</a></div><div class="ttdeci">void EattcReadByGroupTypeReq(dmConnId_t connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle, uint8_t uuidLen, uint8_t *pUuid, bool_t continuing)</div><div class="ttdoc">Initiate an attribute protocol Read By Group Type Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga12c186e6513f8cfd2dc1e8d58da81cb4"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga12c186e6513f8cfd2dc1e8d58da81cb4">EattcInit</a></div><div class="ttdeci">void EattcInit()</div><div class="ttdoc">Initialize the Enhanced ATT Client. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_gab27f68aee5ffaf4db4649f2f94878bb2"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gab27f68aee5ffaf4db4649f2f94878bb2">EattcFindByTypeValueReq</a></div><div class="ttdeci">void EattcFindByTypeValueReq(dmConnId_t connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle, uint16_t uuid16, uint16_t valueLen, uint8_t *pValue, bool_t continuing)</div><div class="ttdoc">Initiate an attribute protocol Find By Type Value Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_s___a_p_i_html_gabeceacc1aec1bbc61be97f71eded31b3"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#gabeceacc1aec1bbc61be97f71eded31b3">EattsInit</a></div><div class="ttdeci">void EattsInit()</div><div class="ttdoc">Initialize the Enhanced ATT Server. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga726657875c7f37e0918b38c99f77f979"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga726657875c7f37e0918b38c99f77f979">EattcWriteReq</a></div><div class="ttdeci">void EattcWriteReq(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t valueLen, uint8_t *pValue)</div><div class="ttdoc">Initiate an attribute protocol Write Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga24f3833b7c953307adc923b6ad954720"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga24f3833b7c953307adc923b6ad954720">EattcExecuteWriteReq</a></div><div class="ttdeci">void EattcExecuteWriteReq(dmConnId_t connId, uint8_t priority, bool_t writeAll)</div><div class="ttdoc">Initiate an attribute protocol Execute Write Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t___a_p_i_html_gaada4fbd7992d3566395581144328fc33"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t___a_p_i.html#gaada4fbd7992d3566395581144328fc33">EattInit</a></div><div class="ttdeci">void EattInit(uint8_t roleBits)</div><div class="ttdoc">Initialize the Enhanced ATT subsystem. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_s___a_p_i_html_ga004b0167a224e63093094829e6785cb9"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga004b0167a224e63093094829e6785cb9">EattsHandleValueNtf</a></div><div class="ttdeci">void EattsHandleValueNtf(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t valueLen, uint8_t *pValue)</div><div class="ttdoc">Send an attribute protocol Handle Value Notification. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t___a_p_i_html_gab1087a4adf4cc2f1f1b3b5434207c070"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t___a_p_i.html#gab1087a4adf4cc2f1f1b3b5434207c070">EattGetNumChannelsInUse</a></div><div class="ttdeci">uint8_t EattGetNumChannelsInUse(dmConnId_t connId)</div><div class="ttdoc">Returns the number of open EATT channels on a given connection. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_gaec964469ce6db6096a9fd84b83840587"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gaec964469ce6db6096a9fd84b83840587">EattcReadReq</a></div><div class="ttdeci">void EattcReadReq(dmConnId_t connId, uint8_t priority, uint16_t handle)</div><div class="ttdoc">Initiate an attribute protocol Read Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga4556eab6ead426ed2f930a8f7fe353c7"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga4556eab6ead426ed2f930a8f7fe353c7">EattcReadMultipleReq</a></div><div class="ttdeci">void EattcReadMultipleReq(dmConnId_t connId, uint8_t priority, uint8_t numHandles, uint16_t *pHandles)</div><div class="ttdoc">Initiate an attribute protocol Read Multiple Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga687c3e0a569d24418649089081502e9a"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga687c3e0a569d24418649089081502e9a">EattcFindInfoReq</a></div><div class="ttdeci">void EattcFindInfoReq(dmConnId_t connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle, bool_t continuing)</div><div class="ttdoc">Initiate an attribute protocol Find Information Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_s___a_p_i_html_gae6c816f181325c58394ed0fdbe040865"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#gae6c816f181325c58394ed0fdbe040865">EattsHandleValueIndZeroCpy</a></div><div class="ttdeci">void EattsHandleValueIndZeroCpy(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t valueLen, uint8_t *pValue)</div><div class="ttdoc">Send an attribute protocol Handle Value Indication without copying the attribute value data...</div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_gae5ab4babc6cb8088dded5cfb15247e99"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gae5ab4babc6cb8088dded5cfb15247e99">EattcReadLongReq</a></div><div class="ttdeci">void EattcReadLongReq(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t offset, bool_t continuing)</div><div class="ttdoc">Initiate an attribute protocol Read Request. </div></div>
+<div class="ttc" id="structeatt_tuple__t_html_a8aed22e2c7b283705ec82e0120515618"><div class="ttname"><a href="structeatt_tuple__t.html#a8aed22e2c7b283705ec82e0120515618">eattTuple_t::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdef"><b>Definition:</b> <a href="eatt__api_8h_source.html#l00068">eatt_api.h:68</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_s___a_p_i_html_ga3c24deec539a55940a30fd2b1e77a5c8"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga3c24deec539a55940a30fd2b1e77a5c8">EattsMultiValueNtf</a></div><div class="ttdeci">void EattsMultiValueNtf(dmConnId_t connId, uint8_t priority, uint16_t numTuples, eattTuple_t *pTupleList)</div><div class="ttdoc">Send multiple attribute protocol Handle Value Notification. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_gaa53e9bf94bf94c391a844a55a9ff8e41"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gaa53e9bf94bf94c391a844a55a9ff8e41">EattcCancelReq</a></div><div class="ttdeci">void EattcCancelReq(dmConnId_t connId, uint8_t priority)</div><div class="ttdoc">Cancel an attribute protocol request in progress. </div></div>
+<div class="ttc" id="dm__api_8h_html"><div class="ttname"><a href="dm__api_8h.html">dm_api.h</a></div><div class="ttdoc">Device Manager subsystem API. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga5fd2c0ab12e49fdceb5d83bfbcb877aa"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga5fd2c0ab12e49fdceb5d83bfbcb877aa">EattcWriteCmd</a></div><div class="ttdeci">void EattcWriteCmd(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t valueLen, uint8_t *pValue)</div><div class="ttdoc">Initiate an attribute protocol Write Command. </div></div>
+<div class="ttc" id="structeatt_tuple__t_html"><div class="ttname"><a href="structeatt_tuple__t.html">eattTuple_t</a></div><div class="ttdoc">EATT multiple notify tuple structure. </div><div class="ttdef"><b>Definition:</b> <a href="eatt__api_8h_source.html#l00065">eatt_api.h:65</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga519e1984572801a3d79e12114ba4db1b"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga519e1984572801a3d79e12114ba4db1b">EattcReadByTypeReq</a></div><div class="ttdeci">void EattcReadByTypeReq(dmConnId_t connId, uint8_t priority, uint16_t startHandle, uint16_t endHandle, uint8_t uuidLen, uint8_t *pUuid, bool_t continuing)</div><div class="ttdoc">Initiate an attribute protocol Read By Type Request. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_s___a_p_i_html_ga0349f9cb7dff0a07bed00cfdba87d014"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga0349f9cb7dff0a07bed00cfdba87d014">EattsHandleValueNtfZeroCpy</a></div><div class="ttdeci">void EattsHandleValueNtfZeroCpy(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t valueLen, uint8_t *pValue)</div><div class="ttdoc">Send an attribute protocol Handle Value Notification without copying the attribute value data...</div></div>
+<div class="ttc" id="structeatt_tuple__t_html_a9ddff936ddacfc2b6285295cb2ef2c9e"><div class="ttname"><a href="structeatt_tuple__t.html#a9ddff936ddacfc2b6285295cb2ef2c9e">eattTuple_t::pValue</a></div><div class="ttdeci">uint8_t * pValue</div><div class="ttdef"><b>Definition:</b> <a href="eatt__api_8h_source.html#l00069">eatt_api.h:69</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_ga07ec8c9da536b62f0eab739628ea5959"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#ga07ec8c9da536b62f0eab739628ea5959">EattcIndConfirm</a></div><div class="ttdeci">void EattcIndConfirm(dmConnId_t connId, uint16_t cid)</div><div class="ttdoc">Send an attribute protocol indication confirmation. </div></div>
+<div class="ttc" id="wsf__timer_8h_html"><div class="ttname"><a href="wsf__timer_8h.html">wsf_timer.h</a></div><div class="ttdoc">Timer service. </div></div>
+<div class="ttc" id="att__defs_8h_html"><div class="ttname"><a href="att__defs_8h.html">att_defs.h</a></div><div class="ttdoc">Attribute protocol constants and definitions from the Bluetooth specification. </div></div>
+<div class="ttc" id="att__uuid_8h_html"><div class="ttname"><a href="att__uuid_8h.html">att_uuid.h</a></div><div class="ttdoc">Attribute protocol UUIDs from the Bluetooth specification. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_s___a_p_i_html_ga63886c14fae99a9416fd6f647fb90057"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_s___a_p_i.html#ga63886c14fae99a9416fd6f647fb90057">EattsHandleValueInd</a></div><div class="ttdeci">void EattsHandleValueInd(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t valueLen, uint8_t *pValue)</div><div class="ttdoc">Send an attribute protocol Handle Value Indication. </div></div>
+<div class="ttc" id="structeatt_tuple__t_html_af242d6e3b6108ea75e1eb236e94c8240"><div class="ttname"><a href="structeatt_tuple__t.html#af242d6e3b6108ea75e1eb236e94c8240">eattTuple_t::handle</a></div><div class="ttdeci">uint16_t handle</div><div class="ttdef"><b>Definition:</b> <a href="eatt__api_8h_source.html#l00067">eatt_api.h:67</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t___a_p_i_html_gad381c03c21b0d647e51d5db3cf776f35"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t___a_p_i.html#gad381c03c21b0d647e51d5db3cf776f35">EattEstablishChannels</a></div><div class="ttdeci">void EattEstablishChannels(dmConnId_t connId)</div><div class="ttdoc">Begin requesting EATT L2CAP coc channels. </div></div>
+<div class="ttc" id="l2c__api_8h_html"><div class="ttname"><a href="l2c__api_8h.html">l2c_api.h</a></div><div class="ttdoc">L2CAP subsystem API. </div></div>
+<div class="ttc" id="group___s_t_a_c_k___a_t_t_c___a_p_i_html_gac64ca6c252cec07af87b00e9b5bbd786"><div class="ttname"><a href="group___s_t_a_c_k___a_t_t_c___a_p_i.html#gac64ca6c252cec07af87b00e9b5bbd786">EattcPrepareWriteReq</a></div><div class="ttdeci">void EattcPrepareWriteReq(dmConnId_t connId, uint8_t priority, uint16_t handle, uint16_t offset, uint16_t valueLen, uint8_t *pValue, bool_t valueByRef, bool_t continuing)</div><div class="ttdoc">Initiate an attribute protocol Prepare Write Request. </div></div>
+<div class="ttc" id="cfg__stack_8h_html"><div class="ttname"><a href="cfg__stack_8h.html">cfg_stack.h</a></div><div class="ttdoc">Stack configuration. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/eatt__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:23:11 GMT -->
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/ip__addr_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:24:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | ip_addr.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="ip__addr_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/ip__addr_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/ip__addr_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_656714f9000830b7293277f30e3fdca8.html">lwipstack</a></li><li class="navelem"><a class="el" href="dir_51bed4128c7c35e28f2b56d9a4d3889d.html">lwip</a></li><li class="navelem"><a class="el" href="dir_a2f77adba6621efb54744c8be588cd6c.html">src</a></li><li class="navelem"><a class="el" href="dir_d881691941f72a257ee32ad5471a029d.html">include</a></li><li class="navelem"><a class="el" href="dir_3fb69e7ecf761e536af7cd2ef4e3092c.html">lwip</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ip_addr.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ip__addr_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * @file</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> * IP address API (common IPv4 and IPv6)</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> */</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> </div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment">/*</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * Copyright (c) 2001-2004 Swedish Institute of Computer Science.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> * All rights reserved.</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> * are permitted provided that the following conditions are met:</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice,</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *    this list of conditions and the following disclaimer.</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice,</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *    this list of conditions and the following disclaimer in the documentation</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *    and/or other materials provided with the distribution.</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> * 3. The name of the author may not be used to endorse or promote products</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *    derived from this software without specific prior written permission.</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment"> * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment"> * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="comment"> * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="comment"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="comment"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="comment"> * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="comment"> * OF SUCH DAMAGE.</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment"> *</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment"> * This file is part of the lwIP TCP/IP stack.</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment"> *</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment"> * Author: Adam Dunkels &lt;adam@sics.se&gt;</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment"> *</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment"> */</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="preprocessor">#ifndef LWIP_HDR_IP_ADDR_H</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="preprocessor">#define LWIP_HDR_IP_ADDR_H</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="preprocessor">#include "<a class="code" href="opt_8h.html">lwip/opt.h</a>"</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="preprocessor">#include "<a class="code" href="def_8h.html">lwip/def.h</a>"</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#include "<a class="code" href="ip4__addr_8h.html">lwip/ip4_addr.h</a>"</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="preprocessor">#include "<a class="code" href="ip6__addr_8h.html">lwip/ip6_addr.h</a>"</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="comment"></span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment">/** @ingroup ipaddr</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment"> * IP address types for use in ip_addr_t.type member.</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment"> * @see tcp_new_ip_type(), udp_new_ip_type(), raw_new_ip_type().</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment"> */</span></div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585c">   54</a></span> <span class="keyword">enum</span> <a class="code" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585c">lwip_ip_addr_type</a> {<span class="comment"></span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment">  /** IPv4 */</span></div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585cace47fa82608deeb1c1c7c2c891eb5049">   56</a></span>   <a class="code" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585cace47fa82608deeb1c1c7c2c891eb5049">IPADDR_TYPE_V4</a> =   0U,<span class="comment"></span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">  /** IPv6 */</span></div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585caae510fd8ec7fe405b594b57af61f9a02">   58</a></span>   <a class="code" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585caae510fd8ec7fe405b594b57af61f9a02">IPADDR_TYPE_V6</a> =   6U,<span class="comment"></span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment">  /** IPv4+IPv6 ("dual-stack") */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585cac6b2c99cf920e08efcb55dc40e42944e">   60</a></span>   <a class="code" href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585cac6b2c99cf920e08efcb55dc40e42944e">IPADDR_TYPE_ANY</a> = 46U</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> };</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="preprocessor">#if LWIP_IPV4 &amp;&amp; LWIP_IPV6</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">/**</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="comment"> * @ingroup ipaddr</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment"> * A union struct for both IP version's addresses.</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> <span class="comment"> * ATTENTION: watch out for its size when adding IPv6 address scope!</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment"> */</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="keyword">typedef</span> <span class="keyword">struct </span>ip_addr {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>   <span class="keyword">union </span>{</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>     <a class="code" href="structnsapi__addr.html">ip6_addr_t</a> ip6;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>     <a class="code" href="structnsapi__addr.html">ip4_addr_t</a> ip4;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>   } u_addr;<span class="comment"></span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">  /** @ref lwip_ip_addr_type */</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>   u8_t type;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> } <a class="code" href="structnsapi__addr.html">ip_addr_t</a>;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> </div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="structnsapi__addr.html">ip_addr_t</a> ip_addr_any_type;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment"></span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="preprocessor">#define IPADDR4_INIT(u32val)          { { { { u32val, 0ul, 0ul, 0ul } IPADDR6_ZONE_INIT } }, IPADDR_TYPE_V4 }</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="preprocessor">#define IPADDR4_INIT_BYTES(a,b,c,d)   IPADDR4_INIT(PP_HTONL(LWIP_MAKEU32(a,b,c,d)))</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment"></span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="preprocessor">#define IPADDR6_INIT(a, b, c, d)      { { { { a, b, c, d } IPADDR6_ZONE_INIT } }, IPADDR_TYPE_V6 }</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="preprocessor">#define IPADDR6_INIT_HOST(a, b, c, d) { { { { PP_HTONL(a), PP_HTONL(b), PP_HTONL(c), PP_HTONL(d) } IPADDR6_ZONE_INIT } }, IPADDR_TYPE_V6 }</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment"></span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> <span class="preprocessor">#define IP_IS_ANY_TYPE_VAL(ipaddr)    (IP_GET_TYPE(&amp;ipaddr) == IPADDR_TYPE_ANY)</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="preprocessor">#define IPADDR_ANY_TYPE_INIT          { { { { 0ul, 0ul, 0ul, 0ul } IPADDR6_ZONE_INIT } }, IPADDR_TYPE_ANY }</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> <span class="comment"></span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="preprocessor">#define IP_IS_V4_VAL(ipaddr)          (IP_GET_TYPE(&amp;ipaddr) == IPADDR_TYPE_V4)</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="preprocessor">#define IP_IS_V6_VAL(ipaddr)          (IP_GET_TYPE(&amp;ipaddr) == IPADDR_TYPE_V6)</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="preprocessor">#define IP_IS_V4(ipaddr)              (((ipaddr) == NULL) || IP_IS_V4_VAL(*(ipaddr)))</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="preprocessor">#define IP_IS_V6(ipaddr)              (((ipaddr) != NULL) &amp;&amp; IP_IS_V6_VAL(*(ipaddr)))</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> </div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="preprocessor">#define IP_SET_TYPE_VAL(ipaddr, iptype) do { (ipaddr).type = (iptype); }while(0)</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="preprocessor">#define IP_SET_TYPE(ipaddr, iptype)     do { if((ipaddr) != NULL) { IP_SET_TYPE_VAL(*(ipaddr), iptype); }}while(0)</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="preprocessor">#define IP_GET_TYPE(ipaddr)           ((ipaddr)-&gt;type)</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> </div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="preprocessor">#define IP_ADDR_RAW_SIZE(ipaddr)      (IP_GET_TYPE(&amp;ipaddr) == IPADDR_TYPE_V4 ? sizeof(ip4_addr_t) : sizeof(ip6_addr_t))</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> </div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="preprocessor">#define IP_ADDR_PCB_VERSION_MATCH_EXACT(pcb, ipaddr) (IP_GET_TYPE(&amp;pcb-&gt;local_ip) == IP_GET_TYPE(ipaddr))</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="preprocessor">#define IP_ADDR_PCB_VERSION_MATCH(pcb, ipaddr) (IP_IS_ANY_TYPE_VAL(pcb-&gt;local_ip) || IP_ADDR_PCB_VERSION_MATCH_EXACT(pcb, ipaddr))</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment"></span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">/** @ingroup ip6addr</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="comment"> * Convert generic ip address to specific protocol version</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment"> */</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="preprocessor">#define ip_2_ip6(ipaddr)   (&amp;((ipaddr)-&gt;u_addr.ip6))</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment">/** @ingroup ip4addr</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment"> * Convert generic ip address to specific protocol version</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment"> */</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="preprocessor">#define ip_2_ip4(ipaddr)   (&amp;((ipaddr)-&gt;u_addr.ip4))</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment"></span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="preprocessor">#define IP_ADDR4(ipaddr,a,b,c,d)      do { IP4_ADDR(ip_2_ip4(ipaddr),a,b,c,d); \</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="preprocessor">                                           IP_SET_TYPE_VAL(*(ipaddr), IPADDR_TYPE_V4); } while(0)</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="preprocessor">#define IP_ADDR6(ipaddr,i0,i1,i2,i3)  do { IP6_ADDR(ip_2_ip6(ipaddr),i0,i1,i2,i3); \</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="preprocessor">                                           IP_SET_TYPE_VAL(*(ipaddr), IPADDR_TYPE_V6); } while(0)</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="preprocessor">#define IP_ADDR6_HOST(ipaddr,i0,i1,i2,i3)  IP_ADDR6(ipaddr,PP_HTONL(i0),PP_HTONL(i1),PP_HTONL(i2),PP_HTONL(i3))</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> </div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="preprocessor">#define ip_clear_no4(ipaddr)  do { ip_2_ip6(ipaddr)-&gt;addr[1] = \</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="preprocessor">                                   ip_2_ip6(ipaddr)-&gt;addr[2] = \</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="preprocessor">                                   ip_2_ip6(ipaddr)-&gt;addr[3] = 0; \</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="preprocessor">                                   ip6_addr_clear_zone(ip_2_ip6(ipaddr)); }while(0)</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment"></span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="preprocessor">#define ip_addr_copy(dest, src)      do{ IP_SET_TYPE_VAL(dest, IP_GET_TYPE(&amp;src)); if(IP_IS_V6_VAL(src)){ \</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> <span class="preprocessor">  ip6_addr_copy(*ip_2_ip6(&amp;(dest)), *ip_2_ip6(&amp;(src))); }else{ \</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="preprocessor">  ip4_addr_copy(*ip_2_ip4(&amp;(dest)), *ip_2_ip4(&amp;(src))); ip_clear_no4(&amp;dest); }}while(0)</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="preprocessor">#define ip_addr_copy_from_ip6(dest, src)      do{ \</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="preprocessor">  ip6_addr_copy(*ip_2_ip6(&amp;(dest)), src); IP_SET_TYPE_VAL(dest, IPADDR_TYPE_V6); }while(0)</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="preprocessor">#define ip_addr_copy_from_ip6_packed(dest, src)      do{ \</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="preprocessor">  ip6_addr_copy_from_packed(*ip_2_ip6(&amp;(dest)), src); IP_SET_TYPE_VAL(dest, IPADDR_TYPE_V6); }while(0)</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="preprocessor">#define ip_addr_copy_from_ip4(dest, src)      do{ \</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="preprocessor">  ip4_addr_copy(*ip_2_ip4(&amp;(dest)), src); IP_SET_TYPE_VAL(dest, IPADDR_TYPE_V4); ip_clear_no4(&amp;dest); }while(0)</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="preprocessor">#define ip_addr_set_ip4_u32(ipaddr, val)  do{if(ipaddr){ip4_addr_set_u32(ip_2_ip4(ipaddr), val); \</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="preprocessor">  IP_SET_TYPE(ipaddr, IPADDR_TYPE_V4); ip_clear_no4(ipaddr); }}while(0)</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="preprocessor">#define ip_addr_set_ip4_u32_val(ipaddr, val)  do{ ip4_addr_set_u32(ip_2_ip4(&amp;(ipaddr)), val); \</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="preprocessor">  IP_SET_TYPE_VAL(ipaddr, IPADDR_TYPE_V4); ip_clear_no4(&amp;ipaddr); }while(0)</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="preprocessor">#define ip_addr_get_ip4_u32(ipaddr)  (((ipaddr) &amp;&amp; IP_IS_V4(ipaddr)) ? \</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="preprocessor">  ip4_addr_get_u32(ip_2_ip4(ipaddr)) : 0)</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="preprocessor">#define ip_addr_set(dest, src) do{ IP_SET_TYPE(dest, IP_GET_TYPE(src)); if(IP_IS_V6(src)){ \</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="preprocessor">  ip6_addr_set(ip_2_ip6(dest), ip_2_ip6(src)); }else{ \</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="preprocessor">  ip4_addr_set(ip_2_ip4(dest), ip_2_ip4(src)); ip_clear_no4(dest); }}while(0)</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="preprocessor">#define ip_addr_set_ipaddr(dest, src) ip_addr_set(dest, src)</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="preprocessor">#define ip_addr_set_zero(ipaddr)     do{ \</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="preprocessor">  ip6_addr_set_zero(ip_2_ip6(ipaddr)); IP_SET_TYPE(ipaddr, 0); }while(0)</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment">/** @ingroup ip5addr */</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="preprocessor">#define ip_addr_set_zero_ip4(ipaddr)     do{ \</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="preprocessor">  ip6_addr_set_zero(ip_2_ip6(ipaddr)); IP_SET_TYPE(ipaddr, IPADDR_TYPE_V4); }while(0)</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">/** @ingroup ip6addr */</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="preprocessor">#define ip_addr_set_zero_ip6(ipaddr)     do{ \</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="preprocessor">  ip6_addr_set_zero(ip_2_ip6(ipaddr)); IP_SET_TYPE(ipaddr, IPADDR_TYPE_V6); }while(0)</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="preprocessor">#define ip_addr_set_any(is_ipv6, ipaddr)      do{if(is_ipv6){ \</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="preprocessor">  ip6_addr_set_any(ip_2_ip6(ipaddr)); IP_SET_TYPE(ipaddr, IPADDR_TYPE_V6); }else{ \</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="preprocessor">  ip4_addr_set_any(ip_2_ip4(ipaddr)); IP_SET_TYPE(ipaddr, IPADDR_TYPE_V4); ip_clear_no4(ipaddr); }}while(0)</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="preprocessor">#define ip_addr_set_any_val(is_ipv6, ipaddr)      do{if(is_ipv6){ \</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="preprocessor">  ip6_addr_set_any(ip_2_ip6(&amp;(ipaddr))); IP_SET_TYPE_VAL(ipaddr, IPADDR_TYPE_V6); }else{ \</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="preprocessor">  ip4_addr_set_any(ip_2_ip4(&amp;(ipaddr))); IP_SET_TYPE_VAL(ipaddr, IPADDR_TYPE_V4); ip_clear_no4(&amp;ipaddr); }}while(0)</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="preprocessor">#define ip_addr_set_loopback(is_ipv6, ipaddr) do{if(is_ipv6){ \</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="preprocessor">  ip6_addr_set_loopback(ip_2_ip6(ipaddr)); IP_SET_TYPE(ipaddr, IPADDR_TYPE_V6); }else{ \</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="preprocessor">  ip4_addr_set_loopback(ip_2_ip4(ipaddr)); IP_SET_TYPE(ipaddr, IPADDR_TYPE_V4); ip_clear_no4(ipaddr); }}while(0)</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="preprocessor">#define ip_addr_set_loopback_val(is_ipv6, ipaddr) do{if(is_ipv6){ \</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="preprocessor">  ip6_addr_set_loopback(ip_2_ip6(&amp;(ipaddr))); IP_SET_TYPE_VAL(ipaddr, IPADDR_TYPE_V6); }else{ \</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="preprocessor">  ip4_addr_set_loopback(ip_2_ip4(&amp;(ipaddr))); IP_SET_TYPE_VAL(ipaddr, IPADDR_TYPE_V4); ip_clear_no4(&amp;ipaddr); }}while(0)</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="preprocessor">#define ip_addr_set_hton(dest, src)  do{if(IP_IS_V6(src)){ \</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="preprocessor">  ip6_addr_set_hton(ip_2_ip6(dest), ip_2_ip6(src)); IP_SET_TYPE(dest, IPADDR_TYPE_V6); }else{ \</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="preprocessor">  ip4_addr_set_hton(ip_2_ip4(dest), ip_2_ip4(src)); IP_SET_TYPE(dest, IPADDR_TYPE_V4); ip_clear_no4(ipaddr); }}while(0)</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="preprocessor">#define ip_addr_get_network(target, host, netmask) do{if(IP_IS_V6(host)){ \</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="preprocessor">  ip4_addr_set_zero(ip_2_ip4(target)); IP_SET_TYPE(target, IPADDR_TYPE_V6); } else { \</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="preprocessor">  ip4_addr_get_network(ip_2_ip4(target), ip_2_ip4(host), ip_2_ip4(netmask)); IP_SET_TYPE(target, IPADDR_TYPE_V4); }}while(0)</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="preprocessor">#define ip_addr_netcmp(addr1, addr2, mask) ((IP_IS_V6(addr1) &amp;&amp; IP_IS_V6(addr2)) ? \</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="preprocessor">  0 : \</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="preprocessor">  ip4_addr_netcmp(ip_2_ip4(addr1), ip_2_ip4(addr2), mask))</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="preprocessor">#define ip_addr_cmp(addr1, addr2)    ((IP_GET_TYPE(addr1) != IP_GET_TYPE(addr2)) ? 0 : (IP_IS_V6_VAL(*(addr1)) ? \</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="preprocessor">  ip6_addr_cmp(ip_2_ip6(addr1), ip_2_ip6(addr2)) : \</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="preprocessor">  ip4_addr_cmp(ip_2_ip4(addr1), ip_2_ip4(addr2))))</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="preprocessor">#define ip_addr_cmp_zoneless(addr1, addr2)    ((IP_GET_TYPE(addr1) != IP_GET_TYPE(addr2)) ? 0 : (IP_IS_V6_VAL(*(addr1)) ? \</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="preprocessor">  ip6_addr_cmp_zoneless(ip_2_ip6(addr1), ip_2_ip6(addr2)) : \</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="preprocessor">  ip4_addr_cmp(ip_2_ip4(addr1), ip_2_ip4(addr2))))</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="preprocessor">#define ip_addr_isany(ipaddr)        (((ipaddr) == NULL) ? 1 : ((IP_IS_V6(ipaddr)) ? \</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="preprocessor">  ip6_addr_isany(ip_2_ip6(ipaddr)) : \</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="preprocessor">  ip4_addr_isany(ip_2_ip4(ipaddr))))</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="preprocessor">#define ip_addr_isany_val(ipaddr)        ((IP_IS_V6_VAL(ipaddr)) ? \</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="preprocessor">  ip6_addr_isany_val(*ip_2_ip6(&amp;(ipaddr))) : \</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="preprocessor">  ip4_addr_isany_val(*ip_2_ip4(&amp;(ipaddr))))</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="preprocessor">#define ip_addr_isbroadcast(ipaddr, netif) ((IP_IS_V6(ipaddr)) ? \</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="preprocessor">  0 : \</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="preprocessor">  ip4_addr_isbroadcast(ip_2_ip4(ipaddr), netif))</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="preprocessor">#define ip_addr_ismulticast(ipaddr)  ((IP_IS_V6(ipaddr)) ? \</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="preprocessor">  ip6_addr_ismulticast(ip_2_ip6(ipaddr)) : \</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span> <span class="preprocessor">  ip4_addr_ismulticast(ip_2_ip4(ipaddr)))</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="preprocessor">#define ip_addr_isloopback(ipaddr)  ((IP_IS_V6(ipaddr)) ? \</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="preprocessor">  ip6_addr_isloopback(ip_2_ip6(ipaddr)) : \</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="preprocessor">  ip4_addr_isloopback(ip_2_ip4(ipaddr)))</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="preprocessor">#define ip_addr_islinklocal(ipaddr)  ((IP_IS_V6(ipaddr)) ? \</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="preprocessor">  ip6_addr_islinklocal(ip_2_ip6(ipaddr)) : \</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="preprocessor">  ip4_addr_islinklocal(ip_2_ip4(ipaddr)))</span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> <span class="preprocessor">#define ip_addr_debug_print(debug, ipaddr) do { if(IP_IS_V6(ipaddr)) { \</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="preprocessor">  ip6_addr_debug_print(debug, ip_2_ip6(ipaddr)); } else { \</span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="preprocessor">  ip4_addr_debug_print(debug, ip_2_ip4(ipaddr)); }}while(0)</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="preprocessor">#define ip_addr_debug_print_val(debug, ipaddr) do { if(IP_IS_V6_VAL(ipaddr)) { \</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="preprocessor">  ip6_addr_debug_print_val(debug, *ip_2_ip6(&amp;(ipaddr))); } else { \</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="preprocessor">  ip4_addr_debug_print_val(debug, *ip_2_ip4(&amp;(ipaddr))); }}while(0)</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="keywordtype">char</span> *ipaddr_ntoa(<span class="keyword">const</span> <a class="code" href="structnsapi__addr.html">ip_addr_t</a> *addr);</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="keywordtype">char</span> *ipaddr_ntoa_r(<span class="keyword">const</span> <a class="code" href="structnsapi__addr.html">ip_addr_t</a> *addr, <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> buflen);</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="keywordtype">int</span> ipaddr_aton(<span class="keyword">const</span> <span class="keywordtype">char</span> *cp, <a class="code" href="structnsapi__addr.html">ip_addr_t</a> *addr);</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment"></span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="preprocessor">#define IPADDR_STRLEN_MAX   IP6ADDR_STRLEN_MAX</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="comment"></span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="preprocessor">#define ip4_2_ipv4_mapped_ipv6(ip6addr, ip4addr) do { \</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="preprocessor">  (ip6addr)-&gt;addr[3] = (ip4addr)-&gt;addr; \</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="preprocessor">  (ip6addr)-&gt;addr[2] = PP_HTONL(0x0000FFFFUL); \</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="preprocessor">  (ip6addr)-&gt;addr[1] = 0; \</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="preprocessor">  (ip6addr)-&gt;addr[0] = 0; \</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="preprocessor">  ip6_addr_clear_zone(ip6addr); } while(0);</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment"></span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="preprocessor">#define unmap_ipv4_mapped_ipv6(ip4addr, ip6addr) \</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="preprocessor">  (ip4addr)-&gt;addr = (ip6addr)-&gt;addr[3];</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> </div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="preprocessor">#define IP46_ADDR_ANY(type) (((type) == IPADDR_TYPE_V6)? IP6_ADDR_ANY : IP4_ADDR_ANY)</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> </div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="preprocessor">#else </span><span class="comment">/* LWIP_IPV4 &amp;&amp; LWIP_IPV6 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> </div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="preprocessor">#define IP_ADDR_PCB_VERSION_MATCH(addr, pcb)          1</span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="preprocessor">#define IP_ADDR_PCB_VERSION_MATCH_EXACT(pcb, ipaddr)  1</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> </div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="preprocessor">#define ip_addr_set_any_val(is_ipv6, ipaddr)          ip_addr_set_any(is_ipv6, &amp;(ipaddr))</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="preprocessor">#define ip_addr_set_loopback_val(is_ipv6, ipaddr)     ip_addr_set_loopback(is_ipv6, &amp;(ipaddr))</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> </div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="preprocessor">#if LWIP_IPV4</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> </div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="keyword">typedef</span> <a class="code" href="structnsapi__addr.html">ip4_addr_t</a> <a class="code" href="structnsapi__addr.html">ip_addr_t</a>;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="preprocessor">#define IPADDR4_INIT(u32val)                    { u32val }</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="preprocessor">#define IPADDR4_INIT_BYTES(a,b,c,d)             IPADDR4_INIT(PP_HTONL(LWIP_MAKEU32(a,b,c,d)))</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="preprocessor">#define IP_IS_V4_VAL(ipaddr)                    1</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="preprocessor">#define IP_IS_V6_VAL(ipaddr)                    0</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="preprocessor">#define IP_IS_V4(ipaddr)                        1</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="preprocessor">#define IP_IS_V6(ipaddr)                        0</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="preprocessor">#define IP_IS_ANY_TYPE_VAL(ipaddr)              0</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="preprocessor">#define IP_SET_TYPE_VAL(ipaddr, iptype)</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="preprocessor">#define IP_SET_TYPE(ipaddr, iptype)</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="preprocessor">#define IP_GET_TYPE(ipaddr)                     IPADDR_TYPE_V4</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="preprocessor">#define IP_ADDR_RAW_SIZE(ipaddr)                sizeof(ip4_addr_t)</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="preprocessor">#define ip_2_ip4(ipaddr)                        (ipaddr)</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="preprocessor">#define IP_ADDR4(ipaddr,a,b,c,d)                IP4_ADDR(ipaddr,a,b,c,d)</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> </div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="preprocessor">#define ip_addr_copy(dest, src)                 ip4_addr_copy(dest, src)</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="preprocessor">#define ip_addr_copy_from_ip4(dest, src)        ip4_addr_copy(dest, src)</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="preprocessor">#define ip_addr_set_ip4_u32(ipaddr, val)        ip4_addr_set_u32(ip_2_ip4(ipaddr), val)</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="preprocessor">#define ip_addr_set_ip4_u32_val(ipaddr, val)    ip_addr_set_ip4_u32(&amp;(ipaddr), val)</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="preprocessor">#define ip_addr_get_ip4_u32(ipaddr)             ip4_addr_get_u32(ip_2_ip4(ipaddr))</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="preprocessor">#define ip_addr_set(dest, src)                  ip4_addr_set(dest, src)</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="preprocessor">#define ip_addr_set_ipaddr(dest, src)           ip4_addr_set(dest, src)</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="preprocessor">#define ip_addr_set_zero(ipaddr)                ip4_addr_set_zero(ipaddr)</span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="preprocessor">#define ip_addr_set_zero_ip4(ipaddr)            ip4_addr_set_zero(ipaddr)</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="preprocessor">#define ip_addr_set_any(is_ipv6, ipaddr)        ip4_addr_set_any(ipaddr)</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="preprocessor">#define ip_addr_set_loopback(is_ipv6, ipaddr)   ip4_addr_set_loopback(ipaddr)</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="preprocessor">#define ip_addr_set_hton(dest, src)             ip4_addr_set_hton(dest, src)</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="preprocessor">#define ip_addr_get_network(target, host, mask) ip4_addr_get_network(target, host, mask)</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="preprocessor">#define ip_addr_netcmp(addr1, addr2, mask)      ip4_addr_netcmp(addr1, addr2, mask)</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="preprocessor">#define ip_addr_cmp(addr1, addr2)               ip4_addr_cmp(addr1, addr2)</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="preprocessor">#define ip_addr_isany(ipaddr)                   ip4_addr_isany(ipaddr)</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="preprocessor">#define ip_addr_isany_val(ipaddr)               ip4_addr_isany_val(ipaddr)</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> <span class="preprocessor">#define ip_addr_isloopback(ipaddr)              ip4_addr_isloopback(ipaddr)</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="preprocessor">#define ip_addr_islinklocal(ipaddr)             ip4_addr_islinklocal(ipaddr)</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="preprocessor">#define ip_addr_isbroadcast(addr, netif)        ip4_addr_isbroadcast(addr, netif)</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="preprocessor">#define ip_addr_ismulticast(ipaddr)             ip4_addr_ismulticast(ipaddr)</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span> <span class="preprocessor">#define ip_addr_debug_print(debug, ipaddr)      ip4_addr_debug_print(debug, ipaddr)</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> <span class="preprocessor">#define ip_addr_debug_print_val(debug, ipaddr)  ip4_addr_debug_print_val(debug, ipaddr)</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span> <span class="preprocessor">#define ipaddr_ntoa(ipaddr)                     ip4addr_ntoa(ipaddr)</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="preprocessor">#define ipaddr_ntoa_r(ipaddr, buf, buflen)      ip4addr_ntoa_r(ipaddr, buf, buflen)</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="preprocessor">#define ipaddr_aton(cp, addr)                   ip4addr_aton(cp, addr)</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> </div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="preprocessor">#define IPADDR_STRLEN_MAX   IP4ADDR_STRLEN_MAX</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> </div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="preprocessor">#define IP46_ADDR_ANY(type) (IP4_ADDR_ANY)</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> </div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="preprocessor">#else </span><span class="comment">/* LWIP_IPV4 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> </div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="keyword">typedef</span> <a class="code" href="structnsapi__addr.html">ip6_addr_t</a> ip_addr_t;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> <span class="preprocessor">#define IPADDR6_INIT(a, b, c, d)                { { a, b, c, d } IPADDR6_ZONE_INIT }</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="preprocessor">#define IPADDR6_INIT_HOST(a, b, c, d)           { { PP_HTONL(a), PP_HTONL(b), PP_HTONL(c), PP_HTONL(d) } IPADDR6_ZONE_INIT }</span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> <span class="preprocessor">#define IP_IS_V4_VAL(ipaddr)                    0</span></div><div class="line"><a name="l00322"></a><span class="lineno">  322</span> <span class="preprocessor">#define IP_IS_V6_VAL(ipaddr)                    1</span></div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> <span class="preprocessor">#define IP_IS_V4(ipaddr)                        0</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span> <span class="preprocessor">#define IP_IS_V6(ipaddr)                        1</span></div><div class="line"><a name="l00325"></a><span class="lineno">  325</span> <span class="preprocessor">#define IP_IS_ANY_TYPE_VAL(ipaddr)              0</span></div><div class="line"><a name="l00326"></a><span class="lineno">  326</span> <span class="preprocessor">#define IP_SET_TYPE_VAL(ipaddr, iptype)</span></div><div class="line"><a name="l00327"></a><span class="lineno">  327</span> <span class="preprocessor">#define IP_SET_TYPE(ipaddr, iptype)</span></div><div class="line"><a name="l00328"></a><span class="lineno">  328</span> <span class="preprocessor">#define IP_GET_TYPE(ipaddr)                     IPADDR_TYPE_V6</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span> <span class="preprocessor">#define IP_ADDR_RAW_SIZE(ipaddr)                sizeof(ip6_addr_t)</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span> <span class="preprocessor">#define ip_2_ip6(ipaddr)                        (ipaddr)</span></div><div class="line"><a name="l00331"></a><span class="lineno">  331</span> <span class="preprocessor">#define IP_ADDR6(ipaddr,i0,i1,i2,i3)            IP6_ADDR(ipaddr,i0,i1,i2,i3)</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="preprocessor">#define IP_ADDR6_HOST(ipaddr,i0,i1,i2,i3)       IP_ADDR6(ipaddr,PP_HTONL(i0),PP_HTONL(i1),PP_HTONL(i2),PP_HTONL(i3))</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> </div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="preprocessor">#define ip_addr_copy(dest, src)                 ip6_addr_copy(dest, src)</span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span> <span class="preprocessor">#define ip_addr_copy_from_ip6(dest, src)        ip6_addr_copy(dest, src)</span></div><div class="line"><a name="l00336"></a><span class="lineno">  336</span> <span class="preprocessor">#define ip_addr_copy_from_ip6_packed(dest, src) ip6_addr_copy_from_packed(dest, src)</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span> <span class="preprocessor">#define ip_addr_set(dest, src)                  ip6_addr_set(dest, src)</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span> <span class="preprocessor">#define ip_addr_set_ipaddr(dest, src)           ip6_addr_set(dest, src)</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span> <span class="preprocessor">#define ip_addr_set_zero(ipaddr)                ip6_addr_set_zero(ipaddr)</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span> <span class="preprocessor">#define ip_addr_set_zero_ip6(ipaddr)            ip6_addr_set_zero(ipaddr)</span></div><div class="line"><a name="l00341"></a><span class="lineno">  341</span> <span class="preprocessor">#define ip_addr_set_any(is_ipv6, ipaddr)        ip6_addr_set_any(ipaddr)</span></div><div class="line"><a name="l00342"></a><span class="lineno">  342</span> <span class="preprocessor">#define ip_addr_set_loopback(is_ipv6, ipaddr)   ip6_addr_set_loopback(ipaddr)</span></div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> <span class="preprocessor">#define ip_addr_set_hton(dest, src)             ip6_addr_set_hton(dest, src)</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> <span class="preprocessor">#define ip_addr_get_network(target, host, mask) ip6_addr_set_zero(target)</span></div><div class="line"><a name="l00345"></a><span class="lineno">  345</span> <span class="preprocessor">#define ip_addr_netcmp(addr1, addr2, mask)      0</span></div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> <span class="preprocessor">#define ip_addr_cmp(addr1, addr2)               ip6_addr_cmp(addr1, addr2)</span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="preprocessor">#define ip_addr_cmp_zoneless(addr1, addr2)      ip6_addr_cmp_zoneless(addr1, addr2)</span></div><div class="line"><a name="l00348"></a><span class="lineno">  348</span> <span class="preprocessor">#define ip_addr_isany(ipaddr)                   ip6_addr_isany(ipaddr)</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span> <span class="preprocessor">#define ip_addr_isany_val(ipaddr)               ip6_addr_isany_val(ipaddr)</span></div><div class="line"><a name="l00350"></a><span class="lineno">  350</span> <span class="preprocessor">#define ip_addr_isloopback(ipaddr)              ip6_addr_isloopback(ipaddr)</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span> <span class="preprocessor">#define ip_addr_islinklocal(ipaddr)             ip6_addr_islinklocal(ipaddr)</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span> <span class="preprocessor">#define ip_addr_isbroadcast(addr, netif)        0</span></div><div class="line"><a name="l00353"></a><span class="lineno">  353</span> <span class="preprocessor">#define ip_addr_ismulticast(ipaddr)             ip6_addr_ismulticast(ipaddr)</span></div><div class="line"><a name="l00354"></a><span class="lineno">  354</span> <span class="preprocessor">#define ip_addr_debug_print(debug, ipaddr)      ip6_addr_debug_print(debug, ipaddr)</span></div><div class="line"><a name="l00355"></a><span class="lineno">  355</span> <span class="preprocessor">#define ip_addr_debug_print_val(debug, ipaddr)  ip6_addr_debug_print_val(debug, ipaddr)</span></div><div class="line"><a name="l00356"></a><span class="lineno">  356</span> <span class="preprocessor">#define ipaddr_ntoa(ipaddr)                     ip6addr_ntoa(ipaddr)</span></div><div class="line"><a name="l00357"></a><span class="lineno">  357</span> <span class="preprocessor">#define ipaddr_ntoa_r(ipaddr, buf, buflen)      ip6addr_ntoa_r(ipaddr, buf, buflen)</span></div><div class="line"><a name="l00358"></a><span class="lineno">  358</span> <span class="preprocessor">#define ipaddr_aton(cp, addr)                   ip6addr_aton(cp, addr)</span></div><div class="line"><a name="l00359"></a><span class="lineno">  359</span> </div><div class="line"><a name="l00360"></a><span class="lineno">  360</span> <span class="preprocessor">#define IPADDR_STRLEN_MAX   IP6ADDR_STRLEN_MAX</span></div><div class="line"><a name="l00361"></a><span class="lineno">  361</span> </div><div class="line"><a name="l00362"></a><span class="lineno">  362</span> <span class="preprocessor">#define IP46_ADDR_ANY(type) (IP6_ADDR_ANY)</span></div><div class="line"><a name="l00363"></a><span class="lineno">  363</span> </div><div class="line"><a name="l00364"></a><span class="lineno">  364</span> <span class="preprocessor">#endif </span><span class="comment">/* LWIP_IPV4 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00365"></a><span class="lineno">  365</span> <span class="preprocessor">#endif </span><span class="comment">/* LWIP_IPV4 &amp;&amp; LWIP_IPV6 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00366"></a><span class="lineno">  366</span> </div><div class="line"><a name="l00367"></a><span class="lineno">  367</span> <span class="preprocessor">#if LWIP_IPV4</span></div><div class="line"><a name="l00368"></a><span class="lineno">  368</span> </div><div class="line"><a name="l00369"></a><span class="lineno">  369</span> <span class="keyword">extern</span> <span class="keyword">const</span> ip_addr_t ip_addr_any;</div><div class="line"><a name="l00370"></a><span class="lineno">  370</span> <span class="keyword">extern</span> <span class="keyword">const</span> ip_addr_t ip_addr_broadcast;</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span> <span class="comment"></span></div><div class="line"><a name="l00372"></a><span class="lineno">  372</span> <span class="comment">/**</span></div><div class="line"><a name="l00373"></a><span class="lineno">  373</span> <span class="comment"> * @ingroup ip4addr</span></div><div class="line"><a name="l00374"></a><span class="lineno">  374</span> <span class="comment"> * Can be used as a fixed/const ip_addr_t</span></div><div class="line"><a name="l00375"></a><span class="lineno">  375</span> <span class="comment"> * for the IP wildcard.</span></div><div class="line"><a name="l00376"></a><span class="lineno">  376</span> <span class="comment"> * Defined to @ref IP4_ADDR_ANY when IPv4 is enabled.</span></div><div class="line"><a name="l00377"></a><span class="lineno">  377</span> <span class="comment"> * Defined to @ref IP6_ADDR_ANY in IPv6 only systems.</span></div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> <span class="comment"> * Use this if you can handle IPv4 _AND_ IPv6 addresses.</span></div><div class="line"><a name="l00379"></a><span class="lineno">  379</span> <span class="comment"> * Use @ref IP4_ADDR_ANY or @ref IP6_ADDR_ANY when the IP</span></div><div class="line"><a name="l00380"></a><span class="lineno">  380</span> <span class="comment"> * type matters.</span></div><div class="line"><a name="l00381"></a><span class="lineno">  381</span> <span class="comment"> */</span></div><div class="line"><a name="l00382"></a><span class="lineno">  382</span> <span class="preprocessor">#define IP_ADDR_ANY         IP4_ADDR_ANY</span></div><div class="line"><a name="l00383"></a><span class="lineno">  383</span> <span class="comment">/**</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span> <span class="comment"> * @ingroup ip4addr</span></div><div class="line"><a name="l00385"></a><span class="lineno">  385</span> <span class="comment"> * Can be used as a fixed/const ip_addr_t</span></div><div class="line"><a name="l00386"></a><span class="lineno">  386</span> <span class="comment"> * for the IPv4 wildcard and the broadcast address</span></div><div class="line"><a name="l00387"></a><span class="lineno">  387</span> <span class="comment"> */</span></div><div class="line"><a name="l00388"></a><span class="lineno">  388</span> <span class="preprocessor">#define IP4_ADDR_ANY        (&amp;ip_addr_any)</span></div><div class="line"><a name="l00389"></a><span class="lineno">  389</span> <span class="comment">/**</span></div><div class="line"><a name="l00390"></a><span class="lineno">  390</span> <span class="comment"> * @ingroup ip4addr</span></div><div class="line"><a name="l00391"></a><span class="lineno">  391</span> <span class="comment"> * Can be used as a fixed/const ip4_addr_t</span></div><div class="line"><a name="l00392"></a><span class="lineno">  392</span> <span class="comment"> * for the wildcard and the broadcast address</span></div><div class="line"><a name="l00393"></a><span class="lineno">  393</span> <span class="comment"> */</span></div><div class="line"><a name="l00394"></a><span class="lineno">  394</span> <span class="preprocessor">#define IP4_ADDR_ANY4       (ip_2_ip4(&amp;ip_addr_any))</span></div><div class="line"><a name="l00395"></a><span class="lineno">  395</span> <span class="comment"></span></div><div class="line"><a name="l00396"></a><span class="lineno">  396</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00397"></a><span class="lineno">  397</span> <span class="preprocessor">#define IP_ADDR_BROADCAST   (&amp;ip_addr_broadcast)</span></div><div class="line"><a name="l00398"></a><span class="lineno">  398</span> <span class="comment">/** @ingroup ip4addr */</span></div><div class="line"><a name="l00399"></a><span class="lineno">  399</span> <span class="preprocessor">#define IP4_ADDR_BROADCAST  (ip_2_ip4(&amp;ip_addr_broadcast))</span></div><div class="line"><a name="l00400"></a><span class="lineno">  400</span> </div><div class="line"><a name="l00401"></a><span class="lineno">  401</span> <span class="preprocessor">#endif </span><span class="comment">/* LWIP_IPV4*/</span><span class="preprocessor"></span></div><div class="line"><a name="l00402"></a><span class="lineno">  402</span> </div><div class="line"><a name="l00403"></a><span class="lineno">  403</span> <span class="preprocessor">#if LWIP_IPV6</span></div><div class="line"><a name="l00404"></a><span class="lineno">  404</span> </div><div class="line"><a name="l00405"></a><span class="lineno">  405</span> <span class="keyword">extern</span> <span class="keyword">const</span> ip_addr_t ip6_addr_any;</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span> <span class="comment"></span></div><div class="line"><a name="l00407"></a><span class="lineno">  407</span> <span class="comment">/** </span></div><div class="line"><a name="l00408"></a><span class="lineno">  408</span> <span class="comment"> * @ingroup ip6addr</span></div><div class="line"><a name="l00409"></a><span class="lineno">  409</span> <span class="comment"> * IP6_ADDR_ANY can be used as a fixed ip_addr_t</span></div><div class="line"><a name="l00410"></a><span class="lineno">  410</span> <span class="comment"> * for the IPv6 wildcard address</span></div><div class="line"><a name="l00411"></a><span class="lineno">  411</span> <span class="comment"> */</span></div><div class="line"><a name="l00412"></a><span class="lineno">  412</span> <span class="preprocessor">#define IP6_ADDR_ANY   (&amp;ip6_addr_any)</span></div><div class="line"><a name="l00413"></a><span class="lineno">  413</span> <span class="comment">/**</span></div><div class="line"><a name="l00414"></a><span class="lineno">  414</span> <span class="comment"> * @ingroup ip6addr</span></div><div class="line"><a name="l00415"></a><span class="lineno">  415</span> <span class="comment"> * IP6_ADDR_ANY6 can be used as a fixed ip6_addr_t</span></div><div class="line"><a name="l00416"></a><span class="lineno">  416</span> <span class="comment"> * for the IPv6 wildcard address</span></div><div class="line"><a name="l00417"></a><span class="lineno">  417</span> <span class="comment"> */</span></div><div class="line"><a name="l00418"></a><span class="lineno">  418</span> <span class="preprocessor">#define IP6_ADDR_ANY6  (ip_2_ip6(&amp;ip6_addr_any))</span></div><div class="line"><a name="l00419"></a><span class="lineno">  419</span> </div><div class="line"><a name="l00420"></a><span class="lineno">  420</span> <span class="preprocessor">#if !LWIP_IPV4</span></div><div class="line"><a name="l00421"></a><span class="lineno">  421</span> <span class="comment">/** IPv6-only configurations */</span></div><div class="line"><a name="l00422"></a><span class="lineno">  422</span> <span class="preprocessor">#define IP_ADDR_ANY IP6_ADDR_ANY</span></div><div class="line"><a name="l00423"></a><span class="lineno">  423</span> <span class="preprocessor">#endif </span><span class="comment">/* !LWIP_IPV4 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00424"></a><span class="lineno">  424</span> </div><div class="line"><a name="l00425"></a><span class="lineno">  425</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00426"></a><span class="lineno">  426</span> </div><div class="line"><a name="l00427"></a><span class="lineno">  427</span> <span class="preprocessor">#if LWIP_IPV4 &amp;&amp; LWIP_IPV6</span></div><div class="line"><a name="l00428"></a><span class="lineno">  428</span> <span class="comment">/** @ingroup ipaddr */</span></div><div class="line"><a name="l00429"></a><span class="lineno">  429</span> <span class="preprocessor">#define IP_ANY_TYPE    (&amp;ip_addr_any_type)</span></div><div class="line"><a name="l00430"></a><span class="lineno">  430</span> <span class="preprocessor">#else</span></div><div class="line"><a name="l00431"></a><span class="lineno">  431</span> <span class="preprocessor">#define IP_ANY_TYPE    IP_ADDR_ANY</span></div><div class="line"><a name="l00432"></a><span class="lineno">  432</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00433"></a><span class="lineno">  433</span> </div><div class="line"><a name="l00434"></a><span class="lineno">  434</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00435"></a><span class="lineno">  435</span> }</div><div class="line"><a name="l00436"></a><span class="lineno">  436</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00437"></a><span class="lineno">  437</span> </div><div class="line"><a name="l00438"></a><span class="lineno">  438</span> <span class="preprocessor">#endif </span><span class="comment">/* LWIP_HDR_IP_ADDR_H */</span><span class="preprocessor"></span></div><div class="ttc" id="def_8h_html"><div class="ttname"><a href="def_8h.html">def.h</a></div><div class="ttdoc">various utility macros </div></div>
+<div class="ttc" id="ip4__addr_8h_html"><div class="ttname"><a href="ip4__addr_8h.html">ip4_addr.h</a></div><div class="ttdoc">IPv4 address API. </div></div>
+<div class="ttc" id="opt_8h_html"><div class="ttname"><a href="opt_8h.html">opt.h</a></div><div class="ttdoc">lwIP Options Configuration </div></div>
+<div class="ttc" id="ip6__addr_8h_html"><div class="ttname"><a href="ip6__addr_8h.html">ip6_addr.h</a></div><div class="ttdoc">IPv6 addresses. </div></div>
+<div class="ttc" id="ip__addr_8h_html_af2142f0dfdcc938e2db16aa745ed585cace47fa82608deeb1c1c7c2c891eb5049"><div class="ttname"><a href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585cace47fa82608deeb1c1c7c2c891eb5049">IPADDR_TYPE_V4</a></div><div class="ttdoc">IPv4. </div><div class="ttdef"><b>Definition:</b> <a href="ip__addr_8h_source.html#l00056">ip_addr.h:56</a></div></div>
+<div class="ttc" id="ip__addr_8h_html_af2142f0dfdcc938e2db16aa745ed585caae510fd8ec7fe405b594b57af61f9a02"><div class="ttname"><a href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585caae510fd8ec7fe405b594b57af61f9a02">IPADDR_TYPE_V6</a></div><div class="ttdoc">IPv6. </div><div class="ttdef"><b>Definition:</b> <a href="ip__addr_8h_source.html#l00058">ip_addr.h:58</a></div></div>
+<div class="ttc" id="structnsapi__addr_html"><div class="ttname"><a href="structnsapi__addr.html">nsapi_addr</a></div><div class="ttdoc">IP address structure for passing IP addresses by value. </div><div class="ttdef"><b>Definition:</b> <a href="nsapi__types_8h_source.html#l00237">nsapi_types.h:237</a></div></div>
+<div class="ttc" id="ip__addr_8h_html_af2142f0dfdcc938e2db16aa745ed585c"><div class="ttname"><a href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585c">lwip_ip_addr_type</a></div><div class="ttdeci">lwip_ip_addr_type</div><div class="ttdoc">IP address types for use in ip_addr_t.type member. </div><div class="ttdef"><b>Definition:</b> <a href="ip__addr_8h_source.html#l00054">ip_addr.h:54</a></div></div>
+<div class="ttc" id="ip__addr_8h_html_af2142f0dfdcc938e2db16aa745ed585cac6b2c99cf920e08efcb55dc40e42944e"><div class="ttname"><a href="ip__addr_8h.html#af2142f0dfdcc938e2db16aa745ed585cac6b2c99cf920e08efcb55dc40e42944e">IPADDR_TYPE_ANY</a></div><div class="ttdoc">IPv4+IPv6 ("dual-stack") </div><div class="ttdef"><b>Definition:</b> <a href="ip__addr_8h_source.html#l00060">ip_addr.h:60</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/ip__addr_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:24:07 GMT -->
+</html>

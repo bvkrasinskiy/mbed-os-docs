@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_file_system_store.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:16:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | FileSystemStore Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="classmbed_1_1_file_system_store.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_file_system_store.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_file_system_store.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><b>mbed</b></li><li class="navelem"><a class="el" href="classmbed_1_1_file_system_store.html">FileSystemStore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> |
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">FileSystemStore Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> for Secure Store.  
+ <a href="classmbed_1_1_file_system_store.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_file_system_store_8h_source.html">FileSystemStore.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for FileSystemStore:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="classmbed_1_1_file_system_store.png" usemap="#FileSystemStore_map"/>
+  <map id="FileSystemStore_map" name="FileSystemStore_map">
+<area alt="KVStore" coords="0,0,103,24" href="classmbed_1_1_k_v_store.html" shape="rect" title="KVStore class. "/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a40417e49f204839ba54aa440ec14a2c5"><td align="right" class="memItemLeft" valign="top">typedef struct <a class="el" href="structmbed_1_1_k_v_store_1_1info.html">mbed::KVStore::info</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_k_v_store.html#a40417e49f204839ba54aa440ec14a2c5">info_t</a></td></tr>
+<tr class="memdesc:a40417e49f204839ba54aa440ec14a2c5"><td class="mdescLeft"> </td><td class="mdescRight">Holds key information.  <a href="#a40417e49f204839ba54aa440ec14a2c5">More...</a><br/></td></tr>
+<tr class="separator:a40417e49f204839ba54aa440ec14a2c5"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a85b34f1d4098ab54e6d33f8058ac14f3"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a85b34f1d4098ab54e6d33f8058ac14f3">FileSystemStore</a> (<a class="el" href="classmbed_1_1_file_system.html">FileSystem</a> *fs)</td></tr>
+<tr class="memdesc:a85b34f1d4098ab54e6d33f8058ac14f3"><td class="mdescLeft"> </td><td class="mdescRight">Create <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> - A Key Value API on top of FS.  <a href="#a85b34f1d4098ab54e6d33f8058ac14f3">More...</a><br/></td></tr>
+<tr class="separator:a85b34f1d4098ab54e6d33f8058ac14f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5089f99066555a2963124c639f3d7fe6"><td align="right" class="memItemLeft" valign="top">virtual </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a5089f99066555a2963124c639f3d7fe6">~FileSystemStore</a> ()</td></tr>
+<tr class="memdesc:a5089f99066555a2963124c639f3d7fe6"><td class="mdescLeft"> </td><td class="mdescRight">Destroy <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> instance.  <a href="#a5089f99066555a2963124c639f3d7fe6">More...</a><br/></td></tr>
+<tr class="separator:a5089f99066555a2963124c639f3d7fe6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae3e772fe7bcf262931cb3620b2af59f7"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#ae3e772fe7bcf262931cb3620b2af59f7">init</a> ()</td></tr>
+<tr class="memdesc:ae3e772fe7bcf262931cb3620b2af59f7"><td class="mdescLeft"> </td><td class="mdescRight">Initialize <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a>, checking validity of <a class="el" href="classmbed_1_1_k_v_store.html" title="KVStore class. ">KVStore</a> writing folder and if it doesn't exist, creating it.  <a href="#ae3e772fe7bcf262931cb3620b2af59f7">More...</a><br/></td></tr>
+<tr class="separator:ae3e772fe7bcf262931cb3620b2af59f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9d82ba22bb381150961a175d10072ad4"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a9d82ba22bb381150961a175d10072ad4">deinit</a> ()</td></tr>
+<tr class="memdesc:a9d82ba22bb381150961a175d10072ad4"><td class="mdescLeft"> </td><td class="mdescRight">Deinitialize <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a>, release and free resources.  <a href="#a9d82ba22bb381150961a175d10072ad4">More...</a><br/></td></tr>
+<tr class="separator:a9d82ba22bb381150961a175d10072ad4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa37a1aace352b736c6dd7f752757e722"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#aa37a1aace352b736c6dd7f752757e722">reset</a> ()</td></tr>
+<tr class="memdesc:aa37a1aace352b736c6dd7f752757e722"><td class="mdescLeft"> </td><td class="mdescRight">Reset <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> contents (clear all keys)  <a href="#aa37a1aace352b736c6dd7f752757e722">More...</a><br/></td></tr>
+<tr class="separator:aa37a1aace352b736c6dd7f752757e722"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4eca0f8cfc13dac2204afa63df5a5c5e"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a4eca0f8cfc13dac2204afa63df5a5c5e">set</a> (const char *key, const void *buffer, size_t size, uint32_t create_flags)</td></tr>
+<tr class="memdesc:a4eca0f8cfc13dac2204afa63df5a5c5e"><td class="mdescLeft"> </td><td class="mdescRight">Set one <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> item, given key and value.  <a href="#a4eca0f8cfc13dac2204afa63df5a5c5e">More...</a><br/></td></tr>
+<tr class="separator:a4eca0f8cfc13dac2204afa63df5a5c5e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa7023cc0b6a384a64d66848f264f1fb8"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#aa7023cc0b6a384a64d66848f264f1fb8">get</a> (const char *key, void *buffer, size_t buffer_size, size_t *actual_size=NULL, size_t offset=0)</td></tr>
+<tr class="memdesc:aa7023cc0b6a384a64d66848f264f1fb8"><td class="mdescLeft"> </td><td class="mdescRight">Get one <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> item by given key.  <a href="#aa7023cc0b6a384a64d66848f264f1fb8">More...</a><br/></td></tr>
+<tr class="separator:aa7023cc0b6a384a64d66848f264f1fb8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1593cc0ba1b108661025ddda8a285ba4"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a1593cc0ba1b108661025ddda8a285ba4">get_info</a> (const char *key, <a class="el" href="classmbed_1_1_k_v_store.html#a40417e49f204839ba54aa440ec14a2c5">info_t</a> *<a class="el" href="structmbed_1_1_k_v_store_1_1info.html">info</a>)</td></tr>
+<tr class="memdesc:a1593cc0ba1b108661025ddda8a285ba4"><td class="mdescLeft"> </td><td class="mdescRight">Get information of a given key.  <a href="#a1593cc0ba1b108661025ddda8a285ba4">More...</a><br/></td></tr>
+<tr class="separator:a1593cc0ba1b108661025ddda8a285ba4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2104055f89837396082fccd668134145"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a2104055f89837396082fccd668134145">remove</a> (const char *key)</td></tr>
+<tr class="memdesc:a2104055f89837396082fccd668134145"><td class="mdescLeft"> </td><td class="mdescRight">Remove a <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> item by given key.  <a href="#a2104055f89837396082fccd668134145">More...</a><br/></td></tr>
+<tr class="separator:a2104055f89837396082fccd668134145"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a93f0234ef32e91eb715224b8b67998d5"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a93f0234ef32e91eb715224b8b67998d5">set_start</a> (set_handle_t *handle, const char *key, size_t final_data_size, uint32_t create_flags)</td></tr>
+<tr class="memdesc:a93f0234ef32e91eb715224b8b67998d5"><td class="mdescLeft"> </td><td class="mdescRight">Start an incremental <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> set sequence.  <a href="#a93f0234ef32e91eb715224b8b67998d5">More...</a><br/></td></tr>
+<tr class="separator:a93f0234ef32e91eb715224b8b67998d5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adbc09fb1fba93371af1a9761729933e8"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#adbc09fb1fba93371af1a9761729933e8">set_add_data</a> (set_handle_t handle, const void *value_data, size_t data_size)</td></tr>
+<tr class="memdesc:adbc09fb1fba93371af1a9761729933e8"><td class="mdescLeft"> </td><td class="mdescRight">Add data to incremental <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> set sequence.  <a href="#adbc09fb1fba93371af1a9761729933e8">More...</a><br/></td></tr>
+<tr class="separator:adbc09fb1fba93371af1a9761729933e8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4dae916d0b71446851dfbda1444219a8"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a4dae916d0b71446851dfbda1444219a8">set_finalize</a> (set_handle_t handle)</td></tr>
+<tr class="memdesc:a4dae916d0b71446851dfbda1444219a8"><td class="mdescLeft"> </td><td class="mdescRight">Finalize an incremental <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> set sequence.  <a href="#a4dae916d0b71446851dfbda1444219a8">More...</a><br/></td></tr>
+<tr class="separator:a4dae916d0b71446851dfbda1444219a8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1b651eda4f4b2b65aa989d9d467b74fc"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a1b651eda4f4b2b65aa989d9d467b74fc">iterator_open</a> (iterator_t *it, const char *prefix=NULL)</td></tr>
+<tr class="memdesc:a1b651eda4f4b2b65aa989d9d467b74fc"><td class="mdescLeft"> </td><td class="mdescRight">Start an iteration over <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> keys.  <a href="#a1b651eda4f4b2b65aa989d9d467b74fc">More...</a><br/></td></tr>
+<tr class="separator:a1b651eda4f4b2b65aa989d9d467b74fc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a211f5f89b40bb0417a23a1fae07b9385"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a211f5f89b40bb0417a23a1fae07b9385">iterator_next</a> (iterator_t it, char *key, size_t key_size)</td></tr>
+<tr class="memdesc:a211f5f89b40bb0417a23a1fae07b9385"><td class="mdescLeft"> </td><td class="mdescRight">Get next key in iteration.  <a href="#a211f5f89b40bb0417a23a1fae07b9385">More...</a><br/></td></tr>
+<tr class="separator:a211f5f89b40bb0417a23a1fae07b9385"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7c3570bd8b2deae177a4a13119facd29"><td align="right" class="memItemLeft" valign="top">virtual int </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_file_system_store.html#a7c3570bd8b2deae177a4a13119facd29">iterator_close</a> (iterator_t it)</td></tr>
+<tr class="memdesc:a7c3570bd8b2deae177a4a13119facd29"><td class="mdescLeft"> </td><td class="mdescRight">Close iteration.  <a href="#a7c3570bd8b2deae177a4a13119facd29">More...</a><br/></td></tr>
+<tr class="separator:a7c3570bd8b2deae177a4a13119facd29"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa57c72b4bcfe17ef09abca7c712c1442"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1_k_v_store.html#aa57c72b4bcfe17ef09abca7c712c1442">is_valid_key</a> (const char *key) const </td></tr>
+<tr class="memdesc:aa57c72b4bcfe17ef09abca7c712c1442"><td class="mdescLeft"> </td><td class="mdescRight">Convenience function for checking key validity.  <a href="#aa57c72b4bcfe17ef09abca7c712c1442">More...</a><br/></td></tr>
+<tr class="separator:aa57c72b4bcfe17ef09abca7c712c1442"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> for Secure Store. </p>
+<p>This class implements the <a class="el" href="classmbed_1_1_k_v_store.html" title="KVStore class. ">KVStore</a> interface to create a key value store over <a class="el" href="classmbed_1_1_file_system.html" title="A file system object. ">FileSystem</a>.</p>
+<div class="fragment"><div class="line">...</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="_file_system_store_8h_source.html#l00034">34</a> of file <a class="el" href="_file_system_store_8h_source.html">FileSystemStore.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a40417e49f204839ba54aa440ec14a2c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">typedef struct <a class="el" href="structmbed_1_1_k_v_store_1_1info.html">mbed::KVStore::info</a>  <a class="el" href="classmbed_1_1_k_v_store.html#a40417e49f204839ba54aa440ec14a2c5">info_t</a></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Holds key information. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a85b34f1d4098ab54e6d33f8058ac14f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1_file_system_store.html">FileSystemStore</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_file_system.html">FileSystem</a> * </td>
+          <td class="paramname"><em>fs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> - A Key Value API on top of FS. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">fs</td><td><a class="el" href="classmbed_1_1_file.html" title="File class. ">File</a> system (FAT/LITTLE) on top of which <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> is adding KV API </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5089f99066555a2963124c639f3d7fe6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual ~<a class="el" href="classmbed_1_1_file_system_store.html">FileSystemStore</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Destroy <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> instance. </p>
+
+<p>Definition at line <a class="el" href="_file_system_store_8h_source.html#l00046">46</a> of file <a class="el" href="_file_system_store_8h_source.html">FileSystemStore.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9d82ba22bb381150961a175d10072ad4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int deinit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Deinitialize <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a>, release and free resources. </p>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a430dfece12fa718e068d614544888296">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7023cc0b6a384a64d66848f264f1fb8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int get </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t * </td>
+          <td class="paramname"><em>actual_size</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>offset</em> = <code>0</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get one <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> item by given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key - must not include '*' '/' '?' ':' ';' '\' '"' '|' ' ' '&lt;' '&gt;' '\'. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Value data buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_size</td><td>Value data buffer size. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Actual read size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset to read from in data.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_INVALID_SIZE Invalid size given in function arguments. MBED_ERROR_INVALID_DATA_DETECTED Data is corrupted. MBED_ERROR_ITEM_NOT_FOUND No such key. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a80d304d328db639fb5cb64a7ff2a537b">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1593cc0ba1b108661025ddda8a285ba4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int get_info </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_k_v_store.html#a40417e49f204839ba54aa440ec14a2c5">info_t</a> * </td>
+          <td class="paramname"><em>info</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get information of a given key. </p>
+<p>The returned info contains size and flags</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key - must not include '*' '/' '?' ':' ';' '\' '"' '|' ' ' '&lt;' '&gt;' '\'. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>Returned information structure.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_INVALID_SIZE Invalid size given in function arguments. MBED_ERROR_INVALID_DATA_DETECTED Data is corrupted. MBED_ERROR_ITEM_NOT_FOUND No such key. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a453060f3f4705e9709e0632197b1064a">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3e772fe7bcf262931cb3620b2af59f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Initialize <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a>, checking validity of <a class="el" href="classmbed_1_1_k_v_store.html" title="KVStore class. ">KVStore</a> writing folder and if it doesn't exist, creating it. </p>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#ad0b5cb347048dfd17f3d2c9107fbe259">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa57c72b4bcfe17ef09abca7c712c1442"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool is_valid_key </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Convenience function for checking key validity. </p>
+<p>Key must not include '*' '/' '?' ':' ';' '\' '"' '|' ' ' '&lt;' '&gt;' '\'.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key buffer.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS on success or an error code on failure </dd></dl>
+
+<p>Definition at line <a class="el" href="_k_v_store_8h_source.html#l00200">200</a> of file <a class="el" href="_k_v_store_8h_source.html">KVStore.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c3570bd8b2deae177a4a13119facd29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int iterator_close </td>
+          <td>(</td>
+          <td class="paramtype">iterator_t </td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Close iteration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>Iterator handle.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#ad139e15b030f37a09cbe9338ec3b8957">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a211f5f89b40bb0417a23a1fae07b9385"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int iterator_next </td>
+          <td>(</td>
+          <td class="paramtype">iterator_t </td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>key_size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get next key in iteration. </p>
+<p>There are no issues with any other operations while iterator is open.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>Iterator handle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Buffer for returned key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_size</td><td>Key buffer size.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_ITEM_NOT_FOUND No more keys found. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a5116b40a3480462b88dc3f1bb8583ad4">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b651eda4f4b2b65aa989d9d467b74fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int iterator_open </td>
+          <td>(</td>
+          <td class="paramtype">iterator_t * </td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>prefix</em> = <code>NULL</code> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Start an iteration over <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> keys. </p>
+<p>There are no issues with any other operations while iterator is open.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>Returned iterator handle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Key prefix (null for all keys).</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a77661adec54b9909816e7492a2c61a91">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2104055f89837396082fccd668134145"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int remove </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Remove a <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> item by given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key - must not include '*' '/' '?' ':' ';' '\' '"' '|' ' ' '&lt;' '&gt;' '\'.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_ITEM_NOT_FOUND No such key. MBED_ERROR_WRITE_PROTECTED Already stored with "write once" flag. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a26c25c9cce4b213b6777ba1076d4a13c">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa37a1aace352b736c6dd7f752757e722"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Reset <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> contents (clear all keys) </p>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#ab2733886d2fab90036f7b3edb1b18ee9">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4eca0f8cfc13dac2204afa63df5a5c5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int set </td>
+          <td>(</td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>create_flags</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Set one <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> item, given key and value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key - must not include '*' '/' '?' ':' ';' '\' '"' '|' ' ' '&lt;' '&gt;' '\'. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Value data buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Value data size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">create_flags</td><td>Flag mask.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_INVALID_SIZE Invalid size given in function arguments. MBED_ERROR_WRITE_PROTECTED Already stored with "write once" flag. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a2f68b91d1c041fc31a080134aa912215">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbc09fb1fba93371af1a9761729933e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int set_add_data </td>
+          <td>(</td>
+          <td class="paramtype">set_handle_t </td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>value_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>data_size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Add data to incremental <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> set sequence. </p>
+<p>This operation is blocking other operations. Any get/set/remove operation will be blocked until set_finalize is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Incremental set handle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value_data</td><td>Value data to add. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Value data size.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_INVALID_SIZE Invalid size given in function arguments. MBED_ERROR_WRITE_PROTECTED Already stored with "write once" flag. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#adbe636bf8c05834fe68b281fc638c348">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4dae916d0b71446851dfbda1444219a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int set_finalize </td>
+          <td>(</td>
+          <td class="paramtype">set_handle_t </td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Finalize an incremental <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> set sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Incremental set handle.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a346da66252added46d3b93902066b548">KVStore</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93f0234ef32e91eb715224b8b67998d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">virtual int set_start </td>
+          <td>(</td>
+          <td class="paramtype">set_handle_t * </td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char * </td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t </td>
+          <td class="paramname"><em>final_data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t </td>
+          <td class="paramname"><em>create_flags</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Start an incremental <a class="el" href="classmbed_1_1_file_system_store.html" title="FileSystemStore for Secure Store. ">FileSystemStore</a> set sequence. </p>
+<p>This operation is blocking other operations. Any get/set/remove/iterator operation will be blocked until set_finalize is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>Returned incremental set handle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key - must not include '*' '/' '?' ':' ';' '\' '"' '|' ' ' '&lt;' '&gt;' '\'. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">final_data_size</td><td>Final value data size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">create_flags</td><td>Flag mask.</td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MBED_SUCCESS Success. MBED_ERROR_NOT_READY Not initialized. MBED_ERROR_FAILED_OPERATION Underlying file system failed operation. MBED_ERROR_INVALID_ARGUMENT Invalid argument given in function arguments. MBED_ERROR_INVALID_SIZE Invalid size given in function arguments. MBED_ERROR_WRITE_PROTECTED Already stored with "write once" flag. </dd></dl>
+
+<p>Implements <a class="el" href="classmbed_1_1_k_v_store.html#a6e882a0d4e0cbadf6269142ac3c4e693">KVStore</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_file_system_store.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:16:57 GMT -->
+</html>

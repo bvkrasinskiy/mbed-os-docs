@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/dm__cis_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:23:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | dm_cis.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="dm__cis_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/dm__cis_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/dm__cis_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_33de8441f7b8b108cc48249435a2d2bd.html">cordio_stack</a></li><li class="navelem"><a class="el" href="dir_3940a4f0546291bcd68aa891290cb6c5.html">ble-host</a></li><li class="navelem"><a class="el" href="dir_e276228f8496bf800e01198cc79e5a5f.html">sources</a></li><li class="navelem"><a class="el" href="dir_629a499420c3e80db90a8c1bdd4624c3.html">stack</a></li><li class="navelem"><a class="el" href="dir_392deeb1c72b7ae9d3a0c63d6291095a.html">dm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dm_cis.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dm__cis_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/*!</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *  \file</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *  \brief  DM Connected Isochronous Stream (CIS) management module.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *  Copyright (c) 2019-2020 Packetcraft, Inc.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *  </span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *  Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *  you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *  You may obtain a copy of the License at</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *  </span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *  </span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *  distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *  See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *  limitations under the License.</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> */</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="preprocessor">#ifndef DM_CIS_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="preprocessor">#define DM_CIS_H</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#include "<a class="code" href="dm__api_8h.html">dm_api.h</a>"</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span> {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment">  Macros</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment">/* Uninitialized HCI handle */</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="preprocessor">#define DM_CIS_HCI_HANDLE_NONE              0xFFFF</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment">/* Action set initializer */</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="preprocessor">#define DM_CIS_ACT_SET_INIT(n)              ((n) &lt;&lt; 4)</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">/* Get action set ID from action */</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="preprocessor">#define DM_CIS_ACT_SET_ID(action)           ((action) &gt;&gt; 4)</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment">/* Get action ID from action */</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="preprocessor">#define DM_CIS_ACT_ID(action)               ((action) &amp; 0x0F)</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="comment">/* Restore old state */</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="preprocessor">#define DM_CIS_SM_RESTORE_OLD_STATE         0xFF</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment">  Data Types</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment"></span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">/*! DM CIS event handler messages for state machine */</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="keyword">enum</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>   <span class="comment">/* messages from API */</span></div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a71c8b43c8151558f48ef7985d63a384f">   58</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a71c8b43c8151558f48ef7985d63a384f">DM_CIS_MSG_API_OPEN</a> = DM_MSG_START(DM_ID_CIS),                    <span class="comment">/*!&lt; Open CIS Connection */</span></div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5ab6549445265467aba5223ef062dc8401">   59</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5ab6549445265467aba5223ef062dc8401">DM_CIS_MSG_API_CLOSE</a>,                                             <span class="comment">/*!&lt; Close CIS Connection */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a7a7853976214a0b832535307b5eca058">   60</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a7a7853976214a0b832535307b5eca058">DM_CIS_MSG_API_ACCEPT</a>,                                            <span class="comment">/*!&lt; Accept CIS Connection */</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a428678869db7b16e443969a5f0d2477d">   61</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a428678869db7b16e443969a5f0d2477d">DM_CIS_MSG_API_REJECT</a>,                                            <span class="comment">/*!&lt; Reject CIS Connection */</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>   <span class="comment">/* messages from HCI */</span></div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a3ce19ffcf70b5973a5d7121c0f42a303">   64</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a3ce19ffcf70b5973a5d7121c0f42a303">DM_CIS_MSG_HCI_LE_CIS_EST_FAIL</a>,                                   <span class="comment">/*!&lt; HCI LE CIS Establish Failure Event */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a47d2725195722b859605005ffb7558c6">   65</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a47d2725195722b859605005ffb7558c6">DM_CIS_MSG_HCI_LE_CIS_EST</a>,                                        <span class="comment">/*!&lt; HCI LE CIS Established Event */</span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a546bf5e62eb34f45476b54fc07f60ed5">   66</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a546bf5e62eb34f45476b54fc07f60ed5">DM_CIS_MSG_HCI_DISCONNECT_CMPL</a>,                                   <span class="comment">/*!&lt; HCI Disconnection Complete Event */</span></div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a96da47fbe0f071395b4dbdf888f408d2">   67</a></span>   <a class="code" href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a96da47fbe0f071395b4dbdf888f408d2">DM_CIS_MSG_HCI_LE_CIS_REQ</a>                                         <span class="comment">/*!&lt; HCI LE CIS Request Event */</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> };</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">/* Number of CIS messages */</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="preprocessor">#define DM_CIS_NUM_MSGS                     (DM_CIS_MSG_HCI_LE_CIS_REQ - DM_CIS_MSG_API_OPEN + 1)</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> </div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">/* CIS state machine action function sets */</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="keyword">enum</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> {</div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deadc991905f8a331f5659c784192c1210b">   76</a></span>   <a class="code" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deadc991905f8a331f5659c784192c1210b">DM_CIS_ACT_SET_MAIN</a>,                                              <span class="comment">/*!&lt; Main action functions */</span></div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8dea72ceba3163e9d8a9074ff1c733a56822">   77</a></span>   <a class="code" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8dea72ceba3163e9d8a9074ff1c733a56822">DM_CIS_ACT_SET_MASTER</a>,                                            <span class="comment">/*!&lt; Master action functions */</span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deae028faafc20553670289df1e8369a969">   78</a></span>   <a class="code" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deae028faafc20553670289df1e8369a969">DM_CIS_ACT_SET_SLAVE</a>,                                             <span class="comment">/*!&lt; Slave action functions */</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> </div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>   DM_CIS_NUM_ACT_SETS</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> };</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment"></span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">/*! CIS state machine actions */</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="keyword">enum</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> {</div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a1538bb0ea5bdd20b206194d615bcbe60">   86</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a1538bb0ea5bdd20b206194d615bcbe60">DM_CIS_SM_ACT_NONE</a> = DM_CIS_ACT_SET_INIT(<a class="code" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deadc991905f8a331f5659c784192c1210b">DM_CIS_ACT_SET_MAIN</a>),    <span class="comment">/*!&lt; No Action */</span></div><div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419aedb79e4d764b430f40f78fab99f4a680">   87</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419aedb79e4d764b430f40f78fab99f4a680">DM_CIS_SM_ACT_CLOSE</a>,                                              <span class="comment">/*!&lt; Process Close */</span></div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a5c49c0f401423dffbfd4dc1340f336d9">   88</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a5c49c0f401423dffbfd4dc1340f336d9">DM_CIS_SM_ACT_CIS_EST</a>,                                            <span class="comment">/*!&lt; Procoss CIS Established */</span></div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a9b0f8f91ce48cf381abad4ad6df6bc9d">   89</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a9b0f8f91ce48cf381abad4ad6df6bc9d">DM_CIS_SM_ACT_CIS_EST_FAILED</a>,                                     <span class="comment">/*!&lt; Process CIS Establish Failed */</span></div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a6e2f07f7da2045bd748ad2c08ebfb804">   90</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a6e2f07f7da2045bd748ad2c08ebfb804">DM_CIS_SM_ACT_CIS_CLOSED</a>,                                         <span class="comment">/*!&lt; Process CIS Closed */</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> </div><div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a4d0aea36e3d7f46a39533680692ea860">   92</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a4d0aea36e3d7f46a39533680692ea860">DM_CIS_SM_ACT_OPEN</a> = DM_CIS_ACT_SET_INIT(<a class="code" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8dea72ceba3163e9d8a9074ff1c733a56822">DM_CIS_ACT_SET_MASTER</a>),  <span class="comment">/*!&lt; Process Master Open */</span></div><div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a676aea5bd42a3fd361249a99f19e1536">   93</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a676aea5bd42a3fd361249a99f19e1536">DM_CIS_SM_ACT_CANCEL_OPEN</a>,                                        <span class="comment">/*!&lt; Process Master Cancel Open */</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> </div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a077546cee654b5e60510f9466f277100">   95</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a077546cee654b5e60510f9466f277100">DM_CIS_SM_ACT_REQUEST</a> = DM_CIS_ACT_SET_INIT(<a class="code" href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deae028faafc20553670289df1e8369a969">DM_CIS_ACT_SET_SLAVE</a>),<span class="comment">/*!&lt; Process Slave Request */</span></div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419aa790a7c041e46120c32eb394d306b1a2">   96</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419aa790a7c041e46120c32eb394d306b1a2">DM_CIS_SM_ACT_ACCEPT</a>,                                             <span class="comment">/*!&lt; Process Slave Accept */</span></div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a1825b37992e9600772b4a511892935f3">   97</a></span>   <a class="code" href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a1825b37992e9600772b4a511892935f3">DM_CIS_SM_ACT_REJECT</a>,                                             <span class="comment">/*!&lt; Process Slave Reject */</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> };</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment"></span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment">/*! CIS state machine states */</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="keyword">enum</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> {</div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a5af0614d6c355f92414c477c339401c4">  103</a></span>   <a class="code" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a5af0614d6c355f92414c477c339401c4">DM_CIS_SM_ST_IDLE</a>,                                                <span class="comment">/*!&lt; Idle State */</span></div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a2e4480ecc93ca8beeddb0ee869d4acb3">  104</a></span>   <a class="code" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a2e4480ecc93ca8beeddb0ee869d4acb3">DM_CIS_SM_ST_CONNECTING</a>,                                          <span class="comment">/*!&lt; Connecting State */</span></div><div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90aa826458959953eb2a97a8281fa707ff3">  105</a></span>   <a class="code" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90aa826458959953eb2a97a8281fa707ff3">DM_CIS_SM_ST_REQUESTING</a>,                                          <span class="comment">/*!&lt; Requesting State */</span></div><div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a1a258ee7987c17b7fa5f428bb7f970f6">  106</a></span>   <a class="code" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a1a258ee7987c17b7fa5f428bb7f970f6">DM_CIS_SM_ST_ACCEPTING</a>,                                           <span class="comment">/*!&lt; Accepting State */</span></div><div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a86a5259de772d5f0419e73a919e2c6ca">  107</a></span>   <a class="code" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a86a5259de772d5f0419e73a919e2c6ca">DM_CIS_SM_ST_CONNECTED</a>,                                           <span class="comment">/*!&lt; Connected State */</span></div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90ab75db2b0047cfe388f00ddc09536d742">  108</a></span>   <a class="code" href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90ab75db2b0047cfe388f00ddc09536d742">DM_CIS_SM_ST_DISCONNECTING</a>,                                       <span class="comment">/*!&lt; Disconnecting State */</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> </div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>   DM_CIS_SM_NUM_STATES</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> };</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment"></span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">/*! DM CIS CIG event handler messages for state machine */</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="keyword">enum</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> {</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>   <span class="comment">/* messages from API */</span></div><div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a6252c48e1b5d93f0301453bd57dee22c">  117</a></span>   <a class="code" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a6252c48e1b5d93f0301453bd57dee22c">DM_CIS_CIG_MSG_API_CONFIG</a> = DM_MSG_START(DM_ID_CIS_CIG),          <span class="comment">/*!&lt; Configure CIG */</span></div><div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a345a434bffbd08cee278b22393cd7354">  118</a></span>   <a class="code" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a345a434bffbd08cee278b22393cd7354">DM_CIS_CIG_MSG_API_REMOVE</a>,                                        <span class="comment">/*!&lt; Remove CIG */</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> </div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>   <span class="comment">/* messages from HCI */</span></div><div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a615f4068066291c61f930aa6ec63789a">  121</a></span>   <a class="code" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a615f4068066291c61f930aa6ec63789a">DM_CIS_MSG_HCI_LE_SET_CIG_PARAMS_CMD_CMPL_FAIL</a>,                   <span class="comment">/*!&lt; HCI LE Set CIG Parameters Command Complete Failure Event */</span></div><div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54ac9c5fd36ca49aedd8ca8df4d844a8cc9">  122</a></span>   <a class="code" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54ac9c5fd36ca49aedd8ca8df4d844a8cc9">DM_CIS_MSG_HCI_LE_SET_CIG_PARAMS_CMD_CMPL</a>,                        <span class="comment">/*!&lt; HCI LE Set CIG Parameters Command Complete Event */</span></div><div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a3ed627c618835723a279d79c95ab05d0">  123</a></span>   <a class="code" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a3ed627c618835723a279d79c95ab05d0">DM_CIS_MSG_HCI_LE_REMOVE_CIG_CMD_CMPL_FAIL</a>,                       <span class="comment">/*!&lt; HCI LE Remove CIG Command Complete Failure Event */</span></div><div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a17966817c22858637f84b281fb082506">  124</a></span>   <a class="code" href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a17966817c22858637f84b281fb082506">DM_CIS_MSG_HCI_LE_REMOVE_CIG_CMD_CMPL</a>                             <span class="comment">/*!&lt; HCI LE Remove CIG Command Complete Event */</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> };</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> </div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">/* Number of CIS CIG messages */</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="preprocessor">#define DM_CIS_CIG_NUM_MSGS                 (DM_CIS_MSG_HCI_LE_REMOVE_CIG_CMD_CMPL - DM_CIS_CIG_MSG_API_CONFIG + 1)</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment"></span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">/*! CIS CIG state machine actions */</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="keyword">enum</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> {</div><div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692daebd94f4f645dcdbfeccd19b95f768554">  133</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692daebd94f4f645dcdbfeccd19b95f768554">DM_CIS_CIG_SM_ACT_NONE</a>,                                           <span class="comment">/*!&lt; No Action */</span></div><div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da6b1fa6238903587c631ddca5ff566f46">  134</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da6b1fa6238903587c631ddca5ff566f46">DM_CIS_CIG_SM_ACT_CONFIG</a>,                                         <span class="comment">/*!&lt; Process Configure */</span></div><div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da53cad42fdae1411b91a9b5db5a124359">  135</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da53cad42fdae1411b91a9b5db5a124359">DM_CIS_CIG_SM_ACT_CONFIGED</a>,                                       <span class="comment">/*!&lt; Process Configured */</span></div><div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da289460e36cd6769adebc12857fd9a00c">  136</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da289460e36cd6769adebc12857fd9a00c">DM_CIS_CIG_SM_ACT_CONFIG_FAILED</a>,                                  <span class="comment">/*!&lt; Process Configure Failed */</span></div><div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da06eaf9c5e779c5ef44a497daa43ae457">  137</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da06eaf9c5e779c5ef44a497daa43ae457">DM_CIS_CIG_SM_ACT_REMOVE</a>,                                         <span class="comment">/*!&lt; Process Remove */</span></div><div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692dab3626b0b104d74f739bb66c0d41459eb">  138</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692dab3626b0b104d74f739bb66c0d41459eb">DM_CIS_CIG_SM_ACT_REMOVED</a>,                                        <span class="comment">/*!&lt; Process Removed */</span></div><div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da009fd802689100049b1d48b9ba342208">  139</a></span>   <a class="code" href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da009fd802689100049b1d48b9ba342208">DM_CIS_CIG_SM_ACT_REMOVE_FAILED</a>,                                  <span class="comment">/*!&lt; Process Remove Failed */</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> };</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment"></span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">/*! CIS CIG state machine states */</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="keyword">enum</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> {</div><div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80aa2bffd0fff5169a23d283a5c87b667b5">  145</a></span>   <a class="code" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80aa2bffd0fff5169a23d283a5c87b667b5">DM_CIS_CIG_SM_ST_IDLE</a>,                                            <span class="comment">/*!&lt; Idle State */</span></div><div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ac32849aa897a47a23123327cdbfcb1f5">  146</a></span>   <a class="code" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ac32849aa897a47a23123327cdbfcb1f5">DM_CIS_CIG_SM_ST_CONFIGING</a>,                                       <span class="comment">/*!&lt; Configuring State */</span></div><div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ad9add91014720c3b6a8c254c9ef5791d">  147</a></span>   <a class="code" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ad9add91014720c3b6a8c254c9ef5791d">DM_CIS_CIG_SM_ST_CONFIGED</a>,                                        <span class="comment">/*!&lt; Configured State */</span></div><div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ab533ab770d32cc07cc5e467c53ef0235">  148</a></span>   <a class="code" href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ab533ab770d32cc07cc5e467c53ef0235">DM_CIS_CIG_SM_ST_REMOVING</a>,                                        <span class="comment">/*!&lt; Removing State */</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> </div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>   DM_CIS_CIG_SM_NUM_STATES</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> };</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> </div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment">/* Data structure for DM_CIS_CIG_MSG_API_CONFIG */</span></div><div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="structdm_cis_cig_api_config__t.html">  154</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> {</div><div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="structdm_cis_cig_api_config__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  156</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>                   <a class="code" href="structdm_cis_cig_api_config__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;                                <span class="comment">/*!&lt; Message Header */</span></div><div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="structdm_cis_cig_api_config__t.html#ac3dd390d6465ac192c75f81aea6ce291">  157</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_api_config__t.html#ac3dd390d6465ac192c75f81aea6ce291">numCis</a>;                             <span class="comment">/*!&lt; Number of CIS to be configured */</span></div><div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="structdm_cis_cig_api_config__t.html#ac92aa540155acaff690980d328b4a237">  158</a></span>   <a class="code" href="struct_hci_cis_cis_params__t.html">HciCisCisParams_t</a>             *<a class="code" href="structdm_cis_cig_api_config__t.html#ac92aa540155acaff690980d328b4a237">pCisParam</a>;                         <span class="comment">/*!&lt; CIS parameters */</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> } <a class="code" href="structdm_cis_cig_api_config__t.html">dmCisCigApiConfig_t</a>;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> </div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">/* Data structure for DM_CIS_MSG_API_OPEN */</span></div><div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="structdm_cis_api_open__t.html">  162</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> {</div><div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="structdm_cis_api_open__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  164</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>                   <a class="code" href="structdm_cis_api_open__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;                                <span class="comment">/*!&lt; Message Header */</span></div><div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="structdm_cis_api_open__t.html#ac3dd390d6465ac192c75f81aea6ce291">  165</a></span>   uint8_t                       <a class="code" href="structdm_cis_api_open__t.html#ac3dd390d6465ac192c75f81aea6ce291">numCis</a>;                             <span class="comment">/*!&lt; Total number of CISes to be created */</span></div><div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="structdm_cis_api_open__t.html#a4f95ea2a5392ae293dd8e9287ed28526">  166</a></span>   uint16_t                      *<a class="code" href="structdm_cis_api_open__t.html#a4f95ea2a5392ae293dd8e9287ed28526">pCisHandle</a>;                        <span class="comment">/*!&lt; List of connection handles of CISes */</span></div><div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="structdm_cis_api_open__t.html#a386d95602e9ea01d7c98e1c0adc87e0c">  167</a></span>   uint16_t                      *<a class="code" href="structdm_cis_api_open__t.html#a386d95602e9ea01d7c98e1c0adc87e0c">pAclHandle</a>;                        <span class="comment">/*!&lt; List of connection handles of ACLs */</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> } <a class="code" href="structdm_cis_api_open__t.html">dmCisApiOpen_t</a>;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment"></span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">/*! Data structure for DM_CIS_MSG_API_CLOSE */</span></div><div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="structdm_cis_api_close__t.html">  171</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> {</div><div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="structdm_cis_api_close__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  173</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>                   <a class="code" href="structdm_cis_api_close__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;                                <span class="comment">/*!&lt; Message Header */</span></div><div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="structdm_cis_api_close__t.html#ada17c117060406a3a2871c6856dd0205">  174</a></span>   uint8_t                       <a class="code" href="structdm_cis_api_close__t.html#ada17c117060406a3a2871c6856dd0205">reason</a>;                             <span class="comment">/*!&lt; Reason connection is being closed */</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> } <a class="code" href="structdm_cis_api_close__t.html">dmCisApiClose_t</a>;</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment"></span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">/*! Data structure for DM_CIS_MSG_API_REJECT */</span></div><div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="structdm_cis_api_reject__t.html">  178</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> {</div><div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="structdm_cis_api_reject__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  180</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>                   <a class="code" href="structdm_cis_api_reject__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;                                <span class="comment">/*!&lt; Message Header */</span></div><div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="structdm_cis_api_reject__t.html#ada17c117060406a3a2871c6856dd0205">  181</a></span>   uint8_t                       <a class="code" href="structdm_cis_api_reject__t.html#ada17c117060406a3a2871c6856dd0205">reason</a>;                             <span class="comment">/*!&lt; Reason CIS request was rejected */</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> } <a class="code" href="structdm_cis_api_reject__t.html">dmCisApiReject_t</a>;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment"></span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">/*! Union of all DM CIS state machine messages */</span></div><div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html">  185</a></span> <span class="keyword">typedef</span> <span class="keyword">union</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> {</div><div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">  187</a></span>   <a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a>                   <a class="code" href="uniondm_cis_msg__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">hdr</a>;                                <span class="comment">/*!&lt; Message Header */</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> </div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>   <span class="comment">/* API messages */</span></div><div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#abf1f8885ae02fb79edf1d66cbb6a501b">  190</a></span>   <a class="code" href="structdm_cis_cig_api_config__t.html">dmCisCigApiConfig_t</a>           <a class="code" href="uniondm_cis_msg__t.html#abf1f8885ae02fb79edf1d66cbb6a501b">apiConfig</a>;                          <span class="comment">/*!&lt; Configure CIG */</span></div><div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a6d81e1881fdb8ce984f4ab6f146afa92">  191</a></span>   <a class="code" href="structdm_cis_api_open__t.html">dmCisApiOpen_t</a>                <a class="code" href="uniondm_cis_msg__t.html#a6d81e1881fdb8ce984f4ab6f146afa92">apiOpen</a>;                            <span class="comment">/*!&lt; Open CIS Connection */</span></div><div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a98d0da7a60eaa3155346dfeb99e0d345">  192</a></span>   <a class="code" href="structdm_cis_api_close__t.html">dmCisApiClose_t</a>               <a class="code" href="uniondm_cis_msg__t.html#a98d0da7a60eaa3155346dfeb99e0d345">apiClose</a>;                           <span class="comment">/*!&lt; Close CIS Connection */</span></div><div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a5d4bd3ae8c95d4f8239b89680416b352">  193</a></span>   <a class="code" href="structdm_cis_api_reject__t.html">dmCisApiReject_t</a>              <a class="code" href="uniondm_cis_msg__t.html#a5d4bd3ae8c95d4f8239b89680416b352">apiReject</a>;                          <span class="comment">/*!&lt; Reject CIS Connection */</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> </div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>   <span class="comment">/* HCI LE events */</span></div><div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a3e96e0b224852f4ba2d12a7c7a53bd01">  196</a></span>   <a class="code" href="struct_hci_le_cis_est_evt__t.html">HciLeCisEstEvt_t</a>              <a class="code" href="uniondm_cis_msg__t.html#a3e96e0b224852f4ba2d12a7c7a53bd01">hciLeCisEst</a>;                        <span class="comment">/*!&lt; CIS Established */</span></div><div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a9afd41a5e63476dcbc663d42641bec20">  197</a></span>   <a class="code" href="struct_hci_le_cis_req_evt__t.html">HciLeCisReqEvt_t</a>              <a class="code" href="uniondm_cis_msg__t.html#a9afd41a5e63476dcbc663d42641bec20">hciLeCisReq</a>;                        <span class="comment">/*!&lt; CIS Request */</span></div><div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#a28f73ba2e4176200cf46e9ce55df8fd9">  198</a></span>   <a class="code" href="structhci_le_set_cig_params_cmd_cmpl_evt__t.html">hciLeSetCigParamsCmdCmplEvt_t</a> <a class="code" href="uniondm_cis_msg__t.html#a28f73ba2e4176200cf46e9ce55df8fd9">hciLeSetCigParamsCmdCmpl</a>;           <span class="comment">/*!&lt; Set CIS Parameters Command Complete */</span></div><div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="uniondm_cis_msg__t.html#ae80fc2c0368726a99e1a78665d6945a9">  199</a></span>   <a class="code" href="structhci_le_remove_cig_cmd_cmpl_evt__t.html">hciLeRemoveCigCmdCmplEvt_t</a>    <a class="code" href="uniondm_cis_msg__t.html#ae80fc2c0368726a99e1a78665d6945a9">hciLeRemoveCigCmdCmpl</a>;              <span class="comment">/*!&lt; Remove CIG Command Complete */</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> } <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a>;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment"></span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">/*! CIS connection control block */</span></div><div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html">  203</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> {</div><div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#a8d2b234a86cf670983f4f0e7c693cc56">  205</a></span>   uint8_t                       <a class="code" href="structdm_cis_ccb__t.html#a8d2b234a86cf670983f4f0e7c693cc56">cigId</a>;                              <span class="comment">/*!&lt; Used to identify the connected isochronous group. */</span></div><div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#a8fbcbcfc98922ebd97522bb99ab8b9ff">  206</a></span>   uint8_t                       <a class="code" href="structdm_cis_ccb__t.html#a8fbcbcfc98922ebd97522bb99ab8b9ff">cisId</a>;                              <span class="comment">/*!&lt; Used to identify a connected isochronous stream. */</span></div><div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#a37e6f2215cca513d3d7f1016005e03d5">  207</a></span>   uint16_t                      <a class="code" href="structdm_cis_ccb__t.html#a37e6f2215cca513d3d7f1016005e03d5">aclHandle</a>;                          <span class="comment">/*!&lt; ACL handle. */</span></div><div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#a14e6081238ad6c5f265214dfca943e55">  208</a></span>   uint16_t                      <a class="code" href="structdm_cis_ccb__t.html#a14e6081238ad6c5f265214dfca943e55">cisHandle</a>;                          <span class="comment">/*!&lt; CIS handle. */</span></div><div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#ac0b0ce3bf532af448391d3c914ef92f5">  209</a></span>   <a class="code" href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a>                    <a class="code" href="structdm_cis_ccb__t.html#ac0b0ce3bf532af448391d3c914ef92f5">connId</a>;                             <span class="comment">/*!&lt; DM connection ID */</span></div><div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#a5b9aeb2bb7989ef331f452dd9626f139">  210</a></span>   uint8_t                       <a class="code" href="structdm_cis_ccb__t.html#a5b9aeb2bb7989ef331f452dd9626f139">role</a>;                               <span class="comment">/*!&lt; Role. */</span></div><div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#a0b57aa10271a66f3dc936bba1d2f3830">  211</a></span>   uint8_t                       <a class="code" href="structdm_cis_ccb__t.html#a0b57aa10271a66f3dc936bba1d2f3830">state</a>;                              <span class="comment">/*!&lt; Main state. */</span></div><div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="structdm_cis_ccb__t.html#adc5110901bc5e72ee5aa532f28418e25">  212</a></span>   uint8_t                       <a class="code" href="structdm_cis_ccb__t.html#adc5110901bc5e72ee5aa532f28418e25">inUse</a>;                              <span class="comment">/*!&lt; TRUE if entry in use. */</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> } <a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a>;</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment"></span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">/*! CIS CIG control block */</span></div><div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html">  216</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> {</div><div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a8d2b234a86cf670983f4f0e7c693cc56">  218</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#a8d2b234a86cf670983f4f0e7c693cc56">cigId</a>;                              <span class="comment">/*!&lt; Used to identify the connected isochronous group. */</span></div><div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a82d108b3d822e80a5c8b910fb1eaff04">  219</a></span>   uint32_t                      <a class="code" href="structdm_cis_cig_cb__t.html#a82d108b3d822e80a5c8b910fb1eaff04">sduIntervalMToS</a>;                    <span class="comment">/*!&lt; Time interval between the start of consecutive SDUs from the master Host (in usec).  */</span></div><div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#ae483a36ba548ab6ffbc75e2e74ddbe62">  220</a></span>   uint32_t                      <a class="code" href="structdm_cis_cig_cb__t.html#ae483a36ba548ab6ffbc75e2e74ddbe62">sduIntervalSToM</a>;                    <span class="comment">/*!&lt; Time interval between the start of consecutive SDUs from the slave Host (in usec).  */</span></div><div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a1f1ea81b5b4754f42d8511ca4c58ec75">  221</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#a1f1ea81b5b4754f42d8511ca4c58ec75">sca</a>;                                <span class="comment">/*!&lt; Sleep clock accuracy. */</span></div><div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#af0ef8ffba8031450913dcd0f1260a17f">  222</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#af0ef8ffba8031450913dcd0f1260a17f">packing</a>;                            <span class="comment">/*!&lt; Packing scheme. */</span></div><div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a47be64b082cc85f74d22de7546de098c">  223</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#a47be64b082cc85f74d22de7546de098c">framing</a>;                            <span class="comment">/*!&lt; Indicates the format of CIS Data PDUs.  */</span></div><div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a7922da5e08686349b23c6ed479babcd8">  224</a></span>   uint16_t                      <a class="code" href="structdm_cis_cig_cb__t.html#a7922da5e08686349b23c6ed479babcd8">transLatMToS</a>;                       <span class="comment">/*!&lt; Maximum time for an SDU to be transported from the master Controller to slave Controller (in msec). */</span></div><div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a593f31888e6a7c075be82f9feedfd3d6">  225</a></span>   uint16_t                      <a class="code" href="structdm_cis_cig_cb__t.html#a593f31888e6a7c075be82f9feedfd3d6">transLatSToM</a>;                       <span class="comment">/*!&lt; Maximum time for an SDU to be transported from the slave Controller to master Controller (in msec). */</span></div><div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#ac3dd390d6465ac192c75f81aea6ce291">  226</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#ac3dd390d6465ac192c75f81aea6ce291">numCis</a>;                             <span class="comment">/*!&lt; Total number of CISes in the CIG being added or modified. */</span></div><div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a75323f8d550ab3c07698b4059d7666e8">  227</a></span>   uint8_t                       cisId[<a class="code" href="group___s_t_a_c_k___i_n_i_t.html#ga9bc7f50a3b30a18992f86268170911f3">DM_CIS_MAX</a>];                  <span class="comment">/*!&lt; List of CIS IDs being added or modified. */</span></div><div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#a0b57aa10271a66f3dc936bba1d2f3830">  228</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#a0b57aa10271a66f3dc936bba1d2f3830">state</a>;                              <span class="comment">/*!&lt; Main state. */</span></div><div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="structdm_cis_cig_cb__t.html#adc5110901bc5e72ee5aa532f28418e25">  229</a></span>   uint8_t                       <a class="code" href="structdm_cis_cig_cb__t.html#adc5110901bc5e72ee5aa532f28418e25">inUse</a>;                              <span class="comment">/*!&lt; TRUE if entry in use. */</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> } <a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a>;</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="comment"></span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment">/*! Action functions */</span></div><div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="dm__cis_8h.html#af1379c8514362611005902725a5e2db5">  233</a></span> <span class="keyword">typedef</span> void (*<a class="code" href="dm__cis_8h.html#af1379c8514362611005902725a5e2db5">dmCisAct_t</a>)(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="keyword">typedef</span> void (*dmCisCigAct_t)(<a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a> *pCigCb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment"></span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">/*! Control block of the DM CIS module */</span></div><div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="structdm_cis_cb__t.html">  237</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> {</div><div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="structdm_cis_cb__t.html#a339589b9cd1809228d01b7c4a9b54990">  239</a></span>   <a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a>                    cisCcb[<a class="code" href="group___s_t_a_c_k___i_n_i_t.html#ga9bc7f50a3b30a18992f86268170911f3">DM_CIS_MAX</a>];                 <span class="comment">/*!&lt; CIS connection control block. */</span></div><div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="structdm_cis_cb__t.html#a8608b885ba1470a9ea7942bccfa1d061">  240</a></span>   <a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a>                  cisCigCb[<a class="code" href="group___s_t_a_c_k___i_n_i_t.html#ga53273d245016752c5cbcae28376f93d6">DM_CIG_MAX</a>];               <span class="comment">/*!&lt; CIS CIG control block. */</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> } <a class="code" href="structdm_cis_cb__t.html">dmCisCb_t</a>;</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> </div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment">  Global Variables</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="comment"></span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">/*! State machine action sets */</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="keyword">extern</span> <a class="code" href="dm__cis_8h.html#af1379c8514362611005902725a5e2db5">dmCisAct_t</a> *<a class="code" href="dm__cis_8h.html#a28604d652d65250e9ddfecd94722dde3">dmCisActSet</a>[DM_CIS_NUM_ACT_SETS];</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment"></span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment">/*! Action function table for CIG master module */</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="keyword">extern</span> <span class="keyword">const</span> dmCisCigAct_t <a class="code" href="dm__cis_8h.html#a59548c16d3b8538a0acecaa9c7627efc">dmCisCigAct</a>[];</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment"></span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment">/*! Control block */</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="keyword">extern</span> <a class="code" href="structdm_cis_cb__t.html">dmCisCb_t</a> <a class="code" href="dm__cis_8h.html#a9264ac243e67fdaa2ca7dcd4dfc74d63">dmCisCb</a>;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> </div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="comment">  Function Declarations</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> </div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">/* utility functions */</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a> *dmCisCigCbAlloc(uint8_t cigId);</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="keywordtype">void</span> dmCisCigCbDealloc(<a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a> *pCigCb);</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *dmCisCcbAlloc(uint8_t cigId, uint8_t cisId, uint8_t role);</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="keywordtype">void</span> dmCisCcbDealloc(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb);</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="keywordtype">void</span> dmCisCcbDeallocByCigId(uint8_t cigId);</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *dmCisCcbByHandle(uint16_t handle);</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *dmCisCcbById(uint8_t cigId, uint8_t cisId);</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a> *dmCisCigCbById(uint8_t cigId);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> </div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment">/* CIS main action functions */</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="keywordtype">void</span> dmCisSmActClose(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="keywordtype">void</span> dmCisSmActCisEst(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="keywordtype">void</span> dmCisSmActCisEstFailed(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="keywordtype">void</span> dmCisSmActCisClosed(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> </div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">/* CIG main action functions */</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="keywordtype">void</span> dmCisCigReset(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="keywordtype">void</span> dmCisCigMsgHandler(<a class="code" href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a> *pMsg);</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="keywordtype">void</span> dmCisCigHciHandler(<a class="code" href="unionhci_evt__t.html">hciEvt_t</a> *pEvent);</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> </div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">/* state machine */</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="keywordtype">void</span> dmCisSmExecute(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="keywordtype">void</span> dmCisCigSmExecute(<a class="code" href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> </div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">/* main action functions */</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="keywordtype">void</span> dmCisSmActNone(<a class="code" href="structdm_cis_ccb__t.html">dmCisCcb_t</a> *pCcb, <a class="code" href="uniondm_cis_msg__t.html">dmCisMsg_t</a> *pMsg);</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> </div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> };</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> </div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="preprocessor">#endif </span><span class="comment">/* DM_CIS_H */</span><span class="preprocessor"></span></div><div class="ttc" id="struct_hci_le_cis_est_evt__t_html"><div class="ttname"><a href="struct_hci_le_cis_est_evt__t.html">HciLeCisEstEvt_t</a></div><div class="ttdoc">LE CIS established event. </div><div class="ttdef"><b>Definition:</b> <a href="hci__api_8h_source.html#l00701">hci_api.h:701</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a47be64b082cc85f74d22de7546de098c"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a47be64b082cc85f74d22de7546de098c">dmCisCigCb_t::framing</a></div><div class="ttdeci">uint8_t framing</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00223">dm_cis.h:223</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac6bfa7273251ec8fc11ef21ca645ad90ab75db2b0047cfe388f00ddc09536d742"><div class="ttname"><a href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90ab75db2b0047cfe388f00ddc09536d742">DM_CIS_SM_ST_DISCONNECTING</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00108">dm_cis.h:108</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a59548c16d3b8538a0acecaa9c7627efc"><div class="ttname"><a href="dm__cis_8h.html#a59548c16d3b8538a0acecaa9c7627efc">dmCisCigAct</a></div><div class="ttdeci">const dmCisCigAct_t dmCisCigAct[]</div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_af0ef8ffba8031450913dcd0f1260a17f"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#af0ef8ffba8031450913dcd0f1260a17f">dmCisCigCb_t::packing</a></div><div class="ttdeci">uint8_t packing</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00222">dm_cis.h:222</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_a8fbcbcfc98922ebd97522bb99ab8b9ff"><div class="ttname"><a href="structdm_cis_ccb__t.html#a8fbcbcfc98922ebd97522bb99ab8b9ff">dmCisCcb_t::cisId</a></div><div class="ttdeci">uint8_t cisId</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00206">dm_cis.h:206</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac6bfa7273251ec8fc11ef21ca645ad90a2e4480ecc93ca8beeddb0ee869d4acb3"><div class="ttname"><a href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a2e4480ecc93ca8beeddb0ee869d4acb3">DM_CIS_SM_ST_CONNECTING</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00104">dm_cis.h:104</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___d_m___a_p_i_html_ga794e39c17c1fca021019a1a71017c29f"><div class="ttname"><a href="group___s_t_a_c_k___d_m___a_p_i.html#ga794e39c17c1fca021019a1a71017c29f">dmConnId_t</a></div><div class="ttdeci">uint8_t dmConnId_t</div><div class="ttdoc">Connection identifier. </div><div class="ttdef"><b>Definition:</b> <a href="dm__api_8h_source.html#l00588">dm_api.h:588</a></div></div>
+<div class="ttc" id="struct_hci_cis_cis_params__t_html"><div class="ttname"><a href="struct_hci_cis_cis_params__t.html">HciCisCisParams_t</a></div><div class="ttdoc">CIS parameters. </div><div class="ttdef"><b>Definition:</b> <a href="hci__api_8h_source.html#l01086">hci_api.h:1086</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac6bfa7273251ec8fc11ef21ca645ad90a1a258ee7987c17b7fa5f428bb7f970f6"><div class="ttname"><a href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a1a258ee7987c17b7fa5f428bb7f970f6">DM_CIS_SM_ST_ACCEPTING</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00106">dm_cis.h:106</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a077546cee654b5e60510f9466f277100"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a077546cee654b5e60510f9466f277100">DM_CIS_SM_ACT_REQUEST</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00095">dm_cis.h:95</a></div></div>
+<div class="ttc" id="structdm_cis_api_open__t_html"><div class="ttname"><a href="structdm_cis_api_open__t.html">dmCisApiOpen_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00162">dm_cis.h:162</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_ac3dd390d6465ac192c75f81aea6ce291"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#ac3dd390d6465ac192c75f81aea6ce291">dmCisCigCb_t::numCis</a></div><div class="ttdeci">uint8_t numCis</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00226">dm_cis.h:226</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a7a7853976214a0b832535307b5eca058"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a7a7853976214a0b832535307b5eca058">DM_CIS_MSG_API_ACCEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00060">dm_cis.h:60</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_ae483a36ba548ab6ffbc75e2e74ddbe62"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#ae483a36ba548ab6ffbc75e2e74ddbe62">dmCisCigCb_t::sduIntervalSToM</a></div><div class="ttdeci">uint32_t sduIntervalSToM</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00220">dm_cis.h:220</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac6bfa7273251ec8fc11ef21ca645ad90aa826458959953eb2a97a8281fa707ff3"><div class="ttname"><a href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90aa826458959953eb2a97a8281fa707ff3">DM_CIS_SM_ST_REQUESTING</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00105">dm_cis.h:105</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692daebd94f4f645dcdbfeccd19b95f768554"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692daebd94f4f645dcdbfeccd19b95f768554">DM_CIS_CIG_SM_ACT_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00133">dm_cis.h:133</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a5c49c0f401423dffbfd4dc1340f336d9"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a5c49c0f401423dffbfd4dc1340f336d9">DM_CIS_SM_ACT_CIS_EST</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00088">dm_cis.h:88</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a71c8b43c8151558f48ef7985d63a384f"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a71c8b43c8151558f48ef7985d63a384f">DM_CIS_MSG_API_OPEN</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00058">dm_cis.h:58</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a7922da5e08686349b23c6ed479babcd8"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a7922da5e08686349b23c6ed479babcd8">dmCisCigCb_t::transLatMToS</a></div><div class="ttdeci">uint16_t transLatMToS</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00224">dm_cis.h:224</a></div></div>
+<div class="ttc" id="structdm_cis_cig_api_config__t_html"><div class="ttname"><a href="structdm_cis_cig_api_config__t.html">dmCisCigApiConfig_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00154">dm_cis.h:154</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a5e8ce9967db697e85d5528dafee6b8dea72ceba3163e9d8a9074ff1c733a56822"><div class="ttname"><a href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8dea72ceba3163e9d8a9074ff1c733a56822">DM_CIS_ACT_SET_MASTER</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00077">dm_cis.h:77</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a82d108b3d822e80a5c8b910fb1eaff04"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a82d108b3d822e80a5c8b910fb1eaff04">dmCisCigCb_t::sduIntervalMToS</a></div><div class="ttdeci">uint32_t sduIntervalMToS</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00219">dm_cis.h:219</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5ab6549445265467aba5223ef062dc8401"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5ab6549445265467aba5223ef062dc8401">DM_CIS_MSG_API_CLOSE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00059">dm_cis.h:59</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac8347fa324c6412b168db6df3464ad80ad9add91014720c3b6a8c254c9ef5791d"><div class="ttname"><a href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ad9add91014720c3b6a8c254c9ef5791d">DM_CIS_CIG_SM_ST_CONFIGED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00147">dm_cis.h:147</a></div></div>
+<div class="ttc" id="structdm_cis_api_open__t_html_a386d95602e9ea01d7c98e1c0adc87e0c"><div class="ttname"><a href="structdm_cis_api_open__t.html#a386d95602e9ea01d7c98e1c0adc87e0c">dmCisApiOpen_t::pAclHandle</a></div><div class="ttdeci">uint16_t * pAclHandle</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00167">dm_cis.h:167</a></div></div>
+<div class="ttc" id="struct_hci_le_cis_req_evt__t_html"><div class="ttname"><a href="struct_hci_le_cis_req_evt__t.html">HciLeCisReqEvt_t</a></div><div class="ttdoc">LE CIS request event. </div><div class="ttdef"><b>Definition:</b> <a href="hci__api_8h_source.html#l00723">hci_api.h:723</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a9264ac243e67fdaa2ca7dcd4dfc74d63"><div class="ttname"><a href="dm__cis_8h.html#a9264ac243e67fdaa2ca7dcd4dfc74d63">dmCisCb</a></div><div class="ttdeci">dmCisCb_t dmCisCb</div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html"><div class="ttname"><a href="uniondm_cis_msg__t.html">dmCisMsg_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00185">dm_cis.h:185</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a1825b37992e9600772b4a511892935f3"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a1825b37992e9600772b4a511892935f3">DM_CIS_SM_ACT_REJECT</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00097">dm_cis.h:97</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a8d2b234a86cf670983f4f0e7c693cc56"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a8d2b234a86cf670983f4f0e7c693cc56">dmCisCigCb_t::cigId</a></div><div class="ttdeci">uint8_t cigId</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00218">dm_cis.h:218</a></div></div>
+<div class="ttc" id="structdm_cis_cig_api_config__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structdm_cis_cig_api_config__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">dmCisCigApiConfig_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00156">dm_cis.h:156</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a9afd41a5e63476dcbc663d42641bec20"><div class="ttname"><a href="uniondm_cis_msg__t.html#a9afd41a5e63476dcbc663d42641bec20">dmCisMsg_t::hciLeCisReq</a></div><div class="ttdeci">HciLeCisReqEvt_t hciLeCisReq</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00197">dm_cis.h:197</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac6bfa7273251ec8fc11ef21ca645ad90a86a5259de772d5f0419e73a919e2c6ca"><div class="ttname"><a href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a86a5259de772d5f0419e73a919e2c6ca">DM_CIS_SM_ST_CONNECTED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00107">dm_cis.h:107</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419aa790a7c041e46120c32eb394d306b1a2"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419aa790a7c041e46120c32eb394d306b1a2">DM_CIS_SM_ACT_ACCEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00096">dm_cis.h:96</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_a37e6f2215cca513d3d7f1016005e03d5"><div class="ttname"><a href="structdm_cis_ccb__t.html#a37e6f2215cca513d3d7f1016005e03d5">dmCisCcb_t::aclHandle</a></div><div class="ttdeci">uint16_t aclHandle</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00207">dm_cis.h:207</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a4d0aea36e3d7f46a39533680692ea860"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a4d0aea36e3d7f46a39533680692ea860">DM_CIS_SM_ACT_OPEN</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00092">dm_cis.h:92</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac8347fa324c6412b168db6df3464ad80ab533ab770d32cc07cc5e467c53ef0235"><div class="ttname"><a href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ab533ab770d32cc07cc5e467c53ef0235">DM_CIS_CIG_SM_ST_REMOVING</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00148">dm_cis.h:148</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a0b57aa10271a66f3dc936bba1d2f3830"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a0b57aa10271a66f3dc936bba1d2f3830">dmCisCigCb_t::state</a></div><div class="ttdeci">uint8_t state</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00228">dm_cis.h:228</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a98d0da7a60eaa3155346dfeb99e0d345"><div class="ttname"><a href="uniondm_cis_msg__t.html#a98d0da7a60eaa3155346dfeb99e0d345">dmCisMsg_t::apiClose</a></div><div class="ttdeci">dmCisApiClose_t apiClose</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00192">dm_cis.h:192</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_abf1f8885ae02fb79edf1d66cbb6a501b"><div class="ttname"><a href="uniondm_cis_msg__t.html#abf1f8885ae02fb79edf1d66cbb6a501b">dmCisMsg_t::apiConfig</a></div><div class="ttdeci">dmCisCigApiConfig_t apiConfig</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00190">dm_cis.h:190</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692dab3626b0b104d74f739bb66c0d41459eb"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692dab3626b0b104d74f739bb66c0d41459eb">DM_CIS_CIG_SM_ACT_REMOVED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00138">dm_cis.h:138</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac8347fa324c6412b168db6df3464ad80ac32849aa897a47a23123327cdbfcb1f5"><div class="ttname"><a href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80ac32849aa897a47a23123327cdbfcb1f5">DM_CIS_CIG_SM_ST_CONFIGING</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00146">dm_cis.h:146</a></div></div>
+<div class="ttc" id="structdm_cis_cig_api_config__t_html_ac92aa540155acaff690980d328b4a237"><div class="ttname"><a href="structdm_cis_cig_api_config__t.html#ac92aa540155acaff690980d328b4a237">dmCisCigApiConfig_t::pCisParam</a></div><div class="ttdeci">HciCisCisParams_t * pCisParam</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00158">dm_cis.h:158</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a6d81e1881fdb8ce984f4ab6f146afa92"><div class="ttname"><a href="uniondm_cis_msg__t.html#a6d81e1881fdb8ce984f4ab6f146afa92">dmCisMsg_t::apiOpen</a></div><div class="ttdeci">dmCisApiOpen_t apiOpen</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00191">dm_cis.h:191</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac6bfa7273251ec8fc11ef21ca645ad90a5af0614d6c355f92414c477c339401c4"><div class="ttname"><a href="dm__cis_8h.html#ac6bfa7273251ec8fc11ef21ca645ad90a5af0614d6c355f92414c477c339401c4">DM_CIS_SM_ST_IDLE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00103">dm_cis.h:103</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692da06eaf9c5e779c5ef44a497daa43ae457"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da06eaf9c5e779c5ef44a497daa43ae457">DM_CIS_CIG_SM_ACT_REMOVE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00137">dm_cis.h:137</a></div></div>
+<div class="ttc" id="structdm_cis_api_open__t_html_a4f95ea2a5392ae293dd8e9287ed28526"><div class="ttname"><a href="structdm_cis_api_open__t.html#a4f95ea2a5392ae293dd8e9287ed28526">dmCisApiOpen_t::pCisHandle</a></div><div class="ttdeci">uint16_t * pCisHandle</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00166">dm_cis.h:166</a></div></div>
+<div class="ttc" id="structdm_cis_api_reject__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structdm_cis_api_reject__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">dmCisApiReject_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00180">dm_cis.h:180</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a63cbfa53a16c7eeb228a37be887ccf54a345a434bffbd08cee278b22393cd7354"><div class="ttname"><a href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a345a434bffbd08cee278b22393cd7354">DM_CIS_CIG_MSG_API_REMOVE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00118">dm_cis.h:118</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_af1379c8514362611005902725a5e2db5"><div class="ttname"><a href="dm__cis_8h.html#af1379c8514362611005902725a5e2db5">dmCisAct_t</a></div><div class="ttdeci">void(* dmCisAct_t)(dmCisCcb_t *pCcb, dmCisMsg_t *pMsg)</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00233">dm_cis.h:233</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a5d4bd3ae8c95d4f8239b89680416b352"><div class="ttname"><a href="uniondm_cis_msg__t.html#a5d4bd3ae8c95d4f8239b89680416b352">dmCisMsg_t::apiReject</a></div><div class="ttdeci">dmCisApiReject_t apiReject</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00193">dm_cis.h:193</a></div></div>
+<div class="ttc" id="structhci_le_set_cig_params_cmd_cmpl_evt__t_html"><div class="ttname"><a href="structhci_le_set_cig_params_cmd_cmpl_evt__t.html">hciLeSetCigParamsCmdCmplEvt_t</a></div><div class="ttdoc">LE set CIG parameters command complete event. </div><div class="ttdef"><b>Definition:</b> <a href="hci__api_8h_source.html#l00742">hci_api.h:742</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_ac0b0ce3bf532af448391d3c914ef92f5"><div class="ttname"><a href="structdm_cis_ccb__t.html#ac0b0ce3bf532af448391d3c914ef92f5">dmCisCcb_t::connId</a></div><div class="ttdeci">dmConnId_t connId</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00209">dm_cis.h:209</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692da53cad42fdae1411b91a9b5db5a124359"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da53cad42fdae1411b91a9b5db5a124359">DM_CIS_CIG_SM_ACT_CONFIGED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00135">dm_cis.h:135</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a63cbfa53a16c7eeb228a37be887ccf54a3ed627c618835723a279d79c95ab05d0"><div class="ttname"><a href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a3ed627c618835723a279d79c95ab05d0">DM_CIS_MSG_HCI_LE_REMOVE_CIG_CMD_CMPL_FAIL</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00123">dm_cis.h:123</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a5e8ce9967db697e85d5528dafee6b8deadc991905f8a331f5659c784192c1210b"><div class="ttname"><a href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deadc991905f8a331f5659c784192c1210b">DM_CIS_ACT_SET_MAIN</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00076">dm_cis.h:76</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a63cbfa53a16c7eeb228a37be887ccf54ac9c5fd36ca49aedd8ca8df4d844a8cc9"><div class="ttname"><a href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54ac9c5fd36ca49aedd8ca8df4d844a8cc9">DM_CIS_MSG_HCI_LE_SET_CIG_PARAMS_CMD_CMPL</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00122">dm_cis.h:122</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___i_n_i_t_html_ga53273d245016752c5cbcae28376f93d6"><div class="ttname"><a href="group___s_t_a_c_k___i_n_i_t.html#ga53273d245016752c5cbcae28376f93d6">DM_CIG_MAX</a></div><div class="ttdeci">#define DM_CIG_MAX</div><div class="ttdoc">Maximum number of connected isochronous groups. </div><div class="ttdef"><b>Definition:</b> <a href="cfg__stack_8h_source.html#l00102">cfg_stack.h:102</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_adc5110901bc5e72ee5aa532f28418e25"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#adc5110901bc5e72ee5aa532f28418e25">dmCisCigCb_t::inUse</a></div><div class="ttdeci">uint8_t inUse</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00229">dm_cis.h:229</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a47d2725195722b859605005ffb7558c6"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a47d2725195722b859605005ffb7558c6">DM_CIS_MSG_HCI_LE_CIS_EST</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00065">dm_cis.h:65</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a546bf5e62eb34f45476b54fc07f60ed5"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a546bf5e62eb34f45476b54fc07f60ed5">DM_CIS_MSG_HCI_DISCONNECT_CMPL</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00066">dm_cis.h:66</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a3e96e0b224852f4ba2d12a7c7a53bd01"><div class="ttname"><a href="uniondm_cis_msg__t.html#a3e96e0b224852f4ba2d12a7c7a53bd01">dmCisMsg_t::hciLeCisEst</a></div><div class="ttdeci">HciLeCisEstEvt_t hciLeCisEst</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00196">dm_cis.h:196</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a593f31888e6a7c075be82f9feedfd3d6"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a593f31888e6a7c075be82f9feedfd3d6">dmCisCigCb_t::transLatSToM</a></div><div class="ttdeci">uint16_t transLatSToM</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00225">dm_cis.h:225</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_ae80fc2c0368726a99e1a78665d6945a9"><div class="ttname"><a href="uniondm_cis_msg__t.html#ae80fc2c0368726a99e1a78665d6945a9">dmCisMsg_t::hciLeRemoveCigCmdCmpl</a></div><div class="ttdeci">hciLeRemoveCigCmdCmplEvt_t hciLeRemoveCigCmdCmpl</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00199">dm_cis.h:199</a></div></div>
+<div class="ttc" id="structdm_cis_api_open__t_html_ac3dd390d6465ac192c75f81aea6ce291"><div class="ttname"><a href="structdm_cis_api_open__t.html#ac3dd390d6465ac192c75f81aea6ce291">dmCisApiOpen_t::numCis</a></div><div class="ttdeci">uint8_t numCis</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00165">dm_cis.h:165</a></div></div>
+<div class="ttc" id="structdm_cis_cig_api_config__t_html_ac3dd390d6465ac192c75f81aea6ce291"><div class="ttname"><a href="structdm_cis_cig_api_config__t.html#ac3dd390d6465ac192c75f81aea6ce291">dmCisCigApiConfig_t::numCis</a></div><div class="ttdeci">uint8_t numCis</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00157">dm_cis.h:157</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_ac8347fa324c6412b168db6df3464ad80aa2bffd0fff5169a23d283a5c87b667b5"><div class="ttname"><a href="dm__cis_8h.html#ac8347fa324c6412b168db6df3464ad80aa2bffd0fff5169a23d283a5c87b667b5">DM_CIS_CIG_SM_ST_IDLE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00145">dm_cis.h:145</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a676aea5bd42a3fd361249a99f19e1536"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a676aea5bd42a3fd361249a99f19e1536">DM_CIS_SM_ACT_CANCEL_OPEN</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00093">dm_cis.h:93</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692da009fd802689100049b1d48b9ba342208"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da009fd802689100049b1d48b9ba342208">DM_CIS_CIG_SM_ACT_REMOVE_FAILED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00139">dm_cis.h:139</a></div></div>
+<div class="ttc" id="structdm_cis_api_open__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structdm_cis_api_open__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">dmCisApiOpen_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00164">dm_cis.h:164</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a1538bb0ea5bdd20b206194d615bcbe60"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a1538bb0ea5bdd20b206194d615bcbe60">DM_CIS_SM_ACT_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00086">dm_cis.h:86</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html_a1f1ea81b5b4754f42d8511ca4c58ec75"><div class="ttname"><a href="structdm_cis_cig_cb__t.html#a1f1ea81b5b4754f42d8511ca4c58ec75">dmCisCigCb_t::sca</a></div><div class="ttdeci">uint8_t sca</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00221">dm_cis.h:221</a></div></div>
+<div class="ttc" id="unionhci_evt__t_html"><div class="ttname"><a href="unionhci_evt__t.html">hciEvt_t</a></div><div class="ttdoc">Union of all event types. </div><div class="ttdef"><b>Definition:</b> <a href="hci__api_8h_source.html#l00931">hci_api.h:931</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a28f73ba2e4176200cf46e9ce55df8fd9"><div class="ttname"><a href="uniondm_cis_msg__t.html#a28f73ba2e4176200cf46e9ce55df8fd9">dmCisMsg_t::hciLeSetCigParamsCmdCmpl</a></div><div class="ttdeci">hciLeSetCigParamsCmdCmplEvt_t hciLeSetCigParamsCmdCmpl</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00198">dm_cis.h:198</a></div></div>
+<div class="ttc" id="dm__api_8h_html"><div class="ttname"><a href="dm__api_8h.html">dm_api.h</a></div><div class="ttdoc">Device Manager subsystem API. </div></div>
+<div class="ttc" id="structdm_cis_api_close__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="structdm_cis_api_close__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">dmCisApiClose_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00173">dm_cis.h:173</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_adc5110901bc5e72ee5aa532f28418e25"><div class="ttname"><a href="structdm_cis_ccb__t.html#adc5110901bc5e72ee5aa532f28418e25">dmCisCcb_t::inUse</a></div><div class="ttdeci">uint8_t inUse</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00212">dm_cis.h:212</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a6e2f07f7da2045bd748ad2c08ebfb804"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a6e2f07f7da2045bd748ad2c08ebfb804">DM_CIS_SM_ACT_CIS_CLOSED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00090">dm_cis.h:90</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_a14e6081238ad6c5f265214dfca943e55"><div class="ttname"><a href="structdm_cis_ccb__t.html#a14e6081238ad6c5f265214dfca943e55">dmCisCcb_t::cisHandle</a></div><div class="ttdeci">uint16_t cisHandle</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00208">dm_cis.h:208</a></div></div>
+<div class="ttc" id="structdm_cis_api_reject__t_html"><div class="ttname"><a href="structdm_cis_api_reject__t.html">dmCisApiReject_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00178">dm_cis.h:178</a></div></div>
+<div class="ttc" id="structdm_cis_api_reject__t_html_ada17c117060406a3a2871c6856dd0205"><div class="ttname"><a href="structdm_cis_api_reject__t.html#ada17c117060406a3a2871c6856dd0205">dmCisApiReject_t::reason</a></div><div class="ttdeci">uint8_t reason</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00181">dm_cis.h:181</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a28604d652d65250e9ddfecd94722dde3"><div class="ttname"><a href="dm__cis_8h.html#a28604d652d65250e9ddfecd94722dde3">dmCisActSet</a></div><div class="ttdeci">dmCisAct_t * dmCisActSet[DM_CIS_NUM_ACT_SETS]</div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_a5b9aeb2bb7989ef331f452dd9626f139"><div class="ttname"><a href="structdm_cis_ccb__t.html#a5b9aeb2bb7989ef331f452dd9626f139">dmCisCcb_t::role</a></div><div class="ttdeci">uint8_t role</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00210">dm_cis.h:210</a></div></div>
+<div class="ttc" id="structdm_cis_cb__t_html"><div class="ttname"><a href="structdm_cis_cb__t.html">dmCisCb_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00237">dm_cis.h:237</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html"><div class="ttname"><a href="structdm_cis_ccb__t.html">dmCisCcb_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00203">dm_cis.h:203</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_a0b57aa10271a66f3dc936bba1d2f3830"><div class="ttname"><a href="structdm_cis_ccb__t.html#a0b57aa10271a66f3dc936bba1d2f3830">dmCisCcb_t::state</a></div><div class="ttdeci">uint8_t state</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00211">dm_cis.h:211</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a5e8ce9967db697e85d5528dafee6b8deae028faafc20553670289df1e8369a969"><div class="ttname"><a href="dm__cis_8h.html#a5e8ce9967db697e85d5528dafee6b8deae028faafc20553670289df1e8369a969">DM_CIS_ACT_SET_SLAVE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00078">dm_cis.h:78</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692da289460e36cd6769adebc12857fd9a00c"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da289460e36cd6769adebc12857fd9a00c">DM_CIS_CIG_SM_ACT_CONFIG_FAILED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00136">dm_cis.h:136</a></div></div>
+<div class="ttc" id="uniondm_cis_msg__t_html_a30db164981dd6b8dc1c5b1ce430bdfe5"><div class="ttname"><a href="uniondm_cis_msg__t.html#a30db164981dd6b8dc1c5b1ce430bdfe5">dmCisMsg_t::hdr</a></div><div class="ttdeci">wsfMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00187">dm_cis.h:187</a></div></div>
+<div class="ttc" id="structhci_le_remove_cig_cmd_cmpl_evt__t_html"><div class="ttname"><a href="structhci_le_remove_cig_cmd_cmpl_evt__t.html">hciLeRemoveCigCmdCmplEvt_t</a></div><div class="ttdoc">LE remove CIG command complete event. </div><div class="ttdef"><b>Definition:</b> <a href="hci__api_8h_source.html#l00752">hci_api.h:752</a></div></div>
+<div class="ttc" id="structdm_cis_cig_cb__t_html"><div class="ttname"><a href="structdm_cis_cig_cb__t.html">dmCisCigCb_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00216">dm_cis.h:216</a></div></div>
+<div class="ttc" id="structdm_cis_ccb__t_html_a8d2b234a86cf670983f4f0e7c693cc56"><div class="ttname"><a href="structdm_cis_ccb__t.html#a8d2b234a86cf670983f4f0e7c693cc56">dmCisCcb_t::cigId</a></div><div class="ttdeci">uint8_t cigId</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00205">dm_cis.h:205</a></div></div>
+<div class="ttc" id="structdm_cis_api_close__t_html"><div class="ttname"><a href="structdm_cis_api_close__t.html">dmCisApiClose_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00171">dm_cis.h:171</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a3ce19ffcf70b5973a5d7121c0f42a303"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a3ce19ffcf70b5973a5d7121c0f42a303">DM_CIS_MSG_HCI_LE_CIS_EST_FAIL</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00064">dm_cis.h:64</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a96da47fbe0f071395b4dbdf888f408d2"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a96da47fbe0f071395b4dbdf888f408d2">DM_CIS_MSG_HCI_LE_CIS_REQ</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00067">dm_cis.h:67</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a09d9e56f5d4c14bc6d35272c7ee2692da6b1fa6238903587c631ddca5ff566f46"><div class="ttname"><a href="dm__cis_8h.html#a09d9e56f5d4c14bc6d35272c7ee2692da6b1fa6238903587c631ddca5ff566f46">DM_CIS_CIG_SM_ACT_CONFIG</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00134">dm_cis.h:134</a></div></div>
+<div class="ttc" id="structwsf_msg_hdr__t_html"><div class="ttname"><a href="structwsf_msg_hdr__t.html">wsfMsgHdr_t</a></div><div class="ttdoc">Common message structure passed to event handler. </div><div class="ttdef"><b>Definition:</b> <a href="wsf__os_8h_source.html#l00106">wsf_os.h:106</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a63cbfa53a16c7eeb228a37be887ccf54a615f4068066291c61f930aa6ec63789a"><div class="ttname"><a href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a615f4068066291c61f930aa6ec63789a">DM_CIS_MSG_HCI_LE_SET_CIG_PARAMS_CMD_CMPL_FAIL</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00121">dm_cis.h:121</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a63cbfa53a16c7eeb228a37be887ccf54a6252c48e1b5d93f0301453bd57dee22c"><div class="ttname"><a href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a6252c48e1b5d93f0301453bd57dee22c">DM_CIS_CIG_MSG_API_CONFIG</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00117">dm_cis.h:117</a></div></div>
+<div class="ttc" id="group___s_t_a_c_k___i_n_i_t_html_ga9bc7f50a3b30a18992f86268170911f3"><div class="ttname"><a href="group___s_t_a_c_k___i_n_i_t.html#ga9bc7f50a3b30a18992f86268170911f3">DM_CIS_MAX</a></div><div class="ttdeci">#define DM_CIS_MAX</div><div class="ttdoc">Maximum number of connected isochronous streams, it is shared by CIGs. </div><div class="ttdef"><b>Definition:</b> <a href="cfg__stack_8h_source.html#l00107">cfg_stack.h:107</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_abc3975f01f66a098a347a8262ff103e5a428678869db7b16e443969a5f0d2477d"><div class="ttname"><a href="dm__cis_8h.html#abc3975f01f66a098a347a8262ff103e5a428678869db7b16e443969a5f0d2477d">DM_CIS_MSG_API_REJECT</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00061">dm_cis.h:61</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_a63cbfa53a16c7eeb228a37be887ccf54a17966817c22858637f84b281fb082506"><div class="ttname"><a href="dm__cis_8h.html#a63cbfa53a16c7eeb228a37be887ccf54a17966817c22858637f84b281fb082506">DM_CIS_MSG_HCI_LE_REMOVE_CIG_CMD_CMPL</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00124">dm_cis.h:124</a></div></div>
+<div class="ttc" id="structdm_cis_api_close__t_html_ada17c117060406a3a2871c6856dd0205"><div class="ttname"><a href="structdm_cis_api_close__t.html#ada17c117060406a3a2871c6856dd0205">dmCisApiClose_t::reason</a></div><div class="ttdeci">uint8_t reason</div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00174">dm_cis.h:174</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419a9b0f8f91ce48cf381abad4ad6df6bc9d"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419a9b0f8f91ce48cf381abad4ad6df6bc9d">DM_CIS_SM_ACT_CIS_EST_FAILED</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00089">dm_cis.h:89</a></div></div>
+<div class="ttc" id="dm__cis_8h_html_aaa91b962ffd8aca2f3c24e886a222419aedb79e4d764b430f40f78fab99f4a680"><div class="ttname"><a href="dm__cis_8h.html#aaa91b962ffd8aca2f3c24e886a222419aedb79e4d764b430f40f78fab99f4a680">DM_CIS_SM_ACT_CLOSE</a></div><div class="ttdef"><b>Definition:</b> <a href="dm__cis_8h_source.html#l00087">dm_cis.h:87</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/dm__cis_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:23:05 GMT -->
+</html>

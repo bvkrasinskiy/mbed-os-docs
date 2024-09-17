@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_s_x1276___lo_ra_radio_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | SX1276_LoRaRadio.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_s_x1276___lo_ra_radio_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_s_x1276___lo_ra_radio_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_s_x1276___lo_ra_radio_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_59977a0c207738c890dea4a1d368376e.html">drivers</a></li><li class="navelem"><a class="el" href="dir_e1b190f6cf7b10be5e95474e162cf5ac.html">lora</a></li><li class="navelem"><a class="el" href="dir_d6a2d38c23d04e1625ae0da0138e6119.html">COMPONENT_SX1276</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SX1276_LoRaRadio.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> / _____)             _              | |</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment">( (____  _____ ____ _| |_ _____  ____| |__</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> \____ \| ___ |    (_   _) ___ |/ ___)  _ \</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> _____) ) ____| | | || |_| ____( (___| | | |</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment">(______/|_____)_|_|_| \__)_____)\____)_| |_|</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment">    (C)2013 Semtech</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> ___ _____ _   ___ _  _____ ___  ___  ___ ___</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment">/ __|_   _/_\ / __| |/ / __/ _ \| _ \/ __| __|</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment">\__ \ | |/ _ \ (__| ' &lt;| _| (_) |   / (__| _|</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment">|___/ |_/_/ \_\___|_|\_\_| \___/|_|_\\___|___|</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment">embedded.connectivity.solutions===============</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"></span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment">Description: LoRaWAN stack layer that controls both MAC and PHY underneath</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"></span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment">License: Revised BSD License, see LICENSE.TXT file include in the project</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"></span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment">Maintainer: Miguel Luis ( Semtech ), Gregory Cristian ( Semtech ) and Daniel Jaeckle ( STACKFORCE )</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"></span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"></span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment">Copyright (c) 2017, Arm Limited and affiliates.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"></span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">SPDX-License-Identifier: BSD-3-Clause</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment">*/</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#ifndef SX1276_LORARADIO_H_</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="preprocessor">#define SX1276_LORARADIO_H_</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#if DEVICE_SPI</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#include "PinNames.h"</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#include "InterruptIn.h"</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="preprocessor">#include "DigitalOut.h"</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="preprocessor">#include "DigitalInOut.h"</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="preprocessor">#include "SPI.h"</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="preprocessor">#include "platform/PlatformMutex.h"</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="preprocessor">#ifdef MBED_CONF_RTOS_PRESENT</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="preprocessor">#include "rtos/Thread.h"</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="preprocessor">#include "lorawan/LoRaRadio.h"</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#ifdef MBED_CONF_SX1276_LORA_DRIVER_BUFFER_SIZE</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="preprocessor">#define MAX_DATA_BUFFER_SIZE_SX1276                        MBED_CONF_SX1276_LORA_DRIVER_BUFFER_SIZE</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="preprocessor">#else</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="preprocessor">#define MAX_DATA_BUFFER_SIZE_SX1276                        255</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> </div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="preprocessor">#if DEVICE_LPTICKER</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="preprocessor">#include "LowPowerTimeout.h"</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="preprocessor">#define ALIAS_LORAWAN_TIMER    mbed::LowPowerTimeout</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="preprocessor">#else</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="preprocessor">#include "Timeout.h"</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="preprocessor">#define ALIAS_LORAWAN_TIMER    mbed::Timeout</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment"></span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">/**</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment"> * Radio driver implementation for Semtech SX1272 plus variants.</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment"> * Supports only SPI at the moment. Implements pure virtual LoRaRadio class.</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="comment"> */</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_s_x1276___lo_ra_radio.html">   61</a></span> <span class="keyword">class </span><a class="code" href="class_s_x1276___lo_ra_radio.html">SX1276_LoRaRadio</a>: <span class="keyword">public</span> <a class="code" href="class_lo_ra_radio.html">LoRaRadio</a> {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="keyword">public</span>:<span class="comment"></span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment">    /**</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">     * Use this constructor if pin definitions are provided manually.</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="comment">     * The pins that are marked NC are optional. It is assumed that these</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment">     * pins are not connected until/unless configured otherwise.</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span> <span class="comment">     *</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment">     * Note: Pin ant_switch is equivalent to RxTx pin at</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">     * https://developer.mbed.org/components/SX1276MB1xAS/.</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">     * Reading the state of this pin indicates if the radio module type is</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">     * SX1276MB1LAS(North American frequency band supported) or SX1276MAS</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment">     * (European frequency band supported).</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">     * Pin dio4 can be mapped to multiple pins on the board, please refer to</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">     * schematic of your board. For reference look at</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment">     * https://developer.mbed.org/components/SX1276MB1xAS/</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">     *</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">     * Most of the radio module control pins are not being used at the moment as</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment">     * the SX1276MB1xAS shield has not connected them. For consistency and future</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">     * use we are leaving the pins in the constructor. For example, if in some</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">     * setting SX1276 radio module gets connected to an external power amplifier</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> <span class="comment">     * or radio  latch controls are connected.</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">     */</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>     <a class="code" href="class_s_x1276___lo_ra_radio.html#a868029612643ec476919b4788d330893">SX1276_LoRaRadio</a>(PinName mosi           = MBED_CONF_SX1276_LORA_DRIVER_SPI_MOSI,</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>                      PinName miso           = MBED_CONF_SX1276_LORA_DRIVER_SPI_MISO,</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>                      PinName sclk           = MBED_CONF_SX1276_LORA_DRIVER_SPI_SCLK,</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>                      PinName nss            = MBED_CONF_SX1276_LORA_DRIVER_SPI_CS,</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>                      PinName reset          = MBED_CONF_SX1276_LORA_DRIVER_RESET,</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>                      PinName dio0           = MBED_CONF_SX1276_LORA_DRIVER_DIO0,</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>                      PinName dio1           = MBED_CONF_SX1276_LORA_DRIVER_DIO1,</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>                      PinName dio2           = MBED_CONF_SX1276_LORA_DRIVER_DIO2,</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>                      PinName dio3           = MBED_CONF_SX1276_LORA_DRIVER_DIO3,</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>                      PinName dio4           = MBED_CONF_SX1276_LORA_DRIVER_DIO4,</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>                      PinName dio5           = MBED_CONF_SX1276_LORA_DRIVER_DIO5,</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>                      PinName rf_switch_ctl1 = MBED_CONF_SX1276_LORA_DRIVER_RF_SWITCH_CTL1,</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>                      PinName rf_switch_ctl2 = MBED_CONF_SX1276_LORA_DRIVER_RF_SWITCH_CTL2,</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>                      PinName txctl          = MBED_CONF_SX1276_LORA_DRIVER_TXCTL,</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>                      PinName rxctl          = MBED_CONF_SX1276_LORA_DRIVER_RXCTL,</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>                      PinName ant_switch     = MBED_CONF_SX1276_LORA_DRIVER_ANT_SWITCH,</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>                      PinName pwr_amp_ctl    = MBED_CONF_SX1276_LORA_DRIVER_PWR_AMP_CTL,</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>                      PinName tcxo           = MBED_CONF_SX1276_LORA_DRIVER_TCXO</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>                     );</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment"></span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment">    /**</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">     * Destructor</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">     */</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>     <span class="keyword">virtual</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a10139e25712539736fd36b25807e18d5">~SX1276_LoRaRadio</a>();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment"></span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">    /**</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">     * Registers radio events with the Mbed LoRaWAN stack and</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">     * undergoes initialization steps if any</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">     *</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">     *  @param events Structure containing the driver callback functions</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">     */</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a8ea1bbbbf075a278a3c533c59e9bc04b">init_radio</a>(<a class="code" href="structradio__events.html">radio_events_t</a> *<a class="code" href="namespaceevents.html">events</a>);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment"></span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">    /**</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span> <span class="comment">     * Resets the radio module</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment">     */</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#aaca2c32011387a48a29bae315b96a37c">radio_reset</a>();</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment"></span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment">    /**</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">     *  Put the RF module in sleep mode</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">     */</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#aa4922533eca7af6545c919bb193abe17">sleep</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment"></span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">    /**</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">     *  Sets the radio in standby mode</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">     */</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#aa9057ffb463f80472daf8085f61dc979">standby</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment"></span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment">    /**</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">     *  Sets the reception parameters</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment">     *</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">     *  @param modem         Radio modem to be used [0: FSK, 1: LoRa]</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">     *  @param bandwidth     Sets the bandwidth</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">     *                          FSK : &gt;= 2600 and &lt;= 250000 Hz</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="comment">     *                          LoRa: [0: 125 kHz, 1: 250 kHz,</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> <span class="comment">     *                                 2: 500 kHz, 3: Reserved]</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment">     *  @param datarate      Sets the Datarate</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment">     *                          FSK : 600..300000 bits/s</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment">     *                          LoRa: [6: 64, 7: 128, 8: 256, 9: 512,</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">     *                                10: 1024, 11: 2048, 12: 4096  chips]</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">     *  @param coderate      Sets the coding rate ( LoRa only )</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment">     *                          FSK : N/A ( set to 0 )</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">     *                          LoRa: [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">     *  @param bandwidth_afc Sets the AFC Bandwidth ( FSK only )</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">     *                          FSK : &gt;= 2600 and &lt;= 250000 Hz</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">     *                          LoRa: N/A ( set to 0 )</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">     *  @param preamble_len  Sets the Preamble length ( LoRa only )</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">     *                          FSK : N/A ( set to 0 )</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment">     *                          LoRa: Length in symbols ( the hardware adds 4 more symbols )</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">     *  @param symb_timeout  Sets the RxSingle timeout value</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment">     *                          FSK : timeout number of bytes</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">     *                          LoRa: timeout in symbols</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment">     *  @param fixLen        Fixed length packets [0: variable, 1: fixed]</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment">     *  @param payload_len   Sets payload length when fixed lenght is used</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">     *  @param crc_on        Enables/Disables the CRC [0: OFF, 1: ON]</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">     *  @param freq_hop_on   Enables disables the intra-packet frequency hopping  [0: OFF, 1: ON] (LoRa only)</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">     *  @param hop_period    Number of symbols bewteen each hop (LoRa only)</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">     *  @param iq_inverted   Inverts IQ signals ( LoRa only )</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">     *                          FSK : N/A ( set to 0 )</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">     *                          LoRa: [0: not inverted, 1: inverted]</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">     *  @param rx_continuous Sets the reception in continuous mode</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">     *                          [false: single mode, true: continuous mode]</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">     */</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a8bc23ac6cdcbb807ecfc238d76110d4b">set_rx_config</a>(<a class="code" href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a> modem, uint32_t bandwidth,</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>                                uint32_t datarate, uint8_t coderate,</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>                                uint32_t bandwidth_afc, uint16_t preamble_len,</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>                                uint16_t symb_timeout, <span class="keywordtype">bool</span> fix_len,</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>                                uint8_t payload_len,</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>                                <span class="keywordtype">bool</span> crc_on, <span class="keywordtype">bool</span> freq_hop_on, uint8_t hop_period,</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>                                <span class="keywordtype">bool</span> iq_inverted, <span class="keywordtype">bool</span> rx_continuous);</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment"></span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment">    /**</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">     *  Sets the transmission parameters</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">     *</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">     *  @param modem         Radio modem to be used [0: FSK, 1: LoRa]</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">     *  @param power         Sets the output power [dBm]</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">     *  @param fdev          Sets the frequency deviation ( FSK only )</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">     *                          FSK : [Hz]</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">     *                          LoRa: 0</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">     *  @param bandwidth     Sets the bandwidth ( LoRa only )</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">     *                          FSK : 0</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">     *                          LoRa: [0: 125 kHz, 1: 250 kHz,</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">     *                                 2: 500 kHz, 3: Reserved]</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment">     *  @param datarate      Sets the Datarate</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment">     *                          FSK : 600..300000 bits/s</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment">     *                          LoRa: [6: 64, 7: 128, 8: 256, 9: 512,</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="comment">     *                                10: 1024, 11: 2048, 12: 4096  chips]</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment">     *  @param coderate      Sets the coding rate ( LoRa only )</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="comment">     *                          FSK : N/A ( set to 0 )</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment">     *                          LoRa: [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">     *  @param preamble_len  Sets the preamble length</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment">     *  @param fix_len       Fixed length packets [0: variable, 1: fixed]</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment">     *  @param crc_on        Enables disables the CRC [0: OFF, 1: ON]</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment">     *  @param freq_hop_on   Enables disables the intra-packet frequency hopping  [0: OFF, 1: ON] (LoRa only)</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment">     *  @param hop_period    Number of symbols bewteen each hop (LoRa only)</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment">     *  @param iq_inverted   Inverts IQ signals ( LoRa only )</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">     *                          FSK : N/A ( set to 0 )</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment">     *                          LoRa: [0: not inverted, 1: inverted]</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">     *  @param timeout       Transmission timeout [ms]</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">     */</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a63e79ff02ad70907c707f7beb3e3ed89">set_tx_config</a>(<a class="code" href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a> modem, int8_t power, uint32_t fdev,</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>                                uint32_t bandwidth, uint32_t datarate,</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>                                uint8_t coderate, uint16_t preamble_len,</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>                                <span class="keywordtype">bool</span> fix_len, <span class="keywordtype">bool</span> crc_on, <span class="keywordtype">bool</span> freq_hop_on,</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>                                uint8_t hop_period, <span class="keywordtype">bool</span> iq_inverted, uint32_t timeout);</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment"></span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">    /**</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment">     *  Sends the buffer of size</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="comment">     *</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment">     *  Prepares the packet to be sent and sets the radio in transmission</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">     *</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment">     *  @param buffer        Buffer pointer</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">     *  @param size          Buffer size</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">     */</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a756baaedd78624688d87f5e4bff1df26">send</a>(uint8_t *buffer, uint8_t size);</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="comment"></span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment">    /**</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment">     * For backwards compatibility</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> <span class="comment">     */</span></div><div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="class_s_x1276___lo_ra_radio.html#a3fe322b6710b58dea2777432382b3d24">  222</a></span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a3fe322b6710b58dea2777432382b3d24">receive</a>(uint32_t timeout)</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>     {</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>         (void) timeout;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>         <a class="code" href="class_s_x1276___lo_ra_radio.html#a6d8c423f46d40e9c700e8c2b5d2fe2b6">receive</a>();</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>     }</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment"></span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment">    /**</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">     * Sets the radio to receive</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">     *</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="comment">     * All necessary configuration options for reception are set in</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment">     * 'set_rx_config(parameters)' API.</span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> <span class="comment">     */</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a6d8c423f46d40e9c700e8c2b5d2fe2b6">receive</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment"></span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">    /**</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> <span class="comment">     *  Sets the carrier frequency</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment">     *</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">     *  @param freq          Channel RF frequency</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">     */</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a33b41e7176960ba058fd35776fb59456">set_channel</a>(uint32_t freq);</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment"></span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment">    /**</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment">     *  Generates a 32 bits random value based on the RSSI readings</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="comment">     *</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="comment">     *  Remark this function sets the radio in LoRa modem mode and disables</span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">     *         all interrupts.</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">     *         After calling this function either Radio.SetRxConfig or</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="comment">     *         Radio.SetTxConfig functions must be called.</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="comment">     *</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="comment">     *  @return             32 bits random value</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="comment">     */</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>     <span class="keyword">virtual</span> uint32_t <a class="code" href="class_s_x1276___lo_ra_radio.html#ac7a0edd8bd018f0df4b99f2402aaee0d">random</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment"></span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment">    /**</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment">     *  Get radio status</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="comment">     *</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">     *  @param status        Radio status [RF_IDLE, RF_RX_RUNNING, RF_TX_RUNNING]</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">     *  @return              Return current radio status</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">     */</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>     <span class="keyword">virtual</span> uint8_t <a class="code" href="class_s_x1276___lo_ra_radio.html#ac0c2006e92ff3d7466dd108759322e83">get_status</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment"></span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment">    /**</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment">     *  Sets the maximum payload length</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment">     *</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment">     *  @param modem         Radio modem to be used [0: FSK, 1: LoRa]</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <span class="comment">     *  @param max           Maximum payload length in bytes</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="comment">     */</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#ada5c7ab891a1bb419dfdc77c2c117c94">set_max_payload_length</a>(<a class="code" href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a> modem, uint8_t max);</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment"></span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment">    /**</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="comment">     *  Sets the network to public or private</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="comment">     *</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="comment">     *  Updates the sync byte. Applies to LoRa modem only</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> <span class="comment">     *</span></div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> <span class="comment">     *  @param enable        if true, it enables a public network</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment">     */</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a0d9815c237530b1b6dd10b7913980099">set_public_network</a>(<span class="keywordtype">bool</span> enable);</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment"></span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment">    /**</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">     *  Computes the packet time on air for the given payload</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment">     *</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment">     *  Remark can only be called once SetRxConfig or SetTxConfig have been called</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment">     *</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">     *  @param modem         Radio modem to be used [0: FSK, 1: LoRa]</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment">     *  @param pkt_len       Packet payload length</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment">     *  @return              Computed airTime for the given packet payload length</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment">     */</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>     <span class="keyword">virtual</span> uint32_t <a class="code" href="class_s_x1276___lo_ra_radio.html#a46365ea74dd09c2a92f4ef679f5ce2d0">time_on_air</a>(<a class="code" href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a> modem, uint8_t pkt_len);</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment"></span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="comment">    /**</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="comment">     * Perform carrier sensing</span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="comment">     *</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span> <span class="comment">     * Checks for a certain time if the RSSI is above a given threshold.</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span> <span class="comment">     * This threshold determines if there is already a transmission going on</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment">     * in the channel or not.</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment">     *</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment">     * @param modem                     Type of the radio modem</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment">     * @param freq                      Carrier frequency</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">     * @param rssi_threshold            Threshold value of RSSI</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="comment">     * @param max_carrier_sense_time    time to sense the channel</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> <span class="comment">     *</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="comment">     * @return                          true if there is no active transmission</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment">     *                                  in the channel, false otherwise</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment">     */</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a8a20dd3ae82ac299b4ed242ccb972960">perform_carrier_sense</a>(<a class="code" href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a> modem,</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>                                        uint32_t freq,</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>                                        int16_t rssi_threshold,</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>                                        uint32_t max_carrier_sense_time);</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment"></span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">    /**</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="comment">     *  Sets the radio in CAD mode</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment">     *</span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment">     */</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#ae3026d3aa94a1e0a9394a7fea847379e">start_cad</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="comment"></span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> <span class="comment">    /**</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="comment">     *  Check if the given RF is in range</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> <span class="comment">     *</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="comment">     *  @param frequency       frequency needed to be checked</span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> <span class="comment">     */</span></div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a0147a53ee34494bc708da4a09285094e">check_rf_frequency</a>(uint32_t frequency);</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> <span class="comment"></span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span> <span class="comment">    /** Sets the radio in continuous wave transmission mode</span></div><div class="line"><a name="l00325"></a><span class="lineno">  325</span> <span class="comment">     *</span></div><div class="line"><a name="l00326"></a><span class="lineno">  326</span> <span class="comment">     *  @param freq          Channel RF frequency</span></div><div class="line"><a name="l00327"></a><span class="lineno">  327</span> <span class="comment">     *  @param power         Sets the output power [dBm]</span></div><div class="line"><a name="l00328"></a><span class="lineno">  328</span> <span class="comment">     *  @param time          Transmission mode timeout [s]</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span> <span class="comment">     */</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#abf4cf0d0986166018afc24f983c14ab8">set_tx_continuous_wave</a>(uint32_t freq, int8_t power, uint16_t time);</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span> <span class="comment"></span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="comment">    /**</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> <span class="comment">     * Acquire exclusive access</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="comment">     */</span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#ad67df83ace240f53c1276e24a37ff84c">lock</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span> <span class="comment"></span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span> <span class="comment">    /**</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span> <span class="comment">     * Release exclusive access</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span> <span class="comment">     */</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_s_x1276___lo_ra_radio.html#a5d882b4e464e4f4bd59eab6c75297bda">unlock</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span> </div><div class="line"><a name="l00342"></a><span class="lineno">  342</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> </div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>     <span class="comment">// SPI and chip select control</span></div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>     <a class="code" href="classmbed_1_1_s_p_i.html">mbed::SPI</a> _spi;</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _chip_select;</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> </div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>     <span class="comment">// module rest control</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>     <a class="code" href="classmbed_1_1_digital_in_out.html">mbed::DigitalInOut</a> _reset_ctl;</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span> </div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>     <span class="comment">// Interrupt controls</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>     <a class="code" href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a> _dio0_ctl;</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>     <a class="code" href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a> _dio1_ctl;</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>     <a class="code" href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a> _dio2_ctl;</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>     <a class="code" href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a> _dio3_ctl;</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>     <a class="code" href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a> _dio4_ctl;</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>     <a class="code" href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a> _dio5_ctl;</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span> </div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>     <span class="comment">// Radio specific controls</span></div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _rf_switch_ctl1;</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _rf_switch_ctl2;</div><div class="line"><a name="l00362"></a><span class="lineno">  362</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _txctl;</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _rxctl;</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>     <a class="code" href="classmbed_1_1_digital_in_out.html">mbed::DigitalInOut</a> _ant_switch;</div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _pwr_amp_ctl;</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>     <a class="code" href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a> _tcxo;</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span> </div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>     <span class="comment">// Contains all RF control pin names</span></div><div class="line"><a name="l00369"></a><span class="lineno">  369</span>     <span class="comment">// This storage is needed even after assigning the</span></div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>     <span class="comment">// pins to corresponding object, as the driver needs to know</span></div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>     <span class="comment">// which control pins are connected and which are not. This</span></div><div class="line"><a name="l00372"></a><span class="lineno">  372</span>     <span class="comment">// variation is inherent to driver because of target configuration.</span></div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>     <a class="code" href="structrf__ctrls.html">rf_ctrls</a> _rf_ctrls;</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span> </div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>     <span class="comment">// We need these PinNames as not all modules have those connected</span></div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>     PinName _dio4_pin;</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>     PinName _dio5_pin;</div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> </div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>     <span class="comment">// Structure containing all user and network specified settings</span></div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>     <span class="comment">// for radio module</span></div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>     <a class="code" href="structradio__settings.html">radio_settings_t</a> _rf_settings;</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span> </div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>     <span class="comment">// Structure containing function pointers to the stack callbacks</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>     <a class="code" href="structradio__events.html">radio_events_t</a> *_radio_events;</div><div class="line"><a name="l00385"></a><span class="lineno">  385</span> </div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>     <span class="comment">// Data buffer used for both TX and RX</span></div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>     <span class="comment">// Size of this buffer is configurable via Mbed config system</span></div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>     <span class="comment">// Default is 255 bytes</span></div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>     uint8_t _data_buffer[MAX_DATA_BUFFER_SIZE_SX1276];</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span> </div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>     <span class="comment">// TX timer in ms. This timer is used as a fail safe for TX.</span></div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>     <span class="comment">// If the chip fails to transmit, its a fatal error, reflecting</span></div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>     <span class="comment">// some catastrophic bus failure etc. We wish to have the control</span></div><div class="line"><a name="l00394"></a><span class="lineno">  394</span>     <span class="comment">// back from the driver in such a case.</span></div><div class="line"><a name="l00395"></a><span class="lineno">  395</span>     ALIAS_LORAWAN_TIMER tx_timeout_timer;</div><div class="line"><a name="l00396"></a><span class="lineno">  396</span> </div><div class="line"><a name="l00397"></a><span class="lineno">  397</span> <span class="preprocessor">#ifdef MBED_CONF_RTOS_PRESENT</span></div><div class="line"><a name="l00398"></a><span class="lineno">  398</span>     <span class="comment">// Thread to handle interrupts</span></div><div class="line"><a name="l00399"></a><span class="lineno">  399</span>     <a class="code" href="classrtos_1_1_thread.html">rtos::Thread</a> irq_thread;</div><div class="line"><a name="l00400"></a><span class="lineno">  400</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00401"></a><span class="lineno">  401</span> </div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>     <span class="comment">// Access protection</span></div><div class="line"><a name="l00403"></a><span class="lineno">  403</span>     <a class="code" href="class_platform_mutex.html">PlatformMutex</a> mutex;</div><div class="line"><a name="l00404"></a><span class="lineno">  404</span> </div><div class="line"><a name="l00405"></a><span class="lineno">  405</span>     uint8_t radio_variant;</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span> </div><div class="line"><a name="l00407"></a><span class="lineno">  407</span>     <span class="comment">// helper functions</span></div><div class="line"><a name="l00408"></a><span class="lineno">  408</span>     <span class="keywordtype">void</span> setup_registers();</div><div class="line"><a name="l00409"></a><span class="lineno">  409</span>     <span class="keywordtype">void</span> default_antenna_switch_ctrls();</div><div class="line"><a name="l00410"></a><span class="lineno">  410</span>     <span class="keywordtype">void</span> set_antenna_switch(uint8_t operation_mode);</div><div class="line"><a name="l00411"></a><span class="lineno">  411</span>     <span class="keywordtype">void</span> setup_spi();</div><div class="line"><a name="l00412"></a><span class="lineno">  412</span>     <span class="keywordtype">void</span> gpio_init();</div><div class="line"><a name="l00413"></a><span class="lineno">  413</span>     <span class="keywordtype">void</span> gpio_deinit();</div><div class="line"><a name="l00414"></a><span class="lineno">  414</span>     <span class="keywordtype">void</span> setup_interrupts();</div><div class="line"><a name="l00415"></a><span class="lineno">  415</span>     <span class="keywordtype">void</span> set_operation_mode(uint8_t operation_mode);</div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>     <span class="keywordtype">void</span> set_low_power_mode();</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>     <span class="keywordtype">void</span> set_sx1276_variant_type();</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>     uint8_t get_pa_conf_reg(uint32_t channel);</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>     <span class="keywordtype">void</span> set_rf_tx_power(int8_t power);</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span>     int16_t get_rssi(<a class="code" href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a> modem);</div><div class="line"><a name="l00421"></a><span class="lineno">  421</span>     uint8_t get_fsk_bw_reg_val(uint32_t bandwidth);</div><div class="line"><a name="l00422"></a><span class="lineno">  422</span>     <span class="keywordtype">void</span> write_to_register(uint8_t addr, uint8_t data);</div><div class="line"><a name="l00423"></a><span class="lineno">  423</span>     <span class="keywordtype">void</span> write_to_register(uint8_t addr, uint8_t *data, uint8_t size);</div><div class="line"><a name="l00424"></a><span class="lineno">  424</span>     uint8_t read_register(uint8_t addr);</div><div class="line"><a name="l00425"></a><span class="lineno">  425</span>     <span class="keywordtype">void</span> read_register(uint8_t addr, uint8_t *buffer, uint8_t size);</div><div class="line"><a name="l00426"></a><span class="lineno">  426</span>     <span class="keywordtype">void</span> write_fifo(uint8_t *buffer, uint8_t size);</div><div class="line"><a name="l00427"></a><span class="lineno">  427</span>     <span class="keywordtype">void</span> read_fifo(uint8_t *buffer, uint8_t size);</div><div class="line"><a name="l00428"></a><span class="lineno">  428</span>     <span class="keywordtype">void</span> transmit(uint32_t timeout);</div><div class="line"><a name="l00429"></a><span class="lineno">  429</span>     <span class="keywordtype">void</span> rf_irq_task(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span>     <span class="keywordtype">void</span> set_modem(uint8_t modem);</div><div class="line"><a name="l00431"></a><span class="lineno">  431</span>     <span class="keywordtype">void</span> rx_chain_calibration(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00432"></a><span class="lineno">  432</span> </div><div class="line"><a name="l00433"></a><span class="lineno">  433</span>     <span class="comment">// ISRs</span></div><div class="line"><a name="l00434"></a><span class="lineno">  434</span>     <span class="keywordtype">void</span>  dio0_irq_isr();</div><div class="line"><a name="l00435"></a><span class="lineno">  435</span>     <span class="keywordtype">void</span>  dio1_irq_isr();</div><div class="line"><a name="l00436"></a><span class="lineno">  436</span>     <span class="keywordtype">void</span>  dio2_irq_isr();</div><div class="line"><a name="l00437"></a><span class="lineno">  437</span>     <span class="keywordtype">void</span>  dio3_irq_isr();</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span>     <span class="keywordtype">void</span>  dio4_irq_isr();</div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>     <span class="keywordtype">void</span>  dio5_irq_isr();</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span>     <span class="keywordtype">void</span>  timeout_irq_isr();</div><div class="line"><a name="l00441"></a><span class="lineno">  441</span> </div><div class="line"><a name="l00442"></a><span class="lineno">  442</span>     <span class="comment">// Handlers called by thread in response to signal</span></div><div class="line"><a name="l00443"></a><span class="lineno">  443</span>     <span class="keywordtype">void</span> handle_dio0_irq();</div><div class="line"><a name="l00444"></a><span class="lineno">  444</span>     <span class="keywordtype">void</span> handle_dio1_irq();</div><div class="line"><a name="l00445"></a><span class="lineno">  445</span>     <span class="keywordtype">void</span> handle_dio2_irq();</div><div class="line"><a name="l00446"></a><span class="lineno">  446</span>     <span class="keywordtype">void</span> handle_dio3_irq();</div><div class="line"><a name="l00447"></a><span class="lineno">  447</span>     <span class="keywordtype">void</span> handle_dio4_irq();</div><div class="line"><a name="l00448"></a><span class="lineno">  448</span>     <span class="keywordtype">void</span> handle_dio5_irq();</div><div class="line"><a name="l00449"></a><span class="lineno">  449</span>     <span class="keywordtype">void</span> handle_timeout_irq();</div><div class="line"><a name="l00450"></a><span class="lineno">  450</span> };</div><div class="line"><a name="l00451"></a><span class="lineno">  451</span> </div><div class="line"><a name="l00452"></a><span class="lineno">  452</span> <span class="preprocessor">#endif // DEVICE_SPI</span></div><div class="line"><a name="l00453"></a><span class="lineno">  453</span> </div><div class="line"><a name="l00454"></a><span class="lineno">  454</span> <span class="preprocessor">#endif // SX1276_LORARADIO_H_</span></div><div class="ttc" id="classrtos_1_1_thread_html"><div class="ttname"><a href="classrtos_1_1_thread.html">rtos::Thread</a></div><div class="ttdoc">The Thread class allow defining, creating, and controlling thread functions in the system...</div><div class="ttdef"><b>Definition:</b> <a href="_thread_8h_source.html#l00092">Thread.h:92</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a63e79ff02ad70907c707f7beb3e3ed89"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a63e79ff02ad70907c707f7beb3e3ed89">SX1276_LoRaRadio::set_tx_config</a></div><div class="ttdeci">virtual void set_tx_config(radio_modems_t modem, int8_t power, uint32_t fdev, uint32_t bandwidth, uint32_t datarate, uint8_t coderate, uint16_t preamble_len, bool fix_len, bool crc_on, bool freq_hop_on, uint8_t hop_period, bool iq_inverted, uint32_t timeout)</div><div class="ttdoc">Sets the transmission parameters. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_abf4cf0d0986166018afc24f983c14ab8"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#abf4cf0d0986166018afc24f983c14ab8">SX1276_LoRaRadio::set_tx_continuous_wave</a></div><div class="ttdeci">virtual void set_tx_continuous_wave(uint32_t freq, int8_t power, uint16_t time)</div><div class="ttdoc">Sets the radio in continuous wave transmission mode. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a868029612643ec476919b4788d330893"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a868029612643ec476919b4788d330893">SX1276_LoRaRadio::SX1276_LoRaRadio</a></div><div class="ttdeci">SX1276_LoRaRadio(PinName mosi=MBED_CONF_SX1276_LORA_DRIVER_SPI_MOSI, PinName miso=MBED_CONF_SX1276_LORA_DRIVER_SPI_MISO, PinName sclk=MBED_CONF_SX1276_LORA_DRIVER_SPI_SCLK, PinName nss=MBED_CONF_SX1276_LORA_DRIVER_SPI_CS, PinName reset=MBED_CONF_SX1276_LORA_DRIVER_RESET, PinName dio0=MBED_CONF_SX1276_LORA_DRIVER_DIO0, PinName dio1=MBED_CONF_SX1276_LORA_DRIVER_DIO1, PinName dio2=MBED_CONF_SX1276_LORA_DRIVER_DIO2, PinName dio3=MBED_CONF_SX1276_LORA_DRIVER_DIO3, PinName dio4=MBED_CONF_SX1276_LORA_DRIVER_DIO4, PinName dio5=MBED_CONF_SX1276_LORA_DRIVER_DIO5, PinName rf_switch_ctl1=MBED_CONF_SX1276_LORA_DRIVER_RF_SWITCH_CTL1, PinName rf_switch_ctl2=MBED_CONF_SX1276_LORA_DRIVER_RF_SWITCH_CTL2, PinName txctl=MBED_CONF_SX1276_LORA_DRIVER_TXCTL, PinName rxctl=MBED_CONF_SX1276_LORA_DRIVER_RXCTL, PinName ant_switch=MBED_CONF_SX1276_LORA_DRIVER_ANT_SWITCH, PinName pwr_amp_ctl=MBED_CONF_SX1276_LORA_DRIVER_PWR_AMP_CTL, PinName tcxo=MBED_CONF_SX1276_LORA_DRIVER_TCXO)</div><div class="ttdoc">Use this constructor if pin definitions are provided manually. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_ae3026d3aa94a1e0a9394a7fea847379e"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#ae3026d3aa94a1e0a9394a7fea847379e">SX1276_LoRaRadio::start_cad</a></div><div class="ttdeci">virtual void start_cad(void)</div><div class="ttdoc">Sets the radio in CAD mode. </div></div>
+<div class="ttc" id="group___lo_ra_w_a_n_html_ga5d67172ffe958f12f6a5ae0ebd66144c"><div class="ttname"><a href="group___lo_ra_w_a_n.html#ga5d67172ffe958f12f6a5ae0ebd66144c">radio_modems_t</a></div><div class="ttdeci">enum modem_type radio_modems_t</div><div class="ttdoc">Type of modem. </div></div>
+<div class="ttc" id="structrf__ctrls_html"><div class="ttname"><a href="structrf__ctrls.html">rf_ctrls</a></div><div class="ttdoc">Structure to hold RF controls for LoRa Radio. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_radio_8h_source.html#l00035">LoRaRadio.h:35</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a3fe322b6710b58dea2777432382b3d24"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a3fe322b6710b58dea2777432382b3d24">SX1276_LoRaRadio::receive</a></div><div class="ttdeci">virtual void receive(uint32_t timeout)</div><div class="ttdoc">For backwards compatibility. </div><div class="ttdef"><b>Definition:</b> <a href="_s_x1276___lo_ra_radio_8h_source.html#l00222">SX1276_LoRaRadio.h:222</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a0147a53ee34494bc708da4a09285094e"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a0147a53ee34494bc708da4a09285094e">SX1276_LoRaRadio::check_rf_frequency</a></div><div class="ttdeci">virtual bool check_rf_frequency(uint32_t frequency)</div><div class="ttdoc">Check if the given RF is in range. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a5d882b4e464e4f4bd59eab6c75297bda"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a5d882b4e464e4f4bd59eab6c75297bda">SX1276_LoRaRadio::unlock</a></div><div class="ttdeci">virtual void unlock(void)</div><div class="ttdoc">Release exclusive access. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_aa9057ffb463f80472daf8085f61dc979"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#aa9057ffb463f80472daf8085f61dc979">SX1276_LoRaRadio::standby</a></div><div class="ttdeci">virtual void standby(void)</div><div class="ttdoc">Sets the radio in standby mode. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a8a20dd3ae82ac299b4ed242ccb972960"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a8a20dd3ae82ac299b4ed242ccb972960">SX1276_LoRaRadio::perform_carrier_sense</a></div><div class="ttdeci">virtual bool perform_carrier_sense(radio_modems_t modem, uint32_t freq, int16_t rssi_threshold, uint32_t max_carrier_sense_time)</div><div class="ttdoc">Perform carrier sensing. </div></div>
+<div class="ttc" id="classmbed_1_1_digital_in_out_html"><div class="ttname"><a href="classmbed_1_1_digital_in_out.html">mbed::DigitalInOut</a></div><div class="ttdoc">A digital input/output, used for setting or reading a bi-directional pin. </div><div class="ttdef"><b>Definition:</b> <a href="_digital_in_out_8h_source.html#l00036">DigitalInOut.h:36</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_aaca2c32011387a48a29bae315b96a37c"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#aaca2c32011387a48a29bae315b96a37c">SX1276_LoRaRadio::radio_reset</a></div><div class="ttdeci">virtual void radio_reset()</div><div class="ttdoc">Resets the radio module. </div></div>
+<div class="ttc" id="class_platform_mutex_html"><div class="ttname"><a href="class_platform_mutex.html">PlatformMutex</a></div><div class="ttdoc">The PlatformMutex class is used to synchronize the execution of threads. </div><div class="ttdef"><b>Definition:</b> <a href="_platform_mutex_8h_source.html#l00047">PlatformMutex.h:47</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_ada5c7ab891a1bb419dfdc77c2c117c94"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#ada5c7ab891a1bb419dfdc77c2c117c94">SX1276_LoRaRadio::set_max_payload_length</a></div><div class="ttdeci">virtual void set_max_payload_length(radio_modems_t modem, uint8_t max)</div><div class="ttdoc">Sets the maximum payload length. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a0d9815c237530b1b6dd10b7913980099"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a0d9815c237530b1b6dd10b7913980099">SX1276_LoRaRadio::set_public_network</a></div><div class="ttdeci">virtual void set_public_network(bool enable)</div><div class="ttdoc">Sets the network to public or private. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a33b41e7176960ba058fd35776fb59456"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a33b41e7176960ba058fd35776fb59456">SX1276_LoRaRadio::set_channel</a></div><div class="ttdeci">virtual void set_channel(uint32_t freq)</div><div class="ttdoc">Sets the carrier frequency. </div></div>
+<div class="ttc" id="structradio__events_html"><div class="ttname"><a href="structradio__events.html">radio_events</a></div><div class="ttdoc">Reporting functions for upper layers. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_radio_8h_source.html#l00389">LoRaRadio.h:389</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a10139e25712539736fd36b25807e18d5"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a10139e25712539736fd36b25807e18d5">SX1276_LoRaRadio::~SX1276_LoRaRadio</a></div><div class="ttdeci">virtual ~SX1276_LoRaRadio()</div><div class="ttdoc">Destructor. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a756baaedd78624688d87f5e4bff1df26"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a756baaedd78624688d87f5e4bff1df26">SX1276_LoRaRadio::send</a></div><div class="ttdeci">virtual void send(uint8_t *buffer, uint8_t size)</div><div class="ttdoc">Sends the buffer of size. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a46365ea74dd09c2a92f4ef679f5ce2d0"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a46365ea74dd09c2a92f4ef679f5ce2d0">SX1276_LoRaRadio::time_on_air</a></div><div class="ttdeci">virtual uint32_t time_on_air(radio_modems_t modem, uint8_t pkt_len)</div><div class="ttdoc">Computes the packet time on air for the given payload. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_ac7a0edd8bd018f0df4b99f2402aaee0d"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#ac7a0edd8bd018f0df4b99f2402aaee0d">SX1276_LoRaRadio::random</a></div><div class="ttdeci">virtual uint32_t random(void)</div><div class="ttdoc">Generates a 32 bits random value based on the RSSI readings. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_ac0c2006e92ff3d7466dd108759322e83"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#ac0c2006e92ff3d7466dd108759322e83">SX1276_LoRaRadio::get_status</a></div><div class="ttdeci">virtual uint8_t get_status(void)</div><div class="ttdoc">Get radio status. </div></div>
+<div class="ttc" id="classmbed_1_1_interrupt_in_html"><div class="ttname"><a href="classmbed_1_1_interrupt_in.html">mbed::InterruptIn</a></div><div class="ttdoc">A digital interrupt input, used to call a function on a rising or falling edge. </div><div class="ttdef"><b>Definition:</b> <a href="_interrupt_in_8h_source.html#l00065">InterruptIn.h:65</a></div></div>
+<div class="ttc" id="namespaceevents_html"><div class="ttname"><a href="namespaceevents.html">events</a></div><div class="ttdef"><b>Definition:</b> <a href="_polled_queue_8h_source.html#l00025">PolledQueue.h:25</a></div></div>
+<div class="ttc" id="classmbed_1_1_digital_out_html"><div class="ttname"><a href="classmbed_1_1_digital_out.html">mbed::DigitalOut</a></div><div class="ttdoc">A digital output, used for setting the state of a pin. </div><div class="ttdef"><b>Definition:</b> <a href="_digital_out_8h_source.html#l00051">DigitalOut.h:51</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a8bc23ac6cdcbb807ecfc238d76110d4b"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a8bc23ac6cdcbb807ecfc238d76110d4b">SX1276_LoRaRadio::set_rx_config</a></div><div class="ttdeci">virtual void set_rx_config(radio_modems_t modem, uint32_t bandwidth, uint32_t datarate, uint8_t coderate, uint32_t bandwidth_afc, uint16_t preamble_len, uint16_t symb_timeout, bool fix_len, uint8_t payload_len, bool crc_on, bool freq_hop_on, uint8_t hop_period, bool iq_inverted, bool rx_continuous)</div><div class="ttdoc">Sets the reception parameters. </div></div>
+<div class="ttc" id="classmbed_1_1_s_p_i_html"><div class="ttname"><a href="classmbed_1_1_s_p_i.html">mbed::SPI</a></div><div class="ttdoc">A SPI Master, used for communicating with SPI slave devices. </div><div class="ttdef"><b>Definition:</b> <a href="_s_p_i_8h_source.html#l00098">SPI.h:98</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a8ea1bbbbf075a278a3c533c59e9bc04b"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a8ea1bbbbf075a278a3c533c59e9bc04b">SX1276_LoRaRadio::init_radio</a></div><div class="ttdeci">virtual void init_radio(radio_events_t *events)</div><div class="ttdoc">Registers radio events with the Mbed LoRaWAN stack and undergoes initialization steps if any...</div></div>
+<div class="ttc" id="structradio__settings_html"><div class="ttname"><a href="structradio__settings.html">radio_settings</a></div><div class="ttdoc">Global radio settings. </div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_radio_8h_source.html#l00347">LoRaRadio.h:347</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_ad67df83ace240f53c1276e24a37ff84c"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#ad67df83ace240f53c1276e24a37ff84c">SX1276_LoRaRadio::lock</a></div><div class="ttdeci">virtual void lock(void)</div><div class="ttdoc">Acquire exclusive access. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_aa4922533eca7af6545c919bb193abe17"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#aa4922533eca7af6545c919bb193abe17">SX1276_LoRaRadio::sleep</a></div><div class="ttdeci">virtual void sleep(void)</div><div class="ttdoc">Put the RF module in sleep mode. </div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html">SX1276_LoRaRadio</a></div><div class="ttdoc">Radio driver implementation for Semtech SX1272 plus variants. </div><div class="ttdef"><b>Definition:</b> <a href="_s_x1276___lo_ra_radio_8h_source.html#l00061">SX1276_LoRaRadio.h:61</a></div></div>
+<div class="ttc" id="class_lo_ra_radio_html"><div class="ttname"><a href="class_lo_ra_radio.html">LoRaRadio</a></div><div class="ttdoc">Interface for the radios, containing the main functions that a radio needs, and five callback functio...</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_radio_8h_source.html#l00440">LoRaRadio.h:440</a></div></div>
+<div class="ttc" id="class_s_x1276___lo_ra_radio_html_a6d8c423f46d40e9c700e8c2b5d2fe2b6"><div class="ttname"><a href="class_s_x1276___lo_ra_radio.html#a6d8c423f46d40e9c700e8c2b5d2fe2b6">SX1276_LoRaRadio::receive</a></div><div class="ttdeci">virtual void receive(void)</div><div class="ttdoc">Sets the radio to receive. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_s_x1276___lo_ra_radio_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:28:35 GMT -->
+</html>

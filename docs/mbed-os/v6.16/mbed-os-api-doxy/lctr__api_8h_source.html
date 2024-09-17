@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/lctr__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:24:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | lctr_api.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="lctr__api_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/lctr__api_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/lctr__api_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_a9b0a4f8a11c2540ce1e65185f830e6a.html">FEATURE_BLE</a></li><li class="navelem"><a class="el" href="dir_73487efda0e2f6d34034d4237b1c3952.html">libraries</a></li><li class="navelem"><a class="el" href="dir_5708b411babcd47c79c1d9a3abf6014b.html">TARGET_CORDIO_LL</a></li><li class="navelem"><a class="el" href="dir_f48eb9e6f176e70dec8c36d1ad9c424e.html">stack</a></li><li class="navelem"><a class="el" href="dir_d6299034f44a5384470e6f82cb7381ae.html">controller</a></li><li class="navelem"><a class="el" href="dir_4a75e9b6d4326b101c591bac7ef3d2bd.html">sources</a></li><li class="navelem"><a class="el" href="dir_fcb7c4937c29b03c3a65ac7f35ce1cf9.html">ble</a></li><li class="navelem"><a class="el" href="dir_7bd9f8bbd30839cafead2a83dab117cd.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lctr_api.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lctr__api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*************************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/*!</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *  \file</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *  \brief      Link layer controller common interface file.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> *  Copyright (c) 2013-2019 Arm Ltd. All Rights Reserved.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *  Copyright (c) 2019-2020 Packetcraft, Inc.</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *  </span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *  Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> *  you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> *  You may obtain a copy of the License at</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *  </span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *  </span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *  distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *  See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> *  limitations under the License.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">/*************************************************************************************************/</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#ifndef LCTR_API_H</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#define LCTR_API_H</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> </div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="preprocessor">#include "<a class="code" href="ll__api_8h.html">ll_api.h</a>"</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "<a class="code" href="ll__defs_8h.html">ll_defs.h</a>"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#include "<a class="code" href="bb__api_8h.html">bb_api.h</a>"</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> </div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span> {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment"></span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment">/*!</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="comment"> *  \addtogroup LL_LCTR_API</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="comment"> *  \{</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="comment"> */</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">  Constants</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment"></span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment">/*! \brief      Message dispatch handler types. */</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="keyword">enum</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> {</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa4999d88ed7feeed33336dc1d3a76e224">   48</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa4999d88ed7feeed33336dc1d3a76e224">LCTR_DISP_CONN_IND</a>,                   <span class="comment">/*!&lt; Advertising channel connection indication dispatch handler type. */</span></div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fac6b64aea847f394bede878467e275efd">   49</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fac6b64aea847f394bede878467e275efd">LCTR_DISP_CONN</a>,                       <span class="comment">/*!&lt; Connection message dispatch handler type. */</span></div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa09ef892f75bc82a1b4cf62f0e4175b98">   50</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa09ef892f75bc82a1b4cf62f0e4175b98">LCTR_DISP_SCAN</a>,                       <span class="comment">/*!&lt; Scan message dispatch handler type. */</span></div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faef2f0932864c283d07b4e618aa3dca51">   51</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faef2f0932864c283d07b4e618aa3dca51">LCTR_DISP_INIT</a>,                       <span class="comment">/*!&lt; Initiate message dispatch handler type. */</span></div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa8ea45ab72d1c3455e1d97e118738921b">   52</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa8ea45ab72d1c3455e1d97e118738921b">LCTR_DISP_ADV</a>,                        <span class="comment">/*!&lt; Advertising message dispatch handler type. */</span></div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7f13f5ff51aeb152d25e47a44873e6f0">   53</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7f13f5ff51aeb152d25e47a44873e6f0">LCTR_DISP_TEST</a>,                       <span class="comment">/*!&lt; Test message dispatch handler type. */</span></div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fae1929abef500e0726d3a1e5f09f8273b">   54</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fae1929abef500e0726d3a1e5f09f8273b">LCTR_DISP_PRIV</a>,                       <span class="comment">/*!&lt; Privacy message dispatch handler type. */</span></div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faadbe9a53dbf0d0ee22bf570ad9609b87">   55</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faadbe9a53dbf0d0ee22bf570ad9609b87">LCTR_DISP_EXT_SCAN</a>,                   <span class="comment">/*!&lt; Extended Scan message dispatch handler type. */</span></div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fac14181340f020a35d861bbdbd62b3aa6">   56</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fac14181340f020a35d861bbdbd62b3aa6">LCTR_DISP_EXT_ADV</a>,                    <span class="comment">/*!&lt; Extended Advertising message dispatch handler type. */</span></div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad8775666ef2c677bec0849615f28da55">   57</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad8775666ef2c677bec0849615f28da55">LCTR_DISP_EXT_INIT</a>,                   <span class="comment">/*!&lt; Extended Initiate message dispatch handler type. */</span></div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa5c24c928b9270d44c45335fd2deb9bed">   58</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa5c24c928b9270d44c45335fd2deb9bed">LCTR_DISP_PER_ADV</a>,                    <span class="comment">/*!&lt; Periodic Advertising message dispatch handler type. */</span></div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faa89a9f8f3eb3e2fd41c98a0e391d4c30">   59</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faa89a9f8f3eb3e2fd41c98a0e391d4c30">LCTR_DISP_PER_CREATE_SYNC</a>,            <span class="comment">/*!&lt; Periodic Create Sync message dispatch handler type. */</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa07e96319d7f3f3588912738d81727ddb">   60</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa07e96319d7f3f3588912738d81727ddb">LCTR_DISP_TRANFER_SYNC</a>,               <span class="comment">/*!&lt; Periodic Sync Transfer message dispatch handler type. */</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa6793650f5f923ea0cef8594553caee9b">   61</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa6793650f5f923ea0cef8594553caee9b">LCTR_DISP_PER_SCAN</a>,                   <span class="comment">/*!&lt; Periodic Scanning message dispatch handler type. */</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7a156831cd25d577e7b5be476d5f8deb">   62</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7a156831cd25d577e7b5be476d5f8deb">LCTR_DISP_ACAD</a>,                       <span class="comment">/*!&lt; ACAD message dispatch handler type (currently only used by slave). */</span></div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad49c99280258e5243349a0866bdb988f">   63</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad49c99280258e5243349a0866bdb988f">LCTR_DISP_CIS</a>,                        <span class="comment">/*!&lt; Connected Isochronous Stream dispatch handler type. */</span></div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fadbb3f3045f90d35a80babef5d28b006b">   64</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fadbb3f3045f90d35a80babef5d28b006b">LCTR_DISP_BIG_BCST</a>,                   <span class="comment">/*!&lt; Broadcast Isochronous Group broadcasting message dispatch handler type. */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fafa63352ff6e59f89e142ae36fe925e43">   65</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fafa63352ff6e59f89e142ae36fe925e43">LCTR_DISP_BIG_SYNC</a>,                   <span class="comment">/*!&lt; Broadcast Isochronous Group synchronization message dispatch handler type. */</span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3facc60d705d7a182872c6baa3d377b80d8">   66</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3facc60d705d7a182872c6baa3d377b80d8">LCTR_DISP_TOTAL</a>,                      <span class="comment">/*!&lt; Total number of dispatch handlers. */</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>   <span class="comment">/* Special IDs */</span></div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa05a8e7a1261c5650ea6bb4d0dec5fc60">   68</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa05a8e7a1261c5650ea6bb4d0dec5fc60">LCTR_DISP_FIRST_SM</a>  = <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa4999d88ed7feeed33336dc1d3a76e224">LCTR_DISP_CONN_IND</a>+1,   <span class="comment">/*!&lt; First state machine. */</span></div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7e9c5d79e50c563cb0c1eddc09368c98">   69</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7e9c5d79e50c563cb0c1eddc09368c98">LCTR_DISP_LAST_SM</a>   = <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3facc60d705d7a182872c6baa3d377b80d8">LCTR_DISP_TOTAL</a>-1,      <span class="comment">/*!&lt; Last state machine. */</span></div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad3344f4649ba174ec906c71c581f6c50">   70</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad3344f4649ba174ec906c71c581f6c50">LCTR_DISP_BCST</a>      = 0xFF                    <span class="comment">/*!&lt; Broadcast message type. */</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> };</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment"></span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">/*! \brief      Broadcast task messages. */</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="keyword">enum</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> {</div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga5ebea2f4f6d4457d66de7733a8ea7bd3a230f321f8d42ccc80a165f308a99f1d9">   76</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga5ebea2f4f6d4457d66de7733a8ea7bd3a230f321f8d42ccc80a165f308a99f1d9">LCTR_MSG_RESET</a>                        <span class="comment">/*!&lt; Reset API message. */</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> };</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment"></span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">/*! \brief      Task event mask bit positions. */</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="keyword">enum</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span> {</div><div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba29709ff8087cde80578d4c061b4f4749">   82</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba29709ff8087cde80578d4c061b4f4749">LCTR_EVENT_RX_PENDING</a>,                <span class="comment">/*!&lt; Receive data PDU pending. */</span></div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba12bdee570571cd765898b034a6e8175d">   83</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba12bdee570571cd765898b034a6e8175d">LCTR_EVENT_TX_PENDING</a>,                <span class="comment">/*!&lt; Transmit data PDU pending. */</span></div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910baad28f87e1e8c53a5ed626a71dc4eeda4">   84</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910baad28f87e1e8c53a5ed626a71dc4eeda4">LCTR_EVENT_TX_COMPLETE</a>,               <span class="comment">/*!&lt; Transmit data PDU completed. */</span></div><div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba66a766a4a06c83e1d078f5908b68c880">   85</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba66a766a4a06c83e1d078f5908b68c880">LCTR_EVENT_CIS_TX_PENDING</a>,            <span class="comment">/*!&lt; Transmit data PDU pending. */</span></div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba4f7d84961adbc47d36df1b48f6afec28">   86</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba4f7d84961adbc47d36df1b48f6afec28">LCTR_EVENT_CIS_RX_PENDING</a>,            <span class="comment">/*!&lt; Receive data PDU pending. */</span></div><div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910baf6dba343f181239e7364ffcd1ea6f621">   87</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910baf6dba343f181239e7364ffcd1ea6f621">LCTR_EVENT_ISO_TX_COMPLETE</a>,           <span class="comment">/*!&lt; Transmit ISO SDU completed. */</span></div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910bae3d12c2cb72ab9ea755caebe49ef2e84">   88</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910bae3d12c2cb72ab9ea755caebe49ef2e84">LCTR_EVENT_RX_ADVB</a>,                   <span class="comment">/*!&lt; Receive AdvB PDU completed. */</span></div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba83b1dc6850c731732b9b48a9d8cce082">   89</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba83b1dc6850c731732b9b48a9d8cce082">LCTR_EVENT_RX_DIRECT_ADVB</a>,            <span class="comment">/*!&lt; Receive direct AdvB PDU completed. */</span></div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba57dfded7576ebc4ac82660cf93cc7fe0">   90</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba57dfded7576ebc4ac82660cf93cc7fe0">LCTR_EVENT_RX_SCAN_REQ</a>,               <span class="comment">/*!&lt; Receive scan request PDU completed.  */</span></div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba91305de1ee4c34244d8cc92525fcd5b7">   91</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba91305de1ee4c34244d8cc92525fcd5b7">LCTR_EVENT_SC_GENERATE_P256_KEY_PAIR</a>, <span class="comment">/*!&lt; Generate P-256 public/private key pair. */</span></div><div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba4ecd3e2ede46a01f85bf0de64bacfcf9">   92</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba4ecd3e2ede46a01f85bf0de64bacfcf9">LCTR_EVENT_SC_GENERATE_DHKEY</a>,         <span class="comment">/*!&lt; Generate Diffie-Hellman key. */</span></div><div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba59b32e9bdd381192981ad56e72a949a9">   93</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba59b32e9bdd381192981ad56e72a949a9">LCTR_EVENT_TOTAL</a>                      <span class="comment">/*!&lt; Total number of event handlers. */</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> };</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment"></span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">/*! \brief      Waiting host reply bitmask. */</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="keyword">enum</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> {</div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371a61a7c3fbc8c9950731f5f9ff0a9b91ed">   99</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371a61a7c3fbc8c9950731f5f9ff0a9b91ed">LCTR_HOST_REPLY_CONN_PARAM_REQ</a>    = (1 &lt;&lt; 0),     <span class="comment">/*!&lt; Waiting for host to submit a connection parameter request reply. */</span></div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371af3fab57481d752e950b5ab1ab6d4f9e1">  100</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371af3fab57481d752e950b5ab1ab6d4f9e1">LCTR_HOST_REPLY_LTK_REQ</a>           = (1 &lt;&lt; 1),     <span class="comment">/*!&lt; Waiting for host to submit a LTK request reply. */</span></div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371ab21442a86c511043ec77899878b3e070">  101</a></span>   <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371ab21442a86c511043ec77899878b3e070">LCTR_HOST_REPLY_CIS_REQ</a>           = (1 &lt;&lt; 2),     <span class="comment">/*!&lt; Waiting for host to submit a CIS request reply. */</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> };</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> </div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">  Data Types</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment"></span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">/*! \brief      Common message structure passed to event handler. */</span></div><div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structlctr_msg_hdr__t.html">  109</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> {</div><div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structlctr_msg_hdr__t.html#af242d6e3b6108ea75e1eb236e94c8240">  111</a></span>   uint16_t          <a class="code" href="structlctr_msg_hdr__t.html#af242d6e3b6108ea75e1eb236e94c8240">handle</a>;             <span class="comment">/*!&lt; Handle. */</span></div><div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structlctr_msg_hdr__t.html#ab8c0c15b6c35e492fe2509a295d45d69">  112</a></span>   uint8_t           <a class="code" href="structlctr_msg_hdr__t.html#ab8c0c15b6c35e492fe2509a295d45d69">dispId</a>;             <span class="comment">/*!&lt; Dispatch ID. */</span></div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structlctr_msg_hdr__t.html#aeef6900f411bc223febdd92c9435693b">  113</a></span>   uint8_t           <a class="code" href="structlctr_msg_hdr__t.html#aeef6900f411bc223febdd92c9435693b">event</a>;              <span class="comment">/*!&lt; Event ID. */</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> } <a class="code" href="structlctr_msg_hdr__t.html">lctrMsgHdr_t</a>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment"></span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">/*! \brief      Channel map update message. */</span></div><div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structlctr_chan_map_update__t.html">  117</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> {</div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structlctr_chan_map_update__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">  119</a></span>   <a class="code" href="structlctr_msg_hdr__t.html">lctrMsgHdr_t</a>      <a class="code" href="structlctr_chan_map_update__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">hdr</a>;                <span class="comment">/*!&lt; Message header. */</span></div><div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structlctr_chan_map_update__t.html#a6c2bfca3fba579b1f4bc4c877d5dd9f8">  120</a></span>   uint64_t          <a class="code" href="structlctr_chan_map_update__t.html#a6c2bfca3fba579b1f4bc4c877d5dd9f8">chanMap</a>;            <span class="comment">/*!&lt; Channel map. */</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> } <a class="code" href="structlctr_chan_map_update__t.html">lctrChanMapUpdate_t</a>;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment"></span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">/*! \brief      BIG created message. */</span></div><div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structlctr_big_created__t.html">  124</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> {</div><div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structlctr_big_created__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">  126</a></span>   <a class="code" href="structlctr_msg_hdr__t.html">lctrMsgHdr_t</a>      <a class="code" href="structlctr_big_created__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">hdr</a>;                <span class="comment">/*!&lt; Message header. */</span></div><div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structlctr_big_created__t.html#a53816db9800339500eee75267cf5833d">  127</a></span>   uint8_t           <a class="code" href="structlctr_big_created__t.html#a53816db9800339500eee75267cf5833d">bigHandle</a>;          <span class="comment">/*!&lt; BIG handle. */</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> } <a class="code" href="structlctr_big_created__t.html">lctrBigCreated_t</a>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment"></span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">/*! \brief      Connect request PDU. */</span></div><div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html">  131</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> {</div><div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#ad23f13fec77a72933a48b8bb6f058a7a">  133</a></span>   uint64_t          <a class="code" href="structlctr_conn_ind__t.html#ad23f13fec77a72933a48b8bb6f058a7a">initAddr</a>;           <span class="comment">/*!&lt; Scanner's address. */</span></div><div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a0b3d4564b3ec448217f7d5d130e39352">  134</a></span>   uint64_t          <a class="code" href="structlctr_conn_ind__t.html#a0b3d4564b3ec448217f7d5d130e39352">advAddr</a>;            <span class="comment">/*!&lt; Advertiser's address. */</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> </div><div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#afaafbbaa95f41dd47dd56b014bd55255">  136</a></span>   uint32_t          <a class="code" href="structlctr_conn_ind__t.html#afaafbbaa95f41dd47dd56b014bd55255">accessAddr</a>;         <span class="comment">/*!&lt; Connection access address. */</span></div><div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a48afefcaaef6e4b4a6876eea4032dc39">  137</a></span>   uint32_t          <a class="code" href="structlctr_conn_ind__t.html#a48afefcaaef6e4b4a6876eea4032dc39">crcInit</a>;            <span class="comment">/*!&lt; CRC initialization value. */</span></div><div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a68c493d689454cc536e3ee3effe4c590">  138</a></span>   uint64_t          <a class="code" href="structlctr_conn_ind__t.html#a68c493d689454cc536e3ee3effe4c590">chanMask</a>;           <span class="comment">/*!&lt; Channel mask. */</span></div><div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a6c52a3d605c056768b59164ce8df8334">  139</a></span>   uint16_t          <a class="code" href="structlctr_conn_ind__t.html#a6c52a3d605c056768b59164ce8df8334">interval</a>;           <span class="comment">/*!&lt; connInterval value. */</span></div><div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a3c33efef6d5cbcd1ddacf7f6ec924423">  140</a></span>   uint16_t          <a class="code" href="structlctr_conn_ind__t.html#a3c33efef6d5cbcd1ddacf7f6ec924423">latency</a>;            <span class="comment">/*!&lt; connSlaveLatency value. */</span></div><div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a7f1ad43d3bf79b40bc39dbb5a6c3a5ae">  141</a></span>   uint16_t          <a class="code" href="structlctr_conn_ind__t.html#a7f1ad43d3bf79b40bc39dbb5a6c3a5ae">timeout</a>;            <span class="comment">/*!&lt; connSupervisionTimeout value. */</span></div><div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a0b9a61298746cc81f440aa75599c8a68">  142</a></span>   uint8_t           <a class="code" href="structlctr_conn_ind__t.html#a0b9a61298746cc81f440aa75599c8a68">txWinSize</a>;          <span class="comment">/*!&lt; transmitWindowSize value. */</span></div><div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#ae159c09358e653df3bc9bc024fef33cc">  143</a></span>   uint16_t          <a class="code" href="structlctr_conn_ind__t.html#ae159c09358e653df3bc9bc024fef33cc">txWinOffset</a>;        <span class="comment">/*!&lt; transmitWindowOffset value. */</span></div><div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a24f48ee63bbc14d4a735b29987caf31b">  144</a></span>   uint8_t           <a class="code" href="structlctr_conn_ind__t.html#a24f48ee63bbc14d4a735b29987caf31b">hopInc</a>;             <span class="comment">/*!&lt; hopIncrement value. */</span></div><div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="structlctr_conn_ind__t.html#a56b9a251e0f414dcfde7ffb6dbc5c3a9">  145</a></span>   uint8_t           <a class="code" href="structlctr_conn_ind__t.html#a56b9a251e0f414dcfde7ffb6dbc5c3a9">masterSca</a>;          <span class="comment">/*!&lt; Master sleep clock accuracy. */</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> } <a class="code" href="structlctr_conn_ind__t.html">lctrConnInd_t</a>;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment"></span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">/*! \brief      Connection establish. */</span></div><div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html">  149</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> {</div><div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">  151</a></span>   <a class="code" href="structlctr_msg_hdr__t.html">lctrMsgHdr_t</a>      <a class="code" href="structlctr_conn_establish__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">hdr</a>;                <span class="comment">/*!&lt; Message header. */</span></div><div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a5610f0c2a9a78daf3db3c7a7739a74f4">  152</a></span>   <a class="code" href="structlctr_conn_ind__t.html">lctrConnInd_t</a>     <a class="code" href="structlctr_conn_establish__t.html#a5610f0c2a9a78daf3db3c7a7739a74f4">connInd</a>;            <span class="comment">/*!&lt; Connection indication. */</span></div><div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a1001f77b94d7d5c5dc83c7b536cf35e6">  153</a></span>   uint32_t          <a class="code" href="structlctr_conn_establish__t.html#a1001f77b94d7d5c5dc83c7b536cf35e6">connIndEndTsUsec</a>;   <span class="comment">/*!&lt; Connection indication packet end timestamp in microseconds. */</span></div><div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a917b9da169e9fd3cd19fd97491716f20">  154</a></span>   uint8_t           <a class="code" href="structlctr_conn_establish__t.html#a917b9da169e9fd3cd19fd97491716f20">peerIdAddrType</a>;     <span class="comment">/*!&lt; Peer identity address type. */</span></div><div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#aa3e0c7e984caa0b7c75120238854509e">  155</a></span>   uint8_t           <a class="code" href="structlctr_conn_establish__t.html#aa3e0c7e984caa0b7c75120238854509e">usedChSel</a>;          <span class="comment">/*!&lt; Used channel selection. */</span></div><div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a5f0a425c8eb6451cb6e7bf29deaacfe5">  156</a></span>   uint8_t           <a class="code" href="structlctr_conn_establish__t.html#a5f0a425c8eb6451cb6e7bf29deaacfe5">phy</a>;                <span class="comment">/*!&lt; PHY selection. */</span></div><div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a24076b1e586dbb8e1da22c2b267dcfed">  157</a></span>   bool_t            <a class="code" href="structlctr_conn_establish__t.html#a24076b1e586dbb8e1da22c2b267dcfed">sendAdvSetTerm</a>;     <span class="comment">/*!&lt; Send Advertising Set Termination event. */</span></div><div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a1bf45670f188a1e723c401694ce12c5d">  158</a></span>   uint8_t           <a class="code" href="structlctr_conn_establish__t.html#a1bf45670f188a1e723c401694ce12c5d">numExtAdvEvents</a>;    <span class="comment">/*!&lt; Number of completed extended advertising events. */</span></div><div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#aab60894e0d7d7512a5db9aa906289e0a">  159</a></span>   bool_t            <a class="code" href="structlctr_conn_establish__t.html#aab60894e0d7d7512a5db9aa906289e0a">isAuxConnReq</a>;       <span class="comment">/*!&lt; True if AUX_CON_REQ is received, False if CONN_IND is received. */</span></div><div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a8140505c4430ec162a78aca877921e33">  160</a></span>   uint64_t          <a class="code" href="structlctr_conn_establish__t.html#a8140505c4430ec162a78aca877921e33">peerIdAddr</a>;         <span class="comment">/*!&lt; Peer identity address. */</span></div><div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#affe967e7ee7836ba0600122d65881005">  161</a></span>   uint64_t          <a class="code" href="structlctr_conn_establish__t.html#affe967e7ee7836ba0600122d65881005">peerRpa</a>;            <span class="comment">/*!&lt; Peer RPA. */</span></div><div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="structlctr_conn_establish__t.html#a15fae3d4a854e29dba61ae72cbc53e47">  162</a></span>   uint64_t          <a class="code" href="structlctr_conn_establish__t.html#a15fae3d4a854e29dba61ae72cbc53e47">localRpa</a>;           <span class="comment">/*!&lt; Local RPA. */</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> } <a class="code" href="structlctr_conn_establish__t.html">lctrConnEstablish_t</a>;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> </div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">  Global Variables</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment"></span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment">/*! \brief       Call signature for periodic enabled check function */</span></div><div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#gae57fbc88e50f12fec8d9524b76a5babd">  170</a></span> <span class="keyword">typedef</span> bool_t (*<a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gae57fbc88e50f12fec8d9524b76a5babd">LctrIsPerAdvEnabledFn_t</a>)(uint8_t handle);</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="comment"></span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment">/*! \brief      Function pointer for periodic advertising enable check */</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="keyword">extern</span> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gae57fbc88e50f12fec8d9524b76a5babd">LctrIsPerAdvEnabledFn_t</a> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gaab4cca1ce1677dd7f206b772e06419af">LctrPerAdvEnabled</a>;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> <span class="comment"></span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment">/*! \brief       Call signature to update CIS channel map */</span></div><div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ga83a6a39ab5071a9ffafffbfef5e707da">  176</a></span> <span class="keyword">typedef</span> void (*<a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga83a6a39ab5071a9ffafffbfef5e707da">LctrUpdateCisChanMapFn_t</a>)(uint16_t aclHandle);</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment"></span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">/*! \brief      Function pointer to update CIS channel map */</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="keyword">extern</span> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga83a6a39ab5071a9ffafffbfef5e707da">LctrUpdateCisChanMapFn_t</a> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga3ee3e771ecc441430e161876111cdb45">LctrUpdateCisChanMapFn</a>;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment"></span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">/*! \brief       Call signature for extended scan enabled check function. */</span></div><div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ga64744146bc9903d65af2d9f7cac5b035">  182</a></span> <span class="keyword">typedef</span> bool_t (*<a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga64744146bc9903d65af2d9f7cac5b035">LctrExtCheckFn_t</a>)(uint8_t scanPhy);</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment"></span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="comment">/*! \brief      Function pointer for extended scan enable check. */</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="keyword">extern</span> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga64744146bc9903d65af2d9f7cac5b035">LctrExtCheckFn_t</a> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gad228997c207577e55396576e5334e819">LctrMstExtScanEnabled</a>;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> <span class="comment"></span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> <span class="comment">/*! \brief      Function pointer for extended advertising init enable check. */</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="keyword">extern</span> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga64744146bc9903d65af2d9f7cac5b035">LctrExtCheckFn_t</a> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#gad2e9b7b4cf8fb92959ce87816072ddcc">LctrMstExtInitEnabled</a>;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> <span class="comment"></span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment">/*! \brief      Call signature for periodic sync pending check. */</span></div><div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="group___l_l___l_c_t_r___a_p_i.html#ga0a2b0552492040206cc392e82227c74e">  191</a></span> <span class="keyword">typedef</span> bool_t (*<a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga0a2b0552492040206cc392e82227c74e">LctrPerSyncPendFn_t</a>)(void);</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment"></span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="comment">/*! \brief      Function pointer for periodic sync pending check. */</span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="keyword">extern</span> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga0a2b0552492040206cc392e82227c74e">LctrPerSyncPendFn_t</a> <a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga28c204b0d492bda5d2a175160537db49">LctrMstPerSyncPending</a>;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment"></span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment">/*! \brief      Runtime configuration. */</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="struct_ll_rt_cfg__t.html">LlRtCfg_t</a> *<a class="code" href="group___l_l___l_c_t_r___a_p_i.html#ga0a640584a9f38396e8268e9a7ead5cbe">pLctrRtCfg</a>;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> </div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">/**************************************************************************************************</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment">  Function Declarations</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">**************************************************************************************************/</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> </div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="comment">/* Initialization */</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> uint16_t LctrInitAdvSetMem(uint8_t *pFreeMem, uint32_t freeMemSize);</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> uint16_t LctrInitExtScanMem(uint8_t *pFreeMem, uint32_t freeMemSize);</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> uint16_t LctrInitConnMem(uint8_t *pFreeMem, uint32_t freeMemSize);</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="keywordtype">void</span> LctrSetSupStates(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> </div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">/* Task */</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="keywordtype">void</span> LctrMsgDispatcher(<a class="code" href="structlctr_msg_hdr__t.html">lctrMsgHdr_t</a> *pMsg);</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span> <span class="keywordtype">void</span> LctrEventHandler(uint8_t event);</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> </div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">/* Control */</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> uint8_t LctrSetChannelClass(uint64_t chanMap);</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment"></span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">/*! \} */</span>    <span class="comment">/* LL_LCTR_API */</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> </div><div class="line"><a name="l00218"></a><span class="lineno">  218</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> };</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> </div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="preprocessor">#endif </span><span class="comment">/* LCTR_API_H */</span><span class="preprocessor"></span></div><div class="ttc" id="structlctr_conn_establish__t_html_a917b9da169e9fd3cd19fd97491716f20"><div class="ttname"><a href="structlctr_conn_establish__t.html#a917b9da169e9fd3cd19fd97491716f20">lctrConnEstablish_t::peerIdAddrType</a></div><div class="ttdeci">uint8_t peerIdAddrType</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00154">lctr_api.h:154</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga456ac33d49271d3e2c371351cd1d6371a61a7c3fbc8c9950731f5f9ff0a9b91ed"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371a61a7c3fbc8c9950731f5f9ff0a9b91ed">LCTR_HOST_REPLY_CONN_PARAM_REQ</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00099">lctr_api.h:99</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba83b1dc6850c731732b9b48a9d8cce082"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba83b1dc6850c731732b9b48a9d8cce082">LCTR_EVENT_RX_DIRECT_ADVB</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00089">lctr_api.h:89</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3faa89a9f8f3eb3e2fd41c98a0e391d4c30"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faa89a9f8f3eb3e2fd41c98a0e391d4c30">LCTR_DISP_PER_CREATE_SYNC</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00059">lctr_api.h:59</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba66a766a4a06c83e1d078f5908b68c880"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba66a766a4a06c83e1d078f5908b68c880">LCTR_EVENT_CIS_TX_PENDING</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00085">lctr_api.h:85</a></div></div>
+<div class="ttc" id="structlctr_msg_hdr__t_html_af242d6e3b6108ea75e1eb236e94c8240"><div class="ttname"><a href="structlctr_msg_hdr__t.html#af242d6e3b6108ea75e1eb236e94c8240">lctrMsgHdr_t::handle</a></div><div class="ttdeci">uint16_t handle</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00111">lctr_api.h:111</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa5c24c928b9270d44c45335fd2deb9bed"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa5c24c928b9270d44c45335fd2deb9bed">LCTR_DISP_PER_ADV</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00058">lctr_api.h:58</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fad3344f4649ba174ec906c71c581f6c50"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad3344f4649ba174ec906c71c581f6c50">LCTR_DISP_BCST</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00070">lctr_api.h:70</a></div></div>
+<div class="ttc" id="ll__api_8h_html"><div class="ttname"><a href="ll__api_8h.html">ll_api.h</a></div><div class="ttdoc">Link layer interface file. </div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa05a8e7a1261c5650ea6bb4d0dec5fc60"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa05a8e7a1261c5650ea6bb4d0dec5fc60">LCTR_DISP_FIRST_SM</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00068">lctr_api.h:68</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ga0a640584a9f38396e8268e9a7ead5cbe"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ga0a640584a9f38396e8268e9a7ead5cbe">pLctrRtCfg</a></div><div class="ttdeci">const LlRtCfg_t * pLctrRtCfg</div><div class="ttdoc">Runtime configuration. </div></div>
+<div class="ttc" id="structlctr_chan_map_update__t_html_a137ed3cb99e0d36c3dcc28311d7dd37f"><div class="ttname"><a href="structlctr_chan_map_update__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">lctrChanMapUpdate_t::hdr</a></div><div class="ttdeci">lctrMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00119">lctr_api.h:119</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a7f1ad43d3bf79b40bc39dbb5a6c3a5ae"><div class="ttname"><a href="structlctr_conn_ind__t.html#a7f1ad43d3bf79b40bc39dbb5a6c3a5ae">lctrConnInd_t::timeout</a></div><div class="ttdeci">uint16_t timeout</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00141">lctr_api.h:141</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba4f7d84961adbc47d36df1b48f6afec28"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba4f7d84961adbc47d36df1b48f6afec28">LCTR_EVENT_CIS_RX_PENDING</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00086">lctr_api.h:86</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa8ea45ab72d1c3455e1d97e118738921b"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa8ea45ab72d1c3455e1d97e118738921b">LCTR_DISP_ADV</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00052">lctr_api.h:52</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a56b9a251e0f414dcfde7ffb6dbc5c3a9"><div class="ttname"><a href="structlctr_conn_ind__t.html#a56b9a251e0f414dcfde7ffb6dbc5c3a9">lctrConnInd_t::masterSca</a></div><div class="ttdeci">uint8_t masterSca</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00145">lctr_api.h:145</a></div></div>
+<div class="ttc" id="structlctr_chan_map_update__t_html"><div class="ttname"><a href="structlctr_chan_map_update__t.html">lctrChanMapUpdate_t</a></div><div class="ttdoc">Channel map update message. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00117">lctr_api.h:117</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3facc60d705d7a182872c6baa3d377b80d8"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3facc60d705d7a182872c6baa3d377b80d8">LCTR_DISP_TOTAL</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00066">lctr_api.h:66</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fad8775666ef2c677bec0849615f28da55"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad8775666ef2c677bec0849615f28da55">LCTR_DISP_EXT_INIT</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00057">lctr_api.h:57</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a5610f0c2a9a78daf3db3c7a7739a74f4"><div class="ttname"><a href="structlctr_conn_establish__t.html#a5610f0c2a9a78daf3db3c7a7739a74f4">lctrConnEstablish_t::connInd</a></div><div class="ttdeci">lctrConnInd_t connInd</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00152">lctr_api.h:152</a></div></div>
+<div class="ttc" id="structlctr_msg_hdr__t_html_aeef6900f411bc223febdd92c9435693b"><div class="ttname"><a href="structlctr_msg_hdr__t.html#aeef6900f411bc223febdd92c9435693b">lctrMsgHdr_t::event</a></div><div class="ttdeci">uint8_t event</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00113">lctr_api.h:113</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_ae159c09358e653df3bc9bc024fef33cc"><div class="ttname"><a href="structlctr_conn_ind__t.html#ae159c09358e653df3bc9bc024fef33cc">lctrConnInd_t::txWinOffset</a></div><div class="ttdeci">uint16_t txWinOffset</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00143">lctr_api.h:143</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ga64744146bc9903d65af2d9f7cac5b035"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ga64744146bc9903d65af2d9f7cac5b035">LctrExtCheckFn_t</a></div><div class="ttdeci">bool_t(* LctrExtCheckFn_t)(uint8_t scanPhy)</div><div class="ttdoc">Call signature for extended scan enabled check function. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00182">lctr_api.h:182</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba59b32e9bdd381192981ad56e72a949a9"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba59b32e9bdd381192981ad56e72a949a9">LCTR_EVENT_TOTAL</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00093">lctr_api.h:93</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa7e9c5d79e50c563cb0c1eddc09368c98"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7e9c5d79e50c563cb0c1eddc09368c98">LCTR_DISP_LAST_SM</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00069">lctr_api.h:69</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html"><div class="ttname"><a href="structlctr_conn_ind__t.html">lctrConnInd_t</a></div><div class="ttdoc">Connect request PDU. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00131">lctr_api.h:131</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910baad28f87e1e8c53a5ed626a71dc4eeda4"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910baad28f87e1e8c53a5ed626a71dc4eeda4">LCTR_EVENT_TX_COMPLETE</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00084">lctr_api.h:84</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gad228997c207577e55396576e5334e819"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gad228997c207577e55396576e5334e819">LctrMstExtScanEnabled</a></div><div class="ttdeci">LctrExtCheckFn_t LctrMstExtScanEnabled</div><div class="ttdoc">Function pointer for extended scan enable check. </div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_aab60894e0d7d7512a5db9aa906289e0a"><div class="ttname"><a href="structlctr_conn_establish__t.html#aab60894e0d7d7512a5db9aa906289e0a">lctrConnEstablish_t::isAuxConnReq</a></div><div class="ttdeci">bool_t isAuxConnReq</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00159">lctr_api.h:159</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a24076b1e586dbb8e1da22c2b267dcfed"><div class="ttname"><a href="structlctr_conn_establish__t.html#a24076b1e586dbb8e1da22c2b267dcfed">lctrConnEstablish_t::sendAdvSetTerm</a></div><div class="ttdeci">bool_t sendAdvSetTerm</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00157">lctr_api.h:157</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a24f48ee63bbc14d4a735b29987caf31b"><div class="ttname"><a href="structlctr_conn_ind__t.html#a24f48ee63bbc14d4a735b29987caf31b">lctrConnInd_t::hopInc</a></div><div class="ttdeci">uint8_t hopInc</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00144">lctr_api.h:144</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa7f13f5ff51aeb152d25e47a44873e6f0"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7f13f5ff51aeb152d25e47a44873e6f0">LCTR_DISP_TEST</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00053">lctr_api.h:53</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ga28c204b0d492bda5d2a175160537db49"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ga28c204b0d492bda5d2a175160537db49">LctrMstPerSyncPending</a></div><div class="ttdeci">LctrPerSyncPendFn_t LctrMstPerSyncPending</div><div class="ttdoc">Function pointer for periodic sync pending check. </div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a137ed3cb99e0d36c3dcc28311d7dd37f"><div class="ttname"><a href="structlctr_conn_establish__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">lctrConnEstablish_t::hdr</a></div><div class="ttdeci">lctrMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00151">lctr_api.h:151</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba4ecd3e2ede46a01f85bf0de64bacfcf9"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba4ecd3e2ede46a01f85bf0de64bacfcf9">LCTR_EVENT_SC_GENERATE_DHKEY</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00092">lctr_api.h:92</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa09ef892f75bc82a1b4cf62f0e4175b98"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa09ef892f75bc82a1b4cf62f0e4175b98">LCTR_DISP_SCAN</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00050">lctr_api.h:50</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3faadbe9a53dbf0d0ee22bf570ad9609b87"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faadbe9a53dbf0d0ee22bf570ad9609b87">LCTR_DISP_EXT_SCAN</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00055">lctr_api.h:55</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa4999d88ed7feeed33336dc1d3a76e224"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa4999d88ed7feeed33336dc1d3a76e224">LCTR_DISP_CONN_IND</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00048">lctr_api.h:48</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fac14181340f020a35d861bbdbd62b3aa6"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fac14181340f020a35d861bbdbd62b3aa6">LCTR_DISP_EXT_ADV</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00056">lctr_api.h:56</a></div></div>
+<div class="ttc" id="struct_ll_rt_cfg__t_html"><div class="ttname"><a href="struct_ll_rt_cfg__t.html">LlRtCfg_t</a></div><div class="ttdoc">LL runtime configuration parameters. </div><div class="ttdef"><b>Definition:</b> <a href="ll__api_8h_source.html#l00124">ll_api.h:124</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fac6b64aea847f394bede878467e275efd"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fac6b64aea847f394bede878467e275efd">LCTR_DISP_CONN</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00049">lctr_api.h:49</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_afaafbbaa95f41dd47dd56b014bd55255"><div class="ttname"><a href="structlctr_conn_ind__t.html#afaafbbaa95f41dd47dd56b014bd55255">lctrConnInd_t::accessAddr</a></div><div class="ttdeci">uint32_t accessAddr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00136">lctr_api.h:136</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa7a156831cd25d577e7b5be476d5f8deb"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa7a156831cd25d577e7b5be476d5f8deb">LCTR_DISP_ACAD</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00062">lctr_api.h:62</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_affe967e7ee7836ba0600122d65881005"><div class="ttname"><a href="structlctr_conn_establish__t.html#affe967e7ee7836ba0600122d65881005">lctrConnEstablish_t::peerRpa</a></div><div class="ttdeci">uint64_t peerRpa</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00161">lctr_api.h:161</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a8140505c4430ec162a78aca877921e33"><div class="ttname"><a href="structlctr_conn_establish__t.html#a8140505c4430ec162a78aca877921e33">lctrConnEstablish_t::peerIdAddr</a></div><div class="ttdeci">uint64_t peerIdAddr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00160">lctr_api.h:160</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html"><div class="ttname"><a href="structlctr_conn_establish__t.html">lctrConnEstablish_t</a></div><div class="ttdoc">Connection establish. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00149">lctr_api.h:149</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3faef2f0932864c283d07b4e618aa3dca51"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3faef2f0932864c283d07b4e618aa3dca51">LCTR_DISP_INIT</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00051">lctr_api.h:51</a></div></div>
+<div class="ttc" id="structlctr_big_created__t_html"><div class="ttname"><a href="structlctr_big_created__t.html">lctrBigCreated_t</a></div><div class="ttdoc">BIG created message. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00124">lctr_api.h:124</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga456ac33d49271d3e2c371351cd1d6371ab21442a86c511043ec77899878b3e070"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371ab21442a86c511043ec77899878b3e070">LCTR_HOST_REPLY_CIS_REQ</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00101">lctr_api.h:101</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gad2e9b7b4cf8fb92959ce87816072ddcc"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gad2e9b7b4cf8fb92959ce87816072ddcc">LctrMstExtInitEnabled</a></div><div class="ttdeci">LctrExtCheckFn_t LctrMstExtInitEnabled</div><div class="ttdoc">Function pointer for extended advertising init enable check. </div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a6c52a3d605c056768b59164ce8df8334"><div class="ttname"><a href="structlctr_conn_ind__t.html#a6c52a3d605c056768b59164ce8df8334">lctrConnInd_t::interval</a></div><div class="ttdeci">uint16_t interval</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00139">lctr_api.h:139</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ga83a6a39ab5071a9ffafffbfef5e707da"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ga83a6a39ab5071a9ffafffbfef5e707da">LctrUpdateCisChanMapFn_t</a></div><div class="ttdeci">void(* LctrUpdateCisChanMapFn_t)(uint16_t aclHandle)</div><div class="ttdoc">Call signature to update CIS channel map. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00176">lctr_api.h:176</a></div></div>
+<div class="ttc" id="structlctr_big_created__t_html_a53816db9800339500eee75267cf5833d"><div class="ttname"><a href="structlctr_big_created__t.html#a53816db9800339500eee75267cf5833d">lctrBigCreated_t::bigHandle</a></div><div class="ttdeci">uint8_t bigHandle</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00127">lctr_api.h:127</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ga3ee3e771ecc441430e161876111cdb45"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ga3ee3e771ecc441430e161876111cdb45">LctrUpdateCisChanMapFn</a></div><div class="ttdeci">LctrUpdateCisChanMapFn_t LctrUpdateCisChanMapFn</div><div class="ttdoc">Function pointer to update CIS channel map. </div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a1001f77b94d7d5c5dc83c7b536cf35e6"><div class="ttname"><a href="structlctr_conn_establish__t.html#a1001f77b94d7d5c5dc83c7b536cf35e6">lctrConnEstablish_t::connIndEndTsUsec</a></div><div class="ttdeci">uint32_t connIndEndTsUsec</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00153">lctr_api.h:153</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a48afefcaaef6e4b4a6876eea4032dc39"><div class="ttname"><a href="structlctr_conn_ind__t.html#a48afefcaaef6e4b4a6876eea4032dc39">lctrConnInd_t::crcInit</a></div><div class="ttdeci">uint32_t crcInit</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00137">lctr_api.h:137</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba91305de1ee4c34244d8cc92525fcd5b7"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba91305de1ee4c34244d8cc92525fcd5b7">LCTR_EVENT_SC_GENERATE_P256_KEY_PAIR</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00091">lctr_api.h:91</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ga0a2b0552492040206cc392e82227c74e"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ga0a2b0552492040206cc392e82227c74e">LctrPerSyncPendFn_t</a></div><div class="ttdeci">bool_t(* LctrPerSyncPendFn_t)(void)</div><div class="ttdoc">Call signature for periodic sync pending check. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00191">lctr_api.h:191</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_aa3e0c7e984caa0b7c75120238854509e"><div class="ttname"><a href="structlctr_conn_establish__t.html#aa3e0c7e984caa0b7c75120238854509e">lctrConnEstablish_t::usedChSel</a></div><div class="ttdeci">uint8_t usedChSel</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00155">lctr_api.h:155</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga456ac33d49271d3e2c371351cd1d6371af3fab57481d752e950b5ab1ab6d4f9e1"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga456ac33d49271d3e2c371351cd1d6371af3fab57481d752e950b5ab1ab6d4f9e1">LCTR_HOST_REPLY_LTK_REQ</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00100">lctr_api.h:100</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gae57fbc88e50f12fec8d9524b76a5babd"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gae57fbc88e50f12fec8d9524b76a5babd">LctrIsPerAdvEnabledFn_t</a></div><div class="ttdeci">bool_t(* LctrIsPerAdvEnabledFn_t)(uint8_t handle)</div><div class="ttdoc">Call signature for periodic enabled check function. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00170">lctr_api.h:170</a></div></div>
+<div class="ttc" id="structlctr_msg_hdr__t_html"><div class="ttname"><a href="structlctr_msg_hdr__t.html">lctrMsgHdr_t</a></div><div class="ttdoc">Common message structure passed to event handler. </div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00109">lctr_api.h:109</a></div></div>
+<div class="ttc" id="structlctr_chan_map_update__t_html_a6c2bfca3fba579b1f4bc4c877d5dd9f8"><div class="ttname"><a href="structlctr_chan_map_update__t.html#a6c2bfca3fba579b1f4bc4c877d5dd9f8">lctrChanMapUpdate_t::chanMap</a></div><div class="ttdeci">uint64_t chanMap</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00120">lctr_api.h:120</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910bae3d12c2cb72ab9ea755caebe49ef2e84"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910bae3d12c2cb72ab9ea755caebe49ef2e84">LCTR_EVENT_RX_ADVB</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00088">lctr_api.h:88</a></div></div>
+<div class="ttc" id="ll__defs_8h_html"><div class="ttname"><a href="ll__defs_8h.html">ll_defs.h</a></div><div class="ttdoc">Link layer constant definitions. </div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a3c33efef6d5cbcd1ddacf7f6ec924423"><div class="ttname"><a href="structlctr_conn_ind__t.html#a3c33efef6d5cbcd1ddacf7f6ec924423">lctrConnInd_t::latency</a></div><div class="ttdeci">uint16_t latency</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00140">lctr_api.h:140</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a68c493d689454cc536e3ee3effe4c590"><div class="ttname"><a href="structlctr_conn_ind__t.html#a68c493d689454cc536e3ee3effe4c590">lctrConnInd_t::chanMask</a></div><div class="ttdeci">uint64_t chanMask</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00138">lctr_api.h:138</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fadbb3f3045f90d35a80babef5d28b006b"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fadbb3f3045f90d35a80babef5d28b006b">LCTR_DISP_BIG_BCST</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00064">lctr_api.h:64</a></div></div>
+<div class="ttc" id="bb__api_8h_html"><div class="ttname"><a href="bb__api_8h.html">bb_api.h</a></div><div class="ttdoc">Baseband interface file. </div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a0b3d4564b3ec448217f7d5d130e39352"><div class="ttname"><a href="structlctr_conn_ind__t.html#a0b3d4564b3ec448217f7d5d130e39352">lctrConnInd_t::advAddr</a></div><div class="ttdeci">uint64_t advAddr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00134">lctr_api.h:134</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gaab4cca1ce1677dd7f206b772e06419af"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gaab4cca1ce1677dd7f206b772e06419af">LctrPerAdvEnabled</a></div><div class="ttdeci">LctrIsPerAdvEnabledFn_t LctrPerAdvEnabled</div><div class="ttdoc">Function pointer for periodic advertising enable check. </div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910baf6dba343f181239e7364ffcd1ea6f621"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910baf6dba343f181239e7364ffcd1ea6f621">LCTR_EVENT_ISO_TX_COMPLETE</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00087">lctr_api.h:87</a></div></div>
+<div class="ttc" id="structlctr_big_created__t_html_a137ed3cb99e0d36c3dcc28311d7dd37f"><div class="ttname"><a href="structlctr_big_created__t.html#a137ed3cb99e0d36c3dcc28311d7dd37f">lctrBigCreated_t::hdr</a></div><div class="ttdeci">lctrMsgHdr_t hdr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00126">lctr_api.h:126</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_ad23f13fec77a72933a48b8bb6f058a7a"><div class="ttname"><a href="structlctr_conn_ind__t.html#ad23f13fec77a72933a48b8bb6f058a7a">lctrConnInd_t::initAddr</a></div><div class="ttdeci">uint64_t initAddr</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00133">lctr_api.h:133</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a5f0a425c8eb6451cb6e7bf29deaacfe5"><div class="ttname"><a href="structlctr_conn_establish__t.html#a5f0a425c8eb6451cb6e7bf29deaacfe5">lctrConnEstablish_t::phy</a></div><div class="ttdeci">uint8_t phy</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00156">lctr_api.h:156</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fae1929abef500e0726d3a1e5f09f8273b"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fae1929abef500e0726d3a1e5f09f8273b">LCTR_DISP_PRIV</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00054">lctr_api.h:54</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba57dfded7576ebc4ac82660cf93cc7fe0"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba57dfded7576ebc4ac82660cf93cc7fe0">LCTR_EVENT_RX_SCAN_REQ</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00090">lctr_api.h:90</a></div></div>
+<div class="ttc" id="structlctr_conn_ind__t_html_a0b9a61298746cc81f440aa75599c8a68"><div class="ttname"><a href="structlctr_conn_ind__t.html#a0b9a61298746cc81f440aa75599c8a68">lctrConnInd_t::txWinSize</a></div><div class="ttdeci">uint8_t txWinSize</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00142">lctr_api.h:142</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba29709ff8087cde80578d4c061b4f4749"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba29709ff8087cde80578d4c061b4f4749">LCTR_EVENT_RX_PENDING</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00082">lctr_api.h:82</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga5ebea2f4f6d4457d66de7733a8ea7bd3a230f321f8d42ccc80a165f308a99f1d9"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga5ebea2f4f6d4457d66de7733a8ea7bd3a230f321f8d42ccc80a165f308a99f1d9">LCTR_MSG_RESET</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00076">lctr_api.h:76</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa07e96319d7f3f3588912738d81727ddb"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa07e96319d7f3f3588912738d81727ddb">LCTR_DISP_TRANFER_SYNC</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00060">lctr_api.h:60</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_ggab59c1bec446b10af208f977a871d910ba12bdee570571cd765898b034a6e8175d"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#ggab59c1bec446b10af208f977a871d910ba12bdee570571cd765898b034a6e8175d">LCTR_EVENT_TX_PENDING</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00083">lctr_api.h:83</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fa6793650f5f923ea0cef8594553caee9b"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fa6793650f5f923ea0cef8594553caee9b">LCTR_DISP_PER_SCAN</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00061">lctr_api.h:61</a></div></div>
+<div class="ttc" id="structlctr_msg_hdr__t_html_ab8c0c15b6c35e492fe2509a295d45d69"><div class="ttname"><a href="structlctr_msg_hdr__t.html#ab8c0c15b6c35e492fe2509a295d45d69">lctrMsgHdr_t::dispId</a></div><div class="ttdeci">uint8_t dispId</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00112">lctr_api.h:112</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a15fae3d4a854e29dba61ae72cbc53e47"><div class="ttname"><a href="structlctr_conn_establish__t.html#a15fae3d4a854e29dba61ae72cbc53e47">lctrConnEstablish_t::localRpa</a></div><div class="ttdeci">uint64_t localRpa</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00162">lctr_api.h:162</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fad49c99280258e5243349a0866bdb988f"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fad49c99280258e5243349a0866bdb988f">LCTR_DISP_CIS</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00063">lctr_api.h:63</a></div></div>
+<div class="ttc" id="structlctr_conn_establish__t_html_a1bf45670f188a1e723c401694ce12c5d"><div class="ttname"><a href="structlctr_conn_establish__t.html#a1bf45670f188a1e723c401694ce12c5d">lctrConnEstablish_t::numExtAdvEvents</a></div><div class="ttdeci">uint8_t numExtAdvEvents</div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00158">lctr_api.h:158</a></div></div>
+<div class="ttc" id="group___l_l___l_c_t_r___a_p_i_html_gga103e76ed4bd42f776f7f260080b98b3fafa63352ff6e59f89e142ae36fe925e43"><div class="ttname"><a href="group___l_l___l_c_t_r___a_p_i.html#gga103e76ed4bd42f776f7f260080b98b3fafa63352ff6e59f89e142ae36fe925e43">LCTR_DISP_BIG_SYNC</a></div><div class="ttdef"><b>Definition:</b> <a href="lctr__api_8h_source.html#l00065">lctr_api.h:65</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/lctr__api_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:24:17 GMT -->
+</html>

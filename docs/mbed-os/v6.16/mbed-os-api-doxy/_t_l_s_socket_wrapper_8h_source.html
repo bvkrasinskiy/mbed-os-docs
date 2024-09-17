@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_t_l_s_socket_wrapper_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:29:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | TLSSocketWrapper.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_t_l_s_socket_wrapper_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_t_l_s_socket_wrapper_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_t_l_s_socket_wrapper_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_cb5af92455080ed55b05484cdba3a725.html">netsocket</a></li><li class="navelem"><a class="el" href="dir_56659472dbd75ea18e02ad7ce9d70b5f.html">include</a></li><li class="navelem"><a class="el" href="dir_767d146d609b49ec9286b3f260bbff1f.html">netsocket</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TLSSocketWrapper.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_t_l_s_socket_wrapper_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/** @file TLSSocketWrapper.h TLSSocketWrapper */</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">/*</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> * Copyright (c) 2018 ARM Limited</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> * SPDX-License-Identifier: Apache-2.0</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> * You may obtain a copy of the License at</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *     http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> *</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> * limitations under the License.</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment">/** @addtogroup netsocket</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment">* @{</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment">*/</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="preprocessor">#ifndef _MBED_HTTPS_TLS_SOCKET_WRAPPER_H_</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="preprocessor">#define _MBED_HTTPS_TLS_SOCKET_WRAPPER_H_</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="preprocessor">#include "<a class="code" href="_socket_8h.html">netsocket/Socket.h</a>"</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="preprocessor">#include "rtos/EventFlags.h"</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="preprocessor">#include "platform/Callback.h"</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="preprocessor">#include "mbedtls/platform.h"</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="preprocessor">#include "mbedtls/ssl.h"</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="preprocessor">#include "mbedtls/entropy.h"</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#include "mbedtls/ctr_drbg.h"</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#include "mbedtls/hmac_drbg.h"</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="preprocessor">#include "mbedtls/error.h"</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment">// This class requires Mbed TLS SSL/TLS client code</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="preprocessor">#if defined(MBEDTLS_SSL_CLI_C) || defined(DOXYGEN_ONLY)</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="preprocessor">#if defined(MBEDTLS_CTR_DRBG_C)</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="preprocessor">#define DRBG_CTX mbedtls_ctr_drbg_context</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> <span class="preprocessor">#define DRBG_INIT mbedtls_ctr_drbg_init</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="preprocessor">#define DRBG_RANDOM mbedtls_ctr_drbg_random</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="preprocessor">#define DRBG_FREE mbedtls_ctr_drbg_free</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#elif defined(MBEDTLS_HMAC_DRBG_C)</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="preprocessor">#define DRBG_CTX mbedtls_hmac_drbg_context</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="preprocessor">#define DRBG_INIT mbedtls_hmac_drbg_init</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="preprocessor">#define DRBG_RANDOM mbedtls_hmac_drbg_random</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> <span class="preprocessor">#define DRBG_FREE mbedtls_hmac_drbg_free</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="preprocessor">#else</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="preprocessor">#error "CTR or HMAC must be defined for TLSSocketWrapper!"</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment"></span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">/**</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment"> * TLSSocket is a wrapper around Socket for interacting with TLS servers.</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment"> *</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment"> * TLSSocketWrapper can use any Socket as a transport. After</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment"> * completing the TLS handshake, it can be used as any Socket would be used.</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment"> *</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment"> */</span></div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_t_l_s_socket_wrapper.html">   59</a></span> <span class="keyword">class </span><a class="code" href="class_t_l_s_socket_wrapper.html">TLSSocketWrapper</a> : <span class="keyword">public</span> <a class="code" href="class_socket.html">Socket</a> {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="keyword">public</span>:<span class="comment"></span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment">    /** Transport modes */</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313">   62</a></span>     <span class="keyword">enum</span> <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313">control_transport</a> {</div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313ae713ef19fd1d1198f7605f2bf4e5e2a5">   63</a></span>         <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313ae713ef19fd1d1198f7605f2bf4e5e2a5">TRANSPORT_KEEP</a>,                 <span class="comment">/**&lt; Doesn't call connect() or close() on transport socket */</span></div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313acb4339d18b0932dec65afc8f3b654271">   64</a></span>         <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313acb4339d18b0932dec65afc8f3b654271">TRANSPORT_CONNECT_AND_CLOSE</a>,    <span class="comment">/**&lt; Does call connect() and close() on transport socket */</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313ad94bd467c4affd72972c4202e238564e">   65</a></span>         <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313ad94bd467c4affd72972c4202e238564e">TRANSPORT_CONNECT</a>,              <span class="comment">/**&lt; Does call only connect() on transport socket */</span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313a8a7ecfee0dfda5cbc7839a0a15e17fe4">   66</a></span>         <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313a8a7ecfee0dfda5cbc7839a0a15e17fe4">TRANSPORT_CLOSE</a>,                <span class="comment">/**&lt; Does call close() on transport socket */</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>     };</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment"></span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">    /** Create a TLSSocketWrapper.</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">     *</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment">     * @param transport    Underlying transport socket to wrap.</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment">     * @param hostname     Hostname of the remote host, used for certificate checking.</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">     * @param control      Transport control mode. See @ref control_transport.</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> <span class="comment">     */</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>     <a class="code" href="class_t_l_s_socket_wrapper.html#a54de1f99ede8d83c91f8750f1af110a4">TLSSocketWrapper</a>(<a class="code" href="class_socket.html">Socket</a> *transport, <span class="keyword">const</span> <span class="keywordtype">char</span> *hostname = NULL, <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313">control_transport</a> control = <a class="code" href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313acb4339d18b0932dec65afc8f3b654271">TRANSPORT_CONNECT_AND_CLOSE</a>);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment"></span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">    /** Destroy a socket wrapper.</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment">     *</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment">     *  Closes socket wrapper if the socket wrapper is still open.</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">     */</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>     <a class="code" href="class_t_l_s_socket_wrapper.html#af2640430a35ca258d27b99cfd8a4d49b">~TLSSocketWrapper</a>() <span class="keyword">override</span>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment"></span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="comment">    /** Set hostname.</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment">     *</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment">     * @note Implementation is inside following defines:</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> <span class="comment">     * #if defined(MBEDTLS_X509_CRT_PARSE_C) &amp;&amp; !defined(MBEDTLS_X509_REMOVE_HOSTNAME_VERIFICATION)</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> <span class="comment">     *</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment">     * TLSSocket requires hostname used to verify the certificate.</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment">     * If hostname is not given in constructor, this function must be used before</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">     * starting the TLS handshake.</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> <span class="comment">     *</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> <span class="comment">     * @param hostname     Hostname of the remote host, used for certificate checking.</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">     */</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>     <span class="keywordtype">void</span> <a class="code" href="class_t_l_s_socket_wrapper.html#a31a3d95f5366b5235f38642a12996b19">set_hostname</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *hostname);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment"></span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> <span class="comment">    /** Sets the certification of Root CA.</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">     *</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> <span class="comment">     * @note Must be called before calling connect()</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment">     *</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment">     * @param root_ca Root CA Certificate in any Mbed TLS-supported format.</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span> <span class="comment">     * @param len     Length of certificate (including terminating 0 for PEM).</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> <span class="comment">     * @retval NSAPI_ERROR_OK on success.</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> <span class="comment">     * @retval NSAPI_ERROR_NO_MEMORY in case there is not enough memory to allocate certificate.</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment">     * @retval NSAPI_ERROR_PARAMETER in case the provided root_ca parameter failed parsing.</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">     */</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a379801ad46117a604da624d99ca0deed">set_root_ca_cert</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *root_ca, <span class="keywordtype">size_t</span> len);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="comment"></span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">    /** Sets the certification of Root CA.</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span> <span class="comment">     *</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">     * @note Must be called before calling connect()</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> <span class="comment">     *</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">     * @param root_ca_pem Root CA Certificate in PEM format.</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span> <span class="comment">     * @retval NSAPI_ERROR_OK on success.</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="comment">     * @retval NSAPI_ERROR_NO_MEMORY in case there is not enough memory to allocate certificate.</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span> <span class="comment">     * @retval NSAPI_ERROR_PARAMETER in case the provided root_ca parameter failed parsing.</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">     */</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a379801ad46117a604da624d99ca0deed">set_root_ca_cert</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *root_ca_pem);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment"></span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="comment">    /** Sets client certificate, and client private key.</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment">     *</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> <span class="comment">     * @param client_cert Client certification in PEM or DER format.</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">     * @param client_cert_len Certificate size including the terminating null byte for PEM data.</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment">     * @param client_private_key_pem Client private key in PEM or DER format.</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="comment">     * @param client_private_key_len Key size including the terminating null byte for PEM data</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment">     * @retval NSAPI_ERROR_OK on success.</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">     * @retval NSAPI_ERROR_PARAMETER in case the provided root_ca parameter failed parsing.</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">     */</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#afaf5de2f7bf45f94bd19b49612abde8e">set_client_cert_key</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *client_cert, <span class="keywordtype">size_t</span> client_cert_len,</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>                                       <span class="keyword">const</span> <span class="keywordtype">void</span> *client_private_key_pem, <span class="keywordtype">size_t</span> client_private_key_len);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment"></span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment">    /** Sets client certificate, and client private key.</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">     *</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment">     * @param client_cert_pem Client certification in PEM format.</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">     * @param client_private_key_pem Client private key in PEM format.</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">     * @retval NSAPI_ERROR_OK on success.</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">     * @retval NSAPI_ERROR_PARAMETER in case the provided root_ca parameter failed parsing.</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> <span class="comment">     */</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#afaf5de2f7bf45f94bd19b49612abde8e">set_client_cert_key</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *client_cert_pem, <span class="keyword">const</span> <span class="keywordtype">char</span> *client_private_key_pem);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment"></span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment">    /** Send data over a TLS socket.</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment">     *</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">     *  The socket must be connected to a remote host. Returns the number of</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">     *  bytes sent from the buffer.</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment">     *</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">     *  @param data     Buffer of data to send to the host.</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">     *  @param size     Size of the buffer in bytes.</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">     *  @retval         int Number of sent bytes on success</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">     *  @retval         NSAPI_ERROR_NO_SOCKET in case socket was not created correctly.</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">     *  @retval         NSAPI_ERROR_WOULD_BLOCK in case non-blocking mode is enabled</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">     *                  and send cannot be performed immediately.</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment">     *  @retval         NSAPI_ERROR_DEVICE_ERROR in case of tls-related errors.</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">     *                  See @ref mbedtls_ssl_write.</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment">     */</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#ad310d89685b610125ee0d648fd5aa470">send</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *data, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) <span class="keyword">override</span>;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment"></span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment">    /** Receive data over a TLS socket.</span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">     *</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">     *  The socket must be connected to a remote host. Returns the number of</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">     *  bytes received into the buffer.</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">     *</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">     *  @param data     Destination buffer for data received from the host.</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span> <span class="comment">     *  @param size     Size of the buffer in bytes.</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> <span class="comment">     *  @retval         int Number of sent bytes on success</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment">     *  @retval         NSAPI_ERROR_NO_SOCKET in case socket was not created correctly.</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">     *  @retval         NSAPI_ERROR_WOULD_BLOCK in case non-blocking mode is enabled</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">     *                  and send cannot be performed immediately.</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment">     *  @retval         NSAPI_ERROR_DEVICE_ERROR in case of tls-related errors.</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">     *                  See @ref mbedtls_ssl_read.</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment">     *  @return         0 if no data is available to be received</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">     *                  and the peer has performed an orderly shutdown.</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="comment">     */</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>     <a class="code" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#ad80e0d2c2bbf75a9c80b54e6bebec4a0">recv</a>(<span class="keywordtype">void</span> *data, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) <span class="keyword">override</span>;</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> </div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>     <span class="comment">/* = Functions inherited from Socket = */</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#ad0597c2e67d39a8408e2697cdf98145d">close</a>() <span class="keyword">override</span>;<span class="comment"></span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">    /**</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span> <span class="comment">     *  Connect the transport socket and start handshake.</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> <span class="comment">     *</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">     *  @note: In case connect() returns an error, the state of the socket is</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="comment">     *  unspecified. A new socket should be created before reconnecting.</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">     *</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span> <span class="comment">     *  See @ref Socket::connect and @ref start_handshake</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">     */</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a94280296c1620b5b30e0df842151b406">connect</a>(<span class="keyword">const</span> <a class="code" href="class_socket_address.html">SocketAddress</a> &amp;address = <a class="code" href="class_socket_address.html">SocketAddress</a>()) <span class="keyword">override</span>;</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>     <a class="code" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a4a7ab60f016a5d62aef8175464a77198">sendto</a>(<span class="keyword">const</span> <a class="code" href="class_socket_address.html">SocketAddress</a> &amp;address, <span class="keyword">const</span> <span class="keywordtype">void</span> *data, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) <span class="keyword">override</span>;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>     <a class="code" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#ada0cdb93bddbaaa7dae79ed4f40ba2c9">recvfrom</a>(<a class="code" href="class_socket_address.html">SocketAddress</a> *address,</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>                                    <span class="keywordtype">void</span> *data, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) <span class="keyword">override</span>;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> </div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>     <a class="code" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a1132b14fc956958c69dbb9718f7c48ec">sendto_control</a>(<span class="keyword">const</span> <a class="code" href="class_socket_address.html">SocketAddress</a> &amp;address,</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>                                          <span class="keyword">const</span> <span class="keywordtype">void</span> *data, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size,</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>                                          <a class="code" href="structnsapi__msghdr.html">nsapi_msghdr_t</a> *control, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> control_size) <span class="keyword">override</span>;</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>     <a class="code" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a9545761931a0a2e3eb4a3bd187753690">recvfrom_control</a>(<a class="code" href="class_socket_address.html">SocketAddress</a> *address,</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>                                            <span class="keywordtype">void</span> *data, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size,</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>                                            <a class="code" href="structnsapi__msghdr.html">nsapi_msghdr_t</a> *control, <a class="code" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> control_size) <span class="keyword">override</span>;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> </div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a2c648a3e7a3a5e01dadddf3b93023e38">bind</a>(<span class="keyword">const</span> <a class="code" href="class_socket_address.html">SocketAddress</a> &amp;address) <span class="keyword">override</span>;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>     <span class="keywordtype">void</span> <a class="code" href="class_t_l_s_socket_wrapper.html#a74bb4486263a8da3692980bed1e47e26">set_blocking</a>(<span class="keywordtype">bool</span> blocking) <span class="keyword">override</span>;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>     <span class="keywordtype">void</span> <a class="code" href="class_t_l_s_socket_wrapper.html#ab5a933911d88935e21c0acd54394c865">set_timeout</a>(<span class="keywordtype">int</span> timeout) <span class="keyword">override</span>;</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>     <span class="keywordtype">void</span> <a class="code" href="class_t_l_s_socket_wrapper.html#a4375c0d24ead23169c0511736b05df7d">sigio</a>(<a class="code" href="classmbed_1_1_callback.html">mbed::Callback</a>&lt;<span class="keywordtype">void</span>()&gt; func) <span class="keyword">override</span>;</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#af4e99acda304c5e6a4018e6a474db24c">setsockopt</a>(<span class="keywordtype">int</span> level, <span class="keywordtype">int</span> optname, <span class="keyword">const</span> <span class="keywordtype">void</span> *optval, <span class="keywordtype">unsigned</span> optlen) <span class="keyword">override</span>;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#abd6327cb21e45e95959c2274d9a5eaa0">getsockopt</a>(<span class="keywordtype">int</span> level, <span class="keywordtype">int</span> optname, <span class="keywordtype">void</span> *optval, <span class="keywordtype">unsigned</span> *optlen) <span class="keyword">override</span>;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>     <a class="code" href="class_socket.html">Socket</a> *<a class="code" href="class_t_l_s_socket_wrapper.html#acbc130577385303439c53eeef1ab9cab">accept</a>(<a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> *<a class="code" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42">error</a> = NULL) <span class="keyword">override</span>;</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#a30618b0cdf86a22f04ef54cfc87d315b">listen</a>(<span class="keywordtype">int</span> backlog = 1) <span class="keyword">override</span>;</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="class_t_l_s_socket_wrapper.html#adee66c8624fd6c6a320728b5c05841cf">getpeername</a>(<a class="code" href="class_socket_address.html">SocketAddress</a> *address) <span class="keyword">override</span>;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> </div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="preprocessor">#if defined(MBEDTLS_X509_CRT_PARSE_C) || defined(DOXYGEN_ONLY)</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> <span class="comment">    /** Get own certificate directly from Mbed TLS.</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span> <span class="comment">     *</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span> <span class="comment">     * @return Internal Mbed TLS X509 structure.</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span> <span class="comment">     */</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>     mbedtls_x509_crt *<a class="code" href="class_t_l_s_socket_wrapper.html#a8841109d425094a6d064be5bddef5866">get_own_cert</a>();</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span> <span class="comment"></span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span> <span class="comment">    /** Set own certificate directly to Mbed TLS.</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span> <span class="comment">     *</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">     * @param crt Mbed TLS X509 certificate chain.</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">     * @return error code from mbedtls_ssl_conf_own_cert().</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">     */</span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>     <span class="keywordtype">int</span> <a class="code" href="class_t_l_s_socket_wrapper.html#a0ffbad64ad1f8b7535cb65ad0b54bda0">set_own_cert</a>(mbedtls_x509_crt *crt);</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment"></span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span> <span class="comment">    /** Get CA chain structure.</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span> <span class="comment">     *</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span> <span class="comment">     * @return Mbed TLS X509 certificate chain.</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment">     */</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>     mbedtls_x509_crt *<a class="code" href="class_t_l_s_socket_wrapper.html#a864af69c0f20acd5c951939685191ef9">get_ca_chain</a>();</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span> <span class="comment"></span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment">    /** Set CA chain directly to Mbed TLS.</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment">     *</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment">     * @param crt Mbed TLS X509 certificate chain.</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span> <span class="comment">     */</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>     <span class="keywordtype">void</span> <a class="code" href="class_t_l_s_socket_wrapper.html#accc8ee5b0d0eb1d46d914dd64fe3fd8f">set_ca_chain</a>(mbedtls_x509_crt *crt);</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span> <span class="comment"></span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span> <span class="comment">    /** Get internal Mbed TLS configuration structure.</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="comment">     *</span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment">     * @return Mbed TLS SSL config.</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> <span class="comment">     */</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>     mbedtls_ssl_config *<a class="code" href="class_t_l_s_socket_wrapper.html#a637fea9922740a42950e49c1d9f8ba20">get_ssl_config</a>();</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> <span class="comment"></span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">    /** Override Mbed TLS configuration.</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">     *</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="comment">     * @param conf Mbed TLS SSL configuration structure.</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment">     */</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>     <span class="keywordtype">void</span> <a class="code" href="class_t_l_s_socket_wrapper.html#a614c8e5c79068f8d612b56cf1a05f668">set_ssl_config</a>(mbedtls_ssl_config *conf);</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span> <span class="comment"></span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="comment">    /** Get internal Mbed TLS context structure.</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="comment">     *</span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="comment">     * @return SSL context.</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="comment">     */</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>     mbedtls_ssl_context *<a class="code" href="class_t_l_s_socket_wrapper.html#ab814d8339a1b25ffee62c2d556bb1d90">get_ssl_context</a>();</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> </div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="keyword">protected</span>:</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="preprocessor">#ifndef DOXYGEN_ONLY</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="comment">    /** Initiates TLS Handshake.</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="comment">     *</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="comment">     *  Initiates a TLS handshake to a remote peer.</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="comment">     *  Underlying transport socket should already be connected.</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="comment">     *</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment">     *  Root CA certification must be set by set_ssl_ca_pem() before</span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">     *  calling this function.</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">     *</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment">     *  For non-blocking purposes, this functions needs to know whether this</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span> <span class="comment">     *  was a first call to Socket::connect() API so that NSAPI_ERROR_INPROGRESS</span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="comment">     *  does not happen twice.</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="comment">     *</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="comment">     *  @param        first_call is this a first call to Socket::connect() API.</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="comment">     *  @retval       NSAPI_ERROR_OK if we happen to complete the request on the first call.</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <span class="comment">     *  @retval       NSAPI_ERROR_IN_PROGRESS if the first call did not complete the request.</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="comment">     *  @retval       NSAPI_ERROR_NO_SOCKET in case the transport socket was not created correctly.</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="comment">     *  @retval       NSAPI_ERROR_AUTH_FAILURE in case of tls-related authentication errors.</span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="comment">     *                See @ref mbedtls_ctr_drbg_seed or @ref mbedtls_hmac_drbg_seed, @ref mbedtls_ssl_setup. @ref mbedtls_ssl_handshake.</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="comment">     */</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> start_handshake(<span class="keywordtype">bool</span> first_call);</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> </div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>     <span class="keywordtype">bool</span> is_handshake_started() <span class="keyword">const</span>;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> </div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>     <span class="keywordtype">void</span> event();</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> </div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> </div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> </div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="keyword">private</span>:<span class="comment"></span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment">    /** Continue already initialized handshake */</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>     <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> continue_handshake();<span class="comment"></span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment">    /**</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">     * Helper for pretty-printing Mbed TLS error codes</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment">     */</span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>     <span class="keyword">static</span> <span class="keywordtype">void</span> print_mbedtls_error(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> err);</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> </div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="preprocessor">#if MBED_CONF_TLS_SOCKET_DEBUG_LEVEL &gt; 0</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> <span class="comment">    /**</span></div><div class="line"><a name="l00291"></a><span class="lineno">  291</span> <span class="comment">     * Debug callback for Mbed TLS</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span> <span class="comment">     * Just prints on the USB serial port</span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span> <span class="comment">     */</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>     <span class="keyword">static</span> <span class="keywordtype">void</span> my_debug(<span class="keywordtype">void</span> *ctx, <span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span> *file, <span class="keywordtype">int</span> line,</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>                          <span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span> <span class="comment"></span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span> <span class="comment">    /**</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment">     * Certificate verification callback for Mbed TLS</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span> <span class="comment">     * Here we only use it to display information on each cert in the chain</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span> <span class="comment">     */</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>     <span class="keyword">static</span> <span class="keywordtype">int</span> my_verify(<span class="keywordtype">void</span> *data, mbedtls_x509_crt *crt, <span class="keywordtype">int</span> depth, uint32_t *flags);</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span> </div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="preprocessor">#endif </span><span class="comment">/* MBED_CONF_TLS_SOCKET_DEBUG_LEVEL &gt; 0 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment"></span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment">    /**</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span> <span class="comment">     * Receive callback for Mbed TLS</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> <span class="comment">     */</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>     <span class="keyword">static</span> <span class="keywordtype">int</span> ssl_recv(<span class="keywordtype">void</span> *ctx, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> len);</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="comment"></span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment">    /**</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">     * Send callback for Mbed TLS</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="comment">     */</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>     <span class="keyword">static</span> <span class="keywordtype">int</span> ssl_send(<span class="keywordtype">void</span> *ctx, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> len);</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> </div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>     mbedtls_ssl_context _ssl;</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="preprocessor">#ifdef MBEDTLS_X509_CRT_PARSE_C</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>     mbedtls_pk_context _pkctx;</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> </div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>     DRBG_CTX _drbg;</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> </div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>     mbedtls_entropy_context _entropy;</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> </div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>     <a class="code" href="classrtos_1_1_event_flags.html">rtos::EventFlags</a> _event_flag;</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>     <a class="code" href="classmbed_1_1_callback.html">mbed::Callback&lt;void()&gt;</a> _sigio;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>     <a class="code" href="class_socket.html">Socket</a> *_transport;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>     <span class="keywordtype">int</span> _timeout = -1;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span> </div><div class="line"><a name="l00329"></a><span class="lineno">  329</span> <span class="preprocessor">#ifdef MBEDTLS_X509_CRT_PARSE_C</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>     mbedtls_x509_crt *_cacert = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>     mbedtls_x509_crt *_clicert = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>     mbedtls_ssl_config *_ssl_conf = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> </div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>     <span class="keywordtype">bool</span> _connect_transport: 1;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>     <span class="keywordtype">bool</span> _close_transport: 1;</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>     <span class="keywordtype">bool</span> _tls_initialized: 1;</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>     <span class="keywordtype">bool</span> _handshake_completed: 1;</div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>     <span class="keywordtype">bool</span> _cacert_allocated: 1;</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>     <span class="keywordtype">bool</span> _clicert_allocated: 1;</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>     <span class="keywordtype">bool</span> _ssl_conf_allocated: 1;</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span> </div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> };</div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> </div><div class="line"><a name="l00345"></a><span class="lineno">  345</span> <span class="preprocessor">#endif </span><span class="comment">/* MBEDTLS_SSL_CLI_C */</span><span class="preprocessor"></span></div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> <span class="preprocessor">#endif // _MBED_HTTPS_TLS_SOCKET_WRAPPER_H_</span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="comment">/** @} */</span></div><div class="ttc" id="structnsapi__msghdr_html"><div class="ttname"><a href="structnsapi__msghdr.html">nsapi_msghdr</a></div><div class="ttdoc">nsapi_msghdr </div><div class="ttdef"><b>Definition:</b> <a href="nsapi__types_8h_source.html#l00414">nsapi_types.h:414</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_ada0cdb93bddbaaa7dae79ed4f40ba2c9"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#ada0cdb93bddbaaa7dae79ed4f40ba2c9">TLSSocketWrapper::recvfrom</a></div><div class="ttdeci">nsapi_size_or_error_t recvfrom(SocketAddress *address, void *data, nsapi_size_t size) override</div><div class="ttdoc">Receive a data from a socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a30618b0cdf86a22f04ef54cfc87d315b"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a30618b0cdf86a22f04ef54cfc87d315b">TLSSocketWrapper::listen</a></div><div class="ttdeci">nsapi_error_t listen(int backlog=1) override</div><div class="ttdoc">Listen for incoming connections. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_abd6327cb21e45e95959c2274d9a5eaa0"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#abd6327cb21e45e95959c2274d9a5eaa0">TLSSocketWrapper::getsockopt</a></div><div class="ttdeci">nsapi_error_t getsockopt(int level, int optname, void *optval, unsigned *optlen) override</div><div class="ttdoc">Get socket options. </div></div>
+<div class="ttc" id="group__platform__error_html_gabc561ef2adcee0d1aef1917f40828a42"><div class="ttname"><a href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42">error</a></div><div class="ttdeci">MBED_NORETURN void error(const char *format,...) MBED_PRINTF(1</div><div class="ttdoc">To generate a fatal compile-time error, you can use the pre-processor error directive. </div></div>
+<div class="ttc" id="classrtos_1_1_event_flags_html"><div class="ttname"><a href="classrtos_1_1_event_flags.html">rtos::EventFlags</a></div><div class="ttdoc">The EventFlags class is used to control event flags or wait for event flags other threads control...</div><div class="ttdef"><b>Definition:</b> <a href="_event_flags_8h_source.html#l00053">EventFlags.h:53</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_acbc130577385303439c53eeef1ab9cab"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#acbc130577385303439c53eeef1ab9cab">TLSSocketWrapper::accept</a></div><div class="ttdeci">Socket * accept(nsapi_error_t *error=NULL) override</div><div class="ttdoc">Accepts a connection on a socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html">TLSSocketWrapper</a></div><div class="ttdoc">TLSSocket is a wrapper around Socket for interacting with TLS servers. </div><div class="ttdef"><b>Definition:</b> <a href="_t_l_s_socket_wrapper_8h_source.html#l00059">TLSSocketWrapper.h:59</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_ad0597c2e67d39a8408e2697cdf98145d"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#ad0597c2e67d39a8408e2697cdf98145d">TLSSocketWrapper::close</a></div><div class="ttdeci">nsapi_error_t close() override</div><div class="ttdoc">Closes the socket. </div></div>
+<div class="ttc" id="group__netsocket_html_ga67a8f07758d2ee2a1809293fa52bdf14"><div class="ttname"><a href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a></div><div class="ttdeci">signed int nsapi_error_t</div><div class="ttdoc">Type used to represent error codes. </div><div class="ttdef"><b>Definition:</b> <a href="nsapi__types_8h_source.html#l00142">nsapi_types.h:142</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a637fea9922740a42950e49c1d9f8ba20"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a637fea9922740a42950e49c1d9f8ba20">TLSSocketWrapper::get_ssl_config</a></div><div class="ttdeci">mbedtls_ssl_config * get_ssl_config()</div><div class="ttdoc">Get internal Mbed TLS configuration structure. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a2c648a3e7a3a5e01dadddf3b93023e38"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a2c648a3e7a3a5e01dadddf3b93023e38">TLSSocketWrapper::bind</a></div><div class="ttdeci">nsapi_error_t bind(const SocketAddress &amp;address) override</div><div class="ttdoc">Bind a specific address to a socket. </div></div>
+<div class="ttc" id="group__netsocket_html_ga1aef0d1a2599df92bb4499b5c4262d25"><div class="ttname"><a href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a></div><div class="ttdeci">signed int nsapi_size_or_error_t</div><div class="ttdoc">Type used to represent either a size or error passed through sockets. </div><div class="ttdef"><b>Definition:</b> <a href="nsapi__types_8h_source.html#l00153">nsapi_types.h:153</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a4a7ab60f016a5d62aef8175464a77198"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a4a7ab60f016a5d62aef8175464a77198">TLSSocketWrapper::sendto</a></div><div class="ttdeci">nsapi_size_or_error_t sendto(const SocketAddress &amp;address, const void *data, nsapi_size_t size) override</div><div class="ttdoc">Send a message on a socket. </div></div>
+<div class="ttc" id="_socket_8h_html"><div class="ttname"><a href="_socket_8h.html">Socket.h</a></div><div class="ttdoc">Abstract Socket interface. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_aa276d81e7e532312a696754b5ca39313ad94bd467c4affd72972c4202e238564e"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313ad94bd467c4affd72972c4202e238564e">TLSSocketWrapper::TRANSPORT_CONNECT</a></div><div class="ttdoc">Does call only connect() on transport socket. </div><div class="ttdef"><b>Definition:</b> <a href="_t_l_s_socket_wrapper_8h_source.html#l00065">TLSSocketWrapper.h:65</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_aa276d81e7e532312a696754b5ca39313a8a7ecfee0dfda5cbc7839a0a15e17fe4"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313a8a7ecfee0dfda5cbc7839a0a15e17fe4">TLSSocketWrapper::TRANSPORT_CLOSE</a></div><div class="ttdoc">Does call close() on transport socket. </div><div class="ttdef"><b>Definition:</b> <a href="_t_l_s_socket_wrapper_8h_source.html#l00066">TLSSocketWrapper.h:66</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a864af69c0f20acd5c951939685191ef9"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a864af69c0f20acd5c951939685191ef9">TLSSocketWrapper::get_ca_chain</a></div><div class="ttdeci">mbedtls_x509_crt * get_ca_chain()</div><div class="ttdoc">Get CA chain structure. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a0ffbad64ad1f8b7535cb65ad0b54bda0"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a0ffbad64ad1f8b7535cb65ad0b54bda0">TLSSocketWrapper::set_own_cert</a></div><div class="ttdeci">int set_own_cert(mbedtls_x509_crt *crt)</div><div class="ttdoc">Set own certificate directly to Mbed TLS. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_adee66c8624fd6c6a320728b5c05841cf"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#adee66c8624fd6c6a320728b5c05841cf">TLSSocketWrapper::getpeername</a></div><div class="ttdeci">nsapi_error_t getpeername(SocketAddress *address) override</div><div class="ttdoc">Get the remote-end peer associated with this socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a379801ad46117a604da624d99ca0deed"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a379801ad46117a604da624d99ca0deed">TLSSocketWrapper::set_root_ca_cert</a></div><div class="ttdeci">nsapi_error_t set_root_ca_cert(const void *root_ca, size_t len)</div><div class="ttdoc">Sets the certification of Root CA. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_ab5a933911d88935e21c0acd54394c865"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#ab5a933911d88935e21c0acd54394c865">TLSSocketWrapper::set_timeout</a></div><div class="ttdeci">void set_timeout(int timeout) override</div><div class="ttdoc">Set timeout on blocking socket operations. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_afaf5de2f7bf45f94bd19b49612abde8e"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#afaf5de2f7bf45f94bd19b49612abde8e">TLSSocketWrapper::set_client_cert_key</a></div><div class="ttdeci">nsapi_error_t set_client_cert_key(const void *client_cert, size_t client_cert_len, const void *client_private_key_pem, size_t client_private_key_len)</div><div class="ttdoc">Sets client certificate, and client private key. </div></div>
+<div class="ttc" id="class_socket_address_html"><div class="ttname"><a href="class_socket_address.html">SocketAddress</a></div><div class="ttdoc">SocketAddress class. </div><div class="ttdef"><b>Definition:</b> <a href="_socket_address_8h_source.html#l00037">SocketAddress.h:37</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_accc8ee5b0d0eb1d46d914dd64fe3fd8f"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#accc8ee5b0d0eb1d46d914dd64fe3fd8f">TLSSocketWrapper::set_ca_chain</a></div><div class="ttdeci">void set_ca_chain(mbedtls_x509_crt *crt)</div><div class="ttdoc">Set CA chain directly to Mbed TLS. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a1132b14fc956958c69dbb9718f7c48ec"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a1132b14fc956958c69dbb9718f7c48ec">TLSSocketWrapper::sendto_control</a></div><div class="ttdeci">nsapi_size_or_error_t sendto_control(const SocketAddress &amp;address, const void *data, nsapi_size_t size, nsapi_msghdr_t *control, nsapi_size_t control_size) override</div><div class="ttdoc">Send a message on a socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a31a3d95f5366b5235f38642a12996b19"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a31a3d95f5366b5235f38642a12996b19">TLSSocketWrapper::set_hostname</a></div><div class="ttdeci">void set_hostname(const char *hostname)</div><div class="ttdoc">Set hostname. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_ad80e0d2c2bbf75a9c80b54e6bebec4a0"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#ad80e0d2c2bbf75a9c80b54e6bebec4a0">TLSSocketWrapper::recv</a></div><div class="ttdeci">nsapi_size_or_error_t recv(void *data, nsapi_size_t size) override</div><div class="ttdoc">Receive data over a TLS socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_af4e99acda304c5e6a4018e6a474db24c"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#af4e99acda304c5e6a4018e6a474db24c">TLSSocketWrapper::setsockopt</a></div><div class="ttdeci">nsapi_error_t setsockopt(int level, int optname, const void *optval, unsigned optlen) override</div><div class="ttdoc">Set socket options. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a8841109d425094a6d064be5bddef5866"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a8841109d425094a6d064be5bddef5866">TLSSocketWrapper::get_own_cert</a></div><div class="ttdeci">mbedtls_x509_crt * get_own_cert()</div><div class="ttdoc">Get own certificate directly from Mbed TLS. </div></div>
+<div class="ttc" id="class_socket_html"><div class="ttname"><a href="class_socket.html">Socket</a></div><div class="ttdoc">Socket interface. </div><div class="ttdef"><b>Definition:</b> <a href="_socket_8h_source.html#l00040">Socket.h:40</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_af2640430a35ca258d27b99cfd8a4d49b"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#af2640430a35ca258d27b99cfd8a4d49b">TLSSocketWrapper::~TLSSocketWrapper</a></div><div class="ttdeci">~TLSSocketWrapper() override</div><div class="ttdoc">Destroy a socket wrapper. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_aa276d81e7e532312a696754b5ca39313ae713ef19fd1d1198f7605f2bf4e5e2a5"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313ae713ef19fd1d1198f7605f2bf4e5e2a5">TLSSocketWrapper::TRANSPORT_KEEP</a></div><div class="ttdoc">Doesn&amp;#39;t call connect() or close() on transport socket. </div><div class="ttdef"><b>Definition:</b> <a href="_t_l_s_socket_wrapper_8h_source.html#l00063">TLSSocketWrapper.h:63</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a614c8e5c79068f8d612b56cf1a05f668"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a614c8e5c79068f8d612b56cf1a05f668">TLSSocketWrapper::set_ssl_config</a></div><div class="ttdeci">void set_ssl_config(mbedtls_ssl_config *conf)</div><div class="ttdoc">Override Mbed TLS configuration. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_aa276d81e7e532312a696754b5ca39313acb4339d18b0932dec65afc8f3b654271"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313acb4339d18b0932dec65afc8f3b654271">TLSSocketWrapper::TRANSPORT_CONNECT_AND_CLOSE</a></div><div class="ttdoc">Does call connect() and close() on transport socket. </div><div class="ttdef"><b>Definition:</b> <a href="_t_l_s_socket_wrapper_8h_source.html#l00064">TLSSocketWrapper.h:64</a></div></div>
+<div class="ttc" id="group__netsocket_html_gaeaef3ae1ffcf0d50c66fa2ca37621281"><div class="ttname"><a href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a></div><div class="ttdeci">unsigned int nsapi_size_t</div><div class="ttdoc">Type used to represent the size of data passed through sockets. </div><div class="ttdef"><b>Definition:</b> <a href="nsapi__types_8h_source.html#l00146">nsapi_types.h:146</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_aa276d81e7e532312a696754b5ca39313"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#aa276d81e7e532312a696754b5ca39313">TLSSocketWrapper::control_transport</a></div><div class="ttdeci">control_transport</div><div class="ttdoc">Transport modes. </div><div class="ttdef"><b>Definition:</b> <a href="_t_l_s_socket_wrapper_8h_source.html#l00062">TLSSocketWrapper.h:62</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a4375c0d24ead23169c0511736b05df7d"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a4375c0d24ead23169c0511736b05df7d">TLSSocketWrapper::sigio</a></div><div class="ttdeci">void sigio(mbed::Callback&lt; void()&gt; func) override</div><div class="ttdoc">Register a callback on state change of the socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a94280296c1620b5b30e0df842151b406"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a94280296c1620b5b30e0df842151b406">TLSSocketWrapper::connect</a></div><div class="ttdeci">nsapi_error_t connect(const SocketAddress &amp;address=SocketAddress()) override</div><div class="ttdoc">Connect the transport socket and start handshake. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a9545761931a0a2e3eb4a3bd187753690"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a9545761931a0a2e3eb4a3bd187753690">TLSSocketWrapper::recvfrom_control</a></div><div class="ttdeci">nsapi_size_or_error_t recvfrom_control(SocketAddress *address, void *data, nsapi_size_t size, nsapi_msghdr_t *control, nsapi_size_t control_size) override</div><div class="ttdoc">Receive a data from a socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a54de1f99ede8d83c91f8750f1af110a4"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a54de1f99ede8d83c91f8750f1af110a4">TLSSocketWrapper::TLSSocketWrapper</a></div><div class="ttdeci">TLSSocketWrapper(Socket *transport, const char *hostname=NULL, control_transport control=TRANSPORT_CONNECT_AND_CLOSE)</div><div class="ttdoc">Create a TLSSocketWrapper. </div></div>
+<div class="ttc" id="classmbed_1_1_callback_html"><div class="ttname"><a href="classmbed_1_1_callback.html">mbed::Callback</a></div><div class="ttdoc">Callback class based on template specialization. </div><div class="ttdef"><b>Definition:</b> <a href="_callback_8h_source.html#l00053">Callback.h:53</a></div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_ad310d89685b610125ee0d648fd5aa470"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#ad310d89685b610125ee0d648fd5aa470">TLSSocketWrapper::send</a></div><div class="ttdeci">nsapi_error_t send(const void *data, nsapi_size_t size) override</div><div class="ttdoc">Send data over a TLS socket. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_ab814d8339a1b25ffee62c2d556bb1d90"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#ab814d8339a1b25ffee62c2d556bb1d90">TLSSocketWrapper::get_ssl_context</a></div><div class="ttdeci">mbedtls_ssl_context * get_ssl_context()</div><div class="ttdoc">Get internal Mbed TLS context structure. </div></div>
+<div class="ttc" id="class_t_l_s_socket_wrapper_html_a74bb4486263a8da3692980bed1e47e26"><div class="ttname"><a href="class_t_l_s_socket_wrapper.html#a74bb4486263a8da3692980bed1e47e26">TLSSocketWrapper::set_blocking</a></div><div class="ttdeci">void set_blocking(bool blocking) override</div><div class="ttdoc">Set blocking or non-blocking mode of the socket. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_t_l_s_socket_wrapper_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:29:31 GMT -->
+</html>

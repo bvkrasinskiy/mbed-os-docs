@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1internal_1_1_sys_timer.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:16:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | SysTimer&lt; Period, IRQ &gt; Class Template Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="classmbed_1_1internal_1_1_sys_timer.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1internal_1_1_sys_timer.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1internal_1_1_sys_timer.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><b>mbed</b></li><li class="navelem"><b>internal</b></li><li class="navelem"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html">SysTimer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> |
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">SysTimer&lt; Period, IRQ &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__mbed-os-internal.html">Internal API</a> » <a class="el" href="group__platform-internal-api.html">Platform</a> » <a class="el" href="group__mbed___sys_timer.html">SysTimer class</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html" title="The SysTimer class is used to provide timing for system suspension, and the idle loop in TICKLESS mod...">SysTimer</a> class is used to provide timing for system suspension, and the idle loop in TICKLESS mode.  
+ <a href="classmbed_1_1internal_1_1_sys_timer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SysTimer&lt; Period, IRQ &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="classmbed_1_1internal_1_1_sys_timer.png" usemap="#SysTimer_3C_20Period_2C_20IRQ_20_3E_map"/>
+  <map id="SysTimer_3C_20Period_2C_20IRQ_20_3E_map" name="SysTimer&lt; Period, IRQ &gt;_map">
+<area alt="TimerEvent" coords="0,0,256,24" href="classmbed_1_1_timer_event.html" shape="rect" title="Base abstraction for timer interrupts. "/>
+<area alt="NonCopyable&lt; SysTimer&lt; Period, IRQ &gt; &gt;" coords="266,0,522,24" href="classmbed_1_1_non_copyable.html" shape="rect"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a7f4179eb551095a2be43d8a852a523a7"><td align="right" class="memItemLeft" valign="top">using </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a7f4179eb551095a2be43d8a852a523a7">highres_duration</a> = TickerDataClock::duration</td></tr>
+<tr class="memdesc:a7f4179eb551095a2be43d8a852a523a7"><td class="mdescLeft"> </td><td class="mdescRight">duration type used for underlying high-res timer  <a href="#a7f4179eb551095a2be43d8a852a523a7">More...</a><br/></td></tr>
+<tr class="separator:a7f4179eb551095a2be43d8a852a523a7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ada6e392ce65a2f904bdd26c21fde2d5c"><td align="right" class="memItemLeft" valign="top">using </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ada6e392ce65a2f904bdd26c21fde2d5c">highres_time_point</a> = TickerDataClock::time_point</td></tr>
+<tr class="memdesc:ada6e392ce65a2f904bdd26c21fde2d5c"><td class="mdescLeft"> </td><td class="mdescRight">time_point type used for underlying high-res timer  <a href="#ada6e392ce65a2f904bdd26c21fde2d5c">More...</a><br/></td></tr>
+<tr class="separator:ada6e392ce65a2f904bdd26c21fde2d5c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aca97957725ac69abfe134082fe69f99f"><td align="right" class="memItemLeft" valign="top">using </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#aca97957725ac69abfe134082fe69f99f">highres_period</a> = TickerDataClock::period</td></tr>
+<tr class="memdesc:aca97957725ac69abfe134082fe69f99f"><td class="mdescLeft"> </td><td class="mdescRight">period of underlying high-res timer  <a href="#aca97957725ac69abfe134082fe69f99f">More...</a><br/></td></tr>
+<tr class="separator:aca97957725ac69abfe134082fe69f99f"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3380bca378dc7f8fb99e8bdd6bca4a8a"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a3380bca378dc7f8fb99e8bdd6bca4a8a">SysTimer</a> ()</td></tr>
+<tr class="memdesc:a3380bca378dc7f8fb99e8bdd6bca4a8a"><td class="mdescLeft"> </td><td class="mdescRight">Default constructor uses LPTICKER if available (so the timer will continue to run in deep sleep), else USTICKER.  <a href="#a3380bca378dc7f8fb99e8bdd6bca4a8a">More...</a><br/></td></tr>
+<tr class="separator:a3380bca378dc7f8fb99e8bdd6bca4a8a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3f2c8de90b87334ecf6406ec845848f8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a3f2c8de90b87334ecf6406ec845848f8">set_wake_time</a> (time_point at)</td></tr>
+<tr class="memdesc:a3f2c8de90b87334ecf6406ec845848f8"><td class="mdescLeft"> </td><td class="mdescRight">Get the interrupt number for the tick.  <a href="#a3f2c8de90b87334ecf6406ec845848f8">More...</a><br/></td></tr>
+<tr class="separator:a3f2c8de90b87334ecf6406ec845848f8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a174ba97818843110670bc48c931e7460"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a174ba97818843110670bc48c931e7460">wake_time_passed</a> () const </td></tr>
+<tr class="memdesc:a174ba97818843110670bc48c931e7460"><td class="mdescLeft"> </td><td class="mdescRight">Check whether the wake time has passed.  <a href="#a174ba97818843110670bc48c931e7460">More...</a><br/></td></tr>
+<tr class="separator:a174ba97818843110670bc48c931e7460"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a626fb521a05cbb73aee58c30fabfb2ff"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a626fb521a05cbb73aee58c30fabfb2ff">wake_time_set</a> () const </td></tr>
+<tr class="memdesc:a626fb521a05cbb73aee58c30fabfb2ff"><td class="mdescLeft"> </td><td class="mdescRight">Check whether wake timer is active.  <a href="#a626fb521a05cbb73aee58c30fabfb2ff">More...</a><br/></td></tr>
+<tr class="separator:a626fb521a05cbb73aee58c30fabfb2ff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9f3607524a91394601b7dcc5392053c6"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a9f3607524a91394601b7dcc5392053c6">cancel_wake</a> ()</td></tr>
+<tr class="memdesc:a9f3607524a91394601b7dcc5392053c6"><td class="mdescLeft"> </td><td class="mdescRight">Cancel any pending wake.  <a href="#a9f3607524a91394601b7dcc5392053c6">More...</a><br/></td></tr>
+<tr class="separator:a9f3607524a91394601b7dcc5392053c6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af712e47d55e987473e45ab968722a9fe"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#af712e47d55e987473e45ab968722a9fe">start_tick</a> ()</td></tr>
+<tr class="memdesc:af712e47d55e987473e45ab968722a9fe"><td class="mdescLeft"> </td><td class="mdescRight">Schedule an os tick to fire.  <a href="#af712e47d55e987473e45ab968722a9fe">More...</a><br/></td></tr>
+<tr class="separator:af712e47d55e987473e45ab968722a9fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3bb229792e14cfd0f966a2b5f1d4224f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a3bb229792e14cfd0f966a2b5f1d4224f">acknowledge_tick</a> ()</td></tr>
+<tr class="memdesc:a3bb229792e14cfd0f966a2b5f1d4224f"><td class="mdescLeft"> </td><td class="mdescRight">Acknowledge an os tick.  <a href="#a3bb229792e14cfd0f966a2b5f1d4224f">More...</a><br/></td></tr>
+<tr class="separator:a3bb229792e14cfd0f966a2b5f1d4224f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a76d619f7facaf03875704ce1aa7ede4d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a76d619f7facaf03875704ce1aa7ede4d">cancel_tick</a> ()</td></tr>
+<tr class="memdesc:a76d619f7facaf03875704ce1aa7ede4d"><td class="mdescLeft"> </td><td class="mdescRight">Prevent any more scheduled ticks from triggering.  <a href="#a76d619f7facaf03875704ce1aa7ede4d">More...</a><br/></td></tr>
+<tr class="separator:a76d619f7facaf03875704ce1aa7ede4d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aecf3b32991218e0ab39252858da159a7"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#aecf3b32991218e0ab39252858da159a7">ticking</a> () const </td></tr>
+<tr class="memdesc:aecf3b32991218e0ab39252858da159a7"><td class="mdescLeft"> </td><td class="mdescRight">Check whether ticker is active.  <a href="#aecf3b32991218e0ab39252858da159a7">More...</a><br/></td></tr>
+<tr class="separator:aecf3b32991218e0ab39252858da159a7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9ed323a89c66f0518e50bae83158907"><td align="right" class="memItemLeft" valign="top">std::chrono::duration&lt; int, period &gt; </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ae9ed323a89c66f0518e50bae83158907">unacknowledged_ticks</a> () const </td></tr>
+<tr class="memdesc:ae9ed323a89c66f0518e50bae83158907"><td class="mdescLeft"> </td><td class="mdescRight">Check unacknowledged ticks.  <a href="#ae9ed323a89c66f0518e50bae83158907">More...</a><br/></td></tr>
+<tr class="separator:ae9ed323a89c66f0518e50bae83158907"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad14113588c2116c703173a762cd4535e"><td align="right" class="memItemLeft" valign="top">time_point </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ad14113588c2116c703173a762cd4535e">get_tick</a> () const </td></tr>
+<tr class="memdesc:ad14113588c2116c703173a762cd4535e"><td class="mdescLeft"> </td><td class="mdescRight">Get the current tick count.  <a href="#ad14113588c2116c703173a762cd4535e">More...</a><br/></td></tr>
+<tr class="separator:ad14113588c2116c703173a762cd4535e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abef149d6e71c65f34e2df349ccd3aa7e"><td align="right" class="memItemLeft" valign="top">time_point </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#abef149d6e71c65f34e2df349ccd3aa7e">update_and_get_tick</a> ()</td></tr>
+<tr class="memdesc:abef149d6e71c65f34e2df349ccd3aa7e"><td class="mdescLeft"> </td><td class="mdescRight">Update and get the current tick count.  <a href="#abef149d6e71c65f34e2df349ccd3aa7e">More...</a><br/></td></tr>
+<tr class="separator:abef149d6e71c65f34e2df349ccd3aa7e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad35627965545926f7e41fc1dac2025ba"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a7f4179eb551095a2be43d8a852a523a7">highres_duration</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ad35627965545926f7e41fc1dac2025ba">get_time_since_tick</a> () const </td></tr>
+<tr class="memdesc:ad35627965545926f7e41fc1dac2025ba"><td class="mdescLeft"> </td><td class="mdescRight">Returns time since last tick.  <a href="#ad35627965545926f7e41fc1dac2025ba">More...</a><br/></td></tr>
+<tr class="separator:ad35627965545926f7e41fc1dac2025ba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:accb2a3c7a5e3558ba645f57807804596"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ada6e392ce65a2f904bdd26c21fde2d5c">highres_time_point</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#accb2a3c7a5e3558ba645f57807804596">get_time</a> () const </td></tr>
+<tr class="memdesc:accb2a3c7a5e3558ba645f57807804596"><td class="mdescLeft"> </td><td class="mdescRight">Get the time.  <a href="#accb2a3c7a5e3558ba645f57807804596">More...</a><br/></td></tr>
+<tr class="separator:accb2a3c7a5e3558ba645f57807804596"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;class Period, bool IRQ = true&gt;<br/>
+class mbed::internal::SysTimer&lt; Period, IRQ &gt;</h3>
+
+<p>The <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html" title="The SysTimer class is used to provide timing for system suspension, and the idle loop in TICKLESS mod...">SysTimer</a> class is used to provide timing for system suspension, and the idle loop in TICKLESS mode. </p>
+<p>Template for speed for testing - only one instance will be used normally.</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html" title="The SysTimer class is used to provide timing for system suspension, and the idle loop in TICKLESS mod...">SysTimer</a> is not the part of Mbed API. </dd></dl>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00050">50</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a7f4179eb551095a2be43d8a852a523a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">using <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a7f4179eb551095a2be43d8a852a523a7">highres_duration</a> =  TickerDataClock::duration</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>duration type used for underlying high-res timer </p>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00061">61</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca97957725ac69abfe134082fe69f99f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">using <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#aca97957725ac69abfe134082fe69f99f">highres_period</a> =  TickerDataClock::period</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>period of underlying high-res timer </p>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00065">65</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada6e392ce65a2f904bdd26c21fde2d5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">using <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ada6e392ce65a2f904bdd26c21fde2d5c">highres_time_point</a> =  TickerDataClock::time_point</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>time_point type used for underlying high-res timer </p>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00063">63</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3380bca378dc7f8fb99e8bdd6bca4a8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html">SysTimer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Default constructor uses LPTICKER if available (so the timer will continue to run in deep sleep), else USTICKER. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3bb229792e14cfd0f966a2b5f1d4224f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void acknowledge_tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Acknowledge an os tick. </p>
+<p>This will queue another os tick immediately if the os is running slow </p>
+
+</div>
+</div>
+<a class="anchor" id="a76d619f7facaf03875704ce1aa7ede4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cancel_tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Prevent any more scheduled ticks from triggering. </p>
+<p>If called from OS tick context, there may be remaining unacknowledged ticks. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9f3607524a91394601b7dcc5392053c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void cancel_wake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Cancel any pending wake. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad14113588c2116c703173a762cd4535e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">time_point get_tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the current tick count. </p>
+<p>This count is updated by the ticker interrupt, if the ticker interrupt is running. It the ticker interrupt is not running, <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#abef149d6e71c65f34e2df349ccd3aa7e" title="Update and get the current tick count. ">update_and_get_tick()</a> should be used instead.</p>
+<p>This indicates how many ticks have been generated by the tick interrupt. The os_timer should equal this number minus the number of unacknowledged ticks.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of ticks since timer creation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="accb2a3c7a5e3558ba645f57807804596"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ada6e392ce65a2f904bdd26c21fde2d5c">highres_time_point</a> get_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the time. </p>
+<p>Returns the instantaneous precision time from underlying timer. This is a slow operation so should not be called from critical sections.</p>
+<dl class="section return"><dt>Returns</dt><dd>Current time in microseconds </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad35627965545926f7e41fc1dac2025ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a7f4179eb551095a2be43d8a852a523a7">highres_duration</a> get_time_since_tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns time since last tick. </p>
+<dl class="section return"><dt>Returns</dt><dd>Relative time in microseconds </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3f2c8de90b87334ecf6406ec845848f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_wake_time </td>
+          <td>(</td>
+          <td class="paramtype">time_point </td>
+          <td class="paramname"><em>at</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Get the interrupt number for the tick. </p>
+<dl class="section return"><dt>Returns</dt><dd>interrupt number Set the wake time</dd></dl>
+<p>Schedules an interrupt to cause wake-up in time for the event. Interrupt may be arranged early to account for latency. If the time has already passed, no interrupt will be scheduled.</p>
+<p>This is called from outside a critical section, as it is known to be a slow operation.</p>
+<p>If the wake time is already set, this is a no-op. But that check is racy, which means <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#a626fb521a05cbb73aee58c30fabfb2ff" title="Check whether wake timer is active. ">wake_time_set()</a> should be rechecked after taking a critical section.</p>
+<p>As a side-effect, this clears the unacknowledged tick count - the caller is expected to use <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#abef149d6e71c65f34e2df349ccd3aa7e" title="Update and get the current tick count. ">update_and_get_tick()</a> after the suspend operation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">at</td><td>Wake up tick </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the ticker tick is already scheduled it needs to be cancelled first! </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af712e47d55e987473e45ab968722a9fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void start_tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Schedule an os tick to fire. </p>
+<p>Ticks will be rescheduled automatically every tick until cancel_tick is called.</p>
+<p>A tick will be fired immediately if there are any unacknowledged ticks.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If a tick is already scheduled it needs to be cancelled first! </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aecf3b32991218e0ab39252858da159a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool ticking </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check whether ticker is active. </p>
+<p>Each time the tick interrupt fires, it is automatically rescheduled, so this will remain true once the tick is started, except during processing.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the ticker is active. </dd></dl>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00176">176</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9ed323a89c66f0518e50bae83158907"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">std::chrono::duration&lt;int, period&gt; unacknowledged_ticks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check unacknowledged ticks. </p>
+<p>Returns the count of how many times the OS timer has been queued minus the number of times is has been acknowledged.</p>
+<p><a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ad14113588c2116c703173a762cd4535e" title="Get the current tick count. ">get_tick()</a> - <a class="el" href="classmbed_1_1internal_1_1_sys_timer.html#ae9ed323a89c66f0518e50bae83158907" title="Check unacknowledged ticks. ">unacknowledged_ticks()</a> should equal the OS's tick count, although such a calculation is not atomic if the ticker is currently running.</p>
+<dl class="section return"><dt>Returns</dt><dd>number of unacknowledged ticks </dd></dl>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00192">192</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abef149d6e71c65f34e2df349ccd3aa7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">time_point update_and_get_tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Update and get the current tick count. </p>
+<p>This is a slow operation that reads the timer and adjusts for elapsed time. Can only be used when the ticker is not running, as there is no IRQ synchronization.</p>
+<p>This clears the unacknowledged tick counter - the caller is assumed to update their timer based on this return.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of ticks since timer creation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a174ba97818843110670bc48c931e7460"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool wake_time_passed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check whether the wake time has passed. </p>
+<p>This is a fast operation, based on checking whether the wake interrupt has run.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the specified wake tick has passed </dd></dl>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00122">122</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a626fb521a05cbb73aee58c30fabfb2ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool wake_time_set </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Check whether wake timer is active. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the wake timer is active. </dd></dl>
+
+<p>Definition at line <a class="el" href="_sys_timer_8h_source.html#l00132">132</a> of file <a class="el" href="_sys_timer_8h_source.html">SysTimer.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1internal_1_1_sys_timer.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:16:31 GMT -->
+</html>

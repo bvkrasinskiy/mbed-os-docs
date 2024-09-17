@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/apis/securitymanager.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:14:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        
+        
+        <title>SecurityManager - API references and tutorials | Mbed OS 6 Documentation</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="../static/css/vendor/font-awesome-4.7.0/css/font-awesome.min.mbed-cache-269550530cc127b6aa5a35925a7de6ce.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-23ac288f803d41065f3596e4c6b08e94.css" rel="stylesheet"/>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="securitymanager.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/apis/securitymanager.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/apis/securitymanager.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="off-canvas-wrapper" id="docs-content">
+            <div class="off-canvas-wrapper-inner full-height" data-off-canvas-wrapper="">
+                <div class="off-canvas-content" data-off-canvas-content="">
+                    <a href="#" id="nav-button">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </a>
+
+                    <div class="toc-wrapper" id="navbar">
+                        <div id="toc">
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item introduction" href="../introduction/index.html">Introduction to Mbed OS 6</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item bare-metal" href="../bare-metal/index.html">Mbed OS bare metal profile</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item quick-start" href="../quick-start/index.html">Quick start</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item apis active-doc" href="index.html">API references and tutorials</a>
+        </div>
+        
+
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="index.html">Full API list</a>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="scheduling-rtos-and-event-handling.html">Scheduling: RTOS and event handling</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="scheduling-concepts.html">Scheduling concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="scheduling-concepts.html">RTOS overview</a>
+                        
+                        <a class="toc-item" href="thread-safety.html">Thread safety</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="scheduling-options-and-config.html">Scheduling options and config</a>
+                    
+                    
+                    <a class="toc-item" href="scheduling-tutorials.html">Scheduling tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="scheduling-tutorials.html">The EventQueue API</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="rtos-apis.html">RTOS APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="rtos-apis.html">ConditionVariable</a>
+                        
+                        <a class="toc-item" href="eventflags.html">EventFlags</a>
+                        
+                        <a class="toc-item" href="idle-loop.html">Idle loop</a>
+                        
+                        <a class="toc-item" href="kernel-interface-functions.html">Kernel interface functions</a>
+                        
+                        <a class="toc-item" href="mail.html">Mail</a>
+                        
+                        <a class="toc-item" href="mutex.html">Mutex</a>
+                        
+                        <a class="toc-item" href="queue.html">Queue</a>
+                        
+                        <a class="toc-item" href="semaphore.html">Semaphore</a>
+                        
+                        <a class="toc-item" href="thisthread.html">ThisThread</a>
+                        
+                        <a class="toc-item" href="thread.html">Thread</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="event-handling-apis.html">Event handling APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="event-handling-apis.html">Event</a>
+                        
+                        <a class="toc-item" href="eventqueue.html">EventQueue</a>
+                        
+                        <a class="toc-item" href="userallocatedevent.html">UserAllocatedEvent</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="drivers.html">Drivers</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="drivers-concepts.html">Drivers concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="driver-interfaces-experimental.html">Driver Interfaces (Experimental)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="drivers-architecture.html">Drivers architecture</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="drivers-architecture.html">USB device stack</a>
+                        
+                        <a class="toc-item" href="usb-overview.html">USB components overview</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="drivers-options-and-config.html">Drivers options and config</a>
+                    
+                    
+                    <a class="toc-item" href="drivers-tutorials.html">Drivers tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="drivers-tutorials.html">Alarm tutorial</a>
+                        
+                        <a class="toc-item" href="usb-wav-audio-player.html">USB WAV audio player</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="standard-pin-names.html">Standard Pin Names</a>
+                        
+                        <a class="toc-item" href="arduino-uno-pin-names.html">Arduino Uno Pin Names</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="serial-uart-apis.html">Serial (UART) APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="serial-uart-apis.html">BufferedSerial</a>
+                        
+                        <a class="toc-item" href="unbufferedserial.html">UnbufferedSerial</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="spi-apis.html">SPI APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="spi-apis.html">QuadSPI (QSPI)</a>
+                        
+                        <a class="toc-item" href="spi.html">SPI</a>
+                        
+                        <a class="toc-item" href="spislave.html">SPISlave</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="i-o-apis.html">I/O APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="i-o-apis.html">AnalogIn</a>
+                        
+                        <a class="toc-item" href="analogout.html">AnalogOut</a>
+                        
+                        <a class="toc-item" href="busin.html">BusIn</a>
+                        
+                        <a class="toc-item" href="busout.html">BusOut</a>
+                        
+                        <a class="toc-item" href="businout.html">BusInOut</a>
+                        
+                        <a class="toc-item" href="digitalin.html">DigitalIn</a>
+                        
+                        <a class="toc-item" href="digitalout.html">DigitalOut</a>
+                        
+                        <a class="toc-item" href="digitalinout.html">DigitalInOut</a>
+                        
+                        <a class="toc-item" href="interruptin.html">InterruptIn</a>
+                        
+                        <a class="toc-item" href="portin.html">PortIn</a>
+                        
+                        <a class="toc-item" href="portout.html">PortOut</a>
+                        
+                        <a class="toc-item" href="portinout.html">PortInOut</a>
+                        
+                        <a class="toc-item" href="pwmout.html">PwmOut</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="usb-apis.html">USB APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="usb-apis.html">USBAudio</a>
+                        
+                        <a class="toc-item" href="usbcdc.html">USBCDC</a>
+                        
+                        <a class="toc-item" href="usbcdc-ecm.html">USBCDC_ECM</a>
+                        
+                        <a class="toc-item" href="usbhid.html">USBHID</a>
+                        
+                        <a class="toc-item" href="usbkeyboard.html">USBKeyboard</a>
+                        
+                        <a class="toc-item" href="usbmidi.html">USBMIDI</a>
+                        
+                        <a class="toc-item" href="usbmouse.html">USBMouse</a>
+                        
+                        <a class="toc-item" href="usbmousekeyboard.html">USBMouseKeyboard</a>
+                        
+                        <a class="toc-item" href="usbmsd.html">USBMSD</a>
+                        
+                        <a class="toc-item" href="usbserial.html">USBSerial</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="other-driver-apis.html">Other driver APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="other-driver-apis.html">CAN</a>
+                        
+                        <a class="toc-item" href="flash-iap.html">Flash IAP</a>
+                        
+                        <a class="toc-item" href="i2c.html">I2C</a>
+                        
+                        <a class="toc-item" href="i2cslave.html">I2CSlave</a>
+                        
+                        <a class="toc-item" href="mbedcrc.html">MbedCRC</a>
+                        
+                        <a class="toc-item" href="resetreason.html">ResetReason</a>
+                        
+                        <a class="toc-item" href="watchdog.html">Watchdog</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="platform.html">Platform</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="platform-concepts.html">Platform concepts</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="platform-concepts.html">Platform overview</a>
+                        
+                        <a class="toc-item" href="printf-and-reducing-memory.html">printf and reducing memory</a>
+                        
+                        <a class="toc-item" href="memory-model.html">Memory</a>
+                        
+                        <a class="toc-item" href="static-memory-optimization.html">Static memory optimization</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="platform-options-and-config.html">Platform options and config</a>
+                    
+                    
+                    <a class="toc-item" href="platform-tutorials.html">Platform tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="platform-tutorials.html">Application flow control</a>
+                        
+                        <a class="toc-item" href="power-optimization.html">Power optimization</a>
+                        
+                        <a class="toc-item" href="runtime-memory-tracing.html">Runtime memory tracing</a>
+                        
+                        <a class="toc-item" href="runtime-memory-statistics.html">Runtime memory statistics</a>
+                        
+                        <a class="toc-item" href="link-time-optimization.html">Link Time Optimization</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="time-apis.html">Time APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="time-apis.html">RTC</a>
+                        
+                        <a class="toc-item" href="ticker.html">Ticker</a>
+                        
+                        <a class="toc-item" href="time.html">Time</a>
+                        
+                        <a class="toc-item" href="timeout.html">Timeout</a>
+                        
+                        <a class="toc-item" href="timer.html">Timer</a>
+                        
+                        <a class="toc-item" href="wait.html">Wait</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="power-apis.html">Power APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="power-apis.html">DeepSleepLock</a>
+                        
+                        <a class="toc-item" href="lowpowerticker.html">LowPowerTicker</a>
+                        
+                        <a class="toc-item" href="lowpowertimeout.html">LowPowerTimeout</a>
+                        
+                        <a class="toc-item" href="lowpowertimer.html">LowPowerTimer</a>
+                        
+                        <a class="toc-item" href="power-management-sleep.html">Power management (sleep)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="memory-apis.html">Memory APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="memory-apis.html">Memory tracing</a>
+                        
+                        <a class="toc-item" href="mpu-management.html">MPU management</a>
+                        
+                        <a class="toc-item" href="memorypool.html">MemoryPool</a>
+                        
+                        <a class="toc-item" href="mbed-statistics.html">Mbed statistics</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="other-platform-apis.html">Other platform APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="other-platform-apis.html">Assert</a>
+                        
+                        <a class="toc-item" href="atcmdparser.html">ATCmdParser</a>
+                        
+                        <a class="toc-item" href="callback.html">Callback</a>
+                        
+                        <a class="toc-item" href="circularbuffer.html">CircularBuffer</a>
+                        
+                        <a class="toc-item" href="criticalsectionlock.html">CriticalSectionLock</a>
+                        
+                        <a class="toc-item" href="debug.html">Debug</a>
+                        
+                        <a class="toc-item" href="error-handling.html">Error handling</a>
+                        
+                        <a class="toc-item" href="filehandle.html">FileHandle</a>
+                        
+                        <a class="toc-item" href="noncopyable.html">NonCopyable</a>
+                        
+                        <a class="toc-item" href="platformmutex.html">PlatformMutex</a>
+                        
+                        <a class="toc-item" href="poll.html">Poll</a>
+                        
+                        <a class="toc-item" href="scopedramexecutionlock.html">ScopedRamExecutionLock</a>
+                        
+                        <a class="toc-item" href="scopedromwritelock.html">ScopedRomWriteLock</a>
+                        
+                        <a class="toc-item" href="shared-pointer.html">Shared Pointer</a>
+                        
+                        <a class="toc-item" href="span.html">Span</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="data-storage.html">Data storage</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="data-storage-concepts.html">Data storage concepts</a>
+                    
+                    
+                    <a class="toc-item" href="data-architecture.html">Data architecture</a>
+                    
+                    
+                    <a class="toc-item" href="data-options-and-config.html">Data options and config</a>
+                    
+                    
+                    <a class="toc-item" href="file-system-apis.html">File system APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="file-system-apis.html">Dir</a>
+                        
+                        <a class="toc-item" href="fatfilesystem.html">FATFileSystem</a>
+                        
+                        <a class="toc-item" href="file.html">File</a>
+                        
+                        <a class="toc-item" href="filesystem.html">FileSystem</a>
+                        
+                        <a class="toc-item" href="kvstore.html">KVStore</a>
+                        
+                        <a class="toc-item" href="littlefilesystem.html">LittleFileSystem</a>
+                        
+                        <a class="toc-item" href="static-global-api.html">kvstore_global_api (Static Global API)</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="blockdevice-apis.html">BlockDevice APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="blockdevice-apis.html">BlockDevice</a>
+                        
+                        <a class="toc-item" href="bufferedblockdevice.html">BufferedBlockDevice</a>
+                        
+                        <a class="toc-item" href="chainingblockdevice.html">ChainingBlockDevice</a>
+                        
+                        <a class="toc-item" href="dataflashblockdevice.html">DataFlashBlockDevice</a>
+                        
+                        <a class="toc-item" href="flashiapblockdevice.html">FlashIAPBlockDevice</a>
+                        
+                        <a class="toc-item" href="flashsimblockdevice.html">FlashSimBlockDevice</a>
+                        
+                        <a class="toc-item" href="heapblockdevice.html">HeapBlockDevice</a>
+                        
+                        <a class="toc-item" href="mbrblockdevice.html">MBRBlockDevice</a>
+                        
+                        <a class="toc-item" href="profilingblockdevice.html">ProfilingBlockDevice</a>
+                        
+                        <a class="toc-item" href="qspifblockdevice.html">QSPIFBlockDevice</a>
+                        
+                        <a class="toc-item" href="sdblockdevice.html">SDBlockDevice</a>
+                        
+                        <a class="toc-item" href="slicingblockdevice.html">SlicingBlockDevice</a>
+                        
+                        <a class="toc-item" href="spi-flash-block-device.html">SPI Flash block device</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="psa-compliant-apis.html">PSA compliant APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="psa-compliant-apis.html">PSA internal storage</a>
+                        
+                        <a class="toc-item" href="psa-protected-storage.html">PSA protected storage</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="connectivity.html">Connectivity</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="choosing-a-connectivity-type.html">Choosing a connectivity type</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="bluetooth.html">Bluetooth</a>
+                        
+                        <a class="toc-item" href="cellular-networking.html">Cellular networking</a>
+                        
+                        <a class="toc-item" href="ethernet-technology.html">Ethernet</a>
+                        
+                        <a class="toc-item" href="wlan-technology.html">Wireless LAN</a>
+                        
+                        <a class="toc-item" href="lora-tech.html">LoRaWAN</a>
+                        
+                        <a class="toc-item" href="nfc-technology.html">NFC</a>
+                        
+                        <a class="toc-item" href="wisun-tech.html">Wi-SUN</a>
+                        
+                        <a class="toc-item" href="6LoWPAN-ND-tech.html">6LoWPAN-ND</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-architecture.html">Connectivity architecture</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-architecture.html">IP networking</a>
+                        
+                        <a class="toc-item" href="network-socket.html">Network socket</a>
+                        
+                        <a class="toc-item" href="network-socket-interfaces-and-classes.html">Network socket interfaces and classes</a>
+                        
+                        <a class="toc-item" href="network-interface.html">Network interface</a>
+                        
+                        <a class="toc-item" href="secure-socket.html">Secure Socket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-options-and-config.html">Connectivity options and config</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-options-and-config.html">Connectivity configurations</a>
+                        
+                        <a class="toc-item" href="configuration-mesh.html">6LoWPAN Mesh</a>
+                        
+                        <a class="toc-item" href="configuration-ble.html">BLE configuration</a>
+                        
+                        <a class="toc-item" href="lorawan-configuration.html">LoRaWAN configuration</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="connectivity-tutorials.html">Connectivity tutorials</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="connectivity-tutorials.html">Mesh tutorial</a>
+                        
+                        <a class="toc-item" href="light-control.html">Light control tutorial</a>
+                        
+                        <a class="toc-item" href="lorawan-usage.html">LoRaWAN usage</a>
+                        
+                        <a class="toc-item" href="LoRa-tutorial.html">Building a private LoRa network</a>
+                        
+                        <a class="toc-item" href="tls-tutorial.html">Using Mbed TLS to communicate securely</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="network-socket-apis.html">Network socket APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="network-socket-apis.html">Non-IP cellular socket</a>
+                        
+                        <a class="toc-item" href="socket.html">Socket</a>
+                        
+                        <a class="toc-item" href="socketaddress.html">SocketAddress</a>
+                        
+                        <a class="toc-item" href="socketstats.html">SocketStats</a>
+                        
+                        <a class="toc-item" href="tcpsocket.html">TCPSocket</a>
+                        
+                        <a class="toc-item" href="udpsocket.html">UDPSocket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="network-interface-apis.html">Network interface APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="network-interface-apis.html">Cellular</a>
+                        
+                        <a class="toc-item" href="ethernet.html">Ethernet</a>
+                        
+                        <a class="toc-item" href="mesh-api.html">Mesh</a>
+                        
+                        <a class="toc-item" href="network-status.html">Network status</a>
+                        
+                        <a class="toc-item" href="wi-fi.html">Wi-Fi</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="secure-socket-apis.html">Secure socket APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="secure-socket-apis.html">DTLSSocket</a>
+                        
+                        <a class="toc-item" href="tlssocket.html">TLSSocket</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="dns-apis.html">DNS APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="dns-apis.html">DNS Resolver</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="bluetooth-apis.html">Bluetooth APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="bluetooth-apis.html">BLE</a>
+                        
+                        <a class="toc-item" href="gap.html">GAP</a>
+                        
+                        <a class="toc-item" href="gattserver.html">GattServer</a>
+                        
+                        <a class="toc-item" href="securitymanager.html">SecurityManager</a>
+                        
+                        <a class="toc-item" href="ble-services.html">BLE Services</a>
+                        
+                        <a class="toc-item" href="gattclient.html">GattClient</a>
+                        
+                        <a class="toc-item" href="optimizing-applications-for-throughput-and-power-consumption.html">Optimizing applications for throughput and power consumption</a>
+                        
+                        <a class="toc-item" href="test-and-measure.html">Test and measure</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="nfc-apis.html">NFC APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="nfc-apis.html">MessageBuilder</a>
+                        
+                        <a class="toc-item" href="messageparser.html">MessageParser</a>
+                        
+                        <a class="toc-item" href="nfccontroller.html">NFCController</a>
+                        
+                        <a class="toc-item" href="nfc-eeprom.html">NFC EEPROM</a>
+                        
+                        <a class="toc-item" href="simplemessageparser.html">SimpleMessageParser</a>
+                        
+                    </div>
+                    
+                    
+                    <a class="toc-item" href="lorawan-apis.html">LoRAWAN APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="lorawan-apis.html">LoRaWANInterface</a>
+                        
+                        <a class="toc-item" href="loraradio.html">LoRa radio driver</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+            <div class="toc-level one">
+                <a class="toc-item" href="security.html">Security</a>
+                
+                <div class="toc-level two sub">
+                    
+                    <a class="toc-item" href="security-concepts.html">Security concepts</a>
+                    
+                    
+                    <a class="toc-item" href="security-apis.html">Security APIs</a>
+                    
+                    <div class="toc-level three sub closed">
+                        
+                        <a class="toc-item" href="security-apis.html">DeviceKey</a>
+                        
+                        <a class="toc-item" href="mbed-crypto.html">Mbed Crypto</a>
+                        
+                        <a class="toc-item" href="psa-initial-attestation.html">PSA initial attestation</a>
+                        
+                        <a class="toc-item" href="psa-lifecycle.html">PSA lifecycle</a>
+                        
+                        <a class="toc-item" href="tls.html">TLS</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item program-setup" href="../program-setup/index.html">Program setup</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item build-tools" href="../build-tools/index.html">Build tools</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item debug-test" href="../debug-test/index.html">Debugging and testing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item tutorials" href="../tutorials/index.html">Tutorials and examples</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item contributing" href="../contributing/index.html">Contributing</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item porting" href="../porting/index.html">Porting</a>
+        </div>
+        
+
+        
+
+    
+        
+        <div class="toc-level top">
+            <a class="toc-item mbed-os-pelion" href="../mbed-os-pelion/index.html">Reference designs and end-to-end information</a>
+        </div>
+        
+
+        
+
+    
+</div>
+                    </div>
+
+                    <div class="page-wrapper" id="page">
+                        <div class="row">
+                            <div class="content large-12 medium-12 columns" id="content">
+                                <div class="breadcrumbs">
+                                    
+                                    <a href="../index.html">Docs</a>
+                                     › 
+                                    
+                                    <a href="index.html">API references and tutorials</a>
+                                     › 
+                                    
+                                    <a href="connectivity.html">Connectivity</a>
+                                     › 
+                                    
+                                    <a href="bluetooth-apis.html">Bluetooth APIs</a>
+                                     › 
+                                    
+                                    <a href="securitymanager.html">SecurityManager</a>
+                                    
+                                    
+                                </div>
+                                <h1>SecurityManager</h1><p>SecurityManager deals with authentication and encryption for the Bluetooth Low Energy link. The pairing and optionally bonding processes provide this. The SecurityManager achieves bonding by saving the pairing information and reusing it on subsequent reconnections. This saves time because the pairing does not have to be performed again.</p><p>The pairing process may produce a set of keys to be used during current or later connections. The SecurityManager handles these, and they include the Long Term Encryption Key (LTK), the Identity Resolving Key (IRK) and the Connection Signature Resolving Key (CSRK). The SecurityManager uses the LTK to encrypt subsequent connections without having to pair again. The Link Controller uses IRK to identify peers who use random resolvable addresses. The application uses CSRK to sign and authenticate signed data.</p><p>The pairing process may provide man-in-the-middle protection (MITM). The SecurityManager achieves this through various means, including out of band communication, depending on the capabilities of the local and peer device.</p><p>The SecurityManager stores the keys, permanently if possible, to speed security requests on subsequent connections.</p><p>Security requests may come explicitly from the user application or implicitly from the GATT server based on attribute requirements.</p><h2 id="pairing">Pairing</h2><p>There are several ways to provide different levels of security during pairing depending on your requirements and the facilities the application provides. The process starts with initializing the SecurityManager with default options for new connections. You can later change some settings per link or globally.</p><p>The important settings in the <code>init()</code> function are the MITM requirement and IO capabilities. MITM protection prevents an attack where one device can impersonate another device by pairing with both devices at the same time. You can achieve this protection by sharing information between the devices through an independent channel. The IO capabilities of both devices dictate what algorithm is used. For details, see BLUETOOTH SPECIFICATION Version 5.0 | Vol 3, Part H - 2.3.5.1. You can change the IO capabilities after initialization with <code>setIoCapability()</code>. This takes effect for all subsequent pairings.</p><p>Secure Connections, which relies on elliptical curve cryptography, provides the most secure pairing. Support for Secure Connections depends on both the stack and controller on both sides supporting it. If either side doesn't support it, legacy pairing is used. This is an older standard of pairing. If you require higher security, you can disable legacy pairing by calling <code>allowLegacyPairing(false);</code>.</p><h2 id="out-of-band-oob-data-used-in-pairing">Out of band (OOB) data used in pairing</h2><p>Sharing this information through IO capabilities means user interaction, which limits the degree of protection due to the limit of the amount of data that you can expect to transfer. Another solution is using out of band (OOB) communication to transfer this data. OOB communication can send more data and make MITM attacks less likely to succeed. The application must exchange OOB data and provide it to the SecurityManager. Use <code>setOOBDataUsage()</code> to indicate you want to use it. With this same call, you can set whether the communication channel you are using to transmit the OOB data is itself secure against MITM protection - this sets the level of the link security achieved using pairing that uses this data.</p><h2 id="signing">Signing</h2><p>Applications may require a level of security providing confidence that data transfers are coming from a trusted source. You can achieve this by encrypting the link, which also provides added confidentiality. Encryption is a good choice when a device stays connected but introduces latency due to the need for encrypting the link if the device only connects periodically to transfer data. If you do not require confidentiality, the GATT server may allow writes to happen over an unencrypted link but authenticated by a signature present in each packet. This signature relies on having sent a signing key to the peer during pairing prior to sending any signed packets.</p><h2 id="persistence-of-security-information">Persistence of security information</h2><p>SecurityManager stores all the data required for its operation on active links. Depending on resources available on the device, it also stores data for disconnected devices, which have bonded to be reused when reconnected. If the application has initialized a file system and the SecurityManager has received a file path during the <code>init()</code> call, SecurityManager may also provide data persistence across resets. You must enable this by calling <code>preserveBondingStateOnReset()</code>. Persistence may fail if abnormally terminated. SecurityManager may also fall back to a nonpersistent implementation if the resources are too limited.</p><h2 id="how-to-use">How to use</h2><p>Call <code>init()</code> with your chosen settings before calling any other SecurityManager functions.</p><p>The SecurityManager communicates with your application through events. These trigger calls in the EventHandler that you must provide by calling the <code>setSecurityManagerEventHandler()</code> function.</p><p>The most important process is pairing. You may trigger this manually by calling <code>requestPairing()</code>. Pairing may also result from the application requiring encryption by calling <code>setLinkEncryption()</code> or the application requiring MITM protection through <code>requestAuthentication()</code>.</p><p>You can call all of these implicitly by using <code>setLinkSecurity()</code> to set the required security for the link. The SecurityManager triggers the process required to achieve the set security level. You can only escalate the security level; asking the SecurityManager for a lower security level than the existing one does not fail, but results in an event informing the application through <code>linkEncryptionResult()</code> of the current level (which remains unchanged).</p><p>The chosen pairing algorithms depend on the IO capabilities and OOB use settings. They produce appropriate events, which your EventHandler must handle. If your event handler doesn't support all the calls, you must not set IO capabilities or set OOB use in such a way that would trigger them, or else the pairing fails (usually by timing out).</p><p>The simplest example is a pairing of a device with no IO capabilities and no OOB data available. This does not provide any MITM protection. The pairing (triggered implicitly or called explicitly) results in the generation of an event on the peer calling <code>pairingRequest()</code>. The event handler must make a decision (either in the application itself or based on user interaction) whether to accept the pairing and call <code>acceptPairing()</code> or <code>cancelPairing()</code>. An event calling <code>pairingResult()</code> in the EventHandler communicates te result on both peers.</p><h2 id="securitymanager-class-reference">SecurityManager class reference</h2><div class="api-include-block">
+<div class="api-header">
+<a href="../mbed-os-api-doxy/classble_1_1_security_manager.html" target="_blank">
+<i class="fa fa-folder-o"></i>
+<b class="filename">SecurityManager Class Reference</b>
+</a>
+</div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="nested-classes"></a>
+Data Structures</span></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">class  </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager_1_1_event_handler.html" target="_blank">EventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft"> </td><td class="mdescRight">The stack will use these functions to signal events to the application, subclass to override handlers.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager_1_1_event_handler.html#details" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-types"></a>
+Public Types</span></td></tr>
+<tr class="memitem:ae0d0f7d72a94e9dac5051e5df42d43d5"><td align="right" class="memItemLeft" valign="top">typedef uint8_t </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0d0f7d72a94e9dac5051e5df42d43d5" target="_blank">Passkey_t</a>[<a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a1d48c3dc2c084629f12766660ac97333" target="_blank">PASSKEY_LEN</a>]</td></tr>
+<tr class="memdesc:ae0d0f7d72a94e9dac5051e5df42d43d5"><td class="mdescLeft"> </td><td class="mdescRight">6-digit passkey in ASCII ('0'-'9' digits only).  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0d0f7d72a94e9dac5051e5df42d43d5" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</span></td></tr>
+<tr class="memitem:aad9e37acbfe4fa070c2dad999f50fa33"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aad9e37acbfe4fa070c2dad999f50fa33" target="_blank">init</a> (bool enableBonding=true, bool requireMITM=true, <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a586672c6d6a27a6f033cc48bdf478c65" target="_blank">SecurityIOCapabilities_t</a> iocaps=<a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a586672c6d6a27a6f033cc48bdf478c65a4a0686a09a13b402277d11b7d33c13a1" target="_blank">IO_CAPS_NONE</a>, const <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0d0f7d72a94e9dac5051e5df42d43d5" target="_blank">Passkey_t</a> passkey=nullptr, bool signing=true, const char *dbFilepath=nullptr)</td></tr>
+<tr class="memdesc:aad9e37acbfe4fa070c2dad999f50fa33"><td class="mdescLeft"> </td><td class="mdescRight">Enable the <a class="el" href="../mbed-os-api-doxy/classble_1_1_b_l_e.html" target="_blank" title="Abstract away BLE-capable radio transceivers or SOCs. ">BLE</a> stack's Security Manager.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aad9e37acbfe4fa070c2dad999f50fa33" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a3aff80bcbaedbd3834d75dffadf370dc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a3aff80bcbaedbd3834d75dffadf370dc" target="_blank">setDatabaseFilepath</a> (const char *dbFilepath=nullptr)</td></tr>
+<tr class="memdesc:a3aff80bcbaedbd3834d75dffadf370dc"><td class="mdescLeft"> </td><td class="mdescRight">Change the file used for the security database.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a3aff80bcbaedbd3834d75dffadf370dc" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7e9ddee179d9477b59535f5d031a054b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a7e9ddee179d9477b59535f5d031a054b" target="_blank">reset</a> ()</td></tr>
+<tr class="memdesc:a7e9ddee179d9477b59535f5d031a054b"><td class="mdescLeft"> </td><td class="mdescRight">Notify all registered onShutdown callbacks that the <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html" target="_blank" title="Overview. ">SecurityManager</a> is about to be shutdown and clear all <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html" target="_blank" title="Overview. ">SecurityManager</a> state of the associated object.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a7e9ddee179d9477b59535f5d031a054b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a21d07f51bcbd1955b0af4fb78b411c5b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a21d07f51bcbd1955b0af4fb78b411c5b" target="_blank">preserveBondingStateOnReset</a> (bool enable)</td></tr>
+<tr class="memdesc:a21d07f51bcbd1955b0af4fb78b411c5b"><td class="mdescLeft"> </td><td class="mdescRight">Normally all bonding information is lost when device is reset, this requests that the stack attempts to save the information and reload it during initialisation.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a21d07f51bcbd1955b0af4fb78b411c5b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a2d6d0381461f73ffa12eef0627c311b9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a2d6d0381461f73ffa12eef0627c311b9" target="_blank">writeBondingStateToPersistentStorage</a> ()</td></tr>
+<tr class="memdesc:a2d6d0381461f73ffa12eef0627c311b9"><td class="mdescLeft"> </td><td class="mdescRight">Some or all of bonding information may be stored in memory while in use.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a2d6d0381461f73ffa12eef0627c311b9" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a0701a7e56bdc901f87c31f703fc03076"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a0701a7e56bdc901f87c31f703fc03076" target="_blank">purgeAllBondingState</a> ()</td></tr>
+<tr class="memdesc:a0701a7e56bdc901f87c31f703fc03076"><td class="mdescLeft"> </td><td class="mdescRight">Delete all peer device context and all related bonding information from the database within the security manager.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a0701a7e56bdc901f87c31f703fc03076" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a43b03ff5d654e039284241b2c15bb6d2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a43b03ff5d654e039284241b2c15bb6d2" target="_blank">generateWhitelistFromBondTable</a> (::<a class="el" href="../mbed-os-api-doxy/structble_1_1whitelist__t.html" target="_blank">ble::whitelist_t</a> *whitelist) const </td></tr>
+<tr class="memdesc:a43b03ff5d654e039284241b2c15bb6d2"><td class="mdescLeft"> </td><td class="mdescRight">Create a list of addresses from all peers in the bond table and generate an event which returns it as a whitelist.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a43b03ff5d654e039284241b2c15bb6d2" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:acd4b3b22628d7cb94476b059b5292711"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#acd4b3b22628d7cb94476b059b5292711" target="_blank">requestPairing</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle)</td></tr>
+<tr class="memdesc:acd4b3b22628d7cb94476b059b5292711"><td class="mdescLeft"> </td><td class="mdescRight">Request pairing with the peer.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#acd4b3b22628d7cb94476b059b5292711" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a8cf95338dce76ed149256089870c447a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a8cf95338dce76ed149256089870c447a" target="_blank">acceptPairingRequest</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle)</td></tr>
+<tr class="memdesc:a8cf95338dce76ed149256089870c447a"><td class="mdescLeft"> </td><td class="mdescRight">Accept the pairing request.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a8cf95338dce76ed149256089870c447a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a36105907f0ae1ee8b3c3748de5e7ac04"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a36105907f0ae1ee8b3c3748de5e7ac04" target="_blank">cancelPairingRequest</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle)</td></tr>
+<tr class="memdesc:a36105907f0ae1ee8b3c3748de5e7ac04"><td class="mdescLeft"> </td><td class="mdescRight">Reject pairing request if the local device is the slave or cancel an outstanding pairing request if master.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a36105907f0ae1ee8b3c3748de5e7ac04" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a35f59b164e8508e8ecdc982d1ceb14f2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a35f59b164e8508e8ecdc982d1ceb14f2" target="_blank">setPairingRequestAuthorisation</a> (bool required=true)</td></tr>
+<tr class="memdesc:a35f59b164e8508e8ecdc982d1ceb14f2"><td class="mdescLeft"> </td><td class="mdescRight">Tell the stack whether the application needs to authorise pairing requests or should they be automatically accepted.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a35f59b164e8508e8ecdc982d1ceb14f2" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ab433be6c2eafbbdb0f69234781125722"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ab433be6c2eafbbdb0f69234781125722" target="_blank">getPeerIdentity</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle)</td></tr>
+<tr class="memdesc:ab433be6c2eafbbdb0f69234781125722"><td class="mdescLeft"> </td><td class="mdescRight">Retrieve identity address for the peer on the given connection.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ab433be6c2eafbbdb0f69234781125722" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a8e00914401419a2c9fa06a7400bf3085"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a8e00914401419a2c9fa06a7400bf3085" target="_blank">allowLegacyPairing</a> (bool allow=true)</td></tr>
+<tr class="memdesc:a8e00914401419a2c9fa06a7400bf3085"><td class="mdescLeft"> </td><td class="mdescRight">Allow or disallow the use of legacy pairing in case the application only wants to force the use of Secure Connections.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a8e00914401419a2c9fa06a7400bf3085" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:addd203d20f3cce832b98ce711f800182"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#addd203d20f3cce832b98ce711f800182" target="_blank">getSecureConnectionsSupport</a> (bool *enabled)</td></tr>
+<tr class="memdesc:addd203d20f3cce832b98ce711f800182"><td class="mdescLeft"> </td><td class="mdescRight">Check if the Secure Connections feature is supported by the stack and controller.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#addd203d20f3cce832b98ce711f800182" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ab1de18608b219468b28ff31e8f1cb723"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ab1de18608b219468b28ff31e8f1cb723" target="_blank">setIoCapability</a> (<a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a586672c6d6a27a6f033cc48bdf478c65" target="_blank">SecurityIOCapabilities_t</a> iocaps)</td></tr>
+<tr class="memdesc:ab1de18608b219468b28ff31e8f1cb723"><td class="mdescLeft"> </td><td class="mdescRight">Set the IO capability of the local device.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ab1de18608b219468b28ff31e8f1cb723" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ad3c216d8e04acdb5c3630f345339711e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ad3c216d8e04acdb5c3630f345339711e" target="_blank">setDisplayPasskey</a> (const <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0d0f7d72a94e9dac5051e5df42d43d5" target="_blank">Passkey_t</a> passkey)</td></tr>
+<tr class="memdesc:ad3c216d8e04acdb5c3630f345339711e"><td class="mdescLeft"> </td><td class="mdescRight">Set the passkey that is displayed on the local device instead of using a randomly generated one.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ad3c216d8e04acdb5c3630f345339711e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a4ed2033d7c2e6c30cbd0141f49dd4128"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a4ed2033d7c2e6c30cbd0141f49dd4128" target="_blank">setLinkSecurity</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a972b7d01fcaced15c737ba994a824179" target="_blank">SecurityMode_t</a> securityMode)</td></tr>
+<tr class="memdesc:a4ed2033d7c2e6c30cbd0141f49dd4128"><td class="mdescLeft"> </td><td class="mdescRight">Set the security mode on a connection.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a4ed2033d7c2e6c30cbd0141f49dd4128" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aa6997d10eeeb08be2d203de4a25c9ba9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aa6997d10eeeb08be2d203de4a25c9ba9" target="_blank">setKeypressNotification</a> (bool enabled=true)</td></tr>
+<tr class="memdesc:aa6997d10eeeb08be2d203de4a25c9ba9"><td class="mdescLeft"> </td><td class="mdescRight">Set whether or not we want to send and receive keypress notifications during passkey entry.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aa6997d10eeeb08be2d203de4a25c9ba9" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aa7fed99260abce9e78778f045020aa13"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aa7fed99260abce9e78778f045020aa13" target="_blank">enableSigning</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, bool enabled=true)</td></tr>
+<tr class="memdesc:aa7fed99260abce9e78778f045020aa13"><td class="mdescLeft"> </td><td class="mdescRight">Request generation and exchange of signing keys so that packet signing can be utilised on this connection.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aa7fed99260abce9e78778f045020aa13" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:afb36934bbcf9d7133a5ac2ac6282b51e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#afb36934bbcf9d7133a5ac2ac6282b51e" target="_blank">setHintFutureRoleReversal</a> (bool enable=true)</td></tr>
+<tr class="memdesc:afb36934bbcf9d7133a5ac2ac6282b51e"><td class="mdescLeft"> </td><td class="mdescRight">Give a hint to the stack that the master/slave role might change in the future.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#afb36934bbcf9d7133a5ac2ac6282b51e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae7acd6721166648669171814f4eb0c54"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae7acd6721166648669171814f4eb0c54" target="_blank">getLinkEncryption</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/structble_1_1link__encryption__t.html" target="_blank">ble::link_encryption_t</a> *encryption)</td></tr>
+<tr class="memdesc:ae7acd6721166648669171814f4eb0c54"><td class="mdescLeft"> </td><td class="mdescRight">Current state of encryption on the link.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae7acd6721166648669171814f4eb0c54" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7776b6566c1bd1cf721550eb22d0c117"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a7776b6566c1bd1cf721550eb22d0c117" target="_blank">setLinkEncryption</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/structble_1_1link__encryption__t.html" target="_blank">ble::link_encryption_t</a> encryption)</td></tr>
+<tr class="memdesc:a7776b6566c1bd1cf721550eb22d0c117"><td class="mdescLeft"> </td><td class="mdescRight">Enabled or disable encryption on the link.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a7776b6566c1bd1cf721550eb22d0c117" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a48a8da7250bcea8caddfbd980de69b47"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a48a8da7250bcea8caddfbd980de69b47" target="_blank">setEncryptionKeyRequirements</a> (uint8_t minimumByteSize, uint8_t maximumByteSize)</td></tr>
+<tr class="memdesc:a48a8da7250bcea8caddfbd980de69b47"><td class="mdescLeft"> </td><td class="mdescRight">Set the requirements for encryption key size.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a48a8da7250bcea8caddfbd980de69b47" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ad966a71fefaebeeb86a6c50e3749508c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ad966a71fefaebeeb86a6c50e3749508c" target="_blank">getEncryptionKeySize</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">connection_handle_t</a> connectionHandle, uint8_t *size)</td></tr>
+<tr class="memdesc:ad966a71fefaebeeb86a6c50e3749508c"><td class="mdescLeft"> </td><td class="mdescRight">Get encryption key size for given connection.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ad966a71fefaebeeb86a6c50e3749508c" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a0a19aba120df1204e473590b69394f97"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a0a19aba120df1204e473590b69394f97" target="_blank">requestAuthentication</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle)</td></tr>
+<tr class="memdesc:a0a19aba120df1204e473590b69394f97"><td class="mdescLeft"> </td><td class="mdescRight">Request that the link be authenticated (keys with MITM protection).  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a0a19aba120df1204e473590b69394f97" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aadad116146db592f6308315b8d064f3a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aadad116146db592f6308315b8d064f3a" target="_blank">generateOOB</a> (const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">ble::address_t</a> *address)</td></tr>
+<tr class="memdesc:aadad116146db592f6308315b8d064f3a"><td class="mdescLeft"> </td><td class="mdescRight">Generate OOB data with the given address.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aadad116146db592f6308315b8d064f3a" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae0c94328462bfb9fbbfa53ab441586b6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0c94328462bfb9fbbfa53ab441586b6" target="_blank">setOOBDataUsage</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, bool useOOB, bool OOBProvidesMITM=true)</td></tr>
+<tr class="memdesc:ae0c94328462bfb9fbbfa53ab441586b6"><td class="mdescLeft"> </td><td class="mdescRight">Enable OOB data usage during paring.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0c94328462bfb9fbbfa53ab441586b6" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a7a059182320885697edda087079c687b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a7a059182320885697edda087079c687b" target="_blank">confirmationEntered</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, bool confirmation)</td></tr>
+<tr class="memdesc:a7a059182320885697edda087079c687b"><td class="mdescLeft"> </td><td class="mdescRight">Report to the stack if the passkey matches or not.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a7a059182320885697edda087079c687b" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a2d30b4dc034de0c1009acdf42e3b4db1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a2d30b4dc034de0c1009acdf42e3b4db1" target="_blank">passkeyEntered</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae0d0f7d72a94e9dac5051e5df42d43d5" target="_blank">Passkey_t</a> passkey)</td></tr>
+<tr class="memdesc:a2d30b4dc034de0c1009acdf42e3b4db1"><td class="mdescLeft"> </td><td class="mdescRight">Supply the stack with the user entered passkey.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a2d30b4dc034de0c1009acdf42e3b4db1" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aacd3c598a573d4cc228a6e0af99188aa"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aacd3c598a573d4cc228a6e0af99188aa" target="_blank">sendKeypressNotification</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, <a class="el" href="../mbed-os-api-doxy/namespaceble.html#ad795c6b00632415eb3f54a1115b81653" target="_blank">ble::Keypress_t</a> keypress)</td></tr>
+<tr class="memdesc:aacd3c598a573d4cc228a6e0af99188aa"><td class="mdescLeft"> </td><td class="mdescRight">Send a notification to the peer that the user pressed a key on the local device.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aacd3c598a573d4cc228a6e0af99188aa" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:aa72287fdd2f21cd57b5ad2c47b9666cc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aa72287fdd2f21cd57b5ad2c47b9666cc" target="_blank">legacyPairingOobReceived</a> (const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">ble::address_t</a> *address, const <a class="el" href="../mbed-os-api-doxy/namespaceble.html#a355ac810435905bba5a6c713003d3cc8" target="_blank">ble::oob_tk_t</a> *tk)</td></tr>
+<tr class="memdesc:aa72287fdd2f21cd57b5ad2c47b9666cc"><td class="mdescLeft"> </td><td class="mdescRight">Supply the stack with the OOB data for legacy connections.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#aa72287fdd2f21cd57b5ad2c47b9666cc" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae040920e8a946b83a86c2beb2c457124"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae040920e8a946b83a86c2beb2c457124" target="_blank">oobReceived</a> (const <a class="el" href="../mbed-os-api-doxy/structble_1_1address__t.html" target="_blank">ble::address_t</a> *address, const <a class="el" href="../mbed-os-api-doxy/namespaceble.html#a9cc5b9b7cd2fc8c9563f5c79feb6126b" target="_blank">ble::oob_lesc_value_t</a> *random, const <a class="el" href="../mbed-os-api-doxy/namespaceble.html#a9d608ab9eafc2ce1b722eefbbd0eea06" target="_blank">ble::oob_confirm_t</a> *confirm)</td></tr>
+<tr class="memdesc:ae040920e8a946b83a86c2beb2c457124"><td class="mdescLeft"> </td><td class="mdescRight">Supply the stack with the OOB data for secure connections.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae040920e8a946b83a86c2beb2c457124" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a44160233ba879d37ada17f884fbe75e7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a44160233ba879d37ada17f884fbe75e7" target="_blank">getSigningKey</a> (<a class="el" href="../mbed-os-api-doxy/namespaceble.html#af5f34d537045518aa5462a3d42a4b38f" target="_blank">ble::connection_handle_t</a> connectionHandle, bool authenticated)</td></tr>
+<tr class="memdesc:a44160233ba879d37ada17f884fbe75e7"><td class="mdescLeft"> </td><td class="mdescRight">Retrieves a signing key through a signingKey event.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a44160233ba879d37ada17f884fbe75e7" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:acc009a6ae84af3b6f4fb337848c491ee"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/group__common.html#ga6fb48b8f40e280c30d2ae3bd0c3712c4" target="_blank">ble_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#acc009a6ae84af3b6f4fb337848c491ee" target="_blank">setPrivateAddressTimeout</a> (uint16_t timeout_in_seconds)</td></tr>
+<tr class="memdesc:acc009a6ae84af3b6f4fb337848c491ee"><td class="mdescLeft"> </td><td class="mdescRight">Sets how often the address is rotated when privacy is enabled.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#acc009a6ae84af3b6f4fb337848c491ee" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a35e45169eb72fed7140b3c9cb9fe337e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a35e45169eb72fed7140b3c9cb9fe337e" target="_blank">onShutdown</a> (const <a class="el" href="../mbed-os-api-doxy/class_function_pointer_with_context.html" target="_blank">SecurityManagerShutdownCallback_t</a> &amp;callback)</td></tr>
+<tr class="memdesc:a35e45169eb72fed7140b3c9cb9fe337e"><td class="mdescLeft"> </td><td class="mdescRight">Setup a callback to be invoked to notify the user application that the <a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html" target="_blank" title="Overview. ">SecurityManager</a> instance is about to shutdown (possibly as a result of a call to <a class="el" href="../mbed-os-api-doxy/group__ble.html#ga9eb0d0b1a80f1e08490a05199d3cb9c1" target="_blank" title="Shut down the underlying stack, and reset state of this BLE instance. ">BLE::shutdown()</a>).  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a35e45169eb72fed7140b3c9cb9fe337e" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:a4281357bb5997c9ff763134c844d1d25"><td align="right" class="memItemLeft" valign="top"><a class="el" href="../mbed-os-api-doxy/class_call_chain_of_function_pointers_with_context.html" target="_blank">SecurityManagerShutdownCallbackChain_t</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a4281357bb5997c9ff763134c844d1d25" target="_blank">onShutdown</a> ()</td></tr>
+<tr class="memdesc:a4281357bb5997c9ff763134c844d1d25"><td class="mdescLeft"> </td><td class="mdescRight">Provide access to the callchain of shutdown event callbacks.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a4281357bb5997c9ff763134c844d1d25" target="_blank">More...</a><br/></td></tr>
+<tr class="memitem:ae22bb879a68397b12852cfdc66afe1fc"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae22bb879a68397b12852cfdc66afe1fc" target="_blank">setSecurityManagerEventHandler</a> (<a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager_1_1_event_handler.html" target="_blank">EventHandler</a> *handler)</td></tr>
+<tr class="memdesc:ae22bb879a68397b12852cfdc66afe1fc"><td class="mdescLeft"> </td><td class="mdescRight">Assign the event handler implementation that will be used by the stack to signal events back to the application.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#ae22bb879a68397b12852cfdc66afe1fc" target="_blank">More...</a><br/></td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><span class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</span></td></tr>
+<tr class="memitem:a1d48c3dc2c084629f12766660ac97333"><td align="right" class="memItemLeft" valign="top">static const unsigned </td><td class="memItemRight" valign="bottom"><a class="el" href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a1d48c3dc2c084629f12766660ac97333" target="_blank">PASSKEY_LEN</a> = 6</td></tr>
+<tr class="memdesc:a1d48c3dc2c084629f12766660ac97333"><td class="mdescLeft"> </td><td class="mdescRight">Declaration of type containing a passkey to be used during pairing.  <a href="../mbed-os-api-doxy/classble_1_1_security_manager.html#a1d48c3dc2c084629f12766660ac97333" target="_blank">More...</a><br/></td></tr>
+</tbody></table>
+</div><h2 id="securitymanager-example">SecurityManager example</h2><p>The SecurityManager example demonstrates both a central and a peripheral connecting, performing basic pairing and setting up link security.</p><div class="code-include-block">
+<div class="code-header">
+<a href="https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_SecurityAndPrivacy/source/main.cpp" target="_blank"><i class="fa fa-file-code-o"></i> <b class="filename">main.cpp</b></a>
+</div>
+<pre><code>/* mbed Microcontroller Library
+ * Copyright (c) 2006-2013 ARM Limited
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include &lt;events/mbed_events.h&gt;
+#include "ble/BLE.h"
+#include "pretty_printer.h"
+
+#if MBED_CONF_APP_FILESYSTEM_SUPPORT
+#include "LittleFileSystem.h"
+#include "HeapBlockDevice.h"
+#endif //MBED_CONF_APP_FILESYSTEM_SUPPORT
+
+/** This example demonstrates all the basic setup required for pairing and setting
+ *  up link security both as a central and peripheral. It also demonstrates privacy
+ *  features in Gap. It shows how to use private addresses when advertising and
+ *  connecting and how filtering ties in with these operations.
+ *
+ *  The application will start by repeatedly trying to connect to the same
+ *  application running on another board. It will do this by advertising and
+ *  scanning for random intervals waiting until the difference in intervals
+ *  between the boards will make them meet when one is advertising and the
+ *  other scanning.
+ *
+ *  Two devices will be operating using random resolvable addresses. The
+ *  applications will connect to the peer and pair. It will attempt bonding
+ *  to store the IRK that resolve the peer. Subsequent connections will
+ *  turn on filtering based on stored IRKs.
+ */
+
+static const char DEVICE_NAME[] = "SecurityDemo";
+
+using std::literals::chrono_literals::operator""ms;
+
+/* Delay between steps */
+static const std::chrono::milliseconds delay = 3000ms;
+
+/** Base class for both peripheral and central. The same class that provides
+ *  the logic for the application also implements the SecurityManagerEventHandler
+ *  which is the interface used by the Security Manager to communicate events
+ *  back to the applications. You can provide overrides for a selection of events
+ *  your application is interested in.
+ */
+class SecurityDemo : private mbed::NonCopyable&lt;SecurityDemo&gt;,
+                     public SecurityManager::EventHandler,
+                     public ble::Gap::EventHandler
+{
+public:
+    SecurityDemo(BLE &amp;ble, events::EventQueue &amp;event_queue) :
+        _ble(ble), _event_queue(event_queue) { };
+
+    virtual ~SecurityDemo()
+    {
+        _ble.onEventsToProcess(nullptr);
+    };
+
+    /** Start BLE interface initialisation */
+    void run()
+    {
+        /* this will inform us off all events so we can schedule their handling
+         * using our event queue */
+        _ble.onEventsToProcess(makeFunctionPointer(this, &amp;SecurityDemo::schedule_ble_events));
+
+        /* handle gap events */
+        _ble.gap().setEventHandler(this);
+
+        if (_ble.hasInitialized()) {
+            /* ble instance already initialised, skip init and start activity */
+            start();
+        } else {
+            ble_error_t error = _ble.init(this, &amp;SecurityDemo::on_init_complete);
+
+            if (error) {
+                print_error(error, "Error returned by BLE::init.\r\n");
+                return;
+            }
+        }
+
+        /* this will not return until shutdown */
+        _event_queue.dispatch_forever();
+    };
+
+    /** Override to start chosen activity when the system starts */
+    virtual void start() = 0;
+
+    /* callbacks */
+
+    /** This is called when BLE interface is initialised and starts the demonstration */
+    void on_init_complete(BLE::InitializationCompleteCallbackContext *event)
+    {
+        ble_error_t error;
+
+        if (event-&gt;error) {
+            printf("Error during the initialisation\r\n");
+            return;
+        }
+
+        /* for use by tools we print out own address and also use it
+         * to seed RNG as the address is unique */
+        print_local_address();
+
+
+		/* This path will be used to store bonding information but will fallback
+         * to storing in memory if file access fails (for example due to lack of a filesystem) */
+        const char* db_path = "/fs/bt_sec_db";
+
+        error = _ble.securityManager().init(
+            /* enableBonding */ true,
+            /* requireMITM */ false,
+            /* iocaps */ SecurityManager::IO_CAPS_NONE,
+            /* passkey */ nullptr,
+            /* signing */ false,
+            /* dbFilepath */ db_path
+        );
+
+        if (error) {
+            print_error(error, "Error during initialising security manager\r\n");
+            return;
+        }
+
+        /* This tells the stack to generate a pairingRequest event which will require
+         * this application to respond before pairing can proceed. Setting it to false
+         * will automatically accept pairing. */
+        _ble.securityManager().setPairingRequestAuthorisation(true);
+
+#if MBED_CONF_APP_FILESYSTEM_SUPPORT
+        error = _ble.securityManager().preserveBondingStateOnReset(true);
+
+        if (error) {
+            print_error(error, "Error during preserveBondingStateOnReset %d\r\n");
+        }
+#endif // MBED_CONF_APP_FILESYSTEM_SUPPORT
+
+        /* this demo switches between being master and slave */
+        _ble.securityManager().setHintFutureRoleReversal(true);
+
+        /* Tell the security manager to use methods in this class to inform us
+         * of any events. Class needs to implement SecurityManagerEventHandler. */
+        _ble.securityManager().setSecurityManagerEventHandler(this);
+
+        /* gap events also handled by this class */
+        _ble.gap().setEventHandler(this);
+
+        error = _ble.gap().enablePrivacy(true);
+        if (error) {
+            print_error(error, "Error enabling privacy.\r\n");
+            return;
+        }
+
+        /* continuation is in onPrivacyEnabled() */
+    };
+
+    /** Schedule processing of events from the BLE in the event queue. */
+    void schedule_ble_events(BLE::OnEventsToProcessCallbackContext *context)
+    {
+        _event_queue.call([&amp;ble_instance = context-&gt;ble] { ble_instance.processEvents(); });
+    };
+
+private:
+    /* SecurityManager Event handler */
+
+    /** Respond to a pairing request. This will be called by the stack
+     * when a pairing request arrives and expects the application to
+     * call acceptPairingRequest or cancelPairingRequest */
+    void pairingRequest(ble::connection_handle_t connectionHandle) override
+    {
+        printf("Pairing requested - authorising\r\n");
+        _ble.securityManager().acceptPairingRequest(connectionHandle);
+    }
+
+    /** Inform the application of pairing */
+    void pairingResult(
+        ble::connection_handle_t connectionHandle,
+        SecurityManager::SecurityCompletionStatus_t result
+    ) override
+    {
+        if (result == SecurityManager::SEC_STATUS_SUCCESS) {
+            printf("Pairing successful\r\n");
+            _bonded = true;
+        } else {
+            printf("Pairing failed\r\n");
+        }
+
+        _event_queue.call_in(
+            delay,
+            [this, connectionHandle] {
+                _ble.gap().disconnect(connectionHandle, ble::local_disconnection_reason_t::USER_TERMINATION);
+            }
+        );
+    }
+
+    /** Inform the application of change in encryption status. This will be
+      * communicated through the serial port */
+    void linkEncryptionResult(ble::connection_handle_t connectionHandle, ble::link_encryption_t result) override
+    {
+        if (result == ble::link_encryption_t::ENCRYPTED) {
+            printf("Link ENCRYPTED\r\n");
+        } else if (result == ble::link_encryption_t::ENCRYPTED_WITH_MITM) {
+            printf("Link ENCRYPTED_WITH_MITM\r\n");
+        } else if (result == ble::link_encryption_t::NOT_ENCRYPTED) {
+            printf("Link NOT_ENCRYPTED\r\n");
+        }
+    }
+
+    void onPrivacyEnabled() override
+    {
+        /* all initialisation complete, start our main activity */
+        start();
+    }
+
+    /* Gap Event handler */
+
+    /** This is called by Gap to notify the application we connected */
+    void onConnectionComplete(const ble::ConnectionCompleteEvent &amp;event) override
+    {
+        printf("Connected to peer: ");
+        print_address(event.getPeerAddress().data());
+        if (event.getPeerResolvablePrivateAddress() != ble::address_t()) {
+            printf("Peer random resolvable address: ");
+            print_address(event.getPeerResolvablePrivateAddress().data());
+        }
+
+        _handle = event.getConnectionHandle();
+
+        if (_bonded) {
+            /* disconnect in 2s */
+            _event_queue.call_in(
+                delay,
+                [this] {
+                    _ble.gap().disconnect(_handle, ble::local_disconnection_reason_t::USER_TERMINATION);
+                }
+            );
+        } else {
+            /* start bonding */
+            ble_error_t error = _ble.securityManager().setLinkSecurity(
+                _handle,
+                SecurityManager::SECURITY_MODE_ENCRYPTION_NO_MITM
+            );
+            if (error) {
+                print_error(error, "Failed to set link security\r\n");
+                _ble.gap().disconnect(_handle, ble::local_disconnection_reason_t::USER_TERMINATION);
+            }
+        }
+    };
+
+    /** This is called by Gap to notify the application we disconnected */
+    void onDisconnectionComplete(const ble::DisconnectionCompleteEvent &amp;event) override
+    {
+        if (_bonded) {
+            /* we have connected to and bonded with the other device, from now
+             * on we will use the second start function and stay in the same role
+             * as peripheral or central */
+            printf("Disconnected.\r\n\r\n");
+            _event_queue.call_in(delay, [this] { start(); });
+        } else {
+            printf("Failed to bond.\r\n");
+            _event_queue.break_dispatch();
+        }
+    };
+
+    void onScanTimeout(const ble::ScanTimeoutEvent &amp;) override
+    {
+        /* if we failed to find the other device, abort so that we change roles */
+        printf("Haven't seen other device, switch modes.\r\n");
+        _event_queue.break_dispatch();
+    }
+
+    void onAdvertisingEnd(const ble::AdvertisingEndEvent &amp;event) override
+    {
+        if (!event.isConnected()) {
+            printf("No device connected to us, switch modes.\r\n");
+            _event_queue.break_dispatch();
+        }
+    }
+
+private:
+    void print_local_address()
+    {
+        /* show what address we are using now */
+        ble::own_address_type_t addr_type;
+        ble::address_t addr;
+        _ble.gap().getAddress(addr_type, addr);
+        printf("Device address: ");
+        print_address(addr);
+        static bool _seeded = false;
+        if (!_seeded) {
+            _seeded = true;
+            /* use the address as a seed */
+            uint8_t* random_data = addr.data();
+            srand(*((unsigned int*)random_data));
+        }
+    }
+
+protected:
+    BLE &amp;_ble;
+    events::EventQueue &amp;_event_queue;
+    ble::connection_handle_t _handle = 0;
+    bool _bonded = false;
+};
+
+/** A peripheral device will advertise and accept the connections */
+class SecurityPeripheral : public SecurityDemo {
+public:
+    SecurityPeripheral(BLE &amp;ble, events::EventQueue &amp;event_queue)
+        : SecurityDemo(ble, event_queue) { }
+
+    /** Set up and start advertising accepting anyone */
+    void start() override
+    {
+        ble::peripheral_privacy_configuration_t privacy_configuration = {
+            /* use_non_resolvable_random_address */ false,
+            ble::peripheral_privacy_configuration_t::PERFORM_PAIRING_PROCEDURE
+        };
+
+        if (_bonded) {
+            /** advertise and filter based on known devices */
+            printf("We are bonded, we will only accept known devices\r\n");
+            privacy_configuration.resolution_strategy =
+                ble::peripheral_privacy_configuration_t::REJECT_NON_RESOLVED_ADDRESS;
+        }
+
+        _ble.gap().setPeripheralPrivacyConfiguration(&amp;privacy_configuration);
+
+        start_advertising();
+    };
+
+private:
+    void start_advertising()
+    {
+        uint8_t adv_buffer[ble::LEGACY_ADVERTISING_MAX_SIZE];
+        /* use the helper to build the payload */
+        ble::AdvertisingDataBuilder adv_data_builder(adv_buffer);
+
+        adv_data_builder.setFlags();
+        adv_data_builder.setName(DEVICE_NAME);
+
+        /* Set payload for the set */
+        ble_error_t error = _ble.gap().setAdvertisingPayload(
+            ble::LEGACY_ADVERTISING_HANDLE,
+            adv_data_builder.getAdvertisingData()
+        );
+
+        if (error) {
+            print_error(error, "Gap::setAdvertisingPayload() failed");
+            return;
+        }
+
+        ble::AdvertisingParameters adv_parameters(
+            ble::advertising_type_t::CONNECTABLE_UNDIRECTED
+        );
+
+        error = _ble.gap().setAdvertisingParameters(ble::LEGACY_ADVERTISING_HANDLE, adv_parameters);
+
+        if (error) {
+            print_error(error, "Gap::setAdvertisingParameters() failed");
+            return;
+        }
+
+        if (_bonded) {
+            /* if we bonded it means we have found the other device, from now on
+             * wait at each step until completion */
+            error = _ble.gap().startAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+        } else {
+            /* since we have two boards which might start running this example at the same time
+             * we randomise the interval of advertising to have them meet when one is advertising
+             * and the other one is scanning (we use their random address as source of randomness) */
+            ble::millisecond_t random_duration_ms((5 + rand() % 6) * 1000);
+            ble::adv_duration_t random_duration(random_duration_ms);
+
+            error = _ble.gap().startAdvertising(ble::LEGACY_ADVERTISING_HANDLE, random_duration);
+        }
+
+        if (error) {
+            print_error(error, "Gap::startAdvertising() failed");
+            return;
+        }
+
+        printf("Advertising...\r\n");
+    }
+
+};
+
+/** A central device will scan and connect to a peer. */
+class SecurityCentral : public SecurityDemo {
+public:
+    SecurityCentral(BLE &amp;ble, events::EventQueue &amp;event_queue)
+        : SecurityDemo(ble, event_queue) { }
+
+    /** start scanning and attach a callback that will handle advertisements
+     *  and scan requests responses */
+    void start() override
+    {
+        ble::central_privacy_configuration_t privacy_configuration = {
+            /* use_non_resolvable_random_address */ false,
+            ble::central_privacy_configuration_t::DO_NOT_RESOLVE
+        };
+        if (_bonded) {
+            printf("We are bonded - we will only see known devices\r\n");
+            privacy_configuration.resolution_strategy = ble::central_privacy_configuration_t::RESOLVE_AND_FILTER;
+        }
+
+        _ble.gap().setCentralPrivacyConfiguration(&amp;privacy_configuration);
+
+        start_scanning();
+    }
+
+    /* helper functions */
+private:
+    bool start_scanning()
+    {
+        ble_error_t error;
+        ble::ScanParameters scan_params;
+        _ble.gap().setScanParameters(scan_params);
+
+        _is_connecting = false;
+
+        if (_bonded) {
+            /* if we bonded it means we have found the other device, from now on
+             * wait at each step until completion */
+            error = _ble.gap().startScan(ble::scan_duration_t::forever());
+        } else {
+            /* otherwise only scan for a limited time before changing roles again
+             * if we fail to find the other device */
+            error = _ble.gap().startScan(ble::scan_duration_t(ble::millisecond_t(5000)));
+        }
+
+        if (error) {
+            print_error(error, "Error during Gap::startScan\r\n");
+            return false;
+        }
+
+        printf("Scanning...\r\n");
+
+        return true;
+    }
+
+private:
+    /* Event handler */
+
+    /** Look at scan payload to find a peer device and connect to it */
+    void onAdvertisingReport(const ble::AdvertisingReportEvent &amp;event) override
+    {
+        /* don't bother with analysing scan result if we're already connecting */
+        if (_is_connecting) {
+            return;
+        }
+
+        ble::AdvertisingDataParser adv_data(event.getPayload());
+
+        /* parse the advertising payload, looking for a discoverable device */
+        while (adv_data.hasNext()) {
+            ble::AdvertisingDataParser::element_t field = adv_data.next();
+
+            /* connect to a known device by name */
+            if (field.type == ble::adv_data_type_t::COMPLETE_LOCAL_NAME &amp;&amp;
+                field.value.size() == strlen(DEVICE_NAME) &amp;&amp;
+                (memcmp(field.value.data(), DEVICE_NAME, field.value.size()) == 0)) {
+
+                printf("We found a connectable device: \r\n");
+                print_address(event.getPeerAddress().data());
+
+                ble_error_t error = _ble.gap().stopScan();
+
+                if (error) {
+                    print_error(error, "Error caused by Gap::stopScan");
+                    return;
+                }
+
+                error = _ble.gap().connect(
+                    event.getPeerAddressType(),
+                    event.getPeerAddress(),
+                    ble::ConnectionParameters()
+                );
+
+                printf("Connecting...\r\n");
+
+                if (error) {
+                    print_error(error, "Error caused by Gap::connect");
+                    return;
+                }
+
+                /* we may have already scan events waiting
+                 * to be processed so we need to remember
+                 * that we are already connecting and ignore them */
+                _is_connecting = true;
+
+                return;
+            }
+        }
+    }
+
+private:
+    bool _is_connecting = false;
+};
+
+#if MBED_CONF_APP_FILESYSTEM_SUPPORT
+bool create_filesystem()
+{
+    static LittleFileSystem fs("fs");
+
+    /* replace this with any physical block device your board supports (like an SD card) */
+    static HeapBlockDevice bd(4096, 256);
+
+    int err = bd.init();
+
+    if (err) {
+        return false;
+    }
+
+    err = bd.erase(0, bd.size());
+
+    if (err) {
+        return false;
+    }
+
+    err = fs.mount(&amp;bd);
+
+    if (err) {
+        /* Reformat if we can't mount the filesystem */
+        printf("No filesystem found, formatting...\r\n");
+
+        err = fs.reformat(&amp;bd);
+
+        if (err) {
+            return false;
+        }
+    }
+
+    return true;
+}
+#endif //MBED_CONF_APP_FILESYSTEM_SUPPORT
+
+int main()
+{
+    BLE&amp; ble = BLE::Instance();
+    events::EventQueue queue;
+
+#if MBED_CONF_APP_FILESYSTEM_SUPPORT
+    /* if filesystem creation fails or there is no filesystem the security manager
+     * will fallback to storing the security database in memory */
+    if (!create_filesystem()) {
+        printf("Filesystem creation failed, will use memory storage\r\n");
+    }
+#endif
+
+    while(true) {
+        {
+            printf("\r\n * Device is a peripheral *\r\n\r\n");
+            SecurityPeripheral peripheral(ble, queue);
+            peripheral.run();
+        }
+        {
+            printf("\r\n * Device is a central *\r\n\r\n");
+            SecurityCentral central(ble, queue);
+            central.run();
+        }
+    }
+
+    return 0;
+}
+
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="next-prev-links large-12 medium-12 small-12 columns">
+                                
+                                <a class="prev-link" href="gattserver.html"><i aria-hidden="true" class="fa fa-arrow-circle-left"></i> Previous</a>
+                                
+
+                                
+                                <a class="next-link" href="ble-services.html">Next <i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="../static/js/toc.mbed-cache-261a3b3a8a10e9d430f4bb5fdd0e5b5c.js"></script>
+        <script src="../static/js/vendor/foundation-6.2.4.min.mbed-cache-9f0af735cc1c2011ddd8e8a94273129a.js"></script>
+        <script>
+            $('#docs-content').foundation();
+            $(document).ready(function() {
+                initToC();
+            });
+        </script>
+    
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/apis/securitymanager.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 14:14:57 GMT -->
+</html>

@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/class_i_c_m_p_socket.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:18:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | ICMPSocket Class Reference</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="class_i_c_m_p_socket.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/class_i_c_m_p_socket.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/class_i_c_m_p_socket.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li><a href="hierarchy.html"><span>Class Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data Fields</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ICMPSocket Class Reference<div class="ingroups"><a class="el" href="group__netsocket.html">Netsocket</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ICMP socket implementation.  
+ <a href="class_i_c_m_p_socket.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_i_c_m_p_socket_8h_source.html">ICMPSocket.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ICMPSocket:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img alt="" src="class_i_c_m_p_socket.png" usemap="#ICMPSocket_map"/>
+  <map id="ICMPSocket_map" name="ICMPSocket_map">
+<area alt="InternetDatagramSocket" coords="0,112,146,136" href="class_internet_datagram_socket.html" shape="rect" title="InternetDatagramSocket socket implementation. "/>
+<area alt="InternetSocket" coords="0,56,146,80" href="class_internet_socket.html" shape="rect" title="Socket implementation that uses IP network stack. "/>
+<area alt="Socket" coords="0,0,146,24" href="class_socket.html" shape="rect" title="Socket interface. "/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a65dde78bd5d516b367f7f4a600b96aa2"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p_socket.html#a65dde78bd5d516b367f7f4a600b96aa2">ICMPSocket</a> ()</td></tr>
+<tr class="memdesc:a65dde78bd5d516b367f7f4a600b96aa2"><td class="mdescLeft"> </td><td class="mdescRight">Create an uninitialized socket.  <a href="#a65dde78bd5d516b367f7f4a600b96aa2">More...</a><br/></td></tr>
+<tr class="separator:a65dde78bd5d516b367f7f4a600b96aa2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4a7ab60f016a5d62aef8175464a77198"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#a4a7ab60f016a5d62aef8175464a77198">sendto</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address, const void *data, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) override</td></tr>
+<tr class="memdesc:a4a7ab60f016a5d62aef8175464a77198"><td class="mdescLeft"> </td><td class="mdescRight">Send data to the specified address.  <a href="#a4a7ab60f016a5d62aef8175464a77198">More...</a><br/></td></tr>
+<tr class="separator:a4a7ab60f016a5d62aef8175464a77198"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ada0cdb93bddbaaa7dae79ed4f40ba2c9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#ada0cdb93bddbaaa7dae79ed4f40ba2c9">recvfrom</a> (<a class="el" href="class_socket_address.html">SocketAddress</a> *address, void *data, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) override</td></tr>
+<tr class="memdesc:ada0cdb93bddbaaa7dae79ed4f40ba2c9"><td class="mdescLeft"> </td><td class="mdescRight">Receive a datagram and store the source address in address if it's not NULL.  <a href="#ada0cdb93bddbaaa7dae79ed4f40ba2c9">More...</a><br/></td></tr>
+<tr class="separator:ada0cdb93bddbaaa7dae79ed4f40ba2c9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1132b14fc956958c69dbb9718f7c48ec"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#a1132b14fc956958c69dbb9718f7c48ec">sendto_control</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address, const void *data, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size, <a class="el" href="group__netsocket.html#ga1f666b39614be3f21e9e53c25a19cf52">nsapi_msghdr_t</a> *control, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> control_size) override</td></tr>
+<tr class="memdesc:a1132b14fc956958c69dbb9718f7c48ec"><td class="mdescLeft"> </td><td class="mdescRight">Send datagram and ancillary data to the specified address.  <a href="#a1132b14fc956958c69dbb9718f7c48ec">More...</a><br/></td></tr>
+<tr class="separator:a1132b14fc956958c69dbb9718f7c48ec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9545761931a0a2e3eb4a3bd187753690"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#a9545761931a0a2e3eb4a3bd187753690">recvfrom_control</a> (<a class="el" href="class_socket_address.html">SocketAddress</a> *address, void *data, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size, <a class="el" href="group__netsocket.html#ga1f666b39614be3f21e9e53c25a19cf52">nsapi_msghdr_t</a> *control, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> control_size) override</td></tr>
+<tr class="memdesc:a9545761931a0a2e3eb4a3bd187753690"><td class="mdescLeft"> </td><td class="mdescRight">Receive a datagram with ancillary data and store the source address in address if it's not NULL.  <a href="#a9545761931a0a2e3eb4a3bd187753690">More...</a><br/></td></tr>
+<tr class="separator:a9545761931a0a2e3eb4a3bd187753690"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a143371c76e7b2ebeadc7b4f98bd7a21a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#a143371c76e7b2ebeadc7b4f98bd7a21a">connect</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address) override</td></tr>
+<tr class="memdesc:a143371c76e7b2ebeadc7b4f98bd7a21a"><td class="mdescLeft"> </td><td class="mdescRight">Set the remote address for next <a class="el" href="class_internet_datagram_socket.html#a0d5cfa126ffe4939579908221c10242a" title="Send a raw data to connected remote address. ">send()</a> call and filtering of incoming packets.  <a href="#a143371c76e7b2ebeadc7b4f98bd7a21a">More...</a><br/></td></tr>
+<tr class="separator:a143371c76e7b2ebeadc7b4f98bd7a21a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0d5cfa126ffe4939579908221c10242a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#a0d5cfa126ffe4939579908221c10242a">send</a> (const void *data, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) override</td></tr>
+<tr class="memdesc:a0d5cfa126ffe4939579908221c10242a"><td class="mdescLeft"> </td><td class="mdescRight">Send a raw data to connected remote address.  <a href="#a0d5cfa126ffe4939579908221c10242a">More...</a><br/></td></tr>
+<tr class="separator:a0d5cfa126ffe4939579908221c10242a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad80e0d2c2bbf75a9c80b54e6bebec4a0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#ad80e0d2c2bbf75a9c80b54e6bebec4a0">recv</a> (void *data, <a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> size) override</td></tr>
+<tr class="memdesc:ad80e0d2c2bbf75a9c80b54e6bebec4a0"><td class="mdescLeft"> </td><td class="mdescRight">Receive data from a socket.  <a href="#ad80e0d2c2bbf75a9c80b54e6bebec4a0">More...</a><br/></td></tr>
+<tr class="separator:ad80e0d2c2bbf75a9c80b54e6bebec4a0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac6843eb288731018525e27b7f9ab608e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_socket.html">Socket</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#ac6843eb288731018525e27b7f9ab608e">accept</a> (<a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> *<a class="el" href="group__platform__error.html#gabc561ef2adcee0d1aef1917f40828a42">error</a>=nullptr) override</td></tr>
+<tr class="memdesc:ac6843eb288731018525e27b7f9ab608e"><td class="mdescLeft"> </td><td class="mdescRight">Not implemented for <a class="el" href="class_internet_datagram_socket.html" title="InternetDatagramSocket socket implementation. ">InternetDatagramSocket</a>.  <a href="#ac6843eb288731018525e27b7f9ab608e">More...</a><br/></td></tr>
+<tr class="separator:ac6843eb288731018525e27b7f9ab608e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30618b0cdf86a22f04ef54cfc87d315b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_datagram_socket.html#a30618b0cdf86a22f04ef54cfc87d315b">listen</a> (int backlog=1) override</td></tr>
+<tr class="memdesc:a30618b0cdf86a22f04ef54cfc87d315b"><td class="mdescLeft"> </td><td class="mdescRight">Not implemented for <a class="el" href="class_internet_datagram_socket.html" title="InternetDatagramSocket socket implementation. ">InternetDatagramSocket</a>.  <a href="#a30618b0cdf86a22f04ef54cfc87d315b">More...</a><br/></td></tr>
+<tr class="separator:a30618b0cdf86a22f04ef54cfc87d315b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a84767c2637ba24b66b8af8ce1c006d72"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a84767c2637ba24b66b8af8ce1c006d72">open</a> (<a class="el" href="class_network_stack.html">NetworkStack</a> *stack)</td></tr>
+<tr class="memdesc:a84767c2637ba24b66b8af8ce1c006d72"><td class="mdescLeft"> </td><td class="mdescRight">Open a network socket on the network stack of the given network interface.  <a href="#a84767c2637ba24b66b8af8ce1c006d72">More...</a><br/></td></tr>
+<tr class="separator:a84767c2637ba24b66b8af8ce1c006d72"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad0597c2e67d39a8408e2697cdf98145d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#ad0597c2e67d39a8408e2697cdf98145d">close</a> () override</td></tr>
+<tr class="memdesc:ad0597c2e67d39a8408e2697cdf98145d"><td class="mdescLeft"> </td><td class="mdescRight">defined(DOXYGEN_ONLY)  <a href="#ad0597c2e67d39a8408e2697cdf98145d">More...</a><br/></td></tr>
+<tr class="separator:ad0597c2e67d39a8408e2697cdf98145d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8f0ff9db01351a059422cc29d7fdfe4f"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a8f0ff9db01351a059422cc29d7fdfe4f">join_multicast_group</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address)</td></tr>
+<tr class="memdesc:a8f0ff9db01351a059422cc29d7fdfe4f"><td class="mdescLeft"> </td><td class="mdescRight">Subscribe to an IP multicast group.  <a href="#a8f0ff9db01351a059422cc29d7fdfe4f">More...</a><br/></td></tr>
+<tr class="separator:a8f0ff9db01351a059422cc29d7fdfe4f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1b372f73c10a607798c3976ac21233d3"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a1b372f73c10a607798c3976ac21233d3">leave_multicast_group</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address)</td></tr>
+<tr class="memdesc:a1b372f73c10a607798c3976ac21233d3"><td class="mdescLeft"> </td><td class="mdescRight">Leave an IP multicast group.  <a href="#a1b372f73c10a607798c3976ac21233d3">More...</a><br/></td></tr>
+<tr class="separator:a1b372f73c10a607798c3976ac21233d3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0771270bd442ae22aa86460eb9c966b7"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a0771270bd442ae22aa86460eb9c966b7">get_rtt_estimate_to_address</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address, uint32_t *rtt_estimate)</td></tr>
+<tr class="memdesc:a0771270bd442ae22aa86460eb9c966b7"><td class="mdescLeft"> </td><td class="mdescRight">Get estimated round trip time to destination address.  <a href="#a0771270bd442ae22aa86460eb9c966b7">More...</a><br/></td></tr>
+<tr class="separator:a0771270bd442ae22aa86460eb9c966b7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a13df421125be365c1371729f50b516e2"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a13df421125be365c1371729f50b516e2">get_stagger_estimate_to_address</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address, uint16_t data_amount, uint16_t *stagger_min, uint16_t *stagger_max, uint16_t *stagger_rand)</td></tr>
+<tr class="memdesc:a13df421125be365c1371729f50b516e2"><td class="mdescLeft"> </td><td class="mdescRight">Get estimated stagger value.  <a href="#a13df421125be365c1371729f50b516e2">More...</a><br/></td></tr>
+<tr class="separator:a13df421125be365c1371729f50b516e2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad3cb0bacf8f02566b8c557d24b4f8de6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#ad3cb0bacf8f02566b8c557d24b4f8de6">bind</a> (uint16_t port)</td></tr>
+<tr class="memdesc:ad3cb0bacf8f02566b8c557d24b4f8de6"><td class="mdescLeft"> </td><td class="mdescRight">Bind the socket to a port on which to receive data.  <a href="#ad3cb0bacf8f02566b8c557d24b4f8de6">More...</a><br/></td></tr>
+<tr class="separator:ad3cb0bacf8f02566b8c557d24b4f8de6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2c648a3e7a3a5e01dadddf3b93023e38"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a2c648a3e7a3a5e01dadddf3b93023e38">bind</a> (const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp;address) override</td></tr>
+<tr class="memdesc:a2c648a3e7a3a5e01dadddf3b93023e38"><td class="mdescLeft"> </td><td class="mdescRight">Bind a specific address to a socket.  <a href="#a2c648a3e7a3a5e01dadddf3b93023e38">More...</a><br/></td></tr>
+<tr class="separator:a2c648a3e7a3a5e01dadddf3b93023e38"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a74bb4486263a8da3692980bed1e47e26"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a74bb4486263a8da3692980bed1e47e26">set_blocking</a> (bool blocking) override</td></tr>
+<tr class="memdesc:a74bb4486263a8da3692980bed1e47e26"><td class="mdescLeft"> </td><td class="mdescRight">Set blocking or non-blocking mode of the socket.  <a href="#a74bb4486263a8da3692980bed1e47e26">More...</a><br/></td></tr>
+<tr class="separator:a74bb4486263a8da3692980bed1e47e26"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab5a933911d88935e21c0acd54394c865"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#ab5a933911d88935e21c0acd54394c865">set_timeout</a> (int timeout) override</td></tr>
+<tr class="memdesc:ab5a933911d88935e21c0acd54394c865"><td class="mdescLeft"> </td><td class="mdescRight">Set timeout on blocking socket operations.  <a href="#ab5a933911d88935e21c0acd54394c865">More...</a><br/></td></tr>
+<tr class="separator:ab5a933911d88935e21c0acd54394c865"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af4e99acda304c5e6a4018e6a474db24c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#af4e99acda304c5e6a4018e6a474db24c">setsockopt</a> (int level, int optname, const void *optval, unsigned optlen) override</td></tr>
+<tr class="memdesc:af4e99acda304c5e6a4018e6a474db24c"><td class="mdescLeft"> </td><td class="mdescRight">Set socket options.  <a href="#af4e99acda304c5e6a4018e6a474db24c">More...</a><br/></td></tr>
+<tr class="separator:af4e99acda304c5e6a4018e6a474db24c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abd6327cb21e45e95959c2274d9a5eaa0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#abd6327cb21e45e95959c2274d9a5eaa0">getsockopt</a> (int level, int optname, void *optval, unsigned *optlen) override</td></tr>
+<tr class="memdesc:abd6327cb21e45e95959c2274d9a5eaa0"><td class="mdescLeft"> </td><td class="mdescRight">Get socket options.  <a href="#abd6327cb21e45e95959c2274d9a5eaa0">More...</a><br/></td></tr>
+<tr class="separator:abd6327cb21e45e95959c2274d9a5eaa0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4375c0d24ead23169c0511736b05df7d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#a4375c0d24ead23169c0511736b05df7d">sigio</a> (<a class="el" href="classmbed_1_1_callback.html">mbed::Callback</a>&lt; void()&gt; func) override</td></tr>
+<tr class="memdesc:a4375c0d24ead23169c0511736b05df7d"><td class="mdescLeft"> </td><td class="mdescRight">Register a callback on state change of the socket.  <a href="#a4375c0d24ead23169c0511736b05df7d">More...</a><br/></td></tr>
+<tr class="separator:a4375c0d24ead23169c0511736b05df7d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adee66c8624fd6c6a320728b5c05841cf"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_internet_socket.html#adee66c8624fd6c6a320728b5c05841cf">getpeername</a> (<a class="el" href="class_socket_address.html">SocketAddress</a> *address) override</td></tr>
+<tr class="memdesc:adee66c8624fd6c6a320728b5c05841cf"><td class="mdescLeft"> </td><td class="mdescRight">Get the remote-end peer associated with this socket.  <a href="#adee66c8624fd6c6a320728b5c05841cf">More...</a><br/></td></tr>
+<tr class="separator:adee66c8624fd6c6a320728b5c05841cf"><td class="memSeparator" colspan="2"> </td></tr>
+</tbody></table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ICMP socket implementation. </p>
+
+<p>Definition at line <a class="el" href="_i_c_m_p_socket_8h_source.html#l00032">32</a> of file <a class="el" href="_i_c_m_p_socket_8h_source.html">ICMPSocket.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a65dde78bd5d516b367f7f4a600b96aa2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="class_i_c_m_p_socket.html">ICMPSocket</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Create an uninitialized socket. </p>
+<dl class="section note"><dt>Note</dt><dd>Must call open to initialize the socket on a network stack. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac6843eb288731018525e27b7f9ab608e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="class_socket.html">Socket</a>* accept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> * </td>
+          <td class="paramname"><em>error</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Not implemented for <a class="el" href="class_internet_datagram_socket.html" title="InternetDatagramSocket socket implementation. ">InternetDatagramSocket</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">error</td><td>Not used. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_UNSUPPORTED </dd></dl>
+
+<p>Implements <a class="el" href="class_socket.html#acc3f87b17a90f1455e00693e7c2dab9c">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3cb0bacf8f02566b8c557d24b4f8de6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> bind </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t </td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Bind the socket to a port on which to receive data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">port</td><td>Local port to bind. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_OK</td><td>on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>if socket is not open. </td></tr>
+    <tr><td class="paramname">int</td><td>negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#ac92c15ee2f3ef7e26cb881393559d1ff">NetworkStack::socket_bind</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c648a3e7a3a5e01dadddf3b93023e38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> bind </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Bind a specific address to a socket. </p>
+<p>Binding a socket specifies the address and port on which to receive data. If the IP address is zeroed, only the port is bound.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Local address to bind. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_OK on success, negative subclass-dependent error code on failure. </dd></dl>
+
+<p>Implements <a class="el" href="class_socket.html#a37d8bcdf52289fb747a15882fc8771e5">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0597c2e67d39a8408e2697cdf98145d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>defined(DOXYGEN_ONLY) </p>
+<p>Close any open connection, and deallocate any memory associated with the socket. Called from destructor if socket is not closed.</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_OK</td><td>on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>if socket is not open. </td></tr>
+    <tr><td class="paramname">int</td><td>negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a519c5ecb722a17ea2acafad17f9386a3">NetworkStack::socket_close</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a315abc6fe6ecc0ebb0a4b6d487575602">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a143371c76e7b2ebeadc7b4f98bd7a21a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> connect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Set the remote address for next <a class="el" href="class_internet_datagram_socket.html#a0d5cfa126ffe4939579908221c10242a" title="Send a raw data to connected remote address. ">send()</a> call and filtering of incoming packets. </p>
+<p>To reset the address, zero initialized <a class="el" href="class_socket_address.html" title="SocketAddress class. ">SocketAddress</a> must be in the address parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>The <a class="el" href="class_socket_address.html" title="SocketAddress class. ">SocketAddress</a> of the remote host. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_OK on success. </dd></dl>
+
+<p>Implements <a class="el" href="class_socket.html#abc36eff670a3bee145f1c629a7eb7ee3">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0771270bd442ae22aa86460eb9c966b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int get_rtt_estimate_to_address </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t * </td>
+          <td class="paramname"><em>rtt_estimate</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get estimated round trip time to destination address. </p>
+<p>Use estimated round trip time to adjust application retry timers to work in networks that have low data rate and high latency.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Destination address to use in rtt estimate. </td></tr>
+    <tr><td class="paramname">rtt_estimate</td><td>Returned round trip time value in milliseconds. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_OK on success. </dd>
+<dd>
+NSAPI_ERROR_PARAMETER if the provided pointer is invalid. </dd>
+<dd>
+negative error code on other failures (</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_internet_socket.html#abd6327cb21e45e95959c2274d9a5eaa0" title="Get socket options. ">InternetSocket::getsockopt</a>). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a13df421125be365c1371729f50b516e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int get_stagger_estimate_to_address </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t </td>
+          <td class="paramname"><em>data_amount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t * </td>
+          <td class="paramname"><em>stagger_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t * </td>
+          <td class="paramname"><em>stagger_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t * </td>
+          <td class="paramname"><em>stagger_rand</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get estimated stagger value. </p>
+<p>Stagger value is a time that application should wait before using heavy network operations after connecting to network. Purpose of staggering is to avoid network congestion that may happen in low bandwith networks if multiple applications simultaneously start heavy network usage after joining to the network.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Destination added used to estimate stagger value. </td></tr>
+    <tr><td class="paramname">data_amount</td><td>Amount of bytes to transfer in kilobytes. </td></tr>
+    <tr><td class="paramname">stagger_min</td><td>Minimum stagger value in seconds. </td></tr>
+    <tr><td class="paramname">stagger_max</td><td>Maximum stagger value in seconds. </td></tr>
+    <tr><td class="paramname">stagger_rand</td><td>Randomized stagger value between stagger_min and stagger_max in seconds. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_OK on success. </dd>
+<dd>
+negative error code on other failures (</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_internet_socket.html#abd6327cb21e45e95959c2274d9a5eaa0" title="Get socket options. ">InternetSocket::getsockopt</a>). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adee66c8624fd6c6a320728b5c05841cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> getpeername </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_socket_address.html">SocketAddress</a> * </td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get the remote-end peer associated with this socket. </p>
+<p>Copy the remote peer address to a <a class="el" href="class_socket_address.html" title="SocketAddress class. ">SocketAddress</a> structure pointed by address parameter. <a class="el" href="class_socket.html" title="Socket interface. ">Socket</a> must be connected to have a peer address associated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Pointer to <a class="el" href="class_socket_address.html" title="SocketAddress class. ">SocketAddress</a> structure. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_OK</td><td>on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>if socket is not connected. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_CONNECTION</td><td>if the remote peer was not set. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a9ac5b12d252da1a1ea9cf40930bf70e2">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd6327cb21e45e95959c2274d9a5eaa0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> getsockopt </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>optname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>optval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned * </td>
+          <td class="paramname"><em>optlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Get socket options. </p>
+<p><a class="el" href="class_internet_socket.html#abd6327cb21e45e95959c2274d9a5eaa0" title="Get socket options. ">getsockopt()</a> allows an application to retrieve stack-specific options from the underlying stack using stack-specific level and option names, or to request generic options using levels from nsapi_socket_level_t.</p>
+<p>For unsupported options, NSAPI_ERROR_UNSUPPORTED is returned and the socket is unmodified.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">level</td><td>Stack-specific protocol level or nsapi_socket_level_t. </td></tr>
+    <tr><td class="paramname">optname</td><td>Level-specific option name. </td></tr>
+    <tr><td class="paramname">optval</td><td>Destination for option value. </td></tr>
+    <tr><td class="paramname">optlen</td><td>Length of the option value. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_OK</td><td>on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>if socket is not open. </td></tr>
+    <tr><td class="paramname">int</td><td>Negative error code on failure, see <a class="el" href="class_network_stack.html#add47ee70f334bcabd0df63f116143311">NetworkStack::getsockopt</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a839f87e216545803ba4e6bc01ec3a875">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f0ff9db01351a059422cc29d7fdfe4f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int join_multicast_group </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Subscribe to an IP multicast group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Multicast group IP address. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_OK on success, negative error code on failure (</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_internet_socket.html#af4e99acda304c5e6a4018e6a474db24c" title="Set socket options. ">InternetSocket::setsockopt</a>). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1b372f73c10a607798c3976ac21233d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int leave_multicast_group </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Leave an IP multicast group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Multicast group IP address. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_OK on success, negative error code on failure (</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_internet_socket.html#af4e99acda304c5e6a4018e6a474db24c" title="Set socket options. ">InternetSocket::setsockopt</a>). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a30618b0cdf86a22f04ef54cfc87d315b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> listen </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>backlog</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Not implemented for <a class="el" href="class_internet_datagram_socket.html" title="InternetDatagramSocket socket implementation. ">InternetDatagramSocket</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">backlog</td><td>Not used. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NSAPI_ERROR_UNSUPPORTED </dd></dl>
+
+<p>Implements <a class="el" href="class_socket.html#ade3c498316e8b77cc01c824bd27316a7">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84767c2637ba24b66b8af8ce1c006d72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_network_stack.html">NetworkStack</a> * </td>
+          <td class="paramname"><em>stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Open a network socket on the network stack of the given network interface. </p>
+<dl class="section note"><dt>Note</dt><dd>Not needed if stack is passed to the socket's constructor.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">stack</td><td>Network stack as target for socket. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_OK</td><td>on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_PARAMETER</td><td>in case the provided stack was invalid or a stack was already created and socket opened successfully. </td></tr>
+    <tr><td class="paramname">int</td><td>negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a917003ace34919b35f8e1dced0b52a05">NetworkStack::socket_open</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad80e0d2c2bbf75a9c80b54e6bebec4a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> recv </td>
+          <td>(</td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Receive data from a socket. </p>
+<p>This is equivalent to calling recvfrom(NULL, data, size).</p>
+<p>By default, recv blocks until some data is received. If socket is set to nonblocking or times out, NSAPI_ERROR_WOULD_BLOCK can be returned to indicate no data.</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="class_internet_datagram_socket.html#ad80e0d2c2bbf75a9c80b54e6bebec4a0" title="Receive data from a socket. ">recv()</a> is allowed write to data buffer even if error occurs.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">data</td><td>Pointer to buffer for data received from the host. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">int</td><td>Number of received bytes on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>in case socket was not created correctly. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_WOULD_BLOCK</td><td>in case non-blocking mode is enabled and send cannot be performed immediately. </td></tr>
+    <tr><td class="paramname">int</td><td>Other negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a178a8c725d8f646ff6b26b381d2ac2c6">NetworkStack::socket_recv</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#ae97ae191484f90fda5a013b40b4b3ac5">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada0cdb93bddbaaa7dae79ed4f40ba2c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> recvfrom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_socket_address.html">SocketAddress</a> * </td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Receive a datagram and store the source address in address if it's not NULL. </p>
+<p>By default, recvfrom blocks until a datagram is received. If socket is set to nonblocking or times out with no datagram, NSAPI_ERROR_WOULD_BLOCK is returned.</p>
+<dl class="section note"><dt>Note</dt><dd>If the datagram is larger than the buffer, the excess data is silently discarded.</dd>
+<dd>
+If socket is connected, only packets coming from connected peer address are accepted.</dd>
+<dd>
+<a class="el" href="class_internet_datagram_socket.html#ada0cdb93bddbaaa7dae79ed4f40ba2c9" title="Receive a datagram and store the source address in address if it's not NULL. ">recvfrom()</a> is allowed write to address and data buffers even if error occurs. It uses recvfrom_control with zero ancillary data </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Destination for the source address or NULL. </td></tr>
+    <tr><td class="paramname">data</td><td>Destination buffer for RAW data to be received from the host. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">int</td><td>Number of received bytes on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>in case socket was not created correctly. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_WOULD_BLOCK</td><td>in case non-blocking mode is enabled and send cannot be performed immediately. </td></tr>
+    <tr><td class="paramname">int</td><td>Other negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a178a8c725d8f646ff6b26b381d2ac2c6">NetworkStack::socket_recv</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a65396e62e72efb818239baba177ff81d">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9545761931a0a2e3eb4a3bd187753690"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> recvfrom_control </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_socket_address.html">SocketAddress</a> * </td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#ga1f666b39614be3f21e9e53c25a19cf52">nsapi_msghdr_t</a> * </td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>control_size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Receive a datagram with ancillary data and store the source address in address if it's not NULL. </p>
+<p>By default, recvfrom blocks until a datagram is received. If socket is set to nonblocking or times out with no datagram, NSAPI_ERROR_WOULD_BLOCK is returned. Ancillary data is stored in msghdr struct </p><dl class="section note"><dt>Note</dt><dd>If the datagram is larger than the buffer, the excess data is silently discarded.</dd>
+<dd>
+If socket is connected, only packets coming from connected peer address are accepted.</dd>
+<dd>
+<a class="el" href="class_internet_datagram_socket.html#a9545761931a0a2e3eb4a3bd187753690" title="Receive a datagram with ancillary data and store the source address in address if it's not NULL...">recvfrom_control()</a> is allowed write to address and data buffers even if error occurs.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>Destination for the source address or NULL. </td></tr>
+    <tr><td class="paramname">data</td><td>Destination buffer for RAW data to be received from the host. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes. </td></tr>
+    <tr><td class="paramname">control</td><td>Size of the buffer in bytes. </td></tr>
+    <tr><td class="paramname">control_size</td><td>Size of the buffer in bytes. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">int</td><td>Number of received bytes on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>in case socket was not created correctly. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_WOULD_BLOCK</td><td>in case non-blocking mode is enabled and send cannot be performed immediately. </td></tr>
+    <tr><td class="paramname">int</td><td>Other negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a178a8c725d8f646ff6b26b381d2ac2c6">NetworkStack::socket_recv</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a2558521082ff922450f30e24dadb3305">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d5cfa126ffe4939579908221c10242a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> send </td>
+          <td>(</td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Send a raw data to connected remote address. </p>
+<p>By default, send blocks until all data is sent. If socket is set to nonblocking or times out, a partial amount can be written. NSAPI_ERROR_WOULD_BLOCK is returned if no data was written.</p>
+<dl class="section note"><dt>Note</dt><dd>The socket must be connected to a remote host before <a class="el" href="class_internet_datagram_socket.html#a0d5cfa126ffe4939579908221c10242a" title="Send a raw data to connected remote address. ">send()</a> call.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">data</td><td>Buffer of data to send to the host. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">int</td><td>Number of sent bytes on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>in case socket was not created correctly. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_WOULD_BLOCK</td><td>in case non-blocking mode is enabled and send cannot be performed immediately. #retval NSAPI_ERROR_NO_ADDRESS if the address was not set with <a class="el" href="class_internet_datagram_socket.html#a143371c76e7b2ebeadc7b4f98bd7a21a" title="Set the remote address for next send() call and filtering of incoming packets. ">connect()</a>. </td></tr>
+    <tr><td class="paramname">int</td><td>Other negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a70b5c1fd2bc705be0cc7651532008b8a">NetworkStack::socket_send</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#ae7cb2e20b6c83280b1007b2f9db02970">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a7ab60f016a5d62aef8175464a77198"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> sendto </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Send data to the specified address. </p>
+<p>By default, sendto blocks until data is sent. If socket is set to nonblocking or times out, NSAPI_ERROR_WOULD_BLOCK is returned immediately.</p>
+<p>It uses sendto_control with zero ancillary data </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>The <a class="el" href="class_socket_address.html" title="SocketAddress class. ">SocketAddress</a> of the remote host. </td></tr>
+    <tr><td class="paramname">data</td><td>Buffer of data to send to the host. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>in case socket was not created correctly. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_WOULD_BLOCK</td><td>in case non-blocking mode is enabled and send cannot be performed immediately. </td></tr>
+    <tr><td class="paramname">int</td><td>Other negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a70b5c1fd2bc705be0cc7651532008b8a">NetworkStack::socket_send</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#ad0b071ed3b5be04611f438b7232dafcc">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1132b14fc956958c69dbb9718f7c48ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga1aef0d1a2599df92bb4499b5c4262d25">nsapi_size_or_error_t</a> sendto_control </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_socket_address.html">SocketAddress</a> &amp; </td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#ga1f666b39614be3f21e9e53c25a19cf52">nsapi_msghdr_t</a> * </td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__netsocket.html#gaeaef3ae1ffcf0d50c66fa2ca37621281">nsapi_size_t</a> </td>
+          <td class="paramname"><em>control_size</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Send datagram and ancillary data to the specified address. </p>
+<p>By default, sendto blocks until data is sent. If socket is set to nonblocking or times out, NSAPI_ERROR_WOULD_BLOCK is returned immediately.</p>
+<p>It uses sendto_control with zero ancillary data </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">address</td><td>The <a class="el" href="class_socket_address.html" title="SocketAddress class. ">SocketAddress</a> of the remote host. </td></tr>
+    <tr><td class="paramname">data</td><td>Buffer of data to send to the host. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes. </td></tr>
+    <tr><td class="paramname">control</td><td>Size of the buffer in bytes. </td></tr>
+    <tr><td class="paramname">control_size</td><td>Size of the buffer in bytes. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>in case socket was not created correctly. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_WOULD_BLOCK</td><td>in case non-blocking mode is enabled and send cannot be performed immediately. </td></tr>
+    <tr><td class="paramname">int</td><td>Other negative error codes for stack-related failures. See <a class="el" href="class_network_stack.html#a70b5c1fd2bc705be0cc7651532008b8a">NetworkStack::socket_send</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a2e56d146b989c612c786526052c27f25">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74bb4486263a8da3692980bed1e47e26"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_blocking </td>
+          <td>(</td>
+          <td class="paramtype">bool </td>
+          <td class="paramname"><em>blocking</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Set blocking or non-blocking mode of the socket. </p>
+<p>Initially all sockets are in blocking mode. In non-blocking mode blocking operations such as send/recv/accept return NSAPI_ERROR_WOULD_BLOCK if they cannot continue.</p>
+<p>set_blocking(false) is equivalent to set_timeout(0) set_blocking(true) is equivalent to set_timeout(-1)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">blocking</td><td>true for blocking mode, false for non-blocking mode. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#af25c97f10d959cde5140f8d34e61f1b9">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5a933911d88935e21c0acd54394c865"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void set_timeout </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Set timeout on blocking socket operations. </p>
+<p>Initially all sockets have unbounded timeouts. NSAPI_ERROR_WOULD_BLOCK is returned if a blocking operation takes longer than the specified timeout. A timeout of 0 removes the timeout from the socket. A negative value gives the socket an unbounded timeout.</p>
+<p>set_timeout(0) is equivalent to set_blocking(false) set_timeout(-1) is equivalent to set_blocking(true)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">timeout</td><td>Timeout in milliseconds </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#ae11fd42e1e3215802a2480a17f865e45">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af4e99acda304c5e6a4018e6a474db24c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> setsockopt </td>
+          <td>(</td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>
+          <td class="paramname"><em>optname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void * </td>
+          <td class="paramname"><em>optval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned </td>
+          <td class="paramname"><em>optlen</em> </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Set socket options. </p>
+<p><a class="el" href="class_internet_socket.html#af4e99acda304c5e6a4018e6a474db24c" title="Set socket options. ">setsockopt()</a> allows an application to pass stack-specific options to the underlying stack using stack-specific level and option names, or to request generic options using levels from nsapi_socket_level_t.</p>
+<p>For unsupported options, NSAPI_ERROR_UNSUPPORTED is returned and the socket is unmodified.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">level</td><td>Stack-specific protocol level or nsapi_socket_level_t. </td></tr>
+    <tr><td class="paramname">optname</td><td>Level-specific option name. </td></tr>
+    <tr><td class="paramname">optval</td><td>Option value. </td></tr>
+    <tr><td class="paramname">optlen</td><td>Length of the option value. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tbody><tr><td class="paramname">NSAPI_ERROR_OK</td><td>on success. </td></tr>
+    <tr><td class="paramname">NSAPI_ERROR_NO_SOCKET</td><td>if socket is not open. </td></tr>
+    <tr><td class="paramname">int</td><td>Negative error code on failure, see <a class="el" href="class_network_stack.html#aac9e14a8be89337c5aea17fd705c3f46">NetworkStack::setsockopt</a>. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a01c5c30608ceb44db047765173a630be">Socket</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4375c0d24ead23169c0511736b05df7d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tbody><tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void sigio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmbed_1_1_callback.html">mbed::Callback</a>&lt; void()&gt; </td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</tbody></table>
+</div><div class="memdoc">
+
+<p>Register a callback on state change of the socket. </p>
+<p>The specified callback is called on state changes, such as when the socket can receive/send/accept successfully and when an error occurs. The callback may also be called spuriously without reason.</p>
+<p>The callback may be called in an interrupt context and should not perform expensive operations such as receive/send calls.</p>
+<p>Note! This is not intended as a replacement for a poll or attach-like asynchronous API, but rather as a building block for constructing such functionality. The exact timing of the registered function is not guaranteed and susceptible to change.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">func</td><td>Function to call on state change. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_socket.html#a59ccc5950bb6b32b712444b2a92c0631">Socket</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/class_i_c_m_p_socket.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:18:26 GMT -->
+</html>

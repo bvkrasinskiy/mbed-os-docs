@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/crys__dh_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:22:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | crys_dh.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="crys__dh_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/crys__dh_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/crys__dh_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_59977a0c207738c890dea4a1d368376e.html">drivers</a></li><li class="navelem"><a class="el" href="dir_d03599bb5037acf08bca63ef92fdf25a.html">mbedtls</a></li><li class="navelem"><a class="el" href="dir_c945e5189a7a8214fe1e1edc5a4d026e.html">FEATURE_CRYPTOCELL310</a></li><li class="navelem"><a class="el" href="dir_790066f4cf6f78ff32d8c40d9e164497.html">include</a></li><li class="navelem"><a class="el" href="dir_64570b986a01bda1beaf455d118e8821.html">cryptocell310</a></li><li class="navelem"><a class="el" href="dir_02ad9d9bf1d43f4af43e6939683a39f2.html">internal</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">crys_dh.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="crys__dh_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/**************************************************************************************</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment">* Copyright (c) 2016-2017, ARM Limited or its affiliates. All rights reserved         *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment">* This file and the related binary are licensed under the following license:          *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment">* ARM Object Code and Header Files License, v1.0 Redistribution.                      *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment">* Redistribution and use of object code, header files, and documentation, without     *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment">* modification, are permitted provided that the following conditions are met:         *</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment">* 1) Redistributions must reproduce the above copyright notice and the                *</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment">*    following disclaimer in the documentation and/or other materials                 *</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment">*    provided with the distribution.                                                  *</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment">* 2) Unless to the extent explicitly permitted by law, no reverse                     *</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment">*    engineering, decompilation, or disassembly of is permitted.                      *</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment">* 3) Redistribution and use is permitted solely for the purpose of                    *</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment">*    developing or executing applications that are targeted for use                   *</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment">*    on an ARM-based product.                                                         *</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment">*                                                                                     *</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment">* DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND                  *</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">* CONTRIBUTORS "AS IS." ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT             *</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment">* NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT,        *</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="comment">* AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE          *</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="comment">* COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,   *</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="comment">* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED            *</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="comment">* TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR              *</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="comment">* PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF              *</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="comment">* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING                *</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment">* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS                  *</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment">* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                        *</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment">**************************************************************************************/</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> <span class="preprocessor">#ifndef _CRYS_DH_H</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="preprocessor">#define _CRYS_DH_H</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="preprocessor">#include "<a class="code" href="crys__rsa__types_8h.html">crys_rsa_types.h</a>"</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="preprocessor">#include "<a class="code" href="crys__kdf_8h.html">crys_kdf.h</a>"</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="preprocessor">#include "<a class="code" href="crys__rnd_8h.html">crys_rnd.h</a>"</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> </div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span> <span class="keyword">extern</span> <span class="stringliteral">"C"</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment"></span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment">/*!</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">@file</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span> <span class="comment">@brief This module defines the API that supports Diffie-Hellman key exchange, as defined in [PKCS3] and in [X9.42] (key lengths 1024 and 2048 bits).</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> <span class="comment">@defgroup crys_dh CryptoCell DH APIs</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment">@{</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment">@ingroup cryptocell_api</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment">*/</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> </div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span> <span class="comment">/************************ Defines ******************************/</span><span class="comment"></span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> <span class="comment">/*! Defintion for DH public key.*/</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga7f313f9979d6b17665617ceee73fb26d">   62</a></span> <span class="preprocessor">#define CRYS_DHPubKey_t  CRYSRSAPubKey_t</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment"></span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment">/*! Maximal valid key size in bits.*/</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gaa328928a41081a9809e6d8291a49e8cb">   65</a></span> <span class="preprocessor">#define CRYS_DH_MAX_VALID_KEY_SIZE_VALUE_IN_BITS  CRYS_RSA_MAX_VALID_KEY_SIZE_VALUE_IN_BITS </span><span class="comment">/*!&lt; \internal RL restrict to 2048 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment">/*! Minimal valid key size in bits.*/</span></div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga581b687f4c0c9c5e9dd75376c3dfbb76">   67</a></span> <span class="preprocessor">#define CRYS_DH_MIN_VALID_KEY_SIZE_VALUE_IN_BITS  1024 </span><span class="comment">/*!&lt; Size limitation according to ANSI standard */</span><span class="preprocessor"></span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> <span class="comment">/*! Maximal modulus size in bytes.*/</span></div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gaa6597764974dbf54601ee00f7bc66213">   69</a></span> <span class="preprocessor">#define CRYS_DH_MAX_MOD_SIZE_IN_BYTES   (CRYS_DH_MAX_VALID_KEY_SIZE_VALUE_IN_BITS / SASI_BITS_IN_BYTE)</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">/*! Maximal modulus size in words.*/</span></div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga32b58c9c0e26c7f64b55ec14233d4f1a">   71</a></span> <span class="preprocessor">#define CRYS_DH_MAX_MOD_SIZE_IN_WORDS   (CRYS_DH_MAX_MOD_SIZE_IN_BYTES/sizeof(uint32_t))</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment"></span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">/*! Modulus buffer size in words.*/</span></div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga814087ecff4c9b86329a07737613d408">   74</a></span> <span class="preprocessor">#define CRYS_DH_MAX_MOD_BUFFER_SIZE_IN_WORDS (CRYS_DH_MAX_MOD_SIZE_IN_WORDS + 2)</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> <span class="comment">/*! Maximal domain generation size in bits.*/</span></div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga8e9806f5aa18bc8e037b18a4917f65f7">   76</a></span> <span class="preprocessor">#define CRYS_DH_DOMAIN_GENERATION_MAX_SIZE_BITS   CRYS_RSA_MAX_KEY_GENERATION_SIZE_BITS </span><span class="comment">/*!&lt; \internal RL restrict to 2048 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment"></span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment">/*! Defintion for DH primitives data.*/</span></div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">   79</a></span> <span class="preprocessor">#define CRYS_DHPrimeData_t   CRYS_RSAPrimeData_t</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">/*! Defintion for DH public key.*/</span></div><div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">   81</a></span> <span class="preprocessor">#define CRYS_DHUserPubKey_t  CRYS_RSAUserPubKey_t</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> <span class="comment">/*! Defintion for DH other info.*/</span></div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga119c5f6de1a6b4c0634b088173c6a74c">   83</a></span> <span class="preprocessor">#define CRYS_DH_OtherInfo_t  CRYS_KDF_OtherInfo_t</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> <span class="comment"></span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span> <span class="comment">/*! Keying data size is in bytes*/</span></div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga9f1e20e446dbf5be8e92c6959a25fe60">   86</a></span> <span class="preprocessor">#define CRYS_DH_MAX_SIZE_OF_KEYING_DATA  CRYS_KDF_MAX_SIZE_OF_KEYING_DATA</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span> </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> <span class="comment">/************************ Enums ********************************/</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="comment"></span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="comment">/*! DH operations mode */</span></div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga4b5f72abbf9535764b317e66958bc64b">   91</a></span> <span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> {<span class="comment"></span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="comment">    /*! PKCS3 operation mode. */</span></div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba6ffdcfcb771e86cbd7cb6baf1e05d3a3">   94</a></span>     <a class="code" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba6ffdcfcb771e86cbd7cb6baf1e05d3a3">CRYS_DH_PKCS3_mode</a>  = 0,<span class="comment"></span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">    /*! ANSI X942 operation mode. */</span></div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba364a5436fda59497a036898e871abd63">   96</a></span>     <a class="code" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba364a5436fda59497a036898e871abd63">CRYS_DH_ANSI_X942_mode</a> = 1,<span class="comment"></span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span> <span class="comment">    /*! Total number of operation modes. */</span></div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba1b30941b1887c8816eb860e825883eef">   98</a></span>     <a class="code" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba1b30941b1887c8816eb860e825883eef">CRYS_DH_NumOfModes</a>,</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span> <span class="comment"></span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> <span class="comment">    /*! Reserved. */</span></div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba932286695c71d1a2f06afbbda26763eb">  101</a></span>     <a class="code" href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba932286695c71d1a2f06afbbda26763eb">CRYS_DH_OpModeLast</a>    = 0x7FFFFFFF,</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> </div><div class="line"><a name="l00103"></a><span class="lineno">  103</span> }<a class="code" href="group__crys__dh.html#ga4b5f72abbf9535764b317e66958bc64b">CRYS_DH_OpMode_t</a>;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> <span class="comment"></span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span> <span class="comment">/*! HASH operation modes */</span></div><div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga37d441e76a25ea8454c728f077da7510">  106</a></span> <span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> {<span class="comment"></span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> <span class="comment">    /*! SHA1 operation mode. */</span></div><div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a229660c04e435d42655d99dc1faf72ef">  109</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a229660c04e435d42655d99dc1faf72ef">CRYS_DH_HASH_SHA1_mode</a>      = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6aec89c245e5bfa89c5d4d6798b93741cb">CRYS_HASH_SHA1_mode</a>,<span class="comment"></span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> <span class="comment">    /*! SHA224 operation mode. */</span></div><div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a17fbec497a1c91ba46b4f4cbe3b69ef1">  111</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a17fbec497a1c91ba46b4f4cbe3b69ef1">CRYS_DH_HASH_SHA224_mode</a>    = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a8b351964a637f5acbedc54b4bd328064">CRYS_HASH_SHA224_mode</a>,<span class="comment"></span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">    /*! SHA256 operation mode. */</span></div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a5525c73f69772e7b484395a703f9c161">  113</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a5525c73f69772e7b484395a703f9c161">CRYS_DH_HASH_SHA256_mode</a>    = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a8bf2adec41e1b991266001b15390230c">CRYS_HASH_SHA256_mode</a>,<span class="comment"></span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> <span class="comment">    /*! SHA384 operation mode. */</span></div><div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a6f614eeda08ebccb89b8598fa2e6fdae">  115</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a6f614eeda08ebccb89b8598fa2e6fdae">CRYS_DH_HASH_SHA384_mode</a>    = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a0c1e37420b090ce8e0a74d620e3d410f">CRYS_HASH_SHA384_mode</a>,<span class="comment"></span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> <span class="comment">    /*! SHA512 operation mode. */</span></div><div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a3566cd63ac334945a2cb7d3be7d4a470">  117</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a3566cd63ac334945a2cb7d3be7d4a470">CRYS_DH_HASH_SHA512_mode</a>    = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a2f394d3170daf03f269d4357aa9fbdea">CRYS_HASH_SHA512_mode</a>,<span class="comment"></span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> <span class="comment">    /*! MD5 operation mode (not used in DH). */</span></div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a85b41a651fc1398027dc27fffdb06c80">  119</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a85b41a651fc1398027dc27fffdb06c80">CRYS_DH_HASH_MD5_mode</a>           = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6acff06df287ca1379ce2d0ee9122827f5">CRYS_HASH_MD5_mode</a>, <span class="comment">/*!&lt; \internal not used in DH */</span><span class="comment"></span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span> <span class="comment">    /*! Total number of HASH modes. */</span></div><div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a486192d96303cf732b38ac81bbcf24f3">  121</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a486192d96303cf732b38ac81bbcf24f3">CRYS_DH_HASH_NumOfModes</a>     = <a class="code" href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6acff06df287ca1379ce2d0ee9122827f5">CRYS_HASH_MD5_mode</a>,<span class="comment"></span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span> <span class="comment">    /*! Reserved. */</span></div><div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510abf601e645549572366b704325016148c">  123</a></span>     <a class="code" href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510abf601e645549572366b704325016148c">CRYS_DH_HASH_OperationModeLast</a>  = 0x7FFFFFFF,</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> </div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> }<a class="code" href="group__crys__dh.html#ga37d441e76a25ea8454c728f077da7510">CRYS_DH_HASH_OpMode_t</a>;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment"></span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">/*! Key derivation modes. */</span></div><div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gab44016df7c5c760183bb53e976a42e6b">  128</a></span> <span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> {<span class="comment"></span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span> <span class="comment">    /*! ASN1 derivation mode.*/</span></div><div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba45309ac665310c8a97fa41cb1f63a508">  131</a></span>     <a class="code" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba45309ac665310c8a97fa41cb1f63a508">CRYS_DH_ASN1_Der_mode</a>    = <a class="code" href="group__crys__kdf.html#gga23899eaf73b53da1e0e58fe9cb1f2eaeaa502e537ac8fff3f5cd4dda0a76a8cfd">CRYS_KDF_ASN1_DerivMode</a>,<span class="comment"></span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">    /*! Concatination derivation mode.*/</span></div><div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba61d158a49f70c3bc26d6e2d42eb687be">  133</a></span>     <a class="code" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba61d158a49f70c3bc26d6e2d42eb687be">CRYS_DH_Concat_Der_mode</a>  = <a class="code" href="group__crys__kdf.html#gga23899eaf73b53da1e0e58fe9cb1f2eaea4190fc5b66129a71abd105aa1969fcb9">CRYS_KDF_ConcatDerivMode</a>,<span class="comment"></span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">    /*! X963 derivation mode.*/</span></div><div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba206cc24eeee72b1833cea27d57b4605a">  135</a></span>     <a class="code" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba206cc24eeee72b1833cea27d57b4605a">CRYS_DH_X963_DerMode</a>    = <a class="code" href="group__crys__kdf.html#gga23899eaf73b53da1e0e58fe9cb1f2eaea4190fc5b66129a71abd105aa1969fcb9">CRYS_KDF_ConcatDerivMode</a>,<span class="comment"></span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span> <span class="comment">    /*! Reserved. */</span></div><div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba9e2ec8ebd5f106398ddd4aace9627d9a">  137</a></span>     <a class="code" href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba9e2ec8ebd5f106398ddd4aace9627d9a">CRYS_DH_DerivationFunc_ModeLast</a>= 0x7FFFFFFF,</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> </div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> }<a class="code" href="group__crys__dh.html#gab44016df7c5c760183bb53e976a42e6b">CRYS_DH_DerivationFunc_Mode</a>;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> </div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> </div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">/************************ Typedefs  *************************************/</span><span class="comment"></span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">/*! Temporary buffer structure for internal usage.*/</span></div><div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___exp_temp__t.html">  144</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> {<span class="comment"></span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">    /*! Temporary primitives data */</span></div><div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___exp_temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">  147</a></span>     <a class="code" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a> <a class="code" href="struct_c_r_y_s___d_h___exp_temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">PrimeData</a>;<span class="comment"></span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> <span class="comment">    /*! Public key. */</span></div><div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___exp_temp__t.html#a54b6f0ea1c0e8f2f7291af62cef8cd18">  149</a></span>     <a class="code" href="group__crys__dh.html#ga7f313f9979d6b17665617ceee73fb26d">CRYS_DHPubKey_t</a>    <a class="code" href="struct_c_r_y_s___d_h___exp_temp__t.html#a54b6f0ea1c0e8f2f7291af62cef8cd18">PubKey</a>;<span class="comment"></span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">    /*! Temporary buffer for internal usage. */</span></div><div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___exp_temp__t.html#a312db62bdd6c8b3ce9bf3ee182c32abc">  151</a></span>     uint32_t TempBuff[<a class="code" href="group__crys__dh.html#ga814087ecff4c9b86329a07737613d408">CRYS_DH_MAX_MOD_BUFFER_SIZE_IN_WORDS</a>];</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> } <a class="code" href="struct_c_r_y_s___d_h___exp_temp__t.html">CRYS_DH_ExpTemp_t</a>;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment"></span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">/*! Temporary buffer structure for internal usage. */</span></div><div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___temp__t.html">  155</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> {<span class="comment"></span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">    /*! Temporary primitives data */</span></div><div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">  158</a></span>     <a class="code" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a> <a class="code" href="struct_c_r_y_s___d_h___temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">PrimeData</a>;<span class="comment"></span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">    /*! User's public key. */</span></div><div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___temp__t.html#ad7b4f5d565db9b6d4754013bf0e60c20">  160</a></span>     <a class="code" href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">CRYS_DHUserPubKey_t</a>    <a class="code" href="struct_c_r_y_s___d_h___temp__t.html#ad7b4f5d565db9b6d4754013bf0e60c20">UserPubKey</a>;<span class="comment"></span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">    /*! Temporary buffer for internal usage. */</span></div><div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___temp__t.html#a312db62bdd6c8b3ce9bf3ee182c32abc">  162</a></span>     uint32_t TempBuff[<a class="code" href="group__crys__dh.html#ga814087ecff4c9b86329a07737613d408">CRYS_DH_MAX_MOD_BUFFER_SIZE_IN_WORDS</a>];</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> } <a class="code" href="struct_c_r_y_s___d_h___temp__t.html">CRYS_DH_Temp_t</a>;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="comment"></span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">/*! Temporary buffer structure for internal usage. */</span></div><div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___hybr_temp__t.html">  166</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> {<span class="comment"></span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">    /*! Temporary primitives data */</span></div><div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___hybr_temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">  169</a></span>     <a class="code" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a> <a class="code" href="struct_c_r_y_s___d_h___hybr_temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">PrimeData</a>;<span class="comment"></span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span> <span class="comment">    /*! User's public key. */</span></div><div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___hybr_temp__t.html#ad7b4f5d565db9b6d4754013bf0e60c20">  171</a></span>     <a class="code" href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">CRYS_DHUserPubKey_t</a>    <a class="code" href="struct_c_r_y_s___d_h___hybr_temp__t.html#ad7b4f5d565db9b6d4754013bf0e60c20">UserPubKey</a>;<span class="comment"></span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> <span class="comment">    /*! Temporary buffer for internal usage. */</span></div><div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___hybr_temp__t.html#a43d272f396d14315c7c032166e51e4a5">  173</a></span>     uint32_t TempBuff[2*<a class="code" href="group__crys__dh.html#ga814087ecff4c9b86329a07737613d408">CRYS_DH_MAX_MOD_BUFFER_SIZE_IN_WORDS</a>];</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span> } <a class="code" href="struct_c_r_y_s___d_h___hybr_temp__t.html">CRYS_DH_HybrTemp_t</a>;</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span> <span class="comment"></span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span> <span class="comment">/*! Defintion of buffer used for FIPS Known Answer Tests. */</span></div><div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___fips_kat__t.html">  177</a></span> <span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span> {<span class="comment"></span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment">    /*! Public key. */</span></div><div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___fips_kat__t.html#a0306fc10ac16a32d0843a8dbe7928bd2">  180</a></span>     <a class="code" href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">CRYS_DHUserPubKey_t</a> <a class="code" href="struct_c_r_y_s___d_h___fips_kat__t.html#a0306fc10ac16a32d0843a8dbe7928bd2">pubKey</a>;<span class="comment"></span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> <span class="comment">    /*! Temporary primitives data */</span></div><div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___fips_kat__t.html#a69d8c53f4273326a159161a61871b888">  182</a></span>     <a class="code" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a>  <a class="code" href="struct_c_r_y_s___d_h___fips_kat__t.html#a69d8c53f4273326a159161a61871b888">primeData</a>;<span class="comment"></span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> <span class="comment">    /*! Buffer for the secret value.*/</span></div><div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="struct_c_r_y_s___d_h___fips_kat__t.html#a1d565d2b263cad3e5b1ea0f63af4bc7a">  184</a></span>     uint8_t secretBuff[<a class="code" href="group__crys__dh.html#ga581b687f4c0c9c5e9dd75376c3dfbb76">CRYS_DH_MIN_VALID_KEY_SIZE_VALUE_IN_BITS</a>/<a class="code" href="group__ssi__pal__types.html#ga2c178308397f050883ec648e910531db">SASI_BITS_IN_BYTE</a>];  <span class="comment">// KAT tests uses 1024 bit key</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> } <a class="code" href="struct_c_r_y_s___d_h___fips_kat__t.html">CRYS_DH_FipsKat_t</a>;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span> </div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> </div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="comment">/************************ Structs  **************************************/</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span> </div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> <span class="comment">/************************ Public Variables ******************************/</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> </div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment">/************************ Public Functions ******************************/</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> </div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="comment">/*******************************************************************************************/</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> <span class="comment"></span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> <span class="comment">/*!</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> <span class="comment">@brief This function has two purposes:</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> <span class="comment">&lt;ol&gt;&lt;li&gt; Randomly generate the client private key according to the choosen version [PKCS3] or [ANSI X9.42].&lt;/li&gt;</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="comment">&lt;li&gt; Computes the client public key as follows: ClientPub = Generator^Prv mod Prime, where '^' is the symbol of exponentiation.&lt;/li&gt;&lt;/ol&gt;</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> <span class="comment">This function should not be called directly. Instead, use the macros ::CRYS_DH_PKCS3_GeneratePubPrv and ::CRYS_DH_ANSI_X942_GeneratePubPrv.</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span> <span class="comment">\note</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span> <span class="comment">All buffer parameters should be in Big-Endian form.</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> <span class="comment"></span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> <span class="comment">@return CRYS_OK on success.</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> <span class="comment">@return A non-zero value on failure as defined crys_dh_error.h, crys_rnd_error.h or crys_rsa_error.h.</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="comment"> */</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span> CIMPORT_C <a class="code" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> <a class="code" href="group__crys__dh.html#ga094931c8cb4cbf0393409ef2cab5ef12">_DX_DH_GeneratePubPrv</a>(</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>                     <span class="keywordtype">void</span>   *rndState_ptr,               <span class="comment">/*!&lt; [in/out] Pointer to the RND state structure. */</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>                     <a class="code" href="group__crys__rnd.html#ga4a2673621428db92245a2f992be3c628">SaSiRndGenerateVectWorkFunc_t</a> rndGenerateVectFunc, <span class="comment">/*!&lt; [in] Pointer to the random vector generation function. */</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>                     uint8_t *Generator_ptr,                         <span class="comment">/*!&lt; [in]  Pointer to the Generator octet string. */</span></div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>                     uint16_t GeneratorSize,                         <span class="comment">/*!&lt; [in]  The size of the Generator string (in bytes). */</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>                     uint8_t *Prime_ptr,                             <span class="comment">/*!&lt; [in]  Pointer to the Prime octet string P (used as modulus in the algorithm). */</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>                     uint16_t PrimeSize,                             <span class="comment">/*!&lt; [in]  The size of the Prime string in bytes. */</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>                     uint16_t L,                                     <span class="comment">/*!&lt; [in]  Exact size in bits of the Prime to be generated (relevant only for [PKCS3]):</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span> <span class="comment">                                                                               &lt;ul&gt;&lt;li&gt; If L!=0, force the private key to be [2^(L-1) ? Prv &lt; 2^L], where '^'</span></div><div class="line"><a name="l00216"></a><span class="lineno">  216</span> <span class="comment">                                            indicates exponentiation.&lt;/li&gt;</span></div><div class="line"><a name="l00217"></a><span class="lineno">  217</span> <span class="comment">                                                                               &lt;li&gt; If L = 0 then [0 &lt; Prv &lt; P-1].&lt;/li&gt;&lt;/ul&gt; */</span></div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>                     uint8_t *Q_ptr,                                 <span class="comment">/*!&lt; [in]  Relevant only for [ANSI X9.42] - Pointer to the Q octet string in the range:</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span> <span class="comment">                                                                                1 &lt;= Prv &lt;= Q-1 or 1 &lt; Prv &lt; Q-1. */</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>                     uint16_t QSize,                                 <span class="comment">/*!&lt; [in]  Relevant only for [ANSI X9.42] - Size of the Q string (in bytes). */</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>                     <a class="code" href="group__crys__dh.html#ga4b5f72abbf9535764b317e66958bc64b">CRYS_DH_OpMode_t</a> DH_mode,                       <span class="comment">/*!&lt; [in]  An enumerator declaring whether this is [PKCS3] or [ANSI X9.42] mode. */</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>                     <a class="code" href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">CRYS_DHUserPubKey_t</a> *tmpPubKey_ptr,             <span class="comment">/*!&lt; [in]  Pointer to a temporary buffer for public key structure. Used for the</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span> <span class="comment">                                                   exponentiation function. */</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>                     <a class="code" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a>  *tmpPrimeData_ptr,          <span class="comment">/*!&lt; [in]  Pointer to a structure holding internal temporary buffers. */</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>                     uint8_t *ClientPrvKey_ptr,                      <span class="comment">/*!&lt; [out] Pointer to the Private key Prv. This buffer should be at least the following</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span> <span class="comment">                                           size (in bytes):</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span> <span class="comment">                                                                               &lt;ul&gt;&lt;li&gt; If L is provided: (L+7)/8.&lt;/li&gt;</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span> <span class="comment">                                                                               &lt;li&gt; If L is NULL: \p PrimeSize. &lt;/li&gt;&lt;/ul&gt; */</span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>                     uint16_t *ClientPrvKeySize_ptr,                 <span class="comment">/*!&lt; [in/out] Pointer to the Private key size:</span></div><div class="line"><a name="l00230"></a><span class="lineno">  230</span> <span class="comment">                                                                                    &lt;ul&gt;&lt;li&gt; Input - size of the given buffer.&lt;/li&gt;</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span> <span class="comment">                                                                                    &lt;li&gt; Output - actual size of the generated private key.&lt;/li&gt;&lt;/ul&gt; */</span></div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>                     uint8_t *ClientPub1_ptr,                        <span class="comment">/*!&lt; [out] Pointer to the Public key. This buffer should be at least \p PrimeSize bytes. */</span></div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>                     uint16_t *ClientPubSize_ptr                     <span class="comment">/*!&lt; [in/out] Pointer to the Public key size:</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span> <span class="comment">                                                                                  &lt;ul&gt;&lt;li&gt; Input - size of the given buffer.&lt;/li&gt;</span></div><div class="line"><a name="l00235"></a><span class="lineno">  235</span> <span class="comment">                                                                                  &lt;li&gt; Output - actual size of the generated public key.&lt;/li&gt;&lt;/ul&gt; */</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span> );</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span> </div><div class="line"><a name="l00238"></a><span class="lineno">  238</span> </div><div class="line"><a name="l00239"></a><span class="lineno">  239</span> <span class="comment">/* macro for calling the GeneratePubPrv function on PKCS#3 mode:  Q is irrelevant */</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span> <span class="comment">/*--------------------------------------------------------------------------------*/</span><span class="comment"></span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span> <span class="comment">/*!</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span> <span class="comment">This macro is used to generate the public and private DH keys according to [PKCS3]. For a description of the parameters see ::_DX_DH_GeneratePubPrv.</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span> <span class="comment">*/</span></div><div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga31098ba9970f3d6e51c39db66c2b11c4">  244</a></span> <span class="preprocessor">#define CRYS_DH_PKCS3_GeneratePubPrv(rndState_ptr, rndGenerateVectFunc, Generator_ptr,GeneratorSize,\</span></div><div class="line"><a name="l00245"></a><span class="lineno">  245</span> <span class="preprocessor">                Prime_ptr,PrimeSize,\</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span> <span class="preprocessor">                L,\</span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span> <span class="preprocessor">                tmpPubKey_ptr,tmpPrimeData_ptr,\</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span> <span class="preprocessor">                ClientPrvKey_ptr,ClientPrvKeySize_ptr,\</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span> <span class="preprocessor">                ClientPub_ptr,ClientPubSize_ptr)\</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span> <span class="preprocessor">        _DX_DH_GeneratePubPrv(rndState_ptr, rndGenerateVectFunc, (Generator_ptr),(GeneratorSize),\</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span> <span class="preprocessor">                (Prime_ptr),(PrimeSize),\</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span> <span class="preprocessor">                (L),\</span></div><div class="line"><a name="l00253"></a><span class="lineno">  253</span> <span class="preprocessor">                (uint8_t *)NULL,(uint16_t)0,\</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span> <span class="preprocessor">                CRYS_DH_PKCS3_mode,\</span></div><div class="line"><a name="l00255"></a><span class="lineno">  255</span> <span class="preprocessor">                (tmpPubKey_ptr),(tmpPrimeData_ptr),\</span></div><div class="line"><a name="l00256"></a><span class="lineno">  256</span> <span class="preprocessor">                (ClientPrvKey_ptr),(ClientPrvKeySize_ptr),\</span></div><div class="line"><a name="l00257"></a><span class="lineno">  257</span> <span class="preprocessor">                (ClientPub_ptr),(ClientPubSize_ptr))</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span> <span class="comment"></span></div><div class="line"><a name="l00259"></a><span class="lineno">  259</span> <span class="comment">/*!</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span> <span class="comment">This macro is used to generate the public and private DH keys according to [ANSI X9.42]. For a description of the parameters see ::_DX_DH_GeneratePubPrv.</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span> <span class="comment">*/</span></div><div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga86d6fe8a48693ef8940d3d42d434a6f5">  262</a></span> <span class="preprocessor">#define CRYS_DH_ANSI_X942_GeneratePubPrv(rndState_ptr, rndGenerateVectFunc, Generator_ptr,GeneratorSize,Prime_ptr,PrimeSize,\</span></div><div class="line"><a name="l00263"></a><span class="lineno">  263</span> <span class="preprocessor">                Q_ptr,QSize,\</span></div><div class="line"><a name="l00264"></a><span class="lineno">  264</span> <span class="preprocessor">                tmpPubKey_ptr,tmpPrimeData_ptr,\</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span> <span class="preprocessor">                ClientPrvKey_ptr,ClientPrvKeySize_ptr,\</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span> <span class="preprocessor">                ClientPub_ptr,ClientPubSize_ptr)\</span></div><div class="line"><a name="l00267"></a><span class="lineno">  267</span> <span class="preprocessor">        _DX_DH_GeneratePubPrv(rndState_ptr, rndGenerateVectFunc, (Generator_ptr),(GeneratorSize),\</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span> <span class="preprocessor">                (Prime_ptr),(PrimeSize),\</span></div><div class="line"><a name="l00269"></a><span class="lineno">  269</span> <span class="preprocessor">                (uint16_t)0,\</span></div><div class="line"><a name="l00270"></a><span class="lineno">  270</span> <span class="preprocessor">                (Q_ptr),(QSize),\</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span> <span class="preprocessor">                CRYS_DH_ANSI_X942_mode,\</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span> <span class="preprocessor">                (tmpPubKey_ptr),(tmpPrimeData_ptr),\</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span> <span class="preprocessor">                (ClientPrvKey_ptr),(ClientPrvKeySize_ptr),\</span></div><div class="line"><a name="l00274"></a><span class="lineno">  274</span> <span class="preprocessor">                (ClientPub_ptr),(ClientPubSize_ptr))</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span> </div><div class="line"><a name="l00276"></a><span class="lineno">  276</span> </div><div class="line"><a name="l00277"></a><span class="lineno">  277</span> <span class="comment">/*******************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span> <span class="comment">/*!</span></div><div class="line"><a name="l00279"></a><span class="lineno">  279</span> <span class="comment">@brief This function computes the shared secret key (value) accordng to [ANSI X9.42], 7.5.1:</span></div><div class="line"><a name="l00280"></a><span class="lineno">  280</span> <span class="comment">          SecretKey = ServerPubKey ^ ClientPrvKey mod Prime.</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span> <span class="comment">\note &lt;ul id="noteb"&gt;&lt;li&gt; All buffer parameters should be in Big-Endian form.&lt;/li&gt;</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span> <span class="comment">&lt;li&gt;The user must obtain assurance of validity of the public key, using one of methods,</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span> <span class="comment">described in [ANSI X9.42] paragraph 7.4.&lt;/li&gt;</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span> <span class="comment">&lt;li&gt;The actual size of the private key (in bits) must be not less than 2 and not greater than the actual</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span> <span class="comment">size of the Prime (modulus in bits).&lt;/li&gt;&lt;/ul&gt;</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span> <span class="comment"></span></div><div class="line"><a name="l00287"></a><span class="lineno">  287</span> <span class="comment">@return CRYS_OK on success.</span></div><div class="line"><a name="l00288"></a><span class="lineno">  288</span> <span class="comment">@return A non-zero value on failure as defined in crys_dh_error.h or crys_rsa_error.h.</span></div><div class="line"><a name="l00289"></a><span class="lineno">  289</span> <span class="comment">*/</span></div><div class="line"><a name="l00290"></a><span class="lineno">  290</span> CIMPORT_C <a class="code" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> <a class="code" href="group__crys__dh.html#ga84f1808637a8836074dea4fcca898016">CRYS_DH_GetSecretKey</a>(</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>                     uint8_t *ClientPrvKey_ptr,                  <span class="comment">/*!&lt; [in]  Pointer to the Private key octet string Prv &lt; Prime. */</span></div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>                     uint16_t ClientPrvKeySize,                  <span class="comment">/*!&lt; [in]  The Private key Size (in bytes). */</span></div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>                     uint8_t *ServerPubKey_ptr,                  <span class="comment">/*!&lt; [in]  Pointer to the Server public key octet string. */</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>                     uint16_t ServerPubKeySize,                  <span class="comment">/*!&lt; [in]  The Server Public key Size (in bytes). */</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>                     uint8_t *Prime_ptr,                         <span class="comment">/*!&lt; [in]  Pointer to the Prime octet string. */</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>                     uint16_t PrimeSize,                         <span class="comment">/*!&lt; [in]  The size of the Prime string. */</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>                     <a class="code" href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">CRYS_DHUserPubKey_t</a> *tmpPubKey_ptr,         <span class="comment">/*!&lt; [in]  Pointer to the public key structure. Used for the exponentiation</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span> <span class="comment">                                             operation function. Need not be initialized. */</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>                     <a class="code" href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a>  *tmpPrimeData_ptr,      <span class="comment">/*!&lt; [in]  Pointer to a structure containing internal temp buffers. */</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>                     uint8_t *SecretKey_ptr,                     <span class="comment">/*!&lt; [out] Pointer to the secret key octet string. This buffer should be at</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span> <span class="comment">                                            least PrimeSize bytes. */</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>                     uint16_t *SecretKeySize_ptr                 <span class="comment">/*!&lt; [in/out] Pointer to the secret key Buffer Size. This buffer should be at</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span> <span class="comment">                                            least of PrimeSize bytes:</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span> <span class="comment">                                            &lt;ul&gt;&lt;li&gt; Input  - size of the given buffer.&lt;/li&gt;</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span> <span class="comment">                                            &lt;li&gt; Output - actual size. &lt;/li&gt;&lt;/ul&gt;*/</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span> );</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span> </div><div class="line"><a name="l00308"></a><span class="lineno">  308</span> </div><div class="line"><a name="l00309"></a><span class="lineno">  309</span> <span class="comment">/******************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span> <span class="comment">/*!</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span> <span class="comment">@brief This function extracts the shared secret keying data from the shared secret value. It should be called by using</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span> <span class="comment">macros ::CRYS_DH_X942_GetSecretDataAsn1 and ::CRYS_DH_X942_GetSecretDataConcat.</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span> <span class="comment"></span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span> <span class="comment">\note</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span> <span class="comment">&lt;ul id="noteb"&gt;&lt;li&gt; The "other info" argument and its AlgorithmID entry are mandatory only for ASN1 key derivation, and optional for</span></div><div class="line"><a name="l00316"></a><span class="lineno">  316</span> <span class="comment">the other derivation modes. &lt;/li&gt;</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span> <span class="comment">&lt;li&gt;If used, all entries of the structure should be initialized with relevant data and size, prior to calling this function</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span> <span class="comment">(entry size of empty fields must be set to 0).&lt;/li&gt;</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span> <span class="comment">&lt;li&gt;All buffers arguments are represented in Big-Endian form.&lt;/li&gt;&lt;/ul&gt;</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span> <span class="comment"></span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span> <span class="comment">@return CRYS_OK on success.</span></div><div class="line"><a name="l00322"></a><span class="lineno">  322</span> <span class="comment">@return A non-zero value on failure as defined in crys_dh_error.h, crys_rsa_error.h, crys_kdf_error.h or crys_hash_error.h.</span></div><div class="line"><a name="l00323"></a><span class="lineno">  323</span> <span class="comment">*/</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>  CIMPORT_C <a class="code" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> <a class="code" href="group__crys__dh.html#gaa9c1dd3d596eaec592b56239052319b2">CRYS_DH_X942_GetSecretData</a>(</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>                     uint8_t                  *ClientPrvKey_ptr,        <span class="comment">/*!&lt; [in] Pointer to the Private key octet string. */</span></div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>                     uint16_t                  ClientPrvKeySize,         <span class="comment">/*!&lt; [in] The Private key size (in bytes). */</span></div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>                     uint8_t                  *ServerPubKey_ptr,         <span class="comment">/*!&lt; [in] Pointer to the Server public key octet string. */</span></div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>             uint16_t                  ServerPubKeySize,         <span class="comment">/*!&lt; [in] The Server Public key size (in bytes). */</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>                     uint8_t                  *Prime_ptr,                <span class="comment">/*!&lt; [in] Pointer to the Prime octet string. */</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>                     uint16_t                  PrimeSize,                <span class="comment">/*!&lt; [in] The size of the Prime string. */</span></div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>                     <a class="code" href="group__crys__dh.html#ga119c5f6de1a6b4c0634b088173c6a74c">CRYS_DH_OtherInfo_t</a>        *otherInfo_ptr,          <span class="comment">/*!&lt; [in] Pointer to structure containing other data, shared by two entities</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span> <span class="comment">                                          sharing the secret keying data.</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span> <span class="comment">                                                                                  The Maximal size of each data entry of "other info" is limited - see crys_kdf.h</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span> <span class="comment">                                          for the defined value. */</span></div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>                     <a class="code" href="group__crys__dh.html#ga37d441e76a25ea8454c728f077da7510">CRYS_DH_HASH_OpMode_t</a>       hashMode,               <span class="comment">/*!&lt; [in] One of the supported SHA-x HASH modes. The supported modes are according to the supported</span></div><div class="line"><a name="l00336"></a><span class="lineno">  336</span> <span class="comment">                                              HASH modes for the product (and MD5 is not supported). */</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>                     <a class="code" href="group__crys__dh.html#gab44016df7c5c760183bb53e976a42e6b">CRYS_DH_DerivationFunc_Mode</a> DerivFunc_mode,         <span class="comment">/*!&lt; [in] The enumerator ID of key derivation function mode. ASN1 or Concatenation</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span> <span class="comment">                                          modes are supported. */</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>                     <a class="code" href="struct_c_r_y_s___d_h___temp__t.html">CRYS_DH_Temp_t</a>             *tmpBuff_ptr,            <span class="comment">/*!&lt; [in] A pointer to the DH temp buffer structure. Not initialized. */</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>                     uint8_t                  *SecretKeyingData_ptr,     <span class="comment">/*!&lt; [out] Pointer to the secret key octet string. This buffer should be at least</span></div><div class="line"><a name="l00341"></a><span class="lineno">  341</span> <span class="comment">                                           PrimeSize bytes. */</span></div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>                     uint16_t                  SecretKeyingDataSize      <span class="comment">/*!&lt; [in] The required Secret Keying data size (in bytes). Must be larger than 0,</span></div><div class="line"><a name="l00343"></a><span class="lineno">  343</span> <span class="comment">                                          and smaller than the maximal - CRYS_DH_MAX_SIZE_OF_KEYING_DATA. */</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span> );</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span> </div><div class="line"><a name="l00346"></a><span class="lineno">  346</span> <span class="comment">/****************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span> <span class="comment">/*!</span></div><div class="line"><a name="l00348"></a><span class="lineno">  348</span> <span class="comment">This macro implements the DH [ANSI X9.42] standard. It derives a secret key using the Derivation function based on ASN.1. For a</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span> <span class="comment">description of the parameters see ::CRYS_DH_X942_GetSecretData.*/</span></div><div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga45a26ce9acc4370cc11529e44cddd0f6">  350</a></span> <span class="preprocessor">#define CRYS_DH_X942_GetSecretDataAsn1(ClientPrvKey_ptr,ClientPrvKeySize,ServerPubKey_ptr,ServerPubKeySize,Prime_ptr,PrimeSize,otherInfo_ptr,hashMode,tmpBuff_ptr,SecretKeyingData_ptr,SecretKeyingDataSize)\</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span> <span class="preprocessor">    CRYS_DH_X942_GetSecretData((ClientPrvKey_ptr),(ClientPrvKeySize),(ServerPubKey_ptr),(ServerPubKeySize),(Prime_ptr),(PrimeSize),(otherInfo_ptr),(hashMode),(CRYS_DH_ASN1_Der_mode),(tmpBuff_ptr),(SecretKeyingData_ptr),(SecretKeyingDataSize))</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span> <span class="comment">/*!</span></div><div class="line"><a name="l00353"></a><span class="lineno">  353</span> <span class="comment">This macro implements the DH [ANSI X9.42] standard. It derives a secret key using the Derivation function based on concatenation of HASHed data.</span></div><div class="line"><a name="l00354"></a><span class="lineno">  354</span> <span class="comment">For a description of the parameters see ::CRYS_DH_X942_GetSecretData.*/</span></div><div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga1b6c4d17595a763ec18e48d48ddf8c34">  355</a></span> <span class="preprocessor">#define CRYS_DH_X942_GetSecretDataConcat(ClientPrvKey_ptr,ClientPrvKeySize,ServerPubKey_ptr,ServerPubKeySize,Prime_ptr,PrimeSize,otherInfo_ptr,hashMode,tmpBuff_ptr,SecretKeyingData_ptr,SecretKeyingDataSize)\</span></div><div class="line"><a name="l00356"></a><span class="lineno">  356</span> <span class="preprocessor">    CRYS_DH_X942_GetSecretData((ClientPrvKey_ptr),(ClientPrvKeySize),(ServerPubKey_ptr),(ServerPubKeySize),(Prime_ptr),(PrimeSize),(otherInfo_ptr),(hashMode),(CRYS_DH_Concat_Der_mode),(tmpBuff_ptr),(SecretKeyingData_ptr),(SecretKeyingDataSize))</span></div><div class="line"><a name="l00357"></a><span class="lineno">  357</span> </div><div class="line"><a name="l00358"></a><span class="lineno">  358</span> </div><div class="line"><a name="l00359"></a><span class="lineno">  359</span> <span class="comment">/****************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00360"></a><span class="lineno">  360</span> <span class="comment">/*!</span></div><div class="line"><a name="l00361"></a><span class="lineno">  361</span> <span class="comment">@brief The function computes shared secret data using two pairs of public and private keys:</span></div><div class="line"><a name="l00362"></a><span class="lineno">  362</span> <span class="comment"></span></div><div class="line"><a name="l00363"></a><span class="lineno">  363</span> <span class="comment">&lt;ul&gt;&lt;li&gt; SecretKey1 = ServerPubKey1^ClientPrvKey1 mod Prime. &lt;/li&gt;</span></div><div class="line"><a name="l00364"></a><span class="lineno">  364</span> <span class="comment">&lt;li&gt; SecretKey2 = ServerPubKey2^ClientPrvKey2 mod Prime. &lt;/li&gt;&lt;/ul&gt;</span></div><div class="line"><a name="l00365"></a><span class="lineno">  365</span> <span class="comment">It uses the Derivation function to derive secret keying data from the two secret keys (values).</span></div><div class="line"><a name="l00366"></a><span class="lineno">  366</span> <span class="comment">This function may be called directly, or by using macros ::CRYS_DH_X942_HybridGetSecretDataAsn1 and ::CRYS_DH_X942_HybridGetSecretDataConcat</span></div><div class="line"><a name="l00367"></a><span class="lineno">  367</span> <span class="comment">described above.</span></div><div class="line"><a name="l00368"></a><span class="lineno">  368</span> <span class="comment"></span></div><div class="line"><a name="l00369"></a><span class="lineno">  369</span> <span class="comment">\note</span></div><div class="line"><a name="l00370"></a><span class="lineno">  370</span> <span class="comment">&lt;ul id="noteb"&gt;&lt;li&gt; The "other info" argument and its AlgorithmID entry are mandatory only for ASN1 key derivation, and optional for the other derivation modes.&lt;/li&gt;</span></div><div class="line"><a name="l00371"></a><span class="lineno">  371</span> <span class="comment">If used, all entries of the structure should be initialized with relevant data and size, prior to calling this function</span></div><div class="line"><a name="l00372"></a><span class="lineno">  372</span> <span class="comment">(entry size of empty fields must be set to 0).</span></div><div class="line"><a name="l00373"></a><span class="lineno">  373</span> <span class="comment">&lt;li&gt; All buffers arguments are represented in Big-Endian form. &lt;/li&gt;&lt;/ul&gt;</span></div><div class="line"><a name="l00374"></a><span class="lineno">  374</span> <span class="comment"></span></div><div class="line"><a name="l00375"></a><span class="lineno">  375</span> <span class="comment">@return CRYS_OK on success.</span></div><div class="line"><a name="l00376"></a><span class="lineno">  376</span> <span class="comment">@return A non-zero value on failure as defined in crys_dh_error.h, crys_rsa_error.h or crys_hash_error.h.</span></div><div class="line"><a name="l00377"></a><span class="lineno">  377</span> <span class="comment">*/</span></div><div class="line"><a name="l00378"></a><span class="lineno">  378</span> CIMPORT_C <a class="code" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> <a class="code" href="group__crys__dh.html#gac7232a09c3e63645ffba944865dc5aa0">CRYS_DH_X942_HybridGetSecretData</a>(</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>                 uint8_t            *ClientPrvKey_ptr1,          <span class="comment">/*!&lt; [in]  Pointer to the First Private key octet string number. */</span></div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>                 uint16_t            ClientPrvKeySize1,          <span class="comment">/*!&lt; [in]  The First Private key Size (in bytes). */</span></div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>                 uint8_t            *ClientPrvKey_ptr2,          <span class="comment">/*!&lt; [in]  Pointer to the Second Private key octet string. */</span></div><div class="line"><a name="l00382"></a><span class="lineno">  382</span>         uint16_t            ClientPrvKeySize2,          <span class="comment">/*!&lt; [in]  The Second Private key Size (in bytes). */</span></div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>                 uint8_t            *ServerPubKey_ptr1,          <span class="comment">/*!&lt; [in]  Pointer to the First Server public key octet string. */</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>                 uint16_t            ServerPubKeySize1,          <span class="comment">/*!&lt; [in]  The First Server Public key Size (in bytes). */</span></div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>                 uint8_t            *ServerPubKey_ptr2,          <span class="comment">/*!&lt; [in]  Pointer to the Second Server public key octet string. */</span></div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>                 uint16_t            ServerPubKeySize2,          <span class="comment">/*!&lt; [in]  The Second Server Public key Size (in bytes). */</span></div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>                 uint8_t            *Prime_ptr,                  <span class="comment">/*!&lt; [in]  Pointer to the Prime octet string. */</span></div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>                 uint16_t            PrimeSize,                  <span class="comment">/*!&lt; [in]  The size of the Prime string. */</span></div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>                 <a class="code" href="group__crys__dh.html#ga119c5f6de1a6b4c0634b088173c6a74c">CRYS_DH_OtherInfo_t</a>  *otherInfo_ptr,            <span class="comment">/*!&lt; [in]  Pointer to structure containing optional other data, shared by two entities</span></div><div class="line"><a name="l00390"></a><span class="lineno">  390</span> <span class="comment">                                 sharing the secret keying data. */</span></div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>                 <a class="code" href="group__crys__dh.html#ga37d441e76a25ea8454c728f077da7510">CRYS_DH_HASH_OpMode_t</a> hashMode,                 <span class="comment">/*!&lt; [in]  One of the supported SHA-x HASH modes. The supported modes are according to the supported</span></div><div class="line"><a name="l00392"></a><span class="lineno">  392</span> <span class="comment">                                           HASH modes for the product (and MD5 is not supported). */</span></div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>                 <a class="code" href="group__crys__dh.html#gab44016df7c5c760183bb53e976a42e6b">CRYS_DH_DerivationFunc_Mode</a> DerivFunc_mode,     <span class="comment">/*!&lt; [in]  The type of function to use to derive the secret key to the key data.</span></div><div class="line"><a name="l00394"></a><span class="lineno">  394</span> <span class="comment">                                 ASN.1 or Concatenation modes are supported. */</span></div><div class="line"><a name="l00395"></a><span class="lineno">  395</span>                 <a class="code" href="struct_c_r_y_s___d_h___hybr_temp__t.html">CRYS_DH_HybrTemp_t</a>   *tmpDhHybr_ptr,            <span class="comment">/*!&lt; [in]  Pointer to a CRYS_DH_Temp_t structure that contains temp buffers for</span></div><div class="line"><a name="l00396"></a><span class="lineno">  396</span> <span class="comment">                                 internal operations. */</span></div><div class="line"><a name="l00397"></a><span class="lineno">  397</span>                 uint8_t            *SecretKeyingData_ptr,       <span class="comment">/*!&lt; [out] Pointer to the secret key octet string. This buffer should be at least</span></div><div class="line"><a name="l00398"></a><span class="lineno">  398</span> <span class="comment">                                 of size PrimeSize bytes. */</span></div><div class="line"><a name="l00399"></a><span class="lineno">  399</span>                 uint16_t            SecretKeyingDataSize        <span class="comment">/*!&lt; [in]  The required Secret Keying data size (in bytes). Must be larger than 0,</span></div><div class="line"><a name="l00400"></a><span class="lineno">  400</span> <span class="comment">                                 and smaller than CRYS_DH_MAX_SIZE_OF_KEYING_DATA. */</span></div><div class="line"><a name="l00401"></a><span class="lineno">  401</span> );</div><div class="line"><a name="l00402"></a><span class="lineno">  402</span> </div><div class="line"><a name="l00403"></a><span class="lineno">  403</span> </div><div class="line"><a name="l00404"></a><span class="lineno">  404</span> <span class="comment">/****************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00405"></a><span class="lineno">  405</span> <span class="comment">/*!</span></div><div class="line"><a name="l00406"></a><span class="lineno">  406</span> <span class="comment">This macro implements the DH [X9.42] standard deriving a hybrid secret key from two public-private pair of keys using the Derivation function based on ASN.1.</span></div><div class="line"><a name="l00407"></a><span class="lineno">  407</span> <span class="comment">For a description of the parameters see ::CRYS_DH_X942_HybridGetSecretData.*/</span></div><div class="line"><a name="l00408"></a><span class="lineno"><a class="line" href="group__crys__dh.html#ga3966d87dc42e8f565386c269ce8b13cd">  408</a></span> <span class="preprocessor">#define CRYS_DH_X942_HybridGetSecretDataAsn1(ClientPrvKey_ptr1,ClientPrvKeySize1,ClientPrvKey_ptr2,ClientPrvKeySize2,ServerPubKey_ptr1,ServerPubKeySize1,ServerPubKey_ptr2,ServerPubKeySize2,Prime_ptr,PrimeSize,otherInfo_ptr,hashFunc,tmpDhHybr_ptr,SecretKeyingData_ptr,SecretKeyingDataSize)\</span></div><div class="line"><a name="l00409"></a><span class="lineno">  409</span> <span class="preprocessor">    CRYS_DH_X942_HybridGetSecretData((ClientPrvKey_ptr1),(ClientPrvKeySize1),(ClientPrvKey_ptr2),(ClientPrvKeySize2),(ServerPubKey_ptr1),(ServerPubKeySize1),(ServerPubKey_ptr2),(ServerPubKeySize2),(Prime_ptr),(PrimeSize),(otherInfo_ptr),(hashFunc),CRYS_DH_ASN1_Der_mode,(tmpDhHybr_ptr),(SecretKeyingData_ptr),(SecretKeyingDataSize))</span></div><div class="line"><a name="l00410"></a><span class="lineno">  410</span> <span class="comment"></span></div><div class="line"><a name="l00411"></a><span class="lineno">  411</span> <span class="comment">/*!</span></div><div class="line"><a name="l00412"></a><span class="lineno">  412</span> <span class="comment">This macro implements the DH [X9.42] standard, deriving a hybrid secret key from two pairs of public-private keys, using the Derivation</span></div><div class="line"><a name="l00413"></a><span class="lineno">  413</span> <span class="comment">function based on concatenation using SHA-x HASH. For a description of the parameters see ::CRYS_DH_X942_HybridGetSecretData.</span></div><div class="line"><a name="l00414"></a><span class="lineno">  414</span> <span class="comment">*/</span></div><div class="line"><a name="l00415"></a><span class="lineno"><a class="line" href="group__crys__dh.html#gae26dde38745aa3f3f427d90afec812f2">  415</a></span> <span class="preprocessor">#define CRYS_DH_X942_HybridGetSecretDataConcat(ClientPrvKey_ptr1,ClientPrvKeySize1,ClientPrvKey_ptr2,ClientPrvKeySize2,ServerPubKey_ptr1,ServerPubKeySize1,ServerPubKey_ptr2,ServerPubKeySize2,Prime_ptr,PrimeSize,otherInfo_ptr,hashFunc,tmpDhHybr_ptr,SecretKeyingData_ptr,SecretKeyingDataSize)\</span></div><div class="line"><a name="l00416"></a><span class="lineno">  416</span> <span class="preprocessor">    CRYS_DH_X942_HybridGetSecretData((ClientPrvKey_ptr1),(ClientPrvKeySize1),(ClientPrvKey_ptr2),(ClientPrvKeySize2),(ServerPubKey_ptr1),(ServerPubKeySize1),(ServerPubKey_ptr2),(ServerPubKeySize2),(Prime_ptr),(PrimeSize),(otherInfo_ptr),(hashFunc),CRYS_DH_Concat_Der_mode,(tmpDhHybr_ptr),(SecretKeyingData_ptr),(SecretKeyingDataSize))</span></div><div class="line"><a name="l00417"></a><span class="lineno">  417</span> </div><div class="line"><a name="l00418"></a><span class="lineno">  418</span> </div><div class="line"><a name="l00419"></a><span class="lineno">  419</span> <span class="comment">/******************************************************************************************/</span><span class="comment"></span></div><div class="line"><a name="l00420"></a><span class="lineno">  420</span> <span class="comment">/*!</span></div><div class="line"><a name="l00421"></a><span class="lineno">  421</span> <span class="comment">@brief The function checks the obtained DH public key according to its domain parameters [ANSI X9.42-2001]</span></div><div class="line"><a name="l00422"></a><span class="lineno">  422</span> <span class="comment"></span></div><div class="line"><a name="l00423"></a><span class="lineno">  423</span> <span class="comment">\note</span></div><div class="line"><a name="l00424"></a><span class="lineno">  424</span> <span class="comment">Assuming: The DH domain parameters are valid.</span></div><div class="line"><a name="l00425"></a><span class="lineno">  425</span> <span class="comment"></span></div><div class="line"><a name="l00426"></a><span class="lineno">  426</span> <span class="comment">@return CRYS_OK on success.</span></div><div class="line"><a name="l00427"></a><span class="lineno">  427</span> <span class="comment">@return A non-zero value on failure as defined in crys_dh_error.h.</span></div><div class="line"><a name="l00428"></a><span class="lineno">  428</span> <span class="comment">*/</span></div><div class="line"><a name="l00429"></a><span class="lineno">  429</span> CIMPORT_C <a class="code" href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a> <a class="code" href="group__crys__dh.html#gadfb22962c8d9daf42f8b22b10935a846">CRYS_DH_CheckPubKey</a>(</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span>                     uint8_t              *modP_ptr,            <span class="comment">/*!&lt; [in] The pointer to the modulus (prime) P. */</span></div><div class="line"><a name="l00431"></a><span class="lineno">  431</span>                     uint32_t              modPsizeBytes,        <span class="comment">/*!&lt; [in]  The modulus size in bytes. */</span></div><div class="line"><a name="l00432"></a><span class="lineno">  432</span>                     uint8_t              *orderQ_ptr,           <span class="comment">/*!&lt; [in]  The pointer to the prime order Q of generator. */</span></div><div class="line"><a name="l00433"></a><span class="lineno">  433</span>                     uint32_t              orderQsizeBytes,      <span class="comment">/*!&lt; [in]  The size of order of generator in bytes. */</span></div><div class="line"><a name="l00434"></a><span class="lineno">  434</span>                     uint8_t              *pubKey_ptr,           <span class="comment">/*!&lt; [in]  The pointer to the public key to be validated. */</span></div><div class="line"><a name="l00435"></a><span class="lineno">  435</span>                     uint32_t              pubKeySizeBytes,      <span class="comment">/*!&lt; [in]  The public key size in bytes. */</span></div><div class="line"><a name="l00436"></a><span class="lineno">  436</span>                     <a class="code" href="struct_c_r_y_s___d_h___temp__t.html">CRYS_DH_Temp_t</a>       *tempBuff_ptr         <span class="comment">/*!&lt; [in]  The temp buffer for internal calculations. */</span></div><div class="line"><a name="l00437"></a><span class="lineno">  437</span> );</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span> </div><div class="line"><a name="l00439"></a><span class="lineno">  439</span> </div><div class="line"><a name="l00440"></a><span class="lineno">  440</span> <span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00441"></a><span class="lineno">  441</span> }</div><div class="line"><a name="l00442"></a><span class="lineno">  442</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00443"></a><span class="lineno">  443</span> <span class="comment">/**</span></div><div class="line"><a name="l00444"></a><span class="lineno">  444</span> <span class="comment">@}</span></div><div class="line"><a name="l00445"></a><span class="lineno">  445</span> <span class="comment"> */</span></div><div class="line"><a name="l00446"></a><span class="lineno">  446</span> <span class="preprocessor">#endif</span></div><div class="ttc" id="group__crys__dh_html_ggab44016df7c5c760183bb53e976a42e6ba9e2ec8ebd5f106398ddd4aace9627d9a"><div class="ttname"><a href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba9e2ec8ebd5f106398ddd4aace9627d9a">CRYS_DH_DerivationFunc_ModeLast</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00137">crys_dh.h:137</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___hybr_temp__t_html"><div class="ttname"><a href="struct_c_r_y_s___d_h___hybr_temp__t.html">CRYS_DH_HybrTemp_t</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00166">crys_dh.h:166</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a85b41a651fc1398027dc27fffdb06c80"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a85b41a651fc1398027dc27fffdb06c80">CRYS_DH_HASH_MD5_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00119">crys_dh.h:119</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___hybr_temp__t_html_ad7b4f5d565db9b6d4754013bf0e60c20"><div class="ttname"><a href="struct_c_r_y_s___d_h___hybr_temp__t.html#ad7b4f5d565db9b6d4754013bf0e60c20">CRYS_DH_HybrTemp_t::UserPubKey</a></div><div class="ttdeci">CRYS_RSAUserPubKey_t UserPubKey</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00171">crys_dh.h:171</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga814087ecff4c9b86329a07737613d408"><div class="ttname"><a href="group__crys__dh.html#ga814087ecff4c9b86329a07737613d408">CRYS_DH_MAX_MOD_BUFFER_SIZE_IN_WORDS</a></div><div class="ttdeci">#define CRYS_DH_MAX_MOD_BUFFER_SIZE_IN_WORDS</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00074">crys_dh.h:74</a></div></div>
+<div class="ttc" id="group__crys__hash_html_gga386cc79804c5df07345dfa9e8e4f7ec6a8bf2adec41e1b991266001b15390230c"><div class="ttname"><a href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a8bf2adec41e1b991266001b15390230c">CRYS_HASH_SHA256_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__hash_8h_source.html#l00148">crys_hash.h:148</a></div></div>
+<div class="ttc" id="group__crys__hash_html_gga386cc79804c5df07345dfa9e8e4f7ec6a0c1e37420b090ce8e0a74d620e3d410f"><div class="ttname"><a href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a0c1e37420b090ce8e0a74d620e3d410f">CRYS_HASH_SHA384_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__hash_8h_source.html#l00149">crys_hash.h:149</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a3566cd63ac334945a2cb7d3be7d4a470"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a3566cd63ac334945a2cb7d3be7d4a470">CRYS_DH_HASH_SHA512_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00117">crys_dh.h:117</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga37d441e76a25ea8454c728f077da7510"><div class="ttname"><a href="group__crys__dh.html#ga37d441e76a25ea8454c728f077da7510">CRYS_DH_HASH_OpMode_t</a></div><div class="ttdeci">CRYS_DH_HASH_OpMode_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00106">crys_dh.h:106</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___exp_temp__t_html"><div class="ttname"><a href="struct_c_r_y_s___d_h___exp_temp__t.html">CRYS_DH_ExpTemp_t</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00144">crys_dh.h:144</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga4b5f72abbf9535764b317e66958bc64b"><div class="ttname"><a href="group__crys__dh.html#ga4b5f72abbf9535764b317e66958bc64b">CRYS_DH_OpMode_t</a></div><div class="ttdeci">CRYS_DH_OpMode_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00091">crys_dh.h:91</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gadfb22962c8d9daf42f8b22b10935a846"><div class="ttname"><a href="group__crys__dh.html#gadfb22962c8d9daf42f8b22b10935a846">CRYS_DH_CheckPubKey</a></div><div class="ttdeci">CRYSError_t CRYS_DH_CheckPubKey(uint8_t *modP_ptr, uint32_t modPsizeBytes, uint8_t *orderQ_ptr, uint32_t orderQsizeBytes, uint8_t *pubKey_ptr, uint32_t pubKeySizeBytes, CRYS_DH_Temp_t *tempBuff_ptr)</div><div class="ttdoc">The function checks the obtained DH public key according to its domain parameters [ANSI X9...</div></div>
+<div class="ttc" id="group__crys__dh_html_ga119c5f6de1a6b4c0634b088173c6a74c"><div class="ttname"><a href="group__crys__dh.html#ga119c5f6de1a6b4c0634b088173c6a74c">CRYS_DH_OtherInfo_t</a></div><div class="ttdeci">#define CRYS_DH_OtherInfo_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00083">crys_dh.h:83</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a486192d96303cf732b38ac81bbcf24f3"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a486192d96303cf732b38ac81bbcf24f3">CRYS_DH_HASH_NumOfModes</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00121">crys_dh.h:121</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga4b5f72abbf9535764b317e66958bc64ba364a5436fda59497a036898e871abd63"><div class="ttname"><a href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba364a5436fda59497a036898e871abd63">CRYS_DH_ANSI_X942_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00096">crys_dh.h:96</a></div></div>
+<div class="ttc" id="group__crys__hash_html_gga386cc79804c5df07345dfa9e8e4f7ec6a2f394d3170daf03f269d4357aa9fbdea"><div class="ttname"><a href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a2f394d3170daf03f269d4357aa9fbdea">CRYS_HASH_SHA512_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__hash_8h_source.html#l00150">crys_hash.h:150</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___exp_temp__t_html_a54b6f0ea1c0e8f2f7291af62cef8cd18"><div class="ttname"><a href="struct_c_r_y_s___d_h___exp_temp__t.html#a54b6f0ea1c0e8f2f7291af62cef8cd18">CRYS_DH_ExpTemp_t::PubKey</a></div><div class="ttdeci">CRYSRSAPubKey_t PubKey</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00149">crys_dh.h:149</a></div></div>
+<div class="ttc" id="group__crys__kdf_html_gga23899eaf73b53da1e0e58fe9cb1f2eaea4190fc5b66129a71abd105aa1969fcb9"><div class="ttname"><a href="group__crys__kdf.html#gga23899eaf73b53da1e0e58fe9cb1f2eaea4190fc5b66129a71abd105aa1969fcb9">CRYS_KDF_ConcatDerivMode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__kdf_8h_source.html#l00098">crys_kdf.h:98</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___fips_kat__t_html_a0306fc10ac16a32d0843a8dbe7928bd2"><div class="ttname"><a href="struct_c_r_y_s___d_h___fips_kat__t.html#a0306fc10ac16a32d0843a8dbe7928bd2">CRYS_DH_FipsKat_t::pubKey</a></div><div class="ttdeci">CRYS_RSAUserPubKey_t pubKey</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00180">crys_dh.h:180</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___hybr_temp__t_html_adf89e09f2c31bc289388ad3eef6d51c6"><div class="ttname"><a href="struct_c_r_y_s___d_h___hybr_temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">CRYS_DH_HybrTemp_t::PrimeData</a></div><div class="ttdeci">CRYS_RSAPrimeData_t PrimeData</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00169">crys_dh.h:169</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga8ef104eba2f37cbb22fdf8a186b74415"><div class="ttname"><a href="group__crys__dh.html#ga8ef104eba2f37cbb22fdf8a186b74415">CRYS_DHPrimeData_t</a></div><div class="ttdeci">#define CRYS_DHPrimeData_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00079">crys_dh.h:79</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ggab44016df7c5c760183bb53e976a42e6ba206cc24eeee72b1833cea27d57b4605a"><div class="ttname"><a href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba206cc24eeee72b1833cea27d57b4605a">CRYS_DH_X963_DerMode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00135">crys_dh.h:135</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga84f1808637a8836074dea4fcca898016"><div class="ttname"><a href="group__crys__dh.html#ga84f1808637a8836074dea4fcca898016">CRYS_DH_GetSecretKey</a></div><div class="ttdeci">CRYSError_t CRYS_DH_GetSecretKey(uint8_t *ClientPrvKey_ptr, uint16_t ClientPrvKeySize, uint8_t *ServerPubKey_ptr, uint16_t ServerPubKeySize, uint8_t *Prime_ptr, uint16_t PrimeSize, CRYS_RSAUserPubKey_t *tmpPubKey_ptr, CRYS_RSAPrimeData_t *tmpPrimeData_ptr, uint8_t *SecretKey_ptr, uint16_t *SecretKeySize_ptr)</div><div class="ttdoc">This function computes the shared secret key (value) accordng to [ANSI X9.42], 7.5.1: SecretKey = ServerPubKey ^ ClientPrvKey mod Prime. </div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510abf601e645549572366b704325016148c"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510abf601e645549572366b704325016148c">CRYS_DH_HASH_OperationModeLast</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00123">crys_dh.h:123</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga4b5f72abbf9535764b317e66958bc64ba932286695c71d1a2f06afbbda26763eb"><div class="ttname"><a href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba932286695c71d1a2f06afbbda26763eb">CRYS_DH_OpModeLast</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00101">crys_dh.h:101</a></div></div>
+<div class="ttc" id="group__ssi__pal__types_html_ga2c178308397f050883ec648e910531db"><div class="ttname"><a href="group__ssi__pal__types.html#ga2c178308397f050883ec648e910531db">SASI_BITS_IN_BYTE</a></div><div class="ttdeci">#define SASI_BITS_IN_BYTE</div><div class="ttdef"><b>Definition:</b> <a href="ssi__pal__types_8h_source.html#l00065">ssi_pal_types.h:65</a></div></div>
+<div class="ttc" id="group__crys__hash_html_gga386cc79804c5df07345dfa9e8e4f7ec6aec89c245e5bfa89c5d4d6798b93741cb"><div class="ttname"><a href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6aec89c245e5bfa89c5d4d6798b93741cb">CRYS_HASH_SHA1_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__hash_8h_source.html#l00146">crys_hash.h:146</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a6f614eeda08ebccb89b8598fa2e6fdae"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a6f614eeda08ebccb89b8598fa2e6fdae">CRYS_DH_HASH_SHA384_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00115">crys_dh.h:115</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga094931c8cb4cbf0393409ef2cab5ef12"><div class="ttname"><a href="group__crys__dh.html#ga094931c8cb4cbf0393409ef2cab5ef12">_DX_DH_GeneratePubPrv</a></div><div class="ttdeci">CRYSError_t _DX_DH_GeneratePubPrv(void *rndState_ptr, SaSiRndGenerateVectWorkFunc_t rndGenerateVectFunc, uint8_t *Generator_ptr, uint16_t GeneratorSize, uint8_t *Prime_ptr, uint16_t PrimeSize, uint16_t L, uint8_t *Q_ptr, uint16_t QSize, CRYS_DH_OpMode_t DH_mode, CRYS_RSAUserPubKey_t *tmpPubKey_ptr, CRYS_RSAPrimeData_t *tmpPrimeData_ptr, uint8_t *ClientPrvKey_ptr, uint16_t *ClientPrvKeySize_ptr, uint8_t *ClientPub1_ptr, uint16_t *ClientPubSize_ptr)</div><div class="ttdoc">This function has two purposes: </div></div>
+<div class="ttc" id="group__crys__kdf_html_gga23899eaf73b53da1e0e58fe9cb1f2eaeaa502e537ac8fff3f5cd4dda0a76a8cfd"><div class="ttname"><a href="group__crys__kdf.html#gga23899eaf73b53da1e0e58fe9cb1f2eaeaa502e537ac8fff3f5cd4dda0a76a8cfd">CRYS_KDF_ASN1_DerivMode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__kdf_8h_source.html#l00096">crys_kdf.h:96</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___temp__t_html_ad7b4f5d565db9b6d4754013bf0e60c20"><div class="ttname"><a href="struct_c_r_y_s___d_h___temp__t.html#ad7b4f5d565db9b6d4754013bf0e60c20">CRYS_DH_Temp_t::UserPubKey</a></div><div class="ttdeci">CRYS_RSAUserPubKey_t UserPubKey</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00160">crys_dh.h:160</a></div></div>
+<div class="ttc" id="group__crys__hash_html_gga386cc79804c5df07345dfa9e8e4f7ec6acff06df287ca1379ce2d0ee9122827f5"><div class="ttname"><a href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6acff06df287ca1379ce2d0ee9122827f5">CRYS_HASH_MD5_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__hash_8h_source.html#l00151">crys_hash.h:151</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___exp_temp__t_html_adf89e09f2c31bc289388ad3eef6d51c6"><div class="ttname"><a href="struct_c_r_y_s___d_h___exp_temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">CRYS_DH_ExpTemp_t::PrimeData</a></div><div class="ttdeci">CRYS_RSAPrimeData_t PrimeData</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00147">crys_dh.h:147</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga7f313f9979d6b17665617ceee73fb26d"><div class="ttname"><a href="group__crys__dh.html#ga7f313f9979d6b17665617ceee73fb26d">CRYS_DHPubKey_t</a></div><div class="ttdeci">#define CRYS_DHPubKey_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00062">crys_dh.h:62</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gab44016df7c5c760183bb53e976a42e6b"><div class="ttname"><a href="group__crys__dh.html#gab44016df7c5c760183bb53e976a42e6b">CRYS_DH_DerivationFunc_Mode</a></div><div class="ttdeci">CRYS_DH_DerivationFunc_Mode</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00128">crys_dh.h:128</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gaa9c1dd3d596eaec592b56239052319b2"><div class="ttname"><a href="group__crys__dh.html#gaa9c1dd3d596eaec592b56239052319b2">CRYS_DH_X942_GetSecretData</a></div><div class="ttdeci">CRYSError_t CRYS_DH_X942_GetSecretData(uint8_t *ClientPrvKey_ptr, uint16_t ClientPrvKeySize, uint8_t *ServerPubKey_ptr, uint16_t ServerPubKeySize, uint8_t *Prime_ptr, uint16_t PrimeSize, CRYS_KDF_OtherInfo_t *otherInfo_ptr, CRYS_DH_HASH_OpMode_t hashMode, CRYS_DH_DerivationFunc_Mode DerivFunc_mode, CRYS_DH_Temp_t *tmpBuff_ptr, uint8_t *SecretKeyingData_ptr, uint16_t SecretKeyingDataSize)</div><div class="ttdoc">This function extracts the shared secret keying data from the shared secret value. It should be called by using macros CRYS_DH_X942_GetSecretDataAsn1 and CRYS_DH_X942_GetSecretDataConcat. </div></div>
+<div class="ttc" id="group__crys__dh_html_gga4b5f72abbf9535764b317e66958bc64ba6ffdcfcb771e86cbd7cb6baf1e05d3a3"><div class="ttname"><a href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba6ffdcfcb771e86cbd7cb6baf1e05d3a3">CRYS_DH_PKCS3_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00094">crys_dh.h:94</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga4b5f72abbf9535764b317e66958bc64ba1b30941b1887c8816eb860e825883eef"><div class="ttname"><a href="group__crys__dh.html#gga4b5f72abbf9535764b317e66958bc64ba1b30941b1887c8816eb860e825883eef">CRYS_DH_NumOfModes</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00098">crys_dh.h:98</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___fips_kat__t_html"><div class="ttname"><a href="struct_c_r_y_s___d_h___fips_kat__t.html">CRYS_DH_FipsKat_t</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00177">crys_dh.h:177</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ga581b687f4c0c9c5e9dd75376c3dfbb76"><div class="ttname"><a href="group__crys__dh.html#ga581b687f4c0c9c5e9dd75376c3dfbb76">CRYS_DH_MIN_VALID_KEY_SIZE_VALUE_IN_BITS</a></div><div class="ttdeci">#define CRYS_DH_MIN_VALID_KEY_SIZE_VALUE_IN_BITS</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00067">crys_dh.h:67</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gac7232a09c3e63645ffba944865dc5aa0"><div class="ttname"><a href="group__crys__dh.html#gac7232a09c3e63645ffba944865dc5aa0">CRYS_DH_X942_HybridGetSecretData</a></div><div class="ttdeci">CRYSError_t CRYS_DH_X942_HybridGetSecretData(uint8_t *ClientPrvKey_ptr1, uint16_t ClientPrvKeySize1, uint8_t *ClientPrvKey_ptr2, uint16_t ClientPrvKeySize2, uint8_t *ServerPubKey_ptr1, uint16_t ServerPubKeySize1, uint8_t *ServerPubKey_ptr2, uint16_t ServerPubKeySize2, uint8_t *Prime_ptr, uint16_t PrimeSize, CRYS_KDF_OtherInfo_t *otherInfo_ptr, CRYS_DH_HASH_OpMode_t hashMode, CRYS_DH_DerivationFunc_Mode DerivFunc_mode, CRYS_DH_HybrTemp_t *tmpDhHybr_ptr, uint8_t *SecretKeyingData_ptr, uint16_t SecretKeyingDataSize)</div><div class="ttdoc">The function computes shared secret data using two pairs of public and private keys: ...</div></div>
+<div class="ttc" id="group__crys__dh_html_ga180f1def138a5cd419214c4376ecc391"><div class="ttname"><a href="group__crys__dh.html#ga180f1def138a5cd419214c4376ecc391">CRYS_DHUserPubKey_t</a></div><div class="ttdeci">#define CRYS_DHUserPubKey_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00081">crys_dh.h:81</a></div></div>
+<div class="ttc" id="crys__rnd_8h_html"><div class="ttname"><a href="crys__rnd_8h.html">crys_rnd.h</a></div><div class="ttdoc">This file contains the CRYS APIs used for random number generation. The random-number generation modu...</div></div>
+<div class="ttc" id="group__crys__dh_html_ggab44016df7c5c760183bb53e976a42e6ba45309ac665310c8a97fa41cb1f63a508"><div class="ttname"><a href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba45309ac665310c8a97fa41cb1f63a508">CRYS_DH_ASN1_Der_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00131">crys_dh.h:131</a></div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a17fbec497a1c91ba46b4f4cbe3b69ef1"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a17fbec497a1c91ba46b4f4cbe3b69ef1">CRYS_DH_HASH_SHA224_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00111">crys_dh.h:111</a></div></div>
+<div class="ttc" id="group__crys__error_html_gaee257163cb36752ce395c0014fd97d59"><div class="ttname"><a href="group__crys__error.html#gaee257163cb36752ce395c0014fd97d59">CRYSError_t</a></div><div class="ttdeci">uint32_t CRYSError_t</div><div class="ttdef"><b>Definition:</b> <a href="crys__error_8h_source.html#l00253">crys_error.h:253</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___fips_kat__t_html_a69d8c53f4273326a159161a61871b888"><div class="ttname"><a href="struct_c_r_y_s___d_h___fips_kat__t.html#a69d8c53f4273326a159161a61871b888">CRYS_DH_FipsKat_t::primeData</a></div><div class="ttdeci">CRYS_RSAPrimeData_t primeData</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00182">crys_dh.h:182</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___temp__t_html_adf89e09f2c31bc289388ad3eef6d51c6"><div class="ttname"><a href="struct_c_r_y_s___d_h___temp__t.html#adf89e09f2c31bc289388ad3eef6d51c6">CRYS_DH_Temp_t::PrimeData</a></div><div class="ttdeci">CRYS_RSAPrimeData_t PrimeData</div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00158">crys_dh.h:158</a></div></div>
+<div class="ttc" id="crys__rsa__types_8h_html"><div class="ttname"><a href="crys__rsa__types_8h.html">crys_rsa_types.h</a></div><div class="ttdoc">This file contains all of the enums and definitions that are used for the CRYS RSA APIs...</div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a229660c04e435d42655d99dc1faf72ef"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a229660c04e435d42655d99dc1faf72ef">CRYS_DH_HASH_SHA1_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00109">crys_dh.h:109</a></div></div>
+<div class="ttc" id="group__crys__hash_html_gga386cc79804c5df07345dfa9e8e4f7ec6a8b351964a637f5acbedc54b4bd328064"><div class="ttname"><a href="group__crys__hash.html#gga386cc79804c5df07345dfa9e8e4f7ec6a8b351964a637f5acbedc54b4bd328064">CRYS_HASH_SHA224_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__hash_8h_source.html#l00147">crys_hash.h:147</a></div></div>
+<div class="ttc" id="crys__kdf_8h_html"><div class="ttname"><a href="crys__kdf_8h.html">crys_kdf.h</a></div><div class="ttdoc">This module defines the API that supports Key derivation function in modes as defined in PKCS#3...</div></div>
+<div class="ttc" id="group__crys__dh_html_gga37d441e76a25ea8454c728f077da7510a5525c73f69772e7b484395a703f9c161"><div class="ttname"><a href="group__crys__dh.html#gga37d441e76a25ea8454c728f077da7510a5525c73f69772e7b484395a703f9c161">CRYS_DH_HASH_SHA256_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00113">crys_dh.h:113</a></div></div>
+<div class="ttc" id="group__crys__dh_html_ggab44016df7c5c760183bb53e976a42e6ba61d158a49f70c3bc26d6e2d42eb687be"><div class="ttname"><a href="group__crys__dh.html#ggab44016df7c5c760183bb53e976a42e6ba61d158a49f70c3bc26d6e2d42eb687be">CRYS_DH_Concat_Der_mode</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00133">crys_dh.h:133</a></div></div>
+<div class="ttc" id="struct_c_r_y_s___d_h___temp__t_html"><div class="ttname"><a href="struct_c_r_y_s___d_h___temp__t.html">CRYS_DH_Temp_t</a></div><div class="ttdef"><b>Definition:</b> <a href="crys__dh_8h_source.html#l00155">crys_dh.h:155</a></div></div>
+<div class="ttc" id="group__crys__rnd_html_ga4a2673621428db92245a2f992be3c628"><div class="ttname"><a href="group__crys__rnd.html#ga4a2673621428db92245a2f992be3c628">SaSiRndGenerateVectWorkFunc_t</a></div><div class="ttdeci">uint32_t(* SaSiRndGenerateVectWorkFunc_t)(void *rndState_ptr, uint16_t outSizeBytes, uint8_t *out_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="crys__rnd_8h_source.html#l00206">crys_rnd.h:206</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/crys__dh_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:22:36 GMT -->
+</html>

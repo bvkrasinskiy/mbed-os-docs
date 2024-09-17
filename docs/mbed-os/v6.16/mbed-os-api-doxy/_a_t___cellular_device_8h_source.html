@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        
+        <meta charset="utf-8"/>
+        <title>Mbed OS Reference | AT_CellularDevice.h Source File</title>
+        <link href="../static/css/vendor/foundation-6.2.4.min.mbed-cache-4c48f6c816971070eb1e4eca75f0ec30.css" rel="stylesheet"/>
+        <link href="search/search.css" rel="stylesheet"/>
+        <link href="../static/css/app.mbed-cache-a44289fe9f5ca07036a335d6ad7ed8ad.css" rel="stylesheet"/>
+        <script src="../static/js/vendor/jquery-3.2.1.min.mbed-cache-c9f5aeeca3ad37bf2aa006139b935f0a.js"></script>
+        <script src="dynsections.js"></script>
+        <script src="search/searchdata.js"></script>
+        <script src="search/search.js"></script>
+        <script>
+            $(document).ready(function() {
+                init_search();
+            });
+        </script>
+    
+        
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl+'&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../../../static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../../../static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../../../static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../../../static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../../../static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../../static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../../../static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../../static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../../static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+<link rel="stylesheet" href="../../../../static/CACHE/css/output.811e2930ab34.css" type="text/css">
+
+<link href="../../../../static/docs/css/doc_viewer.css" rel="stylesheet">
+<link href="../../../../static/fonts.css" rel="stylesheet">
+<link href="../../../../static/docs-nav-and-footer1b26.css?v2" rel="stylesheet">
+
+
+<link rel="canonical" href="_a_t___cellular_device_8h_source.html">
+<script src="../../../../static/mbed-nav-vertical-menu.js"></script>
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link-detail">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <div>
+                                                <p>Keil Studio Cloud</p>
+                                                <p>Arm's IDE for IoT, embedded and Mbed development</p>
+                                            </div>
+                                         </a>
+                                     </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <div>
+                                               <p>Mbed CLI</p>
+                                               <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview & Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://developer.arm.com/documentation/102497/latest/Arm-Keil-Studio-Cloud">
+                                        Keil Studio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li class="has-dropdown">
+                    Community
+
+                    <!-- Community dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__community-dropdown">
+                            <ul class="mbed-nav__community-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support/">Report a problem</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog/">Blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+            </div>
+            <a class="mbed-nav__cta" href="https://studio.keil.arm.com/mbed" target="_blank">
+                Keil Studio Cloud
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/docs/mbed-os/v6.16/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html">Log in or Sign up</a>
+                        
+                    
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating system</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.keil.arm.com/mbed/?utm_source=mbed_com&amp;utm_medium=compiler_button&amp;utm_campaign=mbed_com_promo" class="mbed-nav__icon-link">
+                                             <svg><use href="https://os.mbed.com/static/img/keil_studio_icon.2c56c28014c6.svg?#keil_studio_icon"></use></svg>
+                                            <p>Keil Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://tls.mbed.org/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/connectivity-technologies/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware/" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#hardware_overview"></use></svg>
+                                    <p>Hardware overview & Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="https://os.mbed.com/static/img/mbed_nav_spritesheet.8ac20221a123.svg?v3#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code/">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li>
+                              <a
+                                href="https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio/?utm_source=mbed_com&amp;utm_medium=nav_docs_link&amp;utm_campaign=mbed_com_promo">
+                                Keil Studio
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/built-with-mbed/">Case studies</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="community-accordion">
+                    <label for="community-accordion">Community</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/latest/contributing/index.html">Contribute</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLKjl7IFAwc4R4plIZe4IuHlsn8zW7rvKh">Mbed OS Tech Forum</a></li>
+                            <li><a href="https://os.mbed.com/support/">Report a problem</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog/">Blog</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<div class="version-picker-container">
+    
+    <select class="version-picker" onchange="goToVersion(this.value)">
+        
+            <option
+                value="v6.16"
+                selected
+            >
+                v6.16
+            </option>
+        
+            <option
+                value="v6.15"
+                
+            >
+                v6.15
+            </option>
+        
+            <option
+                value="v6.14"
+                
+            >
+                v6.14
+            </option>
+        
+            <option
+                value="v6.13"
+                
+            >
+                v6.13
+            </option>
+        
+            <option
+                value="v6.12"
+                
+            >
+                v6.12
+            </option>
+        
+            <option
+                value="v6.11"
+                
+            >
+                v6.11
+            </option>
+        
+            <option
+                value="v6.10"
+                
+            >
+                v6.10
+            </option>
+        
+            <option
+                value="v6.9"
+                
+            >
+                v6.9
+            </option>
+        
+            <option
+                value="v6.8"
+                
+            >
+                v6.8
+            </option>
+        
+            <option
+                value="v6.7"
+                
+            >
+                v6.7
+            </option>
+        
+            <option
+                value="v6.6"
+                
+            >
+                v6.6
+            </option>
+        
+            <option
+                value="v6.5"
+                
+            >
+                v6.5
+            </option>
+        
+            <option
+                value="v5.15"
+                
+            >
+                v5.15
+            </option>
+        
+    </select>
+    
+
+    <div class="contact-us">
+        Mistake on this page?
+        
+            <br>
+            <a href="https://github.com/ARMmbed/mbed-os-5-docs/issues">
+                Report an issue in GitHub
+                <i class="fab fa-github"></i>
+            </a>
+            or
+            <a href="mailto:mbed-support@arm.com">
+                email us
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+    </div>
+</div>
+
+<script>
+    function goToVersion(version) {
+        window.location.href = window.location.href.replace(
+            "v6.16",
+            version
+        )
+    }
+</script>
+
+        
+        <div class="topbar" id="top">
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div class="tabs" id="navrow1">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main Page</span></a></li>
+      <li><a href="pages.html"><span>Related Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data Structures</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div class="MSearchBoxInactive" id="MSearchBox">
+        <span class="left">
+          <img alt="" id="MSearchSelect" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()" src="search/mag_sel.png"/>
+          <input accesskey="S" id="MSearchField" onblur="searchBox.OnSearchFieldFocus(false)" onfocus="searchBox.OnSearchFieldFocus(true)" onkeyup="searchBox.OnSearchFieldChange(event)" type="text" value="Search"/>
+          </span><span class="right">
+            <a href="javascript:searchBox.CloseResultsWindow()" id="MSearchClose"><img alt="" border="0" id="MSearchCloseImg" src="search/close.png"/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2" id="navrow2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onkeydown="return searchBox.OnSearchSelectKey(event)" onmouseout="return searchBox.OnSearchSelectHide()" onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe frameborder="0" id="MSearchResults" name="MSearchResults" src="javascript:void(0)">
+</iframe>
+</div>
+
+<div class="navpath" id="nav-path">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fdebfbd0a4b5643a5e85bf3c8b1558b.html">mbed-os</a></li><li class="navelem"><a class="el" href="dir_456207283565120b441ff9733579e7b8.html">connectivity</a></li><li class="navelem"><a class="el" href="dir_166ec255f347f4550ab030c0250a7093.html">cellular</a></li><li class="navelem"><a class="el" href="dir_d56c9d8760ed675b24ab622f3355d1f3.html">include</a></li><li class="navelem"><a class="el" href="dir_6245d597db7f1ee1cfe9818910ceb8bb.html">cellular</a></li><li class="navelem"><a class="el" href="dir_b0fbdff006d39ab0b4993ecbf7b30914.html">framework</a></li><li class="navelem"><a class="el" href="dir_9eb32bffea48ffa297a0ffeac40bcd32.html">AT</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">AT_CellularDevice.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * Copyright (c) 2017, Arm Limited and affiliates.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> * SPDX-License-Identifier: Apache-2.0</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * You may obtain a copy of the License at</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> *     http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> * See the License for the specific language governing permissions and</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * limitations under the License.</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> */</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> </div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="preprocessor">#ifndef AT_CELLULAR_DEVICE_H_</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="preprocessor">#define AT_CELLULAR_DEVICE_H_</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> </div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="preprocessor">#include "<a class="code" href="_cellular_device_8h.html">CellularDevice.h</a>"</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="preprocessor">#include "ATHandler.h"</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="keyword">namespace </span><a class="code" href="namespacembed.html">mbed</a> {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="keyword">class </span>AT_CellularInformation;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="keyword">class </span>AT_CellularNetwork;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="keyword">class </span>AT_CellularSMS;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="keyword">class </span>AT_CellularContext;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> <span class="keyword">class </span>FileHandle;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="comment"></span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="comment">/**</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> <span class="comment"> *  Class AT_CellularDevice</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> <span class="comment"> *</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="comment"> *  A class defines opening and closing of cellular interfaces.</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> <span class="comment"> *  Deleting/Closing of opened interfaces can be done only through this class.</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> <span class="comment"> */</span></div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classmbed_1_1_a_t___cellular_device.html">   38</a></span> <span class="keyword">class </span><a class="code" href="classmbed_1_1_a_t___cellular_device.html">AT_CellularDevice</a> : <span class="keyword">public</span> <a class="code" href="classmbed_1_1_cellular_device.html">CellularDevice</a> {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> <span class="keyword">public</span>:</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>     <span class="comment">/* Supported features by the modem</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">     *</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">     * NOTE! These are used as index to feature table, so the only allowed modification to this is appending</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment">     *       to the end (just before PROPERTY_MAX). Do not modify any of the existing fields.</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment">     */</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>     <span class="keyword">enum</span> CellularProperty {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>         PROPERTY_C_EREG,                <span class="comment">// AT_CellularNetwork::RegistrationMode. What support modem has for this registration type.</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>         PROPERTY_C_GREG,                <span class="comment">// AT_CellularNetwork::RegistrationMode. What support modem has for this registration type.</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>         PROPERTY_C_REG,                 <span class="comment">// AT_CellularNetwork::RegistrationMode. What support modem has for this registration type.</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>         PROPERTY_AT_CGSN_WITH_TYPE,     <span class="comment">// 0 = not supported, 1 = supported. AT+CGSN without type is likely always supported similar to AT+GSN.</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>         PROPERTY_AT_CGDATA,             <span class="comment">// 0 = not supported, 1 = supported. Alternative is to support only ATD*99***&lt;cid&gt;#</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>         PROPERTY_AT_CGAUTH,             <span class="comment">// 0 = not supported, 1 = supported. APN authentication AT commands supported</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>         PROPERTY_AT_CNMI,               <span class="comment">// 0 = not supported, 1 = supported. New message (SMS) indication AT command</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>         PROPERTY_AT_CSMP,               <span class="comment">// 0 = not supported, 1 = supported. Set text mode AT command</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>         PROPERTY_AT_CMGF,               <span class="comment">// 0 = not supported, 1 = supported. Set preferred message format AT command</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>         PROPERTY_AT_CSDH,               <span class="comment">// 0 = not supported, 1 = supported. Show text mode AT command</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>         PROPERTY_IPV4_PDP_TYPE,         <span class="comment">// 0 = not supported, 1 = supported. Does modem support IPV4?</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>         PROPERTY_IPV6_PDP_TYPE,         <span class="comment">// 0 = not supported, 1 = supported. Does modem support IPV6?</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>         PROPERTY_IPV4V6_PDP_TYPE,       <span class="comment">// 0 = not supported, 1 = supported. Does modem support IPV4 and IPV6 simultaneously?</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>         PROPERTY_NON_IP_PDP_TYPE,       <span class="comment">// 0 = not supported, 1 = supported. Does modem support Non-IP?</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>         PROPERTY_AT_CGEREP,             <span class="comment">// 0 = not supported, 1 = supported. Does modem support AT command AT+CGEREP.</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>         PROPERTY_AT_COPS_FALLBACK_AUTO, <span class="comment">// 0 = not supported, 1 = supported. Does modem support mode 4 of AT+COPS= ?</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>         PROPERTY_SOCKET_COUNT,          <span class="comment">// The number of sockets of modem IP stack</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>         PROPERTY_IP_TCP,                <span class="comment">// 0 = not supported, 1 = supported. Modem IP stack has support for TCP</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>         PROPERTY_IP_UDP,                <span class="comment">// 0 = not supported, 1 = supported. Modem IP stack has support for TCP</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>         PROPERTY_AT_SEND_DELAY,         <span class="comment">// Sending delay between AT commands in ms</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>         PROPERTY_MAX</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>     };</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="keyword">public</span>:</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>     <a class="code" href="classmbed_1_1_a_t___cellular_device.html">AT_CellularDevice</a>(<a class="code" href="classmbed_1_1_file_handle.html">FileHandle</a> *fh, <span class="keywordtype">char</span> *delim = <span class="stringliteral">"\r"</span>);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>     <span class="keyword">virtual</span> ~<a class="code" href="classmbed_1_1_a_t___cellular_device.html">AT_CellularDevice</a>();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> </div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a0e1c89d9112e2d1a6ce8ac84a0ff04dd">clear</a>();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span> </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#ac25de818b0f5fc28c439826860e27f66">hard_power_on</a>();</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> </div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a2e41cf8b3410c7781dfc2d95b0686be4">hard_power_off</a>();</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> </div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a5d0ff2abe7187bfe8ee3a88ed2082f80">soft_power_on</a>();</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> </div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#acfeea5a9bf30ba1d03fb63aff2164da7">soft_power_off</a>();</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> </div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a99a0e271e4704906abe7d9d75a434408">set_pin</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *sim_pin);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span> </div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#aebfe1d1c738eccd76af14686086fd11a">get_sim_state</a>(SimState &amp;state);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span> </div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_cellular_context.html">CellularContext</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#a361e2d4586d12739c398800e39df994b">create_context</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *apn = NULL, <span class="keywordtype">bool</span> cp_req = <span class="keyword">false</span>, <span class="keywordtype">bool</span> nonip_req = <span class="keyword">false</span>);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span> </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a0b49b7adf8a6a99b70582dd6455e3d19">delete_context</a>(<a class="code" href="classmbed_1_1_cellular_context.html">CellularContext</a> *context);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> </div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_cellular_network.html">CellularNetwork</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#a23788e5bda77a9aff5df1e422ea3cb41">open_network</a>();</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_cellular_information.html">CellularInformation</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#a32bfeeaa0df1b574158a7fe0e96231c0">open_information</a>();</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> </div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a03d6d54251b98481234472872c1e3b57">close_network</a>();</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span> </div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a0c185012fd81182d4b717b4b5366354b">close_information</a>();</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span> </div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#ab225d4f65da3c1bcb8bca3037cf988ba">set_timeout</a>(<span class="keywordtype">int</span> timeout);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span> </div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a5c898e1586308d2e57ed2cb1f3a56e19">modem_debug_on</a>(<span class="keywordtype">bool</span> on);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span> </div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#ab22d22158942efe21fd6e4df12973f27">init</a>();</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span> </div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a1548eeda1c463ee315149026b43a4217">shutdown</a>();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> </div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a05f59d68aff890e73a56a40cf2efb293">is_ready</a>();</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> </div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a07bfd405103f2f229d7cd3c87c35d68f">set_ready_cb</a>(<a class="code" href="classmbed_1_1_callback.html">Callback</a>&lt;<span class="keywordtype">void</span>()&gt; <a class="code" href="group__platform___callback.html#ga1104a807bfce1d1dc38e4d1eeba6ed17">callback</a>);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> </div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a30a210749228d945e90113aeb267d766">set_power_save_mode</a>(<span class="keywordtype">int</span> periodic_time, <span class="keywordtype">int</span> active_time = 0);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> </div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_a_t_handler.html">ATHandler</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#aef44cbe28e0f8c3468d4c3a731feb1c4">get_at_handler</a>();</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span> </div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_cellular_context.html">CellularContext</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#aed0cfb5db3d4ffc39b820d08501b5349">get_context_list</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span> </div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#aeb139ecad7d081f38ee6620f93296666">set_baud_rate</a>(<span class="keywordtype">int</span> baud_rate);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span> </div><div class="line"><a name="l00119"></a><span class="lineno">  119</span> <span class="preprocessor">#if MBED_CONF_CELLULAR_USE_SMS</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>     <span class="keyword">virtual</span> CellularSMS *<a class="code" href="classmbed_1_1_cellular_device.html#a8e97fcc47c673d706dc9d433a984337a">open_sms</a>();</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span> </div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_cellular_device.html#a3119ccfca080563f9721daf33b67f85a">close_sms</a>();</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="preprocessor">#endif</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="comment"></span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> <span class="comment">    /** Get value for the given key.</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span> <span class="comment">     *</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> <span class="comment">     *  @param key  key for value to be fetched</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> <span class="comment">     *  @return     property value for the given key. Value type is defined in enum CellularProperty</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment">     */</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>     intptr_t <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a30c800f5aed06acc98a784c14ffd62fa">get_property</a>(CellularProperty key);</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span> <span class="comment"></span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span> <span class="comment">    /** Cellular module need to define an array of cellular properties which defines module supported property values.</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment">     *</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="comment">     *  @param property_array array of module properties</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> <span class="comment">     */</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>     <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a1e0a4b8cfd2501d95ecf149ff5e7a309">set_cellular_properties</a>(<span class="keyword">const</span> intptr_t *property_array);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> </div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> <span class="keyword">protected</span>:<span class="comment"></span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment">    /** Creates new instance of AT_CellularContext or if overridden, modem specific implementation.</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span> <span class="comment">     *</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span> <span class="comment">     *  @param at           ATHandler reference for communication with the modem.</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span> <span class="comment">     *  @param apn          access point to use with context</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment">     *  @param cp_req       flag indicating if control plane EPS optimization needs to be setup</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="comment">     *  @param nonip_req    flag indicating if PDP context needs to be Non-IP</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> <span class="comment">     *  @return             new instance of class AT_CellularContext</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span> <span class="comment">     *</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> <span class="comment">     */</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_a_t___cellular_context.html">AT_CellularContext</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#ab8e699817854250e04a63a8b0b1d1a61">create_context_impl</a>(<a class="code" href="classmbed_1_1_a_t_handler.html">ATHandler</a> &amp;at, <span class="keyword">const</span> <span class="keywordtype">char</span> *apn, <span class="keywordtype">bool</span> cp_req = <span class="keyword">false</span>, <span class="keywordtype">bool</span> nonip_req = <span class="keyword">false</span>);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment"></span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span> <span class="comment">    /** Create new instance of AT_CellularNetwork or if overridden, modem specific implementation.</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span> <span class="comment">     *</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span> <span class="comment">     *  @param at   ATHandler reference for communication with the modem.</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span> <span class="comment">     *  @return new instance of class AT_CellularNetwork</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span> <span class="comment">     */</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_a_t___cellular_network.html">AT_CellularNetwork</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#ad02cd56601cc22f51bfcc7b9b8ffa164">open_network_impl</a>(<a class="code" href="classmbed_1_1_a_t_handler.html">ATHandler</a> &amp;at);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="comment"></span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> <span class="comment">    /** Create new instance of AT_CellularInformation or if overridden, modem specific implementation.</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span> <span class="comment">     *</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> <span class="comment">     *  @param at   ATHandler reference for communication with the modem.</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> <span class="comment">     *  @return new instance of class AT_CellularInformation</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">     */</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>     <span class="keyword">virtual</span> <a class="code" href="classmbed_1_1_a_t___cellular_information.html">AT_CellularInformation</a> *<a class="code" href="classmbed_1_1_a_t___cellular_device.html#a49cc7c8527e68481ff23edfd65144b99">open_information_impl</a>(<a class="code" href="classmbed_1_1_a_t_handler.html">ATHandler</a> &amp;at);</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span> </div><div class="line"><a name="l00164"></a><span class="lineno">  164</span> <span class="preprocessor">#if MBED_CONF_CELLULAR_USE_SMS</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span> <span class="comment">    /** Create new instance of AT_CellularSMS or if overridden, modem specific implementation.</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span> <span class="comment">     *</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment">     *  @param at   ATHandler reference for communication with the modem.</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="comment">     *  @return new instance of class AT_CellularSMS</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> <span class="comment">     */</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>     <span class="keyword">virtual</span> AT_CellularSMS *open_sms_impl(<a class="code" href="classmbed_1_1_a_t_handler.html">ATHandler</a> &amp;at);</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> <span class="preprocessor">#endif // MBED_CONF_CELLULAR_USE_SMS</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> </div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmbed_1_1_a_t___cellular_device.html#a6e3838ab78d1823b6dce054f325e9afb">cellular_callback</a>(nsapi_event_t ev, intptr_t ptr, <a class="code" href="classmbed_1_1_cellular_context.html">CellularContext</a> *ctx = NULL);</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>     <span class="keywordtype">void</span> send_disconnect_to_context(<span class="keywordtype">int</span> cid);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>     <span class="comment">// Sets commonly used URCs</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>     <span class="keywordtype">void</span> set_at_urcs();</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>     <span class="comment">// To be used for setting target specific URCs</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_at_urcs_impl();</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>     <span class="comment">// Sets up parameters for AT handler, for now only the send delay and URCs.</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>     <span class="comment">// This kind of routine is needed for initialisation routines that are virtual and therefore cannot be called from constructor.</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>     <span class="keywordtype">void</span> setup_at_handler();</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>     <span class="keyword">virtual</span> <a class="code" href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a> set_baud_rate_impl(<span class="keywordtype">int</span> baud_rate);</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> </div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>     <span class="keywordtype">void</span> urc_nw_deact();</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>     <span class="keywordtype">void</span> urc_pdn_deact();</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span> </div><div class="line"><a name="l00188"></a><span class="lineno">  188</span> <span class="keyword">protected</span>:</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>     <a class="code" href="classmbed_1_1_a_t_handler.html">ATHandler</a> _at;</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span> </div><div class="line"><a name="l00191"></a><span class="lineno">  191</span> <span class="keyword">private</span>:</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="preprocessor">#if MBED_CONF_CELLULAR_USE_SMS</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>     AT_CellularSMS *_sms;</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> <span class="preprocessor">#endif // MBED_CONF_CELLULAR_USE_SMS</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span> </div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>     <a class="code" href="classmbed_1_1_a_t___cellular_network.html">AT_CellularNetwork</a> *_network;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>     <a class="code" href="classmbed_1_1_a_t___cellular_information.html">AT_CellularInformation</a> *_information;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>     <a class="code" href="classmbed_1_1_a_t___cellular_context.html">AT_CellularContext</a> *_context_list;</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> </div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>     std::chrono::duration&lt;int, std::milli&gt; _default_timeout;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>     <span class="keywordtype">bool</span> _modem_debug_on;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>     <span class="keyword">const</span> intptr_t *_property_array;</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span> };</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span> </div><div class="line"><a name="l00205"></a><span class="lineno">  205</span> } <span class="comment">// namespace mbed</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span> <span class="preprocessor">#endif // AT_CELLULAR_DEVICE_H_</span></div><div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_aebfe1d1c738eccd76af14686086fd11a"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#aebfe1d1c738eccd76af14686086fd11a">mbed::AT_CellularDevice::get_sim_state</a></div><div class="ttdeci">virtual nsapi_error_t get_sim_state(SimState &amp;state)</div><div class="ttdoc">Get SIM card&amp;#39;s state. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a23788e5bda77a9aff5df1e422ea3cb41"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a23788e5bda77a9aff5df1e422ea3cb41">mbed::AT_CellularDevice::open_network</a></div><div class="ttdeci">virtual CellularNetwork * open_network()</div><div class="ttdoc">Create new CellularNetwork interface. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_ab8e699817854250e04a63a8b0b1d1a61"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#ab8e699817854250e04a63a8b0b1d1a61">mbed::AT_CellularDevice::create_context_impl</a></div><div class="ttdeci">virtual AT_CellularContext * create_context_impl(ATHandler &amp;at, const char *apn, bool cp_req=false, bool nonip_req=false)</div><div class="ttdoc">Creates new instance of AT_CellularContext or if overridden, modem specific implementation. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a0c185012fd81182d4b717b4b5366354b"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a0c185012fd81182d4b717b4b5366354b">mbed::AT_CellularDevice::close_information</a></div><div class="ttdeci">virtual void close_information()</div><div class="ttdoc">Closes the opened CellularInformation by deleting the CellularInformation instance. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a07bfd405103f2f229d7cd3c87c35d68f"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a07bfd405103f2f229d7cd3c87c35d68f">mbed::AT_CellularDevice::set_ready_cb</a></div><div class="ttdeci">virtual void set_ready_cb(Callback&lt; void()&gt; callback)</div><div class="ttdoc">Set callback function to listen when device is ready. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a32bfeeaa0df1b574158a7fe0e96231c0"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a32bfeeaa0df1b574158a7fe0e96231c0">mbed::AT_CellularDevice::open_information</a></div><div class="ttdeci">virtual CellularInformation * open_information()</div><div class="ttdoc">Create new CellularInformation interface. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_aeb139ecad7d081f38ee6620f93296666"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#aeb139ecad7d081f38ee6620f93296666">mbed::AT_CellularDevice::set_baud_rate</a></div><div class="ttdeci">virtual nsapi_error_t set_baud_rate(int baud_rate)</div><div class="ttdoc">Sets cellular modem to given baud rate. </div></div>
+<div class="ttc" id="classmbed_1_1_cellular_device_html_a3119ccfca080563f9721daf33b67f85a"><div class="ttname"><a href="classmbed_1_1_cellular_device.html#a3119ccfca080563f9721daf33b67f85a">mbed::CellularDevice::close_sms</a></div><div class="ttdeci">virtual void close_sms()=0</div><div class="ttdoc">Closes the opened CellularSMS by deleting the CellularSMS instance. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a30c800f5aed06acc98a784c14ffd62fa"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a30c800f5aed06acc98a784c14ffd62fa">mbed::AT_CellularDevice::get_property</a></div><div class="ttdeci">intptr_t get_property(CellularProperty key)</div><div class="ttdoc">Get value for the given key. </div></div>
+<div class="ttc" id="classmbed_1_1_cellular_context_html"><div class="ttname"><a href="classmbed_1_1_cellular_context.html">mbed::CellularContext</a></div><div class="ttdoc">CellularContext is CellularInterface/NetworkInterface with extensions for cellular connectivity...</div><div class="ttdef"><b>Definition:</b> <a href="_cellular_context_8h_source.html#l00040">CellularContext.h:40</a></div></div>
+<div class="ttc" id="classmbed_1_1_cellular_device_html"><div class="ttname"><a href="classmbed_1_1_cellular_device.html">mbed::CellularDevice</a></div><div class="ttdoc">Class CellularDevice. </div><div class="ttdef"><b>Definition:</b> <a href="_cellular_device_8h_source.html#l00056">CellularDevice.h:56</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a05f59d68aff890e73a56a40cf2efb293"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a05f59d68aff890e73a56a40cf2efb293">mbed::AT_CellularDevice::is_ready</a></div><div class="ttdeci">virtual nsapi_error_t is_ready()</div><div class="ttdoc">Check whether the device is ready to accept commands. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a99a0e271e4704906abe7d9d75a434408"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a99a0e271e4704906abe7d9d75a434408">mbed::AT_CellularDevice::set_pin</a></div><div class="ttdeci">virtual nsapi_error_t set_pin(const char *sim_pin)</div><div class="ttdoc">Open the SIM card by setting the pin code for SIM. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a1e0a4b8cfd2501d95ecf149ff5e7a309"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a1e0a4b8cfd2501d95ecf149ff5e7a309">mbed::AT_CellularDevice::set_cellular_properties</a></div><div class="ttdeci">void set_cellular_properties(const intptr_t *property_array)</div><div class="ttdoc">Cellular module need to define an array of cellular properties which defines module supported propert...</div></div>
+<div class="ttc" id="group__netsocket_html_ga67a8f07758d2ee2a1809293fa52bdf14"><div class="ttname"><a href="group__netsocket.html#ga67a8f07758d2ee2a1809293fa52bdf14">nsapi_error_t</a></div><div class="ttdeci">signed int nsapi_error_t</div><div class="ttdoc">Type used to represent error codes. </div><div class="ttdef"><b>Definition:</b> <a href="nsapi__types_8h_source.html#l00142">nsapi_types.h:142</a></div></div>
+<div class="ttc" id="classmbed_1_1_file_handle_html"><div class="ttname"><a href="classmbed_1_1_file_handle.html">mbed::FileHandle</a></div><div class="ttdoc">Class FileHandle. </div><div class="ttdef"><b>Definition:</b> <a href="_file_handle_8h_source.html#l00046">FileHandle.h:46</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a6e3838ab78d1823b6dce054f325e9afb"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a6e3838ab78d1823b6dce054f325e9afb">mbed::AT_CellularDevice::cellular_callback</a></div><div class="ttdeci">virtual void cellular_callback(nsapi_event_t ev, intptr_t ptr, CellularContext *ctx=NULL)</div><div class="ttdoc">Cellular callback to be attached to Network and CellularStateMachine classes. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a5d0ff2abe7187bfe8ee3a88ed2082f80"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a5d0ff2abe7187bfe8ee3a88ed2082f80">mbed::AT_CellularDevice::soft_power_on</a></div><div class="ttdeci">virtual nsapi_error_t soft_power_on()</div><div class="ttdoc">Powers up the modem. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_aef44cbe28e0f8c3468d4c3a731feb1c4"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#aef44cbe28e0f8c3468d4c3a731feb1c4">mbed::AT_CellularDevice::get_at_handler</a></div><div class="ttdeci">virtual ATHandler * get_at_handler()</div><div class="ttdoc">Get the current ATHandler instance in use for debug purposes etc. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_acfeea5a9bf30ba1d03fb63aff2164da7"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#acfeea5a9bf30ba1d03fb63aff2164da7">mbed::AT_CellularDevice::soft_power_off</a></div><div class="ttdeci">virtual nsapi_error_t soft_power_off()</div><div class="ttdoc">Powers down the modem. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_aed0cfb5db3d4ffc39b820d08501b5349"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#aed0cfb5db3d4ffc39b820d08501b5349">mbed::AT_CellularDevice::get_context_list</a></div><div class="ttdeci">virtual CellularContext * get_context_list() const </div><div class="ttdoc">Get the linked list of CellularContext instances. </div></div>
+<div class="ttc" id="group__platform___callback_html_ga1104a807bfce1d1dc38e4d1eeba6ed17"><div class="ttname"><a href="group__platform___callback.html#ga1104a807bfce1d1dc38e4d1eeba6ed17">mbed::callback</a></div><div class="ttdeci">Callback&lt; R(ArgTs...)&gt; callback(R(*func)(ArgTs...)=nullptr) noexcept</div><div class="ttdoc">Create a callback class with type inferred from the arguments. </div><div class="ttdef"><b>Definition:</b> <a href="_callback_8h_source.html#l00678">Callback.h:678</a></div></div>
+<div class="ttc" id="_cellular_device_8h_html"><div class="ttname"><a href="_cellular_device_8h.html">CellularDevice.h</a></div><div class="ttdoc">Class CellularDevice. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a1548eeda1c463ee315149026b43a4217"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a1548eeda1c463ee315149026b43a4217">mbed::AT_CellularDevice::shutdown</a></div><div class="ttdeci">virtual nsapi_error_t shutdown()</div><div class="ttdoc">Shutdown cellular device to minimum functionality. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a03d6d54251b98481234472872c1e3b57"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a03d6d54251b98481234472872c1e3b57">mbed::AT_CellularDevice::close_network</a></div><div class="ttdeci">virtual void close_network()</div><div class="ttdoc">Closes the opened CellularNetwork by deleting the CellularNetwork instance. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_ad02cd56601cc22f51bfcc7b9b8ffa164"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#ad02cd56601cc22f51bfcc7b9b8ffa164">mbed::AT_CellularDevice::open_network_impl</a></div><div class="ttdeci">virtual AT_CellularNetwork * open_network_impl(ATHandler &amp;at)</div><div class="ttdoc">Create new instance of AT_CellularNetwork or if overridden, modem specific implementation. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a49cc7c8527e68481ff23edfd65144b99"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a49cc7c8527e68481ff23edfd65144b99">mbed::AT_CellularDevice::open_information_impl</a></div><div class="ttdeci">virtual AT_CellularInformation * open_information_impl(ATHandler &amp;at)</div><div class="ttdoc">Create new instance of AT_CellularInformation or if overridden, modem specific implementation. </div></div>
+<div class="ttc" id="classmbed_1_1_cellular_network_html"><div class="ttname"><a href="classmbed_1_1_cellular_network.html">mbed::CellularNetwork</a></div><div class="ttdoc">An abstract interface for connecting to a network and getting information from it. </div><div class="ttdef"><b>Definition:</b> <a href="_cellular_network_8h_source.html#l00039">CellularNetwork.h:39</a></div></div>
+<div class="ttc" id="classmbed_1_1_cellular_information_html"><div class="ttname"><a href="classmbed_1_1_cellular_information.html">mbed::CellularInformation</a></div><div class="ttdoc">Class CellularInformation. </div><div class="ttdef"><b>Definition:</b> <a href="_cellular_information_8h_source.html#l00039">CellularInformation.h:39</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_ab22d22158942efe21fd6e4df12973f27"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#ab22d22158942efe21fd6e4df12973f27">mbed::AT_CellularDevice::init</a></div><div class="ttdeci">virtual nsapi_error_t init()</div><div class="ttdoc">Initialize cellular device must be called right after the module is ready. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_information_html"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_information.html">mbed::AT_CellularInformation</a></div><div class="ttdoc">Class AT_CellularInformation. </div><div class="ttdef"><b>Definition:</b> <a href="_a_t___cellular_information_8h_source.html#l00032">AT_CellularInformation.h:32</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_ac25de818b0f5fc28c439826860e27f66"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#ac25de818b0f5fc28c439826860e27f66">mbed::AT_CellularDevice::hard_power_on</a></div><div class="ttdeci">virtual nsapi_error_t hard_power_on()</div><div class="ttdoc">Sets the modem up for powering on This is equivalent to plugging in the device, i.e., attaching power and serial port. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a2e41cf8b3410c7781dfc2d95b0686be4"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a2e41cf8b3410c7781dfc2d95b0686be4">mbed::AT_CellularDevice::hard_power_off</a></div><div class="ttdeci">virtual nsapi_error_t hard_power_off()</div><div class="ttdoc">Sets the modem in unplugged state. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a361e2d4586d12739c398800e39df994b"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a361e2d4586d12739c398800e39df994b">mbed::AT_CellularDevice::create_context</a></div><div class="ttdeci">virtual CellularContext * create_context(const char *apn=NULL, bool cp_req=false, bool nonip_req=false)</div><div class="ttdoc">Creates a new CellularContext interface. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_context_html"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_context.html">mbed::AT_CellularContext</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_t___cellular_context_8h_source.html#l00029">AT_CellularContext.h:29</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a0e1c89d9112e2d1a6ce8ac84a0ff04dd"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a0e1c89d9112e2d1a6ce8ac84a0ff04dd">mbed::AT_CellularDevice::clear</a></div><div class="ttdeci">virtual nsapi_error_t clear()</div><div class="ttdoc">Clear modem to a default initial state. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a0b49b7adf8a6a99b70582dd6455e3d19"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a0b49b7adf8a6a99b70582dd6455e3d19">mbed::AT_CellularDevice::delete_context</a></div><div class="ttdeci">virtual void delete_context(CellularContext *context)</div><div class="ttdoc">Deletes the given CellularContext instance. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html">mbed::AT_CellularDevice</a></div><div class="ttdoc">Class AT_CellularDevice. </div><div class="ttdef"><b>Definition:</b> <a href="_a_t___cellular_device_8h_source.html#l00038">AT_CellularDevice.h:38</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_ab225d4f65da3c1bcb8bca3037cf988ba"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#ab225d4f65da3c1bcb8bca3037cf988ba">mbed::AT_CellularDevice::set_timeout</a></div><div class="ttdeci">virtual void set_timeout(int timeout)</div><div class="ttdoc">Set the default response timeout. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a5c898e1586308d2e57ed2cb1f3a56e19"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a5c898e1586308d2e57ed2cb1f3a56e19">mbed::AT_CellularDevice::modem_debug_on</a></div><div class="ttdeci">virtual void modem_debug_on(bool on)</div><div class="ttdoc">Turn modem debug traces on. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_network_html"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_network.html">mbed::AT_CellularNetwork</a></div><div class="ttdoc">Class AT_CellularNetwork. </div><div class="ttdef"><b>Definition:</b> <a href="_a_t___cellular_network_8h_source.html#l00038">AT_CellularNetwork.h:38</a></div></div>
+<div class="ttc" id="classmbed_1_1_cellular_device_html_a8e97fcc47c673d706dc9d433a984337a"><div class="ttname"><a href="classmbed_1_1_cellular_device.html#a8e97fcc47c673d706dc9d433a984337a">mbed::CellularDevice::open_sms</a></div><div class="ttdeci">virtual CellularSMS * open_sms()=0</div><div class="ttdoc">Create new CellularSMS interface. </div></div>
+<div class="ttc" id="classmbed_1_1_a_t___cellular_device_html_a30a210749228d945e90113aeb267d766"><div class="ttname"><a href="classmbed_1_1_a_t___cellular_device.html#a30a210749228d945e90113aeb267d766">mbed::AT_CellularDevice::set_power_save_mode</a></div><div class="ttdeci">virtual nsapi_error_t set_power_save_mode(int periodic_time, int active_time=0)</div><div class="ttdoc">Set power save mode. </div></div>
+<div class="ttc" id="classmbed_1_1_callback_html"><div class="ttname"><a href="classmbed_1_1_callback.html">mbed::Callback</a></div><div class="ttdoc">Callback class based on template specialization. </div><div class="ttdef"><b>Definition:</b> <a href="_callback_8h_source.html#l00053">Callback.h:53</a></div></div>
+<div class="ttc" id="namespacembed_html"><div class="ttname"><a href="namespacembed.html">mbed</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_t_handler_8h_source.html#l00046">ATHandler.h:46</a></div></div>
+<div class="ttc" id="classmbed_1_1_a_t_handler_html"><div class="ttname"><a href="classmbed_1_1_a_t_handler.html">mbed::ATHandler</a></div><div class="ttdoc">Class for sending AT commands and parsing AT responses. </div><div class="ttdef"><b>Definition:</b> <a href="_a_t_handler_8h_source.html#l00068">ATHandler.h:68</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+        
+    
+
+
+        
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="https://twitter.com/ArmSoftwareDev">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/c/ArmSoftwareDevelopers">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script> Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://os.mbed.com/">Home</a></li>
+            <li><a href="https://www.arm.com/company/policies/terms-and-conditions">Website Terms</a></li>
+            <li><a href="https://www.arm.com/company/policies/privacy">Privacy</a></li>
+            <li><a href="https://www.arm.com/company/policies/cookies">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="../../../../static/js/cookie_law.js"></script>
+
+
+
+
+    </body>
+
+<!-- Mirrored from os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 15:14:41 GMT -->
+</html>
